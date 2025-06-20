@@ -1,0 +1,39 @@
+name: 翻譯要求
+description: 為內容翻譯提出建議
+labels: ["type:enhancement"]
+body:
+  - type: dropdown
+    id: missing
+    attributes:
+      label: 你提出的要求是否與官方翻譯有關?
+      options:
+        - "是"
+        - "否"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: NPC 位置
+      description: 指定 NPC 所在位置
+      placeholder: map_name,x,y
+    validations:
+      required: false
+  - type: textarea
+    id: result
+    attributes:
+      label: 錯誤內容
+      description: 描述需要或翻譯錯誤的部分
+      placeholder: |
+        1. NPC 名稱?
+        2. 對話選項?
+        3. 對話內容?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 描述您想要的解決方案
+      description: 為您想要發生的事情提供清晰而簡潔的描述
+    validations:
+      required: true
