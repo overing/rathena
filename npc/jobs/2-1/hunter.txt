@@ -58,19 +58,19 @@
 // Notices in the old Hunter Guild.
 //============================================================
 in_hunter,99,99,4	script	Hunter Info#hnt::HntNotice	727,{
-	mes "============ Notice ============";
-	mes "We would like to inform that the Hunter Job Change Location";
-	mes "has been moved to ^ff0000Hugel^000000 in the Schwarzwald Republic.";
+	mes "============ 公告 ============";
+	mes "我們要通知您，獵人轉職地點";
+	mes "已經移至史瓦茲共和國的 ^ff0000虎葛爾^000000。";
 	next;
-	mes "You can now use the Hugel airline, so please use the airship to visit Hugel.";
+	mes "您現在可以使用虎葛爾航空，所以請搭乘飛空艇前往虎葛爾。";
 	next;
-	mes "You will find the new Job Change Location at ^ff0000 Hugel 208 222 ^000000.";
+	mes "您可以在 ^ff0000 虎葛爾 208 222 ^000000 找到新的轉職地點。";
 	next;
-	mes "^804000(You found a tiny line written at the end of the notice.)^000000";
+	mes "^804000(你在公告的最後發現一行小字。)^000000";
 	mes " ";
 	mes " ";
 	mes " ";
-	mes "I, the Falcon breeder have moved out as well.";
+	mes "我，獵鷹飼養員也搬走了。";
 	close;
 }
 
@@ -80,113 +80,113 @@ pay_fild10,148,252,3	duplicate(HntNotice)	Job Change Location#hu	857
 //============================================================
 hu_in01,386,373,4	script	Hunter Guildsman#hnt	727,{
 	if (Upper == 1) {
-		mes "[Hunter Sherin]";
-		mes "Oh, how have you been? It's been a long time, hasn't it?";
+		mes "[獵人 莎琳]";
+		mes "喔，你最近好嗎？好久不見了，不是嗎？";
 		next;
-		mes "[Hunter Sherin]";
-		mes "...Wait.";
-		mes "Oops! I'm sorry, I could have sworn that we've met before. Huh. How weird.";
+		mes "[獵人 莎琳]";
+		mes "...等等。";
+		mes "哎呀！對不起，我發誓我們以前見過面。嗯。真奇怪。";
 		close;
 	}
 	if (BaseJob == Job_Archer && JobLevel < 40) {
-		mes "[Hunter Guildsman]";
-		mes "Eh? You haven't had enough training as an Archer yet. To become a Hunter, you must gain a certain level of experience as an Archer first.";
+		mes "[獵人 公會人員]";
+		mes "欸？你還沒有足夠的弓箭手訓練。要成為獵人，你必須先獲得一定等級的弓箭手經驗。";
 		next;
-		mes "[Hunter Guildsman]";
-		mes "Go out and train yourself a bit more. You'll need to be at least Job Level 40 before you'll be ready to become a Hunter. Of course, you can train more than that if you want.";
+		mes "[獵人 公會人員]";
+		mes "出去多訓練一下。你至少要達到職業等級 40 級，才有資格成為獵人。當然，如果你想訓練更多也是可以的。";
 		next;
-		mes "[Hunter Guildsman]";
-		mes "See you next time~";
+		mes "[獵人 公會人員]";
+		mes "下次見囉～";
 		close;
 	}
 	if (SkillPoint) {
-		mes "[Hunter Sherin]";
-		mes "You can't change jobs without using all your skill points. Please use all of your skill points before applying to change jobs~";
+		mes "[獵人 莎琳]";
+		mes "在沒有用完所有技能點數的情況下，你無法轉職。請在使用所有技能點數後，再申請轉職～";
 		close;
 	}
 	if (BaseClass == Job_Novice) {
-		mes "[Hunter Guildsman]";
-		mes "You must be...";
-		mes "a Novice? Wow, you've got a long way ahead of you. I don't think there's much you can do here.";
+		mes "[獵人 公會人員]";
+		mes "你一定是...";
+		mes "初心者？哇，你還有很長的路要走。我不認為你在這裡能做什麼。";
 		close;
 	}
 	else if (BaseClass == Job_Swordman) {
-		mes "[Hunter Guildsman]";
-		mes "You have chosen the path of the sword. I can respect the strength of your blade. Of course, from far away, you can't really afford to throw your sword at enemies, can you?";
+		mes "[獵人 公會人員]";
+		mes "你選擇了劍的道路。我可以尊重你的劍的力量。當然，從遠處，你不能真的把劍扔向敵人，不是嗎？";
 		close;
 	}
 	else if (BaseClass == Job_Mage) {
-		mes "[Hunter Guildsman]";
-		mes "You deal with magic? It must feel great to be able to wield mystic power.";
+		mes "[獵人 公會人員]";
+		mes "你使用魔法？能夠揮舞神秘力量的感覺一定很棒。";
 		close;
 	}
 	else if (BaseClass == Job_Acolyte) {
-		mes "[Hunter Guildsman]";
-		mes "Oh, a person who serves God! Nice to meet you. There aren't many people like you that visit this place~ Hehe.";
+		mes "[獵人 公會人員]";
+		mes "喔，一位侍奉神的人！很高興認識你。像你這樣的人很少來這裡～呵呵。";
 		close;
 	}
 	else if (BaseClass == Job_Merchant) {
-		mes "[Hunter Guildsman]";
-		mes "Oh...";
-		mes "How's your business coming along?";
+		mes "[獵人 公會人員]";
+		mes "喔...";
+		mes "你的生意怎麼樣了？";
 		close;
 	}
 	else if (BaseClass == Job_Thief) {
-		mes "[Hunter Guildsman]";
-		mes "Agh?!";
-		mes "This place doesn't have anything worth stealing or anyone worth killing!!";
+		mes "[獵人 公會人員]";
+		mes "啊？！";
+		mes "這個地方沒有任何值得偷的東西，也沒有任何值得殺的人！！";
 		close;
 	}
 	else if (BaseJob == Job_Dancer || BaseJob == Job_Bard) {
-		mes "[Hunter Guildsman]";
-		mes "Phew...sometimes it is really hard for being a hunter, you know...";
-		mes "So how do you like your bohemian life? Yeah, I am envious of you for having so much freedom...";
+		mes "[獵人 公會人員]";
+		mes "呼...有時候當獵人真的很難，你知道...";
+		mes "你覺得你的波希米亞生活怎麼樣？是啊，我很羨慕你擁有這麼多的自由...";
 		close;
 	}
 	else if (BaseJob == Job_Hunter) {
-		mes "[Hunter Sherin]";
-		mes "Oh~ " + strcharinfo(0) + "!!";
-		mes "Long time no see~ What brings you here? Did your Falcon run away or something?";
+		mes "[獵人 莎琳]";
+		mes "喔～ " + strcharinfo(0) + "!!";
+		mes "好久不見了～ 你來這裡做什麼？你的獵鷹跑掉了嗎？";
 		next;
-		mes "[Hunter Sherin]";
-		mes "I don't really have any official notices from the guild at the moment, so I hope you didn't come here just for that...";
+		mes "[獵人 莎琳]";
+		mes "我目前沒有收到公會的任何官方通知，所以我希望你不是為了這個而來的...";
 		close;
 	}
 	else if (BaseJob == Job_Archer) {
 		if (HNTR_Q == 17 && countitem(1007) == 0) {
-			mes "[Hunter Sherin]";
-			mes "Hmm... I've been informed that you passed the test. But you don't have the necessary 'Necklace of Wisdom (Penetration)' that proves your accomplishment.";
+			mes "[獵人 莎琳]";
+			mes "嗯...我已經收到通知說你通過了測試。但你沒有必要的 '智慧項鍊 (穿刺)' 來證明你的成就。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "I'll let you change your job, but you must bring back a 'Necklace of Wisdom (Penetration),' no matter what it takes.";
+			mes "[獵人 莎琳]";
+			mes "我可以讓你轉職，但你必須帶回一條 '智慧項鍊 (穿刺)'，無論如何都要。";
 			close;
 		}
 		else if (HNTR_Q == 17 && countitem(1007) > 0) {
-			mes "[Hunter Sherin]";
-			mes "Oh...?";
-			mes "You passed";
-			mes "the job test?!";
-			mes "Congratulations~!!";
+			mes "[獵人 莎琳]";
+			mes "喔...？";
+			mes "你通過了";
+			mes "轉職測試？！";
+			mes "恭喜你～！！";
 			next;
-			mes "[Hunter Sherin]";
-			mes "Well then,";
-			mes "I will now change";
-			mes "your job to a Hunter~";
+			mes "[獵人 莎琳]";
+			mes "那麼，";
+			mes "我現在將";
+			mes "你的職業轉變為獵人～";
 			next;
 			delitem 1007,1; // Penetration
-			mes "[Hunter Sherin]";
-			mes "Tada~ Congratulations!";
-			mes "You look great as a Hunter!!";
+			mes "[獵人 莎琳]";
+			mes "鏘鏘～ 恭喜你！";
+			mes "你當獵人看起來很棒！！";
 			.@joblvl = JobLevel;
 			completequest 4013;
 			callfunc "Job_Change",Job_Hunter;
 			callfunc "F_ClearJobVar";		// clears all job variables for the current player
 			next;
-			mes "[Hunter Sherin]";
-			mes "Become a noble person and become a worthy representative of our Hunter Guild. Show your love of nature as a Hunter~";
+			mes "[獵人 莎琳]";
+			mes "成為一個高尚的人，並成為我們獵人公會的 ????????? 代表。作為獵人，展現你對大自然的愛～";
 			next;
-			mes "[Hunter Sherin]";
-			mes "And also, here is a little reward for all the effort you put in. It's from me, of course~";
+			mes "[獵人 莎琳]";
+			mes "還有，這是一點小小的獎勵，為了你所付出的所有努力。這當然是我的心意～";
 			if (.@joblvl > 49)
 				getitem 1718,1; //Hunter_Bow
 			else
@@ -195,286 +195,286 @@ hu_in01,386,373,4	script	Hunter Guildsman#hnt	727,{
 		}
 		else if (HNTR_Q == 0 || HNTR_Q == 1) {
 			if (HNTR_Q == 0) {
-				mes "[Hunter Guildsman]";
-				mes "Oh, you're an Archer! It seems as if you've trained enough as an Archer... You came here to become a Hunter, right?";
+				mes "[獵人 公會人員]";
+				mes "喔，你是弓箭手！看來你已經接受了足夠的弓箭手訓練...你來這裡是要成為獵人的，對吧？";
 				next;
-				switch( select( "Yes. That's what I'm here for.", "What are the requirements to change jobs?", "....I don't want to change yet." ) ) {
+				switch( select( "是的。我就是為此而來。", "轉職需要什麼條件？", "....我還不想轉職。" ) ) {
 				case 1:
-					mes "[Hunter Guildsman]";
-					mes "Hehe~";
-					mes "I was right! Let me put you on the candidate list. Let's see~*";
+					mes "[獵人 公會人員]";
+					mes "呵呵～";
+					mes "我猜對了！讓我把你放在候選人名單上。讓我想想～*";
 					next;
-					mes "[Hunter Guildsman]";
-					mes "Hmm... Let's start with the interview. Wait and relax a moment. No need to worry, I'll prepare everything~";
+					mes "[獵人 公會人員]";
+					mes "嗯...讓我們先從面試開始。稍等片刻放鬆一下。不用擔心，我會準備好一切的～";
 					next;
-					mes "^3355FF*Gathers and flips through papers*^000000";
+					mes "^3355FF*收集並翻閱文件*^000000";
 					next;
-					mes "^3355FF*Rummage rummage*^000000";
+					mes "^3355FF*翻找翻找*^000000";
 					next;
-					mes "[Hunter Guildsman]";
-					mes "Ah!";
-					mes "Here they are: the interview questions~ First of all, my name is 'Sherin.' Nice to meet you!";
+					mes "[獵人 公會人員]";
+					mes "啊！";
+					mes "找到了：面試問題～ 首先，我的名字是 '莎琳'。很高興認識你！";
 					next;
-					mes "[Hunter Sherin]";
-					mes "Well then,";
-					mes "shall we begin?";
+					mes "[獵人 莎琳]";
+					mes "那麼，";
+					mes "我們開始吧？";
 					next;
-					if (select( "Yes~ Let's start now.", "No, I'll be back later.") == 2) {
-						mes "[Hunter Sherin]";
-						mes "Okay...";
-						mes "Come back";
-						mes "when you're ready~";
+					if (select( "好的～ 現在開始吧。", "不，我晚點再來。") == 2) {
+						mes "[獵人 莎琳]";
+						mes "好的...";
+						mes "準備好";
+						mes "再來吧～";
 						close;
 					}
 					if (isbegin_quest(4000) == 0)
 						setquest 4000;
-					mes "[Hunter Sherin]";
-					mes "Listen carefully to the scenarios I describe. When I ask a question, you choose an answer. Pretty simple, don't you think?";
+					mes "[獵人 莎琳]";
+					mes "仔細聽我描述的情景。當我問問題時，你選擇一個答案。很簡單，不是嗎？";
 					next;
-					mes "[Hunter Sherin]";
-					mes "I just want to know how you think about life, and why you want to become a Hunter, so there's no need to be nervous.";
+					mes "[獵人 莎琳]";
+					mes "我只是想知道你對人生的看法，以及你為什麼想成為獵人，所以沒有必要緊張。";
 					break;
 				case 2:
-					mes "[Hunter Guildsman]";
-					mes "Job change";
-					mes "requirements?";
-					mes "First...";
-					mes "You must be an Archer.";
+					mes "[獵人 公會人員]";
+					mes "轉職";
+					mes "要求？";
+					mes "首先...";
+					mes "你必須是弓箭手。";
 					next;
-					mes "[Hunter Guildsman]";
-					mes "Second...";
-					mes "You must be";
-					mes "at least Job Level 40.";
+					mes "[獵人 公會人員]";
+					mes "第二...";
+					mes "你必須";
+					mes "至少達到職業等級 40 級。";
 					next;
-					mes "[Hunter Guildsman]";
-					mes "Third...";
-					mes "You must bring all of the items that will be requested by the guild. You can worry about that later.";
+					mes "[獵人 公會人員]";
+					mes "第三...";
+					mes "你必須攜帶公會要求的全部物品。你可以稍後再擔心這個。";
 					next;
-					mes "[Hunter Guildsman]";
-					mes "Fourth...";
-					mes "You've gotta pass the test administered by the guild. If you have had enough training as an Archer, you should be able to pass the test~";
+					mes "[獵人 公會人員]";
+					mes "第四...";
+					mes "你必須通過公會管理的測試。如果你接受了足夠的弓箭手訓練，你??能通過測試～";
 					close;
 				case 3:
-					mes "[Hunter Guildsman]";
-					mes "Okay then,";
-					mes "see you next time~";
+					mes "[獵人 公會人員]";
+					mes "好吧，";
+					mes "下次見囉～";
 					close;
 				}
 			}
 			else if (HNTR_Q == 1) {
-				mes "[Hunter Sherin]";
-				mes "Welcome back...!";
-				mes "Well, let's start with the interview. This time, carefully think about the answers to each question.";
+				mes "[獵人 莎琳]";
+				mes "歡迎回來...!";
+				mes "好吧，讓我們開始面試。這次，仔細思考每個問題的答案。";
 			}
 			next;
-			mes "[Hunter Sherin]";
-			mes "Well then,";
-			mes "let's begin.";
+			mes "[獵人 莎琳]";
+			mes "那麼，";
+			mes "讓我們開始吧。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "You are an Archer, and you don't know where you should go to hunt. What do you do?";
+			mes "[獵人 莎琳]";
+			mes "你是一個弓箭手，你不知道應該去哪裡狩獵。你會怎麼做？";
 			next;
-			switch( select( "Scream out loud asking where you should go.", "Quietly ask a person passing by.", "Wander around alone and search for a place." ) ) {
+			switch( select( "大聲尖叫詢問應該去哪裡。", "安靜地問問路過的人。", "獨自徘徊並尋找地點。" ) ) {
 			case 2:
 			case 3:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "So you've decided on a place to hunt. You're going to hunt the monsters known as Hodes in the Sograt Desert.";
+			mes "[獵人雪琳]";
+			mes "所以你已經決定好狩獵地點了。你打算在蘇克拉特沙漠狩獵叫做霍德的魔物。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "But you are in Payon!!";
-			mes "How do you go to the desert?";
+			mes "[獵人雪琳]";
+			mes "但是你在沛雍!!";
+			mes "你要怎麼去沙漠？";
 			next;
-			switch( select( "Ask a Priest to open a free warp portal.", "Use the Kafra service.", "Walk with a friend." ) ) {
+			switch( select( "請一位牧師打開免費傳送門。", "使用卡普拉服務。", "和朋友一起走路去。" ) ) {
 			case 2:
 			case 3:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "There is no Priest to ask for a warp, and no friend is around to walk with you. You must use the Kafra service, but you have no Zeny!";
+			mes "[獵人雪琳]";
+			mes "沒有牧師可以請你傳送，也沒有朋友在你身邊可以一起走。你必須使用卡普拉服務，但你沒有錢！";
 			next;
-			mes "[Hunter Sherin]";
-			mes "How would you go";
-			mes "about to make the";
-			mes "Zeny that you need?";
+			mes "[獵人雪琳]";
+			mes "你要怎麼做";
+			mes "才能賺到你需要的";
+			mes "錢呢？";
 			next;
-			switch( select( "Beg here and there.", "Sell items I do not need.", "Hunt at a nearby field." ) ) {
+			switch( select( "到處乞討。", "賣掉我不需要的物品。", "在附近的田野狩獵。" ) ) {
 			case 2:
 			case 3:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "So you finally arrive at the Sograt Desert. But you realize that Hodes are a bit too strong for you to hunt alone.";
+			mes "[獵人雪琳]";
+			mes "所以你終於抵達了蘇克拉特沙漠。但是你意識到霍德對你來說太強了，無法獨自狩獵。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "What is your";
-			mes "solution to this";
-			mes "situation?";
+			mes "[獵人雪琳]";
+			mes "你對這個";
+			mes "情況的解決";
+			mes "方案是什麼？";
 			next;
-			if (select( "Attack a Hode from the top of a hill.", "Go back to town.", "Attack someone else's Hode." ) == 2)
+			if (select( "從山頂攻擊霍德。", "回到城鎮。", "攻擊別人的霍德。" ) == 2)
 				.@hunter_t += 10;
-			mes "[Hunter Sherin]";
-			mes "Let's say you were having too much trouble hunting Hodes and returned to town. Now you are out of HP and a Priest happens to be around. How would you ask for a Heal?";
+			mes "[獵人雪琳]";
+			mes "假設你在狩獵霍德時遇到太多麻煩並返回城鎮。現在你的 HP 用完了，而且剛好有一位牧師在附近。你會如何請求治療？";
 			next;
-			if (select( "Would it be possible to get a Heal, please?", "Heal, please.", "Heal me." ) == 1)
+			if (select( "可以請你給我治療嗎？", "治療，拜託。", "治療我。" ) == 1)
 				.@hunter_t += 10;
-			mes "[Hunter Sherin]";
-			mes "This time, you found a rare item while you were going through your inventory. You go out to sell the item, and there are many people with stores and chatrooms open.";
+			mes "[獵人雪琳]";
+			mes "這次，你在整理你的物品時找到了一件稀有物品。你出去賣掉這件物品，並且有很多人開設了商店和聊天室。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "What is the";
-			mes "best way to";
-			mes "sell your item?";
+			mes "[獵人雪琳]";
+			mes "賣掉你的物品";
+			mes "最好的方法";
+			mes "是什麼？";
 			next;
-			switch( select( "Scream out loud to everyone in sight.", "Open a chatroom and wait.", "Look to see if anyone already wants it." ) ) {
+			switch( select( "向所有視線範圍內的人大聲喊叫。", "開設一個聊天室並等待。", "看看是否已經有人想要它。" ) ) {
 			case 2:
 			case 3:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "While you are waiting, someone is begging for items and Zeny. What should you do?";
+			mes "[獵人雪琳]";
+			mes "當你在等待時，有人正在乞討物品和錢。你應該怎麼做？";
 			next;
-			if (select("Give some of my items and Zeny.", "Ignore and walk away.", "Tell the person about a good place to hunt.") == 1)
+			if (select("給他們我的一些物品和錢。", "忽略並走開。", "告訴他們一個好的狩獵地點。") == 1)
 				.@hunter_t += 10;
-			mes "[Hunter Sherin]";
-			mes "By now, you decide to go to the Maze by yourself.";
+			mes "[獵人雪琳]";
+			mes "現在，你決定獨自前往迷宮。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "But on your way, you run";
-			mes "into someone that is lost.";
-			mes "What should you do?";
+			mes "[獵人雪琳]";
+			mes "但在你的路上，你";
+			mes "遇到了一個迷路的人。";
+			mes "你應該怎麼做？";
 			next;
-			switch( select( "Tell them which way to go.", "Guide them to their destination.", "Ignore." ) ) {
+			switch( select( "告訴他們該怎麼走。", "引導他們到目的地。", "忽略。" ) ) {
 			case 1:
 			case 2:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "After meeting this lost person, you decide to get back to hunting. Just then, you find that someone is attacking a boss!";
+			mes "[獵人雪琳]";
+			mes "在遇到這位迷路的人之後，你決定回到狩獵。就在那時，你發現有人正在攻擊 Boss！";
 			next;
-			mes "[Hunter Sherin]";
-			mes "What should you do?";
+			mes "[獵人雪琳]";
+			mes "你應該怎麼做？";
 			next;
-			if (select( "Watch, then attack when asked for help.", "Attack and see what happens.", "Just go back to town." ) == 1)
+			if (select( "觀看，然後在被要求幫助時攻擊。", "攻擊並看看會發生什麼事。", "直接回到城鎮。" ) == 1)
 				.@hunter_t += 10;
-			mes "[Hunter Sherin]";
-			mes "You are now very exhausted after your day of hunting. It's time to go back to town.";
+			mes "[獵人雪琳]";
+			mes "經過一天的狩獵後，你現在非常疲憊。是時候回到城鎮了。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "But what's this!? You find an expensive item lying on the floor! What should you do with it?";
+			mes "[獵人雪琳]";
+			mes "但是這是什麼！？你發現一件昂貴的物品躺在地板上！你應該怎麼處理它？";
 			next;
-			switch( select( "Pick it up and keep it.", "Try to find the owner.", "Just walk by." ) ) {
+			switch( select( "撿起來並保留。", "試著找到主人。", "直接走過去。" ) ) {
 			case 2:
 			case 3:
 				.@hunter_t += 10;
 			default:
 				break;
 			}
-			mes "[Hunter Sherin]";
-			mes "Okay, this is the end of the test!";
+			mes "[獵人雪琳]";
+			mes "好的，這是測驗的結尾！";
 			next;
 			if (.@hunter_t == 100) {
 				HNTR_Q = 2;
 				changequest 4000,4001;
-				mes "[Hunter Sherin]";
-				mes "Well done! Your answers show you've got the right outlook on life. You definitely have the right qualities to become a Hunter~";
+				mes "[獵人雪琳]";
+				mes "做得好！你的回答表明你對生活有正確的看法。你絕對具備成為獵人的正確素質～";
 				next;
-				mes "[Hunter Sherin]";
-				mes "I'm glad to say you've passed the interview~ Now, go to that person in the corner and confirm which item is necessary for your job change test~";
+				mes "[獵人雪琳]";
+				mes "我很樂意地說你通過了面試～現在，去角落裡的那個人那裡確認哪個物品是你的轉職測試所必需的～";
 				close;
 			}
 			else if (.@hunter_t == 90) {
 				HNTR_Q = 2;
 				changequest 4000,4001;
-				mes "[Hunter Sherin]";
-				mes "Well, I'm looking at your answers and your score isn't perfect. But I'll let you pass anyway. I don't know what our Guildmaster will think, though.";
+				mes "[獵人雪琳]";
+				mes "嗯，我正在看你的答案，你的分數並不完美。但我還是讓你通過。我不知道我們的公會長會怎麼想。";
 				next;
-				mes "[Hunter Sherin]";
-				mes "Just remember to always keep basic etiquette in mind. Try harder in the following tests and make me happy, okay?";
+				mes "[獵人雪琳]";
+				mes "只要記住始終將基本禮儀銘記在心。在接下來的測驗中更加努力並讓我高興，好嗎？";
 				close;
 			}
 			HNTR_Q = 1;
-			mes "[Hunter Sherin]";
-			mes "Hmm... I don't think this'll work out. You can't become a Hunter without knowing basic etiquette.";
+			mes "[獵人雪琳]";
+			mes "嗯... 我認為這不會成功。如果你不知道基本禮儀，你無法成為獵人。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "Think about how you answered the questions one more time. In order to value nature, you must first value your relationship with others.";
+			mes "[獵人雪琳]";
+			mes "再想一想你如何回答這些問題。為了珍惜大自然，你必須首先珍惜你與他人的關係。";
 			next;
-			mes "[Hunter Sherin]";
-			mes "Then, you'll be more in tune with nature and with other people. It's this kind of harmony that makes the best Hunters.";
+			mes "[獵人雪琳]";
+			mes "然後，你將更適應大自然和其他人。正是這種和諧造就了最好的獵人。";
 			close;
 		}
 		else if (HNTR_Q > 2 && HNTR_Q < 10) {
-			mes "[Hunter Sherin]";
-			mes "Just give the item to the Demon Hunter, the guy who's all the way to the left in this area~";
+			mes "[獵人雪琳]";
+			mes "只要把東西給惡魔獵人，就是這個區域最左邊的那個人～";
 			next;
-			mes "[Hunter Sherin]";
+			mes "[獵人雪琳]";
 			if (Sex == SEX_MALE)
-				mes "If you decide to become a Hunter, promise to come visit me. I want to see you as a Hunter. You would look great!!";
+				mes "如果你決定成為獵人，答應我會來拜訪我。我想看到你成為獵人。你會看起來很棒！！";
 			else
-				mes "If you decide to become a Hunter, come and visit me, okay? You're pretty, but... You'd be even prettier as a Hunter. Hehe~";
+				mes "如果你決定成為獵人，來拜訪我，好嗎？你很漂亮，但是... 你成為獵人會更漂亮。呵呵～";
 			close;
 		}
 		else if (HNTR_Q == 2) {
-			mes "[Hunter Sherin]";
+			mes "[獵人雪琳]";
 			mes "????";
 			next;
-			mes "[Hunter Sherin]";
-			mes "You weren't able to find the Demon Hunter? That guy is just to the left! Hehe~";
+			mes "[獵人雪琳]";
+			mes "你找不到惡魔獵人？那個人就在左邊！呵呵～";
 			next;
-			mes "[Hunter Sherin]";
-			mes "I want to see you become a Hunter...! Waaah~ I think you'd look great, so please hurry!";
+			mes "[獵人雪琳]";
+			mes "我想看到你成為獵人...！哇～我覺得你會看起來很棒，所以請快點！";
 			close;
 		}
-		mes "[Hunter Sherin]";
-		mes "Hmm, I think you're supposed to visit someone else, not me. Like our Guildmaster who's out for business, you know?";
+		mes "[獵人雪琳]";
+		mes "嗯，我想你應該去拜訪其他人，而不是我。就像我們的公會長出差了，你知道嗎？";
 		next;
-		mes "[Hunter Sherin]";
-		mes "I heard he's at the Payon Central Palace... Or in the Archer Village, one of those two places. Try visiting those places and find him, okay?";
+		mes "[獵人雪琳]";
+		mes "我聽說他在沛雍中央皇宮... 或在弓箭手村莊，兩個地方其中之一。試著拜訪這些地方並找到他，好嗎？";
 		close;
 	}
-	mes "[Hunter Guildsman]";
-	mes "Eh? You haven't trained enough as an Archer. To become a Hunter, you need to gain more experience as an Archer first.";
+	mes "[獵人公會職員]";
+	mes "咦？你作為弓箭手的訓練還不夠。要成為獵人，你需要先獲得更多作為弓箭手的經驗。";
 	next;
-	mes "[Hunter Guildsman]";
-	mes "Well then, go train some more. You must be at least Job Level 40 to be exact. Of course, you can always go higher. See you next time~";
+	mes "[獵人公會職員]";
+	mes "那麼，去多訓練一些吧。確切地說，你必須至少達到職業等級 40。當然，你可以總是變得更高。下次見～";
 	close;
 }
 
 hu_in01,382,382,4	script	Guild Receptionist#hnt	732,{
 	if (HNTR_Q == 2) {
-		mes "[Guild Receptionist]";
-		mes "Greetings. They call me... ^660000The Demon Hunter^000000. I am the one in charge of processing applications. Your name is ... " + strcharinfo(0) + ", correct?";
+		mes "[公會接待員]";
+		mes "您好。他們叫我... ^660000惡魔獵人^000000。我是負責處理申請的人。您的名字是... " + strcharinfo(0) + "，對吧？";
 		next;
-		if (select( "Yes, that is correct.", "Nope~~(heeheehee)" ) == 2) {
-			mes "[Demon Hunter]";
-			mes "Hey, stop messing around.";
-			mes "Your name is " + strcharinfo(0) + ", right?";
+		if (select( "是的，沒錯。", "才不是呢~~(嘻嘻嘻)" ) == 2) {
+			mes "[惡魔獵人]";
+			mes "嘿，別鬧了。";
+			mes "您的名字是 " + strcharinfo(0) + "，對吧？";
 			next;
-			if (select("Yes...", "Hehehe. I keep telling you, it's not~~") == 2) {
-				mes "[Demon Hunter]";
-				mes "Leave if you plan to trifle me your petty tricks. Do you not realize that you are toying with ^660000The Demon Hunter^000000?!'";
+			if (select("是的...", "呵呵呵。我就跟你說不是~~") == 2) {
+				mes "[惡魔獵人]";
+				mes "如果您打算用您那小把戲來戲弄我，就請離開。您難道沒意識到您正在戲弄 ^660000惡魔獵人^000000 嗎？！'";
 				close2;
 				warp "hugel",208,223;
 				end;
 			}
 		}
-		mes "[Demon Hunter]";
-		mes "Okay. These are the items you need for the test. Since we provide all the arrows you will be using for this test, we need you to get the materials to make them.";
+		mes "[惡魔獵人]";
+		mes "好的。這些是您測試所需的物品。由於我們會提供您這次測試中使用的所有箭，所以我們需要您取得製作它們的材料。";
 		next;
-		mes "[Demon Hunter]";
-		mes "You see, we're having some financial problems. Let's see, we're short on these items...";
+		mes "[惡魔獵人]";
+		mes "您看，我們遇到了一些財務問題。讓我想想，我們缺少這些物品...";
 		next;
 		if (checkre(0) == true)
 			.@i = 1;
@@ -515,20 +515,20 @@ hu_in01,382,382,4	script	Guild Receptionist#hnt	732,{
 			changequest 4001,4008;
 			break;
 		}
-		mes "[Demon Hunter]";
-		mes "Hmm. ^660000" + .@items[1] + " " + getitemname(.@items[0]) + "^000000 to use for arrow tips. ^660000" + .@items[3] + " " + getitemname(.@items[2]) + "^000000 to use here and there. And ^660000" + .@items[5] + " " + getitemname(.@items[4]) + "^000000 please.";
+		mes "[惡魔獵人]";
+		mes "嗯。需要 ^660000" + .@items[1] + " 個 " + getitemname(.@items[0]) + "^000000 來製作箭頭。 ^660000" + .@items[3] + " 個 " + getitemname(.@items[2]) + "^000000 用在這裡和那裡。還有 ^660000" + .@items[5] + " 個 " + getitemname(.@items[4]) + "^000000，拜託了。";
 		HNTR_Q = .@items[6];
 		next;
-		mes "[Demon Hunter]";
+		mes "[惡魔獵人]";
 		if (HNTR_Q >= 5)
-			mes "By the way, a member of our Hunter Guild is at the Archer Guild on official business. I believe you have to go visit this person since he is in charge of the testing.";
+			mes "對了，我們獵人公會的一名成員正在弓箭手公會處理公務。我相信您必須去拜訪這個人，因為他負責這次測試。";
 		else {
-			mes "Oh right. Our Guildmaster has gone on an official trip to the Payon Central Palace. You have to go visit him because the one that administers the test.";
-			mes "You can find him in a building east of the Payon Central Palace.";
+			mes "喔對了。我們的公會會長已經去夢羅克中央皇宮出差了。您必須去拜訪他，因為是他管理這次的測試。";
+			mes "您可以在夢羅克中央皇宮東邊的一棟建築物裡找到他。";
 		}
 		next;
-		mes "[Demon Hunter]";
-		mes "Alright then, come back to me when you have everything ready~";
+		mes "[惡魔獵人]";
+		mes "好的，當您準備好一切後再回來找我～";
 		close;
 	}
 	else if (HNTR_Q >= 3 && HNTR_Q <= 9) {
@@ -564,8 +564,8 @@ hu_in01,382,382,4	script	Guild Receptionist#hnt	732,{
 			setarray .@items[0], 1027,2, 942,1, 1026,1, 11;
 			break;
 		}
-		mes "[Demon Hunter]";
-		mes "Hmm?";
+		mes "[惡魔獵人]";
+		mes "嗯？";
 		next;
 		if (countitem(.@items[0]) >= .@items[1] && countitem(.@items[2]) >= .@items[3] && countitem(.@items[4]) >= .@items[5]) {
 			HNTR_Q = .@items[6];
@@ -586,72 +586,72 @@ hu_in01,382,382,4	script	Guild Receptionist#hnt	732,{
 			delitem .@items[0],.@items[1];
 			delitem .@items[2],.@items[3];
 			delitem .@items[4],.@items[5];
-			mes "[Demon Hunter]";
+			mes "[惡魔獵人]";
 			if (HNTR_Q == 10)
-				mes "You brought all of the necessary materials... You can get directions to the testing area from our Guildmaster who is currently in the Payon Central Palace.";
+				mes "您帶來了所有必需的材料... 您可以從我們目前在夢羅克中央皇宮的公會會長那裡獲得前往測試區域的指示。";
 			else
-				mes "You brought all of the necessary materials... To get directions to the testing area, go talk to our Guildmaster who is at the Archer Guild.";
+				mes "您帶來了所有必需的材料... 要取得前往測試區域的指示，請去與在弓箭手公會的公會會長談談。";
 			close;
 		}
-		mes "[Demon Hunter]";
-		mes "You don't have all";
-		mes "of the required materials...";
+		mes "[惡魔獵人]";
+		mes "您沒有全部";
+		mes "的所需材料...";
 		next;
-		mes "[Demon Hunter]";
-		mes "The items you need are";
-		mes "^660000" + .@items[1] + " " + getitemname(.@items[0]) + "^000000,";
-		mes "^660000" + .@items[3] + " " + getitemname(.@items[2]) + "^000000 and";
-		mes "^660000" + .@items[5] + " " + getitemname(.@items[4]) + "^000000.";
-		mes "Come back once you have";
-		mes "gathered all the items.";
+		mes "[惡魔獵人]";
+		mes "您需要的物品是";
+		mes "^660000" + .@items[1] + " 個 " + getitemname(.@items[0]) + "^000000，";
+		mes "^660000" + .@items[3] + " 個 " + getitemname(.@items[2]) + "^000000 還有";
+		mes "^660000" + .@items[5] + " 個 " + getitemname(.@items[4]) + "^000000。";
+		mes "當您收集";
+		mes "到所有物品後再回來。";
 		close;
 	}
 	else if (HNTR_Q > 9 && HNTR_Q < 17) {
-		mes "[Demon Hunter]";
-		mes "Hmm? You didn't go to the Guildmaster either in Payon Central Palace or at the Archer Guild? He should be at one of the two places, so go look for him.";
+		mes "[惡魔獵人]";
+		mes "嗯？您沒有去夢羅克中央皇宮或弓箭手公會找公會會長嗎？他應該在這兩個地方之一，所以去找找他吧。";
 		close;
 	}
 	else if (HNTR_Q == 17) {
-		mes "[Demon Hunter]";
-		mes "Ooh. You passed the test. Congratulations~ You should go talk to Sherin now.";
+		mes "[惡魔獵人]";
+		mes "喔。您通過了測試。恭喜您～ 您現在應該去和雪琳談談了。";
 		close;
 	}
 	else {
-		mes "[Guild Receptionist]";
-		mes "If you wish to change your job to a Hunter, you must register first.";
+		mes "[公會接待員]";
+		mes "如果您想轉職為獵人，您必須先註冊。";
 		close;
 	}
 }
 
-payon_in03,131,7,3	script	Hunter#htnGM	59,{
+payon_in03,131,7,3	script	獵人#htnGM	59,{
 	if (HNTR_Q == 10) {
-		mes "[Hunter Guildmaster]";
-		mes "Hmpf. You must be here for the Hunter job test. Let me tell you about the testing process. What would you like to know?";
+		mes "[獵人公會會長]";
+		mes "哼。您一定是來參加獵人轉職測試的。讓我告訴您關於測試過程。您想知道什麼？";
 		next;
-		switch( select( "What is the test?", "What are the passing requirements?", "Any warnings?", "Begin test." ) ) {
+		switch( select( "測試是什麼？", "通過的要求是什麼？", "有什麼警告嗎？", "開始測試。" ) ) {
 		case 1:
-			mes "[Hunter Guildmaster]";
-			mes "You have to hunt down certain monsters with a particular name. But you must avoid all the traps while you're at it.";
+			mes "[獵人公會會長]";
+			mes "您必須獵殺某些具有特定名稱的怪物。但您必須避開所有的陷阱。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "This is to test your ability to move swiftly and locate targets in various situations.";
+			mes "[獵人公會會長]";
+			mes "這是為了測試您在各種情況下快速移動和定位目標的能力。";
 			close;
 		case 2:
-			mes "[Hunter Guildmaster]";
-			mes "Within the time limit, starting in the 6 o'clock direction of the map, you must hunt the target monsters and then hit the escape switch that will appear in the center of the map.";
+			mes "[獵人公會會長]";
+			mes "在時間限制內，從地圖的 6 點鐘方向開始，您必須獵殺目標怪物，然後擊打將出現在地圖中心的逃脫開關。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "You will pass if you are able to escape in the 12 o'clock direction of the map after you hit the switch.";
+			mes "[獵人公會會長]";
+			mes "如果您在擊打開關後能夠從地圖的 12 點鐘方向逃脫，您就通過了。";
 			close;
 		case 3:
-			mes "[Hunter Guildmaster]";
-			mes "Hmm. Warnings... Well, if you fall into a trap, you have to start from the beginning. Also, only one person can take the test at a time.";
+			mes "[獵人公會會長]";
+			mes "嗯。警告... 好吧，如果您掉入陷阱，您必須從頭開始。此外，一次只能有一人參加測試。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "I will send you to the testing place. There will be a waiting room, but if someone else is taking the test, you must wait in the chatroom.";
+			mes "[獵人公會會長]";
+			mes "我會將您送到測試地點。會有一個等候室，但如果有人正在參加測試，您必須在聊天室裡等候。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "If the person in front succeeds, resigns or fails, the next person waiting in the chatroom is sent to the testing area. If nobody is waiting, the test will begin as soon as you enter the chatroom.";
+			mes "[獵人公會會長]";
+			mes "如果前面的人成功、放棄或失敗，下一個在聊天室等候的人會被送到測試區域。如果沒有人在等候，當您進入聊天室後測試就會立即開始。";
 			close;
 		case 4:
 			// Note: aegis typo
@@ -664,12 +664,12 @@ payon_in03,131,7,3	script	Hunter#htnGM	59,{
 			// 	mes "Okay. Best of luck.";
 			// 	mes "I'll send you right now.";
 			// }
-			mes "[Hunter Guildmaster]";
-			mes "Okay. I'll send you to the testing area right now. Don't blame me if you get lost or confused because you didn't listen to my explanation.";
+			mes "[獵人公會會長]";
+			mes "好的。我現在會將您送到測試區域。如果您因為沒有聽我的解釋而迷路或感到困惑，別怪我。";
 			next;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "Well, then. Your arrows are probably still being made, so you can use mine to take the test.";
+		mes "[獵人公會會長]";
+		mes "那麼，您的箭可能還在製作中，所以您可以使用我的箭來參加測試。";
 		HNTR_Q = 12;
 		changequest 4009,4011;
 		getitem 1751,200; // Silver_Arrow
@@ -678,138 +678,138 @@ payon_in03,131,7,3	script	Hunter#htnGM	59,{
 		end;
 	}
 	else if (HNTR_Q > 1 && HNTR_Q < 10) {
-		mes "[Hunter Guildmaster]";
-		mes "Mmm...?";
-		mes "What is an Archer";
-		mes "visiting me for?";
+		mes "[獵人公會會長]";
+		mes "嗯...？";
+		mes "為什麼弓箭手";
+		mes "要來拜訪我？";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "I wasn't notified about anything in particular from the Hunter Guild. You're not trying to skip the middle part of the Hunter test, are you?";
+		mes "[獵人公會會長]";
+		mes "我沒有收到獵人公會關於任何特別事情的通知。您不是想跳過獵人測試的中間部分吧？";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Go gather the items for the test, and come back after you've visited the Hunter Guild.";
+		mes "[獵人公會會長]";
+		mes "去收集測試所需的物品，並且在拜訪過獵人公會後再回來。";
 		close;
 	}
 	else if (HNTR_Q == 11) {
-		mes "[Hunter]";
-		mes "Hmm? Can I help you? If you wish to change jobs, you should visit the person at the Archer Guild, not me.";
+		mes "[獵人]";
+		mes "嗯？我能幫您什麼嗎？如果您想轉職，您應該去拜訪弓箭手公會的人，而不是我。";
 		close;
 	}
 	else if (HNTR_Q > 11 && HNTR_Q < 16) {
-		mes "[Hunter Guildmaster]";
-		mes "Hmm. You're the Archer that almost gave up on changing jobs. You do have everything ready, right? Then I'll send you to take the test right away.";
+		mes "[獵人公會會長]";
+		mes "嗯。您是那個差點放棄轉職的弓箭手。您確實已經準備好一切了嗎，對吧？那我會立即送您去參加測試。";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "If you have any";
-		mes "questions, ask now.";
+		mes "[獵人公會會長]";
+		mes "如果您有任何";
+		mes "問題，現在就問。";
 		next;
-		switch( select( "What is the test?", "What are the passing requirements?", "Any warnings?", "Begin test." ) ) {
+		switch( select( "測試是什麼？", "通過的要求是什麼？", "有什麼警告嗎？", "開始測試。" ) ) {
 		case 1:
-			mes "[Hunter Guildmaster]";
-			mes "You have to hunt down certain monsters with a particular name, but you also avoid all the traps at the same time. This is to test your ability to move swiftly and locate targets in various situations.";
+			mes "[獵人公會會長]";
+			mes "您必須獵殺某些具有特定名稱的怪物，但同時也要避開所有的陷阱。這是為了測試您在各種情況下快速移動和定位目標的能力。";
 			close;
 		case 2:
-			mes "[Hunter Guildmaster]";
-			mes "Within the given time, you will start at the 6 o'clock direction of the map, hunt the target monsters, and then hit the escape switch that will appear in the center of the map.";
+			mes "[獵人公會會長]";
+			mes "在給定的時間內，您將從地圖的 6 點鐘方向開始，獵殺目標怪物，然後擊打將出現在地圖中心的逃脫開關。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "You will pass if you are able to escape in the 12 o'clock direction of the map after you hit the switch.";
+			mes "[獵人公會會長]";
+			mes "如果您在擊打開關後能夠從地圖的 12 點鐘方向逃脫，您就通過了。";
 			close;
 		case 3:
-			mes "[Hunter Guildmaster]";
-			mes "Hmm. Warnings... Well, if you fall into a trap, you have to start from the beginning. Also, only one person can take the test at a time.";
+			mes "[獵人公會會長]";
+			mes "嗯。警告... 好吧，如果您掉入陷阱，您必須從頭開始。此外，一次只能有一人參加測試。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "I'll send you to the testing place. There is a waiting room, but if someone else is taking the test, you must wait in the chatroom.";
+			mes "[獵人公會會長]";
+			mes "我會將您送到測試地點。有一個等候室，但如果有人正在參加測試，您必須在聊天室裡等候。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "If the person in front succeeds, resigns or fails, the next person waiting in the chatroom is sent to the testing area. If nobody is waiting, the test will begin as soon as you enter the chatroom.";
+			mes "[獵人公會會長]";
+			mes "如果前面的人成功、放棄或失敗，下一個在聊天室等候的人會被送到測試區域。如果沒有人在等候，當您進入聊天室後測試就會立即開始。";
 			close;
 		case 4:
-			mes "[Hunter Guildmaster]";
-			mes "Okay. Good luck.";
-			mes "I'll send you right now.";
+			mes "[獵人公會長]";
+			mes "好的。祝你好運。";
+			mes "我現在就送你過去。";
 			next;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "Eh? Why won't I give you Silver Arrows? Don't expect anything when you don't bring any materials.";
+		mes "[獵人公會長]";
+		mes "咦？為什麼我不給你銀箭？當你沒有帶任何材料來的時候，別期望得到任何東西。";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Anyway, I believe you've prepared it yourself. Let's begin now.";
+		mes "[獵人公會長]";
+		mes "總之，我相信你已經自己準備好了。現在開始吧。";
 		next;
-		if (select( "Okay. Let's start...", "Ah, wait a sec." ) == 1) {
-			mes "[Hunter Guildmaster]";
-			mes "Okay!! I hope";
-			mes "you will pass this time!";
+		if (select( "好的，開始吧...", "啊，等一下。" ) == 1) {
+			mes "[獵人公會長]";
+			mes "好的！！我希望";
+			mes "這次你會通過！";
 			close2;
 			HNTR_Q = 12;
 			warp "job_hunte",176,22;
 			end;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "Then hurry and finish";
-		mes "all of your preparations.";
+		mes "[獵人公會長]";
+		mes "那麼趕快完成";
+		mes "你所有的準備。";
 		close;
 	}
 	else if (HNTR_Q == 16) {
-		mes "[Hunter Guildmaster]";
-		mes "Wow, you came back in one piece!";
-		mes "I mean, good job. I'll give you the item which proves that you have passed the test.";
+		mes "[獵人公會長]";
+		mes "哇，你完整的回來了！";
+		mes "我是說，做得好。我會給你一件物品，證明你通過了測試。";
 		HNTR_Q = 17;
 		savepoint "payon",104,99,1,1;
 		getitem 1007,1; // Penetration
 		changequest 4012,4013;
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Okay, here it is. Now, go back to the Hunter Guild. I have some more business left to do here, but I hope you can become a Hunter soon.";
+		mes "[獵人公會長]";
+		mes "好的，給你。現在，回到獵人公會。我還有一些事情要做，但我希望你能很快成為獵人。";
 		close;
 	}
 	else if (HNTR_Q == 17) {
-		mes "[Hunter Guildmaster]";
-		mes "I see you aren't in a hurry to become a Hunter? When I first became a Hunter, I ran around for a month wildly brandishing my bow because I was so happy. Hehe~";
+		mes "[獵人公會長]";
+		mes "我看你似乎不急著成為獵人？當我第一次成為獵人時，我高興地揮舞著我的弓箭跑了一個月。呵呵～";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Now, you should go back to the Hunter Guild~";
+		mes "[獵人公會長]";
+		mes "現在，你應該回到獵人公會了～";
 		close;
 	}
 	else {
-		mes "[Hunter]";
-		mes "...Can I help you?";
-		mes "I'm here for official business and am busy at the moment. If you'll excuse me...";
+		mes "[獵人]";
+		mes "...我可以幫你嗎？";
+		mes "我正在處理公務，現在很忙。恕我失陪...";
 		close;
 	}
 }
 
-payon_in02,21,31,1	script	Hunter#htnGM2	59,{
+payon_in02,21,31,1	script	獵人#htnGM2	59,{
 	cutin "job_huntermaster",2;
 	if (HNTR_Q == 11) {
-		mes "[Hunter Guildmaster]";
-		mes "Mmm. I see you're here for the Hunter job test. Let me explain the testing process. What would you like to know?";
+		mes "[獵人公會長]";
+		mes "嗯。我看你是來參加獵人轉職測試的。讓我解釋一下測試過程。你想知道什麼？";
 		next;
-		switch( select( "What is the test?", "What are the passing requirements?", "Any warnings?", "Begin test." ) ) {
+		switch( select( "測試是什麼？", "通過的條件是什麼？", "有任何警告嗎？", "開始測試。" ) ) {
 		case 1:
-			mes "[Hunter Guildmaster]";
-			mes "You have to hunt down certain monsters with a particular name, but you must avoid all of the traps here at the same time.";
+			mes "[獵人公會長]";
+			mes "你必須獵殺具有特定名稱的某些怪物，但同時必須避開這裡的所有陷阱。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "This is to test your ability to move swiftly and locate targets in various situations.";
+			mes "[獵人公會長]";
+			mes "這是為了測試你在各種情況下迅速移動和定位目標的能力。";
 			close3;
 		case 2:
-			mes "[Hunter Guildmaster]";
-			mes "Within the given time, you will start in the 6 o'clock direction of the map, hunt the target monsters, and hit the escape switch that will appear in the center of the map.";
+			mes "[獵人公會長]";
+			mes "在給定的時間內，你將從地圖的 6 點鐘方向開始，獵殺目標怪物，並觸發將出現在地圖中心的逃脫開關。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "You will pass if you are able to escape in the 12 o'clock direction of the map when the switch is activated.";
+			mes "[獵人公會長]";
+			mes "如果你能夠在開關啟動時從地圖的 12 點鐘方向逃脫，你就能通過。";
 			close3;
 		case 3:
-			mes "[Hunter Guildmaster]";
-			mes "Mmm. Warnings... Well, if you fall into a trap, you have to start the test over from the beginning. And only one person can take the test at a time.";
+			mes "[獵人公會長]";
+			mes "嗯。警告...嗯，如果你掉進陷阱，你必須從頭開始重新進行測試。而且一次只能有一人參加測試。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "I'll send you to the testing place. There is a waiting room, but if someone else is taking the test, you must wait in the chatroom.";
+			mes "[獵人公會長]";
+			mes "我會送你去測試地點。有一個等待室，但如果有人正在參加測試，你必須在聊天室裡等待。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "If the person currently taking the test passes or fails, the next person waiting in the chatroom is sent to the testing area. If nobody is waiting, the test will begin as soon as you enter the chatroom.";
+			mes "[獵人公會長]";
+			mes "如果目前正在參加測試的人通過或失敗，下一個在聊天室等待的人會被送到測試區域。如果沒有人在等待，當你進入聊天室後測試就會立即開始。";
 			close3;
 		case 4:
 			// Note: aegis typo
@@ -824,141 +824,141 @@ payon_in02,21,31,1	script	Hunter#htnGM2	59,{
 			// 	mes "I'll send you right now.";
 			// }
 			// next;
-			mes "[Hunter Guildmaster]";
-			mes "...Okay. I'll send you to the testing area right now. Don't blame me if you get lost or confused because you didn't listen to the explanation.";
+			mes "[獵人公會長]";
+			mes "...好的。我現在就送你去測試區域。如果你因為沒有聽解釋而迷路或感到困惑，別怪我。";
 			next;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "Well, your arrows are probably still being made, so you can use mine to take the test.";
+		mes "[獵人公會長]";
+		mes "嗯，你的箭可能還在製作中，所以你可以用我的箭來參加測試。";
 		getitem 1751,200; // Silver_Arrow
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Good luck.";
+		mes "[獵人公會長]";
+		mes "祝你好運。";
 		HNTR_Q = 12;
 		changequest 4010,4011;
 		warp "job_hunte",176,22;
 		end;
 	}
 	else if (HNTR_Q > 1 && HNTR_Q < 10) {
-		mes "[Hunter Guildmaster]";
-		mes "Mmm...?";
-		mes "Why is an Archer";
-		mes "visiting me?";
+		mes "[獵人公會長]";
+		mes "嗯...?";
+		mes "為什麼一個弓箭手";
+		mes "會來找我？";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "I wasn't notified by the Hunter Guild about anything. You're not trying to skip the middle part of the Hunter test, are you?";
+		mes "[獵人公會長]";
+		mes "獵人公會沒有通知我任何事情。你不是想跳過獵人測試的中間部分吧？";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Stop by once you have gathered all the items needed for the test.";
+		mes "[獵人公會長]";
+		mes "一旦你收集了測試所需的所有物品，就再來一趟。";
 		close3;
 	}
 	else if (HNTR_Q == 10) {
-		mes "[Hunter]";
-		mes "Mmm?";
-		mes "Can I help you";
-		mes "with something?";
-		mes "Oh, you must be";
-		mes "a Hunter applicant.";
+		mes "[獵人]";
+		mes "嗯？";
+		mes "我可以幫你";
+		mes "什麼忙嗎？";
+		mes "哦，你一定是";
+		mes "獵人申請者。";
 		next;
-		mes "[Hunter]";
-		mes "If you wish to change jobs, I think you need to go visit the person at Payon Central Palace.";
+		mes "[獵人]";
+		mes "如果你想轉職，我想你需要去拜訪沛雍中央宮殿的那個人。";
 		close3;
 	}
 	else if (HNTR_Q > 11 && HNTR_Q < 16) {
-		mes "[Hunter Guildmaster]";
-		mes "Mmm? Aren't you the Archer who gave up last time? Now you're ready, right? Then I'll send you to the job change area right now.";
+		mes "[獵人公會長]";
+		mes "嗯？你不是上次放棄的弓箭手嗎？現在你準備好了，對吧？那麼我現在就送你去轉職區。";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "If you still";
-		mes "have questions,";
-		mes "feel free to ask.";
+		mes "[獵人公會長]";
+		mes "如果你仍然";
+		mes "有問題，";
+		mes "隨時可以問。";
 		next;
-		switch( select( "What is the test?", "What are the requirements to pass the test?", "Any warnings?", "Begin test." ) ) {
+		switch( select( "測試是什麼？", "通過測試的要求是什麼？", "有任何警告嗎？", "開始測試。" ) ) {
 		case 1:
-			mes "[Hunter Guildmaster]";
-			mes "You have to hunt down certain monsters with a particular name, but you must avoid all of the traps here at the same time.";
+			mes "[獵人公會長]";
+			mes "你必須獵殺具有特定名稱的某些怪物，但同時必須避開這裡的所有陷阱。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "This is to test your ability to move swiftly and locate targets in various situations.";
+			mes "[獵人公會長]";
+			mes "這是為了測試你在各種情況下迅速移動和定位目標的能力。";
 			close3;
 		case 2:
-			mes "[Hunter Guildmaster]";
-			mes "Within the given time, you will start in the 6 o'clock direction of the map, hunt the target monsters, and hit the escape switch that will appear in the center of the map.";
+			mes "[獵人公會長]";
+			mes "在給定的時間內，你將從地圖的 6 點鐘方向開始，獵殺目標怪物，並觸發將出現在地圖中心的逃脫開關。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "You will pass if you are able to escape in the 12 o'clock direction of the map when the switch is activated.";
+			mes "[獵人公會長]";
+			mes "如果你能夠在開關啟動時從地圖的 12 點鐘方向逃脫，你就能通過。";
 			close3;
 		case 3:
-			mes "[Hunter Guildmaster]";
-			mes "Mmm. Warnings... Well, if you fall into a trap, you have to start the test over from the beginning. And only one person can take the test at a time.";
+			mes "[獵人公會長]";
+			mes "嗯。警告...嗯，如果你掉進陷阱，你必須從頭開始重新進行測試。而且一次只能有一人參加測試。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "I'll send you to the testing place. There is a waiting room, but if someone else is taking the test, you must wait in the chatroom.";
+			mes "[獵人公會長]";
+			mes "我會送你去測試地點。有一個等待室，但如果有人正在參加測試，你必須在聊天室裡等待。";
 			next;
-			mes "[Hunter Guildmaster]";
-			mes "If the person currently taking the test passes or fails, the next person waiting in the chatroom is sent to the testing area. If nobody is waiting, the test will begin as soon as you enter the chatroom.";
+			mes "[獵人公會長]";
+			mes "如果目前正在參加測試的人通過或失敗，下一個在聊天室等待的人會被送到測試區域。如果沒有人在等待，當你進入聊天室後測試就會立即開始。";
 			close3;
 		case 4:
-			mes "[Hunter Guildmaster]";
-			mes "Okay, good luck.";
-			mes "I'll send you right now...";
+			mes "[獵人公會長]";
+			mes "好的。祝你好運。";
+			mes "我現在就送你過去...";
 			next;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "Eh? Why don't I give you any Silver Arrows? Well, you shouldn't expect to get anything when you didn't even bring the materials.";
+		mes "[獵人公會長]";
+		mes "咦？為什麼我不給你任何銀箭？嗯，當你甚至沒有帶材料來的時候，你不應該期望得到任何東西。";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Well...";
-		mes "I believe";
-		mes "you're ready.";
-		mes "Let's begin.";
+		mes "[獵人公會長]";
+		mes "嗯...";
+		mes "我相信";
+		mes "你準備好了。";
+		mes "開始吧。";
 		next;
-		if (select( "Yes, let's start.", "Ah, wait a moment." ) == 1) {
-			mes "[Hunter Guildmaster]";
-			mes "Okay!! Now...";
-			mes "Pass this time!";
+		if (select( "是的，開始吧。", "啊，等一下。" ) == 1) {
+			mes "[獵人公會長]";
+			mes "好的！！現在...";
+			mes "這次通過！";
 			close2;
 			cutin "",255;
 			HNTR_Q = 12;
 			warp "job_hunte",176,22;
 			end;
 		}
-		mes "[Hunter Guildmaster]";
-		mes "*Sigh...*";
-		mes "Come back when";
-		mes "you're done with";
-		mes "your preparations.";
+		mes "[獵人公會長]";
+		mes "*嘆氣...*";
+		mes "當你完成";
+		mes "你的準備時";
+		mes "再來吧。";
 		close3;
 	}
 	else if (HNTR_Q == 16) {
-		mes "[Hunter Guildmaster]";
-		mes "Wow. You're back in one piece!";
-		mes "I mean, good job. Well then, I'll give you the item which serves as proof that you passed the test.";
+		mes "[獵人公會長]";
+		mes "哇。你完整的回來了！";
+		mes "我是說，做得好。那麼，我會給你作為你通過測試的證明物品。";
 		HNTR_Q = 17;
 		savepoint "payon",104,99,1,1;
 		getitem 1007,1; //Penetration
 		changequest 4012,4013;
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Well...";
-		mes "There you go.";
-		mes "Now hurry back to the Hunter Guild, and join us~";
+		mes "[獵人公會會長]";
+		mes "嗯...";
+		mes "給你這個。";
+		mes "現在趕快回到獵人公會，加入我們吧～";
 		close3;
 	}
 	else if (HNTR_Q == 17) {
-		mes "[Hunter Guildmaster]";
-		mes "I see you're not in a hurry to become a Hunter. I was running around with joy, wildly brandishing my bow the first month I became a Hunter. Hehe~";
+		mes "[獵人公會會長]";
+		mes "我看得出來你並不急著成為獵人。我剛成為獵人的第一個月，可是興高采烈地四處奔跑，瘋狂地揮舞著我的弓呢。呵呵～";
 		next;
-		mes "[Hunter Guildmaster]";
-		mes "Now hurry~";
-		mes "They're waiting";
-		mes "for you back";
-		mes "at the Hunter Guild.";
+		mes "[獵人公會會長]";
+		mes "現在趕快去吧～";
+		mes "他們在等";
+		mes "你回到";
+		mes "獵人公會。";
 		close3;
 	}
 	else {
-		mes "[Hunter]";
-		mes "What do you want? I'm on an official trip and am busy at the moment. Now if you'll excuse me.";
+		mes "[獵人]";
+		mes "你想做什麼？我正在出公差，現在很忙。恕不奉陪。";
 		close3;
 	}
 }
@@ -966,42 +966,42 @@ payon_in02,21,31,1	script	Hunter#htnGM2	59,{
 job_hunte,178,32,1	script	Guide#hnt	107,5,2,{
 OnTouch_:
 	if (HNTR_Q == 12) {
-		mes "[Guide]";
-		mes "Good day. Welcome to the Hunter testing site. The test begins when you enter the next room.";
+		mes "[嚮導]";
+		mes "您好。歡迎來到獵人測試場。當您進入下一個房間時，測試就會開始。";
 		next;
-		mes "[Guide]";
-		mes "As explained before, hunt 4 or more of the monsters named ^3355FFJob change monster^000000. Upon doing so, a switch in the center of the map will then appear.";
+		mes "[嚮導]";
+		mes "如同之前解釋的，獵殺 4 隻或更多名為 ^3355FFJob change monster^000000 的怪物。完成後，地圖中央的一個開關就會出現。";
 		next;
-		mes "[Guide]";
-		mes "When you destroy the switch, the exit will appear in the 12 o'clock direction of the map. Complete everything within the given time and escape.";
+		mes "[嚮導]";
+		mes "當您摧毀開關時，出口就會在地圖的 12 點鐘方向出現。在規定的時間內完成所有事情並逃脫。";
 		next;
-		mes "[Guide]";
-		mes "If you faint in the middle, fall into a trap, or go over the time limit, you'll fail. Then you must then retake the test.";
+		mes "[嚮導]";
+		mes "如果您在途中昏倒、掉入陷阱或超過時間限制，您將會失敗。然後您必須重新參加測試。";
 		next;
-		mes "[Guide]";
-		mes "We will provide the arrows, so just make sure that you bring a bow. Well, then. Please enter when you are ready.";
+		mes "[嚮導]";
+		mes "我們會提供箭矢，所以只要確保您帶一把弓。那麼，如果您準備好了，請進入。";
 		savepoint "job_hunte",176,22,1,1;
 		close;
 	}
 	else if (HNTR_Q > 12 && HNTR_Q < 16) {
-		mes "[Guide]";
-		mes "Hmm...";
-		mes "Did you mess up?";
-		mes "I'll recover some";
-		mes "of your HP and SP for now.";
+		mes "[嚮導]";
+		mes "嗯...";
+		mes "你搞砸了嗎？";
+		mes "我現在會恢復";
+		mes "你的一些 HP 和 SP。";
 		percentheal 100,100;
 		next;
-		mes "[Guide]";
-		mes "If it's too hard, it wouldn't hurt to try again next time. Would you like to resign for now?";
+		mes "[嚮導]";
+		mes "如果太難，下次再試也不會怎樣。您現在想放棄嗎？";
 		next;
-		if (select( "Keep trying.", "Resign." ) == 1) {
-			mes "[Guide]";
-			mes "Okay. Do your best and become a great Hunter. Please enter the waiting room. If someone is already taking the test, you must wait until that person is done.";
+		if (select( "繼續嘗試。", "放棄。" ) == 1) {
+			mes "[嚮導]";
+			mes "好的。盡你所能，成為一個偉大的獵人。請進入等候室。如果已經有人在參加測試，您必須等到那個人完成。";
 			close;
 		}
 		mapannounce "job_hunte",strcharinfo(0)+ " has resigned. Next person, please enter.",bc_map;
-		mes "[Guide]";
-		mes "Very well. I'll send you to Payon. Hope to see you next time. Don't forget to save when you leave.";
+		mes "[嚮導]";
+		mes "很好。我會送你到沛雍。希望下次再見到你。離開時別忘了儲存。";
 		// donpcevent "Waiting Room#hnt::OnStart";
 		close2;
 		HNTR_Q = 13;
@@ -1009,8 +1009,8 @@ OnTouch_:
 		warp "payon_in02",21,27;
 	}
 	else if (HNTR_Q > 15) {
-		mes "[Guide]";
-		mes "You shouldn't be here. How about finding the required job change item first?";
+		mes "[嚮導]";
+		mes "你不應該在這裡。先去找尋必要的轉職道具如何？";
 		close2;
 		savepoint "payon",104,99,1,1;
 		warp "payon_in02",21,27;
@@ -1200,29 +1200,24 @@ OnTimer197000:
 
 job_hunte,93,101,1	script	Switch#hnt	723,1,1,{
 OnTouch_:
-	mes "^3355FFThere are 3 buttons";
-	mes "on the escape switch.^000000";
+	mes "^3355FF逃生開關上有 3 個按鈕。^000000";
 	HNTR_Q = 15;
 	next;
-	switch( select( "Escape", "Cancel", "Re-test" ) ) {
+	switch( select( "逃脫", "取消", "重新測試" ) ) {
 	case 1:
-		mes "^3355FFThe Escape Warp Portal";
-		mes "has now been activated.^000000";
+		mes "^3355FF逃脫傳送點現在已經啟用。^000000";
 		close2;
 		mapannounce "job_hunte"," !! Escape Warp Portal activation complete. !! ",bc_map;
 		enablenpc "exit#hnttest";
 		end;
 	case 2:
-		mes "^3355FFCanceling";
-		mes "Operation.^000000";
+		mes "^3355FF取消操作。^000000";
 		close2;
 		mapannounce "job_hunte"," !! Operation has been cancelled. !! ",bc_map;
 		end;
 	case 3:
 		mapannounce "job_hunte"," !! Cancellation warp activating... !! ",bc_map;
-		mes "^3355FFYou will soon be";
-		mes "returned to the";
-		mes "waiting room.^000000";
+		mes "^3355FF您很快就會被送回等候室。^000000";
 		close2;
 		HNTR_Q = 13;
 		warp "job_hunte",176,22;

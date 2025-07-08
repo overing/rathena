@@ -20,8 +20,8 @@ verus03,52,254,0	script	verus03_to_verus01	WARPNPC,1,1,{
 	end;
 OnTouch:
 	if (ep15_2_permit < 1) {
-		mes "[Access Controller]";
-		mes "I am sorry but only permitted members can enter from this point.";
+		mes "[存取控制器]";
+		mes "很抱歉，只有獲得許可的成員才能從這裡進入。";
 		close;
 	}
 	warp "verus01",243,62;
@@ -32,8 +32,8 @@ verus03,169,259,0	script	verus03_to_verus02	WARPNPC,1,1,{
 	end;
 OnTouch:
 	if (ep15_2_permit < 1) {
-		mes "[Access Controller]";
-		mes "I am sorry but only permitted members can enter from this point.";
+		mes "[存取控制器]";
+		mes "很抱歉，只有獲得許可的成員才能從這裡進入。";
 		close;
 	}
 	warp "verus02",72,19;
@@ -130,8 +130,8 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 24, getnpcid(0, "Mechanician Mugeosi#EP15.2MR");
-		mes "[Mechanician Mugeosi]";
-		mes "Ah! You're the adventurer send to deliver air cleaners. You are at the right place. Come this way.";
+		mes "[機械師 穆格西]";
+		mes "啊！您是送來空氣清淨機的冒險家。您來對地方了。這邊請。";
 		close;
 	}
 	warp "un_bk_q",21,276;
@@ -223,8 +223,8 @@ un_bk_q,69,167,0	script	b_Monitoring room#L-1	WARPNPC,1,1,{
 OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
-		mes "[Bunker Sayhu]";
-		mes "Hey!! Where do you think you're going when we're trying to get a headcount? Get over here.";
+		mes "[碉堡 薩伊胡]";
+		mes "嘿！！我們正在點人數，你覺得你要去哪裡？過來這裡。";
 		close;
 	}
 	warp "un_bk_q",57,168;
@@ -276,8 +276,8 @@ un_bk_q,97,141,0	script	Monitoring room#A-0	WARPNPC,1,1,{
 OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
-		mes "[Bunker Sayhu]";
-		mes "Hey!! Where do you think you're going when we're trying to get a headcount? Get over here.";
+		mes "[碉堡 薩伊胡]";
+		mes "嘿！！我們正在點人數，你覺得你要去哪裡？過來這裡。";
 		close;
 	}
 	warp "un_bk_q",98,121;
@@ -314,8 +314,8 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 19, getnpcid(0, "Bunker Sayhu#EP15.2MR");
-		mes "[Bunker Sayhu]";
-		mes "Hey!! Where do you think you're going when we're trying to get a headcount? Get over here.";
+		mes "[碉堡 薩伊胡]";
+		mes "嘿！！我們正在點人數，你覺得你要去哪裡？過來這裡。";
 		close;
 	}
 	warp "un_bk_q",140,167;
@@ -392,8 +392,8 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 14, getnpcid(0, "Bioengineer Ebrik#EP15.2MR");
-		mes "[Bioengineer Ebrik]";
-		mes "Are you the Adventurer here to help us with the grape harvest? Right here!!";
+		mes "[生物工程師 伊布里克]";
+		mes "您是來幫我們採收葡萄的冒險家嗎？就在這裡！！";
 		close;
 	}
 	warp "un_bk_q",213,299;
@@ -405,8 +405,8 @@ un_bk_q,216,300,0	script	C-0#Farm	WARPNPC,1,1,{
 OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if ((isbegin_quest(5359) + isbegin_quest(5360) + isbegin_quest(5361) + isbegin_quest(5362)) != 1) {
-		mes "[Bioengineer Touring]";
-		mes "Wait a minute. You cannot enter the farm right now.";
+		mes "[生物工程師 圖靈]";
+		mes "等一下。你現在不能進入農場。";
 		close;
 	}
 	warp "un_bk_q",216,345;
@@ -459,8 +459,8 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 6, getnpcid(0, "Transportation Executive Ernon#EP15.2MR");
-		mes "[Transportation Executive Ernon]";
-		mes "Hey~ This is a time to borrow even the hands of small children. Stop goofing around and come here.";
+		mes "[運輸主管 爾農]";
+		mes "嘿～現在是連小孩子的手都要借來用的時候。別再閒晃了，過來這裡。";
 		close;
 	}
 	warp "un_bk_q",255,261;
@@ -473,14 +473,14 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Look here?! Where are you trying to go? We have to do some tests so don't leave and wait here!!";
+		mes "[護士 菈普拉德]";
+		mes "看這裡？！你想去哪裡？我們必須做一些測試，所以不要離開，在這裡等著！！";
 		close;
 	}
 	if ((isbegin_quest(5364) + isbegin_quest(5365)) == 1) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Hello? You have to deal with it before you can go? Where do you want to go!?";
+		mes "[護士 菈普拉德]";
+		mes "哈囉？你必須先處理完才能走？你想去哪裡！？";
 		close;
 	}
 	warp "un_bk_q",255,235;
@@ -557,14 +557,14 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Look here?! Where are you trying to go? We have to do some tests so don't leave and wait here!!";
+		mes "[護士 菈普拉德]";
+		mes "看這裡？！你想去哪裡？我們必須做一些測試，所以不要離開，在這裡等著！！";
 		close;
 	}
 	if ((isbegin_quest(5364) + isbegin_quest(5365)) == 1) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Hello? You have to deal with it before you can go? Where do you want to go!?";
+		mes "[護士 菈普拉德]";
+		mes "哈囉？你必須先處理完才能走？你想去哪裡！？";
 		close;
 	}
 	warp "un_bk_q",298,203;
@@ -609,14 +609,14 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Look here?! Where are you trying to go? We have to do some tests so don't leave and wait here!!";
+		mes "[護士 菈普拉德]";
+		mes "看這裡？！你想去哪裡？我們必須做一些測試，所以不要離開，在這裡等著！！";
 		close;
 	}
 	if ((isbegin_quest(5364) + isbegin_quest(5365)) == 1) {
 		emotion 6, getnpcid(0, "Nurse Lapplad#EP15.2MR");
-		mes "[Nurse Lapplad]";
-		mes "Hello? You have to deal with it before you can go? Where do you want to go!?";
+		mes "[護士 菈普拉德]";
+		mes "哈囉？你必須先處理完才能走？你想去哪裡！？";
 		close;
 	}
 	warp "un_bk_q",340,235;
@@ -629,8 +629,8 @@ OnTouch:
 	callfunc( "F_time_limit_recorder", .@cooldown_status_day );
 	if (.@cooldown_status_day[0] == 0 && .@cooldown_status_day[1] == 0 && .@cooldown_status_day[2] == 0 && .@cooldown_status_day[3] == 0 && .@cooldown_status_day[4] == 0) {
 		emotion 6, getnpcid(0, "Transportation Executive Ernon#EP15.2MR");
-		mes "[Transportation Executive Ernon]";
-		mes "Hey~ This is a time to borrow even the hands of small children. Stop goofing around and come here.";
+		mes "[運輸主管 爾農]";
+		mes "嘿～現在是連小孩子的手都要借來用的時候。別再閒晃了，過來這裡。";
 		close;
 	}
 	warp "un_bk_q",340,261;

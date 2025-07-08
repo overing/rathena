@@ -17,28 +17,28 @@
 //==================================================
 // beach_dun - Karu, the West cave 
 //==================================================
-beach_dun,0,0	monster	Medusa	1148,60,5000
-beach_dun,0,0	monster	Nereid	1255,20,5000
-beach_dun,0,0	monster	Pest	1256,20,5000
-beach_dun,0,0	monster	Merman	1264,3,5000
-beach_dun,0,0,0,0	boss_monster	Tao Gunka	1583,1,18000000,600000,0
+beach_dun,0,0	monster	¦Ì§ù¨F	1148,60,5000
+beach_dun,0,0	monster	©`§QÂÎ	1255,20,5000
+beach_dun,0,0	monster	³æ²´ÂÎ	1256,20,5000
+beach_dun,0,0	monster	¤H³½¤h§L	1264,3,5000
+beach_dun,0,0,0,0	boss_monster	¶ð¶ø¸s¥d	1583,1,18000000,600000,0
 
 //==================================================
 // beach_dun2 - Ruande the northern cave 
 //==================================================
-beach_dun2,0,0	monster	Stalactic Golem	1278,65,5000
-beach_dun2,0,0	monster	Tri Joint	1279,20,5000
-beach_dun2,0,0	monster	Megalith	1274,15,5000
-beach_dun2,0,0	monster	Hydra	1068,10,5000
-beach_dun2,0,0	monster	Nereid	1255,3,5000
+beach_dun2,0,0	monster	ÄÁ¨Å¥¨¥Û©Ç	1278,65,5000
+beach_dun2,0,0	monster	¤T¸­ÂÎ	1279,20,5000
+beach_dun2,0,0	monster	¨¸´c¼¯¦ã	1274,15,5000
+beach_dun2,0,0	monster	®ü¸ª	1068,10,5000
+beach_dun2,0,0	monster	©`§QÂÎ	1255,3,5000
 
 //==================================================
 // beach_dun3 - Mao, the East Cave 
 //==================================================
-beach_dun3,0,0	monster	Thara Frog	1034,50,5000
-beach_dun3,0,0	monster	Megalodon	1064,30,5000
-beach_dun3,0,0	monster	Hydra	1068,30,5000
-beach_dun3,0,0	monster	Nereid	1255,1,5000
+beach_dun3,0,0	monster	¹F©Ôµì	1034,50,5000
+beach_dun3,0,0	monster	¨¸Àe­¹¤H³½	1064,30,5000
+beach_dun3,0,0	monster	®ü¸ª	1068,30,5000
+beach_dun3,0,0	monster	©`§QÂÎ	1255,1,5000
 
 //==================================================
 // Illusion of Luanda
@@ -61,19 +61,23 @@ S_Mob:
 			.count++;
 		if (.count == 1500 && !.boss_spawn && !.cooldown) {
 			getunitdata( killedgid, .@data );
-			callsub( S_Boss, (20273 + .swap), .@data[UMOB_X], .@data[UMOB_Y] );
+			callsub( S_Boss, (20273 + .swap), .@group, .@data[UMOB_X], .@data[UMOB_Y] );
 		}
 	}
 	.@mob_id = getarg(0);
 	sleep 5000;
-	if (.@group == .group)
+	if (.@group == .group) {
 		monster "com_d02_i",0,0,"--ja--",.@mob_id,1,"illusion_luanda::OnMob" + .@mob_id;
+		// setunittitle for the title, setunitdata
+		setunitdata $@mobid[0], UMOB_GROUP_ID, getarg(1);
+	}
 	end;
 
 S_Boss:
 	killmonster "com_d02_i", "illusion_luanda::OnBossDeath";
 	.boss_spawn = true;
-	monster "com_d02_i",getarg(1),getarg(2),"--ja--",getarg(0),1,"illusion_luanda::OnBossDeath";
+	monster "com_d02_i",getarg(2),getarg(3),"--ja--",getarg(0),1,"illusion_luanda::OnBossDeath";
+	setunitdata $@mobid[0], UMOB_GROUP_ID, getarg(1);
 	if (.swap == 0)	// ILL_TAO_GUNKA
 		mapannounce "com_d02_i", "Ancient Tao Gunka: Is it time to show off your megalithic power?", bc_map, 0x70DBDB;
 	else	// ILL_WOOTAN_DEFENDER
@@ -126,8 +130,14 @@ OnTimer7200000:
 S_SpawnInit:
 	.count = 0;
 	monster "com_d02_i",0,0,"--ja--",getarg(0),50,"illusion_luanda::OnMob" + getarg(0);
+	copyarray .@gid[0], $@mobid[0], 50;
 	monster "com_d02_i",0,0,"--ja--",getarg(1),50,"illusion_luanda::OnMob" + getarg(1);
+	copyarray .@gid[50], $@mobid[0], 50;
 	monster "com_d02_i",0,0,"--ja--",getarg(2),50,"illusion_luanda::OnMob" + getarg(2);
+	copyarray .@gid[100], $@mobid[0], 50;
+
+	for ( .@i = 0; .@i < 150; ++.@i )
+		setunitdata .@gid[.@i], UMOB_GROUP_ID, .group;
 	return;
 
 OnInit:

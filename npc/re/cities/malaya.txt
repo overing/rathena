@@ -21,43 +21,43 @@
 // Old coordinates: alberta (237,71)
 alberta,196,202,3	script	Optamara Crew#alberta	100,{
 	mes "[Optamara Crew]";
-	mes "Hey, there!";
-	mes "It's 10,000 Zeny to go to Port Malaya. Interested?";
+	mes "嗨，你好！";
+	mes "去馬來亞港需要 10,000 Zeny。有興趣嗎？";
 	next;
-	switch(select("About Port Malaya.:Go to Port Malaya.:Cancel.")) {
+	switch(select("關於馬來亞港.:前往馬來亞港.:取消。")) {
 	case 1:
 		mes "[Optamara Crew]";
-		mes "Port Malaya is a small village you could reach by sailing southwest from Alberta.";
+		mes "馬來亞港是一個小村莊，你可以從艾爾貝塔向西南方航行到達。";
 		next;
 		mes "[Optamara Crew]";
-		mes "I couldn't visit the village because they had some issues there but now it seems all is clear!";
+		mes "我沒能去拜訪這個村莊，因為他們在那裡遇到了一些問題，但現在似乎一切都清楚了！";
 		next;
 		mes "[Optamara Crew]";
-		mes "I don't know for sure but it was a village that's like a comfortable and cozy park.";
+		mes "我不確定，但那是一個像舒適又溫馨的公園一樣的村莊。";
 		next;
 		mes "[Optamara Crew]";
-		mes "I was this close to not coming back to cozy Alberta again.";
+		mes "我差點就回不來舒適的艾爾貝塔了。";
 		next;
 		mes "[Optamara Crew]";
-		mes "I'm sure you'll feel the same once you reach Port Malaya.";
+		mes "我相信一旦你到達馬來亞港，你也會有同樣的感覺。";
 		close;
 	case 2:
 		if (Zeny < 10000) {
 			mes "[Optamara Crew]";
-			mes "Oh God!!";
-			mes "You don't know how far it is from here. Of course it's not free. Please come back with 10,000 Zeny. Sorry!";
+			mes "我的天啊！！";
+			mes "你不知道這裡離那裡有多遠。當然這不是免費的。請帶 10,000 Zeny 再來。抱歉！";
 			close;
 		}
 		mes "[Optamara Crew]";
-		mes "Great!";
-		mes "Heading for Port Malaya!!";
+		mes "太棒了！";
+		mes "前往馬來亞港！！";
 		set Zeny, Zeny-10000;
 		close2;
 		warp "malaya",271,55;
 		end;
 	case 3:
 		mes "[Optamara Crew]";
-		mes "Adventurers these days act like they are busy. Come back when you have the time and we could go visit Port Malaya together.";
+		mes "現在的冒險家表現得好像他們很忙。等你空閒的時候再來，我們可以一起去拜訪馬來亞港。";
 		close;
 	}
 }
@@ -65,27 +65,27 @@ alberta,196,202,3	script	Optamara Crew#alberta	100,{
 malaya,276,55,4	script	Optamara Crew#malaya	100,{
 	if (malaya_hi < 10) {
 		mes "[Optamara Crew]";
-		mes "I think the village is still busy. Done with your visit? There is always a ship heading for Alberta.";
+		mes "我認為這個村莊仍然很忙碌。拜訪結束了嗎？總有一艘船要前往艾爾貝塔。";
 		next;
 	} else if (malaya_hi < 20) {
 		mes "[Optamara Crew]";
-		mes "I think a nameless adventurer helped take a load off the villagers' minds. Yahoo! Would you like to go back to Alberta?";
+		mes "我認為一位無名的冒險家幫助村民們卸下了重擔。耶呼！你想要回到艾爾貝塔嗎？";
 		next;
 	} else {
 		mes "[Optamara Crew]";
-		mes "Would you like to go back to Alberta with me?";
+		mes "你想要和我一起回到艾爾貝塔嗎？";
 		next;
 	}
-	switch(select("Return.:Do not return.")) {
+	switch(select("返回.:不要返回。")) {
 	case 1:
 		mes "[Optamara Crew]";
-		mes "Great! Let's leave now for Alberta!!";
+		mes "太棒了！我們現在就出發前往艾爾貝塔！！";
 		close2;
 		warp "alberta",192,217;
 		end;
 	case 2:
 		mes "[Optamara Crew]";
-		mes "That's okay. Come here if you ever want to go back to Alberta.";
+		mes "沒關係。如果你想回到艾爾貝塔，隨時來這裡。";
 		close;
 	}
 }
@@ -94,37 +94,37 @@ malaya,276,55,4	script	Optamara Crew#malaya	100,{
 //============================================================
 ma_in01,30,94,4	script	Inn Keeper#ma	583,{
 	if (malaya_hi < 10) {
-		mes "[Inn Keeper]";
-		mes "Oh my! Visiting?";
-		mes "What bad timing. The village is a bit unorganized at the moment so I'm actually closed. Sorry.";
+		mes "[旅館老闆]";
+		mes "哎呀！來拜訪嗎？";
+		mes "真是不巧。這個村莊目前有點混亂，所以我實際上是關門的。抱歉。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Inn Keeper]";
-		mes "So you are the adventurer villagers are talking about? I reopened my inn thanks to you. Thank you.";
+		mes "[旅館老闆]";
+		mes "所以你就是村民們正在談論的冒險家？多虧了你，我重新開了我的旅館。謝謝你。";
 		next;
 	} else {
-		mes "[Inn Keeper]";
-		mes "Welcome.";
-		mes "This is Port Malaya's best inn, 'Cabin in the City'.";
+		mes "[旅館老闆]";
+		mes "歡迎光臨。";
+		mes "這裡是馬來亞港最好的旅館，'城市小屋'。";
 		next;
 	}
-	mes "[Inn Keeper]";
-	mes "Come for a rest? Lodging will be 5,000 Zeny.";
+	mes "[旅館老闆]";
+	mes "要來休息一下嗎？住宿費用是 5,000 Zeny。";
 	next;
-	switch(select("Store.:Lodge. - 5,000z:Cancel.")) {
+	switch(select("儲存.:住宿 - 5,000z:取消。")) {
 	case 1:
-		mes "[Inn Keeper]";
-		mes "Successfully stored. See you next time.";
+		mes "[旅館老闆]";
+		mes "成功儲存。下次見。";
 		savepoint "ma_in01",43,98,1,1;
 		close;
 	case 2:
 		if (Zeny < 5000) {
-			mes "[Inn Keeper]";
-			mes "Sorry. I think you are a bit short.";
+			mes "[旅館老闆]";
+			mes "抱歉。我想你有點不夠。";
 			close;
 		}
-		mes "[Inn Keeper]";
-		mes "Hope you enjoy your stay.";
+		mes "[旅館老闆]";
+		mes "希望你住宿愉快。";
 		close2;
 		set Zeny, Zeny-5000;
 		percentheal 100,100;
@@ -171,7 +171,7 @@ OnTouch_:
 	if (getcharid(1)) {
 		if ($ma_name04$ == strcharinfo(0) || $ma_name05$ == strcharinfo(0) || $ma_name06$ == strcharinfo(0)) {
 			donpcevent strnpcinfo(0)+"::OnBingx2";
-			mes "The unidentified creature gets a glimpse of you, blushes and then disappears.";
+			mes "不明生物瞥見了你一眼，臉紅了，然後消失了。";
 			close;
 		}
 		if (rand(1,5)%2) {
@@ -182,11 +182,11 @@ OnTouch_:
 			}
 		}
 		donpcevent strnpcinfo(0)+"::OnBingx2";
-		mes "The unidentified creature gets a glimpse of you and disappears.";
+		mes "不明生物瞥見了你一眼，然後消失了。";
 		close;
 	}
 	donpcevent strnpcinfo(0)+"::OnBingx2";
-	mes "The unidentified creature looks at you and runs away.";
+	mes "不明生物看著你，然後跑開了。";
 	close;
 }
 ma_fild01,74,367,6	duplicate(Unidentified Creature#i)	Unidentified Creature#01	572,2,2
@@ -233,7 +233,7 @@ OnTouch_:
 	if (.@pass) {
 		if ($ma_name04$ == strcharinfo(0) || $ma_name05$ == strcharinfo(0) || $ma_name06$ == strcharinfo(0)) {
 			donpcevent strnpcinfo(0)+"::OnBingx2";
-			mes "The unidentified creature gets a glimpse of you, blushes and then disappears.";
+			mes "不明生物瞥見了你一眼，臉紅了，然後消失了。";
 			close;
 		}
 		if (rand(1,5)%2) {
@@ -255,11 +255,11 @@ OnTouch_:
 			}
 		}
 		donpcevent strnpcinfo(0)+"::OnBingx2";
-		mes "The unidentified creature gets a glimpse of you and disappears.";
+		mes "不明生物瞥見了你一眼，然後消失了。";
 		close;
 	}
 	donpcevent strnpcinfo(0)+"::OnBingx2";
-	mes "The unidentified creature looks at you and runs away.";
+	mes "不明生物看著你，然後跑開了。";
 	close;
 }
 ma_fild01,109,116,4	duplicate(Unidentified Creature#j)	Unidentified Creature#02	572,2,2
@@ -273,415 +273,415 @@ ma_scene01,167,112,6	duplicate(Unidentified Creature#j)	Unidentified Creature#11
 
 malaya,227,311,4	script	Grandma#ma01	575,{
 	if (malaya_hi < 10) {
-		mes "[Grandma]";
-		mes "You're not from around here? Take care of yourself.";
+		mes "[奶奶]";
+		mes "你不是這裡的人吧？照顧好自己。";
 		next;
-		mes "[Grandma]";
-		mes "I'm worried because my daughter-in-law is pregnant. I hope nothing goes wrong.";
+		mes "[奶奶]";
+		mes "我很擔心，因為我的媳婦懷孕了。我希望一切順利。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Grandma]";
-		mes "I heard there is an outsider that is helping the village.";
+		mes "[奶奶]";
+		mes "我聽說有一個外人正在幫助這個村莊。";
 		next;
-		mes "[Grandma]";
-		mes "Then my daughter-in-law will be safe.";
+		mes "[奶奶]";
+		mes "這樣我的媳婦就會安全了。";
 		close;
 	}
 	if (rand(1,3) == 2) {
-		mes "[Grandma]";
-		mes "Heard there is this "+getd("$ma_name0"+rand(1,6)+"$")+" that follows Meoneonuncle around.";
+		mes "[奶奶]";
+		mes "聽說有個 "+getd("$ma_name0"+rand(1,6)+"$")+" 總是跟在莫尼恩叔叔身邊。";
 		next;
-		mes "[Grandma]";
-		mes "I will cheer for their forbidden love.";
+		mes "[奶奶]";
+		mes "我會為他們的禁忌之戀加油的。";
 		close;
 	}
-	mes "[Grandma]";
-	mes "I'm worried about my pregnant daughter-in-law. Hope Meoneonuncle won't bother her.";
+	mes "[奶奶]";
+	mes "我很擔心我懷孕的媳婦。希望莫尼恩叔叔不會打擾她。";
 	next;
-	select("Meoneonuncle?");
-	mes "[Grandma]";
-	mes "Not from around here? Let me tell you why even a foreigner like you should be careful.";
+	select("莫尼恩叔叔？");
+	mes "[奶奶]";
+	mes "不是這裡的人？讓我告訴你為什麼即使像你這樣的外國人也應該小心。";
 	next;
-	mes "[Grandma]";
-	mes "Meoneonuncle was a woman who lived in Port Malaya long ago. She married a decent man and also had a baby.";
+	mes "[奶奶]";
+	mes "莫尼恩叔叔是很久以前住在馬來亞港的一個女人。她嫁給了一個正派的男人，還生了一個孩子。";
 	next;
-	mes "[Grandma]";
-	mes "But happiness never lasts forever, right? The baby was miscarried from an accident...";
+	mes "[奶奶]";
+	mes "但幸福永遠不會持續下去，對吧？這個孩子因為一場意外而流產了...";
 	next;
-	mes "[Grandma]";
-	mes "She eventually passed away after grieving over her lost baby for days.";
+	mes "[奶奶]";
+	mes "在為失去的孩子悲傷了好幾天後，她最終也過世了。";
 	next;
-	select("That is a sad story.");
-	mes "[Grandma]";
-	mes "Meoneonuncle then started to appear in spirit and take away babies from pregnant women in the village.";
+	select("真是個悲傷的故事。");
+	mes "[奶奶]";
+	mes "莫尼恩叔叔接著開始以靈魂的形態出現，並從村里懷孕的婦女那裡奪走嬰兒。";
 	next;
-	mes "[Grandma]";
-	mes "If you ever walk around Port Malaya at night...";
+	mes "[奶奶]";
+	mes "如果你晚上在馬來亞港附近走動...";
 	next;
-	mes "[Grandma]";
-	mes "And hear either tik-tik or wak-wak, be cautious because that is the sound of Meoneonuncle's wings flapping.";
+	mes "[奶奶]";
+	mes "聽到滴答滴答或 wak-wak 的聲音，要小心，因為那是莫尼恩叔叔拍動翅膀的聲音。";
 	close;
 }
 
 malaya,189,263,4	script	Drumming Young Man#ma02	578,{
 	if (malaya_hi < 10) {
 		emotion ET_HUK;
-		mes "[Drumming Young Man]";
-		mes "Ugh... it's just like that time before...";
+		mes "[擊鼓青年]";
+		mes "嗚...就像之前的那次一樣...";
 		next;
 		emotion ET_HUK;
-		mes "[Drumming Young Man]";
-		mes "When the moon was swallowed. Argh!";
+		mes "[擊鼓青年]";
+		mes "當月亮被吞噬的時候。啊！";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Drumming Young Man]";
-		mes "I think the village was saved by a nameless adventurer.";
+		mes "[擊鼓青年]";
+		mes "我認為這個村莊是被一位無名的冒險家拯救的。";
 		next;
 		emotion ET_OHNO;
-		mes "[Drumming Young Man]";
-		mes "Phew... I thought Bakonawa appeared again.";
+		mes "[擊鼓青年]";
+		mes "呼...我還以為巴孔納瓦又出現了。";
 		close;
 	}
 	if (rand(1,3) == 2) {
-		mes "[Drumming Young Man]";
-		mes getd("$ma_name0"+rand(1,6)+"$")+" is said to have stopped Bakonawa from swallowing the moon. Isn't it awesome? I'm so relieved.";
+		mes "[擊鼓青年]";
+		mes getd("$ma_name0"+rand(1,6)+"$")+" 據說阻止了巴孔納瓦吞噬月亮。是不是很棒？我真鬆了一口氣。";
 		close;
 	}
-	mes "[Drumming Young Man]";
-	mes "Bakonawa is also known as the 'monster that swallows the moon' in Port Malaya.";
+	mes "[擊鼓的年輕人]";
+	mes "在馬拉雅港，巴科諾瓦也被稱為「吞噬月亮的怪物」。";
 	next;
-	mes "[Drumming Young Man]";
-	mes "But I know that Bakonawa could also 'swallow people', too.";
+	mes "[擊鼓的年輕人]";
+	mes "但我知道巴科諾瓦也會「吞噬人」。";
 	next;
-	select("Huk! Then isn't it dangerous?");
+	select("嚇！那豈不是很危險？");
 	emotion ET_KIK;
-	mes "[Drumming Young Man]";
-	mes "Ha ha ha. There is a way to stop Bakonawa from swallowing a person.";
+	mes "[擊鼓的年輕人]";
+	mes "哈哈哈。有一種方法可以阻止巴科諾瓦吞噬人。";
 	next;
-	mes "[Drumming Young Man]";
-	mes "Yes, there is a weakness to even the worst monster that swallowed 6 moons already.";
+	mes "[擊鼓的年輕人]";
+	mes "是的，即使是最糟糕的、已經吞噬了 6 個月亮的怪物，也有弱點。";
 	next;
-	select("Wow. What is it?");
-	mes "[Drumming Young Man]";
-	mes "He is sensitive to noise so when he's about to swallow the moon!!";
+	select("哇。是什麼？");
+	mes "[擊鼓的年輕人]";
+	mes "牠對噪音很敏感，所以當牠要吞噬月亮時！！";
 	next;
-	mes "[Drumming Young Man]";
-	mes "That's your chance!! It doesn't matter what kind of noise!! Whether it's a caldron, symbol, drum, pot or fry pan, just keep on making noise.";
+	mes "[擊鼓的年輕人]";
+	mes "那就是你的機會！！不管是什麼樣的噪音都沒關係！！無論是鍋、鈸、鼓、壺或煎鍋，只要不停地製造噪音即可。";
 	next;
-	mes "[Drumming Young Man]";
-	mes "Then Bakonawa will get surprised, spit out the moon and run away!";
+	mes "[擊鼓的年輕人]";
+	mes "然後巴科諾瓦會嚇一跳，吐出月亮並逃跑！";
 	next;
-	mes "[Drumming Young Man]";
-	mes "Carry a drum around with you. You'll find it handy.";
+	mes "[擊鼓的年輕人]";
+	mes "隨身攜帶一個鼓。你會發現它很方便。";
 	close;
 }
 
 malaya,270,59,4	script	Port Guard#ma03	570,{
 	if (malaya_hi < 10) {
 		emotion ET_PROFUSELY_SWEAT;
-		mes "[Port Guard]";
-		mes "The village is chaotic these days. Is it okay for me to be off like this?";
+		mes "[港口守衛]";
+		mes "最近村莊很混亂。我這樣離開可以嗎？";
 		close;
 	} else if (malaya_hi < 20) {
 		emotion ET_STARE_ABOUT;
-		mes "[Port Guard]";
-		mes "The village is somewhat stable now but you should still be careful walking around at night.";
+		mes "[港口守衛]";
+		mes "現在村莊已經比較穩定了，但你晚上在外面走動還是要小心。";
 		close;
 	}
 	if (rand(1,3) == 2) {
-		mes "[Port Guard]";
-		mes getd("$ma_name0"+rand(1,6)+"$")+" is said to escape from Buwaya alive after being captured. This person must be powerful.";
+		mes "[港口守衛]";
+		mes getd("$ma_name0"+rand(1,6)+"$")+" 據說在被捕後，從布瓦亞手中活著逃脫。這個人一定很強大。";
 		close;
 	}
 	emotion ET_HUK;
-	mes "[Port Guard]";
-	mes "What!! Port all clear!!";
+	mes "[港口守衛]";
+	mes "什麼！！港口一切都清空了！！";
 	next;
-	mes "[Port Guard]";
-	mes "Huh? You're not the captain? You scared me. Shoot! Ah, right! I received an official document for travelers.";
+	mes "[港口守衛]";
+	mes "咦？你不是船長？嚇我一跳。糟糕！啊，對了！我收到了一份給旅客的官方文件。";
 	next;
-	select("What document?");
-	mes "[Port Guard]";
-	mes "It says that travelers should be careful of monsters when walking in the village at night.";
+	select("什麼文件？");
+	mes "[港口守衛]";
+	mes "上面說旅客晚上在村莊裡行走時要小心怪物。";
 	next;
-	mes "[Port Guard]";
-	mes "Buwaya don't come to the village often but there are cases when they snatch people in the boxes they carry at night.";
+	mes "[港口守衛]";
+	mes "布瓦亞不常來村莊，但有時候牠們會趁晚上，從牠們攜帶的箱子裡抓人。";
 	next;
-	mes "[Port Guard]";
-	mes "Huh?! And it says here that a monster named Wokwok especially visits the village often at night and should be avoided.";
+	mes "[港口守衛]";
+	mes "咦？！這裡還寫著，一種名叫沃克沃克的怪物特別常在晚上拜訪村莊，應該避開牠。";
 	next;
-	switch(select("I see.:Is there any way to prevent them from coming?")) {
+	switch(select("我知道了。:有沒有什麼方法可以阻止牠們來？")) {
 	case 1:
-		mes "[Port Guard]";
-		mes "Be careful at night!";
+		mes "[港口守衛]";
+		mes "晚上要小心！";
 		close;
 	case 2:
-		mes "[Port Guard]";
-		mes "They say you can attack Buwaya's weak point inside the box they carry if you ever get caught in one.";
+		mes "[港口守衛]";
+		mes "據說如果你被困在布瓦亞攜帶的箱子裡，可以攻擊牠們在箱子裡的弱點。";
 		next;
-		mes "[Port Guard]";
-		mes "And you should run into the nearest building when you hear Wokwoks wings fluttering from afar.";
+		mes "[港口守衛]";
+		mes "當你從遠處聽到沃克沃克翅膀拍動的聲音時，應該跑到最近的建築物裡。";
 		next;
 		emotion ET_SCRATCH;
-		mes "[Port Guard]";
-		mes "But if the fluttering sound is small or if you don't hear anything, let's just say you should prepare for attack and wish for luck.";
+		mes "[港口守衛]";
+		mes "但如果拍動的聲音很小，或者你什麼都沒聽到，只能說你要準備好攻擊，並祈求好運。";
 		close;
 	}
 }
 
-malaya,88,252,4	script	Little Girl#ma04	576,{
+malaya,88,252,4	script	小女孩#ma04	576,{
 	if (malaya_hi < 10) {
-		mes "[Little Girl]";
-		mes "I'm scared but I have to visit the fairy in the forest.";
+		mes "[小女孩]";
+		mes "我很害怕，但我必須去拜訪森林裡的仙女。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Little Girl]";
-		mes "He he. Father said I can visit the fairy in the forest when the village calms down.";
+		mes "[小女孩]";
+		mes "呵呵。父親說當村莊平靜下來後，我就可以去拜訪森林裡的仙女。";
 		close;
 	}
 	if (rand(1,3) == 2) {
 		set .@name$, getd("$ma_name0"+rand(1,6)+"$");
-		mes "[Little Girl]";
-		mes "A little while ago "+.@name$+" came and told me a fun story.";
+		mes "[小女孩]";
+		mes "不久前 "+.@name$+" 來了，告訴我一個有趣的故事。";
 		next;
-		mes "[Little Girl]";
-		mes "'I planted a pair of pear trees in the yard.'";
-		mes "He he. Isn't it fun? "+.@name$+" seems like a fun person.";
+		mes "[小女孩]";
+		mes "「我在院子裡種了一對梨樹。」";
+		mes "呵呵。是不是很有趣？"+.@name$+" 似乎是一個有趣的人。";
 		close;
 	}
-	mes "[Little Girl]";
-	mes "Father said I won't catch skin diseases once I'm friends with the fairy from the forest.";
+	mes "[小女孩]";
+	mes "父親說，只要我與森林裡的仙女成為朋友，我就不會得皮膚病。";
 	next;
-	select("What is this fairy?");
-	mes "[Little Girl]";
-	mes "Encan'to! Encan'to fairies live in big trees or rocks in the forest. There are boy fairies and girl fairies...";
+	select("這個仙女是什麼？");
+	mes "[小女孩]";
+	mes "恩坎托！恩坎托仙女住在森林裡的大樹或岩石中。有男仙女和女仙女...";
 	next;
-	mes "[Little Girl]";
-	mes "But boy fairies are prettier. Why is that?";
+	mes "[小女孩]";
+	mes "但男仙女更漂亮。為什麼會這樣？";
 	close;
 }
 
 malaya,219,92,6	script	Little Kid#ma05	577,{
 	if (malaya_hi < 10) {
-		mes "[Little Kid]";
-		mes "My mom told me not to play outside because its dangerous. Why?";
+		mes "[小孩子]";
+		mes "我媽媽告訴我不要在外面玩，因為很危險。為什麼？";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Little Kid]";
-		mes "My mom told me I can play but only in Port Malaya.";
+		mes "[小孩子]";
+		mes "我媽媽告訴我我可以玩，但只能在馬拉雅港。";
 		next;
-		mes "[Little Kid]";
-		mes "He he. But I never thought of going outside of Port Malaya.";
+		mes "[小孩子]";
+		mes "呵呵。但我從未想過要離開馬拉雅港。";
 		close;
 	}
 	if (rand(1,3) == 2) {
-		mes "[Little Kid]";
-		mes "I heard someone took Jejelings hat in Baryo Mahiwaga.";
+		mes "[小孩子]";
+		mes "我聽說有人在巴里奧·馬希瓦加拿走了捷傑林的帽子。";
 		next;
-		mes "[Little Kid]";
-		mes "Why would someone steal a monster's hat? "+getd("$ma_name0"+rand(1,6)+"$")+" must be desperate.";
+		mes "[小孩子]";
+		mes "為什麼有人要偷怪物的帽子？"+getd("$ma_name0"+rand(1,6)+"$")+" 一定很絕望。";
 		next;
-		mes "[Little Kid]";
-		mes "Oh wait! This was suppose to be a secret. Shsh! Please pretend you didn't hear me.";
+		mes "[小孩子]";
+		mes "喔等等！這應該是個秘密。噓！請假裝你沒聽到我說的話。";
 		close;
 	}
-	mes "[Little Kid]";
-	mes "I think someone is stealing all the hats in the village.";
+	mes "[小孩子]";
+	mes "我認為有人偷走了村莊裡所有的帽子。";
 	next;
-	mes "[Little Kid]";
-	mes "The hat my mom washed yesterday disappeared. Our neighbor's hat also disappeared a few days ago.";
+	mes "[小孩子]";
+	mes "我媽媽昨天洗的帽子不見了。我們鄰居的帽子幾天前也消失了。";
 	next;
-	mes "[Little Kid]";
-	mes "Hmm... do you think Jejeling took it?";
+	mes "[小孩子]";
+	mes "嗯...你覺得捷傑林拿走了嗎？";
 	next;
-	mes "[Little Kid]";
-	mes "I visited a friend in Baryo Mahiwaga and he said he saw Jejeling wearing the missing hat...";
+	mes "[小孩子]";
+	mes "我拜訪了巴里奧·馬希瓦加的一個朋友，他說他看到捷傑林戴著那頂失蹤的帽子...";
 	close;
 }
 
 malaya,363,283,4	script	Local#ma06	582,{
 	if (malaya_hi < 10) {
-		mes "[Local]";
-		mes "Hmm... is it time to be careful of the witches' curse?";
+		mes "[當地人]";
+		mes "嗯...現在是小心女巫詛咒的時候了嗎？";
 		next;
-		mes "[Local]";
-		mes "Beware of Mongkukurums needle, foreigner.";
+		mes "[當地人]";
+		mes "小心蒙庫庫魯姆的針，外國人。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Local]";
-		mes "Welcome to Port Malaya, foreigner..";
+		mes "[當地人]";
+		mes "歡迎來到馬拉雅港，外國人..";
 		next;
-		mes "[Local]";
-		mes "The village is chaotic these days. If you see someone with red eyes, try not to stare at their eyes.";
+		mes "[當地人]";
+		mes "最近村莊很混亂。如果你看到有人有紅色的眼睛，盡量不要盯著他們的眼睛看。";
 		close;
 	}
 	set .@name$, getd("$ma_name0"+rand(1,6)+"$");
 	switch(rand(1,6)) {
 	case 1:
-		mes "[Local]";
-		mes "Be careful walking around the village at night. "+.@name$+" was taken down by Wokwok.";
+		mes "[當地人]";
+		mes "晚上在村莊裡走動要小心。"+.@name$+" 被沃克沃克擊倒了。";
 		close;
 	case 2:
-		mes "[Local]";
-		mes .@name$+" is said to have successfully tamed a Tikbalang. This person must be courageous. Wonder if I'll get to see this tamed Tikbalang?";
+		mes "[當地人]";
+		mes .@name$+" 據說成功馴服了一隻提克巴朗。這個人一定很勇敢。不知道我能不能看到這隻被馴服的提克巴朗？";
 		close;
 	case 3:
-		mes "[Local]";
-		mes "Have you ever seen Bongisungisu? I heard "+.@name$+" is hunting down Bongisungisus.";
+		mes "[當地人]";
+		mes "你見過邦伊宋伊蘇嗎？我聽說 "+.@name$+" 正在追捕邦伊宋伊蘇。";
 		close;
 	case 4:
-		mes "[Local]";
-		mes "If you plan to go out of the village, be careful of Tiucknuc. "+.@name$+" is said to be tricked by Tiucknuc and had to go to the hospital.";
+		mes "[當地人]";
+		mes "如果你打算離開村莊，要小心提烏克努克。"+.@name$+" 據說被提烏克努克欺騙，不得不去醫院。";
 		close;
 	case 5:
 	case 6:
 		break;
 	}
-	mes "[Local]";
-	mes "The village is chaotic these days. Looks like Mongkukurum is back in the village.";
+	mes "[當地人]";
+	mes "最近村莊很混亂。看來蒙庫庫魯姆又回到村莊了。";
 	next;
-	select("Mongkukurum?");
-	mes "[Local]";
-	mes "A monster that is also called witch. Looks like a person and also wears clothes.";
+	select("蒙庫庫魯姆？");
+	mes "[當地人]";
+	mes "一種也被稱為女巫的怪物。看起來像一個人，而且也穿著衣服。";
 	next;
-	mes "[Local]";
-	mes "Mongkukurum makes a doll out of the people it sees and curses it with needles.";
+	mes "[本地人]";
+	mes "Mongkukurum 會用它看到的人製作娃娃，並用針詛咒它。";
 	next;
-	select("Is there a way to recognize this monster?");
-	mes "[Local]";
-	mes "There is one way. All Mongkukurum have red eyes.";
+	select("有沒有方法可以辨識這種怪物？");
+	mes "[本地人]";
+	mes "有一種方法。所有的 Mongkukurum 都有紅色的眼睛。";
 	next;
-	mes "[Local]";
-	mes "You can recognize them by their eyes but! You must remember one thing.";
+	mes "[本地人]";
+	mes "你可以藉由牠們的眼睛辨識牠們，但是！你必須記得一件事。";
 	next;
-	mes "[Local]";
-	mes "You will be captivated by Mongkukurum if you stare at their eyes too long.";
+	mes "[本地人]";
+	mes "如果你盯著 Mongkukurum 的眼睛太久，你會被牠們迷住。";
 	next;
-	mes "[Local]";
-	mes "Never ever stare into their eyes for too long.";
+	mes "[本地人]";
+	mes "千萬不要盯著牠們的眼睛太久。";
 	close;
 }
 
 malaya,41,127,6	script	Old Man #ma07	574,{
 	if (malaya_hi < 10) {
-		mes "[Old Man]";
-		mes "Foreigners are not welcomed that much when our village is chaotic like these days.";
+		mes "[老翁]";
+		mes "當我們的村莊像現在這樣混亂的時候，外國人並不怎麼受歡迎。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Old Man]";
-		mes "You are out of luck visiting the village at a time like this and not being welcomed.";
+		mes "[老翁]";
+		mes "你在這種時候拜訪村莊卻不受歡迎，真是倒楣。";
 		close;
 	}
 	if (rand(1,3) == 2) {
-		mes "[Old Man]";
-		mes getd("$ma_name0"+rand(1,6)+"$")+" is said to throw out Jellopy in this village.";
+		mes "[老翁]";
+		mes getd("$ma_name0"+rand(1,6)+"$")+" 據說在這個村莊裡丟出了果凍。";
 		next;
-		mes "[Old Man]";
-		mes "Tsk, tsk... Must be a person that isn't worthy of a Jellopy.";
+		mes "[老翁]";
+		mes "嘖嘖... 一定是個不配擁有果凍的人。";
 		close;
 	}
-	mes "[Old Man]";
-	mes "You must also look out to see if Bangungot lives in a tree you are about to cut down.";
+	mes "[老翁]";
+	mes "你也必須注意看 Bangungot 是否住在你即將砍倒的樹上。";
 	next;
-	mes "[Old Man]";
-	mes "Because strange things happen if logs from trees that Bangungot lived in are used as building pillars.";
+	mes "[老翁]";
+	mes "因為如果使用 Bangungot 住過的樹木的木材作為建築支柱，就會發生奇怪的事情。";
 	next;
-	select("What happens?");
-	mes "[Old Man]";
-	mes "Well, for a Bangungot, it means losing its home so they get vengeful.";
+	select("會發生什麼事？");
+	mes "[老翁]";
+	mes "嗯，對 Bangungot 來說，這意味著失去牠的家，所以牠們會變得報復心強。";
 	next;
-	mes "[Old Man]";
-	mes "When you try to sleep near the pillar, it will keep awake by playing pranks at first.";
+	mes "[老翁]";
+	mes "當你試圖在柱子附近睡覺時，牠一開始會惡作劇來讓你保持清醒。";
 	next;
-	mes "[Old Man]";
-	mes "But as time goes by and their vengeance grows, they sit on top of you until you suffocate.";
+	mes "[老翁]";
+	mes "但隨著時間的推移，牠們的復仇心越來越強，牠們會坐在你身上直到你窒息。";
 	next;
-	select("Oh, gosh...");
-	mes "[Old Man]";
-	mes "Ha ha ha. There are no Bangungots in normal pillars, so don't lose sleep over it.";
+	select("天啊...");
+	mes "[老翁]";
+	mes "哈哈哈。正常的柱子裡沒有 Bangungot，所以別為此失眠。";
 	close;
 }
 
 malaya,63,185,4	script	Woman#ma08	583,{
 	if (malaya_hi < 10) {
-		mes "[Woman]";
-		mes "I don't have anything to share with you.";
+		mes "[婦人]";
+		mes "我沒有什麼可以和你分享的。";
 		close;
 	} else if (malaya_hi < 20) {
-		mes "[Woman]";
-		mes "Im worried about the children. I hope they aren't terrified from whats going on in the village.";
+		mes "[婦人]";
+		mes "我很擔心孩子們。我希望他們不會因為村莊裡發生的事情而感到害怕。";
 		close;
 	}
 	if (rand(1,3) == 2) {
 		set .@name$, getd("$ma_name0"+rand(1,6)+"$");
 		set .@rand, rand(1,10);
 		if (.@rand < 5) {
-			mes "[Woman]";
-			mes "I like fun stories. Not so long ago, "+.@name$+" came and told me a funny story.";
+			mes "[婦人]";
+			mes "我喜歡有趣的故事。不久前，"+.@name$+" 來告訴我一個有趣的故事。";
 			next;
 		}
 		switch(.@rand) {
 		case 1:
-			mes "[Woman]";
-			mes "'My aunt stepped on an ant.'";
+			mes "[婦人]";
+			mes "「我的阿姨踩到了一隻螞蟻。」";
 			next;
 			break;
 		case 2:
-			mes "[Woman]";
-			mes "'You eat chili on a chilly day.'";
+			mes "[婦人]";
+			mes "「你在寒冷的日子裡吃辣椒。」";
 			next;
 			break;
 		case 3:
-			mes "[Woman]";
-			mes "'Why are you putting flour on that flower?'";
+			mes "[婦人]";
+			mes "「你為什麼要在那朵花上撒麵粉？」";
 			next;
 			break;
 		case 4:
-			mes "[Woman]";
-			mes "At the Tool Store, 'Ill buy the needle and thread! You buy the hay to lose the needle in.'";
+			mes "[婦人]";
+			mes "在工具店，「我要買針線！你買乾草把針弄丟在裡面。」";
 			next;
-			mes "[Woman]";
-			mes .@name$+" said that and was kicked out of the Tool Store.";
+			mes "[婦人]";
+			mes .@name$+" 說了那句話，然後就被踢出了工具店。";
 			next;
 			break;
 		case 5:
-			mes "[Woman]";
-			mes "A Kafra Employee I'm friends with told me a story about a customer.";
+			mes "[婦人]";
+			mes "我的一個卡普拉員工朋友告訴我一個關於顧客的故事。";
 			next;
-			mes "[Woman]";
-			mes "'Kafra, the wise never marry and when they marry, they become otherwise.'";
+			mes "[婦人]";
+			mes "「卡普拉，智者從不結婚，而當他們結婚時，他們就會變得不再聰明。」";
 			next;
-			mes "[Woman]";
-			mes "He he... I do like funny stories but a bit difficult for my taste.";
+			mes "[婦人]";
+			mes "呵呵... 我確實喜歡有趣的故事，但對我來說有點難。";
 			close;
 		default:
-			mes "[Woman]";
-			mes "I like fun stories. Oh by the way! "+.@name$+", love is photogenic. Don't you agree?";
+			mes "[婦人]";
+			mes "我喜歡有趣的故事。對了！"+.@name$+"，愛情是上相的。你同意嗎？";
 			next;
-			mes "[Woman]";
-			mes "It needs darkness to develop.";
+			mes "[婦人]";
+			mes "它需要黑暗才能顯影。";
 			next;
 		}
-		mes "[Woman]";
-		mes "He he. Isn't it fun?";
+		mes "[婦人]";
+		mes "呵呵。是不是很有趣？";
 		close;
 	}
-	mes "[Woman]";
-	mes "If you hear a baby crying from the forest outside of the village, never go near it.";
+	mes "[婦人]";
+	mes "如果你聽到村莊外的森林裡傳來嬰兒的哭聲，千萬不要靠近它。";
 	next;
-	select("Why?");
-	mes "[Woman]";
-	mes "There is a monster named Tiucknuc that roams around outside of the village and cries after transforming himself into a baby.";
+	select("為什麼？");
+	mes "[婦人]";
+	mes "有一種叫做 Tiucknuc 的怪物在村莊外面徘徊，牠會把自己變成嬰兒後哭泣。";
 	next;
-	mes "[Woman]";
-	mes "But when kind travelers pick up the baby, it turns back into its original form and attacks.";
+	mes "[婦人]";
+	mes "但是當善良的旅行者抱起嬰兒時，牠就會變回原來的樣子並發動攻擊。";
 	next;
-	select("Sounds like a sneaky monster.");
-	mes "[Woman]";
-	mes "Yes, this monster is bad to trick the kindness of travelers but...";
+	select("聽起來像個狡猾的怪物。");
+	mes "[婦人]";
+	mes "是的，這個怪物很壞，會欺騙旅行者的善良，但是...";
 	next;
-	mes "[Woman]";
-	mes "There is rumor that the monster came from the soul of a baby that never been born. So sad.";
+	mes "[婦人]";
+	mes "有傳言說這個怪物來自一個從未出生的嬰兒的靈魂。真可悲。";
 	close;
 }
 
@@ -697,28 +697,28 @@ function	script	F_Malaya_Jeepney	{
 	}
 
 	if (malaya_hi < 10) {
-		mes "[Jeepney Driver]";
+		mes "[吉普尼司機]";
 		mes getarg(2);
 		close;
 	} else if ((malaya_hi >= 10) && (malaya_hi < 20)) {
-		mes "[Jeepney Driver]";
+		mes "[吉普尼司機]";
 		mes getarg(3);
 		close;
 	} else {
-		mes "[Jeepney Driver]";
+		mes "[吉普尼司機]";
 		mes getarg(4);
 		next;
 	}
-	switch(select("Board [Passenger " + getmapusers(.@mapName$) + "/" + .@passengers +"]:Jeepney?:Are there any other Jeepneys?:Ah... Yes...")) {
+	switch(select("搭乘 [乘客 " + getmapusers(.@mapName$) + "/" + .@passengers +"]:吉普尼嗎？:還有其他的吉普尼嗎？:啊... 是的...")) {
 	case 1:
 		if (getmapusers(.@mapName$) >= .@passengers) {
-			mes "[Jeepney Driver]";
-			mes "I'm afraid the Jeepney is full.";
-			mes "I'm sorry but how about some other Jeepney?";
+			mes "[吉普尼司機]";
+			mes "恐怕吉普尼已經滿了。";
+			mes "不好意思，要不要搭乘其他的吉普尼？";
 			close;
 		} else {
-			mes "[Jeepney Driver]";
-			mes "Have a nice day.";
+			mes "[吉普尼司機]";
+			mes "祝您有個美好的一天。";
 			close2;
 			warp .@mapName$,29,24;
 			end;
@@ -726,7 +726,7 @@ function	script	F_Malaya_Jeepney	{
 	case 2:
 		// iterate through all the jeepney information for this specific NPC
 		for (.@i = 0; .@i < getarraysize(.@msgJeepneyInfo$); .@i++) {
-			mes "[Jeepney Driver]";
+			mes "[吉普尼司機]";
 			mes getd(".@msgJeepneyInfo$[" + .@i + "]");
 
 			if (.@i < (getarraysize(.@msgJeepneyInfo$) - 1)) {
@@ -735,16 +735,16 @@ function	script	F_Malaya_Jeepney	{
 		}
 		close;
 	case 3:
-		mes "[Jeepney Driver]";
-		mes "Oh! Other Jeepneys are in operation, of course.";
+		mes "[吉普尼司機]";
+		mes "喔！當然有其他的吉普尼在營運。";
 		next;
-		mes "[Jeepney Driver]";
-		mes "In Port Malaya there are 12, 30 and 60 passenger Jeepneys with 3 each operating.";
+		mes "[吉普尼司機]";
+		mes "在馬來亞海港，有 12 人、30 人和 60 人座的吉普尼，各有 3 輛在營運。";
 		next;
-		mes "[Jeepney Driver]";
-		mes "Would you like to know the location of other cars?";
+		mes "[吉普尼司機]";
+		mes "您想知道其他車輛的位置嗎？";
 		next;
-		switch (select("I'd like to know where the 12 passenger car is.:I'd like to know where the 30 passenger car is.:I'd like to know where the 60 passenger car is.")) {
+		switch (select("我想知道 12 人座車輛的位置。:我想知道 30 人座車輛的位置。:我想知道 60 人座車輛的位置。")) {
 		case 1:
 			viewpoint 1, 237, 240, 1, 0xF7E009;
 			viewpoint 1, 67 , 44 , 2, 0xF7E009;
@@ -764,13 +764,13 @@ function	script	F_Malaya_Jeepney	{
 			set .@zif_in, 60;
 			break;
 		}
-		mes "[Jeepney Driver]";
-		mes .@zif_in+" passenger Jeepney's location has been marked on your map.";
+		mes "[吉普尼司機]";
+		mes .@zif_in+" 人座吉普尼的位置已在地圖上標記。";
 		next;
 		break;
 	}
-	mes "[Jeepney Driver]";
-	mes "Have a nice trip.";
+	mes "[吉普尼司機]";
+	mes "旅途愉快。";
 	close;
 }
 

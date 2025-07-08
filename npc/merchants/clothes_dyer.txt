@@ -28,45 +28,44 @@ function Dyes;
 
 	set .n$,"[Dyer Ginedin Rephere]";
 	mes .n$;
-	mes "11... 12... Mmm... good. I think I'll be able to finish before tonight's party. Oh! I didn't notice you were here!";
+	mes "11... 12... 嗯... 很好。我想我可以在今晚的派對之前完成。噢！我沒注意到你在這裡！";
 	while(1) {
 		next;
 		mes .n$;
-		mes "How may I assist you?";
+		mes "我能為您做些什麼？";
 		next;
-		switch(select("- Talk:- Dye Clothing:- Price List:- ^777777Cancel^000000")) {
+		switch(select("- 談話:- 服裝染色:- 價目表:- ^777777取消^000000")) {
 		case 1:
 			mes .n$;
-			mes "Life may have gotten a bit better, but when I look at all of the orders I've received... Whew!";
-			mes "It seems that the young women of Rune-Midgarts must be very well off these days.";
+			mes "生活可能變得好一點了，但當我看到我收到的所有訂單時... 哇！";
+			mes "看來盧恩-米德加茲王國的年輕女性這些日子一定過得很好。";
 			next;
 			mes .n$;
-			mes "Not that I think that they are indulging in anything luxurious, mind you.";
-			mes "I don't think there is anything wrong with the pursuit of beauty and being fashionable.";
+			mes "倒不是說我認為她們沉迷於任何奢侈品，請別誤會。";
+			mes "我不認為追求美麗和時尚有任何問題。";
 			next;
 			mes .n$;
-			mes "For us humans, who have no colorful fur or decorative scales, clothes are one of the few ways we have to display our personality, style, and beauty.";
+			mes "對於我們人類來說，我們沒有色彩鮮豔的毛皮或裝飾性的鱗片，衣服是我們展示個性和風格以及美麗的少數幾種方式之一。";
 			next;
 			mes .n$;
-			mes "Haha... When I think about it, I really feel that my job is worthwhile.  I believe that I provide a service that the people desire.";
+			mes "哈哈... 當我想到這些時，我真的覺得我的工作很有價值。我相信我提供的服務是人們所需要的。";
 			next;
 			mes .n$;
-			mes "Can you feel it too? The energy that is released when rough fabric and leather are brought to life with color?.....";
+			mes "您也能感覺到嗎？當粗糙的布料和皮革被色彩賦予生命時所釋放的能量？.....";
 			next;
 			mes .n$;
-			mes "Although the process is very tedious and time consuming, the joy and happiness I feel when a dress is finished more than makes up for all of the hard work!!";
+			mes "雖然這個過程非常乏味和耗時，但當一件衣服完成時我感到的喜悅和幸福遠遠超過了所有的辛勤工作！！";
 			break;
 		case 2:
 			mes .n$;
 			if (!.@EnableDyes) {
-				mes "Sorry, I'm too busy with other jobs to dye your clothes.";
+				mes "抱歉，我忙於其他工作，沒空幫你的衣服染色。";
 				break;
 			}
-			mes "Oh... you need my work? Well... okay, sounds good.";
+			mes "哦... 您需要我的工作嗎？嗯... 好的，聽起來不錯。";
 			next;
 			mes .n$;
-			mes "Please choose a color";
-			mes "that suits you.";
+			mes "請選擇一個適合您的顏色。";
 			next;
 
 			// Dyes(<color value>,<dye number>{,...});
@@ -108,21 +107,21 @@ function Dyes;
 			case Job_Super_Novice:
 				if (Sex == SEX_MALE) Dyes(2,1,6,2,5,3,4,4); else Dyes(6,1,3,2,5,3,4,4);
 			default: 
-				mes "Wow, I've never seen clothes like that before! I'm sorry, but I don't think I can paint it.";
+				mes "哇，我從未見過這樣的衣服！我很抱歉，但我認為我無法為其染色。";
 				close;
 			}
 		case 3:
 			mes .n$;
-			mes "Each color costs 10000z and 1 dye:";
+			mes "每種顏色需要 10000z 和 1 個染料：";
 			mes " ";
-			mes " - ^FF4422Red^000000: Scarlet Dyestuffs";
-			mes " - ^D5A500Yellow^000000: Lemon Dyestuffs";
-			mes " - ^AA00AAViolet^000000: Violet Dyestuffs";
-			mes " - ^FF8800Orange^000000: Orange Dyestuffs";
-			mes " - ^4422FFBlue^000000: CobaltBlue Dyestuffs";
-			mes " - ^009500Green^000000: DarkGreen Dyestuffs";
-			mes " - Black: Black Dyestuffs";
-			mes " - White: White Dyestuffs";
+			mes " - ^FF4422紅色^000000：猩紅色染料";
+			mes " - ^D5A500黃色^000000：檸檬色染料";
+			mes " - ^AA00AAViolet^000000：紫色染料";
+			mes " - ^FF8800橙色^000000：橘色染料";
+			mes " - ^4422FF藍色^000000：鈷藍色染料";
+			mes " - ^009500綠色^000000：深綠色染料";
+			mes " - 黑色：黑色染料";
+			mes " - 白色：白色染料";
 			break;
 		case 4:
 			goto L_End;
@@ -131,7 +130,7 @@ function Dyes;
 
 L_End:
 	mes .n$;
-	mes "Make yourself at home. Even though I don't have time for you.";
+	mes "請自便。即使我沒有時間為你服務。";
 	close;
 
 function Dyes {
@@ -145,32 +144,31 @@ function Dyes {
 	if (.@s == (getargcount()/2)+1) goto L_End;
 	mes .n$;
 	if (.@s == 0) {
-		mes "I can change your dye to";
-		mes "the default for free.";
-		mes "Are you sure?";
+		mes "我可以免費將您的染料更改為預設值。";
+		mes "您確定嗎？";
 		next;
-		switch(select("Yes:No")) {
+		switch(select("是:否")) {
 		case 1:
 			mes .n$;
 			setlook 7,0;
-			mes "Your clothes have been dyed "+.@DyeName$[0]+".";
+			mes "您的衣服已被染成 "+.@DyeName$[0]+"。";
 			close;
 		case 2:
 			goto L_End;
 		}
 	}
 	if (!countitem(.@DyeItems[getarg((.@s-1)*2)])) {
-		mes "For me to dye your clothes, I'll need the appropriate Dyestuffs. Please check my price list for the information.";
+		mes "要我幫您的衣服染色，我需要適當的染料。請查看我的價目表以獲取資訊。";
 		close;
 	}
 	if (Zeny < 10000) {
-		mes "I'm sorry, but you don't have enough money.";
+		mes "我很抱歉，但是您的錢不夠。";
 		close;
 	}
 	delitem .@DyeItems[getarg((.@s-1)*2)],1;
 	set Zeny, Zeny-10000;
 	setlook 7, ((.@s)?(getarg((.@s-1)*2+1)):0);
-	mes "Your clothes have been dyed "+((.@s)?.@DyeName$[getarg((.@s-1)*2)]:.@DyeName$[0])+".";
+	mes "您的衣服已被染成 "+((.@s)?.@DyeName$[getarg((.@s-1)*2)]:.@DyeName$[0])+"。";
 	close;
 }
 }

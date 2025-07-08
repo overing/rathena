@@ -8,43 +8,43 @@
 //============================================================
 
 pay_arche,44,124,5	script	Marry Jae	4_F_JOB_BLACKSMITH,{
-	mes "[Marry Jae]";
+	mes "[瑪麗·潔]";
 	if (BaseLevel < 60) {
-		mes "Your base level is too low, come back when you hit level 60+.";
+		mes "你的Base等級太低了，達到60級以上再來吧。";
 		close;
 	}
-	mes "^ff0000If you attempt to tame any monsters, it will not count as a kill. Please be careful.^000000";
+	mes "^ff0000如果你嘗試馴服任何怪物，這將不會算作擊殺數。請小心。^000000";
 	next;
 	.@day = gettime(DT_DAYOFWEEK);
 	if (.@day != SATURDAY && .@day != SUNDAY) {
-		mes "[Marry Jae]";
-		mes "Oh, a curious onlooker? I'm Marry Jae, the person in charge of weekends among the days of the week.";
+		mes "[瑪麗·潔]";
+		mes "喔，一位好奇的旁觀者？我是瑪麗·潔，負責一週中的週末。";
 		next;
-		mes "[Marry Jae]";
-		mes "What is the weekend dungeon? Actually, it's a specially designed space for new adventurers to train.";
+		mes "[瑪麗·潔]";
+		mes "什麼是週末地下城？實際上，這是一個專門為新冒險者設計的訓練空間。";
 		next;
-		mes "^0000FFLooking around, it's obvious that Marry Jae is talking to you.^000000";
+		mes "^0000FF環顧四周，很明顯瑪麗·潔正在和你說話。^000000";
 		next;
-		mes "[Marry Jae]";
-		mes "For those who do not have a party on the weekends, this place is hunting and experience gaining grounds for lonely adventurers!";
+		mes "[瑪麗·潔]";
+		mes "對於那些在週末沒有隊伍的人來說，這個地方是孤獨的冒險者狩獵和獲得經驗的絕佳場所！";
 		next;
-		mes "[Marry Jae]";
-		mes "Besides, the experience gain here is very generous.";
+		mes "[瑪麗·潔]";
+		mes "此外，這裡的經驗收益非常慷慨。";
 		next;
-		select( "When is the opening time?" );
-		mes "[Marry Jae]";
-		mes "The dungeon will be open during:";
-		mes "^0000FFSaturday 00:00 ~ Sunday 23:59^000000";
+		select( "什麼時候開放？" );
+		mes "[瑪麗·潔]";
+		mes "地下城將在以下時間開放：";
+		mes "^0000FF週六 00:00 ~ 週日 23:59^000000";
 		next;
-		mes "[Marry Jae]";
-		mes "I hope to see you when the weekend arrives~";
+		mes "[瑪麗·潔]";
+		mes "希望在週末到來時見到你～";
 		close;
 	}
 	.@md_name$ = "Weekend Dungeon";
 
 	if (getcharid(1) < 1) {
-		mes "[Marry Jae]";
-		mes "You need to form a party of one member or more.";
+		mes "[瑪麗·潔]";
+		mes "你需要組成一個或多個成員的隊伍。";
 		close;
 	}
 	switch( checkquest(12378,PLAYTIME) ) {
@@ -55,9 +55,9 @@ pay_arche,44,124,5	script	Marry Jae	4_F_JOB_BLACKSMITH,{
 		switch( checkquest(12377,PLAYTIME) ) {
 		case -1:
 		case 2:
-			mes "[Marry Jae]";
-			mes "Sorry, but the entry period to the " + .@md_name$ + " has expired.";
-			mes "Take a rest while waiting for the dungeon to be available again.";
+			mes "[瑪麗·潔]";
+			mes "抱歉，進入 " + .@md_name$ + " 的時間已過期。";
+			mes "請稍作休息，等待地下城再次開放。";
 			close;
 		case 0:
 		case 1:
@@ -67,39 +67,39 @@ pay_arche,44,124,5	script	Marry Jae	4_F_JOB_BLACKSMITH,{
 	case 2:
 		erasequest 12377;
 		erasequest 12378;
-		mes "[Marry Jae]";
-		mes "The cooldown has expired.";
-		mes "You may re-enter the Memorial Dungeon.";
+		mes "[瑪麗·潔]";
+		mes "冷卻時間已過期。";
+		mes "您可以重新進入副本。";
 		close;
 	}
 
 	if (is_party_leader() == true)
 		.@menu$ = "Prepare Memorial Dungeon";
 
-	mes "[Marry Jae]";
-	mes "I think you're just about ready.";
-	mes "Now, would you like to enter it now?";
+	mes "[瑪麗·潔]";
+	mes "我想你已經準備好了。";
+	mes "現在，你現在想進入嗎？";
 	next;
-	switch( select( .@menu$, "Enter Weekend Dungeon", "Cancel" ) ) {
+	switch( select( .@menu$, "進入週末地下城", "取消" ) ) {
 	case 1:
 		instance_create(.@md_name$);
-		mes "[Marry Jae]";
-		mes "The Memorial Dungeon has been created.";
-		mes "You may now enter.";
+		mes "[瑪麗·潔]";
+		mes "副本已經創建。";
+		mes "你現在可以進入了。";
 		close;
 	case 2:
 		switch( instance_enter(.@md_name$) ) {
 		case IE_NOMEMBER:
 			end;
 		case IE_NOINSTANCE:
-			mes "There is no Memorial Dungeon registered.";
+			mes "沒有註冊的副本。";
 			close;
 		case IE_OTHER:
-			mes "An unknown error has occurred.";
+			mes "發生未知錯誤。";
 			close;
 		case IE_OK:
-			mes "[Marry Jae]";
-			mes "Off you go!";
+			mes "[瑪麗·潔]";
+			mes "出發吧！";
 			mapannounce "pay_arche", "" + strcharinfo(0) + " of the party, " + getpartyname( getcharid(1) ) + ", is entering the " + .@md_name$ + ".", bc_map, 0xFF99;
 			if (isbegin_quest(12377) == 0)
 				setquest 12377;
@@ -109,9 +109,9 @@ pay_arche,44,124,5	script	Marry Jae	4_F_JOB_BLACKSMITH,{
 		}
 		end;
 	case 3:
-		mes "[Marry Jae]";
-		mes "You have not prepared?";
-		mes "Can't really help it I guess.";
+		mes "[瑪麗·潔]";
+		mes "你還沒準備好嗎？";
+		mes "我想也沒辦法幫你。";
 		close;
 	}
 }
@@ -119,17 +119,17 @@ pay_arche,44,124,5	script	Marry Jae	4_F_JOB_BLACKSMITH,{
 //Merchant
 pay_arche,44,121,5	script	Gift Supplies Clerk	4_F_02,{
 	.@zeny = 60000;
-	mes "[Gift Supplies Clerk]";
-	mes "I offer packaging services for those who wish to present a precious gift to a cherished one.";
+	mes "[禮品供應商]";
+	mes "我為那些希望將珍貴的禮物送給心愛的人的人提供包裝服務。";
 	next;
-	mes "[Gift Supplies Clerk]";
-	mes "If you have 5 units of <ITEM>" + getitemname(23143) + "<INFO>23143</INFO></ITEM> or <ITEM>" + getitemname(23142) + "<INFO>23142</INFO></ITEM>, I can pack it for just ^FF0000" + F_InsertComma(.@zeny) + "^000000 Zeny!";
-	mes "Do you want to pack it right now?";
+	mes "[禮品供應商]";
+	mes "如果你有 5 個單位的 <ITEM>" + getitemname(23143) + "<INFO>23143</INFO></ITEM> 或 <ITEM>" + getitemname(23142) + "<INFO>23142</INFO></ITEM>，我可以僅用 ^FF0000" + F_InsertComma(.@zeny) + "^000000 Zeny 為您包裝！";
+	mes "您現在要包裝嗎？";
 	next;
-	switch( select( "Cancel", "Growth Elixir Packing", "Job Elixir Packing" ) ) {
+	switch( select( "取消", "成長靈藥包裝", "職業靈藥包裝" ) ) {
 	case 1:
-		mes "[Gift Supplies Clerk]";
-		mes "Come back whenever you need packaging services!";
+		mes "[禮品供應商]";
+		mes "無論何時需要包裝服務，請再來！";
 		close;
 	case 2:
 		.@item = 23142;
@@ -140,29 +140,29 @@ pay_arche,44,121,5	script	Gift Supplies Clerk	4_F_02,{
 		.@box = 23145;
 		break;
 	}
-	mes "[Gift Supplies Clerk]";
+	mes "[禮品供應商]";
 	if (countitem(.@item) < 5) {
-		mes "Please come back when you have enough materials.";
+		mes "請在您有足夠的材料時再來。";
 		close;
 	}
 	if (Zeny < .@zeny) {
-		mes "Please come back when you have enough Zeny.";
-		mes F_InsertComma(.@zeny) + "z to be specific.";
+		mes "請在您有足夠的Zeny時再來。";
+		mes "具體來說是 " + F_InsertComma(.@zeny) + "z。";
 		close;
 	}
 	if (checkweight(23144,1) == 0) {
-		mes "You have too many kinds of objects. Clear your inventory.";
+		mes "您的物品種類太多。清理您的物品欄。";
 		close;
 	}
 	if (MaxWeight - Weight < 10000) {
-		mes "Can't continue because you have too many heavy objects. Reduce your total weight by clearing your inventory.";
+		mes "無法繼續，因為您有太多重物。通過清理您的物品欄來減輕您的總重量。";
 		close;
 	}
-	mes "Confirm to spend " + F_InsertComma(.@zeny) + "z to package 5 <ITEM>" + getitemname(.@item) + "<INFO>" + .@item + "</INFO></ITEM> into <ITEM>" + getitemname(.@box) + "<INFO>" + .@box + "</INFO></ITEM>?";
+	mes "確認花費 " + F_InsertComma(.@zeny) + "z 將 5 個 <ITEM>" + getitemname(.@item) + "<INFO>" + .@item + "</INFO></ITEM> 包裝成 <ITEM>" + getitemname(.@box) + "<INFO>" + .@box + "</INFO></ITEM> 嗎？";
 	next;
-	if (select( "Yes", "No" ) == 2) {
-		mes "[Gift Supplies Clerk]";
-		mes "Come back whenever you need packaging services!";
+	if (select( "是", "否" ) == 2) {
+		mes "[禮品供應商]";
+		mes "無論何時需要包裝服務，請再來！";
 		close;
 	}
 	Zeny -= .@zeny;
@@ -175,11 +175,11 @@ pay_arche,44,121,5	script	Gift Supplies Clerk	4_F_02,{
 1@md_pay,239,30,6	script	Marry Jae#0_1	4_F_JOB_BLACKSMITH,{
 	if (is_party_leader() == false)
 		end;
-	mes "[Marry Jae]";
-	mes "Before we start setting up the environment here, we'll give you the chance to choose an appropriate difficulty level.";
-	mes "I could make my own choice, but each person handles it differently based on their abilities.";
+	mes "[瑪麗·潔]";
+	mes "在我們開始設置這裡的環境之前，我們將讓您有機會選擇一個適當的難度級別。";
+	mes "我可以自己選擇，但每個人根據自己的能力處理方式不同。";
 	next;
-	switch( select( "Cancel", "Lv60 ~ 79", "Lv80 ~ 99", "Lv100 ~ 119", "Lv120 ~ 139", "Lv140 ~ 159", "Lv160 ~ " ) ) {
+	switch( select( "取消", "Lv60 ~ 79", "Lv80 ~ 99", "Lv100 ~ 119", "Lv120 ~ 139", "Lv140 ~ 159", "Lv160 ~ " ) ) {
 	case 1:
 		end;
 	//Familiar, Skeleton, Zombie
@@ -208,14 +208,14 @@ pay_arche,44,121,5	script	Gift Supplies Clerk	4_F_02,{
 		setarray 'mob[0],3648,3642,3654;
 		break;
 	}
-	mes "[Marry Jae]";
+	mes "[瑪麗·潔]";
 	if (BaseLevel < .@min_level) {
-		mes "Your base level is too low to select this, you need to be level " + .@min_level + " + .";
+		mes "您的Base等級太低，無法選擇此項，您需要達到 " + .@min_level + " 級以上。";
 		close;
 	}
 
-	mes "Good luck finding the treasures!";
-	npctalk "Good luck~";
+	mes "祝你好運，找到寶藏！";
+	npctalk "祝你好運～";
 	donpcevent instance_npcname("map_md_pay_spawn") + "::OnStart";
 	close;
 }

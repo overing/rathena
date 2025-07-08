@@ -21,79 +21,78 @@
 // Guarnien
 //============================================================
 alberta_in,70,51,5	script	Guarnien	4W_M_02,{
-	mes "[Guarnien]";
+	mes "[葛尼安]";
 	if(Class != Job_Merchant){
-		mes "Hello stranger.";
-		mes "I wish I could";
-		mes "offer you help";
-		mes "on your adventures...";
+		mes "哈囉，陌生人。";
+		mes "我希望能";
+		mes "在你的冒險中";
+		mes "提供你協助...";
 		next;
-		mes "[Guarnien]";
-		mes "However, what I have to teach would only benefit Merchants. Trading and money making are my areas of expertise. If you have any Merchant friends, send them to me.";
+		mes "[葛尼安]";
+		mes "然而，我所能教導的只對商人有益。貿易和賺錢是我的專長。如果你有任何商人朋友，請把他們介紹給我。";
 		if(Class == Job_Merchant_High){
 			next;
-			mes "[Guarnien]";
-			mes "Technically, yes, you're a Merchant, but I know an expert when I see one. You've been through the Merchant life before, I can tell!";
+			mes "[葛尼安]";
+			mes "嚴格來說，是的，你是個商人，但我一眼就能看出誰是專家。你以前一定經歷過商人的生活，我看得出來！";
 		}
 		close;
 	}
 	switch(tu_merchant){
 	case 17:
-		mes "We can't even begin";
-		mes "to fathom the number";
-		mes "of markets and people";
-		mes "out there in this wide,";
-		mes "wide world of ours.";
+		mes "我們甚至無法";
+		mes "理解在這廣大的";
+		mes "世界裡有多少";
+		mes "市場和人們。";
 		next;
-		mes "[Guarnien]";
-		mes "All of them are possible customers and business partners. Of course, it'll be up to you to meet them.";
-		mes "If you can be sincerely kind to everyone that you meet, you'll";
-		mes "have no problem.";
+		mes "[葛尼安]";
+		mes "他們全都是潛在的客戶和商業夥伴。當然，這取決於你是否去結識他們。";
+		mes "如果你能真誠地對待你遇到的每個人，你就會";
+		mes "沒有問題。";
 		close;
 	case 15:
 	case 16:
 		.@chk_vend = getskilllv("MC_VENDING");
 		if (tu_merchant == 15) {
-			mes "I believe it's time";
-			mes "for my final lecture.";
-			mes "I'll discuss the definitive";
-			mes "skill of the Merchant: ^871F78Vending^000000. Please listen carefully.";
+			mes "我想現在是";
+			mes "我最後的講座時間了。";
+			mes "我將討論商人";
+			mes "最關鍵的技能：^871F78Vending^000000（擺攤）。請仔細聽。";
 			next;
-			mes "[Guarnien]";
-			mes "The Vending skill is an active skill which allows you to open your own shop where you stand. Vending allows you to do real business with other people.";
+			mes "[葛尼安]";
+			mes "擺攤技能是一個主動技能，允許你在你站立的地方開設自己的商店。擺攤讓你能夠與其他人進行真正的交易。";
 			next;
-			mes "[Guarnien]";
-			mes "However, you can only vend items that are stored in your PushCart,";
-			mes "so you'll need one of those. The maximum price you can set for";
-			mes "each item is 99,990,000 Zeny.";
+			mes "[葛尼安]";
+			mes "但是，你只能販賣儲存在手推車中的物品，";
+			mes "所以你需要一個手推車。你可以為";
+			mes "每個物品設定的最高價格是 99,990,000 Zeny。";
 			next;
-			mes "[Guarnien]";
-			mes "Basically, you've got to learn the Push Cart skill first before you can learn the Vending skill.";
+			mes "[葛尼安]";
+			mes "基本上，你必須先學習手推車技能，才能學習擺攤技能。";
 			next;
-			mes "[Guarnien]";
-			mes "The higher the level of the Vending skill, the more items you can vend at one time. Vending is mastered at Skill Level 10.";
+			mes "[葛尼安]";
+			mes "擺攤技能的等級越高，你可以一次販賣的物品就越多。擺攤技能在技能等級 10 時達到精通。";
 			next;
-			mes "[Guarnien]";
-			mes "Level 1 Vending allows you";
-			mes "to vend a total of 3 items at one time. Each time you level up the Vending skill, the total number of items you can vend will";
-			mes "increase by one.";
+			mes "[葛尼安]";
+			mes "擺攤 1 級允許你";
+			mes "一次販賣總共 3 個物品。每次你提升擺攤技能的等級，你可以販賣的物品總數將";
+			mes "增加一個。";
 			next;
-			mes "[Guarnien]";
+			mes "[葛尼安]";
 			if((.@chk_vend > 3) && (.@chk_vend < 10)){
-				mes "But I see that you must already know that, huh? Well, seeing as you're so clever, I think you've earned this little prize~";
+				mes "但我看你一定已經知道了，對吧？好吧，既然你這麼聰明，我想你已經贏得了這份小獎品～";
 				getexp 186,60;
 			} else if(.@chk_vend == 10){
-				mes "But it looks like I just put my foot in my mouth. I'm sorry, I didn't notice that you already mastered the Vending skill...";
+				mes "但看起來我好像說錯話了。我很抱歉，我沒注意到你已經精通擺攤技能了...";
 				next;
-				mes "[Guarnien]";
-				mes "You're such an";
-				mes "excellent student!";
-				mes "Please, take this";
-				mes "little reward for";
-				mes "all your efforts~";
+				mes "[葛尼安]";
+				mes "你真是一個";
+				mes "優秀的學生！";
+				mes "請收下這個";
+				mes "小小的獎勵，";
+				mes "為了你所有的努力～";
 				getexp 199,69;
 			} else {
-				mes "For your final assignment, I will ask you to learn the Vending skill up to Skill Level 4. Of course, once you do, I'll give you a little reward. I'll be waiting, so do your best~";
+				mes "為了你的最後一項作業，我會要求你將擺攤技能學到技能等級 4。當然，一旦你做到了，我就會給你一點小獎勵。我會等著，所以盡你所能～";
 				tu_merchant = 16;
 				erasequest 8239;
 				setquest 8240;
@@ -102,86 +101,86 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 			completequest 8239;
 		}
 		else {
-			mes "So...";
-			mes "How much have";
-			mes "you learned";
-			mes "about Vending?";
+			mes "所以...";
+			mes "你學了多少";
+			mes "關於擺攤的";
+			mes "知識？";
 			next;
-			mes "[Guarnien]";
+			mes "[葛尼安]";
 			if((.@chk_vend > 3) && (.@chk_vend < 10)){
-				mes "Excellent!";
-				mes "You've taught yourself well. Here, you've earned this little reward~";
+				mes "太棒了！";
+				mes "你已經學得很好了。給你，你已經贏得了這個小獎勵～";
 				getexp 186,43;
 			} else if(.@chk_vend == 10){
-				mes "Oh, I see that you're very serious about being a Merchant. I'm proud that you've managed to master this skill! Here, you deserve this reward!";
+				mes "哦，我看得出來你對成為一個商人非常認真。我很驕傲你設法精通了這個技能！給你，你值得這個獎勵！";
 				getexp 199,69;
 			} else {
-				mes "Hmm...";
-				mes "Haven't learned Level 4 Vending yet, huh? Just keep in mind that being able to vend things is one";
-				mes "of the defining characteristics of being a Merchant!";
+				mes "嗯...";
+				mes "還沒學到擺攤 4 級，對吧？只要記住，能夠擺攤是";
+				mes "身為商人的一個決定性特徵！";
 				close;
 			}
 			completequest 8240;
 		}
 		tu_merchant = 17;
 		next;
-		mes "[Guarnien]";
-		mes "Ah, now you have mastered the fundamentals of the Merchant class. Just keep practicing the basic principles, like researching the market for item prices, and you should be fine.";
+		mes "[葛尼安]";
+		mes "啊，現在你已經掌握了商人職業的基本原理。只要繼續練習基本的原則，例如研究物品價格的市場，你就應該沒問題。";
 		next;
-		mes "[Guarnien]";
-		mes "Although everything we do is for money, never forget customer needs and always sell your products at a suitably fair price. Otherwise, no one may buy your goods!";
+		mes "[葛尼安]";
+		mes "雖然我們所做的一切都是為了錢，但永遠不要忘記客戶的需求，並且始終以適當的公平價格出售你的產品。否則，可能沒有人會購買你的商品！";
 		next;
-		mes "[Guarnien]";
-		mes "Well, there's nothing more I can teach you for now. Go out into the world and make your mark as a Merchant.";
+		mes "[葛尼安]";
+		mes "好吧，我現在沒有什麼可以教你的了。走出去，在這個世界上留下你身為商人的印記。";
 		next;
-		mes "[Guarnien]";
-		mes "And feel free to";
-		mes "visit me whenever";
-		mes "the mood strikes you.";
-		mes "Good luck to you~";
+		mes "[葛尼安]";
+		mes "並且隨時";
+		mes "歡迎來拜訪我，";
+		mes "只要你想來。";
+		mes "祝你好運～";
 		close;
 	case 13:
 	case 14:
 		.@chk_cart = getskilllv("MC_PUSHCART");
 		if (tu_merchant == 13) {
-			mes "Now to talk about";
-			mes "^871F78Push Cart^000000. First off, you need to know Level 5 Increase Weight Limit before you can even learn the Push Cart skill.";
+			mes "現在來談談";
+			mes "^871F78Push Cart^000000（手推車）。首先，你需要先學會負重量上升 5 級，才能學習手推車技能。";
 			next;
-			mes "[Guarnien]";
-			mes "Push Cart can be mastered at";
-			mes "Skill Level 10. This skill allows you to carry a Push Cart with you. You can carry a maximum of 100 different kinds of items that weigh less than 8,000.";
+			mes "[葛尼安]";
+			mes "手推車技能可以在";
+			mes "技能等級 10 時達到精通。這個技能允許你攜帶一個手推車。你最多可以攜帶 100 種不同的物品，重量小於 8,000。";
 			next;
-			mes "[Guarnien]";
-			mes "As you can see, this skill is an advanced form of the Increase Weight Limit skill. You can procure a PushCart from most Kafra Ladies for a certain fee.";
+			mes "[葛尼安]";
+			mes "如你所見，這個技能是負重量上升技能的進階形式。你可以從大多數的卡普拉姐姐那裡租借手推車，需要支付一定的費用。";
 			next;
-			mes "[Guarnien]";
-			mes "Once you have rented a Cart, you can hold on to it so long as you don't take it off. The disadvantage to using a PushCart is that your movement speed is reduced to";
-			mes "almost half! Horrible, isn't it?";
+			mes "[葛尼安]";
+			mes "一旦你租借了手推車，只要你不把它卸下來，就可以一直保留它。使用手推車的缺點是你的移動速度會降低到";
+			mes "幾乎一半！很可怕，不是嗎？";
 			next;
-			mes "[Guarnien]";
-			mes "Fortunately, when you increase";
-			mes "the level of the Push Cart skill, your movement speed will slowly be restored. With Push Cart Level 10, a PushCart won't slow you";
-			mes "down at all!";
+			mes "[葛尼安]";
+			mes "幸運的是，當你提高";
+			mes "手推車技能的等級時，你的移動速度會慢慢地恢復。當手推車技能等級為 10 時，手推車完全不會減慢你的";
+			mes "速度！";
 			next;
 			erasequest 8237;
 			.@chk_cart = getskilllv("MC_PUSHCART");
-			mes "[Guarnien]";
+			mes "[葛尼安]";
 			if(.@chk_cart > 3 && .@chk_cart < 10){
-				mes "Ah, and I see that you've been focusing on learning Push Cart. Although you might still have a problem with your movement";
-				mes "speed, it shouldn't be a big deal.";
-				mes "Well done~";
+				mes "啊，我看得出來你一直專注於學習手推車技能。雖然你的移動";
+				mes "速度可能仍然有問題，但這應該不是什麼大問題。";
+				mes "做得好～";
 				getexp 162,52;
 			} else if(.@chk_cart == 10){
-				mes "Wonderful! You've already";
-				mes "mastered the Push Cart skill.";
-				mes "You truly deserve a little bit of a reward~";
+				mes "太棒了！你已經";
+				mes "精通了手推車技能。";
+				mes "你真的值得一點點獎勵～";
 				getexp 186,60;
 			} else {
-				mes "For now, why don't";
-				mes "you learn the Push Cart";
-				mes "skill up to Level 4? Once";
-				mes "you do that, I can go on to";
-				mes "my next lecture.";
+				mes "現在，為什麼不";
+				mes "你學習手推車";
+				mes "技能到 4 級呢？一旦";
+				mes "你做到了，我就能繼續";
+				mes "我的下一次講座。";
 				tu_merchant = 14;
 				setquest 8238;
 				close;
@@ -189,27 +188,27 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 			setquest 8239;
 		}
 		else {
-			mes "So, have you";
-			mes "learned Push Cart up";
-			mes "to Level 4 like I asked?";
+			mes "所以，你有沒有";
+			mes "像我要求的那樣";
+			mes "學會 4 級手推車了？";
 			next;
-			mes "[Guarnien]";
+			mes "[葛尼安]";
 			if(.@chk_cart > 3 && .@chk_cart < 10){
-				mes "Well done~";
-				mes "You've been a very";
-				mes "cooperative student.";
-				mes "You deserve a little";
-				mes "reward for your effort~";
+				mes "做得好～";
+				mes "你一直是一個非常";
+				mes "配合的學生。";
+				mes "你值得一份小小的";
+				mes "獎勵，為了你的努力～";
 				getexp 162,52;
 			} else if(.@chk_cart == 10){
-				mes "Excellent!";
-				mes "You've actually went above and beyond mastered the Push Cart skill. Great work!";
+				mes "太棒了！";
+				mes "你實際上超越了極限，精通了手推車技能。做得好！";
 				getexp 186,60;
 			} else {
-				mes "Still not there, huh?";
-				mes "Well, remember that you need";
-				mes "Level 5 Increase Weight Limit before you can learn the Push";
-				mes "Cart skill. I hope that helps.";
+				mes "還是沒到，對吧？";
+				mes "好吧，記住你需要";
+				mes "負重量上升 5 級，才能學習手";
+				mes "推車技能。我希望這有幫助。";
 				close;
 			}
 			erasequest 8238;
@@ -217,73 +216,73 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 		}
 		tu_merchant = 15;
 		next;
-		mes "[Guarnien]";
-		mes "Next time, I'll talk about the skill that sets Merchants apart from all the other classes: ^871F78Vending^000000. So don't miss it!";
+		mes "[葛尼安]";
+		mes "下次，我將討論使商人與所有其他職業區別開來的技能：^871F78Vending^000000（擺攤）。所以不要錯過！";
 		close;
 	case 11:
 	case 12:
 		.@chk_over = getskilllv("MC_OVERCHARGE");
 		if (tu_merchant == 11) {
-			mes "Ah, ready to";
-			mes "learn already,";
-			mes "are you? Alright,";
-			mes "let me tell you";
-			mes "about ^871F78Over Charge^000000.";
+			mes "啊，已經準備好";
+			mes "學習了，";
+			mes "是嗎？好吧，";
+			mes "讓我告訴你";
+			mes "關於 ^871F78Over Charge^000000（高價販賣）。";
 			next;
-			mes "[Guarnien]";
-			mes "Like Discount, Over Charge is a Passive skill that can be mastered at Skill Level 10. Therefore, it doesn't require SP to use it.";
+			mes "[葛尼安]";
+			mes "就像低價買入一樣，高價販賣是一個被動技能，可以在技能等級 10 時達到精通。因此，它不需要 SP 才能使用它。";
 			next;
-			mes "[Guarnien]";
-			mes "Over Charge allows you to sell items to NPC shops for more Zeny. The higher your Over Charge Skill Level, the more Zeny you'll receive for items sold to NPCs.";
+			mes "[瓜尼恩]";
+			mes "超價販賣能讓你以更高的價格將物品賣給 NPC 商店來獲取 Zeny。你的超價販賣技能等級越高，你從 NPC 處獲得的 Zeny 就越多。";
 			next;
-			mes "[Guarnien]";
+			mes "[瓜尼恩]";
 			erasequest 8235;
 			.@chk_over = getskilllv("MC_OVERCHARGE");
 			if(.@chk_over > 3 && .@chk_over < 10){
-				mes "Ah, you've already learned Level 4 Over Charge. Perfect! Let me give you a little reward~";
+				mes "啊，你已經學會了等級 4 的超價販賣。太棒了！讓我給你一點小小的獎勵～";
 				getexp 126,27;
 			} else if(.@chk_over == 10){
-				mes "Amazing! You've already mastered the Over Charge skill! You must have wanted this reward badly~";
+				mes "太驚人了！你已經精通了超價販賣技能！你一定很想要這個獎勵吧～";
 				getexp 142,33;
 			} else {
-				mes "Personally, I think you should learn this skill for sure! For your next assignment, learn Over Charge up to Level 4. It shouldn't be too difficult to do.";
+				mes "我個人認為你肯定應該學習這個技能！你的下一個任務是，將超價販賣學到等級 4。這應該不會太難。";
 				tu_merchant = 12;
 				setquest 8236;
 				next;
-				mes "[Guarnien]";
-				mes "Once you do that,";
-				mes "we can talk about";
-				mes "more advanced stuff.";
-				mes "Do your best~";
+				mes "[瓜尼恩]";
+				mes "一旦你做到了，";
+				mes "我們可以談談";
+				mes "更進階的東西。";
+				mes "盡你所能～";
 				close;
 			}
 			setquest 8237;
 		}
 		else {
-			mes "So...";
-			mes "How is it going";
-			mes "with learning that";
-			mes "^871F78Over Charge^000000 skill?";
+			mes "所以...";
+			mes "學習那個";
+			mes "^871F78超價販賣^000000 技能";
+			mes "進展如何了呢？";
 			next;
-			mes "[Guarnien]";
+			mes "[瓜尼恩]";
 			if(.@chk_over > 3 && .@chk_over < 10){
-				mes "Nice work!";
-				mes "I can tell that";
-				mes "you've done just";
-				mes "as I asked. Please,";
-				mes "take this little reward~";
+				mes "做得好！";
+				mes "我可以看得出來";
+				mes "你做的";
+				mes "跟我要求的一樣。請，";
+				mes "收下這個小小的獎勵～";
 				getexp 126,27;
 			} else if(.@chk_over == 10){
-				mes "Whoa...";
-				mes "You actually";
-				mes "mastered Over Charge?";
-				mes "Most impressive! You deserve a small reward for your work!";
+				mes "哇...";
+				mes "你居然";
+				mes "精通了超價販賣？";
+				mes "真是令人印象深刻！你值得為你的努力獲得一點小獎勵！";
 				getexp 142,33;
 			} else {
-				mes "Mm? You haven't";
-				mes "learned Over Charge";
-				mes "up to Skill Level 4 yet?";
-				mes "There's no rush, but I won't be able to lecture on anything until you finish this little task.";
+				mes "嗯？你還沒有";
+				mes "將超價販賣";
+				mes "學到技能等級 4 嗎？";
+				mes "不用急，但在你完成這個小任務之前，我沒辦法繼續講課。";
 				close;
 			}
 			erasequest 8236;
@@ -291,70 +290,69 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 		}
 		tu_merchant = 13;
 		next;
-		mes "[Guarnien]";
-		mes "Next time, I'll discuss the";
-		mes "Push Cart skill. Be ready for this lecture, as Push Cart is one of the more important skills for a Merchant.";
+		mes "[瓜尼恩]";
+		mes "下次，我會討論";
+		mes "手推車技能。準備好上這堂課，因為手推車是商人最重要的技能之一。";
 		close;
 	case 10:
-		mes "Let me see those";
-		mes "Red Potions. Now,";
-		mes "how much did you";
-		mes "pay for these...?";
+		mes "讓我看看那些";
+		mes "紅色藥水。現在，";
+		mes "你為了這些";
+		mes "付了多少錢...？";
 		next;
-		mes "[Guarnien]";
-		mes "Ah...!";
-		mes "It looks like...";
-		mes "You were scammed!";
-		mes "D-don't worry, though,";
-		mes "I won't tell anybody.";
+		mes "[瓜尼恩]";
+		mes "啊...！";
+		mes "看起來...";
+		mes "你被騙了！";
+		mes "不-不用擔心，";
+		mes "我不會告訴任何人的。";
 		next;
-		mes "[Guarnien]";
-		mes "Oh well, it happens even to the best of us. Just think of this as an invaluable learning experience.";
+		mes "[瓜尼恩]";
+		mes "好吧，即使是我們這些最棒的人，也會發生這種事。就把它當作一次寶貴的學習經驗吧。";
 		next;
-		mes "[Guarnien]";
-		mes "Now, why don't you go to Prontera and try to buy 10 Red Potions from an NPC for the cheapest price again?";
+		mes "[瓜尼恩]";
+		mes "現在，你何不去普隆德拉，試著再次以最便宜的價格從 NPC 那裡購買 10 瓶紅色藥水？";
 		tu_merchant = rand(6,8);
 		close;
 	case 9:
-		mes "Let me see those";
-		mes "Red Potions. Ah, it seems you researched the market and bought the cheapest ones! Great work!";
+		mes "讓我看看那些";
+		mes "紅色藥水。啊，看來你研究過市場，買了最便宜的！做得好！";
 		tu_merchant = 11;
 		changequest 8234,8235;
 		getexp 112,22;
 		next;
-		mes "[Guarnien]";
-		mes "Alright, next time, we'll talk about the skill that you can learn after knowing how to Discount:";
-		mes "^871F78Over Charge^000000.";
+		mes "[瓜尼恩]";
+		mes "好的，下次，我們會談談在你學會折扣後可以學習的技能：";
+		mes "^871F78超價販賣^000000。";
 		close;
 	case 6:
 	case 7:
 	case 8:
-		mes "Hmm...";
-		mes "You'll find some NPCs";
-		mes "selling 10 Red Potions";
-		mes "in Prontera. Your task";
-		mes "is to buy the potions";
-		mes "for the cheapest price.";
+		mes "嗯...";
+		mes "你會在普隆德拉";
+		mes "找到一些 NPC";
+		mes "販賣 10 瓶紅色藥水。你的任務";
+		mes "是以";
+		mes "最便宜的價格購買藥水。";
 		next;
-		mes "[Guarnien]";
-		mes "First, you'll probably want to research the market price for Red Potions. And always, be careful of scammers and cheats!";
+		mes "[瓜尼恩]";
+		mes "首先，你可能需要研究紅色藥水的市場價格。而且永遠要小心騙子和作弊者！";
 		close;
 	case 5:
-		mes "Alright...";
-		mes "I've given it some thought and I've come up with a little challenge for you. Bring me... 10 Red Potions!";
+		mes "好吧...";
+		mes "我仔細考慮了一下，想出了一個小挑戰給你。帶給我... 10 瓶紅色藥水！";
 		next;
-		mes "[Guarnien]";
-		mes "It's not too hard, but the stipulation I'm adding is that you've got to find the merchant selling Red Potions for the cheapest price.";
+		mes "[瓜尼恩]";
+		mes "這並不太難，但我加上的條件是，你必須找到以最便宜的價格出售紅色藥水的商人。";
 		next;
-		mes "[Guarnien]";
-		mes "So first, you'll need to research the market price for Red Potions. Also, be careful of scammers! If the price is too good to be true, it usually is.";
+		mes "[瓜尼恩]";
+		mes "所以首先，你需要研究紅色藥水的市場價格。另外，要小心騙子！如果價格好到令人難以置信，通常就是這樣。";
 		next;
-		mes "[Guarnien]";
-		mes "Ha ha ha, let me make your goal a bit less confusing. You will need to buy 10 Red Potions from an NPC in Prontera.";
+		mes "[瓜尼恩]";
+		mes "哈哈哈，讓我讓你的目標不那麼令人困惑。你需要從普隆德拉的 NPC 那裡購買 10 瓶紅色藥水。";
 		next;
-		mes "[Guarnien]";
-		mes "Prontera's a bit far from here, isn't it? I'll just use this Kafra Warp-- Mahnsoo has a bunch for";
-		mes "some reason --to send you there right now. Get ready...!";
+		mes "[瓜尼恩]";
+		mes "普隆德拉離這裡有點遠，不是嗎？我就用這個卡普拉傳送 -- 馬尼蘇不知為何有一堆 -- 現在就把你傳送到那裡。準備好了...！";
 		next;
 		tu_merchant = rand(6,8);
 		changequest 8233,8234;
@@ -364,40 +362,40 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 	case 4:
 		.@chk_disc = getskilllv("MC_DISCOUNT");
 		if (tu_merchant == 3) {
-			mes "Ah, you're back!";
-			mes "Now, I was going";
-			mes "to tell you about";
-			mes "the Discount skill, right?";
+			mes "啊，你回來了！";
+			mes "現在，我正要";
+			mes "告訴你關於";
+			mes "折扣技能的事，對吧？";
 			next;
-			mes "[Guarnien]";
-			mes "The ^871F78Discount^000000 skill allows you to buy items at lower prices from NPC shops. It is a ^871F78Passive Skill^000000 which is always in effect and does not consume SP.";
+			mes "[瓜尼恩]";
+			mes "^871F78折扣^000000 技能能讓你以更低的價格從 NPC 商店購買物品。它是一個 ^871F78被動技能^000000，會持續生效且不消耗 SP。";
 			next;
-			mes "[Guarnien]";
-			mes "The Discount skill is";
-			mes "mastered at ^871F78Level 10^000000. The higher the skill level, the less you have to pay for items at NPC shops.";
+			mes "[瓜尼恩]";
+			mes "折扣技能在";
+			mes "^871F78等級 10^000000 時達到精通。技能等級越高，你在 NPC 商店購買物品時需要支付的費用就越少。";
 			next;
-			mes "[Guarnien]";
+			mes "[瓜尼恩]";
 			if(.@chk_disc > 3 && .@chk_disc < 10){
-				mes "Oooh, good work.";
-				mes "I see that you've";
-				mes "raised your Discount";
-				mes "to Level 4 already.";
-				mes "Here, take this";
-				mes "small reward~";
+				mes "喔喔喔，做得好。";
+				mes "我看到你已經";
+				mes "將你的折扣";
+				mes "提高到等級 4 了。";
+				mes "給你，收下這個";
+				mes "小小的獎勵～";
 				getexp 83,11;
 			} else if(.@chk_disc == 10){
-				mes "Incredible!";
-				mes "You've actually mastered the Discount skill! You're such a great student. You deserve a bit of a reward!";
+				mes "太不可思議了！";
+				mes "你竟然精通了折扣技能！你真是個了不起的學生。你值得一點獎勵！";
 				getexp 97,18;
 			} else {
-				mes "Alright! Now, in order to become closer towards becoming a true Merchant, I want you to learn the Discount skill up to Level 4.";
+				mes "好的！現在，為了更接近成為真正的商人，我希望你將折扣技能學到等級 4。";
 				next;
-				mes "[Guarnien]";
-				mes "It'd be nicer if you could";
-				mes "master it, but you might be more interested in devoting your time to other skills.";
+				mes "[瓜尼恩]";
+				mes "如果你能";
+				mes "精通它會更好，但你可能更有興趣將時間投入到其他技能上。";
 				next;
-				mes "[Guarnien]";
-				mes "Still, you can't ignore the fact that bargaining is an essential skill for a Merchant! Come back to me when you're ready~";
+				mes "[瓜尼恩]";
+				mes "儘管如此，你不能忽視議價是商人的一項基本技能！當你準備好的時候再來找我～";
 				tu_merchant = 4;
 				erasequest 8231;
 				setquest 8232;
@@ -407,21 +405,21 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 			setquest 8233;
 		}
 		else {
-			mes "So, how is it going with learning the Discount skill? Like I always say, if you can't make a bargain, you can't be a Merchant!";
+			mes "所以，學習折扣技能進展如何？就像我常說的，如果你不能議價，你就不能當商人！";
 			next;
-			mes "[Guarnien]";
+			mes "[瓜尼恩]";
 			if(.@chk_disc > 3 && .@chk_disc < 10){
-				mes "Ah, you've learned";
-				mes "how to use the Discount skill";
-				mes "well enough. Good, here's a little reward for your hard work~";
+				mes "啊，你學會了";
+				mes "如何充分利用折扣技能";
+				mes "了。很好，這是一點獎勵，獎勵你的努力～";
 				getexp 83,11;
 			} else if(.@chk_disc == 10){
-				mes "Incredible!";
-				mes "You've actually mastered the Discount skill! You're such a great student. You deserve a bit of a reward!";
+				mes "太不可思議了！";
+				mes "你竟然精通了折扣技能！你真是個了不起的學生。你值得一點獎勵！";
 				getexp 97,18;
 			} else {
-				mes "Not yet, huh?";
-				mes "Well, you should be able to reach that goal soon. After all, it's one of the basics of being a Merchant!";
+				mes "還沒學會嗎？";
+				mes "嗯，你應該很快就能達到這個目標。畢竟，這是成為商人的基礎之一！";
 				close;
 			}
 			erasequest 8232;
@@ -429,221 +427,221 @@ alberta_in,70,51,5	script	Guarnien	4W_M_02,{
 		}
 		tu_merchant = 5;
 		next;
-		mes "[Guarnien]";
-		mes "Alright, my next lesson will hopefully offer you a bit more of a challenge. Come back when you think you're ready, alright?";
+		mes "[瓜尼恩]";
+		mes "好的，我的下一課希望可以給你帶來更多的挑戰。當你認為你準備好的時候再來，好嗎？";
 		close;
 	case 2:
-		mes "Ah, you've come back to learn more. Let's see, what was I going to tell you about... Right, Mammonite!";
+		mes "啊，你回來學習更多了。讓我想想，我要告訴你什麼來著... 對了，金錢攻擊！";
 		next;
-		mes "[Guarnien]";
-		mes "^871F78Mammonite^000000 is a skill that lets you greatly damage targets with Zeny. Money really is power!";
+		mes "[瓜尼恩]";
+		mes "^871F78金錢攻擊^000000 是一個讓你用 Zeny 極大傷害目標的技能。金錢確實就是力量！";
 		next;
-		mes "[Guarnien]";
-		mes "The upside is that it inflicts great damage and only uses a little SP. However, the downside is that it will also consume your Zeny!";
+		mes "[瓜尼恩]";
+		mes "好處是它可以造成很大的傷害，而且只消耗一點 SP。然而，壞處是它也會消耗你的 Zeny！";
 		next;
-		mes "[Guarnien]";
-		mes "So if you use this skill too often, you might end up bankrupt! So be really careful. Also, as the Skill Level for Mammonite increases, so does the attack strength and Zeny consumption.";
+		mes "[瓜爾尼恩]";
+		mes "所以如果你太常使用這個技能，你可能會破產！所以要非常小心。此外，隨著金錢攻擊的技能等級增加，攻擊力也會增加，Zeny 消耗量也會增加。";
 		next;
-		mes "[Guarnien]";
+		mes "[瓜爾尼恩]";
 		.@chk_mam = getskilllv("MC_MAMMONITE");
 		if(.@chk_mam > 3 && .@chk_mam < 10){
-			mes "Ah, I see that you've already tried this skill. How much money have you wasted using Mammonite? Not too much, I hope.";
+			mes "啊，我看得出來你已經嘗試過這個技能了。你使用金錢攻擊浪費了多少錢？希望不要太多。";
 			next;
-			mes "[Guarnien]";
-			mes "Well, since you're still green, I feel awfully sorry if you've wasted Zeny. Why don't you take this as compensation?";
+			mes "[瓜爾尼恩]";
+			mes "嗯，既然你還是個新手，如果你浪費了 Zeny，我會感到非常抱歉。不如你把這個當作補償吧？";
 			tu_merchant = 3;
 			erasequest 8230;
 			setquest 8231;
 			getexp 70,12;
 			next;
-			mes "[Guarnien]";
-			mes "Okay. Now I think we're ready for me to discuss the ^871F78Discount^000000 skill. Come back when you'd like me to tell you more about it, okay?";
+			mes "[瓜爾尼恩]";
+			mes "好的。現在我想我們已經準備好讓我來討論 ^871F78折扣^000000 這個技能了。當你想讓我告訴你更多關於它的資訊時，再來找我，好嗎？";
 			close;
 		} else {
-			mes "Okay. Now I think we're ready for me to discuss the ^871F78Discount^000000 skill. Come back when you'd like me to tell you more about it, okay?";
+			mes "好的。現在我想我們已經準備好讓我來討論 ^871F78折扣^000000 這個技能了。當你想讓我告訴你更多關於它的資訊時，再來找我，好嗎？";
 			tu_merchant = 3;
 			erasequest 8230;
 			setquest 8231;
 			close;
 		}
 	case 1:
-		mes "So...";
-		mes "Did you learn the";
-		mes "Increase Weight Limit";
-		mes "skill up to Level 4";
-		mes "like I asked?";
+		mes "所以...";
+		mes "你有學到";
+		mes "負重量增加";
+		mes "技能到 4 級";
+		mes "像我要求的那樣嗎？";
 		next;
-		mes "[Guarnien]";
+		mes "[瓜爾尼恩]";
 		.@chk_soji = getskilllv("MC_INCCARRY");
 		if(.@chk_soji > 3 && .@chk_soji < 10){
-			mes "Ah. I can tell that you have. Not bad! By now you should be able to learn the ^871F78Discount^000000 skill, but I'll teach you about that later.";
+			mes "啊。我看得出來你已經學會了。不錯！到現在你應該可以學習 ^871F78折扣^000000 這個技能了，但我稍後會告訴你更多關於它的資訊。";
 			next;
-			mes "[Guarnien]";
-			mes "There are a few other basic skills which you can learn right away that I'll talk about first. Let's not rush~";
+			mes "[瓜爾尼恩]";
+			mes "還有一些其他的基本技能你可以馬上學到，我會先談談它們。我們不要急～";
 			next;
-			mes "[Guarnien]";
-			mes "First, there's the ^871F78Item Appraisal^000000 skill. This ability, once you've learned it, allows you to ^871F78identify unknown items^000000.";
+			mes "[瓜爾尼恩]";
+			mes "首先，是 ^871F78物品鑑定^000000 技能。一旦你學會了這個能力，你就可以 ^871F78鑑定未知的物品^000000。";
 			next;
-			mes "[Guarnien]";
-			mes "This skill works exactly like a ^871F78Magnifier^000000, so you won't have to spend any Zeny on them. Also, this skill is mastered at ^871F78Level 1^000000.";
+			mes "[瓜爾尼恩]";
+			mes "這個技能就像 ^871F78放大鏡^000000 一樣，所以你不需要花任何 Zeny 在它們上面。此外，這個技能在 ^871F781 級^000000 時就精通了。";
 			next;
 			if(getskilllv("MC_IDENTIFY")){
-				mes "[Guarnien]";
-				mes "I see in your eyes that you've already learned to appraise items. Haha, although having that knowledge is reward in itself, let me give you something extra!";
+				mes "[瓜爾尼恩]";
+				mes "我從你的眼神中看到你已經學會了鑑定物品。哈哈，雖然擁有這種知識本身就是一種獎勵，但還是讓我給你一些額外的東西！";
 				tu_merchant = 2;
 				erasequest 8229;
 				setquest 8230;
 				getexp 58,11;
 				getitem 1351,1; //Battle_Axe
 				next;
-				mes "[Guarnien]";
-				mes "Alright, next time";
-				mes "I'll talk about the Mammonite skill. For now, let me take a little bit of a break from all of this arduous lecture. ^666666*Whew!*^000000";
+				mes "[瓜爾尼恩]";
+				mes "好的，下次";
+				mes "我會談談金錢攻擊技能。現在，讓我在這艱鉅的演講中休息一下。^666666*呼！*^000000";
 				close;
 			}
 		} else {
-			mes "No? That's fine.";
-			mes "But I can't teach you";
-			mes "much more if you can't grasp these simple basics, so hurry and learn those skills, okay?";
+			mes "沒有？沒關係。";
+			mes "但是如果你不能掌握這些簡單的基礎知識，";
+			mes "我就不能教你";
+			mes "更多東西了，所以趕快學習那些技能，好嗎？";
 			close;
 		}
-		mes "Alright, next time";
-		mes "I'll talk about the Mammonite skill. For now, let me take a little bit of a break from all of this arduous lecture. ^666666*Whew!*^000000";
+		mes "好的，下次";
+		mes "我會談談金錢攻擊技能。現在，讓我在這艱鉅的演講中休息一下。^666666*呼！*^000000";
 		tu_merchant = 2;
 		erasequest 8229;
 		setquest 8230;
 		close;
 	}
-	mes "You've just started out as a Merchant, haven't you? How would you like to learn the fundamentals of business from an experienced colleague?";
+	mes "你才剛開始當商人，不是嗎？你想不想向一位經驗豐富的同事學習經商的基本知識？";
 	next;
-	if (select("Sure!:I'll make it on my own!") == 1){
+	if (select("當然!:我要靠自己!") == 1){
 		if(getskilllv("MC_INCCARRY") < 4){
 			tu_merchant = 1;
 			setquest 8229;
-			mes "[Guarnien]";
-			mes callfunc("F_SexMes","Atta girl~!","Atta boy~!");
-			mes "But first things first!";
-			mes "You better learn the";
-			mes "^871F78Increase Weight Limit^000000 skill!";
+			mes "[瓜爾尼恩]";
+			mes callfunc("F_SexMes","好樣的女孩~!","好樣的男孩~!");
+			mes "但首先！";
+			mes "你最好學習";
+			mes "^871F78負重量增加^000000 技能！";
 			next;
-			mes "[Guarnien]";
-			mes "You can't really be a Merchant if you can't even carry around goods to sell. As you increase the level of this skill, you can carry around more items.";
+			mes "[瓜爾尼恩]";
+			mes "如果你甚至不能攜帶貨物出售，你就不能真正成為一個商人。隨著你提高這個技能的等級，你可以攜帶更多的物品。";
 			next;
-			mes "[Guarnien]";
-			mes "Why don't you upgrade your";
-			mes "Increase Weight Limit skill up to Level 4? After that, we can talk more about becoming a true Merchant.";
+			mes "[瓜爾尼恩]";
+			mes "你為什麼不將你的";
+			mes "負重量增加 技能升級到 4 級？在那之後，我們可以更多地談論如何成為一個真正的商人。";
 			close;
 		} else {
-			mes "[Guarnien]";
-			mes "Great...!";
-			mes "Ah, and I see that you've learned the ^871F78Increase Weight Limit^000000 skill to at least Level 4. You're a real go-getter, aren't you?";
+			mes "[瓜爾尼恩]";
+			mes "太好了...！";
+			mes "啊，我看到你至少學會了 4 級的 ^871F78負重量增加^000000 技能。你真是個實幹家，不是嗎？";
 			next;
-			mes "[Guarnien]";
-			mes "Since your Increase Weight";
-			mes "Limit skill level is high enough, you must be able to see a new skill in your Skill Window: ^871F78Discount^000000!";
+			mes "[瓜爾尼恩]";
+			mes "既然你的負重量";
+			mes "增加技能等級夠高了，你一定能在你的技能視窗中看到一個新技能：^871F78折扣^000000！";
 			next;
-			mes "[Guarnien]";
-			mes "But we'll discuss the Discount skill later. There are a few other basic skills which you can learn right away that I'll talk about first. Let's not rush~";
+			mes "[瓜爾尼恩]";
+			mes "但我們稍後會討論折扣技能。還有一些其他的基本技能你可以馬上學到，我會先談談它們。我們不要急～";
 			next;
-			mes "[Guarnien]";
-			mes "First, there's the ^871F78Item Appraisal^000000 skill. This ability, once you've learned it, allows you to ^871F78identify unknown items^000000.";
+			mes "[瓜爾尼恩]";
+			mes "首先，是 ^871F78物品鑑定^000000 技能。一旦你學會了這個能力，你就可以 ^871F78鑑定未知的物品^000000。";
 			next;
-			mes "[Guarnien]";
-			mes "This skill works exactly like a ^871F78Magnifier^000000, so you won't have to spend any Zeny on them. Also, this skill is mastered at ^871F78Level 1^000000.";
+			mes "[瓜爾尼恩]";
+			mes "這個技能就像 ^871F78放大鏡^000000 一樣，所以你不需要花任何 Zeny 在它們上面。此外，這個技能在 ^871F781 級^000000 時就精通了。";
 			next;
-			mes "[Guarnien]";
+			mes "[瓜爾尼恩]";
 			if(getskilllv("MC_IDENTIFY")){
-				mes "I see in your eyes that you've already learned to appraise items. Haha, although having that knowledge is reward in itself, let me give you something extra!";
+				mes "我從你的眼神中看到你已經學會了鑑定物品。哈哈，雖然擁有這種知識本身就是一種獎勵，但還是讓我給你一些額外的東西！";
 				tu_merchant = 2;
 				erasequest 8229;
 				setquest 8230;
 				getexp 58,11;
 				getitem 1351,1; //Battle_Axe
 				next;
-				mes "[Guarnien]";
-				mes "Alright, next time";
-				mes "I'll talk about the Mammonite skill. For now, let me take a little bit of a break from all of this arduous lecture. ^666666*Whew!*^000000";
+				mes "[瓜爾尼恩]";
+				mes "好的，下次";
+				mes "我會談談金錢攻擊技能。現在，讓我在這艱鉅的演講中休息一下。^666666*呼！*^000000";
 				close;
 			}
-			mes "Alright, next time";
-			mes "I'll talk about the Mammonite skill. For now, let me take a little bit of a break from all of this arduous study.";
+			mes "好的，下次";
+			mes "我會談談金錢攻擊技能。現在，讓我在這艱鉅的學習中休息一下。";
 			next;
-			mes "[Guarnien]";
-			mes "Oh...";
-			mes "And I'll tell you";
-			mes "more about the Discount";
-			mes "skill later. I always manage";
-			mes "to forget about that!";
+			mes "[瓜爾尼恩]";
+			mes "喔...";
+			mes "而且我會告訴你";
+			mes "更多關於折扣";
+			mes "技能的資訊。我總是會";
+			mes "忘記那個！";
 			tu_merchant = 2;
 			erasequest 8229;
 			setquest 8230;
 			close;
 		}
 	} else {
-		mes "[Guarnien]";
-		mes "On your own?";
-		mes "Hahaha, that's the spirit!";
-		mes "But still, the advice I'm giving is free. It couldn't hurt to give what I say a little bit of thought.";
+		mes "[瓜爾尼恩]";
+		mes "靠自己？";
+		mes "哈哈哈，這就是精神！";
+		mes "但儘管如此，我給的建議是免費的。稍微思考一下我說的話也不會有什麼壞處。";
 		next;
-		mes "[Guarnien]";
-		mes "Well, if you ever change your mind, stop by and talk to me anytime. And as a Merchant, you should know that free advice is the best!";
+		mes "[瓜爾尼恩]";
+		mes "嗯，如果你改變主意，隨時過來和我談談。作為一個商人，你應該知道免費的建議是最好的！";
 		close;
 	}
 }
 
 // Sagle
 //============================================================
-prontera,66,111,3	script	Sagle	4_KID01,{
-	mes "[Sagle]";
+prontera,66,111,3	script	薩格爾	4_KID01,{
+	mes "[薩格爾]";
 	if (tu_merchant == 6)
 		callsub L_Potions, 390,9;// <Zeny cost>, <next 'tu_merchant' value>
 	else if (tu_merchant == 7)
 		callsub L_Potions, 410,10;
 	else if (tu_merchant == 8)
 		callsub L_Potions, 420,10;
-	mes "It's on the tip";
-	mes "of my tongue, but";
-	mes "I can't quite remember...";
+	mes "它就在我的";
+	mes "舌尖上，但";
+	mes "我不太記得...";
 	next;
-	mes "[Sagle]";
-	mes "You know, the name of the company that has all those beautiful ladies working for it. Ka... Ka-something. Anyway, I hear they're concerned about their growing competition. ";
+	mes "[薩格爾]";
+	mes "你知道的，就是那家有很多美女為他們工作的公司的名字。Ka... Ka-什麼的。總之，我聽說他們很擔心他們日益增長的競爭。";
 	next;
-	mes "[Sagle]";
-	mes "It's none of my business, but it's good to know what's going on in";
-	mes "the world, particularly if it'll affect the markets.";
+	mes "[薩格爾]";
+	mes "這不關我的事，但了解世界上發生的事情是件好事，特別是如果它會影響市場的話。";
 	close;
 
 L_Potions:
 	.@cost = getarg(0);
-	mes "Hello, hello~";
-	mes "Why don't you buy";
-	mes "some Red Potions?";
-	mes "They're essential for travel, and these Red Potions are the best for newer adventurers~";
+	mes "哈囉，哈囉～";
+	mes "要不要買";
+	mes "一些紅色藥水？";
+	mes "它們是旅行的必需品，這些紅色藥水最適合新手冒險家～";
 	next;
-	mes "[Sagle]";
-	mes "I will sell you 10 Red Potions for ^871F78"+ .@cost +" zeny^000000. You'd better get them now while they're still here!";
+	mes "[薩格爾]";
+	mes "我將以 ^871F78"+ .@cost +" zeny^000000 的價格賣給你 10 瓶紅色藥水。最好現在就買，趁它們還在這裡！";
 	next;
-	switch(select("Buy:Cancel")){
+	switch(select("購買:取消")){
 	case 1:
-		mes "[Sagle]";
-		mes "Excellent!";
-		mes "You certainly have an eye for bargains. Here you go, 10 Red Potions fresh from the... Potioner...";
+		mes "[薩格爾]";
+		mes "太棒了！";
+		mes "你確實有發現便宜貨的眼光。給你，10 瓶新鮮的紅色藥水，來自... 藥水師...";
 		if(Zeny < .@cost){
 			next;
-			mes "[Sagle]";
-			mes "Whoa, hold on!";
-			mes "You can't afford";
-			mes "these potions...";
-			mes "Please come back";
-			mes "when you have enough";
-			mes "Zeny, alright?";
+			mes "[薩格爾]";
+			mes "哇，等一下！";
+			mes "你買不起";
+			mes "這些藥水...";
+			mes "請等你";
+			mes "有足夠的";
+			mes "Zeny 再回來，好嗎？";
 			close;
 		}
 		if(MaxWeight - Weight < 71){
 			next;
-			mes "[Sagle]";
-			mes "Whoa, hold on!";
-			mes "There's no way you carry all of this! Why don't you put some of your stuff in Kafra Storage before coming back?";
+			mes "[薩格爾]";
+			mes "哇，等一下！";
+			mes "你不可能帶這麼多東西！為什麼不先把你的一些東西放在卡普拉倉庫裡，然後再回來？";
 		} else {
 			Zeny = Zeny - .@cost;
 			tu_merchant = getarg(1);
@@ -651,62 +649,62 @@ L_Potions:
 		}
 		close;
 	case 2:
-		mes "[Sagle]";
-		mes "Alright...";
-		mes "But don't";
-		mes "complain if";
-		mes "these potions";
-		mes "are sold out!";
+		mes "[薩格爾]";
+		mes "好吧...";
+		mes "但是別";
+		mes "抱怨如果";
+		mes "這些藥水";
+		mes "賣光了！";
 		close;
 	}
 }
 
 // Kellion
 //============================================================
-prontera,93,330,3	script	Kellion	4W_M_01,{
-	mes "[Kellion]";
+prontera,93,330,3	script	凱里昂	4W_M_01,{
+	mes "[凱里昂]";
 	if (tu_merchant == 6)
 		callsub L_Potions, 400,10;// <Zeny cost>, <next 'tu_merchant' value>
 	else if (tu_merchant == 7)
 		callsub L_Potions, 390,9;
 	else if (tu_merchant == 8)
 		callsub L_Potions, 340,10;
-	mes "Recently, I hear that something";
-	mes "has happened to the royal family.";
+	mes "最近，我聽到一些關於";
+	mes "王室的消息。";
 	next;
-	mes "[Kellion]";
-	mes "It's probably not even a reliable rumor, but I've heard that members of the royal family have been dying from some unknown cause.";
+	mes "[凱里昂]";
+	mes "這可能不是什麼可靠的謠言，但我聽說王室成員因為不明原因而死亡。";
 	next;
-	mes "[Kellion]";
-	mes "Huh.";
-	mes "Now that's some morbid news!";
-	mes "Well, hopefully, there's no truth to it whatsoever. None at all...";
+	mes "[凱里昂]";
+	mes "嗯哼。";
+	mes "真是個令人沮喪的消息！";
+	mes "嗯，希望這完全不是真的。完全不是...";
 	close;
 
 L_Potions:
 	.@cost = getarg(0);
-	mes "I'm selling sets of";
-	mes "10 Red Potions for "+ .@cost +" Zeny.";
-	mes "Would you like some?";
+	mes "我正在販售";
+	mes "10 個紅色藥水一組，"+ .@cost +" Zeny。";
+	mes "您想要一些嗎？";
 	next;
-	switch(select("Buy:Cancel")){
+	switch(select("購買:取消")){
 	case 1:
-		mes "[Kellion]";
-		mes "Good choice~";
-		mes "Thank you for";
-		mes "using my shop.";
+		mes "[凱里昂]";
+		mes "好選擇～";
+		mes "感謝您";
+		mes "光顧本店。";
 		if(Zeny < .@cost){
 			next;
-			mes "[Kellion]";
-			mes "Ooops!";
-			mes "I'm sorry, but you don't have enough Zeny. I've got to stay in business somehow, you know?";
+			mes "[凱里昂]";
+			mes "糟糕！";
+			mes "我很抱歉，但您沒有足夠的Zeny。 我必須設法維持生意，您知道嗎？";
 			close;
 		}
 		if(MaxWeight - Weight < 71){
 			next;
-			mes "[Kellion]";
-			mes "...Huh?";
-			mes "You better put some of your stuff in Kafra Storage, you can't carry much else!";
+			mes "[凱里昂]";
+			mes "...嗯？";
+			mes "您最好將一些東西放入卡普拉倉庫，您不能再攜帶更多東西了！";
 		} else {
 			Zeny = Zeny - .@cost;
 			tu_merchant = getarg(1);
@@ -714,11 +712,11 @@ L_Potions:
 		}
 		close;
 	case 2:
-		mes "[Kellion]";
-		mes "Well, I'm sorry";
-		mes "to hear that. But";
-		mes "I guess I'll see";
-		mes "you later.";
+		mes "[凱里昂]";
+		mes "好吧，我很抱歉";
+		mes "聽到這個消息。但是";
+		mes "我想我會再";
+		mes "見到您。";
 		close;
 	}
 }
@@ -726,47 +724,47 @@ L_Potions:
 // Aigie
 //============================================================
 prt_in,169,11,3	script	Aigie	4_F_03,{
-	mes "[Aigie]";
+	mes "[艾姬]";
 	if (tu_merchant == 6)
 		callsub L_Potions, 340,10;// <Zeny cost>, <next 'tu_merchant' value>
 	else if (tu_merchant == 7)
 		callsub L_Potions, 420,10;
 	else if (tu_merchant == 8)
 		callsub L_Potions, 390,9;
-	mes "It's true that money isn't everything. I'm sure other things are important to have in order to be happy.";
+	mes "金錢並非萬能，這是真的。 我相信為了幸福，擁有其他東西也很重要。";
 	next;
-	mes "[Aigie]";
-	mes "However, money can be much more dependable than some people I know. You can rely on money more than anything else in this world.";
+	mes "[艾姬]";
+	mes "然而，金錢比我認識的一些人更可靠。 在這個世界上，您可以比其他任何事物都更依賴金錢。";
 	close;
 
 L_Potions:
 	.@cost = getarg(0);
-	mes "Welcome to my shop.";
-	mes "I'm just a young girl who's a victim of circumstance, forced to sell potions on the street for dirt cheap prices.";
+	mes "歡迎來到我的商店。";
+	mes "我只是一個年輕女孩，是環境的受害者，被迫在街上以極低的價格出售藥水。";
 	next;
-	mes "[Aigie]";
-	mes "Would you like";
-	mes "to buy 10 Red Potions";
-	mes "for "+ .@cost +" Zeny, kind adventurer?";
+	mes "[艾姬]";
+	mes "您想要";
+	mes "購買 10 個紅色藥水";
+	mes "以 "+ .@cost +" Zeny，勇敢的冒險家？";
 	next;
-	switch(select("Buy:Cancel")){
+	switch(select("購買:取消")){
 	case 1:
-		mes "[Aigie]";
-		mes "Thank you so much.";
-		mes "Now I can finally";
-		mes "afford food again...";
+		mes "[艾姬]";
+		mes "非常感謝您。";
+		mes "現在我終於可以";
+		mes "負擔得起食物了...";
 		if(Zeny < .@cost){
 			next;
-			mes "[Aigie]";
-			mes "Wait, wait!";
-			mes "I am sorry, but you don't have enough money. Would you please get some more Zeny before coming back?";
+			mes "[艾姬]";
+			mes "等等，等等！";
+			mes "我很抱歉，但您沒有足夠的錢。 請在回來之前多賺一些Zeny好嗎？";
 			close;
 		}
 		if(MaxWeight - Weight < 71){
 			next;
-			mes "[Aigie]";
-			mes "Wait, wait!";
-			mes "You can't possibly carry any more items. Why don't you put your things in Kafra Storage first?";
+			mes "[艾姬]";
+			mes "等等，等等！";
+			mes "您不可能攜帶更多物品了。 為什麼不先將您的東西放入卡普拉倉庫？";
 		} else {
 			Zeny = Zeny - .@cost;
 			tu_merchant = getarg(1);
@@ -774,61 +772,61 @@ L_Potions:
 		}
 		close;
 	case 2:
-		mes "[Aigie]";
-		mes "I understand.";
-		mes "But I hope you";
-		mes "see that I'm offering";
-		mes "you a really good price.";
-		mes "^666666*Sniff Sniff*^000000";
+		mes "[艾姬]";
+		mes "我明白了。";
+		mes "但我希望您";
+		mes "明白我提供的";
+		mes "是個非常優惠的價格。";
+		mes "^666666*啜泣啜泣*^000000";
 		close;
 	}
 }
 
 // Jayon
 //============================================================
-prontera,247,129,3	script	Jayon	4_M_03,{
-	mes "[Jayon]";
+prontera,247,129,3	script	賈揚	4_M_03,{
+	mes "[賈揚]";
 	if (tu_merchant == 6)
 		callsub L_Potions, 410,10;// <Zeny cost>, <next 'tu_merchant' value>
 	else if (tu_merchant == 7)
 		callsub L_Potions, 400,10;
 	else if (tu_merchant == 8)
 		callsub L_Potions, 410,10;
-	mes "The Schwarzwald Republic...";
-	mes "It's a really interesting country. There's Juno and a few other places worth looking around. ";
+	mes "史瓦茲共和國...";
+	mes "真是個有趣的國家。 有朱諾和其他一些值得一看的地方。";
 	next;
-	mes "[Jayon]";
-	mes "They may not be the best places";
-	mes "for sight seeing, but I'm sure they'll offer something of interest to you adventurers.";
+	mes "[賈揚]";
+	mes "它們可能不是最好的";
+	mes "觀光景點，但我相信它們會為你們冒險家提供一些有趣的東西。";
 	close;
 
 L_Potions:
 	.@cost = getarg(0);
-	mes "If you've checked out the market for Red Potions, you know that my price is the best. I'm offering 10 Red Potions for only "+ .@cost +" Zeny!";
+	mes "如果您已經查看過紅色藥水的市場，您就會知道我的價格是最好的。 我提供 10 個紅色藥水，僅需 "+ .@cost +" Zeny！";
 	next;
-	switch(select("Buy:Cancel")){
+	switch(select("購買:取消")){
 	case 1:
-		mes "[Jayon]";
-		mes "Heh heh...!";
-		mes "It looks like";
-		mes "you know your";
-		mes "stuff. You're a";
-		mes "Merchant yourself,";
-		mes "aren't you?";
+		mes "[賈揚]";
+		mes "呵呵...！";
+		mes "看來";
+		mes "您很懂";
+		mes "東西。 您自己";
+		mes "也是個商人，";
+		mes "不是嗎？";
 		if(Zeny < .@cost){
 			next;
-			mes "[Jayon]";
-			mes "But sorry buddy.";
-			mes "Rules are rules.";
-			mes "You gotta meet my price";
-			mes "if you want these potions.";
+			mes "[賈揚]";
+			mes "但是抱歉，夥伴。";
+			mes "規則就是規則。";
+			mes "如果您想要這些藥水，";
+			mes "就必須接受我的價格。";
 			close;
 		}
 		if(MaxWeight - Weight < 71){
 			next;
-			mes "[Jayon]";
-			mes "But sorry buddy. I can't let you carry more than you can handle.";
-			mes "You ought to free up some of your inventory space when you get the chance.";
+			mes "[賈揚]";
+			mes "但是抱歉，夥伴。 我不能讓您攜帶超過您能承受的重量。";
+			mes "您應該找機會清理一些庫存空間。";
 		} else {
 			Zeny = Zeny - .@cost;
 			tu_merchant = getarg(1);
@@ -836,13 +834,13 @@ L_Potions:
 		}
 		close;
 	case 2:
-		mes "[Jayon]";
-		mes "Just looking";
-		mes "around, eh?";
-		mes "I understand.";
-		mes "But you better take";
-		mes "advantage of a real";
-		mes "deal when you see one!";
+		mes "[賈揚]";
+		mes "只是隨便";
+		mes "看看，是嗎？";
+		mes "我明白了。";
+		mes "但是您最好";
+		mes "利用這個真正的";
+		mes "划算機會！";
 		close;
 	}
 }
@@ -850,49 +848,48 @@ L_Potions:
 // Maos
 //============================================================
 prt_in,251,129,3	script	Maos	4_M_SEAMAN,{
-	mes "[Maos]";
+	mes "[毛斯]";
 	if (tu_merchant == 6)
 		callsub L_Potions, 400,10;// <Zeny cost>, <next 'tu_merchant' value>
 	else if (tu_merchant == 7)
 		callsub L_Potions, 340,10;
 	else if (tu_merchant == 8)
 		callsub L_Potions, 420,10;
-	mes "I see too many people struggling to scrape every penny and put it all into their savings...";
+	mes "我看到太多人努力地積攢每一分錢，並將其全部投入儲蓄...";
 	next;
-	mes "[Maos]";
-	mes "Now, don't get me wrong. It's a good idea to invest in the future. But money exists to be spent! Enjoy every moment, that's what I say~";
+	mes "[毛斯]";
+	mes "現在，別誤會我的意思。 投資未來是個好主意。 但是金錢的存在是為了花費的！ 享受每一刻，這就是我要說的～";
 	next;
-	mes "[Maos]";
-	mes "Besides...";
-	mes "You can't take";
-	mes "your money with you";
-	mes "when your time's up,";
-	mes "you know?";
+	mes "[毛斯]";
+	mes "此外...";
+	mes "您無法將";
+	mes "您的錢帶走";
+	mes "當您的時間到了，";
+	mes "您知道嗎？";
 	close;
 
 L_Potions:
 	.@cost = getarg(0);
-	mes "Don't say anything.";
-	mes "I know what you want.";
-	mes "10 Red Potions, right?";
-	mes "I'll sell them to you";
-	mes "for the low price of "+ .@cost +" Zeny~";
+	mes "別說什麼。";
+	mes "我知道您想要什麼。";
+	mes "10 個紅色藥水，對嗎？";
+	mes "我將以 "+ .@cost +" Zeny的低價賣給您～";
 	next;
-	switch(select("Buy:Cancel")){
+	switch(select("購買:取消")){
 	case 1:
-		mes "[Maos]";
-		mes "Excellent choice!";
-		mes "Good products at affordable prices! That's my ethic as a merchant.";
+		mes "[毛斯]";
+		mes "絕佳的選擇！";
+		mes "優質的產品，實惠的價格！ 這是作為商人的我的原則。";
 		if(Zeny < .@cost){
 			next;
-			mes "[Maos]";
-			mes "Ooh, but you don't even have enough Zeny to purchase these potions. I'm sorry, but I can't sell these just to lose money, you know?";
+			mes "[毛斯]";
+			mes "哦，但您甚至沒有足夠的Zeny來購買這些藥水。 很抱歉，但我不能為了賠錢而出售這些藥水，您知道嗎？";
 			close;
 		}
 		if(MaxWeight - Weight < 71){
 			next;
-			mes "[Maos]";
-			mes "Ooh, but it doesn't look like you've got enough inventory space to carry any more items.";
+			mes "[毛斯]";
+			mes "哦，但看起來您的庫存空間不足以攜帶更多物品。";
 		} else {
 			Zeny = Zeny - .@cost;
 			tu_merchant = getarg(1);
@@ -900,8 +897,8 @@ L_Potions:
 		}
 		close;
 	case 2:
-		mes "[Maos]";
-		mes "Well, I can't force you to buy these, but I'm telling you that you're passing up a real bargain!";
+		mes "[毛斯]";
+		mes "好吧，我不能強迫您購買這些藥水，但我要告訴您，您正在錯過一個真正的划算交易！";
 		close;
 	}
 }

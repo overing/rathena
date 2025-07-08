@@ -15,68 +15,68 @@
 //= Version 2.0: Optimized and brought the script up to standard. [Jguy]
 //============================================================ 
 
-prontera,132,217,5	script	Banker	109,{
+prontera,132,217,5	script	銀行員	109,{
 	set @cost,500;
-	mes "[Banker]";
-	mes "Welcome to the First Bank of Prontera. How can I help you today?";
+	mes "[銀行員]";
+	mes "歡迎來到普隆德拉第一銀行。今天有什麼可以為您服務的嗎？";
 	next;
-	switch(select("I'd like to make a deposit.:I'd like to make a withdrawal.:What's my current balance?:Cancel")) {
+	switch(select("我想存款。:我想提款。:我目前的餘額是多少？:取消")) {
 	case 1:
-		mes "[Banker]";
-		mes "Very well... How much would you like to deposit? The maximum you can deposit at once is 999,999 Zeny.";
+		mes "[銀行員]";
+		mes "好的... 您想存多少錢？您一次最多可以存入 999,999 Zeny。";
 		next;
 		if (@cost > 0) {
-			mes "[Banker]";
-			mes "Oh, and do realize there is a " +@cost + " Zeny charge on all transactions!";
+			mes "[銀行員]";
+			mes "喔，請注意所有交易都會收取 " +@cost + " Zeny 的費用！";
 			next;
 		}
 		input @deposit;
 		if (@deposit < 1) {
-			mes "Make sure you ask me to deposit a real amount.";
+			mes "請確保您要求我存入真實金額。";
 			close;
 		}
 		else if (@deposit > Zeny) {
-			mes "It does not appear like you have the amount of zeny you're trying to deposit!";
+			mes "您似乎沒有您想存入的 Zeny 金額！";
 			close;
 		}
 		else if (@deposit > (Zeny - @cost)) {
-			mes "You need " + @cost + " Zeny to cover the transaction fee!";
+			mes "您需要 " + @cost + " Zeny 才能支付交易手續費！";
 			close;
 		}
 		else {
 			set Zeny,Zeny - @deposit;
 			set Zeny,Zeny - @cost;
 			set #bankstorage,#bankstorage + @deposit;
-			mes "[Banker]";
-			mes "Thank you very much... Your zeny is in good hands.";
+			mes "[銀行員]";
+			mes "非常感謝... 您的 Zeny 會受到妥善保管。";
 			close;
 		}
 	case 2:
-		mes "[Banker]";
-		mes "Very well... How much would you like to withdraw? The maximum you can withdraw at one time is 999,999 Zeny";
+		mes "[銀行員]";
+		mes "好的... 您想提取多少錢？您一次最多可以提取 999,999 Zeny";
 		next;
 		if (@cost > 0) {
-			mes "[Banker]";
-			mes "Oh, and do realize there is a " +@cost + " Zeny charge on all transactions!";
+			mes "[銀行員]";
+			mes "喔，請注意所有交易都會收取 " +@cost + " Zeny 的費用！";
 			next;
 		}
 		input @withdrawl;
 		if (@withdrawl < 1) {
-			mes "Please don't play games. I need a real amount to withdraw.";
+			mes "請不要玩遊戲。我需要一個真實的提款金額。";
 			close;
 		}
 		else if (@withdrawl > #bankstorage) {
-			mes "You only have ^00FF00" + callfunc("F_InsertComma",#bankstorage) +"^000000 zeny in your account!";
+			mes "您的帳戶中只有 ^00FF00" + callfunc("F_InsertComma",#bankstorage) +"^000000 Zeny！";
 			close;
 		}
 		else if ((@cost > Zeny) && ((Zeny + @withdrawl) > @cost)) {
-			mes "[Banker]";
-			mes "You don't have the Zeny for the transaction fee right now. Would you like me to take the fee directly from your withdrawal?";
+			mes "[銀行員]";
+			mes "您現在沒有足夠的 Zeny 來支付交易費用。您是否希望我直接從您的提款中扣除費用？";
 			next;
-			switch(select("Yes please.:No, Thanks")){
+			switch(select("好的，麻煩您。:不用了，謝謝。")){
 			case 1:
-				mes "[Banker]";
-				mes "Removing " + @cost + " from your withdrawal to cover the deposit fee...";
+				mes "[銀行員]";
+				mes "從您的提款中扣除 " + @cost + " 以支付存款費用...";
 				set @withdrawl,@withdrawl - @cost;
 				set #bankstorage,#bankstorage - @cost;
 				set @cost,0;
@@ -84,12 +84,12 @@ prontera,132,217,5	script	Banker	109,{
 				set Zeny,Zeny - @cost;
 				set Zeny,Zeny + @withdrawl;
 				set #bankstorage,#bankstorage - @withdrawl;
-				mes "[Banker]";
-				mes "There's your Zeny. Have a good day.";
+				mes "[銀行員]";
+				mes "這是您的 Zeny。祝您有個美好的一天。";
 				close;
 			case 2:
-				mes "[Banker]";
-				mes "Very well... come again soon.";
+				mes "[銀行員]";
+				mes "好的... 歡迎再來。";
 				close;
 			}
 		}
@@ -97,22 +97,22 @@ prontera,132,217,5	script	Banker	109,{
 			set Zeny,Zeny - @cost;
 			set Zeny,Zeny + @withdrawl;
 			set #bankstorage,#bankstorage - @withdrawl;
-			mes "[Banker]";
-			mes "There's your Zeny. Have a good day.";
+			mes "[銀行員]";
+			mes "這是您的 Zeny。祝您有個美好的一天。";
 			close;
 		}
 	case 3:
-		mes "[Banker]";
-		mes "Hmmmm... let me check some paper work.";
+		mes "[銀行員]";
+		mes "嗯... 讓我檢查一些文件。";
 		next;
-		mes "*Rustle, Rustle*";
+		mes "*沙沙, 沙沙*";
 		next;
-		mes "[Banker]";
-		mes "You currently have " + callfunc("F_InsertComma",#bankstorage) + " Zeny in your account.";
+		mes "[銀行員]";
+		mes "您目前的帳戶餘額為 " + callfunc("F_InsertComma",#bankstorage) + " Zeny。";
 		close;
 	case 4:
-		mes "[Banker]";
-		mes "Very well... come again soon.";
+		mes "[銀行員]";
+		mes "好的... 歡迎再來。";
 		close;
 	}
 }

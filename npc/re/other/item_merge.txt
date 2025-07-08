@@ -19,53 +19,54 @@
 //prontera,146,95,3	script	Mergician#pron	1_M_WIZARD,{
 itemmall,35,75,3	script	Mergician#mall	1_M_WIZARD,{
 	if (checkweight(1301,1) == 0) {
-		mes "- Wait a second !! -";
-		mes "- You are carrying too many items -";
-		mes "- or too much weight to proceed. -";
+		mes "- 等等！！ -";
+		mes "- 你攜帶了太多物品 -";
+		mes "- 或過重的重量，無法繼續進行。 -";
+		mes "- 整理好你的物品欄後再來。 -";
 		mes "- Come back after -";
 		mes "- arranging your inventory. -";
 		close;
 	}
 	mes "[Mergician]";
-	mes "Do you believe in the miracle of Merge god?? If so, repeat my spell loudly as I pronounce it!!!";
+	mes "你相信合併之神的神蹟嗎？如果相信，大聲重複我所宣告的咒語！！！";
 	mes "Merge Merge, Merrrrge!!!";
 	next;
-	switch(select("Merrrrge!!!!:What is the miracle of Merge?:Abandon...")) {
+	switch(select("Merrrrge!!!!:什麼是合併的神蹟？:放棄...")) {
 	case 2:
 		mes "[Mergician]";
-		mes "There is an order which rules the world and keeps the world to go well.";
+		mes "有一個秩序統治著世界，並保持世界的良好運轉。";
 		next;
 		mes "[Mergician]";
-		mes "But there has been a bad factor which totally jeopardised this rule!!";
+		mes "但是有一個不好的因素完全危及了這個規則！！";
 		next;
 		mes "[Mergician]";
-		mes "Those things which are separated even if they are composed by the same material!!";
+		mes "那些即使由相同材料組成卻被分離的東西！！";
 		next;
 		mes "[Mergician]";
-		mes "Have you never experienced this bad incident??";
-		mes "The fact that I had ^3131FFthe same potion, but appearing more than twice in your inventory!!^000000 So unpleasant!!!";
+		mes "你從未經歷過這種糟糕的事件嗎？";
+		mes "我竟然在你物品欄裡發現 ^3131FF同樣的藥水，卻出現兩次以上！！^000000 多麼令人不愉快！！！";
 		next;
 		mes "[Mergician]";
-		mes "Believe in Mergism. That is the truth.";
-		mes "Then I can help you be happy and content.";
+		mes "相信合併主義。這就是真相。";
+		mes "這樣我才能幫助你快樂和滿足。";
 		close;
 	case 1:
 		mes "[Mergician]";
-		mes "This is the total holy ritual to pray to the Great God, Merge! and I am borrowing the power for a while!!";
+		mes "這是向偉大的合併之神祈禱的完全神聖的儀式！我正在借用這種力量一段時間！！";
 		next;
 		mes "[Mergician]";
-		mes "And if you eagerly want to be blessed by Merge, be humble and shout out loud! Merge Merge, Merrrrge!!!";
+		mes "如果你渴望得到合併的祝福，謙卑地大聲喊出來！Merge Merge, Merrrrge!!!";
 		next;
-		switch(select("Merrrrge!:Don't follow what he says.")) {
+		switch(select("Merrrrge!:不要聽他胡說。")) {
 		case 1:
 			mergeitem;
 			mes "[Mergician]";
-			mes "Merge just heard your wish and let it be realised!";
-			mes "Open your inventory to check the miracle!";
+			mes "合併之神剛剛聽到了你的願望，並讓它實現了！";
+			mes "打開你的物品欄來查看奇蹟！";
 			close;
 		case 2:
 			mes "[Mergician]";
-			mes "You jerk!!! You just broke the whole rhythm! Why can't you get my flow and follow me?! Idiot!";
+			mes "你這混蛋！！！你剛剛打破了整個節奏！你為什麼不能理解我的節奏並跟隨我？！白痴！";
 			close;
 		}
 	case 3:

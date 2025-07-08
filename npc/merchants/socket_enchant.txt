@@ -30,52 +30,52 @@
 //= 2.0a Added 'disable_items' command. [Euphy]
 //============================================================
 
--	script	Seiyablem#dummy::SocketEnchant	-1,{
+-	script	西雅布勒姆#dummy::SocketEnchant	-1,{
 	if (checkweight(1201,1) == 0)
 	{
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等等！！ -";
+		mes "- 你目前攜帶 -";
+		mes "- 太多物品了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 等你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Seiyablem]";
-	mes "I'm an engineer that specializes in adding Slots to normal Weapons and Armor.";
-	mes "My service fee, the required materials and the chance of success all depend on the specific item I'm working on.";
+	mes "[西雅布勒姆]";
+	mes "我是一名專門為普通武器和盔甲添加插槽的工程師。";
+	mes "我的服務費、所需的材料以及成功的機會都取決於我正在處理的特定物品。";
 	next;
-	mes "[Seiyablem]";
-	mes "Adding Slots may seem simple, but it's far more complicated than it looks.";
-	mes "If you're interested in my service, let me know.";
+	mes "[西雅布勒姆]";
+	mes "添加插槽看起來很簡單，但實際上比看起來複雜得多。";
+	mes "如果你對我的服務感興趣，請告訴我。";
 	next;
-	switch(select("Add Slot to Weapon:Add Slot to Armor:Slot Attempt Info:Cancel"))
+	switch(select("為武器添加插槽:為盔甲添加插槽:插槽嘗試資訊:取消"))
 	{
 		case 1:
-			mes "[Seiyablem]";
-			mes "You want to add a Slot to a weapon?";
-			mes "I categorize weapons by their difficulty in adding a Slot, C Class being easiest and S Class the most difficult.";
-			mes "Which class would you like to try?";
+			mes "[西雅布勒姆]";
+			mes "你想為武器添加一個插槽？";
+			mes "我根據添加插槽的難度將武器分類，C 級最容易，S 級最困難。";
+			mes "你想嘗試哪個級別？";
 			next;
-			switch(select("C Class:B Class:A Class:S Class"))
+			switch(select("C 級:B 級:A 級:S 級"))
 			{
 				case 1:
-					mes "[Seiyablem]";
-					mes "C Class, eh?";
-					mes "Now, I can only upgrade certain equipment in that class, so please choose one of the following items, so we can try to add a Slot to it.";
+					mes "[西雅布勒姆]";
+					mes "C 級，是嗎？";
+					mes "現在，我只能升級該級別中的某些裝備，因此請選擇以下物品之一，以便我們可以嘗試向其添加一個插槽。";
 					next;
-					switch(select("Trident:Rope:Violin"))
+					switch(select("三叉戟:繩索:小提琴"))
 					{
 						case 1: callfunc "Func_Socket",1460,1461,40,66,200,1010,10;
 						case 2: callfunc "Func_Socket",1950,1951,40,66,200,1010,10;
 						case 3: callfunc "Func_Socket",1901,1902,40,66,200,1010,10;
 					}
 				case 2:
-					mes "[Seiyablem]";
-					mes "B Class?";
-					mes "Alright, this is the average equipment category.";
-					mes "Please choose the weapon to which you'd like me to try to add a Slot.";
+					mes "[西雅布勒姆]";
+					mes "B 級？";
+					mes "好的，這是平均裝備類別。";
+					mes "請選擇你希望我嘗試添加插槽的武器。";
 					next;
-					switch(select("Chain:Gladius:Gakkung Bow:Pike:Haedonggum:Lute:Wire:Waghnakh:Arbalest Bow"))
+					switch(select("鎖鏈:格拉迪烏斯:角弓:長矛:海東劍:琉特琴:鋼絲:瓦格納克:弩弓"))
 					{
 						case 1: callfunc "Func_Socket",1519,1520,40,61,300,1010,10;
 						case 2: callfunc "Func_Socket",1219,1220,40,61,300, 984, 1,999,5;
@@ -88,12 +88,12 @@
 						case 9: callfunc "Func_Socket",1713,1715,40,61,300, 984, 2,999,5;
 					}
 				case 3:
-					mes "[Seiyablem]";
-					mes "Ooh, A Class.";
-					mes "This is some high risk territory!";
-					mes "Alright, which weapon would you like me to try adding a Slot?";
+					mes "[西雅布勒姆]";
+					mes "喔，A 級。";
+					mes "這是一些高風險地帶！";
+					mes "好吧，你想讓我嘗試添加哪個武器的插槽？";
 					next;
-					switch(select("Hunter Bow:Survivor's Rod(INT):Zweihander:Flamberge:Infiltrator:Ballista:Stunner:Berserk:Claymore"))
+					switch(select("獵人之弓:倖存者的魔杖(INT):雙手劍:焰形劍:滲透者:弩砲:暈眩者:狂戰士斧:闊劍"))
 					{
 						case 1: callfunc "Func_Socket",1718,1726,40,61,500,984,2,999,10;
 						case 2: callfunc "Func_Socket",1619,1620,40,61,500,984,5,999,10;
@@ -106,13 +106,13 @@
 						case 9: callfunc "Func_Socket",1163,1172,40,61,500,984,2,999,10; // NPC says "5 Oridecon" (Aegis) but takes only 2
 					}
 				case 4:
-					mes "[Seiyablem]";
-					mes "Whoa, whoa, whoa...";
-					mes "S class? Alright...";
-					mes "It'd be a near miracle if I can actually pull this off.";
-					mes "Okay... Which weapon shall we try adding a Slot to?";
+					mes "[西雅布勒姆]";
+					mes "哇，哇，哇...";
+					mes "S 級？好吧...";
+					mes "如果我真的能成功，那幾乎是個奇蹟。";
+					mes "好... 我們應該嘗試為哪個武器添加插槽？";
 					next;
-					switch(select("Gungnir:Poison Knife:Ice Pick:Sucsamad:Ginnungagap:Cutlas:Crescent Scythe:Survivor's Rod(DEX)"))
+					switch(select("岡格尼爾:毒刃:冰錐:蘇克薩馬德:金倫加:彎刀:新月鐮刀:倖存者的魔杖(DEX)"))
 					{
 						case 1: callfunc "Func_Socket", 1413, 1418,40,51,1000,984,5,999,10;
 						case 2: callfunc "Func_Socket", 1239,13016,40,51,1000,984,5,999,10;
@@ -125,22 +125,22 @@
 					}
 			}
 		case 2:
-			mes "[Seiyablem]";
-			mes "Armor, you said?";
-			mes "Sure, no problem.";
-			mes "Armor is divided into 4 different classes, depending on the work difficulty.";
-			mes "C Class is the easiest one, and S Class he hardest one.";
-			mes "Which class would you like to try?";
+			mes "[西雅布勒姆]";
+			mes "你說盔甲？";
+			mes "當然，沒問題。";
+			mes "盔甲分為 4 個不同的等級，具體取決於工作難度。";
+			mes "C 級是最簡單的，S 級是最難的。";
+			mes "你想嘗試哪個級別？";
 			next;
-			switch(select("C Class:B Class:A Class:S Class"))
+			switch(select("C 級:B 級:A 級:S 級"))
 			{
 				case 1:
-					mes "[Seiyablem]";
-					mes "C Class Armor, eh?";
-					mes "Sounds reasonable.";
-					mes "Which armor would you like to try adding a Slot?";
+					mes "[西雅布勒姆]";
+					mes "C 級盔甲，是嗎？";
+					mes "聽起來很合理。";
+					mes "你想嘗試添加哪個盔甲的插槽？";
 					next;
-					switch(select("Mantle:Coat:Circlet:Biretta"))
+					switch(select("披肩:外套:髮箍:主教帽"))
 					{
 						case 1: callfunc "Func_Socket",2307,2308,40,66,200,999,3;
 						case 2: callfunc "Func_Socket",2309,2310,40,66,200,999,3;
@@ -148,11 +148,11 @@
 						case 4: callfunc "Func_Socket",2216,2217,40,66,200,999,3;
 					}
 				case 2:
-					mes "[Seiyablem]";
-					mes "You have chosen average B Class.";
-					mes "So, what kind of armor do you have?";
+					mes "[西雅布勒姆]";
+					mes "你選擇了普通的 B 級。";
+					mes "那麼，你有什么?的盔甲？";
 					next;
-					switch(select("Mirror Shield:Chain Mail:Saint Robe:Silk Robe:Boots:Shoes:Muffler:Guard:Buckler:Shield:Bongun Hat"))
+					switch(select("鏡盾:鎖子甲:聖袍:絲質長袍:長靴:鞋子:圍巾:護腕:圓盾:盾牌:邦古帽"))
 					{
 						case 1:  callfunc "Func_Socket",2107,2108,40,61,250,999,5;
 						case 2:  callfunc "Func_Socket",2314,2315,40,61,250,999,5;
@@ -167,12 +167,12 @@
 						case 11: callfunc "Func_Socket",5046,5168,40,61,250,999,5;
 					}
 				case 3:
-					mes "[Seiyablem]";
-					mes "Ooh, A Class.";
-					mes "This is some high risk territory!";
-					mes "Alright, which armor would you like me to try adding a Slot?";
+					mes "[西雅布勒姆]";
+					mes "喔，A 級。";
+					mes "這是一些高風險地帶！";
+					mes "好吧，你想讓我嘗試添加哪個盔甲的插槽？";
 					next;
-					switch(select("Gemmed Sallet:Bucket Hat:Memory Book:Tights:Legion Plate Armor:Full Plate:Thief Clothes:Greaves:Coif:Manteau:Helm:Ninja Suit:Orc Helm:Ancient Cape:Monk Hat:Golden Gear:Brooch:Munak Hat"))
+					switch(select("鑲寶石的沙拉頭盔:水桶帽:記憶之書:緊身褲:軍團金屬盔甲:全套盔甲:盜賊服:脛甲:頭巾:披肩:頭盔:忍者服:獸人頭盔:古代斗篷:僧侶帽:金色齒輪:胸針:穆納克帽"))
 					{
 						case 1:  callfunc "Func_Socket",2230,2231,40,61,400,985,1;
 						case 2:  callfunc "Func_Socket",5114,5120,40,61,400,985,1;
@@ -194,12 +194,12 @@
 						case 18: callfunc "Func_Socket",2264,5167,40,61,300,985,1;
 					}
 				case 4:
-					mes "[Seiyablem]";
-					mes "Um... S Class?";
-					mes "You sure about this?";
-					mes "Alright... Let me know the Armor to which you'd like to add a Slot, and I'll tell what I need to try it.";
+					mes "[西雅布勒姆]";
+					mes "嗯... S 級？";
+					mes "你確定嗎？";
+					mes "好吧... 告訴我你想添加插槽的盔甲，我會告訴你需要什麼。";
 					next;
-					switch(select("Majestic Goat:Spiky Band:Bone Helm:Corsair:Crown:Tiara:Sphinx Hat:Robe of Cast:Earring:Ring:Bow Thimble"))
+					switch(select("雄偉山羊:尖刺髮帶:骨製頭盔:海盜帽:皇冠:頭飾:人面獅身帽:施法長袍:耳環:戒指:弓箭護指"))
 					{
 						case 1:  callfunc "Func_Socket",2256,5160,40,51,2000,985,2;
 						case 2:  callfunc "Func_Socket",2258,5161,40,51,2000,985,2;
@@ -215,33 +215,33 @@
 					}
 			}
 		case 3:
-			mes "[Seiyablem]";
-			mes "Well, I haven't really refined the art of Slot Addition.";
-			mes "It's so complicated that I'd be lying if I told you that I knew every factor that affected the process.";
-			mes "Still, I do notice a few trends...";
+			mes "[西雅布勒姆]";
+			mes "好吧，我還沒有真正完善插槽添加的藝術。";
+			mes "它太複雜了，如果我告訴你我了解影響該過程的每一個因素，那我就在撒謊了。";
+			mes "不過，我確實注意到了一些趨勢...";
 			next;
-			mes "[Seiyablem]";
-			mes "In some towns, Slot addition attempts are more successful for equipment with fewer upgrades.";
-			mes "In other towns, the opposite is true.";
-			mes "isn't that really peculiar?";
+			mes "[西雅布勒姆]";
+			mes "在某些城鎮，對於升級次數較少的裝備，插槽添加嘗試更容易成功。";
+			mes "在其他城鎮，情況則相反。";
+			mes "這不是很奇怪嗎？";
 			next;
-			mes "[Seiyablem]";
-			mes "Oh, there's also something really important that you should know.";
-			mes "If you ask me to add a Slot to something, make sure that you don't have multiples of it in your inventory.";
+			mes "[西雅布勒姆]";
+			mes "哦，還有一件非常重要的事情你應該知道。";
+			mes "如果你要求我向某個東西添加插槽，請確保你的物品欄中沒有多個相同的東西。";
 			next;
-			mes "[Seiyablem]";
-			mes "Here's an example: if you have a +7 Manteau and a normal Manteau in your inventory, then I will randomly pick one of them for my Slot Addition attempt.";
-			mes "Just remember to be careful.";
+			mes "[西雅布勒姆]";
+			mes "這是一個例子：如果你的物品欄中有一個 +7 披肩和一個普通的披肩，那麼我會隨機選擇其中一個進行插槽添加嘗試。";
+			mes "請記住要小心。";
 			next;
-			mes "[Seiyablem]";
-			mes "Again, ^FF0000only carry one of the equipment to which you want me to add a Slot^000000.";
-			mes "All other equipment with the same name should be placed in your Kafra Storage, got it?";
+			mes "[西雅布勒姆]";
+			mes "再次，^FF0000僅攜帶你希望我添加插槽的裝備^000000。";
+			mes "所有其他具有相同名稱的裝備都應放置在你的卡普拉儲物空間中，明白了嗎？";
 			close;
 		case 4:
-			mes "[Seiyablem]";
-			mes "Take it easy, adventurer.";
-			mes "If you ever want to try adding a Slot to some of your equipment, come back and let me know.";
-			mes "Seeya~";
+			mes "[西雅布勒姆]";
+			mes "放輕鬆，冒險家。";
+			mes "如果你想嘗試為你的某些裝備添加插槽，請回來告訴我。";
+			mes "再見~";
 			close;
 	}
 }
@@ -253,47 +253,47 @@ function	script	Func_Socket	{
 	setarray .@req_amount[0], getarg(6), getarg(8,0);
 
 	disable_items;
-	mes "[Seiyablem]";
-	mes "You want to add a Slot to a "+ getitemname(.@item_id) +"?";
-	mes "Alright, please bring me ^FF0000"+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "s":"") +"^000000, "+ (.@item_req[1] != 0 && .@req_amount[1] != 0 ? ("^FF0000"+ .@req_amount[1] +" "+ getitemname(.@item_req[1]) + (.@req_amount[1] > 1 && .@item_req[1] != 999 ? "s":"") + "^000000 ") : "") + "and my ^FF0000" + (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny^000000 service fee.";
-	mes "Ah, and don't forget to bring that "+ getitemname(.@item_id) +"!";
+	mes "[西雅布勒姆]";
+	mes "你想為 "+ getitemname(.@item_id) +" 添加一個插槽？";
+	mes "好吧，請給我帶 ^FF0000"+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "個":"") +"^000000, "+ (.@item_req[1] != 0 && .@req_amount[1] != 0 ? ("^FF0000"+ .@req_amount[1] +" "+ getitemname(.@item_req[1]) + (.@req_amount[1] > 1 && .@item_req[1] != 999 ? "個":"") + "^000000 ") : "") + "以及我的 ^FF0000" + (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny^000000 服務費。";
+	mes "啊，別忘了帶上那個 "+ getitemname(.@item_id) +"！";
 	next;
-	mes "[Seiyablem]";
+	mes "[西雅布勒姆]";
 	if (getiteminfo(.@item_id, ITEMINFO_LOCATIONS) & EQP_HAND_R) // weapon
 	{
-		mes "I can try to add a slot now if you have the required items and zeny.";
-		mes "However, you should know that there's a chance that I might fail.";
-		mes "Therefore, I need to give you a fair warning...";
+		mes "如果你有需要的物品和 zeny，我現在可以嘗試添加一個插槽。";
+		mes "但是，你應該知道我可能會失敗。";
+		mes "因此，我需要給你一個公平的警告...";
 		next;
-		mes "[Seiyablem]";
-		mes "If this attempt to add a Slot to your Weapon fails, then the ^FF0000Weapon^000000, ^FF0000and any Cards compounded to it will be destroyed^000000.";
+		mes "[西雅布勒姆]";
+		mes "如果嘗試向你的武器添加插槽失敗，那麼^FF0000武器^000000，^FF0000以及任何複合到它的卡片都會被銷毀^000000。";
 	}
 	else // armor
 	{
-		mes "If you have all the required materials, my zeny service fee and the Armor, then we can go ahead with the Slot Addition attempt.";
-		mes "But before that, I must warn you of the risk.";
+		mes "如果你擁有所有必需的材料、我的 zeny 服務費和盔甲，那麼我們可以繼續進行插槽添加嘗試。";
+		mes "但在那之前，我必須警告你風險。";
 		next;
-		mes "[Seiyablem]";
-		mes "If this attempt to add a Slot to your Armor fails, then the ^FF0000Armor^000000, ^FF0000it's upgrades^000000 ^FF0000and any Cards compounded to it will be destroyed^000000.";
+		mes "[西雅布勒姆]";
+		mes "如果嘗試向你的盔甲添加插槽失敗，那麼^FF0000盔甲^000000，^FF0000它的升級^000000 ^FF0000以及任何複合到它的卡片都會被銷毀^000000。";
 	}
-	mes "Do you still want to try to add a Slot?";
+	mes "你仍然想嘗試添加插槽嗎？";
 	next;
-	switch(select("Attempt Slot Addition:Cancel"))
+	switch(select("嘗試添加插槽:取消"))
 	{
 		case 1:
 			if ((Zeny >= .@zeny_req*1000) && countitem(.@item_req[0]) >= .@req_amount[0] && countitem(getarg(7,512)) >= .@req_amount[1] && countitem(.@item_id) > 0)// if there's no getarg(7) and getarg(8) provided, check itemcount against 0 (we still need a valid item ID though)
 			{
-				mes "[Seiyablem]";
-				mes "Alright then, let the work begin!";
-				mes "You'd better pray for a successful result.";
+				mes "[西雅布勒姆]";
+				mes "好吧，讓工作開始吧！";
+				mes "你最好祈禱能成功。";
 				next;
 				set .@a, rand(1,100);
 				if ((.@a > getarg(2)) && (.@a < getarg(3)))
 				{
 					specialeffect getarg(3) == 51 ? EF_LORD : EF_SANCTUARY; // only S Class items have Lord of Vermillion effect
-					mes "[Seiyablem]";
-					mes "Great, it seems to be successful.";
-					mes "It looks pretty well done. Congratulations!";
+					mes "[西雅布勒姆]";
+					mes "太棒了，似乎成功了。";
+					mes "看起來做得很好。恭喜你！";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
@@ -301,68 +301,68 @@ function	script	Func_Socket	{
 					Zeny = Zeny - .@zeny_req *1000;
 					getitem getarg(1),1;
 					next;
-					mes "[Seiyablem]";
-					mes "See you again, buddy!";
+					mes "[西雅布勒姆]";
+					mes "再見，夥計！";
 					close;
 				}
 				else
 				{
 					specialeffect EF_SUI_EXPLOSION;
-					mes "[Seiyablem]";
-					mes "Wah! ...I am so sorry, it failed.";
-					mes "However, I am completely innocent.";
-					mes "This is your luck, and it is destined by god, okay?";
-					mes "Don't be so disappointed, and try next time.";
+					mes "[西雅布勒姆]";
+					mes "哇！ ...我很抱歉，它失敗了。";
+					mes "但是，我是完全無辜的。";
+					mes "這是你的運氣，這是上帝註定的，好嗎？";
+					mes "不要太失望，下次再試。";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
 						delitem .@item_req[1],.@req_amount[1];
 					Zeny = Zeny - .@zeny_req *1000;
 					next;
-					mes "[Seiyablem]";
-					mes "I wish you good luck next time!";
+					mes "[西雅布勒姆]";
+					mes "我祝你下次好運！";
 					close;
 				}
 			}
 			else
 			{
-				mes "[Seiyablem]";
-				mes "I'd like to go ahead with this Slot Addition attempt, but you're missing a few things.";
-				mes "You sure that you have the equipment, required materials and the zeny?";
+				mes "[西雅布勒姆]";
+				mes "我想繼續進行這個插槽添加嘗試，但是你缺少一些東西。";
+				mes "你確定你有裝備、所需的材料和 zeny 嗎？";
 				close;
 			}
 		case 2:
-			mes "[Seiyablem]";
-			mes "Need some time to think about it, huh?";
-			mes "Alright, I can understand.";
-			mes "Just remember that life's no fun if you're always playing it safe~";
+			mes "[西雅布勒姆]";
+			mes "需要一些時間來考慮一下，是嗎？";
+			mes "好吧，我能理解。";
+			mes "只要記住，如果你總是玩得很安全，生活就沒有樂趣了~";
 			close;
 	}
 }
 
-payon,140,151,5	duplicate(SocketEnchant)	Seiyablem#pay	84
-lhz_in02,281,35,5	duplicate(SocketEnchant)	Seiyablem#lhz	84
-prt_in,33,70,5	duplicate(SocketEnchant)	Seiyablem#prt	84
-morocc,51,41,4	duplicate(SocketEnchant)	Seiyablem#moc	84
+payon,140,151,5	duplicate(SocketEnchant)	西雅布勒姆#pay	84
+lhz_in02,281,35,5	duplicate(SocketEnchant)	西雅布勒姆#lhz	84
+prt_in,33,70,5	duplicate(SocketEnchant)	西雅布勒姆#prt	84
+morocc,51,41,4	duplicate(SocketEnchant)	西雅布勒姆#moc	84
 
--	script	Young Man#dummy::SocketMan	-1,{
-	mes "[Young Man]";
-	mes "I'm considering becoming a Slotting Engineer.";
-	mes "It's a new field where you can add Slots to equipment, and it'd be cool if I can work in such a lucrative career.";
+-	script	年輕人#dummy::SocketMan	-1,{
+	mes "[年輕人]";
+	mes "我正在考慮成為一名插槽工程師。";
+	mes "這是一個新的領域，你可以在裝備上添加插槽，如果我能從事這樣一份利潤豐厚的工作，那就太酷了。";
 	next;
-	mes "[Young Man]";
-	mes "There's a huge element of luck involved in successfully adding Slots from what I can understand.";
-	mes "You fail sometimes, but if you're super lucky, you can add two Slots.";
-	mes "Crazy. Huh?";
+	mes "[年輕人]";
+	mes "從我所理解的來看，成功添加插槽需要很大的運氣。";
+	mes "有時候你會失敗，但如果你超級幸運，你可以添加兩個插槽。";
+	mes "瘋狂。是吧？";
 	next;
-	mes "[Young Man]";
-	mes "But don't get too excited.";
-	mes "Only certain equipment can handle the addition of two extra Slots.";
-	mes "There's so much more I have to learn before I can even be an apprentice...";
+	mes "[年輕人]";
+	mes "但不要太興奮。";
+	mes "只有某些裝備可以處理添加兩個額外插槽。";
+	mes "在我甚至成為學徒之前，我還有很多東西要學習...";
 	close;
 }
 
-prt_in,31,57,1	duplicate(SocketMan)	Young Man#prt	97
-payon,143,143,7	duplicate(SocketMan)	Young Man#pay	97
-morocc,60,42,3	duplicate(SocketMan)	Young Man#moc	97
-lhz_in02,269,33,5	duplicate(SocketMan)	Young Man#lhz	97
+prt_in,31,57,1	duplicate(SocketMan)	年輕人#prt	97
+payon,143,143,7	duplicate(SocketMan)	年輕人#pay	97
+morocc,60,42,3	duplicate(SocketMan)	年輕人#moc	97
+lhz_in02,269,33,5	duplicate(SocketMan)	年輕人#lhz	97

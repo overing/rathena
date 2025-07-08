@@ -13,19 +13,19 @@
 //============================================================ 
 
 y_airport,143,43,5	script	Airport Staff#y_air1a::y_airport1	90,{
-	mes "[Airport Staff]";
-	mes "Welcome to Juno Airport where we offer domestic flights to Einbroch, Lighthalzen and Hugel,";
-	mes "and international flights to Izlude and Rachel.";
-	mes "How may I be of service?";
+	mes "[機場人員]";
+	mes "歡迎來到朱諾機場，我們提供國內航班前往艾音布羅克、里希塔樂鎮和毀葛，";
+	mes "以及國際航班前往艾音布洛克和拉赫爾。";
+	mes "請問有什麼能為您服務的嗎？";
 	next;
-	if (select("Board the Airship.:Cancel.") == 1) {
-		mes "[Airport Staff]";
-		mes "The boarding fee for all";
-		mes "flights is 1,200 zeny. If you";
-		mes "use a Free Ticket for Airship,";
-		mes "the boarding fee will be waived.So would you like to depart?";
+	if (select("搭乘飛空艇。:取消。") == 1) {
+		mes "[機場人員]";
+		mes "所有航班的登機費用";
+		mes "都是 1,200 zeny。如果您";
+		mes "使用飛空艇免費搭乘券，";
+		mes "則免除登機費用。那麼您想出發嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			if (countitem(7311) > 0) {
 				delitem 7311,1; //Free_Flying_Ship_Ticket
 				warp "y_airport",148,51;
@@ -36,16 +36,16 @@ y_airport,143,43,5	script	Airport Staff#y_air1a::y_airport1	90,{
 				warp "y_airport",148,51;
 				end;
 			}
-			mes "[Airport Staff]";
-			mes "I'm sorry, but you don't";
-			mes "have 1,200 zeny to pay";
-			mes "for the boarding fee.";
+			mes "[機場人員]";
+			mes "很抱歉，您沒有";
+			mes "1,200 zeny 可以支付";
+			mes "登機費用。";
 			close;
 		}
 	}
-	mes "[Airport Staff]";
-	mes "Thank you and";
-	mes "have a nice day.";
+	mes "[機場人員]";
+	mes "謝謝您，";
+	mes "祝您有美好的一天。";
 	close;
 }
 
@@ -53,28 +53,27 @@ y_airport,158,43,5	duplicate(y_airport1)	Airport Staff#y_air1b	90
 y_airport,126,43,5	duplicate(y_airport1)	Airport Staff#y_air1c	90
 
 y_airport,143,49,3	script	Arrival Staff#y_air2a::y_airport2	90,{
-	mes "[Airport Staff]";
-	mes "Welcome to Juno Airport. If you've just arrived from your";
-	mes "flight, let me guide you to the main terminal. Otherwise, please";
-	mes "board the departing Airship to reach your intended destination.";
+	mes "[機場人員]";
+	mes "歡迎來到朱諾機場。如果您剛從航班抵達，請讓我引導您前往主要航廈。否則，請";
+	mes "搭乘出發的飛空艇前往您想要的目的地。";
 	next;
-	if (select("Exit to main terminal:Cancel") == 1) {
-		mes "[Airport Staff]";
-		mes "Once you're in the main terminal, you must pay the fee once again";
-		mes "to board a departing Airship. You should only exit if your intended";
-		mes "destination is Juno. Proceed to";
-		mes "exit to the main terminal?";
+	if (select("前往主要航廈:取消") == 1) {
+		mes "[機場人員]";
+		mes "一旦您進入主要航廈，您必須再次支付費用";
+		mes "才能搭乘出發的飛空艇。如果您想要";
+		mes "前往的目的地是朱諾，您才應該離開。要";
+		mes "前往主要航廈嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			warp "y_airport",142,40;
 			end;
 		}
 	}
-	mes "[Airport Staff]";
-	mes "Alright, thank you";
-	mes "for your patronage";
-	mes "and I hope you have";
-	mes "a pleasant flight~";
+	mes "[機場人員]";
+	mes "好的，謝謝您的";
+	mes "惠顧";
+	mes "我希望您";
+	mes "有個愉快的旅程～";
 	close;
 }
 
@@ -82,80 +81,82 @@ y_airport,126,51,3	duplicate(y_airport2)	Arrival Staff#y_air2b	90
 y_airport,158,50,3	duplicate(y_airport2)	Arrival Staff#y_air2c	90
 
 y_airport,145,63,5	script	Domestic Boarding	91,{
-	mes "[Boarding Staff]";
-	mes "Would you like to board the";
-	mes "Airship that flies to Einbroch,";
-	mes "Lighthalzen and Hugel? If so,";
-	mes "please let me guide you to that";
-	mes "Airship's boarding area.";
+	mes "[登機人員]";
+	mes "您想要搭乘前往";
+	mes "艾音布羅克、";
+	mes "里希塔樂鎮和毀葛的";
+	mes "飛空艇嗎？如果是的話，";
+	mes "請讓我引導您前往該";
+	mes "飛空艇的登機區域。";
 	next;
-	if (select("Yes:No") == 1) {
+	if (select("是:否") == 1) {
 		warp "yuno",59,244;
 		end;
 	}
-	mes "[Boarding Staff]";
-	mes "Very well, then.";
-	mes "Thank you for your";
-	mes "patronage, and I hope";
-	mes "you enjoy your travels~";
+	mes "[登機人員]";
+	mes "好的，那麼。";
+	mes "謝謝您的";
+	mes "惠顧，我希望";
+	mes "您旅途愉快～";
 	close;
 }
 
 y_airport,140,63,5	script	International Boarding	91,{
-	mes "[Boarding Staff]";
-	mes "Would you like to board";
-	mes "the Airship which flies to";
-	mes "Juno, Izlude and Rachel?";
-	mes "If so, let me guide";
-	mes "you to the boarding area.";
+	mes "[登機人員]";
+	mes "您想要搭乘";
+	mes "前往";
+	mes "朱諾、艾音布洛克和拉赫爾的";
+	mes "飛空艇嗎？";
+	mes "如果是的話，讓我引導";
+	mes "您前往登機區域。";
 	next;
-	if (select("Yes:No") == 1) {
+	if (select("是:否") == 1) {
 		warp "yuno",47,244;
 		end;
 	}
-	mes "[Boarding Staff]";
-	mes "Alright, then.";
-	mes "Thank you for flying";
-	mes "with us, and I hope you";
-	mes "enjoy your travels on our";
-	mes "state of the art Airships.";
+	mes "[登機人員]";
+	mes "好的，那麼。";
+	mes "感謝您搭乘";
+	mes "我們的飛空艇，我希望您";
+	mes "在我們最先進的";
+	mes "飛空艇上旅途愉快。";
 	close;
 }
 
 yuno,14,262,5	script	Airship Staff#yuno01	91,{
-	mes "[Airship Staff]";
-	mes "Welcome to Juno Airport.";
-	mes "Please use this door to";
-	mes "board the Airship that will";
-	mes "be flying all the way to Izlude";
-	mes "in the Rune-Midgarts Kingdom,";
-	mes "and to Rachel in the Arunafeltz";
-	mes "Republic.";
+	mes "[飛空艇人員]";
+	mes "歡迎來到朱諾機場。";
+	mes "請使用此門";
+	mes "搭乘飛往艾音布洛克的";
+	mes "飛空艇，該飛空艇將一路";
+	mes "飛往盧恩米德加茲王國的艾音布洛克";
+	mes "以及艾魯納貝爾茲共和國的";
+	mes "拉赫爾。";
 	next;
-	mes "[Airship Staff]";
-	mes "Otherwise, if Juno is";
-	mes "your intended destination,";
-	mes "please head down the stairs";
-	mes "and ask the Arrival Staff to lead";
-	mes "you to the main terminal. Thank";
-	mes "you, and enjoy your travels.";
+	mes "[飛空艇人員]";
+	mes "否則，如果朱諾是";
+	mes "您想要前往的目的地，";
+	mes "請下樓梯";
+	mes "並請抵達服務人員帶領";
+	mes "您前往主要航廈。謝謝";
+	mes "您，祝您旅途愉快。";
 	close;
 }
 
 yuno,88,263,3	script	Airship Staff#yuno02	91,{
-	mes "[Airship Staff]";
-	mes "Welcome to Juno Airport.";
-	mes "Please use this door to";
-	mes "board the Airship which stops";
-	mes "over Einbroch, Lighthalzen and";
-	mes "Hugel in the Schwarzwald Republic.";
+	mes "[飛空艇人員]";
+	mes "歡迎來到朱諾機場。";
+	mes "請使用此門";
+	mes "搭乘飛往";
+	mes "史瓦西共和國的艾音布羅克、里希塔樂鎮和";
+	mes "毀葛的飛空艇。";
 	next;
-	mes "[Airship Staff]";
-	mes "Otherwise, if Juno is";
-	mes "your intended destination,";
-	mes "please head down the stairs";
-	mes "and ask the Arrival Staff to lead";
-	mes "you to the main terminal. Thank";
-	mes "you, and enjoy your travels.";
+	mes "[飛空艇人員]";
+	mes "否則，如果朱諾是";
+	mes "您想要前往的目的地，";
+	mes "請下樓梯";
+	mes "並請抵達服務人員帶領";
+	mes "您前往主要航廈。謝謝";
+	mes "您，祝您旅途愉快。";
 	close;
 }

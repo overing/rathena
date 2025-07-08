@@ -21,120 +21,119 @@
 //= 1.6 Rescripted to official 10.3 standards. [L0ne_W0lf]
 //============================================================
 
-payon,162,67,4	script	Guide#pay	708,{
+payon,162,67,4	script	嚮導#pay	708,{
 	cutin "pay_soldier",2;
-	mes "[Payon Guide]";
-	mes "Welcome to the";
-	mes "mountain city of Payon.";
-	mes "If you're unfamiliar with this";
-	mes "area, I can help you find what";
-	mes "you're looking for around here.";
+	mes "[斐楊嚮導]";
+	mes "歡迎來到";
+	mes "山岳都市斐楊。";
+	mes "如果你對這裡不熟悉，";
+	mes "我可以幫你找到";
+	mes "你想在這裡找的東西。";
 	set .@loop1,1;
 	while (.@loop1) {
 		next;
-		switch(select("City Guide:Remove Marks from Mini-Map:Notice.:Cancel")) {
+		switch(select("城市嚮導:移除小地圖標記:公告:取消")) {
 		case 1:
-			mes "[Payon Guide]";
-			mes "Please select";
-			mes "a location from";
-			mes "the following menu.";
+			mes "[斐楊嚮導]";
+			mes "請從";
+			mes "以下選單中";
+			mes "選擇地點。";
 			if (.@compass_check == 0) {
-				mes "Would you like me";
-				mes "to mark locations";
-				mes "on your Mini-Map?";
+				mes "要我幫你在";
+				mes "小地圖上標記";
+				mes "地點嗎？";
 				next;
-				if (select("Yes.:No.") == 1) set .@compass_check,1;
+				if (select("是的。:不用了。") == 1) set .@compass_check,1;
 			}
 			set .@loop2,1;
 			while(.@loop2) {
 				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
 				else next;
-				switch(select("^FF0000Archer Guild^000000:Weapon Shop:Tool Shop:Pub:Central Palace:The Empress:Palace Annex:Royal Kitchen:Forge:Cancel")) {
+				switch(select("^FF0000弓箭手公會^000000:武器商店:道具商店:酒館:中央宮殿:女皇:宮殿別館:皇家廚房:鐵匠鋪:取消")) {
 				case 1:
-					mes "[Payon Guide]";
-					mes "The Archer Guild handles";
-					mes "Job Changes to the Archer";
-					mes "Class. You'll need to enter";
-					mes "the Archer Village which is";
-					mes "to the northeast of Payon.";
+					mes "[斐楊嚮導]";
+					mes "弓箭手公會負責";
+					mes "弓箭手職業的";
+					mes "轉職。 你需要進入";
+					mes "位於斐楊東北方的";
+					mes "弓箭手村莊。";
 					if (.@compass_check)
 						viewpoint 1,227,328,2,0xFF0000;
 					break;
 				case 2:
-					mes "[Payon Guide]";
-					mes "The Weapon Shop";
-					mes "can be found in the";
-					mes "northwest corner of";
-					mes "the city of Payon.";
+					mes "[斐楊嚮導]";
+					mes "武器商店";
+					mes "位於";
+					mes "斐楊城的";
+					mes "西北角。";
 					if (.@compass_check)
 						viewpoint 1,139,159,3,0xFF00FF;
 					break;
 				case 3:
-					mes "[Payon Guide]";
-					mes "The Tool Shop";
-					mes "is located near";
-					mes "the northwest";
-					mes "corner of Payon.";
+					mes "[斐楊嚮導]";
+					mes "道具商店";
+					mes "位於";
+					mes "西北";
+					mes "斐楊的角落附近。";
 					if (.@compass_check)
 						viewpoint 1,144,85,4,0xFF00FF;
 					break;
 				case 4:
-					mes "[Payon Guide]";
-					mes "The Pub can be";
-					mes "found in the northeast";
-					mes "part of Payon. It's the";
-					mes "best place to relax after";
-					mes "a long day of hunting.";
+					mes "[斐楊嚮導]";
+					mes "酒館位於";
+					mes "斐楊的東北方";
+					mes "部分。這是";
+					mes "經過漫長的一天狩獵後";
+					mes "放鬆身心的最佳場所。";
 					if (.@compass_check)
 						viewpoint 1,220,117,5,0xFF00FF;
 					break;
 				case 5:
-					mes "[Payon Guide]";
-					mes "The Central Palace";
-					mes "is located to the north";
-					mes "within the city of Payon.";
+					mes "[斐楊嚮導]";
+					mes "中央宮殿";
+					mes "位於斐楊城";
+					mes "的北部。";
 					if (.@compass_check)
 						viewpoint 1,155,245,6,0x00FF00;
 					break;
 				case 6:
-					mes "[Payon Guide]";
-					mes "The Empress";
-					mes "can be found to the";
-					mes "northwest in Payon.";
+					mes "[斐楊嚮導]";
+					mes "女皇";
+					mes "位於";
+					mes "斐楊的西北方。";
 					if (.@compass_check)
 						viewpoint 1,107,324,7,0x00FF00;
 					break;
 				case 7:
-					mes "[Payon Guide]";
-					mes "The Palace Annex";
-					mes "can be found in the";
-					mes "western part of Payon.";
+					mes "[斐楊嚮導]";
+					mes "宮殿別館";
+					mes "位於";
+					mes "斐楊的西部。";
 					if (.@compass_check)
 						viewpoint 1,130,204,8,0x00FF00;
 					break;
 				case 8:
-					mes "[Payon Guide]";
-					mes "The Royal Kitchen";
-					mes "is located near the";
-					mes "northern end of Payon.";
+					mes "[斐楊嚮導]";
+					mes "皇家廚房";
+					mes "位於";
+					mes "斐楊的北端附近。";
 					if (.@compass_check)
 						viewpoint 1,154,325,9,0x00FF00;
 					break;
 				case 9:
-					mes "[Payon Guide]";
-					mes "The Forge is";
-					mes "situated near";
-					mes "the center of Payon.";
+					mes "[斐楊嚮導]";
+					mes "鐵匠鋪";
+					mes "位於";
+					mes "斐楊的中心附近。";
 					if (.@compass_check)
 						viewpoint 1,126,169,10,0xFFFF00;
 					break;
 				case 10:
-					mes "[Payon Guide]";
-					mes "Please ask me to ''Remove";
-					mes "Marks from Mini-Map'' if you";
-					mes "no longer wish to have the";
-					mes "location marks displayed";
-					mes "on your Mini-Map.";
+					mes "[斐楊嚮導]";
+					mes "如果您不再希望";
+					mes "在小地圖上顯示";
+					mes "位置標記，請告訴我";
+					mes "''移除小地圖標記''。";
 					set .@loop2,0;
 					break;
 				}
@@ -153,34 +152,34 @@ payon,162,67,4	script	Guide#pay	708,{
 			set .@compass_check,0;
 			break;
 		case 3:
-			mes "[Payon Guide]";
-			mes "Advances in sorcery and";
-			mes "technology have allowed";
-			mes "us to update our information";
-			mes "system, enabling up to mark";
-			mes "locations on your Mini-Map";
-			mes "for easier navigation.";
+			mes "[斐楊嚮導]";
+			mes "巫術和";
+			mes "技術的進步使得";
+			mes "我們能夠更新我們的資訊";
+			mes "系統，能夠在你的小地圖上";
+			mes "標記位置";
+			mes "以便更輕鬆地導航。";
 			next;
-			mes "[Payon Guide]";
-			mes "Your Mini-Map is located";
-			mes "in the upper right corner";
-			mes "of the screen. If you can't";
-			mes "see it, press the Ctrl + Tab";
-			mes "keys or click the ''Map'' button in your Basic Info Window.";
+			mes "[斐楊嚮導]";
+			mes "你的小地圖位於";
+			mes "螢幕的右上角";
+			mes "的螢幕。 如果你看不到";
+			mes "它，請按 Ctrl + Tab";
+			mes "鍵或點擊基本資訊視窗中的 ''地圖'' 按鈕。";
 			next;
-			mes "[Payon Guide]";
-			mes "On your Mini-Map,";
-			mes "click on the ''+'' and ''-''";
-			mes "symbols to zoom in and";
-			mes "our of your Mini-Map. We";
-			mes "hope you enjoy your travels";
-			mes "here in the city of Payon.";
+			mes "[斐楊嚮導]";
+			mes "在你的小地圖上，";
+			mes "點擊 ''+'' 和 ''-''";
+			mes "符號來放大和";
+			mes "縮小你的小地圖。 我們";
+			mes "希望你在斐楊城";
+			mes "的旅途中玩得愉快。";
 			break;
 		case 4:
-			mes "[Payon Guide]";
-			mes "Be safe in";
-			mes "your travels,";
-			mes "brave adventurer.";
+			mes "[斐楊嚮導]";
+			mes "祝你旅途";
+			mes "平安，";
+			mes "勇敢的冒險家。";
 			close2;
 			set .@loop1,0;
 			break;
@@ -190,25 +189,25 @@ payon,162,67,4	script	Guide#pay	708,{
 	end;
 }
 
-pay_arche,85,30,2	script	Guide#2pay	708,{
+pay_arche,85,30,2	script	嚮導#2pay	708,{
 	cutin "pay_soldier",2;
-	mes "[Payon Guide]";
-	mes "Welcome to the";
-	mes "mountain city of Payon.";
-	mes "If you're unfamiliar with this";
-	mes "area, I can help you find what";
-	mes "you're looking for around here.";
+	mes "[斐楊嚮導]";
+	mes "歡迎來到";
+	mes "山岳都市斐楊。";
+	mes "如果你對這裡不熟悉，";
+	mes "我可以幫你找到";
+	mes "你想在這裡找的東西。";
 	set .@loop1,1;
 	while (.@loop1) {
 		next;
-		switch(select("City Guide:Remove Marks from Mini-Map:Notice:Cancel")) {
+		switch(select("城市嚮導:移除小地圖標記:公告:取消")) {
 		case 1:
-			mes "[Payon Guide]";
-			mes "Please, select a menu.";
+			mes "[斐楊嚮導]";
+			mes "請選擇一個選單。";
 			if (.@compass_check == 0) {
-				mes "Would you like to leave indicators on the mini-map?";
+				mes "您想要在地圖上留下指標嗎？";
 				next;
-				if (select("Yes.:No.") == 1) set .@compass_check,1;
+				if (select("是的。:不用了。") == 1) set .@compass_check,1;
 			}
 			set .@loop2,1;
 			while(.@loop2) {
@@ -216,36 +215,36 @@ pay_arche,85,30,2	script	Guide#2pay	708,{
 				else next;
 				switch(select("^FF0000Archer Guild^000000:Tool Shop:Payon Dungeon:Cancel")) {
 				case 1:
-					mes "[Payon Guide]";
-					mes "The Archer Guild,";
-					mes "found northeast in";
-					mes "the Archer Village,";
-					mes "handles Job Changes";
-					mes "to the Archer Class.";
+					mes "[斐楊嚮導]";
+					mes "弓箭手公會，";
+					mes "位於東北方的";
+					mes "弓箭手村莊，";
+					mes "負責弓箭手職業的";
+					mes "轉職。";
 					if (.@compass_check)
 						viewpoint 1,144,164,0,0xFFFF00;
 					break;
 				case 2:
-					mes "[Payon Guide]";
-					mes "You can find";
-					mes "a Tool Shop in";
-					mes "the northeast corner";
-					mes "of the Archer Village.";
+					mes "[斐楊嚮導]";
+					mes "你可以在";
+					mes "弓箭手村莊的";
+					mes "東北角";
+					mes "找到道具商店。";
 					if (.@compass_check)
 						viewpoint 1,71,156,1,0xFFFF00;
 					break;
 				case 3:
-					mes "[Payon Guide]";
-					mes "The entrance to";
-					mes "the Payon Dungeon";
-					mes "is located at the west";
-					mes "end of the village.";
+					mes "[斐楊嚮導]";
+					mes "斐楊地監的";
+					mes "入口位於";
+					mes "村莊的西邊";
+					mes "盡頭。";
 					if (.@compass_check)
 						viewpoint 1,34,132,2,0xFFFFFF;
 					break;
 				case 4:
-					mes "[Payon Guide]";
-					mes "If you'd like to erase the marks on the mini-map, select menu, 'Wipe all indicators on the mini-map'.";
+					mes "[斐楊嚮導]";
+					mes "如果您想擦除迷你地圖上的標記，請選擇選單，“擦除迷你地圖上的所有指示符”。";
 					set .@loop2,0;
 					break;
 				}
@@ -258,34 +257,34 @@ pay_arche,85,30,2	script	Guide#2pay	708,{
 			set .@compass_check,0;
 			break;
 		case 3:
-			mes "[Payon Guide]";
-			mes "Advances in sorcery and";
-			mes "technology have allowed";
-			mes "us to update our information";
-			mes "system, enabling up to mark";
-			mes "locations on your Mini-Map";
-			mes "for easier navigation.";
+			mes "[斐楊嚮導]";
+			mes "巫術和";
+			mes "技術的進步使得";
+			mes "我們能夠更新我們的資訊";
+			mes "系統，能夠在你的小地圖上";
+			mes "標記位置";
+			mes "以便更輕鬆地導航。";
 			next;
-			mes "[Payon Guide]";
-			mes "Your Mini-Map is located";
-			mes "in the upper right corner";
-			mes "of the screen. If you can't";
-			mes "see it, press the Ctrl + Tab";
-			mes "keys or click the ''Map'' button in your Basic Info Window.";
+			mes "[斐楊嚮導]";
+			mes "你的小地圖位於";
+			mes "螢幕的右上角";
+			mes "的螢幕。 如果你看不到";
+			mes "它，請按 Ctrl + Tab";
+			mes "鍵或點擊基本資訊視窗中的 ''地圖'' 按鈕。";
 			next;
-			mes "[Payon Guide]";
-			mes "On your Mini-Map,";
-			mes "click on the ''+'' and ''-''";
-			mes "symbols to zoom in and";
-			mes "our of your Mini-Map. We";
-			mes "hope you enjoy your travels";
-			mes "here in the city of Payon.";
+			mes "[斐楊嚮導]";
+			mes "在你的小地圖上，";
+			mes "點擊 ''+'' 和 ''-''";
+			mes "符號來放大和";
+			mes "縮小你的小地圖。 我們";
+			mes "希望你在斐楊城";
+			mes "的旅途中玩得愉快。";
 			break;
 		case 4:
-			mes "[Payon Guide]";
-			mes "Be safe in";
-			mes "your travels,";
-			mes "brave adventurer.";
+			mes "[斐楊嚮導]";
+			mes "祝你旅途";
+			mes "平安，";
+			mes "勇敢的冒險家。";
 			close2;
 			set .@loop1,0;
 			break;

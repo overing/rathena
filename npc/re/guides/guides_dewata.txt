@@ -15,19 +15,19 @@
 //============================================================ 
 
 dewata,202,106,4	script	Dewata Guide#dewata01	4_M_DEWWOMAN,{
-	mes "[Dewata Guide]";
-	mes "Welcome to ^8B4513Dewata Island^000000,";
-	mes "a place with dazzling waves and charming views it's a great place to relax.";
-	mes "If you have any questions, please ask me.";
+	mes "[德瓦塔嚮導]";
+	mes "歡迎來到 ^8B4513德瓦塔島^000000，";
+	mes "這裡有耀眼的海浪和迷人的景色，是個放鬆的好地方。";
+	mes "如果您有任何問題，請隨時問我。";
 	next;
-	mes "[Dewata Guide]";
-	mes "Where can I guide you?";
+	mes "[德瓦塔嚮導]";
+	mes "我能為您指引到哪裡呢？";
 	F_Navi("[Dewata Guide]");
 	while (1) {
 		next;
-		switch(select("[ Kafra Employee ]:[ Weapon Dealer ]:[ Armor Dealer ]:[ Tool Dealer ]:[ Restauranteur ]:[ Krakatau Gatekeeper ]:[ Alberta Sailor ]:Remove marks from Mini-Map:Cancel")) {
+		switch(select("[ 卡普拉員工 ]:[ 武器商人 ]:[ 防具商人 ]:[ 工具商人 ]:[ 餐廳老闆 ]:[ 克拉卡托閘門守衛 ]:[ 艾爾貝塔水手 ]:從迷你地圖移除標記:取消")) {
 		case 1:
-			callsub L_Mark, "^0000FFKafra Employee^000000";
+			callsub L_Mark, "^0000FF卡普拉職員^000000";
 			viewpoint 1,202,184,0,0x000FFF;
 			break;
 		case 2:
@@ -55,9 +55,9 @@ dewata,202,106,4	script	Dewata Guide#dewata01	4_M_DEWWOMAN,{
 			viewpoint 1,229,49,6,0x00BFFF;
 			break;
 		case 8:
-			mes "[Dewata Guide]";
-			mes "I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[德瓦塔嚮導]";
+			mes "我會從您的迷你地圖移除所有標記。";
+			mes "還有什麼我可以為您做的嗎？";
 			viewpoint 2,202,184,0,0xFFFFFF;
 			viewpoint 2,218,163,1,0xFFFFFF;
 			viewpoint 2,158,182,2,0xFFFFFF;
@@ -67,18 +67,18 @@ dewata,202,106,4	script	Dewata Guide#dewata01	4_M_DEWWOMAN,{
 			viewpoint 2,230,52,6,0xFFFFFF;
 			break;
 		case 9:
-			mes "[Dewata Guide]";
-			mes "Enjoy your trip!!";
+			mes "[德瓦塔嚮導]";
+			mes "旅途愉快！！";
 			close;
 		}
 	}
 
 L_Mark:
-	mes "[Dewata Guide]";
-	mes "The "+getarg(0)+" is";
-	mes "marked on your mini-map.";
-	mes "Check your mini-map.";
-	mes "Is there anything else I can do for you?";
+	mes "[德瓦塔嚮導]";
+	mes "地圖上的"+getarg(0)+"已";
+	mes "在地圖上標記。";
+	mes "查看您的迷你地圖。";
+	mes "還有什麼我可以為您做的嗎？";
 	return;
 }
 dewata,197,184,4	duplicate(Dewata Guide#dewata01)	Dewata Guide#dewata02	535

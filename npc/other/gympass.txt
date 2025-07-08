@@ -17,50 +17,49 @@
 //= 1.3 Updated script, and fixed potential errors. [L0ne_W0lf]
 //============================================================ 
 
-payon,173,141,4	script	Ripped Cabus#GymPass	899,{
-	mes "[Ripped]";
-	mes "Hey, there. People aren't";
-	mes "as physically active as they";
-	mes "used to be. Even if you fight";
-	mes "for a living, your body might";
-	mes "be weak and flabby in some";
-	mes "areas. Know what I mean?";
+payon,173,141,4	script	雷普卡布斯#GymPass	899,{
+	mes "[雷普]";
+	mes "嘿，你好。人們不像";
+	mes "以前那樣活躍了。即使你";
+	mes "以戰鬥為生，你的身體";
+	mes "某些部位可能還是虛弱而鬆弛的。";
+	mes "你知道我的意思嗎？";
 	next;
-	mes "[Ripped]";
-	mes "Hey, train with me, and I can";
-	mes "guarantee that you'll be able";
-	mes "to lift and carry more of your";
-	mes "stuff. Just gimme your";
-	mes "^FF0000Gym Pass^000000 each time,";
-	mes "and we'll be good to go.";
+	mes "[雷普]";
+	mes "嘿，跟我一起訓練，我可以";
+	mes "保證你能夠";
+	mes "舉起並攜帶更多的東西。";
+	mes "每次只要給我你的";
+	mes "^FF0000健身通行證^000000，";
+	mes "我們就可以開始了。";
 	next;
-	mes "[Ripped]";
-	mes "But don't get too excited:";
-	mes "no matter how much training";
-	mes "I take you through, you can";
-	mes "overdo it. You ever hear of";
-	mes "anyone that got too buff?";
-	mes "That's cuz they're dead. See?";
+	mes "[雷普]";
+	mes "但是別太興奮：";
+	mes "無論我讓你接受多少訓練";
+	mes "你都可能會過度訓練。";
+	mes "你聽說過";
+	mes "有人變得太壯了嗎？";
+	mes "那是因為他們死了。明白了嗎？";
 	next;
-	mes "[Ripped]";
-	mes "I'd say that it'd be safe";
-	mes "for you to seriously train";
-	mes "with me and increase your";
-	mes "item carrying capacity ^FF000010 times^000000.";
-	mes "So... Are you ready to sweat?";
+	mes "[雷普]";
+	mes "我認為，對你來說，";
+	mes "跟我一起認真訓練，";
+	mes "並增加你的";
+	mes "物品攜帶容量 ^FF000010次^000000，是安全的。";
+	mes "所以... 你準備好流汗了嗎？";
 	next;
-	switch(select("Yes:No:Um, my workouts wore off.")) {
+	switch(select("是的:否:嗯，我的鍛鍊效果消失了。")) {
 	case 1:
 		if (gympassmemory < 10) {
 			set .@add_carry,gympassmemory + 1;
 			set .@remain_carry,10 - .@add_carry;
 			if (countitem(7776) > 0) {
-				mes "[Ripped]";
-				mes "Oh, awesome, I see you";
-				mes "brought your Gym Pass.";
-				mes "Alright, just do what I do,";
-				mes "and try to feel the burn.";
-				mes "Ready? Let's do this.";
+				mes "[雷普]";
+				mes "哦，太棒了，我看到你";
+				mes "帶了你的健身通行證。";
+				mes "好的，照我做的，";
+				mes "試著感受那種燃燒的感覺。";
+				mes "準備好了嗎？開始吧。";
 				next;
 				specialeffect2 EF_EARTHSPIKE;
 				next;
@@ -70,56 +69,56 @@ payon,173,141,4	script	Ripped Cabus#GymPass	899,{
 				next;
 				specialeffect2 EF_SIGHTRASHER;
 				next;
-				mes "[Ripped]";
-				mes "There, you should be able";
-				mes "to carry more stuff with you.";
-				mes "Let's see, we can increase";
-				mes "your item carrying capacity";
-				mes "^FF00000" + .@remain_carry + "^000000 more times if we continue";
-				mes "training together like this.";
+				mes "[雷普]";
+				mes "好了，你現在應該可以";
+				mes "攜帶更多的東西了。";
+				mes "讓我想想，如果我們像這樣";
+				mes "繼續一起訓練，我們可以增加";
+				mes "你的物品攜帶容量";
+				mes "^FF00000" + .@remain_carry + "^000000 更多次。";
 				delitem 7776,1; //Max_Weight_Up_Scroll
 				set gympassmemory,.@add_carry;
 				skill "ALL_INCCARRY",.@add_carry,SKILL_PERM_GRANT;
 				close;
 			}
 			else {
-				mes "[Ripped]";
-				mes "Dude, what'd I tell you?";
-				mes "You gotta bring me your";
-				mes "^FF0000Gym Pass^000000 if you wanna";
-				mes "work out, and build up your";
-				mes "item carrying muscles.";
+				mes "[雷普]";
+				mes "老兄，我跟你說過什麼？";
+				mes "如果你想";
+				mes "鍛鍊並增強你的";
+				mes "物品攜帶肌肉，你必須";
+				mes "帶你的 ^FF0000健身通行證^000000 給我。";
 				close;
 			}
 		}
 		else {
-			mes "[Ripped]";
-			mes "Dude, I don't think we can";
-			mes "build up your item carrying";
-			mes "muscles anymore than that.";
-			mes "It's too dangerous for your";
-			mes "body if we even tried! C'mon,";
-			mes "I told you about the limits.";
+			mes "[雷普]";
+			mes "老兄，我不認為我們能";
+			mes "再增強你的物品攜帶";
+			mes "肌肉了。";
+			mes "如果我們嘗試的話，對你的";
+			mes "身體來說太危險了！拜託，";
+			mes "我告訴過你極限了。";
 			close;
 		}
 	case 2:
-		mes "[Ripped]";
-		mes "Aw, that's too bad.";
-		mes "Well, come back if you";
-		mes "change your mind. Tell";
-		mes "your friends about me:";
-		mes "if they're flabby, I'll help";
-		mes "get them in shape.";
+		mes "[雷普]";
+		mes "喔，太可惜了。";
+		mes "好吧，如果你";
+		mes "改變主意，就回來吧。告訴";
+		mes "你的朋友們關於我的事：";
+		mes "如果他們很虛弱，我會幫助";
+		mes "他們恢復體態。";
 		close;
 	case 3:
 		if (gympassmemory > 0) {
-			mes "[Ripped]";
-			mes "What happened?";
-			mes "You let your item carrying";
-			mes "muscles just atrophy? Lucky";
-			mes "for you, there's such a thing";
-			mes "as muscle memory. It's won't take";
-			mes "as long to build 'em back up...";
+			mes "[雷普]";
+			mes "發生什麼事了？";
+			mes "你讓你的物品攜帶";
+			mes "肌肉萎縮了嗎？你很幸運，";
+			mes "因為有肌肉記憶這種東西。";
+			mes "重建它們不會花";
+			mes "那麼長的時間...";
 			next;
 			specialeffect2 EF_EARTHSPIKE;
 			next;
@@ -129,21 +128,21 @@ payon,173,141,4	script	Ripped Cabus#GymPass	899,{
 			next;
 			specialeffect2 EF_SIGHTRASHER;
 			next;
-			mes "[Ripped]";
-			mes "How about that?";
-			mes "Your item carrying";
-			mes "muscles grew back,";
-			mes "just like that! Try not to";
-			mes "wimp out again, okay?";
+			mes "[雷普]";
+			mes "怎麼樣？";
+			mes "你的物品攜帶";
+			mes "肌肉又長回來了，";
+			mes "就像那樣！盡量不要";
+			mes "再次示弱，好嗎？";
 			skill "ALL_INCCARRY",gympassmemory,SKILL_PERM_GRANT;
 			close;
 		}
 		else {
-			mes "[Ripped]";
-			mes "Uhh...";
-			mes "We didn't work out";
-			mes "together before.";
-			mes "I'm sure about that.";
+			mes "[雷普]";
+			mes "呃...";
+			mes "我們之前沒有一起";
+			mes "鍛鍊過。";
+			mes "我很確定。";
 			close;
 		}
 	}

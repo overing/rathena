@@ -15,139 +15,139 @@
 //= 1.2 Added use of F_HasEdenGroupMark function. [Ragno]
 //============================================================
 
-moc_para01,41,76,3	script	Ragi#1	4_M_RAGI,{
+moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 	cutin "ragi01",0;
-	mes "[Ragi]";
+	mes "[拉奇]";
 	if (!callfunc("F_HasEdenGroupMark")) {
-		mes "Only adventurers from Eden Group are welcome here.";
-		mes "I'm giving requests to base level ^FF0000130-140^000000 adventurers only.";
+		mes "只有伊甸園的冒險家才歡迎來到這裡。";
+		mes "我只對等級 ^FF0000130-140^000000 的冒險家發布請求。";
 	}
 	else if (para_130lv01 == 0) {
-		mes "Hi. I'm the new member of the Dandelion band Ragi. I am making songs on behalf of Aigu. Are you interested in a story?";
+		mes "嗨。我是蒲公英樂隊的新成員拉奇。我代表艾格創作歌曲。你有興趣聽故事嗎？";
 		next;
-		mes "[Ragi]";
-		mes "Haha. I am sorry to request to adventurers even though I am a new.";
+		mes "[拉奇]";
+		mes "哈哈。我很抱歉，雖然我還是個新人，卻向冒險家提出請求。";
 		next;
-		mes "[Ragi]";
-		mes "Just take a look at the list. Can you help me if it is okay with you?";
+		mes "[拉奇]";
+		mes "請看看列表。如果可以的話，你能幫我嗎？";
 		para_130lv01 = 1;
 	}
 	else {
-		mes "I am collecting stories to make a song on behalf of Aigu.";
+		mes "我正在收集故事，以便代表艾格創作歌曲。";
 		next;
-		if (select( "Request to collect stories", "Conversation" ) == 1) {
-			mes "[Ragi]";
+		if (select( "請求收集故事", "對話" ) == 1) {
+			mes "[拉奇]";
 			if (BaseLevel < 131) {
 				cutin "ragi02",0;
-				mes "This is the request of Aigu but it is dangerous. You should grow up more.";
+				mes "這是艾格的請求，但很危險。你應該變得更強大。";
 			}
 			else if (BaseLevel < 141) {
-				mes "This song and story is about monsters. ^FF0000Tell me the story about how you felt while you were fighting with them.^000000";
+				mes "這首歌和故事是關於怪物的。 ^FF0000告訴我你與它們戰鬥時的感受。^000000";
 				next;
-				switch( select( "The story of the lost", "Story of devil", "Story from far away distance" ) ) {
-					mes "[Ragi]";
+				switch( select( "失落的故事", "惡魔的故事", "來自遙遠距離的故事" ) ) {
+					mes "[拉奇]";
 				case 1:
-					mes "Lighthalzen has many stories that I'm sure are sad and lost. Their stories should not be forgotten so please tell me what you can.";
+					mes "樂園之都應該有很多悲傷和失落的故事。他們的故事不應該被遺忘，所以請告訴我你所知道的。";
 					next;
-					switch( select( "Egnigem Cenia (Swordman Monster)",
-									"Armeyer Dinze (Merchant Monster)",
-									"Wickebine Tres (Thief Monster)",
-									"Kavach Icarus (Archer Monster)",
-									"Errende Ebecee (Acolyte Monster)",
-									"Laurell Weinder (Mage Monster)" ) ) {
-						mes "[Ragi]";
+					switch( select( "艾尼格瑪?賽尼亞 (劍士怪物)",
+									"阿邁爾·丁茲 (商人怪物)",
+									"維克賓·特雷斯 (盜賊怪物)",
+									"卡瓦奇·伊卡洛斯 (弓箭手怪物)",
+									"艾倫德·艾貝西 (服事怪物)",
+									"勞蕾爾·溫德 (法師怪物)" ) ) {
+						mes "[拉奇]";
 					case 1:
 						if (checkquest(13144,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13143,HUNTING) == 1) {
-							cutin "檜斜棲薊撮棲嬴蘋萄",3;  //ygnizem_card
-							mes "She is a sad swordman in such a far away place. What brought here there do you think?";
+							cutin "??????????????",3;  //ygnizem_card
+							mes "她是在如此遙遠的地方的一位悲傷劍士。你認為是什麼把她帶到這裡？";
 							next;
-							mes "[Ragi]";
-							mes "These are very important stories to someone. I want to make a song with these stories. Please help me.";
+							mes "[拉奇]";
+							mes "這些對某些人來說是非常重要的故事。我想用這些故事創作一首歌。請幫幫我。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13143,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？如果你在旅途中聽到了任何故事，請告訴我。";
 							callsub S_Quest,13143,13144,1100000,300000;
 						}
 						else {
-							cutin "檜斜棲薊撮棲嬴蘋萄",3;  //ygnizem_card
-							mes "A sword woman who is stronger than any swordmen. Egnigem Cenia. That is her name. I am not sure if that is her or someone else.";
+							cutin "??????????????",3;  //ygnizem_card
+							mes "一位比任何劍士都強大的劍女。艾尼格瑪?賽尼亞。那是她的名字。我不確定那是她還是其他人。";
 							next;
-							mes "[Ragi]";
-							mes "I can not lose her story. I really wish you to stop by.";
+							mes "[拉奇]";
+							mes "我不能失去她的故事。我真的希望你能停下來聽聽。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "It will be more dangerous than you think. But story must be conveyed for everyone.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉奇]";
+								mes "這會比你想像的更危險。但故事必須傳達給每個人。";
 								callsub S_Quest,13144,13143;
 							}
 						}
 						break;
 					case 2:
 						if (checkquest(13146,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13145,HUNTING) == 1) {
-							cutin "嬴腦葆檜橫蛞薯蘋萄",3;  //armaia_card
-							mes "How far could she have continued her journey? I guess she could not do it alone.";
+							cutin "??????????????",3;  //armaia_card
+							mes "她到底能繼續她的旅程多遠？我猜她不能獨自完成。";
 							next;
-							mes "[Ragi]";
-							mes "You do not wonder why that journey should have stopped?";
+							mes "[拉奇]";
+							mes "你不覺得奇怪，為什麼那段旅程應該停止？";
 							next;
-							mes "[Ragi]";
-							mes "I want to make a song with these stories. Please help me.";
+							mes "[拉奇]";
+							mes "我想用這些故事創作一首歌。請幫幫我。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13145,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？如果你在旅途中聽到了任何故事，請告訴我。";
 							callsub S_Quest,13145,13146,1100000,300000;
 						}
 						else {
-							cutin "嬴腦葆檜橫蛞薯蘋萄",3;  //armaia_card
-							mes "A daughter of a merchant. Armeyer Dinze, she looks like a rich woman. But she looks insecure.";
+							cutin "??????????????",3;  //armaia_card
+							mes "一位商人的女兒。阿梅爾?迪恩澤，她看起來像個有錢的女人。但她看起來沒有安全感。";
 							next;
-							mes "[Ragi]";
-							mes "What made her disappear? Or for what? Please listen to her story.";
+							mes "[拉奇]";
+							mes "是什麼讓她消失了？或者為了什麼？請聽聽她的故事。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "It will be more dangerous than you think. But the story must be conveyed.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉奇]";
+								mes "這會比你想像的更危險。但故事必須傳達。";
 								callsub S_Quest,13146,13145;
 							}
 						}
 						break;
 					case 3:
 						if (checkquest(13148,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13147,HUNTING) == 1) {
-							cutin "�秺伄梴恇捂捐瘧奏�",3;  //whikebain_card
-							mes "What might have moved her mind? She only cared about money.";
+							cutin "???????????????",3;  //whikebain_card
+							mes "是什麼觸動了她的心？她只關心錢。";
 							next;
-							mes "[Ragi]";
-							mes "I wonder how far her heart has been reached? Please listen to her story. Please tell me.";
+							mes "[拉奇]";
+							mes "我想知道她的心已經走了多遠？請聽聽她的故事。請告訴我。";
 							next;
-							mes "[Ragi]";
-							mes "Please make a song for us.";
+							mes "[拉奇]";
+							mes "請為我們創作一首歌。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13147,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？如果你在旅途中聽到了任何故事，請告訴我。";
 							callsub S_Quest,13147,13148,1100000,300000;
 						}
 						else {
-							cutin "�秺伄梴恇捂捐瘧奏�",3;  //whikebain_card
-							mes "Nobody knows how it has started. Wickebine Tres is the name who could have found a true companion.";
+							cutin "???????????????",3;  //whikebain_card
+							mes "沒有人知道它是如何開始的。薇克拜恩?特雷斯這個名字可能已經找到了真正的同伴。";
 							next;
-							mes "[Ragi]";
-							mes "She was the one who only cared for money. How far has her journey continued? Please listen to her story in Lighthalzen.";
+							mes "[拉奇]";
+							mes "她是一個只關心錢的人。她的旅程持續了多遠？請在樂園之都聽聽她的故事。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "It will be more dangerous than you think. But the story must be conveyed.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉奇]";
+								mes "這會比你想像的更危險。但故事必須傳達。";
 								emotion ET_BEST;
 								callsub S_Quest,13148,13147;
 							}
@@ -155,138 +155,138 @@ moc_para01,41,76,3	script	Ragi#1	4_M_RAGI,{
 						break;
 					case 4:
 						if (checkquest(13150,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13149,HUNTING) == 1) {
-							cutin "蘋夥觼檜蘋瑞蝶蘋萄",3;  //kavac_card
-							mes "Yes. It seems that I have heard the same name from Payon. I am not sure it means the same.";
+							cutin "????????罺???",3;  //kavac_card
+							mes "是的。我好像在沛雍聽到過同樣的名字。我不確定這是否意味著同一個人。";
 							next;
-							mes "[Ragi]";
-							mes "Please try to find him or a bow at Lighthalzen.";
+							mes "[拉奇]";
+							mes "請試著在樂園之都找到他或一把弓。";
 							next;
-							mes "[Ragi]";
-							mes "Please do not forget to tell me any story you hear.";
+							mes "[拉奇]";
+							mes "請不要忘記告訴我你聽到的任何故事。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13149,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？如果你在旅途中聽到了任何故事，請告訴我。";
 							callsub S_Quest,13149,13150,1100000,300000;
 						}
 						else {
-							cutin "蘋夥觼檜蘋瑞蝶蘋萄",3;  //kavac_card
-							mes "Kavach Icarus is the name whose hands are faster than eyes and shoots arrows swiftly.";
+							cutin "????????罺???",3;  //kavac_card
+							mes "卡瓦奇?伊卡洛斯這個名字，他的手比眼睛還快，能迅速射箭。";
 							next;
-							mes "[Ragi]";
-							mes "I heard his shadow and his arrow are wandering somewhere. Please go to Lighthalzen and tell me his story.";
+							mes "[拉奇]";
+							mes "我聽說他的影子和他的箭在某處徘徊。請去樂園之都告訴我他的故事。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Please be careful of his arrows. You may have laid down on the cold floor before this story is finished.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉奇]";
+								mes "請小心他的箭。在這個故事結束之前，你可能已經躺在冰冷的地板上了。";
 								callsub S_Quest,13150,13149;
 							}
 						}
 						break;
 					case 5:
 						if (checkquest(13152,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13151,HUNTING) == 1) {
-							cutin "檜溶萄縑漆衛蘋萄",3;  //erend_card
-							mes "No matter if it was for friendship or a mission. If that journey was for someone, It would not be easy to stop the journey.";
+							cutin "????忡???????",3;  //erend_card
+							mes "無論是為了友誼還是為了任務。如果那段旅程是為了某人，那麼要停止旅程並不容易。";
 							next;
-							mes "[Ragi]";
-							mes "What made stopped their journey? What kind of story is in it?";
+							mes "[拉吉]";
+							mes "是什麼讓他們停止了旅程？裡面有什麼樣的故事呢？";
 							next;
-							mes "[Ragi]";
-							mes "Please check that story in Lighthalzen.";
+							mes "[拉吉]";
+							mes "請在里希塔樂鎮確認那個故事。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13151,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？請告訴我你旅途中的任何故事。";
 							callsub S_Quest,13151,13152,1100000,300000;
 						}
 						else {
-							cutin "檜溶萄縑漆衛蘋萄",3;  //erend_card
-							mes "Errende Ebecee is the one who started a journey to look for someone.";
+							cutin "????忡???????",3;  //erend_card
+							mes "厄倫德·埃貝希是那個開始尋找某人的旅程的人。";
 							next;
-							mes "[Ragi]";
-							mes "But I guess... His journey also might have stopped somewhere in Lighthalzen. Please listen to his story.";
+							mes "[拉吉]";
+							mes "但我猜... 他的旅程也可能停在了里希塔樂鎮的某個地方。請聽聽他的故事。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Please be careful not get lost like these ^FF0000poor souls^000000.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "請小心不要像這些^FF0000可憐的靈魂^000000一樣迷路了。";
 								callsub S_Quest,13152,13151;
 							}
 						}
 						break;
 					case 6:
 						if (checkquest(13154,PLAYTIME) == 0)
-							mes "Some adventurers tell me stories a little bit but they are not enough to make a song out of.";
+							mes "有些冒險家告訴我一些故事，但它們不足以譜成一首歌。";
 						else if (checkquest(13153,HUNTING) == 1) {
-							cutin "塭辦滂筵渦蘋萄",3;  //rawrel_card
-							mes "By the way. I have read a book called ^FF0000How to be a wizard^000000...";
+							cutin "?????????",3;  //rawrel_card
+							mes "順帶一提。我讀過一本叫做 ^FF0000如何成為巫師^000000 的書...";
 							next;
-							mes "[Ragi]";
-							mes "According to that book, some magic by 25 years olds can be stronger than older wizards.";
+							mes "[拉吉]";
+							mes "根據那本書，25 歲的人所使用的魔法可能比年長的巫師更強大。";
 							next;
-							mes "[Ragi]";
-							mes "What are you listening to seriously? Let's finish the request about Laurell Weinders story!";
+							mes "[拉吉]";
+							mes "你在認真聽什麼？讓我們完成關於勞雷爾·溫德的故事的請求！";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13153,HUNTING) == 2) {
-							mes "Have you heard any new stories? Please tell me stories if you have any from your journey.";
+							mes "你有聽到任何新的故事嗎？請告訴我你旅途中的任何故事。";
 							callsub S_Quest,13153,13154,1100000,300000;
 						}
 						else {
-							cutin "塭辦滂筵渦蘋萄",3;  //rawrel_card
-							mes "Laurell Weinder, who decided to have a difficult journey to repay gratitude for some wizards deed.";
+							cutin "?????????",3;  //rawrel_card
+							mes "勞雷爾·溫德，她決定進行一次艱難的旅程，以報答一些巫師的恩情。";
 							next;
-							mes "[Ragi]";
-							mes "But... These talented wizards could not return? Who made them? Find a clue in Lighthalzen.";
+							mes "[拉吉]";
+							mes "但是... 這些有才華的巫師無法回來嗎？是誰造成的？在里希塔樂鎮尋找線索。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "I like this story but be careful if you do not want to end up a story yourself.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "我喜歡這個故事，但要小心，如果你不想自己也變成一個故事的話。";
 								callsub S_Quest,13154,13153;
 							}
 						}
 					}
 					break;
 				case 2:
-					mes "Do you know the story about Satan Morocc? I want to sing a song of their story even when time passes by.";
+					mes "你知道關於撒旦·莫洛克的傳說嗎？即使時間流逝，我也想為他們的故事唱一首歌。";
 					next;
-					switch( select( "Angel Incarnation", "Black Nightmare Incarnation", "Ghost Incarnation" ) ) {
-						mes "[Ragi]";
+					switch( select( "天使化身", "黑色夢魘化身", "幽靈化身" ) ) {
+						mes "[拉吉]";
 					case 1:
 						if (checkquest(13156,PLAYTIME) == 0) {
-							mes "A monster from Morocc has wings like an angel. Maybe, Satan Morocc wants to be an angel?";
+							mes "來自莫洛克的怪物長著像天使一樣的翅膀。也許，撒旦·莫洛克想成為天使？";
 							next;
-							mes "[Ragi]";
-							mes "Haha please do not mind. It is just joke of a story teller. Please give me another story next time.";
+							mes "[拉吉]";
+							mes "哈哈請別介意。這只是一個說書人的玩笑。下次請給我另一個故事。";
 						}
 						else if (checkquest(13155,HUNTING) == 1) {
-							mes "Appearance looks fine but inside.. I am sure they are flesh and blood!";
+							mes "外表看起來不錯，但裡面... 我相信他們是血肉之軀！";
 							next;
-							mes "[Ragi]";
-							mes "Of course, I did not check by myself. But I am just a story teller as you see.";
+							mes "[拉吉]";
+							mes "當然，我沒有親自檢查。但我只是一個說書人，正如你所見。";
 							next;
-							mes "[Ragi]";
-							mes "But it is not safe.. So be careful! Please give me more stories! Maybe I can meet Satan Morocc somewhere around here?";
+							mes "[拉吉]";
+							mes "但這裡並不安全... 所以要小心！請給我更多的故事！也許我可以在這裡附近遇到撒旦·莫洛克？";
 						}
 						else if (checkquest(13155,HUNTING) == 2) {
-							mes "Wow. There are so many stories coming to me! Thanks to you!";
+							mes "哇。有這麼多故事湧向我！謝謝你！";
 							callsub S_Quest,13155,13156,1100000,200000;
 						}
 						else {
-							mes "Well... This song is not about the prince of darkness, but it is taken from people who claim to have seen him.";
+							mes "嗯... 這首歌不是關於黑暗王子的，而是取自那些聲稱見過他的人。";
 							next;
-							mes "[Ragi]";
-							mes "Please help me to make a story by searching the flying Incarnations of Morocc.";
+							mes "[拉吉]";
+							mes "請幫助我通過搜尋莫洛克的飛行化身來編寫一個故事。";
 							next;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Be sure to get at least 30 Angel looking Incarnations of Morocc.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "務必至少獲得 30 個外表像天使一樣的莫洛克化身。";
 								emotion ET_KEK;
 								callsub S_Quest,13156,13155;
 							}
@@ -294,178 +294,178 @@ moc_para01,41,76,3	script	Ragi#1	4_M_RAGI,{
 						break;
 					case 2:
 						if (checkquest(13158,PLAYTIME) == 0) {
-							mes "Story is not made yet, so I will ask next time !";
+							mes "故事還沒完成，所以我下次再問！";
 							cutin "ragi02",0;
 						}
 						else if (checkquest(13157,HUNTING) == 1) {
-							mes "The shape is not completed but it has a very sharp tooth.";
+							mes "形狀不完整，但它有非常鋒利的牙齒。";
 							next;
-							mes "[Ragi]";
-							mes "Do not you think that is going to be a very funny story?";
+							mes "[拉吉]";
+							mes "你不認為這會是一個非常有趣的故事嗎？";
 						}
 						else if (checkquest(13157,HUNTING) == 2) {
-							mes "Wow. There are so many stories coming to me! Thanks to you!";
+							mes "哇。有這麼多故事湧向我！謝謝你！";
 							callsub S_Quest,13157,13158,1100000,200000;
 						}
 						else {
-							mes "I do not know if everything came out from Satan Morocc himself but things like this look horrible.";
+							mes "我不知道一切是否都來自撒旦·莫洛克本人，但這樣的事情看起來很可怕。";
 							next;
-							mes "[Ragi]";
-							mes "But I think there also will be a story in it. That is why those creature are made. Please look for something black and tar-like.";
+							mes "[拉吉]";
+							mes "但我認為其中也會有一個故事。那就是為什麼會創造這些生物。請尋找一些黑色且像焦油的東西。";
 							next;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Find and get rid of 30 Dark Incarnation of Morocc.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "找到並擺脫 30 個莫洛克的黑暗化身。";
 								callsub S_Quest,13158,13157;
 							}
 						}
 						break;
 					case 3:
 						if (checkquest(13160,PLAYTIME) == 0)
-							mes "The creature without clothing has very weird shape. Haha do not take it seriously. I am just a story teller.";
+							mes "沒有衣服的生物有非常奇怪的形狀。哈哈不要太認真。我只是一個說書人。";
 						else if (checkquest(13159,HUNTING) == 1) {
-							mes "This story should be spread out for weak adventurers like me! Because not everyone can be adventurer.";
+							mes "這個故事應該傳播給像我一樣弱小的冒險家！因為不是每個人都能成為冒險家。";
 							next;
-							mes "[Ragi]";
-							mes "Maybe, adventurers have a good merit to know this kind of story. So can you please look for these creatures near Morocc?";
+							mes "[拉吉]";
+							mes "也許，冒險家們有充分的理由了解這種故事。所以你能請你尋找在莫洛克附近的這些生物嗎？";
 						}
 						else if (checkquest(13159,HUNTING) == 2) {
-							mes "Wow. There are so many stories coming to me! Thanks to you!";
+							mes "哇。有這麼多故事湧向我！謝謝你！";
 							callsub S_Quest,13159,13160,1100000,200000;
 						}
 						else {
-							mes "This one is weird.. But he is also is an Incarnation of Morocc.";
+							mes "這個很奇怪... 但他也是莫洛克的化身。";
 							next;
-							mes "[Ragi]";
-							mes "But I am curious because it looks like a ghost and attacks does not work.";
+							mes "[拉吉]";
+							mes "但我很好奇，因為它看起來像一個幽靈，而且攻擊無效。";
 							next;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Please make a story after hunting at least 30 Ghost Incarnation of Morocc!";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "請在狩獵至少 30 個莫洛克的幽靈化身後編寫一個故事！";
 								callsub S_Quest,13160,13159;
 							}
 						}
 					}
 					break;
 				case 3:
-					mes "I never been to Ash Vacuum but I heard there are many interesting creatures there in the Scaraba Hall.";
+					mes "我從未去過艾音布羅克，但我聽說在史卡巴洞穴裡有很多有趣的生物。";
 					next;
-					switch( select( "Uni-Horn Scaraba Story", "Horn Scaraba Story", "Antler Scaraba Story", "Rake Horn Scaraba Story" ) ) {
-						mes "[Ragi]";
+					switch( select( "獨角史卡巴故事", "犄角史卡巴故事", "鹿角史卡巴故事", "耙角史卡巴故事" ) ) {
+						mes "[拉吉]";
 					case 1:
 						if (checkquest(13162,PLAYTIME) == 0)
-							mes "I am making a story about Uni-Horn Scaraba. One means less than two!~ I started but it is difficult to finish. Can you help me?";
+							mes "我正在編寫關於獨角史卡巴的故事。一個意味著少於兩個！~ 我開始了，但很難完成。你能幫助我嗎？";
 						else if (checkquest(13161,HUNTING) == 1) {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "They also have some stories right? First, I wonder about the shape of the one with one horn.";
+							cutin "?????????",3;  //scaraba_card
+							mes "他們也有一些故事，對吧？首先，我想知道帶有一個角的那個的形狀。";
 							next;
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13161,HUNTING) == 2) {
-							mes "I wonder what Uni-Horn Scarabas think? I want to make a song. Thanks for your help!";
+							mes "我想知道獨角史卡巴在想什麼？我想寫一首歌。謝謝你的幫助！";
 							callsub S_Quest,13161,13162,1100000,200000;
 						}
 						else {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "New world is full of amazing monsters. They will become a dream for children who want to be adventurers.";
+							cutin "?????????",3;  //scaraba_card
+							mes "新世界充滿了驚人的怪物。 對於那些想成為冒險家的孩子來說，它們將會是個夢想。";
 							next;
-							mes "[Ragi]";
-							mes "I want to make a song about the ^FF0000Uni-Horn Scaraba^000000!? Children will really like it.";
+							mes "[拉吉]";
+							mes "我想製作一首關於 ^FF0000獨角仙人掌^000000 的歌曲！？ 孩子們一定會喜歡的。";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "You can find them near somewhere in the east at Scaraba Hall.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "你可以在斯卡拉巴聖殿東邊附近的某個地方找到牠們。";
 								callsub S_Quest,13162,13161;
 							}
 						}
 						break;
 					case 2:
 						if (checkquest(13164,PLAYTIME) == 0)
-							mes "I am making a story... Two means less than three~ I started to make a story but I can not finish. Will you help me?";
+							mes "我正在編寫一個故事... 二小於三～ 我開始編寫一個故事，但我無法完成。 你能幫我嗎？";
 						else if (checkquest(13163,HUNTING) == 1) {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "That horn thing bothers me a little bit. What is the difference between one and two horns? Just appearance?";
+							cutin "?????????",3;  //scaraba_card
+							mes "那個有角的東西有點困擾我。 一個角和兩個角有什麼區別？ 只是外觀？";
 							next;
-							mes "[Ragi]";
-							mes "Maybe it is unnecessary. But curiosity is important for story tellers. Hahaha.";
+							mes "[拉吉]";
+							mes "也許這是不必要的。 但對於說故事的人來說，好奇心很重要。 哈哈哈。";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13163,HUNTING) == 2) {
-							mes "You came back safely! How is it? Horn Scaraba seemed to be a fun story. You really did a good job.";
+							mes "你安全回來了！ 怎麼樣？ 獨角仙人掌似乎是個有趣的故事。 你做得真好。";
 							callsub S_Quest,13163,13164,1100000,200000;
 						}
 						else {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "We talk about Horn Scaraba? There is one more we should mention.. That is Horn Scaraba!";
+							cutin "?????????",3;  //scaraba_card
+							mes "我們在談論獨角仙人掌嗎？ 我們還應該提到一個... 那就是獨角仙人掌！";
 							next;
-							mes "[Ragi]";
-							mes "I do no know why. I just heard from people. I need to make a song so please take a look at their world!";
+							mes "[拉吉]";
+							mes "我不知道為什麼。 我只是從人們那裡聽說的。 我需要製作一首歌，所以請看看牠們的世界！";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "You can find them near somewhere in the east at Scaraba Hall.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "你可以在斯卡拉巴聖殿東邊附近的某個地方找到牠們。";
 								callsub S_Quest,13164,13163;
 							}
 						}
 						break;
 					case 3:
 						if (checkquest(13166,PLAYTIME) == 0)
-							mes "There seem to be more story about Antler Scaraba! Please help me if you have time.";
+							mes "似乎還有更多關於鹿角仙人掌的故事！ 如果你有時間請幫助我。";
 						else if (checkquest(13165,HUNTING) == 1) {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "There seemed to be more special Scarabas according to rumors. Stronger and more scary ones.";
+							cutin "?????????",3;  //scaraba_card
+							mes "根據傳聞，似乎還有更多特殊的仙人掌。 更強大，更可怕的。";
 							next;
-							mes "[Ragi]";
-							mes "Do you think Antler Scaraba might be one of them?";
+							mes "[拉吉]";
+							mes "你認為鹿角仙人掌可能是其中之一嗎？";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13165,HUNTING) == 2) {
-							mes "It must be tiring traveling long distance! Please tell me if there are more interesting stories!";
+							mes "長途旅行一定很累！ 如果有更多有趣的故事，請告訴我！";
 							callsub S_Quest,13165,13166,1100000,200000;
 						}
 						else {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "This one is very unique! Horns look like the one of a deer so it is called an Antler Scaraba.";
+							cutin "?????????",3;  //scaraba_card
+							mes "這個非常獨特！ 角看起來像鹿的角，所以它被稱為鹿角仙人掌。";
 							next;
-							mes "[Ragi]";
-							mes "Aren't you curious why it has that horn? I think it has an interesting story that people would like. Shall I ask you adventurer?";
+							mes "[拉吉]";
+							mes "你不好奇牠為什麼有那個角嗎？ 我認為它有一個人們會喜歡的有趣故事。 我可以問你冒險家嗎？";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Can you please find a story about Antler Scaraba? Experience yourself is the best I guess!";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "你能幫我找一個關於鹿角仙人掌的故事嗎？ 我想親身體驗是最好的！";
 								callsub S_Quest,13166,13165;
 							}
 						}
 						break;
 					case 4:
 						if (checkquest(13168,PLAYTIME) == 0)
-							mes "I feel like Rake Horn Scaraba has more story. Please help me if you have time.";
+							mes "我覺得耙角仙人掌有更多的故事。 如果你有時間請幫助我。";
 						else if (checkquest(13167,HUNTING) == 1) {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "Here my plan is. I am making 4 passages for each Scaraba.";
+							cutin "?????????",3;  //scaraba_card
+							mes "這是我的計畫。 我要為每個仙人掌製作 4 個段落。";
 							next;
-							mes "[Ragi]";
-							mes "Whoever listen or sing will be confused to sing a troll. It sounds fun, right?";
+							mes "[拉吉]";
+							mes "無論誰聽或唱都會被搞糊塗到像在唱巨魔一樣。 聽起來很有趣，對吧？";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13167,HUNTING) == 2) {
-							mes "Thank you ! I am sure that I can make a great song.";
+							mes "謝謝你！ 我確信我可以製作一首很棒的歌曲。";
 							callsub S_Quest,13167,13168,1100000,200000;
 						}
 						else {
-							cutin "蝶蘋塭夥蘋萄",3;  //scaraba_card
-							mes "I'm starting to get confused. I am going to make a song of the Rake Horn Scarabas story.";
+							cutin "?????????",3;  //scaraba_card
+							mes "我開始感到困惑了。 我要製作一首關於耙角仙人掌的故事的歌曲。";
 							next;
-							mes "[Ragi]";
-							mes "A song begins with Uni-horn Scaraba then sing along with Rake Horn Scaraba. Will you help me?";
+							mes "[拉吉]";
+							mes "一首歌從獨角仙人掌開始，然後跟著耙角仙人掌一起唱。 你能幫我嗎？";
 							next;
 							cutin "ragi01",0;
-							if (select( "Take the request", "Quit." ) == 1) {
-								mes "[Ragi]";
-								mes "Please find a story about Rake Horn Scaraba from Scaraba Hall. Battle or experienced stories are fine.";
+							if (select( "接受請求", "退出。" ) == 1) {
+								mes "[拉吉]";
+								mes "請從斯卡拉巴聖殿找到一個關於耙角仙人掌的故事。 戰鬥或經驗故事都可以。";
 								callsub S_Quest,13168,13167;
 							}
 						}
@@ -474,7 +474,7 @@ moc_para01,41,76,3	script	Ragi#1	4_M_RAGI,{
 				}
 			}
 			else {
-				mes "I will continue to make a story or songs. But adventurers should step into a new adventure.";
+				mes "我將繼續編寫故事或歌曲。 但冒險家應該踏入新的冒險。";
 				next;
 				callsub S_Erasequest,
 					13143,1,"Egnigem Cenia",
@@ -490,44 +490,44 @@ moc_para01,41,76,3	script	Ragi#1	4_M_RAGI,{
 					13163,3,"Horn Scaraba",
 					13165,3,"Antler Scaraba",
 					13167,3,"Rake Horn Scaraba";
-				mes "[Ragi]";
-				mes "I hope to see you again as we farewell with smile.";
+				mes "[拉吉]";
+				mes "我希望再次見到你，當我們帶著微笑告別時。";
 			}
 		}
 		else {
-			mes "[Ragi]";
-			mes "Well, I am kind of busy doing an errand for Sir Aigu. Do you have any questions?";
+			mes "[拉吉]";
+			mes "嗯，我正在為艾格大人跑腿，有點忙。 你有什麼問題嗎？";
 			next;
-			switch( select( "Where did you get your hair-do?", "Please sing a song for me.", "Do you have a girl friend?", "About Aigu" ) ) {
-				mes "[Ragi]";
+			switch( select( "你的髮型在哪裡做的？", "請為我唱首歌。", "你有女朋友嗎？", "關於艾格" ) ) {
+				mes "[拉吉]";
 			case 1:
-				mes "There is a fine hair artist in Alberta. He butchered my hair with a some cooking scissors. Looks illegal.";
+				mes "在艾爾貝塔有一位優秀的髮型設計師。 他用一些廚房剪刀毀了我的頭髮。 看起來不合法。";
 				next;
-				mes "[Ragi]";
-				mes "Sometimes, hair-dos or color are strange... but I was lucky I didn't die.";
+				mes "[拉吉]";
+				mes "有時，髮型或顏色很奇怪... 但我很幸運我沒有死。";
 				break;
 			case 2:
-				mes "I did not make a song as a member of band yet. Someday, I will make a great song for you!";
+				mes "我還沒有以樂隊成員的身份製作歌曲。 有一天，我會為你製作一首很棒的歌曲！";
 				break;
 			case 3:
 				cutin "ragi03",0;
 				mes "......";
 				next;
 				cutin "ragi02",0;
-				mes "[Ragi]";
-				mes "Aigu is only on my mind. I can not think of anything else. I am fine even if it is just a one-sided love...";
+				mes "[拉吉]";
+				mes "我的腦海裡只有艾格。 我無法想到其他任何事情。 即使只是一廂情願的愛，我也沒關係...";
 				break;
 			case 4:
-				mes "I will never forget the first day I met her. She stared at me out of all the people in Izlude port. Now I help her by doing small errands.";
+				mes "我永遠不會忘記我第一次見到她的那一天。 她在依斯魯得港的所有人中盯著我看。 現在我通過做一些小跑腿來幫助她。";
 				next;
-				mes "[Ragi]";
-				mes "But alas, I think Aigu likes someone else. ^FF0000We've never met... But I hate him.^000000";
+				mes "[拉吉]";
+				mes "但不幸的是，我認為艾格喜歡別人。 ^FF0000我們從未見過... 但我恨他。^000000";
 				next;
-				mes "[Ragi]";
-				mes "But I hate myself more because I want to stay around her even if she will never see me. Haha was I too serious?";
+				mes "[拉吉]";
+				mes "但我更恨自己，因為即使她永遠不會看到我，我也想留在她身邊。 哈哈，我太認真了嗎？";
 				next;
-				mes "[Ragi]";
-				mes "I am just a storyteller.. Any story can be made up. Most of the times it contains the truth.";
+				mes "[拉吉]";
+				mes "我只是一個說故事的人... 任何故事都可以編造。 大多數時候它包含著真相。";
 			}
 		}
 	}
@@ -552,30 +552,30 @@ S_Erasequest:
 			continue;
 		case 0:
 		case 1:
-			mes "[Ragi]";
+			mes "[拉吉]";
 			switch( getarg(.@i+1) ) {
 			case 1:
-				mes "The rest of the story of "+ getarg(.@i+2) +" is Okay, I will ask to someone else.";
+				mes "關於 "+ getarg(.@i+2) +" 的其餘故事...好吧，我會問其他人。";
 				break;
 			case 2:
 			case 3:
-				mes "I will ask to other adventurers about the story of "+ getarg(.@i+2) +".";
+				mes "我會問其他冒險家關於 "+ getarg(.@i+2) +" 的故事。";
 				break;
 			}
 			break;
 		case 2:
-			mes "[Ragi]";
+			mes "[拉吉]";
 			switch( getarg(.@i+1) ) {
 			case 1:
-				mes "Did you hear the story of "+ getarg(.@i+2) +"? Thanks you. I promise to make a good song.";
+				mes "你聽說過關於 "+ getarg(.@i+2) +" 的故事嗎？ 謝謝你。 我保證會製作一首好歌。";
 				getexp 1100000,300000;
 				break;
 			case 2:
-				mes "Is Morocc's story good enough for songs? You did a good job.";
+				mes "夢羅克的的故事夠好聽能寫成歌嗎? 你做得很好。";
 				getexp 1100000,200000;
 				break;
 			case 3:
-				mes "How was your adventure? Was it fun? Please let me hear your adventure story someday.";
+				mes "你的冒險怎麼樣？ 好玩嗎？ 請讓我有一天聽到你的冒險故事。";
 				getexp 1100000,200000;
 				break;
 			}

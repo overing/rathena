@@ -23,17 +23,17 @@
 //============================================================
 mal_in01,172,28,2	script	Albo#mal	561,{
 	if (checkweight(1201,1) == 0) {
-		mes "You have too many kinds of objects. Try to continue after reducing those objects.";
+		mes "你擁有的物品種類太多了。減少物品後再嘗試。";
 		close;
 	}
 	if (MaxWeight - Weight < 1000) {
-		mes "You have too many heavy objects. Try to continue after reducing your weight.";
+		mes "你擁有的物品太重了。減輕負重後再嘗試。";
 		close;
 	}
 	if (BaseLevel < 90) {
-		mes "[Albo]";
-		mes "Who are you?";
-		mes "We don't need a weaking!!";
+		mes "[阿爾伯]";
+		mes "你是誰？";
+		mes "我們不需要弱者！！";
 		close;
 	}
 	setarray .@quests[0],12271,12272,12273,12274;
@@ -53,34 +53,34 @@ mal_in01,172,28,2	script	Albo#mal	561,{
 			set .@menu$, .@menu$+.@names$[.@i]+":";
 		}
 	}
-	mes "[Albo]";
-	mes "We crossed the sea!";
-	mes "We are great heroes of Culvert! We do not forgive the seafood that aims at Culvert!";
+	mes "[阿爾伯]";
+	mes "我們跨越了海洋！";
+	mes "我們是庫勒沃特的偉大英雄！我們絕不原諒那些瞄準庫勒沃特的海鮮！";
 	next;
 	set .@i, select(.@menu$)-1;
 	if (.@i == 0) {
-		mes "[Albo]";
-		mes "We used to be the henchmen of Mr. Missing! We almost became guards of such a historic site.";
+		mes "[阿爾伯]";
+		mes "我們曾經是迷斯丁先生的嘍囉！我們差點就成為這個歷史遺跡的守衛了。";
 		next;
-		mes "[Albo]";
-		mes "However, when sea water flooded all precious the resources, my dream... all my dreams melted away...";
+		mes "[阿爾伯]";
+		mes "然而，當海水淹沒了所有珍貴的資源，我的夢想...我所有的夢想都融化了...";
 		next;
-		mes "[Albo]";
-		mes "We do not forgive the seafood that invaded our territory. I'll eat them with spicy paste!!!";
+		mes "[阿爾伯]";
+		mes "我們絕不原諒入侵我們領地的海鮮。我要用辣醬把牠們吃掉！！！";
 		next;
-		mes "^0000ffAlbo's voice shakes with anger. He smacked his lips when he mentioned spicy paste.^000000";
+		mes "^0000ff阿爾伯的聲音因為憤怒而顫抖。當他提到辣醬時，他咂了咂嘴。^000000";
 		close;
 	}
 	switch(.@status[.@i-1]) {
 	case 0:
-		mes "[Albo]";
-		mes "That task is really hard for you, so I can't tell you about it. Why don't you find another one?";
+		mes "[阿爾伯]";
+		mes "那個任務對你來說太難了，所以我不能告訴你。你何不找另一個？";
 		close;
 	case 1:
 		break;
 	case 2:
-		mes "[Albo]";
-		mes "I'm sorry. There is no new task yet! If I find any work, I'll tell you so!";
+		mes "[阿爾伯]";
+		mes "我很抱歉。目前還沒有新的任務！如果我找到任何工作，我會告訴你的！";
 		close;
 	}
 	switch(.@i) {
@@ -113,8 +113,8 @@ mal_in01,172,28,2	script	Albo#mal	561,{
 			case 2: callsub L_GiveQuest,.@i,12270,12274,"Mutant Coelacanth";
 		}
 	default:
-		mes "[Albo]";
-		mes "Uh!? Where is the task? Let me find that quickly. You must speak with Madeca!";
+		mes "[阿爾伯]";
+		mes "呃！？任務在哪裡？讓我快點找到它。你必須和梅迪卡談談！";
 		close;
 	}
 	end;
@@ -123,67 +123,67 @@ mal_in01,172,28,2	script	Albo#mal	561,{
 L_GiveQuest:
 	setquest getarg(1);
 	setquest getarg(2);
-	mes "[Albo]";
-	mes "Today, the heroes of Culvert!";
-	mes "We raise our voices and set a date for the extermination of ^0000ff"+getarg(3)+"^000000!";
+	mes "[阿爾伯]";
+	mes "今天，庫勒沃特的英雄們！";
+	mes "我們提高聲音，並為消滅 ^0000ff"+getarg(3)+"^000000 設定日期！";
 	next;
-	mes "[Albo]";
+	mes "[阿爾伯]";
 	switch(getarg(0)) {
 	case 1:
 	case 2:
-		mes "Come on, heroes! Don't be afraid of them! Just go on, since it's a one-day mission!";
+		mes "來吧，英雄們！不要害怕牠們！繼續前進，因為這是一項為期一天的任務！";
 		break;
 	case 3:
-		mes "I'll give you one week to finish this job! Terminate all of them in Culvert Dungeon, Normal Mode!";
+		mes "我會給你一個星期來完成這項工作！消滅庫勒沃特地牢普通模式中的所有怪物！";
 		break;
 	case 4:
-		mes "I'll give you one week to finish this job! Terminate all of them in Culvert Dungeon, Hard Mode!";
+		mes "我會給你一個星期來完成這項工作！消滅庫勒沃特地牢困難模式中的所有怪物！";
 		break;
 	}
 	next;
-	mes "You received a request for the Extermination of ^005500"+getarg(3)+"^000000. If you need more details, please check the quest window.";
+	mes "你收到了消滅 ^005500"+getarg(3)+"^000000 的請求。如果您需要更多詳細信息，請查看任務視窗。";
 	close;
 }
 
 mal_in01,172,26,2	script	Madeca#mal	544,{
 	if (checkweight(1201,1) == 0) {
-		mes "You have too many kinds of objects. Try to continue after reducing those objects.";
+		mes "你擁有的物品種類太多了。減少物品後再嘗試。";
 		close;
 	}
 	if (MaxWeight - Weight < 1000) {
-		mes "You have too many heavy objects. Try to continue after reducing your weight.";
+		mes "你擁有的物品太重了。減輕負重後再嘗試。";
 		close;
 	}
 	if (BaseLevel < 90) {
-		mes "[Madeca]";
-		mes "Karrrrrrr!!";
-		mes "Let's have some bad seafood that can be boiled or grilled!";
+		mes "[梅迪卡]";
+		mes "卡rrrrrrr！！";
+		mes "讓我們來吃一些可以煮或烤的壞海鮮！";
 		next;
-		mes "[Madeca]";
-		mes "Who are you? You are such a totterer. Even seaweed could kill you!";
+		mes "[梅迪卡]";
+		mes "你是誰？你是個蹣跚學步的人。即使是海藻也能殺了你！";
 		close;
 	}
-	mes "[Madeca]";
-	mes "Oh?";
-	mes "You're the one who took care of my big brother Albo's request. It was a hard job!";
+	mes "[梅迪卡]";
+	mes "哦？";
+	mes "你就是那個處理我大哥阿爾伯請求的人。這是一項艱鉅的工作！";
 	next;
-	set .@i, select("What are you doing here?:General Culvert Daily Service Compensation:Hard Culvert Daily Service Compensation:General Culvert Weekly Service Compensation:Hard Culvert Weekly Service Compensation")-1;
+	set .@i, select("你在這裡做什麼？:一般庫勒沃特每日服務補償:困難庫勒沃特每日服務補償:一般庫勒沃特每週服務補償:困難庫勒沃特每週服務補償")-1;
 	if (.@i == 0) {
-		mes "[Madeca]";
-		mes "I'm here to help my big brother Albo!";
+		mes "[梅迪卡]";
+		mes "我在這裡幫助我的大哥阿爾伯！";
 		next;
-		mes "[Madeca]";
-		mes "We provide precious materials to humans who make sludge out of the bad seafood in the Culverts!";
+		mes "[梅迪卡]";
+		mes "我們為那些將庫勒沃特中的壞海鮮變成污泥的人類提供珍貴的材料！";
 		next;
-		mes "[Madeca]";
-		mes "We provide A~B Grade Coins as compensation for daily service, and the precious Sea God's Wrath as compensation for weekly service.";
+		mes "[梅迪卡]";
+		mes "我們提供 A~B 級硬幣作為每日服務的補償，以及珍貴的海神之怒作為每週服務的補償。";
 		next;
-		mes "[Madeca]";
-		mes "If you take care of big brother Albo's request, I will see you very often. So, let's stay close!";
+		mes "[梅迪卡]";
+		mes "如果你處理我大哥阿爾伯的請求，我會經常見到你。所以，讓我們保持親近！";
 		close;
 	}
-	mes "[Madeca]";
-	mes "I can't give you compensation for an expired request, so let me check if any of yours have expired.";
+	mes "[梅迪卡]";
+	mes "我不能給你過期請求的補償，所以讓我檢查一下你是否有任何請求已過期。";
 	next;
 	specialeffect2 EF_SPHERE;
 	progressbar "0xFFFF00",3;
@@ -234,12 +234,12 @@ mal_in01,172,26,2	script	Madeca#mal	544,{
 		}
 		break;
 	default:
-		mes "[Madeca]";
-		mes "Something is wrong. Please check this again!";
+		mes "[梅迪卡]";
+		mes "有些東西出錯了。請再次檢查！";
 		close;
 	}
-	mes "[Madeca]";
-	mes "I don't see any completed mission!";
+	mes "[梅迪卡]";
+	mes "我沒有看到任何已完成的任務！";
 	close;
 
 L_EraseQuest:
@@ -247,16 +247,16 @@ L_EraseQuest:
 		if (checkquest(getarg(.@j)) > -1)
 			erasequest getarg(.@j);
 	}
-	mes "[Madeca]";
-	mes "Um, I'm sorry. You exceeded the time limit, so I can't give you any payment.";
+	mes "[梅迪卡]";
+	mes "嗯，我很抱歉。你超過了時間限制，所以我無法給你任何報酬。";
 	close;
 
 // callsub L_CheckQuest,<quest ID>,<monster>,<reward item ID>,<reward item amount>;
 L_CheckQuest:
 	if (checkquest(getarg(0),HUNTING) == 2) {
-		mes "[Madeca]";
-		mes "You've punished ^0000ff"+getarg(1)+"^000000!";
-		mes "Here's your pay!";
+		mes "[梅迪卡]";
+		mes "你已經懲罰了 ^0000ff"+getarg(1)+"^000000！";
+		mes "這是你的報酬！";
 		erasequest getarg(0);
 		specialeffect2 EF_STEAL;
 		getitem getarg(2),getarg(3);
@@ -269,164 +269,153 @@ L_CheckQuest:
 //============================================================
 mal_in01,160,34,4	script	Missing, the Cleaner	545,{
 	if (BaseLevel < 90) {
-		mes "[Missing, the Cleaner]";
-		mes "Are you talking to me?!";
+		mes "[失蹤者，清潔工]";
+		mes "你在跟我說話嗎？！";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "I'm not sure what made you come here but you can't enter!";
-		mes "Tomas' orders...";
+		mes "[失蹤者，清潔工]";
+		mes "我不確定是什麼讓你來到這裡，但你不能進入！";
+		mes "托馬斯 的命令...";
 		next;
-		mes "^770099You must be Base level 90 to enter.^000000";
+		mes "^770099你必須達到 Base 等級 90 才能進入。^000000";
 		close;
 	}
 	if (in_canal_n == 0) {
-		mes "[Missing, the Cleaner]";
-		mes "(trembling)";
+		mes "[失蹤者，清潔工]";
+		mes "(顫抖)";
 		next;
-		mes "^660066This cat looks like it's in bad shape. It is slightly trembling.^000000";
+		mes "^660066這隻貓看起來狀況不佳。它正在輕微顫抖。^000000";
 		next;
-		if(select("Pet the cat:Are you ok?") == 1) {
-			mes "[Missing, the Cleaner]";
-			mes "Are you talking to me?!";
+		if(select("撫摸貓咪:你還好嗎？") == 1) {
+			mes "[失蹤者，清潔工]";
+			mes "你在跟我說話嗎？！";
 			next;
-			mes "^660066A trembling cat is looking up at you.^000000";
+			mes "^660066一隻顫抖的貓正在仰望你。^000000";
 			close;
 		}
-		mes "[Missing, the Cleaner]";
-		mes "Achoo!";
+		mes "[失蹤者，清潔工]";
+		mes "阿嚏！";
+		next;
+		mes "[失蹤者，清潔工]";
+		mes "在清理庫勒沃特期間，我們遇到了許多問題。但是一隻貓必須做它該做的...";
+		next;
+		select("你在清理哪個庫勒沃特？");
+		mes "[失蹤者，清潔工]";
+		mes "對於一個外行人來說，它可能看起來很陌生，但實際上這個地方是用來存放紀念品和奢侈品的。";
+		next;
+		mes "[失蹤者，清潔工]";
+		mes "在這個島嶼發生大震動之後，東西開始在這裡洩漏。所以這就是我成為清潔工的原因，儘管我曾經是一名經理。";
+		next;
+		mes "^660066這隻貓看起來一直在哭...^000000";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "We have had many issues during the";
-		mes "cleaning of the culverts. But a";
-		mes "cat's gotta do it...";
-		next;
-		select("What culvert are you cleaning?");
-		mes "[Missing, the Cleaner]";
-		mes "It might look unfamiliar for an";
-		mes "outsider, but actually this place";
-		mes "is made to keep souvenirs and";
-		mes "luxurious things.";
+		mes "沿著這條路有一條通往地下室的暗渠。";
+		mes "有很多壞傢伙傷害我。我厭倦了";
+		mes "每天和他們戰鬥這麼多次！";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "After there was a big trembling on";
-		mes "this island, things started leaking";
-		mes "around here. So that's why I became";
-		mes "a cleaner here, though I used";
-		mes "to be a manager.";
+		mes "噢！你碰了我的毛皮！";
+		mes "我的毛皮正在脫落...這都是";
+		mes "那些傢伙的錯～";
 		next;
-		mes "^660066The cat looks like it's been crying...^000000";
+		mes "^660066你剛剛才注意到貓的毛皮在某些地方脫落了。^000000";
+		next;
+		select("你為什麼不直接辭職！");
+		mes "[Missing, the Cleaner]";
+		mes "我還是得謀生，不是嗎？";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "There is a culvert along this way";
-		mes "to the basement. There are many bad";
-		mes "guys who hurt me. I am tired of";
-		mes "fighting with them so many times a";
-		mes "day!";
+		mes "有時候我可以得到一個幸運箱，";
+		mes "或者更好的是，我可以得到罐頭...";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "Ohh! You touched my fur!";
-		mes "My fur is falling out... it's all";
-		mes "those guys' fault~";
-		next;
-		mes "^660066You just now notice that the cat's fur is missing in some places.^000000";
-		next;
-		select("Why don't you just quit!");
-		mes "[Missing, the Cleaner]";
-		mes "I still have to make a living, don't I?";
-		next;
-		mes "[Missing, the Cleaner]";
-		mes "Sometimes I can get a lucky box,";
-		mes "or even better, I can get cans...";
-		next;
-		if(select("Okay, cheers!:I will help if possible...") == 1) {
+		if(select("好吧，乾杯！:如果可能的話，我會幫忙...") == 1) {
 			mes "[Missing, the Cleaner]";
-			mes "Thank you. I am going back to pour the water!";
+			mes "謝謝你。我要回去倒水了！";
 			close;
 		}
 		mes "[Missing, the Cleaner]";
-		mes "(turns down his voice)";
-		mes "If you really want to help, come closer!";
+		mes "(壓低聲音)";
+		mes "如果你真的想幫忙，靠近一點！";
 		next;
-		select("(get in closer)");
+		select("(靠得更近)");
 		mes "[Missing, the Cleaner]";
-		mes "Not everyone can be an assistant";
-		mes "here. But I can't help choosing";
-		mes "anyone at the moment...";
-		next;
-		mes "[Missing, the Cleaner]";
-		mes "If you want to go down here, let me get this code.";
-		next;
-		mes "^660066The cat scribbles a memo for code to you.^000000";
-		next;
-		select("Open the memo.");
-		mes "^660000Aragam insulted me.^000000";
+		mes "不是每個人都能成為助手";
+		mes "在這裡。但我現在沒辦法";
+		mes "選擇任何人...";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "You must be here with friends";
-		mes "because you can't go in alone! And";
-		mes "the password code will be from the";
-		mes "party leader!";
+		mes "如果你想下去這裡，讓我拿到這個密碼。";
+		next;
+		mes "^660066貓咪潦草地寫了一張關於密碼的便條給你。^000000";
+		next;
+		select("打開便條。");
+		mes "^660000阿拉加姆侮辱了我。^000000";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "What is also important is you must";
-		mes "have a Seagod Protection with you.";
+		mes "你一定是和朋友一起來的";
+		mes "因為你不能獨自進入！而且";
+		mes "密碼將來自";
+		mes "隊伍隊長！";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "Don't forget! I will not open the";
-		mes "door if you do not have Seagod Protection!";
+		mes "同樣重要的是你必須";
+		mes "身上帶著海神守護。";
+		next;
+		mes "[Missing, the Cleaner]";
+		mes "別忘了！如果你沒有海神守護，我不會打開";
+		mes "門！";
 		set in_canal_n,1;
 		close;
 	}
 	if (rentalcountitem(6436) == 0) {
 		mes "[Missing, the Cleaner]";
-		mes "You don't look like you have Seagod Protection. I can't open door at the moment!";
+		mes "你看起來不像有海神守護。我目前無法開門！";
 		close;
 	}
 	set .@party_id,getcharid(1);
 	set .@md_name$,"Culvert";
 	if (!.@party_id) {
-		mes "^0000ffYou have to organize a party of";
-		mes "more than 1 member or be a member";
-		mes "of the party and come back.^000000";
+		mes "^0000ff你必須組織一個超過";
+		mes "1 名成員的隊伍，或成為";
+		mes "隊伍的成員，然後再回來。^000000";
 		close;
 	}
 	set .@playtime, checkquest(12254,PLAYTIME);
 	if (.@playtime == -1) {
 		if (is_party_leader() == true) {
 			mes "[Missing, the Cleaner]";
-			mes "Ummm? What's up? Tell me the password if you're the leader!";
+			mes "嗯？怎麼了？如果你是隊長，告訴我密碼！";
 			next;
-			switch(select("No... nothing.:Aragam insulted me.:Enter the Culvert.")) {
+			switch(select("不...沒事。:阿拉加姆侮辱了我。:進入暗渠。")) {
 			case 1:
 				mes "[Missing, the Cleaner]";
-				mes "What a rookie.";
+				mes "真是個菜鳥。";
 				close;
 			case 2:
 				if (instance_create(.@md_name$) < 0) {
-					mes "Party name: "+getpartyname(.@party_id);
-					mes "Party leader: "+strcharinfo(0);
-					mes "^0000ff"+.@md_name$+"^000000 - Reservation Failed!";
+					mes "隊伍名稱："+getpartyname(.@party_id);
+					mes "隊伍隊長："+strcharinfo(0);
+					mes "^0000ff"+.@md_name$+"^000000 - 預約失敗！";
 					close;
 				}
-				mes "^3333FF"+.@md_name$+"^000000 - Reserving";
-				mes "After making the reservation, you";
-				mes "have to select Enter the Culvert.";
+				mes "^3333FF"+.@md_name$+"^000000 - 預約中";
+				mes "在預約之後，你";
+				mes "必須選擇進入暗渠。";
 				close;
 			case 3:
 				callsub L_Enter,0;
 			}
 		}
-		if(select("Enter Culvert:Cancel") == 2)
+		if(select("進入暗渠:取消") == 2)
 			end;
 		callsub L_Enter,1;
 	} else if (.@playtime == 0 || .@playtime == 1) {
-		mes "You can enter the Culvert if the gate is open.";
+		mes "如果閘門是打開的，你就可以進入暗渠。";
 		next;
-		if(select("Enter Culvert:Cancel") == 2)
+		if(select("進入暗渠:取消") == 2)
 			close;
 		callsub L_Enter,0;
 	} else if (.@playtime == 2) {
-		mes "^0000ffThe gate to the Culvert is open again.^000000";
+		mes "^0000ff通往暗渠的閘門再次打開。^000000";
 		erasequest 12254;
 		close;
 	}
@@ -434,14 +423,14 @@ mal_in01,160,34,4	script	Missing, the Cleaner	545,{
 L_Enter:
 	switch(instance_enter("Culvert")) {
 	case IE_OTHER:
-		mes "An unknown error has occurred.";
+		mes "發生了未知的錯誤。";
 		close;
 	case IE_NOINSTANCE:
-		mes "The gate to the Culvert is still closed.";
-		mes "You must wait until you are able to enter or find a party leader who can create the instance.";
+		mes "通往暗渠的閘門仍然關閉。";
+		mes "你必須等到能夠進入，或者找到可以創建副本的隊伍隊長。";
 		close;
 	case IE_NOMEMBER:
-		mes "Only party members can participate.";
+		mes "只有隊伍成員才能參與。";
 		close;
 	case IE_OK:
 		mapannounce "mal_in01", strcharinfo(0)+" of the party "+getpartyname(getcharid(1))+" is entering the Culvert.",bc_map,"0x00ff99";
@@ -457,23 +446,23 @@ L_Enter:
 1@pump,63,100,4	script	Missing, the Cleaner#0	545,{
 	if (is_party_leader() == false) {
 		mes "[Missing, the Cleaner]";
-		mes "I am trying to have a conversation with your leader now. Please don't disturb and wait!";
+		mes "我現在正試圖和你的隊長談話。請不要打擾，稍等一下！";
 		close;
 	}
 	mes "[Missing, the Cleaner]";
-	mes "This is the underground culvert where you will clean with your friends!";
+	mes "這是你將和你的朋友一起清理的地下暗渠！";
 	next;
 	mes "[Missing, the Cleaner]";
-	mes "I'll open the door first. By the way, do you know how to fight?";
+	mes "我會先打開門。對了，你知道怎麼戰鬥嗎？";
 	next;
-	switch(select("I'm pretty good at delivering bread.:I know how to fight.:^ffffffGive me the diamond.^000000")) {
+	switch(select("我非常擅長送麵包。:我知道如何戰鬥。:^ffffff給我鑽石。^000000")) {
 	case 1:
 		mes "[Missing, the Cleaner]";
-		mes "Ok then, I'll let you clean the culverts here as usual! I will prepare at the right-hand corner, please follow me!";
+		mes "好吧，那麼，我會讓你像往常一樣清理這裡的暗渠！我會在右手邊的角落準備，請跟著我！";
 		next;
-		if(select("Wait! I changed my mind!:As you wish~") == 1) {
+		if(select("等等！我改變主意了！:如你所願～") == 1) {
 			mes "[Missing, the Cleaner]";
-			mes "Huh? Not ready yet? Talk to me again when you're ready.";
+			mes "嗯？還沒準備好嗎？準備好的時候再來和我說話。";
 			close;
 		}
 		set 'party_id,getcharid(1);
@@ -484,18 +473,18 @@ L_Enter:
 	case 2:
 		if (BaseLevel < 140) {
 			mes "[Missing, the Cleaner]";
-			mes "Hmmm... Missing thinks you're weak! Tell me the truth!!";
+			mes "嗯... Missing 覺得你很弱！告訴我實話！！";
 			close;
 		}
 		mes "[Missing, the Cleaner]";
-		mes "Huh? You have some fighting skills? Well, then, there is one place I wasn't able to clean... why don't you go there?!";
+		mes "嗯？你有一些戰鬥技巧？好吧，那麼，有一個地方我沒能清理... 你為什麼不去那裡？！";
 		next;
 		mes "[Missing, the Cleaner]";
-		mes "I must tell you that it's been such a long~~ time since we've cleaned that place, so anyone under level 140 cannot even enter! Are you sure you still want to go?";
+		mes "我必須告訴你，我們已經很久~~沒有清理那個地方了，所以任何等級低於 140 的人都無法進入！你確定你還是想去嗎？";
 		next;
-		if(select("Wait! I changed my mind!:Sure, I'm prepared already~") == 1) {
+		if(select("等等！我改變主意了！:當然，我已經準備好了～") == 1) {
 			mes "[Missing, the Cleaner]";
-			mes "Hmm? Talk to me again when you're ready.";
+			mes "嗯？準備好的時候再來和我說話。";
 			close;
 		}
 		set 'party_id,getcharid(1);
@@ -505,7 +494,7 @@ L_Enter:
 		close;
 	case 3:
 		mes "[Missing, the Cleaner]";
-		mes "I told you not to play with me~!";
+		mes "我告訴過你不要和我玩～！";
 		close;
 	}
 	end;
@@ -527,41 +516,41 @@ OnTouch:
 
 function	script	F_mal_missing	{
 	mes "[Missing, the Cleaner]";
-	mes "I will tell you how to clean shortly. Can you see the culverts around you?";
+	mes "我會很快告訴你如何清理。你能看到你周圍的暗渠嗎？";
 	next;
-	if(select("What culverts??:Yes, I see them.") == 1) {
+	if(select("什麼暗渠？？:是的，我看到了。") == 1) {
 		mes "[Missing, the Cleaner]";
-		mes "Huh? Is this your first time seeing culverts? You'll see many buried machines in the ground. You may look around and come back!";
+		mes "嗯？這是你第一次看到暗渠嗎？你會看到許多埋在地下的機器。你可以四處看看，然後回來！";
 		close;
 	}
 	mes "[Missing, the Cleaner]";
-	mes "That's right! Those culverts are very important! We must clean the culverts to prevent seaweed from blocking them. This is what we, cleaners, do!";
+	mes "沒錯！這些暗渠非常重要！我們必須清理暗渠，以防止海藻堵塞它們。這就是我們清潔工的工作！";
 	next;
-	mes "[Missing, the Cleaner]";
-	mes "Watch out! Some monsters will be after you while you're cleaning the culverts! But do not yield to them!";
+	mes "[清潔工 Missing]";
+	mes "小心！當你在清理排水溝時，有些怪物會來找你！但不要屈服於它們！";
 	next;
-	mes "[Missing, the Cleaner]";
-	mes "And... NEVER let 6 seaweeds stack! Up to 5 is acceptable! If there are 6, I'll drag you out of here!!";
+	mes "[清潔工 Missing]";
+	mes "而且... 永遠不要讓6個海藻堆疊！最多5個是可以接受的！如果有6個，我就把你拖出去！！";
 	next;
-	mes "[Missing, the Cleaner]";
-	mes "I don't care if you get help from your friends or not. I want you to clean up all culverts! Don't forget! I will watch you and give you instructions. Just do what I said!!";
+	mes "[清潔工 Missing]";
+	mes "我不在乎你是否得到你朋友的幫助。我希望你清理所有的排水溝！別忘了！我會看著你並給你指示。只要照我說的做！！";
 	next;
 	if (is_party_leader() == false) {
-		mes "[Missing, the Cleaner]";
-		mes "Once your leader finishes preparing, it will begin, so get your hearts ready for it!!";
+		mes "[清潔工 Missing]";
+		mes "一旦你們的領導者完成準備，它就會開始，所以準備好你們的心吧！！";
 		close;
 	}
-	mes "[Missing, the Cleaner]";
-	mes "So, are you ready to clean now?";
+	mes "[清潔工 Missing]";
+	mes "那麼，你現在準備好清理了嗎？";
 	next;
-	switch(select("Wait! Not yet!:Let's start!")) {
+	switch(select("等等！還沒準備好！:讓我們開始吧！")) {
 	case 1:
-		mes "[Missing, the Cleaner]";
-		mes "Huh? Not ready yet? Then talk to me when you're ready.";
+		mes "[清潔工 Missing]";
+		mes "蛤？還沒準備好？那麼當你準備好時再來跟我說。";
 		close;
 	case 2:
-		mes "[Missing, the Cleaner]";
-		mes "OK! Now it begins!";
+		mes "[清潔工 Missing]";
+		mes "好！現在開始了！";
 		return;
 	}
 }
@@ -569,28 +558,28 @@ function	script	F_mal_missing	{
 // Instance: Normal Mode :: in_pump1
 //============================================================
 1@pump,84,105,4	script	Missing, the Cleaner#nf	545,{
-	mes "[Missing, the Cleaner]";
-	mes "I have the cleaning job for 40 years and I've never seen such a terrible team!!";
+	mes "[清潔工 Missing]";
+	mes "我做清潔工作40年了，從未見過這麼糟糕的團隊！！";
 	next;
-	mes "[Missing, the Cleaner]";
-	mes "I see seaweed everywhere because you're wiggling! All the culverts will be blocked with seaweed!";
+	mes "[清潔工 Missing]";
+	mes "我到處都看到海藻，因為你扭來扭去！所有的排水溝都會被海藻堵住！";
 	next;
 	if (is_party_leader() == false) {
-		mes "[Missing, the Cleaner]";
-		mes "Once your leader finishes preparing, settlement will be decided so get your hearts ready for it!!";
+		mes "[清潔工 Missing]";
+		mes "一旦你們的領導者完成準備，結算就會決定，所以準備好你們的心吧！！";
 		close;
 	}
-	mes "[Missing, the Cleaner]";
-	mes "If you got some guts to challenge again, I'll give you another chance! What's your choice going to be!?";
+	mes "[清潔工 Missing]";
+	mes "如果你有膽量再次挑戰，我會給你另一次機會！你的選擇會是什麼！？";
 	next;
-	switch(select("Wait! Not yet!:Okay, let's start again!")) {
+	switch(select("等等！還沒準備好！:好吧，讓我們重新開始！")) {
 	case 1:
-		mes "[Missing, the Cleaner]";
-		mes "You're still slow! Talk to me again whenever your're ready.";
+		mes "[清潔工 Missing]";
+		mes "你還是很慢！當你準備好時再來跟我說。";
 		close;
 	case 2:
-		mes "[Missing, the Cleaner]";
-		mes "Ok! Let's start now!";
+		mes "[清潔工 Missing]";
+		mes "好！現在開始吧！";
 		set .@i$, charat(strnpcinfo(2),0);
 		enablenpc instance_npcname("Missing, the Cleaner#"+.@i$);
 		donpcevent instance_npcname("Missing, the Cleaner#"+.@i$)+"::OnStart";
@@ -635,14 +624,14 @@ OnFail:
 	set .@map$, instance_mapname("1@pump");
 	killmonster .@map$,instance_npcname("Missing, the Cleaner#n")+"::OnMyMobDead";
 	enablenpc instance_npcname("Missing, the Cleaner#nf");
-	mapannounce .@map$,"What is this!! Seaweed is all over the culverts! You're done with cleaning! Get out!!",bc_map,"0xff88ff",FW_NORMAL,15;
+	mapannounce .@map$,"這是什麼！！排水溝裡到處都是海藻！你們已經結束清理了！滾出去！！",bc_map,"0xff88ff",FW_NORMAL,15;
 	disablenpc instance_npcname("Missing, the Cleaner#n");
 	end;
 OnTimer100:
-	mapannounce instance_mapname("1@pump"),"First culvert will be opened in 5 sec. Cleaner can find the opened drain and click to start cleaning.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("1@pump"),"第一個排水溝將在5秒後開啟。清潔工可以找到開啟的排水口並點擊開始清理。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	end;
 OnTimer5500:
-	mapannounce instance_mapname("1@pump"),"The one who's in charge of cleaning the culvert cannot move or be attacked until the casting is over.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("1@pump"),"負責清理排水溝的人在詠唱結束前無法移動或被攻擊。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	donpcevent instance_npcname("Monster Hole#n")+"::OnSpawn";
 	end;
 OnTimer45000:
@@ -654,7 +643,7 @@ OnTimer295000:
 OnTimer345000:
 OnTimer395000:
 OnTimer445000:
-	mapannounce instance_mapname("1@pump"),"Next culvert will be opened in 5 sec. Please hurry up and find the position of the next culvert.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("1@pump"),"下一個排水溝將在5秒後開啟。請趕快找到下一個排水溝的位置。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	end;
 OnTimer50000:
 OnTimer100000:
@@ -676,7 +665,7 @@ OnTimer450000:
 OnTimer515000:
 	set .@map$, instance_mapname("1@pump");
 	set .@mob_dead_num, mobcount(.@map$,instance_npcname("Missing, the Cleaner#n")+"::OnMyMobDead");
-	mapannounce .@map$,"Contaminated Seaweed: "+.@mob_dead_num+" stem. Missing will come and inspect the results of the cleaning soon.",bc_map,"0xff3333",FW_NORMAL,20;
+	mapannounce .@map$,"Contaminated Seaweed: "+.@mob_dead_num+" stem. Missing 很快會來檢查清理的結果。",bc_map,"0xff3333",FW_NORMAL,20;
 	end;
 OnTimer520000:
 	stopnpctimer;
@@ -782,15 +771,15 @@ OnEnable:
 OnTimer100:
 	set .@i$, charat(strnpcinfo(2),0);
 	if (.@i$ == "n")
-		mapannounce instance_mapname("1@pump"),"Hmm! That wasn't so bad!",bc_map,"0xff88ff",FW_NORMAL,15;
+		mapannounce instance_mapname("1@pump"),"嗯！那還不算太糟！",bc_map,"0xff88ff",FW_NORMAL,15;
 	else if (.@i$ == "h")
-		mapannounce instance_mapname("2@pump"),"Hmm! You guys are pretty good!!",bc_map,"0xff88ff",FW_NORMAL,15;
+		mapannounce instance_mapname("2@pump"),"嗯！你們做得很好！！",bc_map,"0xff88ff",FW_NORMAL,15;
 	end;
 OnTimer5000:
-	mapannounce strnpcinfo(4),"Let's pack up and go... WHAT!!?",bc_map,"0xff88ff",FW_NORMAL,15;
+	mapannounce strnpcinfo(4),"我們收拾東西走吧... 什麼！！?",bc_map,"0xff88ff",FW_NORMAL,15;
 	end;
 OnTimer10000:
-	mapannounce strnpcinfo(4),"I sense something strange!! Don't loosen up-- prepare for a fight!!",bc_map,"0xff88ff",FW_NORMAL,15;
+	mapannounce strnpcinfo(4),"我感覺到有些奇怪！！別放鬆--準備戰鬥！！",bc_map,"0xff88ff",FW_NORMAL,15;
 	end;
 OnTimer20000:
 	stopnpctimer;
@@ -801,18 +790,18 @@ OnTimer20000:
 			monster instance_mapname("1@pump"),0,0,"Weird Coelacanth",2188,1,.@label$;
 		else if (.@i$ == "h")
 			monster instance_mapname("2@pump"),0,0,"Mutant Coelacanth",2189,1,.@label$;
-		mapannounce strnpcinfo(4),"Something big inside the abyss appears with a huge noise.",bc_map,"0x00ffcc",FW_NORMAL,15;
+		mapannounce strnpcinfo(4),"深淵中的某個龐然大物帶著巨大的聲響出現。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	} else {
 		if (.@i$ == "n")
 			monster instance_mapname("1@pump"),0,0,"Gloomy Coelacanth",2187,1,.@label$;
 		else if (.@i$ == "h")
 			monster instance_mapname("2@pump"),0,0,"Violent Coelacanth",2190,1,.@label$;
-		mapannounce strnpcinfo(4),"Something savage inside the abyss appears with a huge noise.",bc_map,"0x00ffcc",FW_NORMAL,15;
+		mapannounce strnpcinfo(4),"深淵中的某個野蠻生物帶著巨大的聲響出現。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	}
 	end;
 OnMyMobDead:
 	if (mobcount(strnpcinfo(4),instance_npcname(strnpcinfo(0))+"::OnMyMobDead") < 1) {
-		mapannounce strnpcinfo(4),"You've destroyed all monsters in the culverts. There are trophies lying on the ground, please look for them.",bc_map,"0xffff00",FW_NORMAL,15;
+		mapannounce strnpcinfo(4),"你們已經摧毀了排水溝裡的所有怪物。地上有戰利品，請尋找它們。",bc_map,"0xffff00",FW_NORMAL,15;
 		set .@i$, charat(strnpcinfo(2),0);
 		set .@map$, strnpcinfo(4);
 		enablenpc instance_npcname("Culvert Entrance#"+.@i$);
@@ -841,38 +830,38 @@ OnMyMobDead:
 			}
 		}
 	} else
-		mapannounce strnpcinfo(4),"There are still monsters alive.",bc_map,"0x00ff99",FW_NORMAL,20;
+		mapannounce strnpcinfo(4),"還有怪物存活。",bc_map,"0x00ff99",FW_NORMAL,20;
 	end;
 }
 
 1@pump,84,105,4	script	Missing, the Cleaner#no	545,{
 	set .@i$, charat(strnpcinfo(2),0);
 	if (.@i$ == "n") {
-		mes "[Missing, the Cleaner]";
-		mes "I was very surprised!!";
+		mes "[清潔工 Missing]";
+		mes "我很驚訝！！";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "That funny-looking fish seems to be one of Coelacanths living around here. This is my first time seeing one coming here alone!";
+		mes "[清潔工 Missing]";
+		mes "那條看起來很有趣的魚似乎是生活在這裡的腔棘魚之一。這是我第一次看到牠獨自來到這裡！";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "I'll clean up the remains. Go pack and leave! Enterance is located on the other side, look for it!";
+		mes "[清潔工 Missing]";
+		mes "我會清理殘骸。去收拾東西離開！入口在另一邊，去找找看！";
 		next;
 	} else if (.@i$ == "h") {
-		mes "[Missing, the Cleaner]";
-		mes "You've destroyed an immense monster!";
+		mes "[清潔工 Missing]";
+		mes "你們摧毀了一個巨大的怪物！";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "The one you destroyed was among the variety of Coelacanths. Others have tried to destroy them but failed.";
+		mes "[清潔工 Missing]";
+		mes "你們摧毀的是腔棘魚中的一種。其他人也曾試圖摧毀牠們，但都失敗了。";
 		next;
-		mes "[Missing, the Cleaner]";
-		mes "I'll clean up the remains. You go ahead to get trophies and leave!";
+		mes "[清潔工 Missing]";
+		mes "我會清理殘骸。你們先去拿戰利品然後離開！";
 		next;
 	}
-	mes "[Missing, the Cleaner]";
-	mes "One more thing! DO NOT TALK to ANYONE about what you've seen here today!!";
+	mes "[清潔工 Missing]";
+	mes "還有一件事！不要跟任何人談論你今天在這裡看到的事情！！";
 	next;
-	mes "[Missing, the Cleaner]";
-	mes "If Tomas closes this down, we will lose our jobs!";
+	mes "[清潔工 Missing]";
+	mes "如果 湯瑪斯 關閉這裡，我們就會失去工作！";
 	close;
 OnInstanceInit:
 	disablenpc();
@@ -918,14 +907,14 @@ OnFail:
 	set .@map$, instance_mapname("2@pump");
 	killmonster .@map$, instance_npcname("Missing, the Cleaner#h")+"::OnMyMobDead";
 	enablenpc instance_npcname("Missing, the Cleaner#hf");
-	mapannounce .@map$,"What is this!! Seaweed is all over the culverts! You're done with cleaning! Get out!!",bc_map,"0xff88ff",FW_NORMAL,15;
+	mapannounce .@map$,"這是什麼！！排水溝裡到處都是海藻！你們已經結束清理了！滾出去！！",bc_map,"0xff88ff",FW_NORMAL,15;
 	disablenpc instance_npcname("Missing, the Cleaner#h");
 	end;
 OnTimer100:
-	mapannounce instance_mapname("2@pump"),"First culvert will be opened in 5 sec. Cleaner can find the opened drain and click to start cleaning.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("2@pump"),"第一個排水溝將在5秒後開啟。清潔工可以找到開啟的排水口並點擊開始清理。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	end;
 OnTimer5500:
-	mapannounce instance_mapname("2@pump"),"The one who's in charge of cleaning the culvert cannot move or be attacked until the casting is over.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("2@pump"),"負責清理排水溝的人在詠唱結束前無法移動或被攻擊。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	donpcevent instance_npcname("Monster Hole#h")+"::OnSpawn";
 	end;
 OnTimer35000:
@@ -937,7 +926,7 @@ OnTimer235000:
 OnTimer275000:
 OnTimer315000:
 OnTimer355000:
-	mapannounce instance_mapname("2@pump"),"Next culvert will be opened in 5 sec. Please hurry up and find the position of the next culvert.",bc_map,"0x00ffcc",FW_NORMAL,15;
+	mapannounce instance_mapname("2@pump"),"下一個排水溝將在5秒後開啟。請趕快找到下一個排水溝的位置。",bc_map,"0x00ffcc",FW_NORMAL,15;
 	end;
 OnTimer40000:
 OnTimer80000:
@@ -957,7 +946,7 @@ OnTimer360000:
 		donpcevent instance_npcname("Monster Hole#h")+"::OnSpawn";
 	end;
 OnTimer420000:
-	mapannounce instance_mapname("2@pump"),"It seems Missing will come and inspect the results of the cleaning soon. Shall we clean up the mess around here?",bc_map,"0xff3333",FW_NORMAL,20;
+	mapannounce instance_mapname("2@pump"),"似乎 Missing 很快會來檢查清理的結果。我們要不要清理一下這裡的髒亂？",bc_map,"0xff3333",FW_NORMAL,20;
 	end;
 OnTimer425000:
 	stopnpctimer;

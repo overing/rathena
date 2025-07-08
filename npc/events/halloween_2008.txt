@@ -17,113 +17,113 @@
 //= 1.1 Some small changes. [Kisuka]
 //============================================================
 
-payon,162,176,4	script	Halloween Magician#iRO08	704,{
+payon,162,176,4	script	萬聖節魔術師#iRO08	704,{
 	if (Hallow08 < 1) {
-		mes "[Halloween Magician]";
+		mes "[萬聖節魔術師]";
 		mes "Kkkkkkkkk!";
-		mes "I have a special event this Halloween that tests your luck and agility.";
-		mes "Are you interested?";
+		mes "今年萬聖節我有一個特別的活動，測試你的運氣和敏捷。";
+		mes "你有興趣嗎？";
 		next;
-		mes "[Halloween Magician]";
-		mes "Come on! Don't be a wuss!";
-		mes "If you collect enough tickets you can get good prizes!";
-		mes "So what do you say?";
+		mes "[萬聖節魔術師]";
+		mes "拜託！別當個孬種！";
+		mes "如果你收集到足夠的票券，就可以獲得很棒的獎品！";
+		mes "所以你怎麼說？";
 		next;
 		goto MainMenu;
 	}
 	if (Hallow08Kill == 1) {
-		mes "[Halloween Magician]";
-		mes "You a 'fraidy cat or something?!";
-		mes "You know you want to try again...";
-		mes "Do you know the rules?";
+		mes "[萬聖節魔術師]";
+		mes "你是膽小鬼之類的嗎？！";
+		mes "你知道你想要再試一次...";
+		mes "你知道規則嗎？";
 		next;
 		set Hallow08Kill,0;
-		if(select("Yes, I know.:No, I don't know.") == 2) {
+		if(select("是的，我知道。:不，我不知道。") == 2) {
 			goto Rules;
 		}
 		goto Participate;
 	}
 	if (Hallow08Kill == 2) {
-		mes "[Halloween Magician]";
-		mes "Oh, well done! You are alright!";
-		mes "Isn't it fun with zombies??";
-		mes "You know, zombies were people too!";
-		mes "Ha!";
+		mes "[萬聖節魔術師]";
+		mes "喔，做得好！你還不錯嘛！";
+		mes "和殭屍在一起是不是很有趣？";
+		mes "你知道嗎，殭屍也是人啊！";
+		mes "哈！";
 		mes "Kkkkkkk.";
 		next;
 		getitem 7941,1;
 		set Hallow08Kill,0;
-		mes "[Halloween Magician]";
-		mes "As I promised";
-		mes "You can get Halloween tickets for cool items.";
+		mes "[萬聖節魔術師]";
+		mes "正如我承諾的";
+		mes "你可以用萬聖節票券換取酷炫的物品。";
 		close;
 	}
 	if (Hallow08 > 0) {
-		mes "[Halloween Magician]";
-		mes "Well, do you want to hear the rules again or, just get back to it...";
+		mes "[萬聖節魔術師]";
+		mes "嗯，你想要再次聽聽規則，還是直接開始...";
 		next;
 		goto MainMenu2;
 	}
 
 		Rules:
-			mes "[Halloween Magician]";
-			mes "This village is like a virtual Payon.";
-			mes "There are zombies and ghouls roaming around and three southern exits, but only one works.";
-			mes "That's up to you to find out.";
+			mes "[萬聖節魔術師]";
+			mes "這個村莊就像一個虛擬的沛雍。";
+			mes "有殭屍和食屍鬼在四處遊蕩，以及三個南邊的出口，但只有一個有效。";
+			mes "這取決於你來找出它。";
 			next;
-			mes "[Halloween Magician]";
-			mes "You can't use any skills to kill the ghouls or zombies.";
-			mes "And one more thing...";
-			mes "you shouldn't forget...";
+			mes "[萬聖節魔術師]";
+			mes "你不能使用任何技能來殺死食屍鬼或殭屍。";
+			mes "還有一件事...";
+			mes "你不應該忘記...";
 			next;
-			mes "[Halloween Magician]";
-			mes "All participants should be wearing nothing.";
-			mes "Put all belongings in your storage and come back here when your weight is '0'.";
+			mes "[萬聖節魔術師]";
+			mes "所有參與者都應該什麼都不穿。";
+			mes "將所有物品放在你的倉庫中，當你的重量為 '0' 時回到這裡。";
 			next;
-			mes "[Halloween Magician]";
-			mes "Oh and one more thing!";
-			mes "You can't be riding a PecoPeco or have a Cart.";
-			mes "If you are, then I will remove them before you enter.";
-			mes "Got it?";
+			mes "[萬聖節魔術師]";
+			mes "喔，還有一件事！";
+			mes "你不能騎著波利或擁有手推車。";
+			mes "如果你有，我會在您進入之前將它們移除。";
+			mes "明白了嗎？";
 			next;
-			mes "[Halloween Magician]";
-			mes "Remember, there are three exits but only one works randomly, the zombies and ghouls roaming around there can't be killed and you can't be wearing anything.";
+			mes "[萬聖節魔術師]";
+			mes "記住，有三個出口但只有一個隨機有效，在那裡四處遊蕩的殭屍和食屍鬼無法被殺死，而且你不能穿任何東西。";
 			next;
 			if (Hallow08 > 0) {
-				mes "[Halloween Magician]";
-				mes "Hey...";
-				mes "Come back once you're ready.";
+				mes "[萬聖節魔術師]";
+				mes "嘿...";
+				mes "準備好後再回來。";
 				close;
 			} else {
 				goto MainMenu;
 			}
 
 		Participate:
-			mes "[Halloween Magician]";
-			mes "Ok, you are ready.";
-			mes "Let me check your weight.";
+			mes "[萬聖節魔術師]";
+			mes "好的，你準備好了。";
+			mes "讓我檢查你的重量。";
 			next;
 			if (Weight > 0) {
-				mes "[Halloween Magician]";
-				mes "Gosh!";
-				mes "There's always a black sheep anywhere.";
+				mes "[萬聖節魔術師]";
+				mes "哎呀！";
+				mes "任何地方總會有一隻害群之馬。";
 				next;
-				mes "[Halloween Magician]";
-				mes "You think I wouldn't notice that your weight is above '0'?";
-				mes "You're overweight...";
+				mes "[萬聖節魔術師]";
+				mes "你認為我不會注意到你的重量高於 '0' 嗎？";
+				mes "你超重了...";
 				close;
 			} else {
-				mes "[Halloween Magician]";
-				mes "You seem good to go, and your weight is just right.";
+				mes "[萬聖節魔術師]";
+				mes "你似乎準備好了，你的重量剛剛好。";
 				next;
-				mes "[Halloween Magician]";
-				mes "I was quite swamped with my work, so I'm exhausted.";
+				mes "[萬聖節魔術師]";
+				mes "我工作太忙了，所以我很累。";
 				next;
-				mes "[Halloween Magician]";
-				mes "I sometimes forget to send you there...";
+				mes "[萬聖節魔術師]";
+				mes "我偶爾會忘記送你過去...";
 				next;
-				mes "[Halloween Magician]";
-				mes "I hope you come back well.";
+				mes "[萬聖節魔術師]";
+				mes "我希望你能平安歸來。";
 				close2;
 				if (Hallow08 < 1) {
 					set Hallow08,1;
@@ -138,24 +138,24 @@ payon,162,176,4	script	Halloween Magician#iRO08	704,{
 			}
 
 		TicketExchange:
-			mes "[Halloween Magician]";
-			mes "You want to exchange tickets for prizes?";
-			mes "Good job! Kkkkkk!";
+			mes "[萬聖節魔術師]";
+			mes "你想用票券兌換獎品嗎？";
+			mes "做得好！Kkkkkk!";
 			next;
-			mes "[Halloween Magician]";
-			mes "Lemme tell you what items you can exchange for.";
+			mes "[萬聖節魔術師]";
+			mes "讓我告訴你可以兌換哪些物品。";
 			next;
-			mes "[Halloween Magician]";
-			mes "5 tickets for Pumpkin Pie.";
-			mes "20 tickets for Pumpkin-Head.";
-			mes "50 tickets for Old Blue Box.";
-			mes "70 tickets for Old Purple Box.";
-			mes "200 tickets for Old Card Album.";
+			mes "[萬聖節魔術師]";
+			mes "5 張票券換南瓜派。";
+			mes "20 張票券換南瓜頭。";
+			mes "50 張票券換舊藍色箱子。";
+			mes "70 張票券換舊紫色箱子。";
+			mes "200 張票券換舊卡冊。";
 			next;
-			mes "[Halloween Magician]";
-			mes "What would you like to exchange for?";
+			mes "[萬聖節魔術師]";
+			mes "你想要兌換什麼？";
 			next;
-			switch(select("Pumpkin Pie:Pumpkin-Head:Old Blue Box:Old Purple Box:Old Card Album")) {
+			switch(select("南瓜派:南瓜頭:舊藍色箱子:舊紫色箱子:舊卡冊")) {
 			case 1:
 				if (countitem(7941) < 5) {
 					goto NotEnough;
@@ -203,8 +203,8 @@ payon,162,176,4	script	Halloween Magician#iRO08	704,{
 			}
 
 		NextTime:
-			mes "[Halloween Magician]";
-			mes "Ok, see you then.";
+			mes "[萬聖節魔術師]";
+			mes "好的，再見。";
 			mes "Kkkkkkkk.";
 			close;
 
@@ -215,17 +215,17 @@ payon,162,176,4	script	Halloween Magician#iRO08	704,{
 		menu "Get me back there now!",Participate,"Please, tell me the rules",Rules,"I want to exchange tickets for prizes.",TicketExchange,"I'll come back next time.",NextTime;
 
 	NotEnough:
-		mes "[Halloween Magician]";
-		mes "You don't have enough tickets!";
-		mes "Can't you even count?";
-		mes "Please come here with the right number of tickets.";
+		mes "[萬聖節魔術師]";
+		mes "你的票券不足！";
+		mes "你甚至不會數數嗎？";
+		mes "請帶著正確數量的票券來這裡。";
 		close;
 
 	Enough:
-		mes "[Halloween Magician]";
-		mes "Here it is.";
-		mes "Do you need...";
-		mes "anything else?";
+		mes "[萬聖節魔術師]";
+		mes "給你。";
+		mes "你還需要...";
+		mes "別的東西嗎？";
 		next;
 		if (Hallow08 == 1) {
 			goto MainMenu2;

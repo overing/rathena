@@ -13,60 +13,60 @@
 //= 1.1 First Beta. [Samuray22]
 //============================================================
 
-prontera,146,91,5	script	Pandit chacha#child07	61,{
+prontera,146,91,5	script	潘迪特恰恰#child07	61,{
 	if (BaseLevel > 50) {
-		mes "[Pandit chacha]";
-		mes "Hahaha~";
-		mes "It is special day, comes only one time in a year.";
-		mes "If you see little adventurers around you send to me~";
-		mes "I will give the special gift.";
+		mes "[潘迪特恰恰]";
+		mes "哈哈哈~";
+		mes "這是一年一度的特別日子。";
+		mes "如果你看到周圍有小冒險家，就把他們送到我這裡來~";
+		mes "我會給他們特別的禮物。";
 		close;
 	} else if (BaseLevel < 20) {
-		mes "[Pandit chacha]";
-		mes "Hahaha~";
-		mes "You are a baby adventurer not little adventurer.";
-		mes "When you more grow up, come back again. hahaha.";
+		mes "[潘迪特恰恰]";
+		mes "哈哈哈~";
+		mes "你是個小寶寶冒險家，不是小冒險家。";
+		mes "等你再長大一點，再回來吧。哈哈哈。";
 		close;
 	} else if (oversea_event9 < 1) {
-		mes "[Pandit chacha]";
-		mes "Hahaha~";
-		mes "Welcome, little adventurers!";
-		mes "Today is special day, isn't it~?";
-		mes "I would like to give the small gift to little adventurer...";
-		mes "What about you? Do you want to take it?";
+		mes "[潘迪特恰恰]";
+		mes "哈哈哈~";
+		mes "歡迎，小冒險家們！";
+		mes "今天是很特別的日子，不是嗎~？";
+		mes "我想送一份小禮物給小冒險家們...";
+		mes "你呢？你想要拿嗎？";
 		next;
-		if(select("No. I will take it later.:Sure, I want.") == 1) {
-			mes "[Pandit chacha]";
-			mes "That's too bad.... hum...";
-			mes "I gathered some stuffs from far a way world to make it....";
-			mes "Whenever come back again if you want it...";
+		if(select("不要。我晚點再拿。:當然，我想要。") == 1) {
+			mes "[潘迪特恰恰]";
+			mes "真可惜.... 嗯...";
+			mes "我從遙遠的世界收集了一些東西來製作它....";
+			mes "如果你想要，隨時都可以再回來...";
 			close;
 		}
 		set oversea_event9,1;
 		getitem 11705,10; //Special_White_Potion
-		mes "[Pandit chacha]";
-		mes "Look. This is a child Potion.";
-		mes "The weight is just 1 but recover much HP.";
-		mes "If you want to get more, bring the 1 Wedding Bouquet and 1 Witherless Rose.";
+		mes "[潘迪特恰恰]";
+		mes "看。這是兒童藥水。";
+		mes "重量只有 1，但可以恢復很多 HP。";
+		mes "如果你想要更多，就帶 1 個結婚花束和 1 朵枯萎的玫瑰來。";
 		close;
 	} else if (oversea_event9 == 1) {
 		if (countitem(745) > 0 && countitem(748) > 0) {
-			mes "[Pandit chacha]";
-			mes "Ahha!!";
-			mes "You have remembered my beautiful composition.";
-			mes "You did good work.";
-			mes "Could you give me 1 Wedding Bouquet and 1 Witherless Rose? ";
+			mes "[潘迪特恰恰]";
+			mes "啊哈！！";
+			mes "你還記得我美麗的組合。";
+			mes "你做得很好。";
+			mes "可以給我 1 個結婚花束和 1 朵枯萎的玫瑰嗎？";
 			next;
-			if(select("Not yet.:Sure, take it.") == 1) {
-				mes "[Pandit chacha]";
-				mes "If you are not prepared yet, call me when you ready.";
+			if(select("還沒準備好。:當然，拿去吧。") == 1) {
+				mes "[潘迪特恰恰]";
+				mes "如果你還沒準備好，準備好後再叫我。";
 				close;
 			}
-			mes "[Pandit chacha]";
-			mes "Hahaha~";
-			mes "Oh~ you get it.";
-			mes "Here, I will exchange to the 50 child potion.";
-			mes "Once you get this 50 child potion, I won't give any more.";
+			mes "[潘迪特恰恰]";
+			mes "哈哈哈~";
+			mes "喔~ 你拿到了。";
+			mes "來，我會交換給你 50 瓶兒童藥水。";
+			mes "一旦你拿到這 50 瓶兒童藥水，我就不會再給了。";
 			close2;
 			delitem 745,1; //Wedding_Bouquet
 			delitem 748,1; //Witherless_Rose
@@ -74,13 +74,13 @@ prontera,146,91,5	script	Pandit chacha#child07	61,{
 			getitem 11705,50; //Special_White_Potion
 			end;
 		}
-		mes "[Pandit chacha]";
-		mes "Little adventurers, you should bring the 1 Wedding Bouquet and 1 Witherless Rose.";
-		mes "If you bring these stuffs I will exchange them for child Potion. ";
+		mes "[潘迪特恰恰]";
+		mes "小冒險家們，你們應該帶 1 個結婚花束和 1 朵枯萎的玫瑰來。";
+		mes "如果你們帶來這些東西，我就會把它們換成兒童藥水。";
 		close;
 	}
-	mes "[Pandit chacha]";
-	mes "Hahaha~";
-	mes "Are you enjoying children week~?";
+	mes "[潘迪特恰恰]";
+	mes "哈哈哈~";
+	mes "你喜歡兒童週嗎~？";
 	close;
 }

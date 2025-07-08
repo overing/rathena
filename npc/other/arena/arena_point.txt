@@ -14,36 +14,35 @@
 //============================================================
 
 prt_are_in,103,11,3	script	Arena Point Manager	732,{
-	mes "[Arena Point Manager]";
-	mes "I hope you're having a good";
-	mes "time in the Arena. If you've";
-	mes "earned Turbo Track Points at";
-	mes "Al De Baran's Turbo Track, I can,";
-	mes "convert them into Arena Points.";
+	mes "[競技場點數管理員]";
+	mes "希望您在競技場玩得愉快。";
+	mes "如果您在奧德朗的渦輪軌道";
+	mes "賺取了渦輪軌道點數，我可以";
+	mes "將它們轉換成競技場點數。";
 	next;
-	switch(select("Point Check:Convert Points:^660000Conversion Info^000000")) {
+	switch(select("點數查詢:轉換點數:^660000轉換資訊^000000")) {
 	case 1:
-		mes "[Arena Point Manager]";
+		mes "[競技場點數管理員]";
 		mes "" + strcharinfo(0) + ",";
-		mes "you currently have";
-		mes "" + arena_point + " Arena Points";
-		mes "and " + tt_point + " Turbo Track Points.";
+		mes "您目前有";
+		mes "" + arena_point + " 競技場點數";
+		mes "以及 " + tt_point + " 渦輪軌道點數。";
 		close;
 	case 2:
-		mes "[Arena Point Manager]";
+		mes "[競技場點數管理員]";
 		mes "" + strcharinfo(0) + ",";
-		mes "you currently have";
-		mes "" + arena_point + " Arena Points";
-		mes "and " + tt_point + " Turbo Track Points.";
+		mes "您目前有";
+		mes "" + arena_point + " 競技場點數";
+		mes "以及 " + tt_point + " 渦輪軌道點數。";
 		next;
-		mes "[Arena Point Manager]";
-		mes "Please choose from among";
-		mes "the Track Point to Arena Point";
-		mes "conversions. Keep in mind that";
-		mes "when you convert more than 10";
-		mes "Track Points at one time, you can only convert in ^4D4DFFmultiples of 10^000000.";
+		mes "[競技場點數管理員]";
+		mes "請從以下";
+		mes "軌道點數轉換為競技場點數";
+		mes "的選項中選擇。 請記住，";
+		mes "當您一次轉換超過 10";
+		mes "個軌道點數時，您只能以 ^4D4DFF10 的倍數^000000 轉換。";
 		next;
-		switch(select("2 TP -> 1 AP:4 TP -> 2 AP:6 TP -> 3 AP:8 TP -> 4 AP:10 TP and more:Cancel")) {
+		switch(select("2 TP -> 1 AP:4 TP -> 2 AP:6 TP -> 3 AP:8 TP -> 4 AP:10 TP 以上:取消")) {
 		case 1:
 			callsub S_ExchangePoints,28999,2,1;
 		case 2:
@@ -53,27 +52,27 @@ prt_are_in,103,11,3	script	Arena Point Manager	732,{
 		case 4:
 			callsub S_ExchangePoints,28996,8,4;
 		case 5:
-			mes "[Arena Point Manager]";
-			mes "Please enter the number";
-			mes "of times you wish to convert";
-			mes "10 Turbo Track Points into";
-			mes "Arena Points. The largest";
-			mes "value you may enter is 20.";
-			mes "To cancel, enter ''^3355FF0^000000.''";
+			mes "[競技場點數管理員]";
+			mes "請輸入您希望將";
+			mes "10 個渦輪軌道點數轉換成";
+			mes "競技場點數的次數。";
+			mes "您可以輸入的最大";
+			mes "值為 20。";
+			mes "要取消，請輸入 ''^3355FF0^000000''。";
 			next;
 			input .@input;
 			if (.@input <= 0) {
-				mes "[Arena Point Manager]";
-				mes "You have";
-				mes "canceled";
-				mes "this service.";
+				mes "[競技場點數管理員]";
+				mes "您已";
+				mes "取消";
+				mes "此服務。";
 				close;
 			}
 			else if (.@input > 20) {
-				mes "[Arena Point Manager]";
-				mes "Your request exceeds";
-				mes "the maximum limit. Please";
-				mes "enter a value no greater than 20.";
+				mes "[競技場點數管理員]";
+				mes "您的請求超過";
+				mes "最大限制。 請輸入";
+				mes "不超過 20 的值。";
 				close;
 			}
 			else {
@@ -82,54 +81,53 @@ prt_are_in,103,11,3	script	Arena Point Manager	732,{
 				set .@my_arena_all,arena_point + .@want_point;
 				set .@my_turbo_all,tt_point - .@want_point1;
 				if (.@my_arena_all > 28999) {
-					mes "[Arena Point Manager]";
-					mes "You will exceed the";
-					mes "maximum amount of";
-					mes "Arena Points if we proceed";
-					mes "with this conversion of your";
-					mes "Turbo Track Points. You cannot";
-					mes "have more than 29,000 Arena Points.";
+					mes "[競技場點數管理員]";
+					mes "如果我們繼續";
+					mes "將您的渦輪軌道點數";
+					mes "轉換，您將超過";
+					mes "競技場點數的最大數量。";
+					mes "您的競技場點數不能超過 29,000 點。";
 					next;
-					mes "[Arena Point Manager]";
-					mes "Please spend some of";
-					mes "your Arena Points before";
-					mes "using this service again.";
-					mes "Thank you for your patronage.";
+					mes "[競技場點數管理員]";
+					mes "在使用此服務之前，";
+					mes "請先花費一些";
+					mes "您的競技場點數。";
+					mes "感謝您的惠顧。";
 					close;
 				}
 				if (.@my_turbo_all < 0) {
-					mes "[Arena Point Manager]";
-					mes "I'm sorry, but";
-					mes "you don't have enough";
-					mes "Turbo Track Points to";
-					mes "perform this Arena";
-					mes "Point conversion.";
+					mes "[競技場點數管理員]";
+					mes "很抱歉，您";
+					mes "沒有足夠的";
+					mes "渦輪軌道點數來";
+					mes "執行此競技場";
+					mes "點數轉換。";
 					close;
 				}
 				else {
-					mes "[Arena Point Manager]";
-					mes "You have converted";
-					mes "10 Turbo Track Points";
-					mes "into 5 Arena Points " + .@input + " times.";
-					mes "A total of " + .@want_point1 + " Turbo Track Points were converted into";
-					mes "" + .@want_point +" Arena Points.";
+					mes "[競技場點數管理員]";
+					mes "您已將";
+					mes "10 個渦輪軌道點數";
+					mes "轉換成 5 個競技場點數 " + .@input + " 次。";
+					mes "總共將 " + .@want_point1 + " 個渦輪軌道點數轉換成";
+					mes "" + .@want_point +" 競技場點數。";
 					set tt_point, .@my_turbo_all;
 					set arena_point, .@my_arena_all;
 					next;
-					mes "[Arena Point Manager]";
+					mes "[競技場點數管理員]";
 					mes "" + strcharinfo(0) + ",";
-					mes "you now have";
-					mes "^4682B4" + arena_point + "^000000 Arena Points";
-					mes "and ^00688B" + tt_point + "^000000 Turbo Track Points.";
-					mes "Thank you for your patronage.";
+					mes "您現在有";
+					mes "^4682B4" + arena_point + "^000000 競技場點數";
+					mes "以及 ^00688B" + tt_point + "^000000 渦輪軌道點數。";
+					mes "感謝您的惠顧。";
 					close;
 				}
 			}
 		case 6:
-			mes "[Arena Point Manager]";
-			mes "You have";
-			mes "canceled";
-			mes "this service.";
+			mes "[競技場點數管理員]";
+			mes "您已";
+			mes "取消";
+			mes "此服務。";
 			close;
 		}
 	case 3:
@@ -140,44 +138,43 @@ prt_are_in,103,11,3	script	Arena Point Manager	732,{
 
 S_ExchangePoints:
 	if (arena_point > getarg(0) ) {
-		mes "[Arena Point Manager]";
-		mes "You will exceed the";
-		mes "maximum amount of";
-		mes "Arena Points if we proceed";
-		mes "with this conversion of your";
-		mes "Turbo Track Points. You cannot";
-		mes "have more than 29,000 Arena Points.";
+		mes "[競技場點數管理員]";
+		mes "如果我們繼續";
+		mes "將您的渦輪軌道點數";
+		mes "轉換，您將超過";
+		mes "競技場點數的最大數量。";
+		mes "您的競技場點數不能超過 29,000 點。";
 		next;
-		mes "[Arena Point Manager]";
-		mes "Please spend some of";
-		mes "your Arena Points before";
-		mes "using this service again.";
-		mes "Thank you for your patronage.";
+		mes "[競技場點數管理員]";
+		mes "在使用此服務之前，";
+		mes "請先花費一些";
+		mes "您的競技場點數。";
+		mes "感謝您的惠顧。";
 		close;
 	}
 	.@track_point = getarg(1);
 	if (tt_point >= .@track_point) {
 		.@arena_point = getarg(2);
-		mes "[Arena Point Manager]";
+		mes "[競技場點數管理員]";
 		mes "" + strcharinfo(0) + ",";
-		mes "you've converted "+ .@track_point +" Track";
-		mes "Points into "+ .@arena_point +" Arena Point.";
+		mes "您已將 "+ .@track_point +" 個軌道";
+		mes "點數轉換成 "+ .@arena_point +" 個競技場點數。";
 		tt_point = tt_point - .@track_point;
 		arena_point = arena_point + .@arena_point;
 		next;
-		mes "[Arena Point Manager]";
+		mes "[競技場點數管理員]";
 		mes "" + strcharinfo(0) + ",";
-		mes "you now have";
-		mes "^4682B4" + arena_point + "^000000 Arena Points";
-		mes "and ^00688B" + tt_point + "^000000 Turbo Track Points.";
-		mes "Thank you for your patronage.";
+		mes "您現在有";
+		mes "^4682B4" + arena_point + "^000000 競技場點數";
+		mes "以及 ^00688B" + tt_point + "^000000 渦輪軌道點數。";
+		mes "感謝您的惠顧。";
 		close;
 	}
 	else {
-		mes "[Arena Point Manager]";
-		mes "I'm sorry, but you don't have";
-		mes "enough Turbo Track Points.";
-		mes "You need at least 2 Turbo Track Points for this conversion service.";
+		mes "[競技場點數管理員]";
+		mes "很抱歉，但您的";
+		mes "渦輪軌道點數不足。";
+		mes "您至少需要 2 個渦輪軌道點數才能使用此轉換服務。";
 		close;
 	}
 }

@@ -19,69 +19,69 @@ valkyrie,53,42,3	script	Champion#Valkyrie	52,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Champion]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[冠軍]";
+			mes "恭喜。";
+			mes "榮耀歸於戰士們！";
 			close;
 		}
-		mes "[Champion]";
-		mes "Skill.";
-		mes "Speed.";
-		mes "Strength.";
-		mes "Agility.";
+		mes "[冠軍]";
+		mes "技巧。";
+		mes "速度。";
+		mes "力量。";
+		mes "敏捷。";
 		next;
-		mes "[Champion]";
-		mes "A Champion can";
-		mes "benefit from all";
-		mes "these things. But";
-		mes "one can only master";
-		mes "so much in life...";
+		mes "[冠軍]";
+		mes "一位冠軍可以";
+		mes "從所有這些事物中";
+		mes "獲益。但是";
+		mes "一個人一生中只能";
+		mes "掌握這麼多...";
 		close;
 	}
 	else if (ADVJOB == Job_Champion && Class == Job_Acolyte_High && JobLevel > 39) {
-		mes "[Champion]";
-		mes "It's time.";
-		mes "Time for great heroes";
-		mes "to stand up against the";
-		mes "forces of evil which plague";
-		mes "the world of Midgard!";
+		mes "[冠軍]";
+		mes "時候到了。";
+		mes "偉大英雄挺身而出";
+		mes "對抗困擾";
+		mes "米德加爾特世界的";
+		mes "邪惡勢力的時刻到了！";
 		next;
-		mes "[Champion]";
-		mes "Would you like";
-		mes "to become a Champion?";
+		mes "[冠軍]";
+		mes "你想要";
+		mes "成為一位冠軍嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Champion]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不要。:是的。") == 1) {
+			mes "[冠軍]";
+			mes "當你準備好時，";
+			mes "隨時回來。";
+			mes "榮耀歸於戰士們！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Champion]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[冠軍]";
+			mes "你仍然有可能學習更多技能。請在使用完";
+			mes "你所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Champion;
 		set ADVJOB,0;
-		mes "[Champion]";
-		mes "Congratulations!";
-		mes "Live as a Champion,";
-		mes "and bring light into";
-		mes "the world through the";
-		mes "strength of your fists.";
+		mes "[冠軍]";
+		mes "恭喜！";
+		mes "以冠軍之姿活下去，";
+		mes "並透過你的";
+		mes "拳頭的力量，將光明";
+		mes "帶入世界。";
 		close;
 	}
-	mes "[Champion]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[冠軍]";
+	mes "歡迎";
+	mes "來到瓦爾哈拉，";
+	mes "榮耀大廳。";
 	next;
-	mes "[Champion]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[冠軍]";
+	mes "請";
+	mes "在這裡";
+	mes "盡情放鬆。";
+	mes "榮耀歸於戰士們！";
 	close;
 }

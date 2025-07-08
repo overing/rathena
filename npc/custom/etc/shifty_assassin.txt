@@ -18,26 +18,26 @@ morocc,148,86,5	script	Shifty Assassin	725,{
 
 	// STARTS THE MENU //
 M_Start:
-	mes "[Shifty Assassin]";
-	mes "What do you want?";
+	mes "[狡猾的刺客]";
+	mes "你想要什麼？";
 	next;
 	menu "Buy Ninjas",M_Buy,"Assassinate somebody",M_Kill,"Check your Ninjas",M_Check, ( getgmlevel() > 90 ? "Add Ninjas" : "" ),-,"Cancel",M_Exit;
 
 	// GM MENU TO ADD NINJAS //
-	mes "[Shifty Assassin]";
-	mes "How many ninjas do you want to make available?";
+	mes "[狡猾的刺客]";
+	mes "你想要提供多少忍者？";
 	next;
 	input .@add;
 	set $ninja_avail, $ninja_avail+.@add;
-	mes .@add +" ninjas added.";
+	mes .@add +" 位忍者已新增。";
 	close;
 
 	// BUY NINJAS //
 M_Buy:
-	mes "[Shifty Assassin]";
-	mes "How many ninjas do you want buy?";
-	mes "There are ^0000FF" + $ninja_avail + "^000000 ninjas available.";
-	mes "They cost ^0000FF" + .@ninja_price + " zeny ^000000each.";
+	mes "[狡猾的刺客]";
+	mes "你想購買多少忍者？";
+	mes "目前有 ^0000FF" + $ninja_avail + "^000000 位忍者可供購買。";
+	mes "每位價格 ^0000FF" + .@ninja_price + " zeny^000000。";
 
 	input .@buy;
 	next;
@@ -46,8 +46,8 @@ M_Buy:
 	set .@price, .@buy*.@ninja_price;
 	if (Zeny < .@price) goto NoZeny;
 
-	mes "[Shifty Assassin]";
-	mes "That will cost you ^0000FF"+ .@price +" zeny^000000.";
+	mes "[狡猾的刺客]";
+	mes "總共需要 ^0000FF"+ .@price +" zeny^000000。";
 	next;
 	menu "Continue",-,"Cancel",M_Exit;
 
@@ -55,29 +55,29 @@ M_Buy:
 	set #ninjas, #ninjas + .@buy;
 	set $ninja_avail, $ninja_avail - .@buy;
 
-	mes "[Shifty Assassin]";
-	mes "Thank you.";
+	mes "[狡猾的刺客]";
+	mes "謝謝你。";
 	close;
 
 	// ASSASSINATE SOMEBODY //
 M_Kill:
 	if (agitcheck()) goto M_Busy;
-	mes "[Shifty Assassin]";
-	mes "Enter the name of the target.";
-	mes "^FF0000Type the name exactly, otherwise I won't be able to find the victim.^000000";
+	mes "[狡猾的刺客]";
+	mes "輸入目標的名稱。";
+	mes "^FF0000請完全依照名稱輸入，否則我無法找到受害者。^000000";
 	next;
 	menu "Continue",-,"Cancel",M_Exit;
 	input .@name$;
 	if ( !getcharid( 3,.@name$ ) ) {
-		mes "[Shifty Assassin]";
-		mes .@name$ +" is not online.";
+		mes "[狡猾的刺客]";
+		mes .@name$ +" 並未上線。";
 		close;
 	}
 	next;
-	mes "[Shifty Assassin]";
-	mes "Active Ninjas: "+#ninjas;
-	mes "Resting Ninjas: "+#ninjasr;
-	mes "How many do you want to send?";
+	mes "[狡猾的刺客]";
+	mes "活躍的忍者："+#ninjas;
+	mes "休息中的忍者："+#ninjasr;
+	mes "你想要派遣多少位？";
 	input .@number;
 	if (.@number < 1) goto NoNinjasSent;
 	if (.@number > #ninjas) goto NotEnoughNinjas1;
@@ -89,12 +89,12 @@ M_Kill:
 	if (.@number < .@chance) goto M_Failure;
 
 	// SUCCESSFUL ATTACK //
-	mes "Sending ninjas now.";
+	mes "現在派遣忍者。";
 	next;
-	mes "[Shifty Assassin]";
+	mes "[狡猾的刺客]";
 	set .@ninjasurvived, rand(1,.@number);
 	set #ninjasr,.@number-.@ninjasurvived;
-	mes "Your attack succeeded but only ^FF0000" + #ninjasr + "^000000 Ninjas survived.";
+	mes "你的攻擊成功了，但只有 ^FF0000" + #ninjasr + "^000000 位忍者存活下來。";
 	set .@acc_id, getcharid( 3,.@name$ );
 	if ( .@acc_id )
 		unitkill .@acc_id;
@@ -103,70 +103,70 @@ M_Kill:
 
 	// FAILED ATTACK //
 M_Failure:
-	mes "Sending ninjas now.";
+	mes "現在派遣忍者。";
 	next;
-	mes "[Shifty Assassin]";
+	mes "[狡猾的刺客]";
 	set .@ninjasurvived, rand(1,.@number);
 	set #ninjasr, .@number-.@ninjasurvived;
-	mes "Your attack failed and only ^FF0000" + #ninjasr + "^000000 Ninjas survived.";
+	mes "你的攻擊失敗了，只有 ^FF0000" + #ninjasr + "^000000 位忍者存活下來。";
 
 	announce .@name$+" has survived " + strcharinfo(0) +"'s Ninja attack.",8;
 	close;
 
 	// NINJAS BUSY FOR WOE //
 M_Busy:
-	mes "[Shifty Assassin]";
-	mes "Sorry, all my ninjas are busy doing War of Emperium.";
+	mes "[狡猾的刺客]";
+	mes "抱歉，我所有的忍者都在忙著進行攻城戰。";
 	close;
 
 	// CHECK YOUR NINJAS //
 M_Check:
-	mes "[Shifty Assassin]";
-	mes "You have:";
-	mes "^FF0000" + #ninjas + "^000000 Active Ninjas.";
-	mes "^0000FF" + #ninjasr + "^000000 Resting Ninjas.";
+	mes "[狡猾的刺客]";
+	mes "你擁有：";
+	mes "^FF0000" + #ninjas + "^000000 位活躍的忍者。";
+	mes "^0000FF" + #ninjasr + "^000000 位休息中的忍者。";
 	next;
 	goto M_Start;
 
 
 	// LIMIT //
 NoNinjasSent:
-	mes "[Shifty Assassin]";
-	mes "You can't kill anyone without ninjas.";
+	mes "[狡猾的刺客]";
+	mes "沒有忍者的話，你無法殺任何人。";
 	next;
 	goto M_Start;
 
 TooManyNinjas:
-	mes "[Shifty Assassin]";
-	mes "You can only send 10 ninjas max.";
+	mes "[狡猾的刺客]";
+	mes "你最多只能派遣 10 位忍者。";
 	next;
 	goto M_Start;
 
 NoZeny:
-	mes "[Shifty Assassin]";
-	mes "You do not have enough zeny.";
+	mes "[狡猾的刺客]";
+	mes "你沒有足夠的 zeny。";
 	close;
 
 NotEnoughNinjas:
-	mes "[Shifty Assassin]";
-	mes "There aren't that many ninjas to buy.";
+	mes "[狡猾的刺客]";
+	mes "沒有那麼多忍者可以購買。";
 	next;
 	goto M_Start;
 
 NoNinjas:
-	mes "[Shifty Assassin]";
-	mes "There are no ninjas left to buy.";
+	mes "[狡猾的刺客]";
+	mes "沒有忍者可以購買了。";
 	close;
 
 NotEnoughNinjas1:
-	mes "[Shifty Assassin]";
-	mes "You do not have that many ninjas.";
+	mes "[狡猾的刺客]";
+	mes "你沒有那麼多忍者。";
 	next;
 	goto M_Start;
 
 M_Exit:
-	mes "[Shifty Assassin]";
-	mes "Goodbye.";
+	mes "[狡猾的刺客]";
+	mes "再見。";
 	close;
 
 // TIMER DELAY NINJA ADDER //

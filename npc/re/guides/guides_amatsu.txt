@@ -16,24 +16,24 @@
 //============================================================ 
 
 amatsu,202,91,3	script	Amatsu Guide#amatsu	758,{
-	mes "[Amachang]";
-	mes "Welcome to ^8B4513Amatsu^000000,";
-	mes "the town of kind towners";
-	mes "and beautiful cherry blossoms.";
+	mes "[阿瑪強]";
+	mes "歡迎來到 ^8B4513天津町^000000，";
+	mes "這是一個充滿善良居民";
+	mes "和美麗櫻花的小鎮。";
 	next;
-	mes "[Amachang]";
-	mes "I'm Amachang,";
-	mes "the 13th Miss Amatsu.";
-	mes "I will guide you about town";
-	mes "as Miss Amatsu.";
-	mes "Please tell me";
-	mes "if you want to know something.";
+	mes "[阿瑪強]";
+	mes "我是阿瑪強，";
+	mes "第13任天津小姐。";
+	mes "我將以天津小姐的身分";
+	mes "引導您認識這個城鎮。";
+	mes "如果您想知道什麼，";
+	mes "請告訴我。";
 	F_Navi("[Amachang]");
 	while (1) {
 		next;
-		switch(select("[ Kafra Employee ]:[ Bar ]:[ Weapon Dealer ]:[ Tool Dealer ]:[ Amatsu Palace ]:[ Chef Assistant ]:[ Ninja Guild Building ]:[ Sea Captain ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 卡普拉職員 ]:[ 酒吧 ]:[ 武器商人 ]:[ 工具商人 ]:[ 天津町御所 ]:[ 廚師助手 ]:[ 忍者公會建築 ]:[ 海上船長 ]:從小地圖移除標記:取消")) {
 		case 1:
-			callsub L_Mark, "^0000FFKafra Employee^000000";
+			callsub L_Mark, "^0000FF卡普拉職員^000000";
 			viewpoint 1,102,149,0,0x0A82FF;
 			break;
 		case 2:
@@ -53,7 +53,7 @@ amatsu,202,91,3	script	Amatsu Guide#amatsu	758,{
 			viewpoint 1,87,235,4,0x8B4513;
 			break;
 		case 6:
-			callsub L_Mark, F_Navi("Chef Assistant","amatsu,206,150","^8A2BE2");
+			callsub L_Mark, F_Navi("廚師助理","amatsu,206,150","^8A2BE2");
 			viewpoint 1,206,150,5,0x8A2BE2;
 			break;
 		case 7:
@@ -65,9 +65,9 @@ amatsu,202,91,3	script	Amatsu Guide#amatsu	758,{
 			viewpoint 1,195,79,7,0x00BFFF;
 			break;
 		case 9:
-			mes "[Amachang]";
-			mes "I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[阿瑪強]";
+			mes "我會從小地圖移除所有標記。";
+			mes "還有什麼我可以為您效勞的嗎？";
 			viewpoint 2,1,1,0,0xFFFFFF;
 			viewpoint 2,1,1,1,0xFFFFFF;
 			viewpoint 2,1,1,2,0xFFFFFF;
@@ -78,16 +78,15 @@ amatsu,202,91,3	script	Amatsu Guide#amatsu	758,{
 			viewpoint 2,1,1,7,0xFFFFFF;
 			break;
 		case 10:
-			mes "[Amachang]";
-			mes "Enjoy your trip~!!";
+			mes "[阿瑪強]";
+			mes "旅途愉快～！！";
 			close;
 		}
 	}
 	end;
 L_Mark:
-	mes "[Amachang]";
-	mes "The "+getarg(0)+" is";
-	mes "marked on your mini-map.";
-	mes "Is there anything else I can do for you?";
+	mes "[阿瑪強]";
+	mes "您的迷你地圖上已標記"+getarg(0)+"。";
+	mes "還有什麼我可以為您效勞的嗎？";
 	return;
 }

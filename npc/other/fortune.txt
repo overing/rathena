@@ -14,2639 +14,2639 @@
 //= 1.1 Little clean-up. [Capuche]
 //============================================================
 
-payon_in03,117,128,5	script	Fortune Teller	4_M_BIBI,{
-	mes "[Lhimetorra]";
-	mes "You're an adventurer of this world... " +strcharinfo(0)+ ", right? So, what can an old person like me do for you?";
+payon_in03,117,128,5	script	算命先生	4_M_BIBI,{
+	mes "[萊希梅托拉]";
+	mes "你是這個世界的冒險者... " +strcharinfo(0)+ ", 對吧？那麼，像我這樣的老人家能為你做些什麼呢？";
 	next;
-	if (select("I would like a tarot card reading.:What's a tarot card reading?") == 2) {
-		mes "[Lhimetorra]";
-		mes " Monster card reading uses the cards of familiar monsters around us to get advice about our future, love, and many other things. ";
-		mes " A fortuneteller like me takes a question from a person and asks the card. The card answers and I tell the person. ";
+	if (select("我想要塔羅牌占卜。:什麼是塔羅牌占卜？") == 2) {
+		mes "[萊希梅托拉]";
+		mes "怪物卡牌占卜是使用我們周圍熟悉的怪物的卡牌，來獲得關於我們未來、愛情和許多其他事情的建議。";
+		mes "像我這樣的占卜師會從一個人那裡得到一個問題，然後詢問卡牌。卡牌會回答，然後我告訴這個人。";
 		next;
-		mes "[Lhimetorra]";
-		mes " You should not get more than one card reading a day, and don't get one often since the card can get angry or confused. ";
-		mes " Also, it can have a bad influence on your life, too! ";
+		mes "[萊希梅托拉]";
+		mes "你不應該一天占卜超過一次，而且不要經常占卜，因為卡牌會生氣或感到困惑。";
+		mes "此外，它也可能對你的生活產生不良影響！";
 		next;
-		mes "[Lhimetorra]";
-		mes " And... one more thing. ";
-		mes " A card reading is only a reading... No matter how extraordinary the result may be, don't get too caught up with it. Bear that in mind. ";
+		mes "[萊希梅托拉]";
+		mes "而且...還有一件事。";
+		mes "卡牌占卜只是一種占卜...無論結果多麼非凡，都不要太過沉迷於其中。請記住這一點。";
 		close;
 	}
-	mes "[Lhimetorra]";
-	mes "Is that so...?";
-	mes "Well, if you want a monster card reading, you must first show me your faith. Otherwise, the monster spirits will grow angry and place a curse on you.";
+	mes "[萊希梅托拉]";
+	mes "是這樣嗎...？";
+	mes "嗯，如果你想要怪物卡牌占卜，你必須先向我展示你的信念。否則，怪物靈魂會生氣並對你施加詛咒。";
 	next;
-	mes "[Lhimetorra]";
-	mes "So, would you like a monster card reading? ";
+	mes "[萊希梅托拉]";
+	mes "那麼，你想要怪物卡牌占卜嗎？";
 	next;
-	if (select("Yes.:I would like to think it over once more.") == 2) {
-		mes "[Lhimetorra]";
-		mes " Ok then. Young adventurer, may luck be with you... ";
+	if (select("是的。:我想再考慮一下。") == 2) {
+		mes "[萊希梅托拉]";
+		mes "好吧。年輕的冒險者，願好運與你同在... ";
 		close;
 	}
-	mes "[Lhimetorra]";
-	mes "Then...";
-	mes "Please pay your fee with all of your sincerity.";
+	mes "[萊希梅托拉]";
+	mes "那麼...";
+	mes "請以你全部的誠意支付費用。";
 	next;
 	input .@input;
 	if (.@input == 0) {
-		mes "[Lhimetorra]";
-		mes "Ah...?!";
-		mes "You have angered the monster spirits!";
+		mes "[萊希梅托拉]";
+		mes "啊...？！";
+		mes "你激怒了怪物靈魂！";
 		close;
 	}
 	else if (.@input > zeny) {
-		mes "[Lhimetorra]";
-		mes "There's no need to overdo it. Just give with all your heart... *Tsk tsk*";
+		mes "[萊希梅托拉]";
+		mes "沒有必要過度。只要全心全意地付出... *嘖 嘖*";
 		close;
 	}
 	else {
-		mes "[Lhimetorra]";
-		mes "I accept your heart and your devotion with my gratitude. Thoughts are more important than the amount when paying a fortune teller.";
+		mes "[萊希梅托拉]";
+		mes "我以感激之情接受你的心意和奉獻。在支付占卜師的費用時，思想比金額更重要。";
 		Zeny = Zeny-.@input;
 	}
 	next;
-	mes "[Lhimetorra]";
-	mes "Then, I will begin to tell the fortune of your wish. Concentrate on yourself...";
+	mes "[萊希梅托拉]";
+	mes "那麼，我將開始告訴你願望的運勢。專注於你自己...";
 	next;
-	mes "[Lhimetorra]";
+	mes "[萊希梅托拉]";
 	mes "...";
-	mes "Clear your mind... ";
+	mes "淨空你的思緒... ";
 	next;
-	mes "[Lhimetorra]";
+	mes "[萊希梅托拉]";
 	mes "...";
-	mes "Once you have emptied your mind, think of the thing you most wish to know.";
+	mes "一旦你淨空了你的思緒，想想你最想知道的事情。";
 	next;
-	switch(select(" (I would like to know my love fortune.) "," (How rich will I be?) "," (I need advice about my future.) "," (Can I get a warning of any dangers awaiting?) ")) {
+	switch(select("（我想知道我的愛情運勢。）","（我會有多富有？）","（我需要關於我未來的建議。）","（我可以得到任何潛在危險的警告嗎？）")) {
 	case 1:
-		mes "[Lhimetorra]";
-		mes " I see it... I see a sign of love... ";
+		mes "[萊希梅托拉]";
+		mes "我看到了...我看到了一個愛情的徵兆...";
 		next;
 		.@card_1_love = rand(1,74);
-		if (.@card_1_love < 5) cutin "陛檜嬴蝶蘋萄",4;		// Giearth Card
-		else if (.@card_1_love < 10) cutin "渦蝶じ啻蝶蘋萄",4;// Dustiness Card
-		else if (.@card_1_love < 18) cutin "萄塭聽塭蘋萄",4;	// Dracula Card
-		else if (.@card_1_love < 26) cutin "葆葬釭蘋萄",4;	// Marina Card
-		else if (.@card_1_love < 30) cutin "詭舒餌蘋萄",4;	// Medusa Card
-		else if (.@card_1_love < 35) cutin "夥ん詭お蘋萄",4;	// Baphomet Card
-		else if (.@card_1_love < 39) cutin "僻萄裔蘋萄",4;	// Sandman Card
-		else if (.@card_1_love < 43) cutin "模�鯆奏�",4;		// Sohee Card
-		else if (.@card_1_love < 51) cutin "蝶騷錶醴蘋萄",4;	// Skel Worker Card
-		else if (.@card_1_love < 55) cutin "嬴援綠蝶蘋萄",4;	// Anubis Card
-		else if (.@card_1_love < 59) cutin "螃觼煎萄蘋萄",4;	// Orc Lord Card
-		else if (.@card_1_love < 63) cutin "燮蘋萄",4;		// Jakk Card
-		else if (.@card_1_love < 67) cutin "褻醴蘋萄",4;		// Joker Card
-		else if (.@card_1_love < 71) cutin "�ㄤ暰奏�",4;		// Hode Card
-		else cutin "�票痁奏�",4;// Minorous Card
+		if (.@card_1_love < 5) cutin "?????????",4;		// Giearth Card
+		else if (.@card_1_love < 10) cutin "???????????",4;// Dustiness Card
+		else if (.@card_1_love < 18) cutin "?????????",4;	// Dracula Card
+		else if (.@card_1_love < 26) cutin "?????????",4;	// Marina Card
+		else if (.@card_1_love < 30) cutin "??λ????",4;	// Medusa Card
+		else if (.@card_1_love < 35) cutin "??????????",4;	// Baphomet Card
+		else if (.@card_1_love < 39) cutin "????????",4;	// Sandman Card
+		else if (.@card_1_love < 43) cutin "???????",4;		// Sohee Card
+		else if (.@card_1_love < 51) cutin "?????????",4;	// Skel Worker Card
+		else if (.@card_1_love < 55) cutin "????????",4;	// Anubis Card
+		else if (.@card_1_love < 59) cutin "????ε????",4;	// Orc Lord Card
+		else if (.@card_1_love < 63) cutin "?????",4;		// Jakk Card
+		else if (.@card_1_love < 67) cutin "??????",4;		// Joker Card
+		else if (.@card_1_love < 71) cutin "??????",4;		// Hode Card
+		else cutin "??????",4;// Minorous Card
 		
-		mes "[Lhimetorra]";
+		mes "[萊希梅托拉]";
 		switch(.@card_1_love) {
 		case 1:
-			mes " You are afraid to show yourself working, to your loved one.. ";
-			mes " But that is not love. Do not be afraid to show different sides of yourself to your loved one.. ";
+			mes "你害怕向你愛的人展示你工作的一面...";
+			mes "但這不是愛。不要害怕向你愛的人展示你不同的一面...";
 			next;
-			mes "[Lhimetorra]";
-			mes " So do not worry and move on. ";
+			mes "[萊希梅托拉]";
+			mes "所以不要擔心，繼續前進。";
 			break;
 		case 2:
-			mes " Maybe you are using love as an excuse to work? The card is saying to try observing love from a different perspective. ";
+			mes "也許你正在用愛作為工作的藉口？卡牌說要嘗試從不同的角度觀察愛情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Shoveling requires skills as well. ";
+			mes "[萊希梅托拉]";
+			mes "鏟土也需要技巧。";
 			break;
 		case 3:
-			mes " How about taking a break from love and giving yourself time to relax.. I agree with what the card is saying. ";
+			mes "不妨從愛情中休息一下，給自己一些放鬆的時間...我同意卡牌所說的。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love is not meant to be so hard. ";
+			mes "[萊希梅托拉]";
+			mes "愛情不應該這麼困難。";
 			break;
 		case 4:
-			mes " A shovel..? ";
+			mes "一把鏟子...？";
 			next;
-			mes "[Lhimetorra]";
-			mes " Strange that this would come up about love.. bizarre.. You aren't using this shovel to take revenge on someone, are you?? ";
-			mes " Don't get malicious thoughts. Keep a kind heart. ";
+			mes "[萊希梅托拉]";
+			mes "奇怪的是，這會出現在關於愛情的事情上...太奇怪了...你不是在用這把鏟子向某人復仇吧？？";
+			mes "不要有惡意的想法。保持一顆善良的心。";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about taking a break from love and giving yourself time to relax.. I agree with this card. ";
+			mes "[萊希梅托拉]";
+			mes "不妨從愛情中休息一下，給自己一些放鬆的時間...我同意這張卡牌。";
 			break;
 		case 5:// Dustiness Card
-			mes " Its pure eyes look at a loved one but cannot recognize them, the wings flutter towards the loved one, but it helplessly stays in one place, ";
-			mes " it calls its loved one, but they cannot hear.. ";
+			mes "它純潔的眼睛看著所愛的人卻無法認出，翅膀朝著所愛的人扇動，但它無助地停留在一個地方，";
+			mes "它呼喚著所愛的人，但他們聽不見...";
 			next;
-			mes "[Lhimetorra]";
-			mes " What a sad fortune.. ";
-			mes " Indeed, it is sad love... it might be hard to overcome. ";
+			mes "[萊希梅托拉]";
+			mes "多麼悲傷的運勢...";
+			mes "的確，這是悲傷的愛情...可能很難克服。";
 			break;
 		case 6:
-			mes " The passion of love like a raging wave... You can't even hide it. ";
-			mes " With such passionate love, isn't there only one way..? ";
+			mes "像洶湧的波浪一樣的愛情熱情...你甚至無法隱藏它。";
+			mes "有了如此熱情的愛，難道只有一種方法嗎...？";
 			next;
-			mes "[Lhimetorra]";
-			mes " Passionate love is nearby. It is a good sign. ";
+			mes "[萊希梅托拉]";
+			mes "熱情的愛就在附近。這是一個好兆頭。";
 			break;
 		case 7:
-			mes " The teeth of dustiness are very strong. This means.. use your teeth for victory?! ";
+			mes "塵埃的牙齒非常堅固。這意味著...用你的牙齒來取得勝利？！";
 			break;
 		case 8:
-			mes " The card is telling me, 'Fly to your loved one as you were a butterfly and shoot at it as you were a star.' ";
-			mes "..even though it doesn't sound like something a moth would say. ";
+			mes "卡牌告訴我，'像蝴蝶一樣飛向你所愛的人，像星星一樣向它射擊。'";
+			mes "..即使這聽起來不像飛蛾會說的話。";
 			next;
-			mes "[Lhimetorra]";
-			mes " The passion of love like a raging wave.. You can't even hide it. ";
+			mes "[萊希梅托拉]";
+			mes "像洶湧的波浪一樣的愛情熱情...你甚至無法隱藏它。";
 			break;
 		case 9:
-			mes " Perhaps the person you believe to be a butterfly is actually a moth. This fortune is awaiting a prudent judgement. ";
+			mes "也許你認為是蝴蝶的人實際上是飛蛾。這種運勢正在等待審慎的判斷。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love is indeed a subject to be dealt with prudence. Keep that in mind young one. ";
+			mes "[萊希梅托拉]";
+			mes "愛情的確是一個需要謹慎處理的主題。請記住這一點，年輕人。";
 			break;
 		case 10: // Dracula Card
-			mes " The one you love will give you a kiss of death. ";
-			mes " The irresistable kiss.. It is up to you to decide whether to avoid it or not. ";
+			mes "你愛的人會給你一個死亡之吻。";
+			mes "無法抗拒的吻...是否要避免它取決於你。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Charisma... is the sweetest poison. ";
+			mes "[萊希梅托拉]";
+			mes "魅力...是最甜蜜的毒藥。";
 			break;
 		case 11:
-			mes " You are looking at a wonderful person, but their eyes are fixed in darkness. ";
-			mes " How about trying to grab their attention? ";
+			mes "你正在看著一個很棒的人，但他們的眼睛卻固定在黑暗中。";
+			mes "不妨試著吸引他們的注意力？";
 			next;
-			mes "[Lhimetorra]";
-			mes " so, you need to try something other than charisma. ";
+			mes "[萊希梅托拉]";
+			mes "所以，你需要嘗試一些魅力之外的東西。";
 			break;
 		case 12:
-			mes " Your love needs fresh blood. Healthy exercises and eating habits are necessary! ";
-			mes " You must change your living pattern first. ";
+			mes "你的愛需要新鮮的血液。健康的鍛鍊和飲食習慣是必要的！";
+			mes "你必須先改變你的生活模式。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Health is the best. ";
+			mes "[萊希梅托拉]";
+			mes "健康是最好的。";
 			break;
 		case 13:
-			mes " Don't you think you are infatuated by outer appearance and gambling with love? You might have to be more careful about it this time. ";
+			mes "你不覺得你被外表迷住，並且在愛情中賭博嗎？這次你可能要更加小心。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Beauty is only skin deep. ";
+			mes "[萊希梅托拉]";
+			mes "美麗只是一層皮囊。";
 			break;
 		case 14:
-			mes " Become a pirate of love! It is a simple, yet strong fortune! ";
+			mes "成為愛情的海盜！這是一個簡單而強大的運勢！";
 			break;
 		case 15:
-			mes " No matter how romantic and beautiful love is, it is not rightful, it is undesirable.. ";
-			mes " is what this card means. ";
+			mes "無論愛情多麼浪漫和美麗，它都是不正當的，不受歡迎的...";
+			mes "這就是這張卡牌的意思。";
 			next;
-			mes "[Lhimetorra]";
-			mes " I hope you are not disappointed by the moral of this fortune. ";
+			mes "[萊希梅托拉]";
+			mes "我希望你不要對這個運勢的道德感到失望。";
 			break;
 		case 16:
-			mes " In the rough sea called the world, only pirates, the outlaws of love, are the law. ";
-			mes " This card supports strong love. ";
+			mes "在名為世界的波濤洶湧的海洋中，只有海盜，愛情的法外之徒，才是法律。";
+			mes "這張卡牌支持強烈的愛情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " You must overcome it - no matter how strong the wave is. ";
+			mes "[萊希梅托拉]";
+			mes "你必須克服它 - 無論浪潮多麼強烈。";
 			break;
 		case 17:
-			mes " It is a warning not to get involved in false love like pirated editions! ";
-			mes " You may have to reconsider your love right now. ";
+			mes "這是一個警告，不要像盜版一樣捲入虛假的愛情！";
+			mes "你可能必須重新考慮你現在的愛情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Illegal copying is not love! ";
+			mes "[莉梅托拉]";
+			mes " 非法複製不是愛！ ";
 			break;
 		case 18:// Marina Card
-			mes " This is praising the type of love that is always there, yet barely has a form as it does not exist. ";
-			mes " Are you involved this type of love? ";
+			mes " 這是在讚美那種始終存在，卻幾乎沒有形式的愛，因為它並不存在。 ";
+			mes " 你有牽涉到這種愛嗎？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love's form is obscure. ";
+			mes "[莉梅托拉]";
+			mes " 愛的形式是模糊的。 ";
 			break;
 		case 19:
-			mes " You must be careful. Love is quietly approaching and spreading poison. Be careful of the poison of love. ";
+			mes " 你必須小心。愛正在悄悄地逼近並散播毒藥。小心愛的毒藥。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " There is no cure for this poison! ";
+			mes "[莉梅托拉]";
+			mes " 沒有解藥可以治療這種毒藥！ ";
 			break;
 		case 20:
-			mes " Aren't you already caught in love that you cannot run away from? Look around you. ";
-			mes " You might be captured inside invisible walls. ";
+			mes " 你是不是已經陷入了無法逃脫的愛？看看你周圍。 ";
+			mes " 你可能被囚禁在無形的牆壁裡。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You have been blinded by love and became a prisoner! Shouldn't you escape? ";
+			mes "[莉梅托拉]";
+			mes " 你被愛蒙蔽了雙眼，成了囚犯！你不應該逃脫嗎？ ";
 			break;
 		case 21:
-			mes " This fortune is saying that love is.. approaching wobbly and softly~ and then bam~ embracing it. ";
-			mes " Very romantic. Hehe. ";
+			mes " 這個運勢說，愛是.. 搖搖晃晃、輕輕柔柔地靠近~ 然後砰~ 擁抱它。 ";
+			mes " 非常浪漫。呵呵。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Romance is the best part of love~ ";
+			mes "[莉梅托拉]";
+			mes " 浪漫是愛中最好的部分~ ";
 			break;
 		case 22:
-			mes " This card is warning you to not treat your loved one like a puppet. ";
-			mes " You're not doing this, are you? ";
+			mes " 這張卡片警告你不要把你的愛人當作傀儡。 ";
+			mes " 你沒有這樣做，對吧？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love is not supposed to be about controlling and restraining~ mm~ ";
+			mes "[莉梅托拉]";
+			mes " 愛不應該是關於控制和約束~ 嗯~ ";
 			break;
 		case 23:
-			mes " Dolls understand a human's heart more than a human. Try treating your loved one as they were a doll. ";
+			mes " 洋娃娃比人類更了解人類的心。試著像對待洋娃娃一樣對待你的愛人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Your loved one can't be worse than a doll, can they? ";
+			mes "[莉梅托拉]";
+			mes " 你的愛人不可能比洋娃娃更糟，對吧？ ";
 			break;
 		case 24:
-			mes " you are afraid to look into a doll's eyes, that is because there is a dark shadow covering your love. ";
-			mes " Rid yourselves of that shadow. Then the doll will smile as well. ";
+			mes " 你害怕看洋娃娃的眼睛，那是因為有一道黑暗的陰影籠罩著你的愛。 ";
+			mes " 擺脫那道陰影。那麼洋娃娃也會微笑的。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " That is what love is. ";
+			mes "[莉梅托拉]";
+			mes " 那就是愛。 ";
 			break;
 		case 25:
-			mes " Dolls become accustomed to the owner the more they are handled. Give your doll more attention. ";
-			mes " The doll is craving attention. A lot of attention. ";
+			mes " 洋娃娃會隨著主人撫摸得越多而越習慣主人。多給你的洋娃娃一些關注。 ";
+			mes " 洋娃娃渴望被關注。大量的關注。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Delicate treatment and attention is the best in love. ";
+			mes "[莉梅托拉]";
+			mes " 在愛情中，細膩的對待和關注是最好的。 ";
 			break;
 		case 26:// Medusa Card
-			mes " Do you fear the snake hair of a Medusa? However, love cannot be achieved with fear. ";
-			mes " You must move forward! ";
+			mes " 你害怕梅杜莎的蛇髮嗎？但是，愛不能靠恐懼來實現。 ";
+			mes " 你必須前進！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love must be pushed forward! ";
+			mes "[莉梅托拉]";
+			mes " 愛必須被推動前進！ ";
 			break;
 		case 27:
-			mes " Warriors that hastily attacked the Medusa all failed, but the one hero that used a mirror succeeded. ";
-			mes " You cannot succeed in love with brute force. You must use wisdom. ";
+			mes " 倉促攻擊梅杜莎的戰士都失敗了，但使用鏡子的英雄卻成功了。 ";
+			mes " 你不能用蠻力在愛情中取得成功。你必須運用智慧。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Do you understand what I mean young one? ";
+			mes "[莉梅托拉]";
+			mes " 你明白我的意思嗎，年輕人？ ";
 			break;
 		case 28:
-			mes " Must you love the one that has hair of snakes? Reconsider this love and think about it earnestly. ";
+			mes " 你一定要愛那個有蛇髮的人嗎？重新考慮這份愛，並認真思考。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What do you think? Isn't this a great opportunity to ponder about the relationship. ";
+			mes "[莉梅托拉]";
+			mes " 你覺得呢？這不是一個思考關係的好機會嗎？ ";
 			break;
 		case 29:
-			mes " It is a hint saying that a strong hairstyle is the key to turning over the situation. Change your hairstyle! ";
+			mes " 這是一個提示，表示強烈的髮型是扭轉局勢的關鍵。改變你的髮型！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Fashion is in the hands of those who are ahead! ";
+			mes "[莉梅托拉]";
+			mes " 時尚掌握在領先者手中！ ";
 			break;
 		case 30:// Baphomet Card
-			mes " Love must have two things: great strength and the will to live. Have you thought about whether or not you can overcome this with your current self? ";
+			mes " 愛必須有兩件事：強大的力量和生存的意志。你有沒有想過，憑藉你目前的狀態，你是否能夠克服這個難關？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Know love and know thyself! ";
+			mes "[莉梅托拉]";
+			mes " 了解愛，了解你自己！ ";
 			break;
 		case 31:
-			mes " A scythe may seem burdensome but a strong Baphomet can freely use it. ";
-			mes " It is the same concept. you are ready, any type of love is possible. There is no such thing as impossible. ";
+			mes " 鐮刀可能看起來很沉重，但強壯的巴風特可以自由地使用它。 ";
+			mes " 這是一樣的概念。你已經準備好了，任何類型的愛都是可能的。沒有不可能的事情。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Love requires preparation as well! ";
+			mes "[莉梅托拉]";
+			mes " 愛也需要準備！ ";
 			break;
 		case 32:
-			mes " Love must have two things: great strength and the will to live. Have you thought about whether or not you can overcome this with your current self? ";
+			mes " 愛必須有兩件事：強大的力量和生存的意志。你有沒有想過，憑藉你目前的狀態，你是否能夠克服這個難關？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Know love and know thyself! ";
+			mes "[莉梅托拉]";
+			mes " 了解愛，了解你自己！ ";
 			break;
 		case 33:
-			mes " There are those who are born, destined to run into this wall, an obstacle. Your love seems to have reached that wall.. It must be hard. ";
+			mes " 有些人天生註定會撞到這面牆，一個障礙。你的愛似乎已經到達了那面牆.. 一定很辛苦。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What a pity. ";
+			mes "[莉梅托拉]";
+			mes " 真可惜。 ";
 			break;
 		case 34:
-			mes " This Baphomet looks as it is having a hard time. The person must be exhausted even it may not seem so. ";
+			mes " 這個巴風特看起來很辛苦。這個人一定很疲憊，即使看起來可能不是這樣。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Approach then with affection. ";
+			mes "[莉梅托拉]";
+			mes " 那就用愛意接近吧。 ";
 			break;
 		case 35:// Sandman Card
-			mes " Can't you hear the cry of the card? It is suffering. Love is like that.. ";
+			mes " 你聽不到卡片的哭聲嗎？它很痛苦。愛就是那樣的.. ";
 			next;
-			mes "[Lhimetorra]";
-			mes " So don't be upset about it! ";
+			mes "[莉梅托拉]";
+			mes " 所以不要為此感到沮喪！ ";
 			break;
 		case 36:
-			mes " Your love right now is so bored that it is yawning. How about trying something fresh and new? ";
+			mes " 你現在的愛太無聊了，正在打哈欠。何不嘗試一些新鮮事物？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Try changing your dating style. ";
+			mes "[莉梅托拉]";
+			mes " 嘗試改變你的約會方式。 ";
 			break;
 		case 37:
-			mes " Deep sleep brings happiness and dreams. I think what you need right now is sleep. ";
+			mes " 深沉的睡眠帶來幸福和夢想。我想你現在需要的是睡眠。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Get some sleep. ";
+			mes "[莉梅托拉]";
+			mes " 去睡一覺吧。 ";
 			break;
 		case 38:
-			mes " I feel some sort of emptiness.. Maybe there is a gap in your love? ";
+			mes " 我感覺到某種空虛.. 也許你的愛中存在著裂痕？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Take a close look. ";
+			mes "[莉梅托拉]";
+			mes " 仔細觀察。 ";
 			break;
 		case 39:// Sohee Card
-			mes " Even a traditional beauty can seem cold to others. Try looking at your loved one from a different point of view. ";
+			mes " 即使是傳統的美女，對其他人來說也可能顯得很冷漠。試著從不同的角度看待你的愛人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Look at love from a different perspective. You never know when you'll be able to discover something. ";
+			mes "[莉梅托拉]";
+			mes " 從不同的角度看愛情。你永遠不知道什麼時候才能發現新事物。 ";
 			break;
 		case 40:
-			mes " They may seem dreary and ominous but their attire is spotless. They show devotion to the other. ";
-			mes " Even though you are not satisfied with your love right now, take a look at their attire. ";
+			mes " 他們可能看起來陰沉而凶兆，但他們的服裝一塵不染。他們展現出對對方的奉獻。 ";
+			mes " 即使你現在對你的愛不滿意，看看他們的服裝。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " it is carefully worn, their heart for you can be seen in it as well.. ";
+			mes "[莉梅托拉]";
+			mes " 它們被小心地穿著，他們對你的心意也可以在其中看到.. ";
 			break;
 		case 41:
-			mes " There is a person you must not deal with thoughtlessly nearby. Don't say or do anything carelessly. You must be careful when dealing with this person. ";
+			mes " 在你附近有一個你不能輕率對待的人。不要隨便說或做任何事。你在與這個人打交道時必須小心。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Bear that in mind. ";
+			mes "[莉梅托拉]";
+			mes " 記住這一點。 ";
 			break;
 		case 42:
-			mes " Even the wind blows and the trail of her clothes flutter, her posture never changes. Loving a person with that type of heart will bring goodwill and happiness. ";
+			mes "即使風吹過，她的衣裳飄動，她的姿態也從未改變。愛上擁有這種心的人會帶來善意和幸福。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Keep a righteous heart and mind. ";
+			mes "[莉梅托拉]";
+			mes "保持正直的心和思想。";
 			break;
 		case 43:// Skel Worker Card
-			mes " That lightens and attacks with a pickaxe! You must aggressively move forward. What do you think? Your fortune is a good one. ";
+			mes "那個用鶴嘴鋤照明和攻擊的人！你必須積極前進。你覺得怎麼樣？你的運氣很好。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Is your heart ready young one? ";
+			mes "[莉梅托拉]";
+			mes "年輕人，你的心準備好了嗎？";
 			break;
 		case 44:
-			mes " The card only shows gaunt bones, but notice how it has all the necessary tools?";
-			mes " Even though your love right now may seem as there is nothing to it, it has everything you need. ";
+			mes "這張牌只顯示了瘦骨嶙峋的骨頭，但請注意它擁有所有必要的工具嗎？";
+			mes "即使你現在的愛情看起來好像什麼都沒有，但它擁有你所需要的一切。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't get too greedy about things. ";
+			mes "[莉梅托拉]";
+			mes "不要對事物太過貪婪。";
 			break;
 		case 45:
-			mes " It has a lantern on its back and even in its hand.. it believes one light is insufficient. ";
-			mes " you are only shining one type of light to your loved one, shining another might help. ";
+			mes "它的背上甚至手上都有燈籠……它認為一盞燈是不夠的。";
+			mes "你只向你愛的人發出一種光芒，發出另一種光芒可能會有所幫助。";
 			next;
-			mes "[Lhimetorra]";
-			mes " They might be feeling that one is not enough. ";
+			mes "[莉梅托拉]";
+			mes "他們可能覺得一種是不夠的。";
 			break;
 		case 46:
-			mes " You know the smile of Mona Lisa.. Perhaps the person you are looking at has the same expression? ";
+			mes "你知道蒙娜麗莎的微笑……也許你正在看的人有同樣的表情？";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't try to gaze straight them. Make an effort to approach them. ";
+			mes "[莉梅托拉]";
+			mes "不要試圖直視他們。努力接近他們。";
 			break;
 		case 47:
-			mes " A knight on a horse is a fantasy in every person's heart. Make it so that this fantasy becomes real. ";
+			mes "騎在馬上的騎士是每個人心中的幻想。讓這個幻想變成現實。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Then there will surely be progress. ";
+			mes "[莉梅托拉]";
+			mes "那麼肯定會有進展。";
 			break;
 		case 48:
-			mes " Is that soldier waiting to attack? I can feel great tension between the horse and knight. ";
-			mes " Don't run forward carelessly. Raise your sword and wait for your chance. ";
+			mes "那個士兵在等待攻擊嗎？我能感受到馬和騎士之間巨大的緊張感。";
+			mes "不要粗心大意地向前衝。舉起你的劍，等待你的機會。";
 			next;
-			mes "[Lhimetorra]";
-			mes " This means now is a time to wait. How about it, would you like to wait a while? ";
+			mes "[莉梅托拉]";
+			mes "這意味著現在是等待的時候。你覺得怎麼樣，你想等一下嗎？";
 			break;
 		case 49:
-			mes " He is falling asleep awaiting a battle. Is it because he is laid back, or simply pathetic? Depends on the situation I suppose. ";
-			mes " But you've got to give him credit for his boldness. ";
+			mes "他在等待戰鬥時睡著了。是因為他很悠閒，還是只是可悲？我想這取決於情況。";
+			mes "但你必須讚賞他的膽量。";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about becoming a brave warrior in the battle of love? ";
+			mes "[莉梅托拉]";
+			mes "在愛情的戰鬥中成為一個勇敢的戰士如何？";
 			break;
 		case 50:
-			mes " Very favorable. It's to a point that I can feel strong energy from the card. I will give some of this energy to you. ";
+			mes "非常有利。甚至到了我能感受到從卡片中散發出的強大能量的程度。我會把這些能量分給你一些。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Devote that energy to love..! ";
+			mes "[莉梅托拉]";
+			mes "將這種能量奉獻給愛情……！";
 			break;
 		case 51:// Anubis Card
-			mes " What does the god of death have to say about love? It is something ominous for sure. ";
+			mes "死神對愛情有什麼看法？這肯定是不祥之兆。";
 			next;
-			mes "[Lhimetorra]";
-			mes " I think it is trying to give a warning. Be careful. ";
+			mes "[莉梅托拉]";
+			mes "我認為它試圖發出警告。小心點。";
 			break;
 		case 52:
-			mes " Hmm. How about giving a cute puppy as a gift? One with a round nose. Then they will surely be happy. ";
+			mes "嗯。送一隻可愛的小狗作為禮物怎麼樣？一隻有圓鼻子的。那麼他們肯定會很高興。";
 			next;
-			mes "[Lhimetorra]";
-			mes " But can't help it they don't like puppies. ";
+			mes "[莉梅托拉]";
+			mes "但如果他們不喜歡小狗也沒辦法。";
 			break;
 		case 53:
-			mes " I can tell what it was doing from the way it is crying while holding an axe with blood. It is deeply wounded by love. ";
+			mes "我能從它一邊哭泣一邊拿著一把帶血的斧頭的方式判斷它在做什麼。它被愛深深地傷害了。";
 			next;
-			mes "[Lhimetorra]";
-			mes " that wound isn't cured soon, it will become as Anubis wanted. ";
+			mes "[莉梅托拉]";
+			mes "如果那個傷口沒有很快治癒，它就會變成阿努比斯想要的樣子。";
 			break;
 		case 54:
-			mes " The pattern of the clothes symbolizes a warning. It is saying to be careful of love. ";
+			mes "衣服的圖案象徵著警告。它說要注意愛情。";
 			next;
-			mes "[Lhimetorra]";
-			mes "Be cautious. ";
+			mes "[莉梅托拉]";
+			mes "要謹慎。";
 			break;
 		case 55:// Orc Lord Card
-			mes " He is a warning you not to drool over someone else. ";
+			mes "他警告你不要對別人流口水。";
 			next;
-			mes "[Lhimetorra]";
-			mes " That's bad! You will be punished! ";
+			mes "[莉梅托拉]";
+			mes "太糟糕了！你會受到懲罰的！";
 			break;
 		case 56:
-			mes " Who is he so fiercly gazing at with those grand muscles? He is looking at someone else for sure. ";
+			mes "他用那些強壯的肌肉兇猛地盯著誰？他肯定在看別人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't get sidetracked and look elsewhere! You will be cursed! ";
+			mes "[莉梅托拉]";
+			mes "不要跑題，不要看向別處！你會被詛咒的！";
 			break;
 		case 57:
-			mes " Strengthen your body and observe the target. That is the step to success. ";
+			mes "增強你的身體並觀察目標。這是成功的步驟。";
 			next;
-			mes "[Lhimetorra]";
-			mes " you want love as well, why don't you take the card's advice and prepare yourself first? ";
+			mes "[莉梅托拉]";
+			mes "你也想要愛，為什麼不聽取卡片的建議，先做好準備呢？";
 			break;
 		case 58:
-			mes " His navel is very pretty. You have to meet someone with that type of navel to be happy. ";
+			mes "他的肚臍非常漂亮。你必須遇到一個擁有那種肚臍的人才能幸福。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Ok? Keep that in mind~ ";
+			mes "[莉梅托拉]";
+			mes "好嗎？記住這一點~";
 			break;
 		case 59:// Jakk Card
-			mes " You'll get hurt you mess around. This card is giving you a piece of advice. ";
+			mes "你胡鬧會受傷的。這張卡正在給你一個建議。";
 			next;
-			mes "[Lhimetorra]";
-			mes " You did something wrong to your loved one, didn't you? Make an effort to make up for it~! ";
+			mes "[莉梅托拉]";
+			mes "你對你愛的人做錯了什麼，不是嗎？努力彌補一下~! ";
 			break;
 		case 60:
-			mes " From the way he is massaging its back because of a shoulder cramp, maybe your love is seeking someone to massage them. Love starts from little thoughts.";
+			mes "從他因為肩膀抽筋而按摩背部的方式來看，也許你的愛人正在尋找可以按摩他們的人。愛始於小小的想法。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Next time you meet them, give them a massage. Start with the little things. ";
+			mes "[莉梅托拉]";
+			mes "下次你見到他們時，給他們按摩一下。從小事做起。";
 			break;
 		case 61:
-			mes " His expression is in awe. When encountering an absurd incident, his face and expression becomes peculiarly distorted. ";
-			mes " I think the one you are looking towards has that type of expression. ";
+			mes "他的表情很敬畏。當遇到荒謬的事件時，他的臉和表情會變得異常扭曲。";
+			mes "我認為你正在尋找的那個人有那種表情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Did you do something absurd to that person? Are you sure? Think about it~ ";
+			mes "[莉梅托拉]";
+			mes "你對那個人做了什麼荒謬的事情嗎？你確定嗎？想想看~";
 			break;
 		case 62:
-			mes " the lover does something wrong he pokes them with a needle. How scary.. ";
+			mes "戀人做錯事，他就用針扎他們。多麼可怕……";
 			break;
 		case 63:// Joker Card
-			mes " A person's heart is like this card. you flip it over nobody can tell what is behind it. Try turning the person's card over. ";
+			mes "一個人的心就像這張牌。你把它翻過來，沒人能知道它背後是什麼。試著翻轉這個人的牌。";
 			next;
-			mes "[Lhimetorra]";
-			mes " You must approach their true heart. Understand? ";
+			mes "[莉梅托拉]";
+			mes "你必須接近他們真實的心。明白了嗎？";
 			break;
 		case 64:
-			mes " Jokers are sly, but that is just because it is their habit. ";
-			mes " The reason the person may seem capricious or cunning is partially because they are born like that. ";
+			mes "小丑很狡猾，但這只是因為這是他們的習慣。";
+			mes "這個人看起來反覆無常或狡猾的原因，部分是因為他們天生就是這樣。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Will you be able to approach them regardless? To do so, you must prepare you heart.. mm.. ";
+			mes "[莉梅托拉]";
+			mes "無論如何，你能接近他們嗎？要做到這一點，你必須準備好你的心……嗯……";
 			break;
 		case 65:
-			mes " The joker can't use any of his strength because he is tied to a card. Perhaps the person is caught in something and can't show their true merit? ";
+			mes "小丑無法使用任何力量，因為他被綁在一張卡片上。也許這個人被困在某件事中，無法展現他們真正的優點？";
 			next;
-			mes "[Lhimetorra]";
-			mes " you love them, free them from the chains tying them down.. That is consideration.. and love ";
+			mes "[莉梅托拉]";
+			mes "你愛他們，將他們從束縛他們的鎖鏈中解放出來……那就是體貼……和愛";
 			break;
 		case 66:
-			mes " Don't get fooled by tricks. They are a person, too. They know how to lie once in a while. Search for the trick calmly and carefully. ";
+			mes "不要被花招愚弄。他們也是一個人。他們知道偶爾如何撒謊。冷靜而仔細地尋找詭計。";
 			next;
-			mes "[Lhimetorra]";
-			mes " And then search for a different route. That is the wise decision. ";
+			mes "[莉梅托拉]";
+			mes "然後尋找不同的路線。那是明智的決定。";
 			break;
 		case 67:// Hode Card
-			mes " It is saying that daring action is necessary, such as that of the Hode that strikes up from the sand. ";
+			mes " 它說，需要大膽的行動，就像霍德從沙子中冒出來一樣。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Maybe you are discouraged a little too much right now. Be brave and daring young one. ";
+			mes "[莉梅托拉]";
+			mes " 也許你現在有點太灰心了。勇敢和大膽一點，年輕人。 ";
 			break;
 		case 68:
-			mes " Seeing that the Hode spits out sand to those who bother them, you must have done something to bother the person somehow. ";
+			mes " 看到霍德向打擾牠的人吐沙子，你一定做了什麼事打擾到那個人了。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Maybe you are being troublesome? Make an effort to relax a little more. ";
+			mes "[莉梅托拉]";
+			mes " 也許你很麻煩？努力放鬆一點。 ";
 			break;
 		case 69:
-			mes " The Hode has a very strong will to live. It is to survive in the forest. It is suggesting dating with that kind of will.";
+			mes " 霍德有非常強烈的求生意志。牠要在森林裡生存。它建議以那種意志去約會。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Hmm, try love with more spirit. You will get good results. ";
+			mes "[莉梅托拉]";
+			mes " 嗯，試著更有精神地去愛。你會得到好結果的。 ";
 			break;
 		case 70:
-			mes " Ah.. there is a noble person up north. North it is. This direction will never change. ";
+			mes " 啊……北方有一位高貴的人。就是北方。這個方向永遠不會改變。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Trust me and go for it. ";
+			mes "[莉梅托拉]";
+			mes " 相信我，放手去做吧。 ";
 			break;
 		case 71:// Minorous Card
-			mes " A walking bull is rare. The person you are looking towards is that rare. Don't let go of them. You may never see them again.. ";
+			mes " 行走的公牛很少見。你所關注的人就是那麼稀有。別放開他們。你可能再也見不到他們了…… ";
 			next;
-			mes "[Lhimetorra]";
-			mes " The card is saying this. ";
+			mes "[莉梅托拉]";
+			mes " 這張牌是這麼說的。 ";
 			break;
 		case 72:
-			mes " Can you see the strong muscles that even arrows cannot pierce? The person is like that, too. ";
+			mes " 你能看到連箭都無法穿透的強壯肌肉嗎？這個人也是那樣的。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " To attack with love.. you will need a stronger attack.. Mmm.. ";
+			mes "[莉梅托拉]";
+			mes " 用愛來攻擊……你需要更強烈的攻擊……嗯…… ";
 			break;
 		case 73:
-			mes " The scariest thing is not the hammer nor horn. It is the massive legs that support its heavy weight. Nobody can survive a hit by those legs. The person is also probably hiding the most dangerous part. ";
+			mes " 最可怕的不是鎚子也不是角。而是支撐其沉重重量的巨大腿。沒有人能在那些腿的撞擊下倖存。這個人可能也隱藏著最危險的部分。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You must love but be careful at the same time. You never know when you will be hit by the hind legs. ";
+			mes "[莉梅托拉]";
+			mes " 你必須愛，但同時也要小心。你永遠不知道什麼時候會被後腿踢到。 ";
 			break;
 		case 74:
-			mes " No matter how fearful the bull may be, it has a nose ring, it has already been tamed by humans. No matter how astonishing that person may be, taming is your responsibility. ";
+			mes " 無論公牛多麼可怕，牠都有鼻環，牠已經被人類馴服了。無論那個人多麼令人驚訝，馴服是你的責任。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Approach them with more sincerity and consideration. ";
+			mes "[莉梅托拉]";
+			mes " 以更多的誠意和體貼來接近他們。 ";
 			break;
 		}
 		next;
-		mes "[Lhimetorra]";
-		mes " You seeked advice about love. ";
-		mes " Even if you may not pleased with it, consider it calmly and make an effort to find true happiness. ";
+		mes "[莉梅托拉]";
+		mes " 你尋求關於愛情的建議。 ";
+		mes " 即使你可能不滿意，也要冷靜地考慮它，並努力找到真正的幸福。 ";
 		cutin "",255;
 		next;
-		mes "[Lhimetorra]";
-		mes " Then... ";
+		mes "[莉梅托拉]";
+		mes " 那麼... ";
 		close;
 	//=================================================================Assets? ===
 	case 2:
-		mes "[Lhimetorra]";
-		mes " Ooh... something about your fortune is starting to show... ";
+		mes "[莉梅托拉]";
+		mes " 喔... 關於你的財運的事情開始顯現了... ";
 		next;
 		.@card_1_money = rand(1,73);
-		if (.@card_1_money < 5) cutin "陛檜嬴蝶蘋萄",4;			// Giearth Card
-		else if (.@card_1_money < 10) cutin "渦蝶じ啻蝶蘋萄",4;	// Dustiness Card
-		else if (.@card_1_money < 13) cutin "萄塭聽塭蘋萄",4;		// Dracula Card
-		else if (.@card_1_money < 16) cutin "萄溯檜觼蘋萄",4;		// Drake Card
-		else if (.@card_1_money < 20) cutin "葆葬釭蘋萄",4;		// Marina Card
-		else if (.@card_1_money < 24) cutin "葆葬螃啻お蘋萄",4;	// Marionette Card
-		else if (.@card_1_money < 29) cutin "詭舒餌蘋萄",4;		// Medusa Card
-		else if (.@card_1_money < 33) cutin "夥ん詭お蘋萄",4;		// Baphomet Card
-		else if (.@card_1_money < 37) cutin "僻萄裔蘋萄",4;		// Sandman Card
-		else if (.@card_1_money < 41) cutin "模�鯆奏�",4;		// Sohee Card
-		else if (.@card_1_money < 45) cutin "蝶騷錶醴蘋萄",4;		// Skel Worker Card
-		else if (.@card_1_money < 50) cutin "蝶騷釭檜お蘋萄",4;	// Khalitzburg Card
-		else if (.@card_1_money < 54) cutin "嬴援綠蝶蘋萄",4;		// Anubis Card
-		else if (.@card_1_money < 58) cutin "螃觼煎萄蘋萄",4;		// Orc Lord Card
-		else if (.@card_1_money < 62) cutin "燮蘋萄",4;			// Jakk Card
-		else if (.@card_1_money < 66) cutin "褻醴蘋萄",4;		// Joker Card
-		else if (.@card_1_money < 70) cutin "�ㄤ暰奏�",4;		// Hode Card
-		else cutin "�票痁奏�",4; // Minorous Card
+		if (.@card_1_money < 5) cutin "?????????",4;			// Giearth Card
+		else if (.@card_1_money < 10) cutin "???????????",4;	// Dustiness Card
+		else if (.@card_1_money < 13) cutin "?????????",4;		// Dracula Card
+		else if (.@card_1_money < 16) cutin "?巹??????",4;		// Drake Card
+		else if (.@card_1_money < 20) cutin "?????????",4;		// Marina Card
+		else if (.@card_1_money < 24) cutin "????????????",4;	// Marionette Card
+		else if (.@card_1_money < 29) cutin "??λ????",4;		// Medusa Card
+		else if (.@card_1_money < 33) cutin "??????????",4;		// Baphomet Card
+		else if (.@card_1_money < 37) cutin "????????",4;		// Sandman Card
+		else if (.@card_1_money < 41) cutin "???????",4;		// Sohee Card
+		else if (.@card_1_money < 45) cutin "?????????",4;		// Skel Worker Card
+		else if (.@card_1_money < 50) cutin "???????????",4;	// Khalitzburg Card
+		else if (.@card_1_money < 54) cutin "????????",4;		// Anubis Card
+		else if (.@card_1_money < 58) cutin "????ε????",4;		// Orc Lord Card
+		else if (.@card_1_money < 62) cutin "?????",4;			// Jakk Card
+		else if (.@card_1_money < 66) cutin "??????",4;		// Joker Card
+		else if (.@card_1_money < 70) cutin "??????",4;		// Hode Card
+		else cutin "??????",4; // Minorous Card
 		
-		mes "[Lhimetorra]";
+		mes "[莉梅托拉]";
 		switch(.@card_1_money) {
 		case 1:
-			mes " You must work hard to become wealthy. Don't think of other things.. Focus on and put effort into achieving your goals. ";
+			mes " 你必須努力工作才能變得富有。別想其他的事情……專注於並努力實現你的目標。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Then good luck and try your best. ";
+			mes "[莉梅托拉]";
+			mes " 祝你好運，盡力而為。 ";
 			break;
 		case 2:
-			mes " Something very rare may come your way. A gold mine has been the dream of many since ancient times. You have a gold mine right in front of you. ";
+			mes " 非常罕見的東西可能會朝你走來。自古以來，金礦一直是許多人的夢想。你面前就有一座金礦。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " All in all, a big fortune is right in front of your eyes. I'll be looking forward to it. ";
+			mes "[莉梅托拉]";
+			mes " 總而言之，一大筆財富就在你眼前。我很期待。 ";
 			break;
 		case 3:
-			mes " In the stomach pocket, there must be a secret treasure. There may be something in your pocket as well. ";
+			mes " 在胃袋裡，一定有秘密的寶藏。你的口袋裡可能也有東西。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Are you hiding things from other people? You should get rid of them. They may bring bad luck. ";
+			mes "[莉梅托拉]";
+			mes " 你在隱瞞別人嗎？你應該擺脫它們。它們可能會帶來厄運。 ";
 			break;
 		case 4:
-			mes " The card says that you should not be too greedy, for that may cause you to dig your own grave. ";
+			mes " 這張牌說你不應該太貪婪，因為那可能會導致你自掘墳墓。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You may not feel good about it, but you should accept the card's advice..! ";
+			mes "[莉梅托拉]";
+			mes " 你可能對此感覺不好，但你應該接受這張牌的建議……！ ";
 			break;
 		case 5:// Dustiness Card
-			mes " Did you know that a moth's wings has infinite amounts of powder on it? A moth symbolizes wealth in the sense that it can gather wealth just as the powder on its wings. ";
+			mes " 你知道飛蛾的翅膀上有無數的粉末嗎？飛蛾像徵著財富，因為牠可以像翅膀上的粉末一樣聚集財富。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Young one, you will gather much wealth. ";
+			mes "[莉梅托拉]";
+			mes " 年輕人，你會積累很多財富。 ";
 			break;
 		case 6:
-			mes " You must work hard to become wealthy. Don't think of other things. Simply focusing on your goals putting effort into it will help. ";
+			mes " 你必須努力工作才能變得富有。別想其他的事情。只是專注於你的目標並為之努力將會有幫助。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Good luck and try your best. ";
+			mes "[莉梅托拉]";
+			mes " 祝你好運，盡力而為。 ";
 			break;
 		case 7:
-			mes " There is a common saying that when a moth flaps its wings, wealth will fly away as well. It's not a very good sign. ";
+			mes " 有一種常見的說法是，當飛蛾拍打翅膀時，財富也會隨之飛走。這不是一個好兆頭。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be careful not to lose your assets. Take good care of your wallet. ";
+			mes "[莉梅托拉]";
+			mes " 小心不要損失你的資產。好好保管你的錢包。 ";
 			break;
 		case 8:
-			mes " Dustiness teeth are very strong. This means.. ";
+			mes " 沙塵獸的牙齒非常堅固。這意味著…… ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Your tooth will become a gold tooth?! ";
+			mes "[莉梅托拉]";
+			mes " 你的牙齒會變成金牙？！ ";
 			break;
 		case 9:
-			mes " When a dustiness flies around, a big expense comes up. You may need to spend some money soon. ";
+			mes " 當沙塵獸飛來飛去時，就會出現一大筆開銷。你可能很快就需要花一些錢。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You might want to set up a budget to prepare for this expense. ";
+			mes "[莉梅托拉]";
+			mes " 你可能需要制定一個預算來為這筆費用做準備。 ";
 			break;
 		case 10:// Dracula Card
-			mes " Dracula brings in money. Maybe it is the moral influence from when it was a count. It is expensive to be a vampire, but I've never seen a poor one before. ";
+			mes " 德古拉帶來金錢。也許是來自他還是伯爵時的道德影響。當吸血鬼是很昂貴的，但我從未見過一個貧窮的吸血鬼。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You don't need to worry about money. ";
+			mes "[莉梅托拉]";
+			mes " 你不需要擔心錢。 ";
 			break;
 		case 11:
-			mes " To Dracula, money is not important. Blood is more valuable. To you, money must not be that important. You don't need to be concerned about money. ";
+			mes " 對於德古拉來說，金錢並不重要。血液更有價值。對你來說，金錢一定沒有那麼重要。你不需要擔心錢。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about it? Try being a little more casual about money. ";
+			mes "[莉梅托拉]";
+			mes " 怎麼樣？試著對金錢更隨意一點。 ";
 			break;
 		case 12:
-			mes " Dracula mocks human's money. To him it is worthless. ";
+			mes " 德古拉嘲笑人類的錢。對他來說，它一文不值。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You should not be so concerned about money and assets, too. ";
+			mes "[莉梅托拉]";
+			mes " 你也不應該太關心金錢和資產。 ";
 			break;
 		case 13:// Drake Card
-			mes " No matter what, stealing is wrong! Even a Drake blesses you in the name of pirates! Stealing is forbidden! ";
+			mes " 無論如何，偷竊是錯誤的！即使是德雷克也以海盜的名義祝福你！禁止偷竊！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Noooooooo stealing! ";
+			mes "[莉梅托拉]";
+			mes " 不~~~~~要偷竊！ ";
 			break;
 		case 14:
-			mes " You will gather good fortune in a secretive and peculiar way.. Although, there seems to be shadows over some parts of your life. ";
+			mes " 你將以一種隱秘而奇特的方式聚集好運……雖然，你的生活似乎有一些陰影。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It's an uneasy fortune. Are you ready? ";
+			mes "[莉梅托拉]";
+			mes " 這是一種令人不安的運氣。你準備好了嗎？ ";
 			break;
 		case 15:
-			mes " The reason pirates indulge in others assets in the vast rough ocean, is because it is the only way to let the people of the land know of their existence. ";
+			mes " 海盜在廣闊的 Rough Ocean 中沉迷於他人的資產的原因，是因為這是讓陸地上的人們了解他們存在的唯一途徑。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " But those who live on land do not need to do so. Don't look over other people's belongings. It is the advice of a pirate. ";
+			mes "[莉梅托拉]";
+			mes " 但是住在陸地上的人不需要這麼做。不要窺探別人的財產。這是海盜的忠告。";
 			break;
 		case 16:// Marina Card
-			mes " Marina prefers clean funds. It hates suspicious money. Your possessions should be clean as well. ";
+			mes " 瑪莉娜喜歡乾淨的資金。它討厭可疑的錢。你的財產也應該是乾淨的。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Why? The Marina might get rid of it all. ";
+			mes "[莉梅托拉]";
+			mes " 為什麼？瑪莉娜可能會擺脫一切。";
 			break;
 		case 17:
-			mes " The Marina gathers money quietly, little by little, and freely roaming at the same time. That's the real way to make money. The Marina is suggesting this method to you. ";
+			mes " 瑪莉娜悄悄地，一點一滴地積累金錢，同時自由地漫遊。這才是賺錢的真正方法。瑪莉娜向你推薦這個方法。";
 			next;
-			mes "[Lhimetorra]";
-			mes " You should take a shot at it. You've got nothing to lose. ";
+			mes "[莉梅托拉]";
+			mes " 你應該試一試。你沒有什麼好失去的。";
 			break;
 		case 18:
-			mes " The Marina is not interested in money. The card suggests that you will resemble these traits as well. You will enjoy life apart from money. ";
+			mes " 瑪莉娜對金錢不感興趣。這張卡暗示你也會擁有這些特質。你會享受金錢以外的生活。";
 			next;
-			mes "[Lhimetorra]";
-			mes " That's the fortune from a Marina card. ";
+			mes "[莉梅托拉]";
+			mes " 這是瑪莉娜卡片的預言。";
 			break;
 		case 19:
-			mes " You will gather money swiftly and quietly, then boom~ blow it all at once. ";
+			mes " 你會迅速而悄悄地積累金錢，然後砰~ 一次性全部花光。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Very witty, hoho. ";
+			mes "[莉梅托拉]";
+			mes " 非常風趣，呵呵。";
 			break;
 		case 20:// Marionette Card
-			mes " The Marionette treasures art over wealth. Bear that in mind. Honor over assets. ";
+			mes " 傀儡師重視藝術勝過財富。請記住這一點。榮譽勝過資產。";
 			next;
-			mes "[Lhimetorra]";
-			mes " What an important lesson.. Mmm... ";
+			mes "[莉梅托拉]";
+			mes " 多麼重要的一課.. 嗯... ";
 			break;
 		case 21:
-			mes " The Marionette likes shiny money. Not dull money, but the shiny kind. ";
+			mes " 傀儡師喜歡閃亮的錢。不是暗淡的錢，而是閃閃發光的那種。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Anyways, search for that type of money. ";
+			mes "[莉梅托拉]";
+			mes " 總之，尋找那種錢。";
 			break;
 		case 22:
-			mes " The Marionette requires lots of money. Its expenditures are enormous. You must have many expenditures ahead of you. ";
+			mes " 傀儡師需要大量的金錢。它的支出是巨大的。你未來一定有很多開銷。";
 			next;
-			mes "[Lhimetorra]";
-			mes " A gloomy fortune. How about being cautious? ";
+			mes "[莉梅托拉]";
+			mes " 一個陰鬱的預言。小心謹慎如何？";
 			break;
 		case 23:
-			mes " The Marionette uses a lot of money. There is someone around you that is like that, too. ";
+			mes " 傀儡師花費大量的金錢。你身邊也有這樣的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " There is a person like that for sure. You should watch out. ";
+			mes "[莉梅托拉]";
+			mes " 肯定有這樣的人。你應該小心。";
 			break;
 		case 24:// Medusa Card
-			mes " The hair of the Medusa symbolizes the amount of wealth. Seems as something good will happen to you, young one. ";
+			mes " 梅杜莎的頭髮象徵著財富的數量。似乎會有好事發生在你身上，年輕人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " You can look forward to it. ";
+			mes "[莉梅托拉]";
+			mes " 你可以期待一下。";
 			break;
 		case 25:
-			mes " The hair of the Medusa are all snakes. Snakes symbolize greed and slyness. When gathering things, it seems as a cunning force will join you. It's not exactly a bright sign.. ";
+			mes " 梅杜莎的頭髮都是蛇。蛇象徵著貪婪和狡猾。在收集東西時，似乎有一股狡猾的力量會加入你。這不是一個好兆頭.. ";
 			next;
-			mes "[Lhimetorra]";
-			mes " But you surely will get money. Hmm.. ";
+			mes "[莉梅托拉]";
+			mes " 但你肯定會得到錢。嗯.. ";
 			break;
 		case 26:
-			mes " The Medusa is strongly recommending saving. This card is telling you to save. It says to put many savings accounts in your hair and make yourself resemble its head shape. ";
+			mes " 梅杜莎強烈建議儲蓄。這張卡告訴你要儲蓄。它說要把許多儲蓄帳戶放在你的頭髮裡，讓自己像它的頭部形狀。";
 			next;
-			mes "[Lhimetorra]";
-			mes " That is what it believes to be wealth. Oooh! ";
+			mes "[莉梅托拉]";
+			mes " 這就是它認為的財富。喔！";
 			break;
 		case 28:
-			mes " The Medusa does not enjoy playing with money. you are attempting to use money other than the way it should be used, you should stop. Why? ";
+			mes " 梅杜莎不喜歡玩弄金錢。你試圖以不該使用的方式使用金錢，你應該停止。為什麼？";
 			next;
-			mes "[Lhimetorra]";
-			mes " Because there can be a curse of the Medusa. ";
+			mes "[莉梅托拉]";
+			mes " 因為可能會受到梅杜莎的詛咒。";
 			break;
 		case 29:// Baphomet Card
-			mes " The great strength of the Baphomet brings in fortune. It seems as you will be able to gather much wealth with the aid of the Baphomet's force! ";
+			mes " 巴風特的強大力量帶來財富。似乎你將能夠在巴風特力量的幫助下積累大量財富！";
 			next;
-			mes "[Lhimetorra]";
-			mes " It's a good sign! Congratulations! ";
+			mes "[莉梅托拉]";
+			mes " 這是一個好兆頭！恭喜！";
 			break;
 		case 30:
-			mes " The scythe of the Baphomet means a strong tool to gather wealth. you have a strong tool like his, it should be easy to gather wealth. ";
+			mes " 巴風特的鐮刀意味著收集財富的強大工具。你擁有像他一樣強大的工具，應該很容易積累財富。";
 			next;
-			mes "[Lhimetorra]";
-			mes " What the Baphomet is trying to say is, find a mean that can help you like his tool. ";
+			mes "[莉梅托拉]";
+			mes " 巴風特想要說的是，找到一種能像他的工具一樣幫助你的方法。";
 			break;
 		case 31:
-			mes " How about getting involved in raising cattle? It seems like you can gather much wealth through it. ";
+			mes " 參與畜牧業如何？似乎你可以通過它積累大量財富。";
 			break;
 		case 32:
-			mes " The Baphomet would like a tribute. He is saying that you do, he will return great benefits. ";
+			mes " 巴風特想要貢品。他說如果你這麼做，他會回報巨大的好處。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So try offering a part of your assets to the Baphomet. ";
+			mes "[莉梅托拉]";
+			mes " 所以試著將你的一部分資產獻給巴風特。";
 			break;
 		case 33:// Sandman Card
-			mes " The Sandman cries with sadness when money comes up. It is sad because money does not possess love or affection. ";
+			mes " 當提到金錢時，沙塵之希會傷心地哭泣。它很傷心，因為金錢沒有愛或感情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " I wonder the meaning of money will slowly disappear from your life as well. ";
+			mes "[莉梅托拉]";
+			mes " 我想金錢的意義也會慢慢從你的生活中消失。";
 			break;
 		case 34:
-			mes " The Sandman is screaming because it saw too much money. It saw the money in the hands of your future. I wonder what all that money is? ";
+			mes " 沙塵之希正在尖叫，因為它看到了太多的錢。它看到了你未來手中的錢。我想知道所有這些錢是什麼？";
 			next;
-			mes "[Lhimetorra]";
-			mes " I wonder.. Aren't you curious? ";
+			mes "[莉梅托拉]";
+			mes " 我想.. 你不好奇嗎？";
 			break;
 		case 35:
-			mes " The Sandman's body is empty inside. Your wallet seems to be emtpy, too. You should save up some money. ";
+			mes " 沙塵之希的身體內部是空的。你的錢包似乎也是空的。你應該存一些錢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " The Sandman likes to save, too. Even a monster likes to save, but when a human doesn't... ";
+			mes "[莉梅托拉]";
+			mes " 沙塵之希也喜歡儲蓄。即使是怪物也喜歡儲蓄，但當人類不儲蓄時... ";
 			break;
 		case 36:
-			mes " Money is like sand. Even you save it, once the wind blows, it disappears. This card shows the emptiness of money. ";
+			mes " 金錢就像沙子。即使你存起來，一旦風吹來，它就會消失。這張卡顯示了金錢的空虛。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Indeed, money is futile. ";
+			mes "[莉梅托拉]";
+			mes " 確實，金錢是徒勞的。";
 			break;
 		case 37:// Sohee Card
-			mes " Sohee is wearing a fine article. To wear something like that, you would need plenty of money. Do you know what the secret is? Sohee saved very much when she was once alive. ";
+			mes " 蘇海穿著一件精美的衣服。要穿那樣的東西，你需要大量的金錢。你知道秘訣是什麼嗎？蘇海在生前存了很多錢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So you should start saving, too. ";
+			mes "[莉梅托拉]";
+			mes " 所以你也應該開始儲蓄。";
 			break;
 		case 38:
-			mes " Sohee hates misers. She believes she has become like that because of a miser. Don't be stingy in front of Sohee! ";
+			mes " 蘇海討厭吝嗇鬼。她認為自己是因為一個吝嗇鬼才變成這樣的。不要在蘇海面前吝嗇！";
 			next;
-			mes "[Lhimetorra]";
-			mes " That type of stinginess will spite other people. Use money when it is necessary. ";
+			mes "[莉梅托拉]";
+			mes " 那種吝嗇會惹惱其他人。在必要時使用金錢。";
 			break;
 		case 39:
-			mes " Sohee dislikes the wealthy. They try to gather money, but never use it for others. you don't want to be cursed by Sohee, you need to learn how to be generous with money. ";
+			mes " 蘇海不喜歡富人。他們試圖積累金錢，但從不把它用於他人。你不想被蘇海詛咒，你需要學會如何慷慨地使用金錢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So you have malicious desires, forget them. An ill heart easily gathers misfortune. ";
+			mes "[莉梅托拉]";
+			mes " 所以如果你有惡意的慾望，忘記它們吧。一顆邪惡的心很容易招致不幸。";
 			break;
 		case 40:
-			mes " Sohee likes foreign money. They are cute and pretty. you have foreign currency, Sohee will love you. ";
+			mes " 蘇海喜歡外國的錢。它們可愛又漂亮。如果你有外幣，蘇海會愛你。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Keep an eye out for foreign currency. It will bring you luck. ";
+			mes "[莉梅托拉]";
+			mes " 留意外幣。它會給你帶來好運。";
 			break;
 		case 41:// Skel Worker Card
-			mes " Those who work hard will gather great fortune. The Skeleton says diligent work will help greatly in gathering wealth. ";
+			mes " 那些努力工作的人會積累巨大的財富。骷髏說勤奮的工作將大大有助於積累財富。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Hmm~ a ghost is saying strange things. ";
+			mes "[萊米托拉]";
+			mes " 嗯~ 一個鬼魂正在說著奇怪的事情。";
 			break;
 		case 42:
-			mes " Its youth is gone after a lifetime of chasing after gold. It became a monster with only bones left. No matter how much you like money and your work, look after your life as well. ";
+			mes " 它的一生都在追逐黃金，青春早已逝去。它變成了一個只剩下骨頭的怪物。無論你多麼喜歡金錢和你的工作，也要照顧好你的生活。";
 			next;
-			mes "[Lhimetorra]";
-			mes " There is much more to life than wealth. ";
+			mes "[萊米托拉]";
+			mes " 人生中還有比財富更重要的東西。";
 			break;
 		case 43:
-			mes " To become rich, you must work hard as you became a skeleton. The Skeleton is saying to work hard until you become a skeleton. ";
+			mes " 要變得富有，你必須像變成骷髏一樣努力工作。骷髏說要努力工作直到變成骷髏。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Then not only the Skeleton, but many people will repay you greatly. ";
+			mes "[萊米托拉]";
+			mes " 這樣不僅僅是骷髏，許多人也會大大地回報你。";
 			break;
 		case 44:
-			mes " The Skeleton says that you can make money by going north. Go north. ";
+			mes " 骷髏說，往北走可以賺錢。往北走吧。";
 			next;
-			mes "[Lhimetorra]";
-			mes " There must be great fortune in that direction. ";
+			mes "[萊米托拉]";
+			mes " 那個方向一定有很大的財富。";
 			break;
 		case 45:// Khalitzburg Card
-			mes " A knight is a job that requires a lot of money. A hint of a big expense. You might want to tighten your belt. ";
+			mes " 騎士是一個需要很多錢的職業。暗示著一大筆開銷。你可能要勒緊褲帶了。";
 			next;
-			mes "[Lhimetorra]";
-			mes " That is, you don't want go to bankrupt. ";
+			mes "[萊米托拉]";
+			mes " 也就是說，你不想破產。";
 			break;
 		case 46:
-			mes " Knights do not fight for money. they did, they would be a mercenary. A knight reaches for something higher. What the knight wants to tell you is the way to live. ";
+			mes " 騎士不是為了錢而戰。如果他們這樣做，他們就會成為僱傭兵。騎士追求更高的目標。騎士想告訴你的是生存之道。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Set a goal higher than money and wealth. Do you understand, young one? ";
+			mes "[萊米托拉]";
+			mes " 設定一個比金錢和財富更高的目標。你明白嗎，年輕人？";
 			break;
 		case 47:
-			mes " A knight values honor more than fortune. They consider discussing wealth itself dirty not worthy. How would you be able to ask such a knight a fortune about wealth? ";
+			mes " 騎士重視榮譽勝過財富。他們認為討論財富本身就是骯髒的，不值得一提。你怎麼能向這樣一位騎士詢問關於財富的事情呢？";
 			next;
-			mes "[Lhimetorra]";
-			mes " The knight says that a new road of life will open once you look away from fortune. ";
+			mes "[萊米托拉]";
+			mes " 騎士說，一旦你不再關注財富，新的生活道路就會開啟。";
 			break;
 		case 48:
-			mes " You need to think of an ideal more noble than money. The fortune the knight suggests is this: Knights never speak of ways to make money. ";
+			mes " 你需要想到一個比金錢更崇高的理想。騎士建議的財富是：騎士從不談論賺錢的方法。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Compared to life, they believe money is foolish. The knight would like to understand these ideas of life. ";
+			mes "[萊米托拉]";
+			mes " 與生命相比，他們認為金錢是愚蠢的。騎士想了解這些關於人生的想法。";
 			break;
 		case 49:
-			mes " Working hard is the only way to gather wealth; don't get sidetracked and put effort into working will help your fortune. ";
+			mes " 努力工作是積累財富的唯一途徑；不要分心，努力工作將有助於你的財運。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So do your best. ";
+			mes "[萊米托拉]";
+			mes " 所以盡你所能吧。";
 			break;
 		case 50:// Anubis Card
-			mes " What does the god of death have to say about wealth? It is surely a bad omen. It is trying to warn something. ";
+			mes " 死神對財富有什麼看法？這肯定是不祥之兆。它想警告什麼。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be careful. It is the word of the god of death. ";
+			mes "[萊米托拉]";
+			mes " 小心。這是死神的話。";
 			break;
 		case 51:
-			mes " The Anubis is very interested in the sacrifices offered. The offerings he likes are youth and effort. ";
+			mes " 阿努比斯對祭品非常感興趣。他喜歡的祭品是青春和努力。";
 			next;
-			mes "[Lhimetorra]";
-			mes " you offer these two things, the Anubis says he will bring you wealth. ";
+			mes "[萊米托拉]";
+			mes " 你獻上這兩樣東西，阿努比斯說他會給你帶來財富。";
 			break;
 		case 52:
-			mes " The Anubis is giving a warning of the west. There is a being there that can break away your wealth. ";
+			mes " 阿努比斯正在發出關於西方的警告。那裡有一個可以奪走你財富的存在。";
 			next;
-			mes "[Lhimetorra]";
-			mes " you want to protect your assets, beware of the west. ";
+			mes "[萊米托拉]";
+			mes " 如果你想保護你的資產，請提防西方。";
 			break;
 		case 53:
-			mes " The Anubis hates those who try to gather money for his death. He believes it's a waste of money. Don't make the mistake of gathering money for death. ";
+			mes " 阿努比斯討厭那些試圖為他的死亡而積累金錢的人。他認為這是浪費金錢。不要犯為了死亡而積累金錢的錯誤。";
 			next;
-			mes "[Lhimetorra]";
-			mes " This is the true advice of a Anubis. ";
+			mes "[萊米托拉]";
+			mes " 這是阿努比斯的真正建議。";
 			break;
 		case 54:// Orc Lord Card
-			mes " The Orc Lord possesses much wealth. It's because of greed. Greed is essential in collecting money. The desire and greediness to make money is not something to be ashamed about. Be diligent and go make money. ";
+			mes " 獸人領主擁有大量財富。這是因為貪婪。貪婪是積累金錢的必要條件。賺錢的慾望和貪婪並不是什麼可恥的事情。勤奮點，去賺錢吧。";
 			next;
-			mes "[Lhimetorra]";
-			mes " But, too much greed is forbidden. ";
+			mes "[萊米托拉]";
+			mes " 但是，過度的貪婪是被禁止的。";
 			break;
 		case 55:
-			mes " The Orc Lord starts drooling about anything involving money. He targets anybody with money. ";
+			mes " 獸人領主開始對任何與金錢有關的東西垂涎三尺。他盯上了任何有錢的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Therefore, don't speak of money to the Orc Lord. ";
+			mes "[萊米托拉]";
+			mes " 因此，不要對獸人領主談論金錢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Same goes for humans. Be wary of those who are avaricious like the Orc Lord. ";
+			mes "[萊米托拉]";
+			mes " 人類也是如此。要提防那些像獸人領主一樣貪婪的人。";
 			break;
 		case 56:
-			mes " There should be great wealth awaiting in the direction the Orc Lord's horn is pointing. The card is directing towards.. ";
+			mes " 在獸人領主的角所指的方向，應該有巨大的財富等待著。卡片指向..";
 			next;
-			mes "[Lhimetorra]";
-			mes " The northwest? Would you like to try your luck in that direction? ";
+			mes "[萊米托拉]";
+			mes " 西北方？你想試試運氣朝那個方向走嗎？";
 			break;
 		case 57:
-			mes " The Orc Lord likes gold. Of all the treasures, gold is the best. Closely watch gold. ";
+			mes " 獸人領主喜歡黃金。在所有的寶藏中，黃金是最好的。密切關注黃金。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Gold is rather peculiar compared to other assets. ";
+			mes "[萊米托拉]";
+			mes " 與其他資產相比，黃金相當特殊。";
 			break;
 		case 58: // Jakk Card
-			mes " Jack makes money through jokes. Others' happiness is the key to his wealth. ";
+			mes " 傑克通過笑話賺錢。別人的快樂是他財富的關鍵。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Why don't you learn how to make others happy? It should be of great help. ";
+			mes "[萊米托拉]";
+			mes " 你為什麼不學學如何讓別人快樂呢？這應該會有很大的幫助。";
 			break;
 		case 59:
-			mes " Jack likes fun money. He detests sad and burdensome money. ";
-			mes " He always says this. Light-hearted and easy money isn't dangerous even it piles up. ";
+			mes " 傑克喜歡有趣的錢。他討厭悲傷和沉重的錢。";
+			mes " 他總是這樣說。輕鬆愉快的錢即使堆積起來也不危險。";
 			next;
-			mes "[Lhimetorra]";
-			mes " As Jack's advice says, stay closer to light money. It is safer and better. ";
+			mes "[萊米托拉]";
+			mes " 正如傑克的建議所說，保持與輕鬆的錢更接近。它更安全也更好。";
 			break;
 		case 60:
-			mes " Jack thinks of money as a foolish item. But somehow he makes that kind of money. ";
-			mes " That's why those who are controlled by fools consider the other a fool, too. ";
+			mes " 傑克認為錢是愚蠢的東西。但不知何故，他賺了那種錢。";
+			mes " 這就是為什麼那些被傻瓜控制的人也認為對方是傻瓜。";
 			next;
-			mes "[Lhimetorra]";
-			mes " you don't want to be considered a fool by Jack, don't be controlled by money. ";
-			mes " Or else, Jack will attack. ";
+			mes "[萊米托拉]";
+			mes " 如果你不想被傑克認為是傻瓜，就不要被金錢控制。";
+			mes " 否則，傑克會攻擊你。";
 			break;
 		case 61:
-			mes " Jack is asking for money. Don't be stingy about paying those who bring entertainment and fun. ";
+			mes " 傑克正在要錢。不要吝嗇於支付那些帶來娛樂和樂趣的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Then, Jack will reward you in return. ";
+			mes "[萊米托拉]";
+			mes " 那麼，傑克會回報你的。";
 			break;
 		case 62:// Joker Card
-			mes " Do you know what a joker's specialty is? It is tricking others and making money. Be wary of the joker. ";
+			mes " 你知道小丑的特長是什麼嗎？是欺騙他人並賺錢。提防小丑。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Jokers do not exist in one form. They will aim for your money in several different ways. ";
+			mes "[萊米托拉]";
+			mes " 小丑並非以一種形式存在。他們會以幾種不同的方式瞄準你的錢。";
 			break;
 		case 63:
-			mes " The Joker says you let him borrow money, he will repay you with more. You're going to refuse, right? But the Joker's temptation does not end after one try. ";
-			mes " He will linger around you as a neighbor, or a rare item and ask for money. ";
+			mes " 小丑說你讓他借錢，他會用更多的錢來償還你。你會拒絕，對吧？但是小丑的誘惑並不會在嘗試一次後就結束。";
+			mes " 他會作為鄰居或稀有物品徘徊在你身邊，並要求金錢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Act wisely! You'll be in trouble you are tricked easily! ";
+			mes "[萊米托拉]";
+			mes " 明智地行動！如果你容易被騙，你就會有麻煩！";
 			break;
 		case 64:
-			mes " Even a joker asks for change, never give any to him. He will ask for change, then end up ask for a big sum of money. ";
-			mes " Jokers are like that. They have the ability to turn a small mistake into a big calamity. ";
+			mes " 即使是小丑要零錢，也永遠不要給他。他會要零錢，然後最終要一大筆錢。";
+			mes " 小丑就是這樣。他們有能力將一個小錯誤變成一個大災難。";
 			next;
-			mes "[Lhimetorra]";
-			mes " That's why you should be more careful about it. ";
+			mes "[萊米托拉]";
+			mes " 這就是為什麼你應該更加小心。";
 			break;
 		case 65:
-			mes " There is only one reason a Joker requests money.. to take yours. ";
-			mes " His goal is not to become rich. A real foul playful one. ";
+			mes " 小丑要求錢只有一個原因.. 拿走你的錢。";
+			mes " 他的目標不是變得富有。真是個卑鄙的頑皮鬼。";
 			next;
-			mes "[Lhimetorra]";
-			mes " But losing money isn't a joke now, is it? You should be careful. ";
+			mes "[莉梅托拉]";
+			mes " 但是失去錢財現在可不是開玩笑的，不是嗎？你應該要小心。";
 			break;
 		case 66:// Hode Card
-			mes " Hodes do not know about money. They just gobble everything up. But that might be the shortcut to gaining great wealth. ";
+			mes " 霍德並不懂得錢財。牠們只是狼吞虎嚥地吃掉一切。但那可能就是獲得巨大財富的捷徑。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't focus too much on money. Just work at it. It's saying that it is the best method. ";
+			mes "[莉梅托拉]";
+			mes " 不要太過專注於金錢。只要努力工作即可。這表示這是最好的方法。";
 			break;
 		case 67:
-			mes " Hodes do not know anything about money. But they do not forgive those who have an eye on their things. ";
-			mes " Not being greedy and taking care of your share is the wisest way to manage your wealth. ";
+			mes " 霍德什麼都不懂關於錢財。但是牠們不會原諒那些覬覦牠們東西的人。";
+			mes " 不貪婪並照顧好你的份額是管理財富最明智的方法。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Indeed, the Hode is right. Do you understand as well? ";
+			mes "[莉梅托拉]";
+			mes " 確實，霍德是對的。你也明白了嗎？";
 			break;
 		case 68:
-			mes " The Hode knows nothing about money. But a very rare item drops from a Hode's body. ";
-			mes " It has a treasure in it without knowing. ";
+			mes " 霍德什麼都不懂關於錢財。但是非常稀有的物品會從霍德的屍體掉落。";
+			mes " 牠在不知情的情況下擁有寶藏。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Take a careful look around you. Treasures are hidden all over. ";
+			mes "[莉梅托拉]";
+			mes " 仔細環顧四周。寶藏隱藏在各處。";
 			break;
 		case 69:
-			mes " Hodes are strong even though they live in the desert. Just because the environment is poor, doesn't mean that you can't gather wealth. ";
+			mes " 即使霍德生活在沙漠中，牠們也很強壯。僅僅因為環境貧瘠，並不意味著你無法積累財富。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't blame the environment. That excuse is only for whiners. ";
+			mes "[莉梅托拉]";
+			mes " 不要責怪環境。那種藉口只適合愛抱怨的人。";
 			break;
 		case 70:// Minorous Card
-			mes " Do you know the saying that says those who work like bulls become rich? Working hard is the best way. ";
+			mes " 你知道那句說像牛一樣工作的人會變富有的話嗎？努力工作是最好的方法。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Just like a bull. ";
+			mes "[莉梅托拉]";
+			mes " 就像牛一樣。";
 			break;
 		case 71:
-			mes " Bulls only know how to work, but the bull itself has a lot to offer. Meat, leather, horn.. ";
+			mes " 牛只知道如何工作，但牛本身有很多可以提供的東西。肉、皮革、角..";
 			next;
-			mes "[Lhimetorra]";
-			mes " You, too, should look after yourself and not just work. You have many hidden values. ";
+			mes "[莉梅托拉]";
+			mes " 你也應該照顧好自己，而不僅僅是工作。你有很多隱藏的價值。";
 			break;
 		case 72:
-			mes " Bulls continue to work even on gloomy days. Then they can gather a lot of things. ";
+			mes " 即使在陰沉的日子裡，牛也會繼續工作。然後牠們可以收集很多東西。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't be picky about the days you work. You will be able to make more money. ";
+			mes "[莉梅托拉]";
+			mes " 不要挑剔你工作的日子。你將能夠賺更多的錢。";
 			break;
 		case 73:
-			mes " Bulls do not like working for money. They are disgruntled when others consider labor as money. ";
-			mes " Shouldn't you reconsider working against your will just for money? ";
+			mes " 牛不喜歡為了錢而工作。當其他人將勞動視為金錢時，牠們會感到不滿。";
+			mes " 你不應該重新考慮僅僅為了錢而違背你的意願工作嗎？";
 			next;
-			mes "[Lhimetorra]";
-			mes " It is a serious problem. It is your life, so ponder about it young one. ";
+			mes "[莉梅托拉]";
+			mes " 這是一個嚴重的問題。這是你的人生，所以年輕人好好想想。";
 			break;
 		}
 		next;
-		mes "[Lhimetorra]";
-		mes " Most people are curious about money. ";
-		mes " It is a very humanly and common curiosity. Cards are very stingy about fortunes regarding wealth. ";
+		mes "[莉梅托拉]";
+		mes " 大多數人對金錢感到好奇。";
+		mes " 這是一種非常人性且普遍的好奇心。卡片對於關於財富的預言非常吝嗇。";
 		next;
 		cutin "",255;
-		mes "[Lhimetorra]";
-		mes " Therefore, getting a fortune like this is considered being lucky. Use this fortune to prosper. ";
+		mes "[莉梅托拉]";
+		mes " 因此，獲得這樣的財運被認為是幸運的。利用這個運勢來繁榮。";
 		close;
 	//=================================================================Future ===
 	case 3:
-		mes "[Lhimetorra]";
-		mes " Future... the card that sees the future is beginning to speak...... Prepare yourself... ";
+		mes "[莉梅托拉]";
+		mes " 未來...看到未來的牌開始說話了......做好準備... ";
 		next;
 		.@card_1_future = rand(1,67);
-		if (.@card_1_future < 5) cutin "陛檜嬴蝶蘋萄",4;			// Giearth Card
-		else if (.@card_1_future < 10) cutin "渦蝶じ啻蝶蘋萄",4;	// Dustiness Card
-		else if (.@card_1_future < 13) cutin "萄塭聽塭蘋萄",4;	// Dracula Card
-		else if (.@card_1_future < 16) cutin "萄溯檜觼蘋萄",4;	// Drake Card
-		else if (.@card_1_future < 19) cutin "葆葬釭蘋萄",4;		// Marina Card
-		else if (.@card_1_future < 23) cutin "葆葬螃啻お蘋萄",4;	// Marionette Card
-		else if (.@card_1_future < 27) cutin "詭舒餌蘋萄",4;		// Medusa Card
-		else if (.@card_1_future < 31) cutin "夥ん詭お蘋萄",4;	// Baphomet Card
-		else if (.@card_1_future < 35) cutin "僻萄裔蘋萄",4;		// Sandman Card
-		else if (.@card_1_future == 35) cutin "模�鯆奏�",4;		// Sohee Card
-		else if (.@card_1_future < 40) cutin "蝶騷錶醴蘋萄",4;	// Skel Worker Card
-		else if (.@card_1_future < 44) cutin "蝶騷釭檜お蘋萄",4;	// Khalitzburg Card
-		else if (.@card_1_future < 48) cutin "嬴援綠蝶蘋萄",4;	// Anubis Card
-		else if (.@card_1_future < 52) cutin "螃觼煎萄蘋萄",4;	// Orc Lord Card
-		else if (.@card_1_future < 57) cutin "燮蘋萄",4;			// Jakk Card
-		else if (.@card_1_future < 61) cutin "褻醴蘋萄",4;		// Joker Card
-		else if (.@card_1_future < 63 || .@card_1_future == 67) cutin "�ㄤ暰奏�",4;	// Hode Card
-		else cutin "�票痁奏�",4; // Minorous Card
+		if (.@card_1_future < 5) cutin "?????????",4;			// Giearth Card
+		else if (.@card_1_future < 10) cutin "???????????",4;	// Dustiness Card
+		else if (.@card_1_future < 13) cutin "?????????",4;	// Dracula Card
+		else if (.@card_1_future < 16) cutin "?巹??????",4;	// Drake Card
+		else if (.@card_1_future < 19) cutin "?????????",4;		// Marina Card
+		else if (.@card_1_future < 23) cutin "????????????",4;	// Marionette Card
+		else if (.@card_1_future < 27) cutin "??λ????",4;		// Medusa Card
+		else if (.@card_1_future < 31) cutin "??????????",4;	// Baphomet Card
+		else if (.@card_1_future < 35) cutin "????????",4;		// Sandman Card
+		else if (.@card_1_future == 35) cutin "???????",4;		// Sohee Card
+		else if (.@card_1_future < 40) cutin "?????????",4;	// Skel Worker Card
+		else if (.@card_1_future < 44) cutin "???????????",4;	// Khalitzburg Card
+		else if (.@card_1_future < 48) cutin "????????",4;	// Anubis Card
+		else if (.@card_1_future < 52) cutin "????ε????",4;	// Orc Lord Card
+		else if (.@card_1_future < 57) cutin "?????",4;			// Jakk Card
+		else if (.@card_1_future < 61) cutin "??????",4;		// Joker Card
+		else if (.@card_1_future < 63 || .@card_1_future == 67) cutin "??????",4;	// Hode Card
+		else cutin "??????",4; // Minorous Card
 
-		mes "[Lhimetorra]";
+		mes "[莉梅托拉]";
 		switch(.@card_1_future) {
 		case 1:
-			mes " Youth is not eternal. At one point when you wake up, you realize you are already a middle-aged worker. ";
-			mes " Even reminiscing about the past over a cup of coffee can't bring back time. ";
+			mes " 青春不是永恆的。當你醒來時，你會意識到你已經是一個中年工人。";
+			mes " 即使是在一杯咖啡前回憶過去也無法帶回時間。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Treasure the present.. is what the card is saying. ";
+			mes "[莉梅托拉]";
+			mes " 珍惜現在...這就是卡片所說的。";
 			break;
 		case 2:
-			mes " This fortune is foreshadowing that you will become a strong and healthy worker in the future. ";
-			mes " Not a normal worker, but one that has great strength and might.. ";
+			mes " 這個財運預示著你將來會成為一個強壯又健康的工人。";
+			mes " 不是一個普通的工人，而是一個擁有強大力量的工人..";
 			next;
-			mes "[Lhimetorra]";
-			mes " You should prepare for your future. ";
+			mes "[莉梅托拉]";
+			mes " 你應該為你的未來做準備。";
 			break;
 		case 3:
-			mes " Smoking in a mine is an imprudent, life-threatening thing to do. You are wasting your precious life with that kind of behavior. ";
+			mes " 在礦坑裡吸煙是一種輕率且危及生命的事情。你正在用這種行為浪費你寶貴的生命。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Act with a little more wisdom for your future. ";
+			mes "[莉梅托拉]";
+			mes " 為了你的未來，用多一點智慧來行動。";
 			break;
 		case 4:
-			mes " You may be shoveling in the future. In a dark dark place, shoveling that requires great strength. You must be careful young one. ";
+			mes " 你將來可能會在鏟煤。在一個黑暗的地方，需要很大力氣的鏟煤。你必須小心，年輕人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " This type of fortune is never wrong. ";
+			mes "[莉梅托拉]";
+			mes " 這種財運從來不會錯。";
 			break;
 		case 5:// Dustiness Card
-			mes " The moth is used when it is a caterpillar and ignored after it becomes a moth, by humans. ";
-			mes " Which is better? ";
+			mes " 毛毛蟲在還是毛毛蟲的時候被利用，變成飛蛾之後就被人類忽略。";
+			mes " 哪個比較好？";
 			next;
-			mes "[Lhimetorra]";
-			mes " Check to see if there is an aspect of your life that is like the moth. ";
+			mes "[莉梅托拉]";
+			mes " 檢查看看你生活中有沒有像飛蛾的面向。";
 			break;
 		case 6:
-			mes " The moth flies around without worrying about the future. It is telling you to fly freely rather than getting anxious about the future.. ";
+			mes " 飛蛾四處飛舞而不擔心未來。牠告訴你自由地飛翔，而不是對未來感到焦慮..";
 			next;
-			mes "[Lhimetorra]";
-			mes " This is the fortune from this card. ";
+			mes "[莉梅托拉]";
+			mes " 這是這張牌帶來的財運。";
 			break;
 		case 7:
-			mes " Dustiness' teeth are very strong. This means... ";
+			mes " 灰塵怪的牙齒非常堅固。這意味著...";
 			next;
-			mes "[Lhimetorra]";
-			mes " To live the future with strong teeth?! ";
+			mes "[莉梅托拉]";
+			mes " 用堅固的牙齒過未來嗎？！";
 			break;
 		case 8:
-			mes " The moth says that this is not a time to think about wealth and prosperity. It says that someone important has appeared near you. ";
+			mes " 飛蛾說現在不是思考財富和繁榮的時候。牠說有一個重要的人出現在你身邊。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Any ideas who that may be? ";
+			mes "[莉梅托拉]";
+			mes " 有沒有想法那個人可能是誰？";
 			break;
 		case 9:
-			mes " Dustiness symbolizes a hazy future. It is similar to your mind right now. It says it is obvious. ";
-			mes " It says that there is no set path in the future. Isn't a relief in a way? ";
+			mes " 灰塵怪象徵著朦朧的未來。這和你現在的心情很相似。牠說這是顯而易見的。";
+			mes " 牠說未來沒有既定的道路。從某種意義上來說，這不是一種解脫嗎？";
 			next;
-			mes "[Lhimetorra]";
-			mes " It is not good nor bad, so there is always room for new possibilities. ";
+			mes "[莉梅托拉]";
+			mes " 這不好也不壞，所以總是有新的可能性。";
 			break;
 		case 10:// Dracula Card
-			mes " Sometime in your future, a future like Dracula awaits you. ";
+			mes " 在你的未來中的某個時候，像德古拉一樣的未來等待著你。";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you hope for that type of future, it is no problem, but you should be careful nonetheless. ";
+			mes "[莉梅托拉]";
+			mes " 如果你希望那種類型的未來，那沒有問題，但你仍然應該小心。";
 			break;
 		case 11:
-			mes " If the condition is just right, vampires can live forever. But, when that perfect condition is disrupted, they meet a tragic end. ";
+			mes " 如果條件合適，吸血鬼可以永遠活下去。但是，當這種完美狀態被破壞時，他們會迎來悲慘的結局。";
 			next;
-			mes "[Lhimetorra]";
-			mes " This means that if you go after fame and eternal life, tragedy awaits you in the end. They are not the important things in life. ";
+			mes "[莉梅托拉]";
+			mes " 這意味著，如果你追求名聲和永生，悲劇最終會等待著你。牠們不是人生中重要的事情。";
 			break;
 		case 12:
-			mes " The Dracula says to be true to the present. Indeed, thinking and being true to the present is much more important than trying to figure out your future. ";
+			mes " 德古拉說要忠於現在。確實，思考並忠於現在遠比試圖弄清楚你的未來更重要。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Unfortunately, I agree with it young one. ";
+			mes "[莉梅托拉]";
+			mes " 不幸的是，我同意牠的說法，年輕人。";
 			break;
 		case 13:// Drake Card
-			mes " Pirates do not have a future. That doesn't mean you do not have one. But.. you simply need to make more prudent decisions. ";
+			mes " 海盜沒有未來。這並不意味著你沒有。但是..你只需要做出更謹慎的決定。";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about changing your lifestyle? That's what this means. ";
+			mes "[莉梅托拉]";
+			mes " 改變你的生活方式怎麼樣？這就是這個意思。";
 			break;
 		case 14:
-			mes " In this world, being a pirate out in the rough seas is very dangerous. But, they do not regret their decisions. ";
+			mes " 在這個世界上，在波濤洶湧的大海上當海盜是非常危險的。但是，他們不後悔他們的決定。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Because they find their meaning of life in the process. Young one, how about searching for the meaning of your life? ";
+			mes "[莉梅托拉]";
+			mes " 因為他們在這個過程中找到了人生的意義。年輕人，尋找你人生的意義如何？";
 			break;
 		case 15:
-			mes " Pirates are remembered as pirates even after they pass away. A person's name is beyond the matter of life and death. ";
+			mes " 海盜即使死後也會被記得是海盜。一個人的名字超越了生與死的問題。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You should live with that aspect in mind.";
+			mes "[莉梅托拉]";
+			mes " 你應該記住這一點而活下去。";
 			break;
 		case 16:// Marina Card
-			mes " The Marina does not think of its future.. But I can tell you one thing. Survival. The Marina only thinks about survival and life. ";
+			mes " 瑪莉娜不考慮它的未來...但我可以告訴你一件事。生存。瑪莉娜只考慮生存和生活。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You.. no, all of us should learn and do the same. ";
+			mes "[莉梅托拉]";
+			mes " 你...不，我們所有人都應該學習並做同樣的事情。 ";
 			break;
 		case 17:
-			mes " The Marina doesn't think of its future.. but I can tell you one thing. Freedom. The Marina swims freely. ";
+			mes " 瑪莉娜不考慮它的未來...但我可以告訴你一件事。自由。瑪莉娜自由自在地游泳。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about living like that, too? ";
+			mes "[莉梅托拉]";
+			mes " 像那樣活著怎麼樣？ ";
 			break;
 		case 18:
-			mes " Leave your future to the Marina. The Marina treasures its precious ocean. The sea will be of great significance in your future, too. ";
+			mes " 把你的未來交給瑪莉娜吧。瑪莉娜珍惜它珍貴的海洋。海洋對你的未來也將具有重要意義。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " A fisherman? Oceanographer? Pirate? Although I do not know which job it is... ";
+			mes "[莉梅托拉]";
+			mes " 漁夫？海洋學家？海盜？雖然我不知道是哪個職業... ";
 			break;
 		case 19:// Marionette Card
-			mes " A Marionette is a Marionette forever. Its past and future never changes. Its present is its future. Don't you think it is rather sad? ";
+			mes " 傀儡永遠是傀儡。它的過去和未來永遠不會改變。它的現在就是它的未來。你不覺得這很可悲嗎？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " But that could also be a good thing. This is the meaning of a Marionette. ";
+			mes "[莉梅托拉]";
+			mes " 但那也可能是一件好事。這就是傀儡的意義。 ";
 			break;
 		case 20:
-			mes " A Marionette is restrained but it has hope that it will be freed one day. ";
+			mes " 傀儡受到束縛，但它抱有終有一天會被解放的希望。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Very nice. This fortune signifies 'hope'. ";
+			mes "[莉梅托拉]";
+			mes " 非常好。這個預兆意味著『希望』。 ";
 			break;
 		case 21:
-			mes " The eyes of a Marionette symbolize 'challenge.' Challenge will mean a lot in your future. ";
+			mes " 傀儡的眼睛象徵著『挑戰』。挑戰對你的未來意義重大。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " ...to the point where that challenge will change your life. ";
+			mes "[莉梅托拉]";
+			mes " ...到了那個挑戰會改變你人生的地步。 ";
 			break;
 		case 22:
-			mes " The Marionette believes the present is more important than the future. Basically, asking about the future is pointless. ";
+			mes " 傀儡認為現在比未來更重要。基本上，詢問未來毫無意義。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " The Marionette devotes everything into the present. It suggests that type of attitude to you, too. ";
+			mes "[莉梅托拉]";
+			mes " 傀儡將一切都奉獻給現在。它也向你建議那種態度。 ";
 			break;
 		case 23:// Medusa Card
-			mes " The Medusa symbolizes the absolute one who accepts everyone's challenge. Your future will be in a position that is challenged by many. ";
+			mes " 梅杜莎象徵著接受所有人挑戰的絕對者。你的未來將處於一個受到許多人挑戰的位置。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It could be good and bad. It is also a very tiring position. ";
+			mes "[莉梅托拉]";
+			mes " 這可能是好事也可能是壞事。這也是一個非常累人的位置。 ";
 			break;
 		case 24:
-			mes " The Medusa symbolizes the absolute one who accepts everyone's challenge. Your future must be filled with challenges! ";
+			mes " 梅杜莎象徵著接受所有人挑戰的絕對者。你的未來一定充滿挑戰！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Always challenge others! It is alright to fail, since challenge itself will become life. ";
+			mes "[莉梅托拉]";
+			mes " 永遠挑戰他人！失敗是可以的，因為挑戰本身將成為生命。 ";
 			break;
 		case 25:
-			mes " The Medusa says that there will be great chaos in the future. Chaos... I'm not sure what type of chaos it means, but it is definitely something that has never happened before. ";
+			mes " 梅杜莎說，未來將會發生巨大的混亂。混亂...我不確定這意味著哪種類型的混亂，但它絕對是以前從未發生過的事情。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " There is something that you must fight.. and win, in your future. ";
+			mes "[莉梅托拉]";
+			mes " 在你的未來，有你需要戰鬥...並且獲勝的東西。 ";
 			break;
 		case 26:
-			mes " The hair of the Medusa are sticking up. It is nervous about the big change that is going to happen. A change that even makes the scary Medusa worried. ";
+			mes " 梅杜莎的頭髮豎起來了。它對即將發生的巨大變化感到緊張。一個甚至讓可怕的梅杜莎擔心的變化。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " How about preparing yourself as well? ";
+			mes "[莉梅托拉]";
+			mes " 你也準備一下如何？ ";
 			break;
 		case 27:// Baphomet Card
-			mes " The Baphomet doesn't care about a human's future. They simply observe quietly. Hmm... It seems like it has nothing to say about your future as well... ";
+			mes " 巴風特不在乎人類的未來。他們只是靜靜地觀察。嗯... 似乎它也沒有什麼關於你的未來要說的... ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It has an unconcerned expression. ";
+			mes "[莉梅托拉]";
+			mes " 它有一種漠不關心的表情。 ";
 			break;
 		case 28:
-			mes " The scythe the Baphomet is holding signifies the strong will to conquer the future. ";
-			mes " What you need is not someone else's help or wisdom, but strong willpower. ";
+			mes " 巴風特持有的鐮刀象徵著征服未來的強烈意志。 ";
+			mes " 你需要的不是別人的幫助或智慧，而是堅強的意志力。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Once you have that type of willpower, the road to the future will be very broad and promising. ";
+			mes "[莉梅托拉]";
+			mes " 一旦你擁有那種意志力，通往未來的道路將非常廣闊且充滿希望。 ";
 			break;
 		case 29:
-			mes " The Baphomet says that humans have no future. It says that their greed and selfishness shows no hope. ";
-			mes " The future will only open to those that go beyond human's greed. ";
+			mes " 巴風特說，人類沒有未來。它說，他們的貪婪和自私沒有希望。 ";
+			mes " 未來只會向那些超越人類貪婪的人敞開。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " The card expects something like that from you. ";
+			mes "[莉梅托拉]";
+			mes " 這張牌對你有這樣的期望。 ";
 			break;
 		case 30:
-			mes " The Baphomet is facing the future. No matter how much effort you put in, without an eye that looks towards the future, it is pointless. ";
-			mes " The Baphomet is telling you to look towards the future. ";
+			mes " 巴風特正面向未來。無論你付出多少努力，如果沒有一雙看向未來的眼睛，那都是沒有意義的。 ";
+			mes " 巴風特告訴你，要看向未來。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " To know your position right now and where to aim in the future. ";
+			mes "[莉梅托拉]";
+			mes " 了解你現在的位置以及未來要瞄準的方向。 ";
 			break;
 		case 31:// Sandman Card
-			mes " A sand's future is simply sand. Not a rock, nor mud. Some things just don't change young one. ";
+			mes " 沙子的未來就是沙子。不是岩石，也不是泥土。有些事情就是不會改變，年輕人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What the Sandman card is trying to say is to treasure your present self. ";
+			mes "[莉梅托拉]";
+			mes " 沙人卡想要說的是珍惜你現在的自己。 ";
 			break;
 		case 32:
-			mes " A sand dune changes its shape even after a day. The Sandman card is speaking of a future with many changes. ";
+			mes " 沙丘即使在一天之後也會改變它的形狀。沙人卡正在談論一個充滿變化的未來。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It says not to be too caught up with the present, because the future is always changing. ";
+			mes "[莉梅托拉]";
+			mes " 它說不要太過於執著於現在，因為未來總是在變化。 ";
 			break;
 		case 33:
-			mes " You will have a son in the future. Hmm? What'd you say? No plans for a baby? ";
+			mes " 你將來會有一個兒子。嗯？你說什麼？沒有要小孩的計畫？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " That's why it is the future. Unexpected things happen every once in a while in the future. Lala~ ";
+			mes "[莉梅托拉]";
+			mes " 這就是為什麼它是未來。意想不到的事情偶爾會在未來發生。啦啦~ ";
 			break;
 		case 34:
-			mes " There are rare and precious treasures in the sand. The Sandman says that in the vast sand of the world, a treasure, will be discovered. That treasure is you young one.";
+			mes " 沙子裡有稀有且珍貴的寶藏。沙人說，在廣闊的世界沙灘中，會發現一個寶藏。那個寶藏就是你，年輕人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Hmm... Expecting a lot. Hehe~ ";
+			mes "[莉梅托拉]";
+			mes " 嗯... 期望很高。呵呵~ ";
 			break;
 		case 35:// Sohee Card
-			mes " Do you know what a Sohee thinks the most pitiful thing is? The future. It is because she was not able to live her future. ";
-			mes " That is why you cannot bring up the subject of future in front of Sohee. I'm very sorry I cannot help. ";
+			mes " 你知道蘇西認為最可悲的事情是什麼嗎？未來。那是因為她沒能活出她的未來。 ";
+			mes " 這就是為什麼你不能在蘇西面前提起未來的話題。我很抱歉我無法幫助。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " But isn't it better than a curse. Just think of it as that and forget about it. ";
+			mes "[莉梅托拉]";
+			mes " 但這不比詛咒好嗎。就把它當作那樣，然後忘記它吧。 ";
 			break;
 		case 36:// Skel Worker Card
-			mes " Even in darkness you will shine for your goal. ";
-			mes " The Skeleton is encouraging you to not lose your light even in a life in dark and damp places. ";
+			mes " 即使在黑暗中，你也會為你的目標發光。 ";
+			mes " 骷髏鼓勵你在黑暗潮濕的地方生活中也不要失去你的光芒。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You must feel good, getting a word of encouragement from the Skeleton. Lala~ ";
+			mes "[莉梅托拉]";
+			mes " 從骷髏那裡得到鼓勵，你一定感覺很好。啦啦~ ";
 			break;
 		case 37:
-			mes " The story I heard from the skeleton goes like this. I am the king of the future. What in the world is that supposed to mean? ";
+			mes " 我從骷髏那裡聽到的故事是這樣的。我是未來的國王。這到底是什麼意思？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " I don't know. Maybe it is saying that a scrawny person will do something great in the future? ";
+			mes "[莉梅托拉]";
+			mes " 我不知道。也許它是在說，一個瘦骨嶙峋的人將來會做一些偉大的事情？ ";
 			break;
 		case 38:
-			mes " If you want to do something great in the future, you must express your thankfulness to the Skeleton. ";
-			mes " Then the Skeleton will help you. How do you express your thankfulness? ";
+			mes " 如果你想在未來做一些偉大的事情，你必須向骷髏表達你的感激之情。 ";
+			mes " 那麼骷髏會幫助你。你如何表達你的感激之情？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you see someone that resembles the Skeleton, help them. ";
-			mes " Then the Skeleton will think that you helped itself and be happy. What a silly monster. Haha. ";
+			mes "[莉梅托拉]";
+			mes " 如果你看到有人長得像骷髏，幫助他們。 ";
+			mes " 那麼骷髏會認為你幫助了它自己，並且會很高興。多麼愚蠢的怪物。哈哈。 ";
 			break;
 		case 39:
-			mes " The Skeleton has the ability to dig where it feels the future, rather than looking into it. ";
-			mes " It is digging in the east right now. How about it, won't you try going there? ";
+			mes " 骷髏有能力挖掘它感受到未來的地方，而不是看進去。 ";
+			mes " 它現在正在東方挖掘。怎麼樣，你要不要試著去那裡？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Who knows, the key to the future may be lying in the east. ";
+			mes "[莉梅托拉]";
+			mes " 誰知道呢，通往未來的鑰匙可能就藏在東方。 ";
 			break;
 		case 40:// Khalitzburg Card
-			mes " A knight's future leads to death. An honorable death on the battlefield. ";
-			mes " One cannot live as a knight without being proud of that type of future. ";
+			mes " 騎士的未來通往死亡。在戰場上光榮的死亡。 ";
+			mes " 如果不能以那種未來為榮，就無法以騎士的身分活下去。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " The knight wants you to be proud of yourself. ";
-			mes " It says what you need is pride. Not honor, wealth, or love.. but pride. ";
+			mes "[莉梅托拉]";
+			mes " 騎士希望你為自己感到驕傲。 ";
+			mes " 它說你所需要的是驕傲。不是榮譽、財富或愛情……而是驕傲。 ";
 			break;
 		case 41:
-			mes " A knight commenting about a person's future is very rare. ";
-			mes " It says nothing for you in particular. Nothing ominous. ";
+			mes " 騎士評論一個人的未來非常罕見。 ";
+			mes " 它沒有特別為你說什麼。沒有什麼不祥的預兆。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It is a very good thing. Means a bright and clear future. Hohoho~ ";
+			mes "[莉梅托拉]";
+			mes " 這是件非常好的事。代表光明而清晰的未來。呵呵呵～ ";
 			break;
 		case 42:
-			mes " A knight commenting about a person's future is very rare. ";
-			mes " It says it will say one thing for you. Dark clouds can be seen beyond the clear skies. ";
+			mes " 騎士評論一個人的未來非常罕見。 ";
+			mes " 它說它會為你說一件事。在晴朗的天空之外可以看到烏雲。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You must find out for yourself what those clouds mean. Anyways, you must be careful. ";
+			mes "[莉梅托拉]";
+			mes " 你必須自己找出那些雲代表什麼。總之，你必須小心。 ";
 			break;
 		case 43:
-			mes " It is necessary to reflect upon the past and present in order to look into the future. This card says to look carefully into your past. ";
+			mes " 為了展望未來，有必要反思過去和現在。這張牌表示要仔細審視你的過去。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " ..with the attitude of reflecting upon yourself. What do you think? Don't you think you lived too much looking into the future? ";
+			mes "[莉梅托拉]";
+			mes " ...用反思自己的態度。你覺得怎麼樣？你不覺得你活得太過於展望未來了嗎？ ";
 			break;
 		case 44:
-			mes " What does the god of death want to say about the future? It is definitely an ominous sign. ";
+			mes " 死神想對未來說些什麼？這絕對是不祥的徵兆。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It is trying to warn something about the future. Be careful. ";
+			mes "[莉梅托拉]";
+			mes " 它試圖警告一些關於未來的事情。小心。 ";
 			break;
 		case 45:
-			mes " The Anubis likes comedy despite people's expectations. It looks forward to comedy. Comedy must be important in the future. ";
+			mes " 阿努比斯喜歡喜劇，儘管人們的期望並非如此。它期待著喜劇。喜劇在未來一定很重要。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " In your case, it would be wise to grow your sense of humor. ";
+			mes "[莉梅托拉]";
+			mes " 以你的情況來說，培養你的幽默感會是明智之舉。 ";
 			break;
 		case 46:
-			mes " The Anubis is the god of death, but it expresses more interest in the future than death. ";
+			mes " 阿努比斯是死神，但他對未來的興趣比對死亡更大。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Even the Anubis doesn't think about death, so why should you be thinking about it? Expect a good future young one. ";
+			mes "[莉梅托拉]";
+			mes " 即使是阿努比斯也不考慮死亡，所以你為什麼要考慮它呢？期待一個美好的未來吧，年輕人。 ";
 			break;
 		case 47:
-			mes " The Anubis says it has no interest in you. It is a good sign. ";
+			mes " 阿努比斯說它對你沒有興趣。這是個好兆頭。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What can be better than being ignored by the god of death? ";
+			mes "[莉梅托拉]";
+			mes " 有什麼比被死神忽略更好呢？ ";
 			break;
 		case 48:// Orc Lord Card
-			mes " The Orc Lord says that dairy farming will develop in the future. Why don't you invest in it as well? ";
+			mes " 獸人領主說乳製品業將在未來發展。你為什麼不也投資它呢？ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " A business looking into the future? ";
+			mes "[莉梅托拉]";
+			mes " 一項展望未來的事業？ ";
 			break;
 		case 49:
-			mes " The Orc Lord says you need great strength in the future. Strength that is three, four times greater than now. ";
+			mes " 獸人領主說你在未來需要強大的力量。比現在強三、四倍的力量。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Make yourself stronger in any form. In the future, you will need it. ";
+			mes "[莉梅托拉]";
+			mes " 以任何形式讓自己變得更強大。在未來，你會需要它。 ";
 			break;
 		case 50:
-			mes " The Orc Lord says that love for your companions will become great strength in the future. ";
-			mes " Your strength is not enough. ";
+			mes " 獸人領主說，在未來，對同伴的愛將成為巨大的力量。 ";
+			mes " 你的力量還不夠。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " To become a Lord, you will need colleagues. You should take the Orc Lord's advice! ";
+			mes "[莉梅托拉]";
+			mes " 要成為領主，你需要同事。你應該聽取獸人領主的建議！ ";
 			break;
 		case 51:
-			mes " The Orc Lord is expressing opposition in being too curious about the future. ";
-			mes " Pay a little more attention to the present. ";
+			mes " 獸人領主表達了對過於好奇未來的反對。 ";
+			mes " 多花一點心思在當下。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Respect his opinion young one. You have nothing to lose. ";
+			mes "[莉梅托拉]";
+			mes " 尊重他的意見，年輕人。你沒有什麼好損失的。 ";
 			break;
 		case 52:// Jakk Card
-			mes " Jack says something interesting will happen in the future. According to him, the future will be more fun than the present. ";
+			mes " 傑克說未來會發生一些有趣的事情。據他說，未來會比現在更有趣。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Are you looking forward to it? ";
+			mes "[莉梅托拉]";
+			mes " 你期待嗎？ ";
 			break;
 		case 53:
-			mes " Jack says, in order to prepare for the future, a delightful preparation is necessary. ";
-			mes " Delightful preparation? I don't understand.. I suppose I am too old. Maybe young ones get it.. ";
+			mes " 傑克說，為了為未來做準備，必須做好令人愉快的準備。 ";
+			mes " 令人愉快的準備？我不明白……我想我太老了。也許年輕人懂…… ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What do you think? Any assumptions? ";
+			mes "[莉梅托拉]";
+			mes " 你怎麼看？有什麼假設嗎？ ";
 			break;
 		case 54:
-			mes " Jack is jealous because a splendid person is headed your way in the future. ";
-			mes " I wonder what type of person it is to make that Jack jealous! ";
+			mes " 傑克很嫉妒，因為一個出色的人將在未來走向你。 ";
+			mes " 我想知道是什麼樣的人讓那個傑克嫉妒！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " One thing for sure is that you will be very happy! Congratulations young one! ";
+			mes "[莉梅托拉]";
+			mes " 可以肯定的是，你會非常幸福！恭喜你，年輕人！ ";
 			break;
 		case 56:
-			mes " Jack says you may be frustrated in the future. ";
-			mes " He says to overcome the frustration, it is necessary to think of happy thoughts. ";
+			mes " 傑克說你將來可能會感到沮喪。 ";
+			mes " 他說要克服挫折感，必須想到快樂的事情。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Meaning your future will become a battle between happiness and frustration.. ";
+			mes "[莉梅托拉]";
+			mes " 意味著你的未來將成為幸福與挫折之間的戰鬥…… ";
 			break;
 		case 57:// Joker Card
-			mes " The Joker is trying to trick you. This card has all different types of ominous fortunes. ";
-			mes " He wants to enjoy watching you tremble with anxiety. ";
+			mes " 小丑試圖欺騙你。這張牌有各種不祥的預言。 ";
+			mes " 他想享受看你焦慮發抖的樣子。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Sadness, failure, darkness, loneliness.. you may feel all of these emotions, but they are not fatal. Don't worry. ";
+			mes "[莉梅托拉]";
+			mes " 悲傷、失敗、黑暗、孤獨……你可能會感受到所有這些情緒，但它們並不是致命的。別擔心。 ";
 			break;
 		case 58:
-			mes " Jokers don't just appear and go away. They come back in the future. ";
-			mes " They will seduce you numerous times. ";
+			mes " 小丑不會只是出現然後消失。他們將在未來回來。 ";
+			mes " 他們會多次引誘你。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " So train yourself not to be tempted. ";
-			mes " Or else you will face frustration or commit a blunder. ";
+			mes "[莉梅托拉]";
+			mes " 所以訓練自己不要被誘惑。 ";
+			mes " 否則你將面臨挫折或犯下錯誤。 ";
 			break;
 		case 59:
-			mes " Do you see the thing that looks like a leaf flying around the Joker? That is the spade mark. ";
-			mes " Spades means death. Jokers leave those kinds of marks on purpose. ";
+			mes " 你看到小丑周圍飛舞的像葉子的東西了嗎？那是黑桃標記。 ";
+			mes " 黑桃意味著死亡。小丑會故意留下那種標記。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't get disturbed by the mark of death. It's merely a Joker's joke. ";
+			mes "[莉梅托拉]";
+			mes " 不要被死亡的標記所困擾。這只是一個小丑的玩笑。 ";
 			break;
 		case 60:
-			mes " Joker offers a nice insurance and says to prepare for the future, but most of it is a waste of time. ";
+			mes " 小丑提供了一份不錯的保險，並說要為未來做準備，但其中大部分都是浪費時間。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't prepare for the future carelessly. A loose measure is worse than a prepared adventure. ";
+			mes "[莉梅托拉]";
+			mes " 不要隨意為未來做準備。鬆散的措施比有準備的冒險更糟糕。 ";
 			break;
 		case 61:// Hode Card
-			mes " Hodes do not know about tomorrow. But though they are quiet, they endanger other living things. ";
-			mes " Effort into oneself puts great power into the mere existence of one. ";
+			mes " 霍德斯不知道明天。但即使他們很安靜，他們也會危及其他生物。 ";
+			mes " 投入到自己身上的努力，將巨大的力量投入到一個人的存在中。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't forget that you must think about yorsrelf the most. ";
+			mes "[莉梅托拉]";
+			mes " 別忘了你必須最關心自己。 ";
 			break;
 		case 62:
-			mes " Hodes do not know about tomorrow, but they still know about death. ";
-			mes " Even though you may be honest and simple, in a time of a crisis, you must be alert. ";
+			mes " 霍德斯不知道明天，但他們仍然知道死亡。 ";
+			mes " 即使你可能誠實而簡單，在危機時刻，你必須保持警惕。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Or else you will really be a simple and honest fool. That may be troublesome. ";
+			mes "[莉梅托拉]";
+			mes " 否則你真的會是一個簡單而誠實的傻瓜。那可能會很麻煩。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Hodes do not ponder about life, but their will to live is very strong.";
-			mes " You can gain a lot simply through the will to hold on to life. ";
+			mes "[莉梅托拉]";
+			mes " 霍德斯不會思考生命，但他們求生的意志非常強烈。";
+			mes " 你可以僅僅通過堅持生命的意志獲得很多。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be thankful that you are alive. Thankfullness itself should help greatly. ";
+			mes "[莉梅托拉]";
+			mes " 感恩你還活著。感恩本身應該會有很大的幫助。 ";
 			break;
 		case 63:
-			mes " Hodes are afraid of crises. You should try not to be afraid of crises either. ";
+			mes " 霍德斯害怕危機。你也應該盡量不要害怕危機。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't think of them too much. A crisis is simply a crisis. ";
+			mes "[莉梅托拉]";
+			mes " 不要想太多。危機只是一個危機。 ";
 			break;
 		case 64:// Minorous Card
-			mes " Before, bulls used to be thought of as foolishly honest workers, but these days bulls are great strong fighters. ";
+			mes " 以前，牛通常被認為是愚蠢又誠實的勞工，但現在的牛是強大的戰士。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Finding different sides of oneself is the way to improve. Study about yourself. ";
+			mes "[萊姆托拉]";
+			mes " 找到自己不同的面向是進步的方式。研究你自己。 ";
 			break;
 		case 65:
-			mes " Do bulls leave leather when they pass away? Or was it the tiger? ";
-			mes " Anyways, he is jealous of the humans that leave their name in history. ";
+			mes " 牛死後會留下皮革嗎？還是老虎？ ";
+			mes " 總之，牠嫉妒那些在歷史上留下名字的人類。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you don't leave your name, he may bear hatred against you for wasting your life. ";
-			mes " So, to not be cursed, make an effort to leave your name in history. ";
+			mes "[萊姆托拉]";
+			mes " 如果你沒有留下你的名字，牠可能會因為你浪費生命而憎恨你。 ";
+			mes " 所以，為了不被詛咒，努力在歷史上留下你的名字。 ";
 			break;
 		case 66:
-			mes " It might seem funny that a bull will look into the future, but the bull is looking into your future right now. ";
-			mes " He says your future is mixed with storms and fall weather. ";
+			mes " 一頭牛會看未來似乎很可笑，但這頭牛現在正在看你的未來。 ";
+			mes " 牠說你的未來充滿了暴風雨和秋天的天氣。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It may be difficult if you are caught up with one situation. In good times, prepare for the bad, and in bad times look forward to good luck. ";
+			mes "[萊姆托拉]";
+			mes " 如果你陷入某種情況，可能會很困難。在順境時，為逆境做準備，在逆境時，期待好運。 ";
 			break;
 		case 67:// Hode Card
-			mes " The bull thinks of the happiness awaiting in the future, but it doesn't like reduced efficiency because of that happiness. ";
+			mes " 這頭牛想著未來等待的幸福，但不喜歡因為那幸福而降低效率。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Even though happiness may be on its way, don't let it affect your work right now. ";
-			mes " This is the bull's thought and your fortune. ";
+			mes "[萊姆托拉]";
+			mes " 即使幸福可能即將到來，也不要讓它影響你現在的工作。 ";
+			mes " 這是牛的想法和你的運氣。 ";
 			break;
 		}
 		next;
-		mes "[Lhimetorra]";
-		mes " Speaking of the future is as dangerous act. ";
-		mes " Humans may face disaster if speaking of the future carelessly. That's why we ask cards about the future. ";
+		mes "[萊姆托拉]";
+		mes " 談論未來是一種危險的行為。 ";
+		mes " 人類如果隨便談論未來，可能會面臨災難。這就是為什麼我們向卡片詢問未來。 ";
 		next;
 		cutin "",255;
-		mes "[Lhimetorra]";
-		mes " Your fortune is a rather good one. There are some in this world who get more horrible fortunes. ";
-		mes " Use this fortune as a support in your life. Ok? ";
+		mes "[萊姆托拉]";
+		mes " 你的運氣相當不錯。世界上有些人得到的運氣更糟糕。 ";
+		mes " 將這個運氣作為你生活中的支持。好嗎？ ";
 		close;
 	//================================================================= Warning ===
 	case 4:
-		mes "[Lhimetorra]";
-		mes " Someone that knows of the dangers you do not, will warn you in the form of cards... so listen carefully-! ";
+		mes "[萊姆托拉]";
+		mes " 知道你不知道的危險的人，會以卡片的形式警告你...所以仔細聽-！ ";
 		next;
 		.@card_1_warning = rand(1,70);
-		if (.@card_1_warning < 5) cutin "陛檜嬴蝶蘋萄",4;			// Giearth Card
-		else if (.@card_1_warning < 9) cutin "渦蝶じ啻蝶蘋萄",4;	// Dustiness Card
-		else if (.@card_1_warning < 13) cutin "萄塭聽塭蘋萄",4;	// Dracula Card
-		else if (.@card_1_warning < 16) cutin "萄溯檜觼蘋萄",4;	// Drake Card
-		else if (.@card_1_warning < 20) cutin "葆葬釭蘋萄",4;		// Marina Card
-		else if (.@card_1_warning < 24) cutin "葆葬螃啻お蘋萄",4;	// Marionette Card
-		else if (.@card_1_warning < 28) cutin "詭舒餌蘋萄",4;		// Medusa Card
-		else if (.@card_1_warning < 32) cutin "夥ん詭お蘋萄",4;	// Baphomet Card
-		else if (.@card_1_warning < 36) cutin "僻萄裔蘋萄",4;		// Sandman Card
-		else if (.@card_1_warning < 40) cutin "模�鯆奏�",4;		// Sohee Card
-		else if (.@card_1_warning < 44) cutin "蝶騷錶醴蘋萄",4;	// Skel Worker Card
-		else if (.@card_1_warning < 48) cutin "蝶騷釭檜お蘋萄",4;	// Khalitzburg Card
-		else if (.@card_1_warning < 52) cutin "嬴援綠蝶蘋萄",4;	// Anubis Card
-		else if (.@card_1_warning < 56) cutin "螃觼煎萄蘋萄",4;	// Orc Lord Card
-		else if (.@card_1_warning < 59) cutin "燮蘋萄",4;		// Jakk Card
-		else if (.@card_1_warning < 63) cutin "褻醴蘋萄",4;		// Joker Card
-		else if (.@card_1_warning < 68) cutin "�ㄤ暰奏�",4;		// Hode Card
-		else cutin "�票痁奏�",4; // Minorous Card
+		if (.@card_1_warning < 5) cutin "?????????",4;			// Giearth Card
+		else if (.@card_1_warning < 9) cutin "???????????",4;	// Dustiness Card
+		else if (.@card_1_warning < 13) cutin "?????????",4;	// Dracula Card
+		else if (.@card_1_warning < 16) cutin "?巹??????",4;	// Drake Card
+		else if (.@card_1_warning < 20) cutin "?????????",4;		// Marina Card
+		else if (.@card_1_warning < 24) cutin "????????????",4;	// Marionette Card
+		else if (.@card_1_warning < 28) cutin "??λ????",4;		// Medusa Card
+		else if (.@card_1_warning < 32) cutin "??????????",4;	// Baphomet Card
+		else if (.@card_1_warning < 36) cutin "????????",4;		// Sandman Card
+		else if (.@card_1_warning < 40) cutin "???????",4;		// Sohee Card
+		else if (.@card_1_warning < 44) cutin "?????????",4;	// Skel Worker Card
+		else if (.@card_1_warning < 48) cutin "???????????",4;	// Khalitzburg Card
+		else if (.@card_1_warning < 52) cutin "????????",4;	// Anubis Card
+		else if (.@card_1_warning < 56) cutin "????ε????",4;	// Orc Lord Card
+		else if (.@card_1_warning < 59) cutin "?????",4;		// Jakk Card
+		else if (.@card_1_warning < 63) cutin "??????",4;		// Joker Card
+		else if (.@card_1_warning < 68) cutin "??????",4;		// Hode Card
+		else cutin "??????",4; // Minorous Card
 
-		mes "[Lhimetorra]";
+		mes "[萊姆托拉]";
 		switch(.@card_1_warning) {
 		case 1:
-			mes " Do you see the forbidden mark on its shoulder? It is telling you to not do something. ";
+			mes " 你看到牠肩膀上禁止的標記了嗎？它是在告訴你不要做某事。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you are thinking of something right now, stop your movement. Or else disaster may be headed your way. ";
+			mes "[萊姆托拉]";
+			mes " 如果你現在正在考慮某事，停止你的行動。否則災難可能會降臨到你身上。 ";
 			break;
 		case 2:
-			mes " Someone is after you. The person is very strong like the picture. They might be holding grudges against you. ";
+			mes " 有人在追你。這個人像圖片一樣非常強壯。他們可能對你懷恨在心。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Look around you. Of course, look for anyone you might have spited.. ";
+			mes "[萊姆托拉]";
+			mes " 環顧四周。當然，尋找任何你可能得罪過的人... ";
 			break;
 		case 3:
-			mes " It is saying to be careful not to burn your mustache with a cigarette. When you do something, something is always at risk.. It is probably warning about that. ";
+			mes " 它說要小心不要用香煙燒到你的鬍子。當你做某事時，總是有風險的...它可能是在警告那個。 ";
 			break;
 		case 4:
-			mes " 'Be careful of shoveling'.. You might get hit by a shovel. Should you be careful around a construction site? ";
+			mes " 「小心鏟子」...你可能會被鏟子打到。你應該在施工現場附近小心嗎？ ";
 			break;
 		case 5:// Dustiness Card
-			mes " The sound of a moth's wings fluttering means chaos. A chaotic event may occur around you. ";
+			mes " 飛蛾翅膀扇動的聲音意味著混亂。混亂的事件可能發生在你身邊。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " The moth is warning you of this. You should be careful. ";
+			mes "[萊姆托拉]";
+			mes " 這隻飛蛾正在警告你。你應該小心。 ";
 			break;
 		case 6:
-			mes " Be aware of the wings. Wings symbolize flight, adventure, and fickleness of a player. ";
+			mes " 注意翅膀。翅膀象徵著飛行、冒險和玩家的善變。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If a word strikes you, be wary of that. Maybe.. a player? ";
+			mes "[萊姆托拉]";
+			mes " 如果一個詞讓你感到震驚，要小心。也許...一個玩家？ ";
 			break;
 		case 7:
-			mes " The teeth of Dustiness are very strong. This means.. Someone may attempt to bite you with their teeth?! ";
+			mes " 沙漠之狼的牙齒非常堅固。這意味著...有人可能會試圖用他們的牙齒咬你？！ ";
 			break;
 		case 8:
-			mes " The moth's warning: 'Dangerous!'. A very simple, yet obvious warning. ";
+			mes " 飛蛾的警告：「危險！」。一個非常簡單，但明顯的警告。 ";
 			break;
 		case 9:// Dracula Card
-			mes " Dracula says, 'Be careful in the streets at night.' ";
+			mes " 德古拉說，「晚上在街上要小心。」 ";
 			break;
 		case 10:
-			mes " Dracula says, 'Don't be too picky.' ";
+			mes " 德古拉說，「不要太挑剔。」 ";
 			break;
 		case 11:
-			mes " Dracula says, 'Brush your teeth 3 times a day.' Make sure you brush your teeth! ";
+			mes " 德古拉說，「每天刷牙 3 次。」確保你刷牙！ ";
 			break;
 		case 12:
-			mes " Dracula says, 'Study the important points first.' Cramming will not work! ";
+			mes " 德古拉說，「先學習重點。」死記硬背是行不通的！ ";
 			break;
 		case 13:// Drake Card
-			mes " If you see the flag of a pirate, either run or do as they say. Pirates do not give more than one warning. ";
+			mes " 如果你看到海盜的旗幟，要么逃跑，要么按照他們說的做。海盜不會給予超過一次的警告。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It is the same in life. ";
+			mes "[萊姆托拉]";
+			mes " 生活也是如此。 ";
 			break;
 		case 14:
-			mes " Pirates give warnings about many things. But right now, this card is speaking of betrayal. ";
+			mes " 海盜會警告很多事情。但現在，這張卡片說的是背叛。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " To pirates, betrayal means tragic death. Be careful of betrayals. ";
+			mes "[萊姆托拉]";
+			mes " 對於海盜來說，背叛意味著悲慘的死亡。小心背叛。 ";
 			break;
 		case 15:
-			mes " The pirate is warning you of your beauty. Don't show off your beauty too much. Pirates are very jealous of appearance, as well. ";
+			mes " 海盜正在警告你的美麗。不要過分炫耀你的美麗。海盜也非常嫉妒外貌。 ";
 			break;
 		case 16:// Marina Card
-			mes " The Marina is warning of a hot stinging poison. Be cautious of poison. ";
+			mes " 瑪麗娜警告你一種灼熱的毒藥。小心毒藥。 ";
 			break;
 		case 17:
-			mes " The Marina is warning about a lazy lifestyle. It says such a lifestyle will lead to something like itself. ";
+			mes " 瑪麗娜警告你一種懶惰的生活方式。它說這樣的生活方式會導致像它自己一樣。 ";
 			break;
 		case 18:
-			mes " The Marina doesn't really think about anything else.. But it will say one thing. Food. The Marina loves food. ";
+			mes " 瑪麗娜並沒有真正考慮其他任何事情...但它會說一件事。食物。瑪麗娜喜歡食物。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Eating is happiness. Same goes for humans as well. Value food and enjoy eating. ";
+			mes "[萊姆托拉]";
+			mes " 吃飯是幸福。人類也是如此。珍惜食物，享受美食。 ";
 			break;
 		case 19:
-			mes " The Marina is warning about a big belly. It's not happy because it resembles itself.. How about losing some weight? ";
+			mes " 瑪麗娜警告你一個大肚子。它並不高興，因為它像自己...減肥怎麼樣？ ";
 			break;
 		case 20:// Marionette Card
-			mes " The Marionette says that you must not rely on violence and to use a different method. ";
-			mes " I'm not quite sure, but it may become an important word of advice to you..? ";
+			mes " 傀儡師說你不能依賴暴力，而是要使用不同的方法。 ";
+			mes " 我不太確定，但它可能會成為你重要的人生建議...？ ";
 			break;
 		case 21:
-			mes " The Marionette is warning about ominous activities. If you did something recently, you should settle it soon. ";
+			mes " 傀儡師正在警告你不祥的活動。如果你最近做了什麼事，應該盡快解決。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " A bad result may come your way. ";
+			mes "[萊姆托拉]";
+			mes " 不好的結果可能會降臨到你身上。 ";
 			break;
 		case 22:
-			mes " The Marionette's eyes are warning about your falsehood. Lies, deceit, fake calculations and actions.. The Marionette is warning about all of them. ";
+			mes " 傀儡師的眼睛正在警告你的虛假。謊言、欺騙、虛假的計算和行動...傀儡師正在警告所有這些。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " This is all for you young one. Therefore, follow this fortune and rid yourself of falsehood. ";
+			mes "[萊姆托拉]";
+			mes " 這一切都是為了你，年輕人。因此，遵循這個預言，擺脫虛假。 ";
 			break;
 		case 23:
-			mes " The Marionette is emphasizing a proper diet. Don't rely too much on meat. ";
+			mes " 傀儡師正在強調適當的飲食。不要過度依賴肉類。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Take the Marionette's advice. She never says anything wrong. Hoho... ";
+			mes "[萊姆托拉]";
+			mes " 聽取傀儡師的建議。她從不說錯話。呵呵... ";
 			break;
 		case 24:// Medusa Card
-			mes " The Medusa punishes those who challenge it without warning. Unexpected punishment. ";
+			mes " 美杜莎會懲罰那些未經警告就挑戰它的人。意想不到的懲罰。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " That is a Medusa. You should be careful. The warning ended a long time ago. ";
+			mes "[萊姆托拉]";
+			mes " 那是美杜莎。你應該小心。警告很久以前就結束了。 ";
 			break;
 		case 25:
-			mes " The Medusa is warning you to be nice to others, or else it will turn you into stone.";
+			mes " 美杜莎警告你要善待他人，否則它會把你變成石頭。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " What a rightful Medusa. Hmm... ";
+			mes "[萊姆托拉]";
+			mes " 多麼公正的美杜莎。嗯... ";
 			break;
 		case 26:
-			mes " The Medusa is warning you to return anything you borrow on time. ";
-			mes " Saying it will not forgive those who use other's things like a black hole.. borrowing and never returning ";
+			mes "梅杜莎警告你，借來的東西要準時歸還。";
+			mes "她說她不會原諒那些像黑洞一樣使用別人的東西，借了從不歸還的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Are you sure you returned everything you have borrowed? Better take care of everything before you get punished. ";
+			mes "[莉梅托拉]";
+			mes "你確定你已經歸還所有借來的東西了嗎？最好在受到懲罰之前處理好一切。";
 			break;
 		case 27:
-			mes " The Medusa is warning about a person near you. Of their existence.. and the relationship, ";
+			mes "梅杜莎正在警告你，關於你附近的一個人。關於他們的存在……以及關係。";
 			next;
-			mes "[Lhimetorra]";
-			mes " The Medusa's warning is very stern. Take a close look around you. ";
+			mes "[莉梅托拉]";
+			mes "梅杜莎的警告非常嚴厲。仔細看看你周圍。";
 			break;
 		case 28:// Baphomet Card
-			mes " The Baphomet says to beware when intervening with others' issues. ";
+			mes "巴風特說，干涉他人事務時要小心。";
 			next;
-			mes "[Lhimetorra]";
-			mes " He is very angry about intruding in others' spaces. Accept the Baphomet's warning. ";
+			mes "[莉梅托拉]";
+			mes "他對侵入他人的空間感到非常憤怒。接受巴風特的警告。";
 			break;
 		case 29:
-			mes " The Baphomet is warning about arrogance. Even a strong and wise warrior must show respect to a Baphomet, ";
-			mes " Arrogance takes away that respect. The Baphomet hates that type of arrogance. ";
+			mes "巴風特正在警告關於傲慢。即使是強大而明智的戰士也必須對巴風特表示尊重。";
+			mes "傲慢會奪走那份尊重。巴風特討厭那種傲慢。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Maybe it means he sees that type of arrogance in you? Since the Baphomet is warning you.. ";
+			mes "[莉梅托拉]";
+			mes "也許這意味著他在你身上看到了那種傲慢？既然巴風特在警告你……";
 			break;
 		case 30:
-			mes " The Baphomet is warning about the laziness that stops one from sharpening the scythe. ";
-			mes " That laziness will cause you to lose your life in an instant. ";
+			mes "巴風特正在警告關於懶惰，這種懶惰會阻止人們磨礪鐮刀。";
+			mes "這種懶惰會讓你在一瞬間失去生命。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Laziness is more dangerous than the monster in front of you. Don't forget about this warning. ";
+			mes "[莉梅托拉]";
+			mes "懶惰比你面前的怪物更危險。不要忘記這個警告。";
 			break;
 		case 31:
-			mes " The Baphomet says it has nothing to say. I wonder why? Isn't it a very good sign?!! ";
+			mes "巴風特說它沒什麼可說的。我想知道為什麼？這難道不是一個非常好的兆頭嗎？！！";
 			break;
 		case 32:// Sandman Card
-			mes " Sand is an instant cure of athlete's foot. He says to beware of athlete's foot and that he hates those rubbing their infected feet into his body. ";
+			mes "沙子是治療香港腳的特效藥。他說要小心香港腳，而且他討厭那些把感染的腳蹭到他身上的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " A Sandman's warning is very stern. Wash your feet regularly, young one. ";
+			mes "[莉梅托拉]";
+			mes "沙人的警告非常嚴厲。年輕人，定期洗腳。";
 			break;
 		case 33:
-			mes " A chicken puts sand in its mouth to aid its insufficient digestion system. ";
-			mes " The Sandman says to watch out before you become like a chicken. ";
+			mes "雞會把沙子放進嘴裡，以幫助其不足的消化系統。";
+			mes "沙人說要小心，別變得像雞一樣。";
 			next;
-			mes "[Lhimetorra]";
-			mes " And don't eat too much spicy and salty food, alcohol, etc. What a thoughtful Sandman. ";
+			mes "[莉梅托拉]";
+			mes "而且不要吃太多辛辣和鹹的食物、酒精等等。多麼體貼的沙人。";
 			break;
 		case 34:
-			mes " The Sandman says over-sleepers will be punished by society! ";
+			mes "沙人說，睡過頭的人會受到社會的懲罰！";
 			next;
-			mes "[Lhimetorra]";
-			mes " Oooh, a stern warning about the future! Young one, bear this in mind. ";
+			mes "[莉梅托拉]";
+			mes "喔，一個關於未來的嚴厲警告！年輕人，請牢記在心。";
 			break;
 		case 35:
-			mes " One warning from the Sandman, respect your parents. ";
+			mes "沙人的一個警告，尊重你的父母。";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you don't, you will end up like him. Listen to the Sandman. ";
+			mes "[莉梅托拉]";
+			mes "如果你不尊重，你就會像他一樣。聽沙人的話。";
 			break;
 		case 36:// Sohee Card
-			mes " Sohee dislikes stinky feet. Don't forget to wash your feet. ";
+			mes "小女孩討厭臭腳。別忘了洗腳。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Bah, don't laugh about it! This is a solemn warning. ";
+			mes "[莉梅托拉]";
+			mes "哎，別笑了！這是一個莊嚴的警告。";
 			break;
 		case 37:
-			mes " Sohee stands on the tip of her toes. It is because her toes are very strong. ";
-			mes " No matter what a person does, physical strength is the most important. Exercise and get stronger. ";
+			mes "小女孩踮起腳尖。這是因為她的腳趾非常強壯。";
+			mes "無論一個人做什麼，體力是最重要的。鍛鍊並變得更強壯。";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you sit around all day, even the things that were going to work won't. Got it? Exercise, exercise! ";
+			mes "[莉梅托拉]";
+			mes "如果你整天坐著，即使是本來會成功的事情也不會成功。明白了嗎？鍛鍊，鍛鍊！";
 			break;
 		case 38:
-			mes " Look at Sohee's hairstyle. Isn't it splendid. ";
-			mes " Sohee likes to take care of her appearance. If you don't, Sohee will get mad at you. ";
+			mes "看看小女孩的髮型。是不是很華麗。";
+			mes "小女孩喜歡打理自己的外貌。如果你不打理，小女孩會對你生氣。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Making yourself look presentable is just as important as keeping a good heart. ";
-			mes " Take care of your appearance. And get that pepper out from between your teeth! ";
+			mes "[莉梅托拉]";
+			mes "讓自己看起來體面與保持一顆善良的心同樣重要。";
+			mes "注意你的外表。還有，把牙縫裡的辣椒拿掉！";
 			break;
 		case 39:
-			mes " Once, Sohee didn't get her change back when she asked a baby ghost to run an errand. ";
-			mes " No can do! Always return the change. ";
+			mes "有一次，小女孩讓小幽靈跑腿卻沒拿回找零。";
+			mes "不行！一定要歸還找零。";
 			next;
-			mes "[Lhimetorra]";
-			mes " No matter how little the amount, you must not just keep it. Sohee greatly dislikes it. ";
+			mes "[莉梅托拉]";
+			mes "無論金額多麼小，你都不能就這樣拿走。小女孩非常不喜歡這樣。";
 			break;
 		case 40:// Skel Worker Card
-			mes " Even though it is a skeleton with only bones, it has all the safety gear needed. ";
+			mes "即使只是一個只有骨頭的骷髏，它也擁有所有必要的安全裝備。";
 			next;
-			mes "[Lhimetorra]";
-			mes " What the skeleton wants to say is, be aware of 'safety'. Being ignorant about safety is dangerous. ";
+			mes "[莉梅托拉]";
+			mes "骷髏想要說的是，要注意「安全」。對安全一無所知是很危險的。";
 			break;
 		case 41:
-			mes " The skeleton card has a gray tone. If you read the grey, you can see the darkness. ";
-			mes " It seems like darkness is on its way. Be careful, this darkness isn't ordinary. ";
+			mes "骷髏卡的色調是灰色的。如果你閱讀灰色，你就能看到黑暗。";
+			mes "黑暗似乎正在逼近。小心，這種黑暗並不尋常。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Hmm.. would you like an amulet? ";
+			mes "[莉梅托拉]";
+			mes "嗯……你想要一個護身符嗎？";
 			break;
 		case 42:
-			mes " The skeleton is warning you about an irregular eating pattern. ";
-			mes " It says it became like that because of a bad eating habit. ";
+			mes "骷髏正在警告你關於不規律的飲食習慣。";
+			mes "它說它變成這樣是因為不良的飲食習慣。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Eat the right food at the right time. That's the only way your body will survive. You can't afford to become like a skeleton. ";
+			mes "[莉梅托拉]";
+			mes "在正確的時間吃正確的食物。這是你的身體存活的唯一途徑。你不能變成骷髏的樣子。";
 			break;
 		case 43:
-			mes " The skeleton's pickaxe is very strong. Even though its body seems weak, with the right tools, it can do great things. ";
+			mes "骷髏的鶴嘴鋤非常堅固。即使它的身體看起來很虛弱，但有了合適的工具，它也能做偉大的事情。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So don't blame your body right now and go search for the right tools. Then you will have a good result. ";
+			mes "[莉梅托拉]";
+			mes "所以現在不要責怪你的身體，去尋找合適的工具。那麼你就會有好的結果。";
 			break;
 		case 44:// Khalitzburg Card
-			mes " The knight is warning you of reckless driving. Do you ride a Pecopeco by any chance? ";
-			mes " Anyhow, you should avoid reckless driving.. If a knight is saying that, it is a big problem. ";
+			mes "騎士正在警告你關於魯莽駕駛。你有騎著鳥龍獸嗎？";
+			mes "總之，你應該避免魯莽駕駛……如果一個騎士這麼說，這就是一個大問題。";
 			break;
 		case 45:
-			mes " The knight is warning you of cruelty. It could be yours or that of someone around you. ";
+			mes "騎士正在警告你關於殘酷。它可能是你自己的，也可能是你周圍的人的。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Anyhow, cruelty will harm you for sure. Be cautious of it. ";
+			mes "[莉梅托拉]";
+			mes "總之，殘酷肯定會傷害你。小心它。";
 			break;
 		case 46:
-			mes " The misfortune shown in the knight card is hastiness. That is also what takes away a knight's life, too. ";
+			mes "騎士卡中顯示的不幸是倉促。這也是奪走騎士生命的原因。";
 			next;
-			mes "[Lhimetorra]";
-			mes " This knight is warning you from the bottom of his heart, ";
-			mes " so that you don't repeat his mistake. Be ware of hastiness. ";
+			mes "[莉梅托拉]";
+			mes "這位騎士正在從心底警告你，";
+			mes "讓你不要重蹈他的覆轍。小心倉促。";
 			break;
 		case 47:
-			mes " This knight is warning you of loneliness. He doesn't have a person to help his horse, ";
-			mes " nor a lover awaiting him, so loneliness hits him in the heart. ";
+			mes "這位騎士正在警告你關於孤獨。他沒有人來幫助他的馬，";
+			mes "也沒有愛人在等著他，所以孤獨擊中了他的心。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Loneliness is not simply sadness. It is a formless devil eating your life. Stay away from loneliness. ";
+			mes "[莉梅托拉]";
+			mes "孤獨不僅僅是悲傷。它是一種無形的惡魔，正在吞噬你的生命。遠離孤獨。";
 			break;
 		case 48:// Anubis Card
-			mes " The warning of the god of death is death itself. ";
+			mes "死神的警告就是死亡本身。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be cautious of death.. death that can be your turn, or maybe someone else. ";
+			mes "[莉梅托拉]";
+			mes "小心死亡……可能是輪到你，也可能是其他人。";
 			break;
 		case 49:
-			mes " The Anubis says to be careful of darkness. In darkness, death lingers in the dark. ";
+			mes "阿努比斯說要小心黑暗。在黑暗中，死亡潛伏在黑暗中。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Take the Anubis's advice and avoid the dark. That is the wisest choice. ";
+			mes "[莉梅托拉]";
+			mes "聽取阿努比斯的建議，避開黑暗。那是明智的選擇。";
 			break;
 		case 50:
-			mes " The Anubis doesn't like foul language. You don't have a foul mouth, do you? ";
-			mes " Watch your mouth. The Anubis is after those that say foul language.";
+			mes "阿努比斯不喜歡髒話。你沒有滿嘴髒話吧？";
+			mes "注意你的嘴巴。阿努比斯正在追捕那些說髒話的人。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Humans have a problem with their mouths. Mmm~ Agh. Me, too?! ";
+			mes "[莉梅托拉]";
+			mes "人類的嘴巴有問題。嗯～啊。我也是嗎？！";
 			break;
 		case 51:
-			mes " The Anubis is warning you of hatred. Hatred only brings upon death. ";
-			mes " The Anubis must not like being busy these days. ";
+			mes "阿努比斯正在警告你關於仇恨。仇恨只會帶來死亡。";
+			mes "阿努比斯一定不喜歡最近這麼忙。";
 			next;
-			mes "[Lhimetorra]";
-			mes " Seeing that he is warning about hatred. Don't you think it's a good idea to avoid his eyes at a time like this? ";
+			mes "[莉梅托拉]";
+			mes " 看到他在警告關於憎恨的事情。你不覺得在這種時候避開他的目光是個好主意嗎？ ";
 			break;
 		case 52:// Orc Lord Card
-			mes " The Orc Lord is warning you of self-righteousness. It is the most dangerous noxious bug that will feed on you. ";
+			mes " 獸人領主在警告你關於自以為是的事情。這是最危險的有害蟲，會吞噬你。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Learn how to accept others' opinions. How about starting from accepting the Orc Lord's? ";
+			mes "[莉梅托拉]";
+			mes " 學習如何接受他人的意見。從接受獸人領主的意見開始如何？ ";
 			break;
 		case 53:
-			mes " The Orc Lord is warning you about freedom. Isn't freedom a good thing? ";
-			mes " Not always! Too much freedom can lead to self-indulgence! ";
+			mes " 獸人領主在警告你關於自由的事情。自由難道不是一件好事嗎？ ";
+			mes " 並非總是如此！過多的自由會導致自我放縱！ ";
 			next;
-			mes "[Lhimetorra]";
-			mes " He knows about the danger of freedom as a lord. ";
+			mes "[莉梅托拉]";
+			mes " 作為領主，他知道自由的危險。 ";
 			break;
 		case 54:
-			mes " The Orc Lord warning you of the opposite sex. Yes. They are poisonous. Keep your distance. ";
+			mes " 獸人領主在警告你關於異性的事情。是的。他們是有毒的。保持距離。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Especially a young one like you... You are too close to one. Cough. ";
+			mes "[莉梅托拉]";
+			mes " 尤其像你這樣年輕的... 你們靠得太近了。咳咳。 ";
 			break;
 		case 55:
-			mes " The Orc Lord is warning about destruction. He knows destruction very well because he is a master of destruction. ";
+			mes " 獸人領主在警告你關於毀滅的事情。他非常了解毀滅，因為他是毀滅的大師。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " That's why he knows about the danger and misfortune destruction brings. Don't destroy thoughtlessly. You will end up destroying yourself as well. ";
+			mes "[莉梅托拉]";
+			mes " 這就是為什麼他了解毀滅帶來的危險和不幸。不要不經思索地毀滅。最終你也會毀滅自己。 ";
 			break;
 		case 56:// Jakk Card
-			mes " Jack is warning you of lame jokes. When he finds one saying them, he tends to hit them with his stick. ";
+			mes " 傑克在警告你關於蹩腳的笑話。當他發現有人說這種笑話時，他會用他的棍子打他們。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If you don't want to be hit, stop your lame jokes! ";
+			mes "[莉梅托拉]";
+			mes " 如果你不想被打，停止說你的蹩腳笑話！ ";
 			break;
 		case 57:
-			mes " Jack is warning you about others' anger and that anger takes away happiness and kills a joke. ";
+			mes " 傑克在警告你關於他人的憤怒，憤怒會奪走幸福並扼殺笑話。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Anger only exhausts you. Keep your distance from anger and befriend jokes. Jack's word. ";
+			mes "[莉梅托拉]";
+			mes " 憤怒只會讓你疲憊不堪。與憤怒保持距離，與笑話為友。傑克說的。 ";
 			break;
 		case 58:
-			mes " It seems like Jack is worried about excessive jokes. ";
-			mes " Jokes are fun, but too much will turn you into a ghost like him. ";
+			mes " 傑克似乎擔心過度的笑話。 ";
+			mes " 笑話很有趣，但太多會讓你變成像他一樣的鬼魂。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be careful. When Jack speaks like this, he playfulness is gone. ";
+			mes "[莉梅托拉]";
+			mes " 小心。當傑克這樣說話時，他的玩心就消失了。 ";
 			break;
 		case 59:// Joker Card
-			mes " Jokers enjoy giving opposite warnings. He says to enjoy sleeping in.";
+			mes " 小丑喜歡給出相反的警告。他說要享受睡懶覺。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " I think you should wake up early. ";
+			mes "[莉梅托拉]";
+			mes " 我認為你應該早點起床。 ";
 			break;
 		case 60:
-			mes " Jokers enjoy giving opposite warnings. He says to enjoy a midnight snack. ";
+			mes " 小丑喜歡給出相反的警告。他說要享受宵夜。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Don't eat anything at night. Your stomach will hurt. ";
+			mes "[莉梅托拉]";
+			mes " 晚上不要吃任何東西。你的胃會痛。 ";
 			break;
 		case 61:
-			mes " Jokers enjoy giving opposite warnings. ";
-			mes " He says if someone has something you want, make it yours. ";
+			mes " 小丑喜歡給出相反的警告。 ";
+			mes " 他說如果有人擁有你想要的東西，把它變成你的。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Need I say more? That's a dangerous thought!! ";
+			mes "[莉梅托拉]";
+			mes " 我還需要多說嗎？那是個危險的想法！！ ";
 			break;
 		case 62:
-			mes " Joker enjoys giving opposite warnings. ";
-			mes " What he is telling you is to not fear death. ";
+			mes " 小丑喜歡給出相反的警告。 ";
+			mes " 他告訴你不要害怕死亡。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " If a Joker is saying this, be careful. There is no cure for thoughtless fools. ";
+			mes "[莉梅托拉]";
+			mes " 如果小丑這麼說，要小心。對於不經思索的傻瓜，沒有任何治療方法。 ";
 			break;
 		case 63:// Hode Card
-			mes " The Hode can forgive others, but not those who hurt it. ";
-			mes " You should also only not forgive those who hurt you. ";
+			mes " 霍德可以原諒他人，但不原諒那些傷害它的人。 ";
+			mes " 你也應該只不原諒那些傷害你的人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " A small territory will ensure great happiness. ";
+			mes "[莉梅托拉]";
+			mes " 一小塊領土將確保極大的幸福。 ";
 			break;
 		case 64:
-			mes " The Hode is warning you of voracious eating that made it sluggish. ";
-			mes " Eating is good, but the wild is a dangerous place. Leave your stomach partially empty. ";
+			mes " 霍德警告你暴飲暴食使它變得遲緩。 ";
+			mes " 吃東西是好事，但野外是個危險的地方。讓你的胃保持部分空腹。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " So you can quickly respond to crises. ";
+			mes "[莉梅托拉]";
+			mes " 這樣你才能迅速應對危機。 ";
 			break;
 		case 65:
-			mes " The Hode is warning you of voracious eating that made it sluggish. ";
-			mes " Eating is good, but the wild is a dangerous place. Leave your stomach partially empty.";
+			mes " 霍德警告你暴飲暴食使它變得遲緩。 ";
+			mes " 吃東西是好事，但野外是個危險的地方。讓你的胃保持部分空腹。";
 			next;
-			mes "[Lhimetorra]";
-			mes " So you can quickly respond to crises. ";
+			mes "[莉梅托拉]";
+			mes " 這樣你才能迅速應對危機。 ";
 			break;
 		case 66:
-			mes " If you are to the point of being warned by a Hode.. you must be one considerable person. ";
+			mes " 如果你到了被霍德警告的地步... 你一定是個了不起的人。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " It says to do better.. I have no idea what it means. ";
+			mes "[莉梅托拉]";
+			mes " 它說要做得更好... 我不知道它是什麼意思。 ";
 			break;
 		case 67:
-			mes " The Bull warns of corruption. A lazy hedonist that is not diligent. ";
-			mes " He believes that is like a cancer cell that can't be removed. ";
+			mes " 公牛警告關於腐敗的事情。一個懶惰的享樂主義者，不勤奮。 ";
+			mes " 他認為這就像一個無法移除的癌細胞。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " Be careful to not have that kind of cell stuck on you. ";
+			mes "[莉梅托拉]";
+			mes " 小心不要讓那種細胞黏在你身上。 ";
 			break;
 		case 68:// Minorous Card
-			mes " The bull is warning about ignorance about a crisis. ";
-			mes " Not knowing that a crisis is a crisis is the most dangerous of all. ";
+			mes " 公牛在警告關於對危機的無知。 ";
+			mes " 不知道危機是危機，是最危險的。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " You will need to learn how to read danger. Accept the bull's advice. ";
+			mes "[莉梅托拉]";
+			mes " 你需要學習如何讀懂危險。接受公牛的建議。 ";
 			break;
 		case 69:
-			mes " The bull is warning of something that will make life sad. ";
-			mes " Sadness is a natural feeling, but don't let that put you down. ";
+			mes " 公牛在警告關於會讓生活悲傷的事情。 ";
+			mes " 悲傷是一種自然的情感，但不要讓它擊倒你。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " A bull is an honest worker that cries even while it works. It knows that it must not be lazy about what it needs to do, even when expressing sadness. ";
-			mes " It seems like he wants to tell you this. ";
+			mes "[莉梅托拉]";
+			mes " 公牛是一個誠實的工人，即使在工作時也會哭泣。牠知道即使在表達悲傷時，也不能對牠需要做的事情感到懶惰。 ";
+			mes " 牠似乎想告訴你這個。 ";
 			break;
 		case 70:
-			mes " The bull is warning about meat from watered cows. ";
-			mes " Saying that, that type of behavior will surely bring upon monsters' curses. ";
+			mes " 公牛在警告關於注水牛的肉。 ";
+			mes " 說那種行為肯定會招致怪物的詛咒。 ";
 			next;
-			mes "[Lhimetorra]";
-			mes " I don't know why he would warn you about it.. Do you raise cattle by any chance? ";
+			mes "[莉梅托拉]";
+			mes " 我不知道牠為什麼要警告你這個... 你有飼養牛嗎？ ";
 			break;
 		}
 		next;
-		mes "[Lhimetorra]";
-		mes " A warning is always a useful fortune. You can never lose anything. ";
+		mes "[莉梅托拉]";
+		mes " 警告總是有用的預言。你永遠不會失去任何東西。 ";
 		next;
 		cutin "",255;
-		mes "[Lhimetorra]";
-		mes " I hope you will be able to avoid misfortune with this warning. Then... ";
+		mes "[莉梅托拉]";
+		mes " 我希望你能藉由這個警告來避免不幸。那麼... ";
 		close;
 	}
 }
 
-payon_in03,75,129,5	script	Poring Fortune Teller	4_M_BIBI,{
-	mes "[Chocarle]";
-	mes " Welcome, welcome~!! " +strcharinfo(0)+ "~!";
-	mes " What brings you here today!? ";
+payon_in03,75,129,5	script	波利算命師	4_M_BIBI,{
+	mes "[喬卡勒]";
+	mes " 歡迎，歡迎~!! " +strcharinfo(0)+ "~!";
+	mes " 今天有什麼事讓你來到這裡呢！？ ";
 	next;
-	if (select(" I would like a Poring card reading. : What is a Poring card reading? ") == 2) {
-		mes "[Chocarle]";
-		mes " Poring card readings focus on cards with cute Porings..! ";
-		mes " Poke~poke~ they tell you your fortune! It is not traditional, but the liveliness is the best! ";
+	if (select(" 我想要一個波利卡牌占卜。 : 什麼是波利卡牌占卜？ ") == 2) {
+		mes "[喬卡勒]";
+		mes " 波利卡牌占卜著重於帶有可愛波利的卡牌...！ ";
+		mes " 戳~戳~ 他們會告訴你你的運勢！這不是傳統的，但生氣蓬勃是最好的！ ";
 		next;
-		mes "[Chocarle]";
-		mes " The fortunes are simple and refreshing. It is perfect when you would like your fortune told with a light heart and not be burdensome! ";
+		mes "[喬卡勒]";
+		mes " 這些運勢簡單而清新。當你想輕鬆愉快地占卜，而不想感到負擔時，這是完美的選擇！ ";
 		close;
 	}
-	mes "[Chocarle]";
-	mes " Ah~ is that so! ";
-	mes " Solving the wonders of the future with these cute and adorable Poring cards! ";
-	mes " It is 1000z for each fortune! Shall we begin? ";
+	mes "[喬卡勒]";
+	mes " 啊~ 原來如此！ ";
+	mes " 用這些可愛又迷人的波利卡牌來解開未來的奧秘！ ";
+	mes " 每次占卜需要 1000z！我們要開始了嗎？ ";
 	next;
-	if (select(" Yes. : I would like to think about it once more. ") == 2) {
-		mes "[Chocarle]";
-		mes " Ok then! Come again next time! We'll do a good job! Bye-bye~! ";
+	if (select(" 是的。 : 我想再考慮一下。 ") == 2) {
+		mes "[喬卡勒]";
+		mes " 好的！下次再來！我們會做得很好！掰掰~! ";
 		close;
 	}
 	if (Zeny < 1000) {
-		mes "[Chocarle]";
-		mes "You don't even have 1000 zeny!";
-		mes "Nope, I can read cards for you!";
-		mes "Nope!";
+		mes "[喬卡勒]";
+		mes "你甚至沒有 1000 zeny！";
+		mes "不行，我不能為你讀卡！";
+		mes "不行！";
 		close;
 	}
 	Zeny = Zeny -1000;
-	mes "[Chocarle]";
-	mes " Thank you~! Then we shall look into your fortune! ";
-	mes " First, clear your mind! Just like washing when you wash dishes! ";
+	mes "[喬卡勒]";
+	mes " 謝謝~! 那麼我們來看看你的運勢！ ";
+	mes " 首先，淨空你的思緒！就像你洗碗時的清洗一樣！ ";
 	next;
-	mes "[Chocarle]";
-	mes " Then~ gently think of your wish! ";
+	mes "[喬卡勒]";
+	mes " 然後~ 輕輕地想想你的願望！ ";
 	next;
-	switch(select(" (I'm curious about love!) : (I would like to do well in school!) : (Will my friendship be intact?) : (I want to know about my future self!) : (Will I make a lot of money?) ")) {
+	switch(select("（我對愛情感到好奇！）:（我想要在學校表現良好！）:（我的友誼會完好無損嗎？）:（我想知道未來的自己！）:（我會賺很多錢嗎？）")) {
 	case 1:
-		mes "[Chocarle]";
-		mes " Ohh! Cute love fortune! Heh! Lets look at the cards! ";
+		mes "[喬卡爾]";
+		mes " 喔！可愛的愛情運勢！嘿嘿！讓我們看看牌！";
 		next;
 		.@card_2_love = rand(1,33);
 		callsub L_displaycutin, .@card_2_love;
 
-		mes "[Chocarle]";
+		mes "[喬卡爾]";
 		switch(.@card_2_love) {
 		case 1:
-			mes " Oh! Your lover is about to leave your side! Hold on tight! ";
+			mes " 喔！你的愛人即將離開你身邊！緊緊抓住！";
 			break;
 		case 2:
-			mes " Agh! You're about to give your soul to your loved one! Take it down a notch! ";
+			mes " 呃！你即將把你的靈魂獻給你的愛人！放低一點！";
 			break;
 		case 3:
-			mes " No! Your heart is about to leave your love! Catch it! ";
+			mes " 不！你的心即將離開你的愛！抓住它！";
 			break;
 		case 4:// Drops Card
-			mes " Love is like juice in the forest! It is refreshing! Take care of your loved one! ";
+			mes " 愛情就像森林裡的果汁！令人耳目一新！照顧好你的愛人！";
 			break;
 		case 5:
-			mes " Uh! You didn't share your juice with your loved one! What a shame! Take care of your loved one! ";
+			mes " 嗚！你沒有和你的愛人分享你的果汁！真可惜！照顧好你的愛人！";
 			break;
 		case 6:
-			mes " Why not share with your loved one? Don't be too greedy and try to keep it all! ";
+			mes " 為什麼不和你的愛人分享呢？不要太貪心，試圖全部保留！";
 			break;
 		case 7:// Mantis Card
-			mes " Your love is going to have a crisis! Protect your love! ";
+			mes " 你的愛情即將面臨危機！保護你的愛情！";
 			break;
 		case 8:
-			mes " Hee! Go after your love like a mole! Puhahaha! ";
+			mes " 嘻！像鼴鼠一樣追逐你的愛！噗哈哈哈！";
 			break;
 		case 9:
-			mes " Oh no! Your love is in danger! Run away from the menace! ";
+			mes " 喔不！你的愛情有危險！逃離威脅！";
 			break;
 		case 10:// Munak Card
-			mes " Oh no! You lost your loved one. And, nobody similar around you. Cheer up! ";
+			mes " 喔不！你失去了你的愛人。而且，你周圍沒有類似的人。振作起來！";
 			break;
 		case 11:
-			mes " Ah! A sexy rival has appeared! Don't get sidetracked! ";
+			mes " 啊！出現了一個性感的對手！不要分心！";
 			break;
 		case 12:
-			mes " You are desperately searching for love! If you go beyond this desert, you can find love! ";
+			mes " 你正在拼命尋找愛情！如果你越過這片沙漠，你就能找到愛情！";
 			break;
 		case 13:// Santa Poring Card
-			mes " Prepare an event of love! They will be flying with happiness! ";
+			mes " 準備一個愛情的活動！他們會幸福地飛起來！";
 			break;
 		case 14:
-			mes " Love is sweet! Be careful not to get cavities! ";
+			mes " 愛情是甜蜜的！小心不要蛀牙！";
 			break;
 		case 15:
-			mes " Prepare a present for your love! They might get a heart attack because they will be overwhelmed with happiness! ";
+			mes " 為你的愛人準備一份禮物！他們可能會因為幸福而心臟病發作！";
 			break;
 		case 16:// Soldier Skeleton Card
-			mes " Don't be shy in front of your loved one! Love transcends everything! ";
+			mes " 不要在你的愛人面前害羞！愛情超越一切！";
 			break;
 		case 17:
-			mes " Embrace every aspect of your loved one! That is true love! ";
+			mes " 擁抱你愛人的每一個面向！那就是真愛！";
 			break;
 		case 18:
-			mes " Love will blossom with a totally different person! Wow, so cool! ";
+			mes " 愛情會與一個完全不同的人綻放！哇，太酷了！";
 			break;
 		case 19:// Skeleton Card
-			mes " No matter what other people say, run towards your loved one! One-track love! ";
+			mes " 無論別人怎麼說，朝著你的愛人奔跑吧！一根筋的愛！";
 			break;
 		case 20:
-			mes " Go to your loved one with a present! They will be very happy! ";
+			mes " 帶著禮物去找你的愛人！他們會非常開心的！";
 			break;
 		case 21:
-			mes " Love requires health and strength! Exercise to become stronger! Power and love! ";
+			mes " 愛情需要健康和力量！鍛鍊身體變得更強壯！力量與愛情！";
 			break;
 		case 22:// Eddga Card
-			mes " Even if you wish to approach your loved one, your body is discomforted! Take a break and rest! ";
+			mes " 即使你希望接近你的愛人，你的身體也不舒服！休息一下！";
 			break;
 		case 23:
-			mes " Love is bending yourself for someone! Service! Sacrifice! ";
+			mes " 愛情就是為了某人而委屈自己！服務！犧牲！";
 			break;
 		case 24:
-			mes " You will be meeting your lover's parents! Prepare well! ";
+			mes " 你將會見到你愛人的父母！好好準備！";
 			break;
 		case 25:// Angeling Card
-			mes " Your relationship must be very happy as it seems you two are flying amongst the clouds! Very jealous! ";
+			mes " 你的關係一定很幸福，因為你們兩個似乎在雲端中飛翔！非常嫉妒！";
 			break;
 		case 26:
-			mes " Make an opportunity to be alone with each other! It will bring much happiness! ";
+			mes " 創造一個與彼此獨處的機會！它會帶來很多幸福！";
 			break;
 		case 27:
-			mes " Uh oh! Someone is peeping at your love! Go scold them! ";
+			mes " 喔哦！有人在偷窺你的愛情！去責罵他們！";
 			break;
 		case 28:// Poring Card
-			mes " Love blossoms from the foundation! Be true to the basics! ";
+			mes " 愛情從基礎開始綻放！忠於基本功！";
 			break;
 		case 29:
-			mes " When your loved one is hurt, be by them! They will be very happy! ";
+			mes " 當你的愛人受傷時，陪在他們身邊！他們會非常開心的！";
 			break;
 		case 30:
-			mes " One day, when you wake up, your loved one will leave a present! Be happy! ";
+			mes " 有一天，當你醒來時，你的愛人會留下一份禮物！開心點！";
 			break;
 		case 31:// Poporing Card
-			mes " Give lots~~ of presents to your loved one! Then you will experience many~ many good things! ";
+			mes " 給你的愛人很多~~禮物！然後你將體驗到很多~很多的好事！";
 			break;
 		case 32:
-			mes " Lean against a wall and await your love! *Boom* Love will appear! ";
+			mes " 靠在牆上等待你的愛！*砰* 愛情將會出現！";
 			break;
 		case 33:
-			mes " You must be lonely! It's ok, cheer up! ";
+			mes " 你一定是孤單的！沒關係，振作起來！";
 			break;
 		}
 		next;
-		mes "[Chocarle]";
-		mes " A fortune of love was told! What do you think! Do you like it? ";
-		mes " Even if you did not get the fortune you wished for, don't be do upset and simply go for your love! ";
+		mes "[喬卡爾]";
+		mes " 愛情的運勢已經說完了！你覺得怎麼樣！你喜歡嗎？";
+		mes " 即使你沒有得到你想要的運勢，也不要太沮喪，直接去追求你的愛吧！";
 		cutin "",255;
 		next;
-		mes "[Chocarle]";
-		mes " Then, see you next time~~~~~ ";
+		mes "[喬卡爾]";
+		mes " 那麼，下次見~~~~~";
 		close;
 	case 2:// Study
-		mes "[Chocarle]";
-		mes " Issues about studying is a serious matter! Lets take a look! Yap! ";
+		mes "[喬卡爾]";
+		mes " 關於學習的問題是很嚴肅的事情！讓我們看看！呀！";
 		next;
 		.@card_2_study = rand(1,33);
 		callsub L_displaycutin, .@card_2_study;
 
-		mes "[Chocarle]";
+		mes "[喬卡爾]";
 		switch(.@card_2_study) {
 		case 1:
-			mes " Agh! Don't die from studying! Take breaks while you're at it! You need some rest! ";
+			mes " 呃！不要因為學習而死掉！學習的時候要休息！你需要休息一下！";
 			break;
 		case 2:
-			mes " Oh, no! You're missing the main points! Figure out the essentials! ";
+			mes " 喔，不！你錯過了重點！找出要點！";
 			break;
 		case 3:
-			mes " Mmph! You're dying not to study! At times like this, a break is the best! ";
+			mes " 嗯！你寧死也不想學習！在這種時候，休息是最好的！";
 			break;
 		case 4:// Drops Card
-			mes " Studying is just like hunting a monster in the desert. Resting for a little is the best. Understand? ";
+			mes " 學習就像在沙漠中狩獵怪物一樣。休息一下是最好的。明白嗎？";
 			break;
 		case 5:
-			mes " A nice cup of cold juice under the hot sun! Studying should be done like that, too! ";
+			mes " 在炎熱的陽光下喝一杯冰冷的果汁！學習也應該這樣做！";
 			break;
 		case 6:
-			mes " Even though it is the desert, you seem to have a relaxed smile! Maybe you need to relax like this when studying as well! ";
+			mes " 即使是在沙漠裡，你似乎也露出了輕鬆的笑容！也許你學習的時候也需要這樣放鬆！";
 			break;
 		case 7:// Mantis Card
-			mes " Your grades are in danger! You must study harder! ";
+			mes " 你的成績有危險！你必須更努力地學習！";
 			break;
 		case 8:
-			mes " There may be a big crisis! Don't get too stressed just because you can't study! ";
+			mes " 可能會有一場大危機！不要因為不能學習而感到壓力太大！";
 			break;
 		case 9:
-			mes " It is saying studying in the dark night can be dangerous! Careful when studying at night! ";
+			mes " 它說在黑暗的夜晚學習可能很危險！晚上學習時要小心！";
 			break;
 		case 10:// Munak Card
-			mes " Studying came to a strange place! It needs to find its original path! You can do it! ";
+			mes " 學習來到了一個奇怪的地方！需要找到它原本的路！你可以的！ ";
 			break;
 		case 11:
-			mes " You're gazing at a smart friend with the eyes of a Poring! Heehee! Doing good! ";
+			mes " 你正用波利般的眼神凝視著一個聰明的朋友！嘻嘻！做得好！ ";
 			break;
 		case 12:
-			mes " Eh? You're too smart! You're at a much higher level than your friends! Take a break! ";
+			mes " 嗯？你太聰明了！你的程度比你的朋友們高太多了！休息一下吧！ ";
 			break;
 		case 13:// Santa Poring Card
-			mes " You will be rewarded for your accomplishments! It was worth the effort! ";
+			mes " 你的成就將會得到獎勵！這是值得的努力！ ";
 			break;
 		case 14:
-			mes " Forget about studying for a moment and enjoy the party! It should be refreshing~! ";
+			mes " 暫時忘記學習，享受派對吧！這應該會讓人耳目一新喔～！ ";
 			break;
 		case 15:
-			mes " Study something that will make people happy! Future set! ";
+			mes " 學習一些能讓人們快樂的事情！未來已定！ ";
 			break;
 		case 16:// Soldier Skeleton Card
-			mes " If you're not sure of something, ask a friend! It's not something to be ashamed about! You can do it! ";
+			mes " 如果你不確定某些事情，就問朋友吧！這不是什麼可恥的事情！你可以的！ ";
 			break;
 		case 17:
-			mes " Don't think that your head is empty! Because, you are smart! You can do it! ";
+			mes " 別認為你的頭腦空空如也！因為，你是聰明的！你可以的！ ";
 			break;
 		case 18:
-			mes " There's a phenomenon you don't understand! Do a little more research! You'll be able to figure it out soon! ";
+			mes " 有一個你無法理解的現象！多做一點研究！你很快就能弄清楚了！ ";
 			break;
 		case 19:// Skeleton Card
-			mes " Don't get lazy about studying wherever you go! Seek the road of truth and go down it to find the answer! ";
+			mes " 無論你走到哪裡，都不要懶惰學習！尋找真理之路並走下去找到答案！ ";
 			break;
 		case 20:
-			mes " You need strength to study! Get stronger! Running is a start! ";
+			mes " 你需要力量來學習！變得更強大！跑步是個開始！ ";
 			break;
 		case 21:
-			mes " You will become an admirable person because of all the effort put into studying! You must feel very worth while! ";
+			mes " 你會因為投入學習的所有努力而成為一個令人欽佩的人！你一定會覺得非常值得！ ";
 			break;
 		case 22:// Eddga Card
-			mes " Try studying the history of our country! From when the tiger started smoking! ";
+			mes " 試著學習我們國家的歷史！從老虎開始抽菸的時候！ ";
 			break;
 		case 23:
-			mes " You must be having a hard time studying because of all the pressure! Go out and get some fresh air! ";
+			mes " 你一定因為壓力而很難學習！出去呼吸一些新鮮空氣吧！ ";
 			break;
 		case 24:
-			mes " Your head seems to be heavy because of studying! You need a diversion! Put studying aside for a moment! ";
+			mes " 你的頭好像因為學習而變得沉重！你需要轉移注意力！先把學習放到一邊吧！ ";
 			break;
 		case 25:// Angeling Card
-			mes " Try studying aerospace or meteorology! Don't you think it would be fun? ";
+			mes " 試著學習航空太空或氣象學！你不覺得這會很有趣嗎？ ";
 			break;
 		case 26:
-			mes " How about studying theology? You even get to study about angels! ";
+			mes " 學習神學怎麼樣？你甚至可以學習關於天使的事情！ ";
 			break;
 		case 27:
-			mes " Study little by little and make yourself feel lighter! You can't study if you're overloaded with words! ";
+			mes " 一點一點地學習，讓自己感覺更輕鬆！如果你被文字超載，你就無法學習！ ";
 			break;
 		case 28:// Poring Card
-			mes " When studying, you should have a snack! It may seem trivial, but it is rather important! ";
+			mes " 學習的時候，你應該吃點零食！這可能看起來微不足道，但它相當重要！ ";
 			break;
 		case 29:
-			mes " Even when you are sick, don't forget about studying! Where there is effort, there is bound to be good results! ";
+			mes " 即使你生病了，也不要忘記學習！只要有努力，就一定會有好的結果！ ";
 			break;
 		case 30:
-			mes " Newton discovered gravity through a falling apple! Be wary of even the little things in your surroundings! ";
+			mes " 牛頓透過一顆掉落的蘋果發現了地心引力！對你周圍的小事情也要保持警惕！ ";
 			break;
 		case 31:// Poporing Card
-			mes " Green is good for studying! Color your walls green or get a green drink! The lucky color! Green! ";
+			mes " 綠色對學習有益！把你的牆壁塗成綠色，或喝一杯綠色的飲料！幸運色！綠色！ ";
 			break;
 		case 32:
-			mes " There is a jewel in your mind! You need to bring all the wisdom to life! Don't study bad things! ";
+			mes " 你的腦海中有一顆寶石！你需要將所有的智慧帶入生活！不要學習壞事！ ";
 			break;
 		case 33:
-			mes " You will receive good results from studying! You can focus on your current studies! ";
+			mes " 你會從學習中獲得好結果！你可以專注於你目前的學習！ ";
 			break;
 		}
 		next;
-		mes "[Chocarle]";
-		mes " You've been told your study fortune! Was it a good one? ";
-		mes " But in studying, effort is more important than any type of fortune! ";
+		mes "[喬卡爾]";
+		mes " 你已經被告知你的學習運勢了！是個好運勢嗎？ ";
+		mes " 但在學習中，努力比任何運勢都重要！ ";
 		next;
 		cutin "",255;
-		mes "[Chocarle]";
-		mes " Try your best. Then, see you again! Byyyyyyyyyyyyyyyyeeeee~~byyyyeeee~ ";
+		mes "[喬卡爾]";
+		mes " 盡你所能。那麼，再見囉！掰掰掰掰掰掰掰掰掰掰掰~~ ";
 		close;
 	case 3:// Friends
-		mes "[Chocarle]";
-		mes " Relationships among friends is more difficult than people think! Let's use the cards to try and solve this complicated puzzle of friendship! ";
+		mes "[喬卡爾]";
+		mes " 朋友們之間的關係比人們想像的更困難！讓我們用卡片來試著解決這個複雜的友誼難題！ ";
 		next;
 		.@card_2_buddy = rand(1,33);
 		callsub L_displaycutin, .@card_2_buddy;
 
-		mes "[Chocarle]";
+		mes "[喬卡爾]";
 		switch(.@card_2_buddy) {
 		case 1:
-			mes " Ah! Your friend has gone crazy! They need the heal of friendship! ";
+			mes " 啊！你的朋友瘋了！他們需要友誼的治療！ ";
 			break;
 		case 2:
-			mes " Mmm! You both have gone crazy. You must overcome it through conversations! ";
+			mes " 嗯！你們兩個都瘋了。你們必須透過對話來克服它！ ";
 			break;
 		case 3:
-			mes " Agh! You are suffering because of your friend! Try opening your heart and be more lenient! ";
+			mes " 哎呀！你因為你的朋友而受苦！試著敞開心扉，更加寬容！ ";
 			break;
 		case 4:// Drops Card
-			mes " You even split a pea between friends! Don't be so cruel. Reflect upon yourself and apologize! ";
+			mes " 你甚至和朋友分一顆豌豆！別這麼殘酷。反省一下自己並道歉！ ";
 			break;
 		case 5:
-			mes " Oh no! Your friend is ignoring you! Offer a bottle of juice to your friend! Your friendship may come back? ";
+			mes " 糟糕！你的朋友在忽略你！送一瓶果汁給你的朋友！你的友誼可能會回來？ ";
 			break;
 		case 6:
-			mes " Eh!? What kind of friendship is this?! Hurry up and make up! ";
+			mes " 欸！？這是什麼樣的友誼？！趕快和好吧！ ";
 			break;
 		case 7:// Mantis Card
-			mes "Oh no?! This person is not your friend, but an enemy! You must be careful! ";
+			mes " 糟糕？！這個人不是你的朋友，而是敵人！你必須小心！ ";
 			break;
 		case 8:
-			mes " Your friend is in danger! You must help your friend! ";
+			mes " 你的朋友有危險！你必須幫助你的朋友！ ";
 			break;
 		case 9:
-			mes " Your friendship is on the verge of falling apart! Cast a shield around your friendship! ";
+			mes " 你的友誼正處於崩潰的邊緣！在你的友誼周圍築起一道盾牌！ ";
 			break;
 		case 10:// Munak Card
-			mes " One person is left out amongst your friends! Be more friendly! ";
+			mes " 你們的朋友中有一人被排除在外！更友善一點！ ";
 			break;
 		case 11:
-			mes " Your friend hit you! Don't cry even if it may hurt! Hurry and make up! ";
+			mes " 你的朋友打了你！即使可能會痛，也不要哭！趕快和好吧！ ";
 			break;
 		case 12:
-			mes " You must be alone! It must be hard to make friends! Try putting on a brighter face! ";
+			mes " 你一定是孤單一人！交朋友一定很難！試著擺出更開朗的表情！ ";
 			break;
 		case 13:// Santa Poring Card
-			mes " Give your friends a present! Your friendship will become deeper! ";
+			mes " 給你的朋友們送一份禮物！你的友誼會變得更深厚！ ";
 			break;
 		case 14:
-			mes " Prepare a hat to cover your friend's large head! They will be moved by your care! ";
+			mes " 準備一頂帽子來遮住你朋友的大頭！他們會被你的關懷所感動！ ";
 			break;
 		case 15:
-			mes " A friend is waiting for you! Be nice to your friend! ";
+			mes " 一個朋友正在等你！對你的朋友好一點！ ";
 			break;
 		case 16:// Soldier Skeleton Card
-			mes " Being close friends despite differences is true friendship! Shelter each other's differences! ";
+			mes " 儘管存在差異，但仍然是親密的朋友，才是真正的友誼！包容彼此的差異！ ";
 			break;
 		case 17:
-			mes " Your misunderstandings will be removed if you take the time to talk! Go have a conversation with your friend! ";
+			mes " 如果你花時間交談，你的誤解將會消除！去和你的朋友談談吧！ ";
 			break;
 		case 18:
-			mes " When a friend is sick, visit them! They will be happy! For sure! ";
+			mes " 當朋友生病時，去拜訪他們！他們會很高興的！肯定！ ";
 			break;
 		case 19:// Skeleton Card
-			mes " Go out and have some fun with your friend! Your friendship will surely get stronger! ";
+			mes " 和你的朋友出去玩玩吧！你們的友誼肯定會更堅強！ ";
 			break;
 		case 20:
-			mes " Give your friend a present! They'll go bragging around town?! ";
+			mes " 給你的朋友一份禮物！他們會在城裡到處炫耀？！ ";
 			break;
 		case 21:
-			mes " Share your bone with your friend! Sacrifices in friendship are beautiful! ";
+			mes " 和你的朋友分享你的骨頭！友誼中的犧牲是美好的！ ";
 			break;
 		case 22:// Eddga Card
-			mes " Do anything for your friend! With all your heart and soul! Your friend will be delighted! ";
+			mes "為了你的朋友做任何事！全心全意！你的朋友會很高興的！";
 			break;
 		case 23:
-			mes " No smoking, even with a friend! Stop smoking for your health! ";
+			mes "即使和朋友在一起也不要抽煙！為了你的健康戒菸！";
 			break;
 		case 24:
-			mes " You and your friend will encounter hardships! Combine your powers and overcome it! ";
+			mes "你和你的朋友會遇到困難！結合你們的力量克服它！";
 			break;
 		case 25:// Angeling Card
-			mes " Go on a trip with your friend! Friendship can get stronger in new environments! ";
+			mes "和你的朋友去旅行！友誼可以在新的環境中變得更堅強！";
 			break;
 		case 26:
-			mes " Give your friend a ride in a plane! They'll probably fly with joy!? ";
+			mes "讓你的朋友搭飛機！他們可能會高興地飛起來！？";
 			break;
 		case 27:
-			mes " Don't forget your friend in heaven! Friendship is eternal! ";
+			mes "不要忘記你在天堂的朋友！友誼是永恆的！";
 			break;
 		case 28:// Poring Card
-			mes " Help your friend's scar. Your friend would greatly appreciate it! ";
+			mes "幫助你朋友的傷疤。你的朋友會非常感激！";
 			break;
 		case 29:
-			mes " You even split a slice of an apple among friends! Share more things with your friend! Something good will happen! ";
+			mes "你甚至和朋友分一個蘋果！和你的朋友分享更多東西！好事會發生！";
 			break;
 		case 30:
-			mes " When your friend is sleeping, think of them! Then there will be progress in your friendship! What do you think~ it means~?! ";
+			mes "當你的朋友在睡覺時，想想他們！那麼你的友誼將會有進展！你認為～是什麼意思～？！";
 			break;
 		case 31:// Poporing Card
-			mes " Don't measure friendship with money! If you do, be careful for there will be a crack in your friendship! ";
+			mes "不要用金錢衡量友誼！如果你這樣做，要小心你的友誼會出現裂痕！";
 			break;
 		case 32:
-			mes " It seems as if your friend will give you many presents! Look forward to it! ";
+			mes "你的朋友似乎會給你很多禮物！期待吧！";
 			break;
 		case 33:
-			mes " You must be lonely without a friend! A good friend will come along soon! ";
+			mes "沒有朋友你一定很寂寞！一個好朋友很快就會出現！";
 			break;
 		}
 		next;
-		mes "[Chocarle]";
-		mes " Poring fortunetelling works very well when it is about friendship! ";
-		mes " It is the heart of the poring card that earnestly hopes for good friendships! ";
+		mes "[喬卡勒]";
+		mes "波利算命在友誼方面非常有效！";
+		mes "它是真心希望擁有良好友誼的波利卡的核心！";
 		next;
 		cutin "",255;
-		mes "[Chocarle]";
-		mes " Did you like it? Next time invite your friend! Then byebye!! ";
+		mes "[喬卡勒]";
+		mes "你喜歡嗎？下次邀請你的朋友！那麼再見！！";
 		close;
 	case 4:// Future
-		mes "[Chocarle]";
-		mes " If you say fortunetelling! Of course it is about the future! Let's try to figure this out! ";
+		mes "[喬卡勒]";
+		mes "如果你說算命！當然是關於未來的！讓我們試著弄清楚！";
 		next;
 		.@card_2_future = rand(1,33);
 		callsub L_displaycutin, .@card_2_future;
 
-		mes "[Chocarle]";
+		mes "[喬卡勒]";
 		switch(.@card_2_future) {
 		case 1:
-			mes " Oh no! You are not confident about the future! Trust yourself a little more! Hope! ";
+			mes "噢不！你對未來沒有信心！多相信自己一點！希望！";
 			break;
 		case 2:
-			mes " Oh! Do you keep on thinking about your death in the future! First, forget about death and live your life! ";
+			mes "哦！你一直在想你未來的死亡嗎！首先，忘記死亡，好好生活！";
 			break;
 		case 3:
-			mes " Cut! You are filled with uncertainty about the future! Let's get rid of this! Wee! It's gone! ";
+			mes "卡！你對未來充滿不確定性！讓我們擺脫它！咻！它消失了！";
 			break;
 		case 4:// Drops Card
-			mes " Life may seem like a hot and dry desert, but in the future, delicious juice and rest awaits you! ";
+			mes "生活可能看起來像一個炎熱乾燥的沙漠，但在未來，美味的果汁和休息在等著你！";
 				break;
 		case 5:
-			mes " Even in a hot and dry desert, isn't the future happier since you can encounter sweet juice? Put forth your strength! ";
+			mes "即使在炎熱乾燥的沙漠中，既然你可以遇到甜美的果汁，未來不是更快樂嗎？發揮你的力量！";
 			break;
 		case 6:
-			mes " Don't your troubles disappear watching a poring smile? Your future must be filled with good things! ";
+			mes "看著波利微笑，你的煩惱不會消失嗎？你的未來一定充滿美好事物！";
 			break;
 		case 7:// Mantis Card
-			mes " There is danger waiting ahead! You should avoid it for now! Take care of yourself! ";
+			mes "前方有危險在等待！你現在應該避免它！照顧好自己！";
 			break;
 		case 8:
-			mes " You must be fearing your future!? Don't worry too much! Think of happy thoughts! ";
+			mes "你一定很害怕你的未來！？不要太擔心！想想快樂的事情！";
 			break;
 		case 9:
-			mes " You may endanger someone in the future! Don't become a bad person~! ";
+			mes "你將來可能會危害某人！不要成為一個壞人～！";
 			break;
 		case 10:// Munak Card
-			mes " You may have to stand alone in the future! Prepare yourself right now! ";
+			mes "你將來可能不得不獨自站立！現在就做好準備！";
 			break;
 		case 11:
-			mes " Many hardships await you in the future! But you can overcome them! ";
+			mes "未來有許多困難在等著你！但你可以克服它們！";
 			break;
 		case 12:
-			mes " You might not even be able to buy summer clothes in the future! Don't waste your money! ";
+			mes "你將來甚至可能買不起夏天的衣服！不要浪費你的錢！";
 			break;
 		case 13:// Santa Poring Card
-			mes " Something exciting may happen! What can it be? Fun! Fun! ";
+			mes "可能會發生一些令人興奮的事情！那會是什麼呢？好玩！好玩！";
 			break;
 		case 14:
-			mes " Something good might happen on this nice day! You can look forward to it! Yay! ";
+			mes "在這個美好的日子裡，可能會發生一些好事！你可以期待它！耶！";
 			break;
 		case 15:
-			mes " A splendid event will be held! Go get ready! Look forward to it! ";
+			mes "將會舉行一個盛大的活動！去準備吧！期待它！";
 			break;
 		case 16:// Soldier Skeleton Card
-			mes " You will meet someone new! It will be very interesting! ";
+			mes "你會遇到一個新人！這將會非常有趣！";
 			break;
 		case 17:
-			mes " If you go little by little, something good will happen! Sit and take a look around you! ";
+			mes "如果你一點一點地走，就會發生一些好事！坐下來看看你周圍！";
 			break;
 		case 18:
-			mes " You get a headache from thinking about the future? Empty your mind! You will feel refreshed! ";
+			mes "你因為思考未來而頭痛？清空你的思緒！你會感到神清氣爽！";
 			break;
 		case 19:// Skeleton Card
-			mes " You will become a respectable person in the future! Good job! ";
+			mes "你將來會成為一個受人尊敬的人！好棒！";
 			break;
 		case 20:
-			mes " I can see you working hard in the future! What a lively future! ";
+			mes "我可以看到你將來努力工作！多麼充滿活力的未來！";
 			break;
 		case 21:
-			mes " You have a very busy future! Take care of your health! ";
+			mes "你將來會非常忙碌！照顧好你的健康！";
 			break;
 		case 22:// Eddga Card
-			mes " Pick a job where you can work with other people! It will be very rewarding, right? ";
+			mes "選擇一份可以與他人一起工作的工作！這將非常有價值，對吧？";
 			break;
 		case 23:
-			mes " Try doing some volunteer work! It is worthwhile and you will feel good about it, too! ";
+			mes "嘗試做一些志願工作！這是值得的，你也會感覺很好！";
 			break;
 		case 24:
-			mes " You may become a commander! Mmm~! Kind of scary! ";
+			mes "你可能會成為一名指揮官！嗯～！有點可怕！";
 			break;
 		case 25:// Angeling Card
-			mes " Choose a job that involves flying! You show potential! ";
+			mes "選擇一份涉及飛行的工作！你展現了潛力！";
 			break;
 		case 26:
-			mes " Scrumptious ice cream that could even be eaten in heaven! Challenge yourself and get involved in a job making things of that sort! ";
+			mes "美味的冰淇淋甚至可以在天堂享用！挑戰自己，參與製作那類東西的工作！";
 			break;
 		case 27:
-			mes " In the future, things that cannot be done right now will be accomplished! You can look forward to it! ";
+			mes "在未來，現在無法完成的事情將會完成！你可以期待它！";
 			break;
 		case 28:// Poring Card
-			mes " Little things in life will bring you happiness and joy in the future! Even more than now! ";
+			mes "生活中的小事將在未來給你帶來幸福和快樂！甚至比現在更多！";
 			break;
 		case 29:
-			mes " Do what you have to do. Live life to the fullest, even though the world may end tomorrow! ";
+			mes "做你必須做的事。充實地生活，即使世界明天可能會結束！";
 			break;
 		case 30:
-			mes " You will deal with fruits in the future! How about preparing yourself? ";
+			mes "你將來會處理水果！準備一下如何？";
 			break;
 		case 31:// Poporing Card
-			mes " Your future self will encounter a high wall! Although, I'm not sure what type of building it may be! ";
+			mes "你未來的自己會遇到一堵高牆！雖然，我不確定它會是什麼樣的建築！";
 			break;
 		case 32:
-			mes " Green symbolizes peace! Your future seems as if it will be very peaceful! It's a good thing, right? ";
+			mes "綠色象徵和平！你的未來似乎會非常和平！這是件好事，對吧？";
 			break;
 		case 33:
-			mes " Romance lays ahead in your future! Relax yourself and prepare yourself! ";
+			mes "浪漫在你未來的路上！放鬆自己，做好準備！";
 			break;
 		}
 		next;
-		mes "[Chocarle]";
-		mes " What do you think? Has your anxiety been relieved after hearing your fortune? ";
-		mes " This is only a small part of your future! You must discover the rest! ";
+		mes "[喬卡勒]";
+		mes " 覺得如何？ 聽了你的運勢後，你的焦慮有減輕了嗎？ ";
+		mes " 這只是你未來的一小部分！ 你必須去發掘其餘的！ ";
 		next;
 		cutin "",255;
-		mes "[Chocarle]";
-		mes " Am I cheesy? I'm just like that! Then, bye~~~~ye~~~ye~~~~!! ";
+		mes "[喬卡勒]";
+		mes " 我很老套嗎？ 我就是這樣！ 那麼，掰~~~~掰~~~掰~~~~！！ ";
 		close;
 	case 5:// Fortune
-		mes "[Chocarle]";
-		mes " Mmm! The long awaited time has come! Asking a question about money to the cute Poring! ";
-		mes " Ok! Let's try it! ";
+		mes "[喬卡勒]";
+		mes " 嗯！ 期待已久的時刻到來了！ 向可愛的波利詢問關於金錢的問題！ ";
+		mes " 好！ 讓我們試試看！ ";
 		next;
 		.@card_2_fortune = rand(1,33);
 		callsub L_displaycutin, .@card_2_fortune;
 
-		mes "[Chocarle]";
+		mes "[喬卡勒]";
 		switch(.@card_2_fortune) {
 		case 1:
-			mes " Uh oh! You're about to be robbed! You must save a little first! ";
+			mes " 嗚哇！ 你即將被搶劫！ 你必須先存一點錢！ ";
 			break;
 		case 2:
-			mes " Kek! Your mind goes blank when you think about money! Think of other thoughts! Forget about money for a while! ";
+			mes " 喀！ 當你想到錢的時候，你的腦袋一片空白！ 想想其他的想法！ 暫時忘記錢！ ";
 			break;
 		case 3:
-			mes " Bah! This isn't a time to think about money. Calm down and put your mind at ease! ";
+			mes " 呸！ 現在不是想錢的時候。 冷靜下來，讓你的心情平靜下來！ ";
 			break;
 		case 4:// Drops Card
-			mes " If you look carefully, it is not drinking juice, but underground water through a straw in the ground! Money is hidden where nobody expects! Good luck searching! ";
+			mes " 如果你仔細看，它不是在喝果汁，而是透過地上的吸管喝地下水！ 錢藏在沒人想到的地方！ 祝你好運！ ";
 			break;
 		case 5:
-			mes " As you can quench your thirst in the dry desert, you can gather money even in this difficult world! ";
+			mes " 正如你可以在乾燥的沙漠中解渴一樣，即使在這個困難的世界裡，你也可以聚集金錢！ ";
 			break;
 		case 6:
-			mes " Just like the juice inside the needles of a cactus, you can still gather wealth though you may be in anguish. You can do it! ";
+			mes " 就像仙人掌針裡的汁液一樣，即使你可能在痛苦中，你仍然可以聚集財富。 你可以的！ ";
 			break;
 		case 7:// Mantis Card
-			mes "Agh! Someone is after your possessions! Be careful! ";
+			mes "啊！ 有人盯上了你的財產！ 小心！ ";
 			break;
 		case 8:
-			mes " Uh oh! Someone is after your money! Take good care of it! ";
+			mes " 嗚哇！ 有人盯上了你的錢！ 好好保管它！ ";
 			break;
 		case 9:
-			mes " It says you might be tempted to do something bad to gather money! Don't forget about a kind heart! ";
+			mes " 它說你可能會受到誘惑去做一些不好的事情來聚斂錢財！ 不要忘記一顆善良的心！ ";
 			break;
 		case 10:// Munak Card
-			mes " You have hidden money in your clothes! Hidden rich one! Be careful not to be caught! ";
+			mes " 你把錢藏在你的衣服裡了！ 隱藏的富人！ 小心不要被抓到！ ";
 			break;
 		case 11:
-			mes " In the future, it seems like you will be kicking money around with your feet like those Porings! Congratulations! ";
+			mes " 在未來，你似乎會像那些波利一樣用你的腳踢錢！ 恭喜！ ";
 			break;
 		case 12:
-			mes " You must be exhausted! Making money is not the easiest thing to do! But it will be that much more valuable! ";
+			mes " 你一定很累！ 賺錢不是最容易的事！ 但它會更有價值！ ";
 			break;
 		case 13:// Santa Poring Card
-			mes " Your tendency to spend money is growing! Be careful! Don't be left empty-handed! ";
+			mes " 你花錢的傾向正在增長！ 小心！ 不要空手而歸！ ";
 			break;
 		case 14:
-			mes " Use your money to buy something fun! Then good luck will be headed your way! ";
+			mes " 用你的錢買一些有趣的東西！ 那麼好運就會降臨到你身上！ ";
 			break;
 		case 15:
-			mes " Use your money on something exciting! It looks as if good luck will be headed your way! ";
+			mes " 用你的錢做一些令人興奮的事情！ 看起來好運會降臨到你身上！ ";
 			break;
 		case 16:// Soldier Skeleton Card
-			mes " It seems like you will have two lucky offerings! Don't miss these two opportunities! ";
+			mes " 看起來你會有兩個幸運的產品！ 不要錯過這兩個機會！ ";
 			break;
 		case 17:
-			mes " Doesn't it seem like there should be money in the small wallet? You will have some small income! Save money wisely! ";
+			mes " 小錢包裡好像應該有錢吧？ 你會有一些小收入！ 明智地存錢！ ";
 			break;
 		case 18:
-			mes " So~ empty. Upsetting, but don't worry too much about money! Something better ought to happen! ";
+			mes " 這麼～空。 令人沮喪，但不要太擔心錢！ 應該會發生更好的事情！ ";
 			break;
 		case 19:// Skeleton Card
-			mes " Someone will return something you lost! What a relief! ";
+			mes " 有人會歸還你遺失的東西！ 真令人欣慰！ ";
 			break;
 		case 20:
-			mes " No need to worry about osteoporosis! Wasn't it a good thing to eat so much calcium? Oops! This isn't about money?! ";
+			mes " 無需擔心骨質疏鬆症！ 吃這麼多鈣不是一件好事嗎？ 哎呀！ 這不是關於錢？！ ";
 			break;
 		case 21:
-			mes " Seeing that you work so hard, seems like you will make lots of money! Congratz~! ";
+			mes " 看到你這麼努力工作，似乎你會賺很多錢！ 恭喜~! ";
 			break;
 		case 22:// Eddga Card
-			mes " Even if you save money, it disappears like smoke. Don't get too caught up with it! ";
+			mes " 即使你存錢，它也會像煙霧一樣消失。 不要太在意它！ ";
 			break;
 		case 23:
-			mes " It's hard to make money, isn't it? But don't forget the good deeds in life! ";
+			mes " 賺錢很難，不是嗎？ 但不要忘記生活中的善行！ ";
 			break;
 		case 24:
-			mes " Going around to collect money might lead you to a scary person! Be very careful! ";
+			mes " 到處收錢可能會帶你去找一個可怕的人！ 非常小心！ ";
 			break;
 		case 25:// Angeling Card
-			mes " Forget about money and fly~fly! You will feel very refreshed! ";
+			mes " 忘記錢，飛吧～飛吧！ 你會感到非常清爽！ ";
 			break;
 		case 26:
-			mes " Money is like clouds! Instead of money, think about a happy life! ";
+			mes " 金錢就像雲！ 不要想錢，想想幸福的生活！ ";
 			break;
 		case 27:
-			mes " Even if it may seem pointless, if you persist, you will be able to make lots of money! You can do it! ";
+			mes " 即使它可能看起來毫無意義，如果你堅持下去，你就能賺很多錢！ 你可以的！ ";
 			break;
 		case 28:// Poring Card
-			mes " Don't neglect the trivial things on the floor! If you keep an open heart like that, you will be able to collect money! ";
+			mes " 不要忽略地板上的瑣碎事物！ 如果你保持像這樣開放的心，你就能夠收集金錢！ ";
 			break;
 		case 29:
-			mes " If you work with something that is related to mushrooms or apples, a good fortune awaits you! What kind of work would that be? ";
+			mes " 如果你從事與蘑菇或蘋果相關的工作，好運正等著你！ 那會是什麼樣的工作？ ";
 			break;
 		case 30:
-			mes " How can you think of money looking at such a peaceful card! That's not nice! Sniff..sniffles! Anyhow, it seems like you will gather much fortune! ";
+			mes " 看著這麼平靜的卡片，你怎麼能想到錢！ 這不好！ 嗚嗚……抽泣！ 無論如何，看起來你會聚集很多財富！ ";
 			break;
 		case 31:// Poporing Card
-			mes " You have many fine stones! You will prosper if you are involved in this industry! ";
+			mes " 你有很多精美的石頭！ 如果你參與這個行業，你會繁榮昌盛！ ";
 			break;
 		case 32:
-			mes " It is an indication that you will prosper! No need to worry now! ";
+			mes " 這表明你將會繁榮昌盛！ 現在無需擔心！ ";
 			break;
 		case 33:
-			mes " You will collect many treasures! But the problem is protecting all of it! ";
+			mes " 你會收集很多寶藏！ 但問題是保護所有這些寶藏！ ";
 			break;
 		}
 		next;
-		mes "[Chocarle]";
-		mes " There is something you need to keep in mind after being told a fortune about wealth! ";
-		mes " Money does not automatically come to one without effort! No matter how good the fortune, you must work diligently! ";
+		mes "[喬卡勒]";
+		mes " 在被告知關於財富的運勢後，你需要記住一些事情！ ";
+		mes " 沒有努力，金錢不會自動來到一個人身邊！ 無論運勢多麼好，你都必須勤奮工作！ ";
 		next;
 		cutin "",255;
-		mes "[Chocarle]";
-		mes " Bear that in mind! Then, until we meet again.. *poof*! ";
+		mes "[喬卡勒]";
+		mes " 記住這一點！ 那麼，直到我們再次相遇.. *砰*！ ";
 		close;
 	}
 
 L_displaycutin:
 	.@arg = getarg(0);
-	if (.@arg < 4) cutin "堅蝶お葭蘋萄",4;		// Ghostring Card
-	else if (.@arg < 7) cutin "萄照Щ蝶蘋萄",4;	// Drops Card
-	else if (.@arg < 10) cutin "裔じ蝶蘋萄",4;	// Mantis Card
-	else if (.@arg < 13) cutin "鼠釩蘋萄",4;		// Munak Card
-	else if (.@arg < 16) cutin "骯顫ん葭蘋萄",4;	// Santa Poring Card
-	else if (.@arg < 19) cutin "樂螳蝶騷驛蘋萄",4;// Soldier Skeleton Card
-	else if (.@arg < 22) cutin "蝶騷溯驛蘋萄",4;	// Skeleton Card
-	else if (.@arg < 25) cutin "縑萄陛蘋萄",4;	// Eddga Card
-	else if (.@arg < 28) cutin "縛薨葭蘋萄",4;	// Angeling Card
-	else if (.@arg < 31) cutin "ん葭蘋萄",4;		// Poring Card
-	else cutin "んん葭蘋萄",4;// Poporing Card
+	if (.@arg < 4) cutin "??????????",4;		// Ghostring Card
+	else if (.@arg < 7) cutin "??????????",4;	// Drops Card
+	else if (.@arg < 10) cutin "????????",4;	// Mantis Card
+	else if (.@arg < 13) cutin "???????",4;		// Munak Card
+	else if (.@arg < 16) cutin "??????????",4;	// Santa Poring Card
+	else if (.@arg < 19) cutin "?????????????",4;// Soldier Skeleton Card
+	else if (.@arg < 22) cutin "??????????",4;	// Skeleton Card
+	else if (.@arg < 25) cutin "???????",4;	// Eddga Card
+	else if (.@arg < 28) cutin "?????????",4;	// Angeling Card
+	else if (.@arg < 31) cutin "???????",4;		// Poring Card
+	else cutin "?????????",4;// Poporing Card
 	return;
 }
 	
-payon_in03,118,119,1	script	Ascetic	4W_F_01,2,2,{
-	mes "[Kissy-Kissy]";
-	mes "NyangNyangNyang~";
-	mes "NyaNyangNyaNyag~";
+payon_in03,118,119,1	script	苦行者	4W_F_01,2,2,{
+	mes "[琪絲-琪絲]";
+	mes "喵喵喵~";
+	mes "喵喵喵喵~";
 	next;
-	mes "[Kissy-Kissy]";
-	mes "I decided to become a fortune teller";
-	mes "when I was young and came to the city";
-	mes "and devoted myself to training.";
-	mes "I was in agony because of my slow progress.";
+	mes "[琪絲-琪絲]";
+	mes "我決定成為一名算命師";
+	mes "當我年輕時來到這個城市";
+	mes "並致力於訓練。";
+	mes "我因為進展緩慢而感到痛苦。";
 	next;
-	mes "[Kissy-Kissy]";
-	mes "I came because I heard many ";
-	mes "fortunetellers gather here in Payon,";
-	mes "but nobody will tell me anything~";
-	mes "Waaah~ so sad~";
+	mes "[琪絲-琪絲]";
+	mes "我來是因為我聽說很多";
+	mes "算命師聚集在斐揚這裡，";
+	mes "但沒有人會告訴我任何事情~";
+	mes "哇啊~好難過~";
 	next;
-	mes "[Kissy-Kissy]";
-	mes "NyangNyangNyang~";
-	mes "NyaNyangNyaNyang~";
+	mes "[琪絲-琪絲]";
+	mes "喵喵喵~";
+	mes "喵喵喵喵~";
 	next;
-	mes "[Kissy-Kissy]";
-	mes "Kiss me~~";
+	mes "[琪絲-琪絲]";
+	mes "親親我~~";
 	close;
 
 OnTouch_:
-	mes "[Kissy-Kissy]";
-	mes "NyangNyangNyang~";
-	mes "NyaNyangNyaNyang~";
-	mes "Kissy me~";
+	mes "[琪絲-琪絲]";
+	mes "喵喵喵~";
+	mes "喵喵喵喵~";
+	mes "親親我~";
 	close;
 }

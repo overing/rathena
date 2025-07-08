@@ -23,11 +23,11 @@ OnTouch:
 	if ('GMT == 0) {
 		'GMT = 1;
 		setquest 9292;
-		mapannounce instance_mapname("1@gef"),"Geffen Broadcast: The Geffen Magic Tournament is about to begin!",bc_blue;
+		mapannounce instance_mapname("1@gef"),"吉芬廣播：吉芬魔法大賽即將開始！",bc_blue;
 		sleep2 3000;
-		mapannounce instance_mapname("1@gef"),"Geffen Broadcast: Citizens and adventurers in Geffen, please join the tournament~!",bc_blue;
+		mapannounce instance_mapname("1@gef"),"吉芬廣播：吉芬的市民和冒險者們，請加入錦標賽～！",bc_blue;
 		sleep2 5000;
-		mapannounce instance_mapname("1@gef"),"Geffen Broadcast: Anyone who wants to join the Geffen Magic Tournament, please come to the southern fountain of Geffen~!",bc_blue;
+		mapannounce instance_mapname("1@gef"),"吉芬廣播：任何想加入吉芬魔法大賽的人，請到吉芬的南方噴泉來～！",bc_blue;
 		'charname$ = strcharinfo(0);
 		'sex = Sex;
 		'gmt_account_id = getcharid(3);
@@ -83,75 +83,75 @@ OnTimer1000:
 	'm1_timer++;
 	
 	switch('m1_timer) {
-		case   1: npctalk "I am lonely... Should I be alone during the festival?", instance_npcname("Young Lady#gef1"); break;
-		case   4: npctalk "Oh my god ~! Why do you say that~?", instance_npcname("Young Lady#gef2"); break;
-		case   8: npctalk "How about hitting on the handsome adventurers coming to Geffen?", instance_npcname("Young Lady#gef3"); break;
-		case  12: npctalk "Handsome? Where are there handsome men?", instance_npcname("Young Lady#gef1"); break;
-		case  17: npctalk "I only see guys who look so old and fat!", instance_npcname("Young Lady#gef1"); break;
-		case  21: npctalk "Agh... I can not just sit around during this festival alone...", instance_npcname("Young Lady#gef2"); break;
-		case  26: npctalk "No! There has to be some handsome guys around here! Don't give up!", instance_npcname("Young Lady#gef3"); break;
+		case   1: npctalk "我很寂寞...我應該在節慶時獨自一人嗎？", instance_npcname("Young Lady#gef1"); break;
+		case   4: npctalk "我的天啊～！你為什麼這麼說～？", instance_npcname("Young Lady#gef2"); break;
+		case   8: npctalk "要不要勾搭來吉芬的帥氣冒險家？", instance_npcname("Young Lady#gef3"); break;
+		case  12: npctalk "帥氣？哪裡有帥哥？", instance_npcname("Young Lady#gef1"); break;
+		case  17: npctalk "我只看到那些看起來又老又胖的傢伙！", instance_npcname("Young Lady#gef1"); break;
+		case  21: npctalk "啊...我不能在節慶期間獨自一人坐在這裡...", instance_npcname("Young Lady#gef2"); break;
+		case  26: npctalk "不！這裡一定有一些帥哥！不要放棄！", instance_npcname("Young Lady#gef3"); break;
 		case  30:
-			npctalk "Um... okay...", instance_npcname("Young Lady#gef1");
-			npctalk "Um... okay...", instance_npcname("Young Lady#gef2");
+			npctalk "嗯...好吧...", instance_npcname("Young Lady#gef1");
+			npctalk "嗯...好吧...", instance_npcname("Young Lady#gef2");
 			break;
-		case  34: npctalk "See! Look over there! A handsome guy!", instance_npcname("Young Lady#gef3"); break;
+		case  34: npctalk "看！看那邊！一個帥哥！", instance_npcname("Young Lady#gef3"); break;
 		case  38:
-			npctalk "Oh god! Where?!", instance_npcname("Young Lady#gef1");
-			npctalk "Oh my god! Where? Where?", instance_npcname("Young Lady#gef2");
+			npctalk "我的天啊！在哪裡？！", instance_npcname("Young Lady#gef1");
+			npctalk "我的天啊！在哪裡？在哪裡？", instance_npcname("Young Lady#gef2");
 			break;
 		case  42:
 			hideoffnpc instance_npcname("Handsome Adventurer#gef");
-			npctalk "Over there~!", instance_npcname("Young Lady#gef3");
+			npctalk "在那邊～！", instance_npcname("Young Lady#gef3");
 			break;
-		case  46: npctalk "There are many beautiful ladies at this year's Magic Tournament.", instance_npcname("Handsome Adventurer#gef"); break;
+		case  46: npctalk "今年的魔法大賽有很多美女。", instance_npcname("Handsome Adventurer#gef"); break;
 		case  50:
-			npctalk "Yikes~~~!!", instance_npcname("Young Lady#gef1");
-			npctalk "Yikes~~~! Is he talking about me?", instance_npcname("Young Lady#gef2");
-			npctalk "Yikes~~! Nice!!", instance_npcname("Young Lady#gef3");
+			npctalk "咿~~~！！", instance_npcname("Young Lady#gef1");
+			npctalk "咿~~~！他是在說我嗎？", instance_npcname("Young Lady#gef2");
+			npctalk "咿~~！太棒了！！", instance_npcname("Young Lady#gef3");
 			break;
-		case  54: npctalk "What should I do? Should I talk to him?", instance_npcname("Young Lady#gef3"); break;
-		case  58: npctalk "Come on~! You're good at this! Hurry up and hook up with him!", instance_npcname("Young Lady#gef2"); break;
-		case  62: npctalk "Hurry up~!", instance_npcname("Young Lady#gef1"); break;
-		case  66: npctalk "It's almost time for the event to begin...", instance_npcname("Handsome Adventurer#gef"); break;
-		case  70: npctalk "Maybe he's waiting for someone!", instance_npcname("Young Lady#gef3"); break;
-		case  74: npctalk "A girlfriend?! It can't be!", instance_npcname("Young Lady#gef2"); break;
+		case  54: npctalk "我該怎麼辦？我應該和他搭話嗎？", instance_npcname("Young Lady#gef3"); break;
+		case  58: npctalk "拜託~!妳很擅長這個！快點和他搭訕！", instance_npcname("Young Lady#gef2"); break;
+		case  62: npctalk "快點~! ", instance_npcname("Young Lady#gef1"); break;
+		case  66: npctalk "活動快要開始了...", instance_npcname("Handsome Adventurer#gef"); break;
+		case  70: npctalk "也許他在等某人！", instance_npcname("Young Lady#gef3"); break;
+		case  74: npctalk "女朋友？！不可能！", instance_npcname("Young Lady#gef2"); break;
 		case  78:
 			hideoffnpc instance_npcname("Male Adventurer#gef");
-			npctalk "No... it can't be~!", instance_npcname("Young Lady#gef1");
+			npctalk "不...不可能~！", instance_npcname("Young Lady#gef1");
 			break;
-		case  79: npctalk "Have I kept you waiting for a long time?", instance_npcname("Male Adventurer#gef"); break;
-		case  83: npctalk "Lucky! It's a man!!!", instance_npcname("Young Lady#gef3"); break;
+		case  79: npctalk "有讓妳久等了嗎？", instance_npcname("Male Adventurer#gef"); break;
+		case  83: npctalk "幸運！是個男人！！！", instance_npcname("Young Lady#gef3"); break;
 		case  86:
-			npctalk "Looks like it's just a friend~!!", instance_npcname("Young Lady#gef2");
+			npctalk "看起來只是一個朋友~！！", instance_npcname("Young Lady#gef2");
 			break;
-		case  88: npctalk "Hook up with both of them? Ho ho ho~!", instance_npcname("Young Lady#gef1"); break;
+		case  88: npctalk "和他們兩個都搭訕？呵呵呵~！", instance_npcname("Young Lady#gef1"); break;
 		case  91:
-			npctalk "Yes! You have finally arrived, my love!", instance_npcname("Handsome Adventurer#gef");
+			npctalk "是的！妳終於到了，我的愛人！", instance_npcname("Handsome Adventurer#gef");
 			emotion ET_HUK, getnpcid(0, instance_npcname("Young Lady#gef1"));
 			emotion ET_HUK, getnpcid(0, instance_npcname("Young Lady#gef2"));
 			emotion ET_HUK, getnpcid(0, instance_npcname("Young Lady#gef3"));
 			break;
 		case  95:
-			npctalk "My love...", instance_npcname("Male Adventurer#gef");
+			npctalk "我的愛人...", instance_npcname("Male Adventurer#gef");
 			emotion ET_THROB, getnpcid(0, instance_npcname("Male Adventurer#gef"));
 			emotion ET_THROB, getnpcid(0, instance_npcname("Handsome Adventurer#gef"));
 			emotion ET_THROB, getnpcid(0, instance_npcname("Handsome Adventurer#gef"));
 			break;
 		case  99:
-			npctalk "Maybe... There are no good guys left for us...", instance_npcname("Young Lady#gef3");
+			npctalk "也許...我們沒有好男人了...", instance_npcname("Young Lady#gef3");
 			emotion ET_THROB, getnpcid(0, instance_npcname("Handsome Adventurer#gef"));
 			break;
 		case 103:
-			npctalk "Ahem... Maybe... Just the three of us... will be together forever...", instance_npcname("Young Lady#gef2");
+			npctalk "咳...也許...我們三個人...會永遠在一起...", instance_npcname("Young Lady#gef2");
 			emotion ET_THROB, getnpcid(0, instance_npcname("Male Adventurer#gef"));
 			break;
 		case 106:
-			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef3");
+			npctalk "我們的友誼永遠長存~!!!", instance_npcname("Young Lady#gef3");
 			emotion ET_THROB, getnpcid(0, instance_npcname("Handsome Adventurer#gef"));
 			sleep 500;
-			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef1");
+			npctalk "我們的友誼永遠長存~!!!", instance_npcname("Young Lady#gef1");
 			sleep 500;
-			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef2");
+			npctalk "我們的友誼永遠長存~!!!", instance_npcname("Young Lady#gef2");
 			'm1_timer++;
 			break;
 		case 109:
@@ -239,57 +239,57 @@ OnInstanceInit:
 1@gef_in,26,178,4	shop	Armor Dealer#GMT	66,2628:-1,2101:-1,2107:-1,2401:-1,2501:-1,2230:-1,2301:-1,2303:-1,2305:-1,2321:-1,2332:-1
 1@gef_in,30,178,4	shop	Weapon Dealer#GMT2	47,1750:-1,1751:-1,1101:-1,1701:-1,1201:-1,1204:-1,1207:-1,1210:-1,1213:-1,1216:-1,1601:-1,1604:-1,1607:-1,1610:-1
 
-1@gef,193,152,4	shop	Pet Groomer#GMT	124,537:-1,643:-1,10013:-1,10014:-1,6113:-1,6114:-1,6115:-1,6110:-1,6100:-1,6098:-1,6112:-1,6104:-1,6108:-1,6111:-1,7824:1000,6097:1000,6107:1000
+1@gef,193,152,4	shop	寵物美容師#GMT	124,537:-1,643:-1,10013:-1,10014:-1,6113:-1,6114:-1,6115:-1,6110:-1,6100:-1,6098:-1,6112:-1,6104:-1,6108:-1,6111:-1,7824:1000,6097:1000,6107:1000
 1@gef,196,111,3	shop	Cook#gef_0et	85,7482:-1
 
 1@gef,131,58,4	script	Geffen Coin Operator#g	4_F_ZONDAGIRL,{ // 55149
 	.@n$ = "[ Geffen Coin Operator ]";
-	mes .@n$,"I exchange Magic Tournament Coins for Equipment."; next;
+	mes .@n$,"我用魔法大賽硬幣兌換裝備。"; next;
 	goto L_Menu;
 	end;
 
 L_Menu:
-	switch(select("Shields:Rings:Armor:End Conversation")){
+	switch(select("盾牌:戒指:盔甲:結束對話")){
 		case 1:
-			mes .@n$,"There are two types of Shields are available for exchange.";
+			mes .@n$,"有兩種盾牌可以兌換。";
 			next;
 L_Shield:
-			switch(select("Magic Reflector ^3355FF<900 Coins>^000000:Revised Encyclopedia ^3355FF<900 Coins>^000000:Go back to previous menu")){
+			switch(select("魔法反射盾 ^3355FF<900 硬幣>^000000:修訂版百科全書 ^3355FF<900 硬幣>^000000:返回上一個選單")){
 				case 1: .@item = 2185; .@cost = 900; break;
 				case 2: .@item = 2186; .@cost = 900; break;
 				case 3: goto L_Menu; break;
 			}
 			mes .@n$;
 			mes mesitemlink( .@item, false );
-			mes "Price is "+.@cost+" coins";
-			mes "Do you wish to exchange your coins?";
+			mes "價格是 "+.@cost+" 硬幣";
+			mes "您要兌換硬幣嗎？";
 			next;
-				switch(select("Do Not Exchange:Exchange")){
+				switch(select("不要兌換:兌換")){
 					case 1:
-						mes .@n$,"Take a look at the other equipment available.";
+						mes .@n$,"看看其他可用的裝備。";
 						next;
 						goto L_Shield;
 						break;
 					case 2:
 						if( countitem(6671) < .@cost ) { 
-							mes .@n$,"You need "+.@cost+" Geffen Magic Tournament Coins."; 
+							mes .@n$,"您需要 "+.@cost+" 吉芬魔法大賽硬幣。"; 
 							next;
-							mes .@n$,"Participate in the Tournament to earn more coins."," ","Do you need more help?"; 
+							mes .@n$,"參加錦標賽以賺取更多硬幣。"," ","您需要更多幫助嗎？"; 
 							goto L_Shield; 
 						}
-						if(!checkweight(.@item,1)) { mes .@n$; mes "You have too many things in your inventory to carry a ^FF0000"+getitemname(.@item)+"^000000."; end; }
+						if(!checkweight(.@item,1)) { mes .@n$; mes "您的物品欄裡東西太多，無法攜帶 ^FF0000"+getitemname(.@item)+"^000000。"; end; }
 						delitem 6671,.@cost;
 						getitem .@item,1;
-						mes .@n$,"Thank you.";
+						mes .@n$,"謝謝您。";
 						end;			
 				}
 
 		case 2:
 			mes .@n$;
-			mes "There are two types of Rings are available for exchange.";
+			mes "有兩種戒指可以兌換。";
 			next;
 L_Ring:
-				switch(select("Physical Enhancer Ring ^3355FF<1350 Coins>^000000:Magic Intensifier Ring ^3355FF<1350 Coins>^000000:Go back to previous menu")){
+				switch(select("物理強化戒指 ^3355FF<1350 硬幣>^000000:魔法強化戒指 ^3355FF<1350 硬幣>^000000:返回上一個選單")){
 					case 1:
 						.@item = 2963;
 						.@cost = 1350;
@@ -304,34 +304,34 @@ L_Ring:
 				}
 			mes .@n$;
 			mes mesitemlink( .@item, false );
-			mes "Price is "+.@cost+" coins";
-			mes "Do you wish to exchange your coins?";
+			mes "價格是 "+.@cost+" 硬幣";
+			mes "您要兌換硬幣嗎？";
 			next;
-				switch(select("Do Not Exchange:Exchange")){
+				switch(select("不要兌換:兌換")){
 					case 1:
-						mes .@n$,"Take a look at the other equipment available.";
+						mes .@n$,"看看其他可用的裝備。";
 						next;
 						goto L_Ring;
 						break;
 					case 2:
 						if( countitem(6671) < .@cost ) { 
-							mes .@n$,"You need "+.@cost+" Geffen Magic Tournament Coins."; 
+							mes .@n$,"您需要 "+.@cost+" 吉芬魔法大賽硬幣。"; 
 							next;
-							mes .@n$,"Participate in the Tournament to earn more coins."," ","Do you need more help?"; 
+							mes .@n$,"參加錦標賽以賺取更多硬幣。"," ","您需要更多幫助嗎？"; 
 							goto L_Ring; 
 						}
-						if(!checkweight(.@item,1)) { mes .@n$; mes "You have too many things in your inventory to carry a ^FF0000"+getitemname(.@item)+"^000000."; end; }
+						if(!checkweight(.@item,1)) { mes .@n$; mes "您的物品欄裡東西太多，無法攜帶 ^FF0000"+getitemname(.@item)+"^000000。"; end; }
 						delitem 6671,.@cost;
 						getitem .@item,1;
-						mes .@n$,"Thank you.";
+						mes .@n$,"謝謝您。";
 						end;						
 				}
 		case 3:
 			mes .@n$;
-			mes "There are two types of Armor are available for exchange.";
+			mes "有兩種盔甲可以兌換。";
 			next;
 L_Armor:
-				switch(select("Anti-Magic Suit ^3355FF<1800 Coins>^000000:Geffen Magic Robe ^3355FF<1800 Coins>^000000:Go back to previous menu")){
+				switch(select("抗魔戰衣 ^3355FF<1800 硬幣>^000000:吉芬魔法袍 ^3355FF<1800 硬幣>^000000:返回上一個選單")){
 					case 1:
 						.@item = 15073;
 						.@cost = 1800;
@@ -346,32 +346,32 @@ L_Armor:
 				}
 			mes .@n$;
 			mes mesitemlink( .@item, false );
-			mes "Price is "+.@cost+" coins";
-			mes "Do you wish to exchange your coins?";
+			mes "價格是 "+.@cost+" 硬幣";
+			mes "您要兌換硬幣嗎？";
 			next;
-				switch(select("Do Not Exchange:Exchange")){
+				switch(select("不要兌換:兌換")){
 					case 1:
-						mes .@n$,"Take a look at the other equipment available.";
+						mes .@n$,"看看其他可用的裝備。";
 						next;
 						goto L_Armor;
 						break;
 					case 2:
 						if( countitem(6671) < .@cost ) { 
-							mes .@n$,"You need "+.@cost+" Geffen Magic Tournament Coins."; 
+							mes .@n$,"您需要 "+.@cost+" 吉芬魔法大賽硬幣。"; 
 							next;
-							mes .@n$,"Participate in the Tournament to earn more coins."," ","Do you need more help?"; 
+							mes .@n$,"參與錦標賽以賺取更多金幣。"," ","您需要更多協助嗎？";
 							goto L_Armor; 
 						}
-						if(!checkweight(.@item,1)) { mes .@n$; mes "You have too many things in your inventory to carry a ^FF0000"+getitemname(.@item)+"^000000."; end; }
+						if(!checkweight(.@item,1)) { mes .@n$; mes "您的物品欄裡的東西太多了，無法攜帶 ^FF0000"+getitemname(.@item)+"^000000。"; end; }
 						delitem 6671,.@cost;
 						getitem .@item,1;
-						mes .@n$,"Thank you.";
+						mes .@n$,"謝謝您。";
 						end;
 				}
 		case 4:
 			mes .@n$;
-			mes "You can tell a lot about a person by what gear they have.";
-			mes "I will see you next time~!";
+			mes "您可以從一個人的裝備了解他的一切。";
+			mes "下次再見囉～！";
 			close;
 
 	}
@@ -515,75 +515,75 @@ OnTouch_:
 
 //Dialogue NPC
 
-1@gef_in,110,172,0	script	Christopher#1_0et	1_M_SMITH,{
-	mes "[ Christopher ]";
-	mes "Welcome to Christopher's Workshop.";
-	mes "Ye can get all yer stuff for";
-	mes "forging here. What business";
-	mes "brings ye to me?";
+1@gef_in,110,172,0	script	克里斯多福#1_0et	1_M_SMITH,{
+	mes "[克里斯多福]";
+	mes "歡迎來到克里斯多福的工作坊。";
+	mes "您可以在這裡取得所有";
+	mes "鍛造所需的東西。有什麼";
+	mes "事需要我幫忙嗎？";
 	next;
-	mes "[ Christopher ]";
-	mes "We are taking a break from our forges in honor of the festival.";
-	mes "Please come back again after the festival is done.";
+	mes "[克里斯多福]";
+	mes "為了慶祝節慶，我們暫停了鍛造。";
+	mes "請在節慶結束後再來。";
 	close;
 }
 
 1@gef,129,65,4	script	Point Merchant#gef_m	8_F_GIRL,{
 	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 2000) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前您攜帶了 -";
+		mes "- 太多物品了。 -";
+		mes "- 請減輕一些重量後 -";
+		mes "- 再試一次。 -";
 		close;
 	}
-	mes "[ Point Merchant ]";
-	mes "Hello. I'm selling a catalyst called ^FF0000Points^000000 for Sorcerers. What would you like?";
+	mes "[點數商人]";
+	mes "您好。我正在販售一種稱為 ^FF0000點數^000000 的術士催化劑。您想要什麼？";
 	next;
-	.@i = select("Scarlet Points - 200z:Lime Green Points - 200z:Indigo Points - 200z:Yellow Wish Points - 200z:Cancel")-1;
-	mes "[ Point Merchant ]";
+	.@i = select("猩紅點數 - 200z:萊姆綠點數 - 200z:靛藍點數 - 200z:黃色願望點數 - 200z:取消")-1;
+	mes "[點數商人]";
 	if (.@i == 4) {
-		mes "You can't find the stuff you need?";
+		mes "您找不到您需要的東西嗎？";
 		close;
 	}
 	setarray .@itemid[0],6360,6363,6361,6362;
 	setarray .@color$[0],"Scarlet","Lime Green","Indigo","Yellow Wish";
-	mes "You have chosen "+.@color$[.@i]+" Points.";
-	mes "How many do you want?";
-	mes "If you want to cancel, enter 0.";
+	mes "您選擇了 "+.@color$[.@i]+" 點數。";
+	mes "您想要多少？";
+	mes "如果想取消，請輸入 0。";
 	next;
 	input .@amount;
-	mes "[ Point Merchant ]";
+	mes "[點數商人]";
 	if (.@amount == 0) {
-		mes "You've cancelled the trade.";
+		mes "您已取消交易。";
 		close;
 	}
 	if (Zeny < .@amount*200) {
-		mes "You don't seem to have enough money.";
+		mes "您似乎沒有足夠的錢。";
 		close;
 	}
 	if (!checkweight(.@itemid[.@i],.@amount)) {
-		mes "You don't have enough space in your inventory to buy this amount.";
+		mes "您的物品欄空間不足以購買這麼多。";
 		close;
 	}
 	Zeny = Zeny-(.@amount*200);
 	getitem .@itemid[.@i],.@amount;
-	mes "Thank you very much. See you~!";
+	mes "非常感謝。再見囉～！";
 	close;
 }
 
-1@gef,127,65,3	script	Universal Rental NPC#gf	8W_SOLDIER,{
+1@gef,127,65,3	script	通用租借NPC#gf	8W_SOLDIER,{
 	if (ismounting()) {
 		message strcharinfo(0),"You must first remove your mount.";
 		end;
 	} else if ((eaclass()&EAJ_THIRDMASK==EAJ_RANGER) && !countitem(6124)) {
 		if (!checkfalcon() && getskilllv("HT_FALCON") && !checkwug()) {
-			if(select(" ~ Falcon: ~ Warg")==1) setfalcon;
+			if(select(" ~ 獵鷹: ~ 座狼")==1) setfalcon;
 			else getitem 6124,1; //Wolf's_Flute
 		} else getitem 6124,1; //Wolf's_Flute
 	} else if ((eaclass()&EAJ_THIRDMASK==EAJ_MECHANIC) && !checkcart() && getskilllv("MC_PUSHCART")) {
 		if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) {
-			if(select(" ~ Cart: ~ Mado")==1) setcart;
+			if(select(" ~ 手推車: ~ 瘋狂兔寶寶")==1) setcart;
 			else setmadogear;
 		} else setcart;
 	} else if (!checkcart() && getskilllv("MC_PUSHCART")) setcart;
@@ -600,13 +600,13 @@ OnTouch_:
 	end;
 }
 
-1@gef,124,65,4	script	Kafra Employee#gef_t	4_F_KAFRA4,{
+1@gef,124,65,4	script	卡普拉工作人員#gef_t	4_F_KAFRA4,{
 	cutin "kafra_04",2;
-	mes "[Kafra Employee]";
-	mes "Welcome~!";
-	mes "The Kafra Services.";
-	mes "are always on your side.";
-	mes "So how can I help you?";
+	mes "[卡普拉職員]";
+	mes "歡迎光臨～！";
+	mes "卡普拉服務。";
+	mes "永遠在您身邊。";
+	mes "請問有什麼可以幫您？";
 	callfunc "F_Kafra",5,5,1,50,0;
 }
 
@@ -627,38 +627,38 @@ dali,100,147,3	script	Dimensional Device#gefma	PORTAL,{
 			
 			if( !getcharid(1) || is_party_leader() == false || .@GPPartySize > 1) {
 				mes .@n$;
-				mes "This is a solo instance. Please form a solo party before continuing.";
+				mes "這是一個單人副本。請先組成單人隊伍再繼續。";
 				end;
 			}
 			
 			if (!.@party_id) {
 				mes .@n$;
-				mes "This is a solo instance. Please form a solo party before continuing.";
+				mes "這是一個單人副本。請先組成單人隊伍再繼續。";
 				end;
 			}
 				
-			switch(select("Leave it alone:^3355FFUse the Device^000000")){
+			switch(select("別管它:^3355FF使用裝置^000000")){
 			
 				case 1:
 					mes .@n$;
-					mes "You can feel time being distorted by the device.";
+					mes "您可以感覺到時間被裝置扭曲。";
 					end;
 					
 				case 2:
 					if (BaseLevel < 90) {
 						mes .@n$; 
-						mes "You must be base level 90 to continue.";
+						mes "您必須達到基礎等級 90 才能繼續。";
 						end;
 					}
 						switch(instance_enter(.@md_name$)) {
 							case 3:
-								mes "An unknown error has occurred.";
+								mes "發生未知錯誤。";
 								end;
 							case 2:
-								mes "The Geffen Magic Tournament instance has not been created. Please go to talk to Emmitt White first.";
+								mes "吉芬魔法大賽副本尚未建立。請先去找艾米特·懷特談談。";
 								end;
 							case 1:
-								mes "Only registered members can enter the "+.@md_name$+" instance.";
+								mes "只有註冊的成員才能進入 "+.@md_name$+" 副本。";
 								end;
 							case 0:
 								mapannounce "dali02",strcharinfo(0)+" of the party, "+.@p_name$+" is entering the "+.@md_name$+".",bc_map,"0x00ff99";
@@ -671,7 +671,7 @@ dali,100,147,3	script	Dimensional Device#gefma	PORTAL,{
 			}
 		} else if ( GeffenTournament > gettimetick(2) ) {
 			mes .@n$;
-			mes "Looks like the window of opportunity is not open right now.";
+			mes "看來機會之窗目前尚未開啟。";
 			end;
 		}
 		end;
@@ -685,7 +685,7 @@ dali,98,141,3	script	Emmitt White	4_M_KHKYEL,{
 	
 		if (BaseLevel < 90) {
 			mes .@n$; 
-			mes "You must be base level 90 to continue.";
+			mes "您必須達到基礎等級 90 才能繼續。";
 			end;
 		}
 	
@@ -739,7 +739,7 @@ dali,98,141,3	script	Emmitt White	4_M_KHKYEL,{
 		
 		if( !getcharid(1) || is_party_leader() == false || .@GPPartySize > 1) {
 			mes .@n$;
-			mes "This is a solo instance. Please form a solo party before continuing.";
+			mes "這是一個單人副本。請先組成單人隊伍再繼續。";
 			end;
 		}
 		
@@ -753,37 +753,37 @@ dali,98,141,3	script	Emmitt White	4_M_KHKYEL,{
 
 			if (!.@party_id) {
 				mes .@n$;
-				mes "You need to be a party leader in order to continue.";
+				mes "您需要是隊長才能繼續。";
 				end;
 			}
 			
 		if (is_party_leader() == true){
 			mes .@n$; 
-			mes "Did you know? A long time ago there was a Magic Tournament in Geffen.";
+			mes "您知道嗎？很久以前在吉芬舉辦過魔法大賽。";
 			next;
 			mes .@n$; 
-			mes "I've done so much research on the Tournament but haven't gotten too much information from research alone.";
+			mes "我對錦標賽做了很多研究，但僅從研究中獲得的資訊並不多。";
 			next;
 			mes .@n$; 
-			mes "When I found out that this time gap can help with my research I couldn't resist the opportunity to continue the research.";
+			mes "當我發現這個時間差可以幫助我的研究時，我忍不住想繼續研究。";
 			next;
 			mes .@n$; 
-			mes "And now I've found an adventurer, in you, who can help me go back to the time that the Tournament took place.";
+			mes "現在我找到了一位冒險者，也就是您，可以幫助我回到錦標賽舉行的那個時代。";
 			next;
 			mes .@n$; 
-			mes "Please use the dimensional device and participate in the Magic Tournament for me.";
+			mes "請使用次元裝置並為我參與魔法大賽。";
 			next;
 			mes .@n$; 
-			mes "Will you go and tell me about it?";
+			mes "您願意去並告訴我相關資訊嗎？";
 			next;
 			mes .@n$; 
-			mes "The portal is unstable so you have to go solo.";
-			mes "Are you ready to enter?";
+			mes "傳送門不穩定，所以您必須單獨前往。";
+			mes "您準備好進入了嗎？";
 			next;
-				switch(select("No:Yes")){
+				switch(select("否:是")){
 					case 1:
 						mes .@n$;
-						mes "Come back if you change your mind~!";
+						mes "如果您改變主意，請再來～！";
 						end;
 					case 2:
 						for (.@i = 9284; .@i <= 9314; .@i++) {
@@ -793,26 +793,26 @@ dali,98,141,3	script	Emmitt White	4_M_KHKYEL,{
 						}
 						
 						if (instance_create(.@md_name$) < 0) {
-							mes "Party Name: "+.@p_name$;
-							mes "Party Leader: "+strcharinfo(0);
-							mes "^0000ff"+.@md_name$+" ^000000- Reservation Failed!";
+							mes "隊伍名稱："+.@p_name$;
+							mes "隊長："+strcharinfo(0);
+							mes "^0000ff"+.@md_name$+" ^000000- 預約失敗！";
 							end;
 						}
 						mes .@n$; 
-						mes "The Dimensional Device has been activated.";
+						mes "次元裝置已被啟動。";
 						end;
 					}
 			end;
 		} else {
 			mes .@n$;
-			mes "You need to be a party leader in order to continue.";
+			mes "您需要是隊伍隊長才能繼續。";
 			end;
 		}
 
 	} else {
 		mes .@n$;
-		mes "Just a second.";
-		mes "You need to wait for the timer to expire before going back.";
+		mes "請稍等。";
+		mes "您需要等待計時器到期才能返回。";
 		mes " ";
 		
 		.@time = (GeffenTournament - gettimetick(2));
@@ -820,7 +820,7 @@ dali,98,141,3	script	Emmitt White	4_M_KHKYEL,{
 		.@min = (.@time / 60) % 60;
 		.@hrs = (.@time / 3600) % 24;
 
-		mes "Cooldown: ^3355FF"+(.@hrs < 10 ? "0" : "")+.@hrs+":"+(.@min < 10 ? "0" : "")+.@min+":"+(.@sec < 10 ? "0" : "")+.@sec+"^000000";
+		mes "冷卻時間: ^3355FF"+(.@hrs < 10 ? "0" : "")+.@hrs+":"+(.@min < 10 ? "0" : "")+.@min+":"+(.@sec < 10 ? "0" : "")+.@sec+"^000000";
 		end;
 		
 
@@ -900,13 +900,13 @@ OnInstanceInit:
 1@gef,123,203,4	script	Tournament Guide#gfmg	705,{
 	cutin "gef_soldier.bmp",2;
 	.@n$ = "[ Tournament Guide ]";
-	mes .@n$,"Welcome to the Magical city of ^8B4513Geffen^000000.";
+	mes .@n$,"歡迎來到神奇的城市 ^8B4513吉芬^000000。";
 	next;
-	mes .@n$,"If you want to watch the ^55CC55Magic Tournament^000000 go to the southern fountain of Geffen.";
+	mes .@n$,"如果您想觀看 ^55CC55魔法大賽^000000，請前往吉芬的南方噴泉。";
 	next;
-	mes .@n$,"The fireworks are here to celebrate the Geffen Magical Tournament Festival.";
+	mes .@n$,"煙火是用來慶祝吉芬魔法大賽慶典的。";
 	next;
-	mes .@n$,"Please enjoy the festivities and enjoy your stay here in Geffen~!";
+	mes .@n$,"請享受慶典，並在吉芬玩得開心～！";
 	close2;
 	cutin "",255;
 	end;
@@ -926,55 +926,55 @@ OnEnable:
 
 	if ( checkquest(9309) != -1 ) {
 		mes .@n$;
-		mes "Fenrir won this year's Magic Tournament!";
+		mes "芬里爾贏得了今年的魔法大賽！";
 		next;
 		mes .@n$;
-		mes "I'm such a big fan of hers.";
+		mes "我是她的大粉絲。";
 		end;
 	}
 	
 	if ( checkquest(9308) != -1 ) {
 		mes .@n$;
-		mes "Congratulations on being this year's Magic Tournament winner!";
+		mes "恭喜您成為今年魔法大賽的冠軍！";
 		end;
 	}
 		
 	if ( 'passtest == 2 ) {
 		mes .@n$;
-		mes "Do you wish to try again?";
-		mes "If you can kill the Desert Wolf within 60 seconds, you pass the test.";
+		mes "您想再次嘗試嗎？";
+		mes "如果您能在 60 秒內殺死沙漠之狼，您就通過了測試。";
 		next;
 		mes .@n$;
-		mes "If you fail, you will automatically be eliminated from the list. You can try again as many times as you want.";
-		mes "Will you take the test again?";
+		mes "如果您失敗了，您將自動從名單中移除。您可以根據需要多次嘗試。";
+		mes "您要再次參加測試嗎？";
 		next;
-		switch(select("No:Yes")){
+		switch(select("否:是")){
 			case 1:
 				mes .@n$;
-				mes "Come back if you change your mind.";
+				mes "如果您改變主意，請回來。";
 				close;
 			case 2:
 				mes .@n$;
-				mes "There is no registration fee to enter.";
-				mes "The only requirement is to pass a simple test.";
+				mes "參加比賽無需註冊費。";
+				mes "唯一的要求是通過一個簡單的測試。";
 				next;
 				mes .@n$;
-				mes "The test is very simple. Defeat a Desert Wolf in 60 seconds or less and you're in.";
+				mes "測試非常簡單。在 60 秒或更短的時間內擊敗一隻沙漠之狼，您就通過了。";
 				next;
 				mes .@n$;
-				mes "If you fail you will automatically be eliminated from the list but you can try again as many times as you wish.";
-				mes "Are you ready?";
+				mes "如果您失敗了，您將自動從名單中移除，但您可以根據需要多次嘗試。";
+				mes "您準備好了嗎？";
 				next;
-				switch(select("No:Yes")){
+				switch(select("否:是")){
 					case 1:
 						mes .@n$;
-						mes "Come back if you change your mind.";
+						mes "如果您改變主意，請回來。";
 						close;
 					case 2:
 						mes .@n$;
-						mes "You can participate in the Magic Tournament after passing the test.";
-						mes "Then, let us begin!";
-						npctalk "Time limit is 60 seconds ! Ready! Set! Go!";
+						mes "通過測試後，您可以參加魔法大賽。";
+						mes "那麼，讓我們開始吧！";
+						npctalk "時間限制為 60 秒！準備！開始！衝啊！";
 						erasequest 9292;
 						setquest 9293;
 						addtimer 60000,instance_npcname("Receptionist#1_0et")+"::OnFail";
@@ -991,27 +991,27 @@ OnEnable:
 	
 		if ('GMT >= 5){
 			mes .@n$;
-			mes "The Magic Tournament is going to start soon.";
-			mes "Enter the portal to the south and you can join in.";
+			mes "魔法大賽即將開始。";
+			mes "進入南方的傳送門，您就可以加入了。";
 			next;
 			mes .@n$;
-			mes "Good luck!";
+			mes "祝您好運！";
 			end;
 		}
 		
 		mes .@n$;
-		mes "Congratulations! You passed the test!";
+		mes "恭喜！您通過了測試！";
 		next;
 		mes .@n$;
-		mes "Give me your name so I can write it down.";
-		mes "You will automatically be registered for the tournament now.";
+		mes "請告訴我您的名字，以便我記錄下來。";
+		mes "您現在將自動註冊參加比賽。";
 		next;
 		input .@char$;
 		if(.@char$ == "") { end; }
 		mes .@n$;
 		mes strcharinfo(0)+"?";
-		mes "Okay, interesting name.";
-		mes "Anyway, your registration is complete!";
+		mes "好的，有趣的名字。";
+		mes "無論如何，您的註冊已完成！";
 		'GMT = 5;
 		erasequest 9293;
 		if (checkquest(9294) > -1)
@@ -1020,14 +1020,14 @@ OnEnable:
 		donpcevent instance_npcname("#gefmagic_warp01")+"::OnEnable";
 		next;
 		mes .@n$;
-		mes "Competitors who registered will randomly be selected.";
+		mes "已註冊的參賽者將被隨機選中。";
 		next;
 		mes .@n$;
-		mes "The Magic Tournament is going to start soon.";
-		mes "Enter the portal to the south and you can join in.";
+		mes "魔法大賽即將開始。";
+		mes "進入南方的傳送門，您就可以加入了。";
 		next;
 		mes .@n$;
-		mes "Good Luck~!";
+		mes "祝您好運～！";
 		end;
 	
 	}
@@ -1035,52 +1035,52 @@ OnEnable:
 	if ( checkquest(9293) == -1 ) {
 		
 		mes .@n$;
-		mes "Thank you for visiting the Geffen Magic Tournament.";
-		mes "What can I do for you?";
+		mes "感謝您參加吉芬魔法大賽。";
+		mes "我能為您做些什麼呢？";
 		next;
 	L_Menu:
-		switch(select("About Geffen Magic Tournament:How do I Register?:Collecting Rewards.:Can I get a Spectator Pass?:End Conversation")){
+		switch(select("關於吉芬魔法大賽:如何註冊？:領取獎勵:我可以獲得觀眾通行證嗎？:結束對話")){
 			case 1:
 				mes .@n$;
-				mes "Geffen Magic Tournament is being held once every 3 years.";
+				mes "吉芬魔法大賽每 3 年舉辦一次。";
 				next;
 				mes .@n$;
-				mes "This festival used to be a more studious event with scholars discussing magical methods.";
-				mes "Now it's all about fun and a big party.";
+				mes "這個節日曾經是一個更嚴肅的活動，學者們討論魔法方法。";
+				mes "現在一切都與樂趣和一個大型派對有關。";
 				next;
 				mes .@n$;
-				mes "Now it has become almost exclusively a fighting tournament.";
-				mes "The most famous Mages from all over the world come for the tournament.";
+				mes "現在它幾乎完全變成了一個格鬥比賽。";
+				mes "來自世界各地的最著名的法師都會來參加比賽。";
 				next;
 				mes .@n$;
-				mes "Anything else?";
+				mes "還有其他事嗎？";
 				next;
 				goto L_Menu;
 			case 2:
 				mes .@n$;
-				mes "There is no registration fee to enter.";
-				mes "The only requirement is to pass a simple test.";
+				mes "參加比賽無需註冊費。";
+				mes "唯一的要求是通過一個簡單的測試。";
 				next;
 				mes .@n$;
-				mes "The test is very simple. Defeat a Desert Wolf in 60 seconds or less and you're in.";
+				mes "測試非常簡單。在 60 秒或更短的時間內擊敗一隻沙漠之狼，您就通過了。";
 				next;
 				mes .@n$;
-				mes "If you fail you will automatically be eliminated from the list but you can try again as many times as you wish.";
-				mes "Do you want to take the test?";
+				mes "如果您失敗了，您將自動從名單中移除，但您可以根據需要多次嘗試。";
+				mes "您想參加測試嗎？";
 				next;
-				switch(select("No:Yes")){
+				switch(select("否:是")){
 					case 1:
 						mes .@n$;
-						mes "Come back if you change your mind.";
+						mes "如果您改變主意，請回來。";
 						close;
 					case 2:
 						mes .@n$;
-						mes "You can participate in the Magic Tournament after passing the test.";
-						mes "Then, let us begin!";
+						mes "通過測試後，您可以參加魔法大賽。";
+						mes "那麼，讓我們開始吧！";
 						erasequest 9292;
 						setquest 9293;
 						'GMT = 3;
-						npctalk "Time limit is 60 seconds ! Ready! Set! Go!";
+						npctalk "時間限制為 60 秒！準備！開始！衝啊！";
 						addtimer 60000,instance_npcname("Receptionist#1_0et")+"::OnFail";
 						monster instance_mapname("1@gef"),120,62,"--ja--",1106,1,instance_npcname("Receptionist#1_0et")+"::OnTest";
 						hideonnpc instance_npcname("Receptionist#1_0et");	
@@ -1089,29 +1089,29 @@ OnEnable:
 				end;
 			case 3:
 				mes .@n$;
-				mes "The father you go along in the tournament, the more coins you will earn.";
+				mes "您在比賽中走得越遠，您將獲得更多的硬幣。";
 				next;
 				mes .@n$;
-				mes "Collect the coins and you can exchange them for equipment from the Geffen Coin Operator.";
+				mes "收集硬幣，您可以從吉芬硬幣操作員那裡將它們兌換為裝備。";
 				next;
 				mes .@n$;
-				mes "Anything else?";
+				mes "還有其他事嗎？";
 				next;
 				goto L_Menu;
 			case 4:
 				mes .@n$;
-				mes "Hmm it seems that the Magic Tournament is so popular this year that there aren't any more spectator seats available.";
+				mes "嗯，今年魔法大賽似乎非常受歡迎，沒有更多的觀眾席位了。";
 				next;
 				mes .@n$;
-				mes "I am sorry for inconvenience.";
+				mes "對於給您帶來的不便，我深感抱歉。";
 				next;
 				mes .@n$;
-				mes "Do you need anything else?";
+				mes "您還需要其他東西嗎？";
 				next;
 				goto L_Menu;
 			case 5:
 				mes .@n$;
-				mes "Please enjoy the Geffen Magic Tournament.";
+				mes "請盡情享受吉芬魔法大賽。";
 				close;
 		}
 		end;
@@ -1123,14 +1123,14 @@ OnTest:
 	deltimer instance_npcname("Receptionist#1_0et")+"::OnFail";
 	'passtest = 1;
 	hideoffnpc instance_npcname("Receptionist#1_0et");
-	npctalk "You passed the test! Shall we finish your registration?", instance_npcname("Receptionist#1_0et");
+	npctalk "你通過了測試！ 我們要完成你的註冊嗎？", instance_npcname("Receptionist#1_0et");
 	end;
 	
 OnFail:
 	hideoffnpc instance_npcname("Receptionist#1_0et");
 	'passtest = 2;
 	killmonster instance_mapname("1@gef"),instance_npcname("Receptionist#1_0et")+"::OnTest";
-	npctalk "You failed the test. Talk to me if you wish to try again.", instance_npcname("Receptionist#1_0et");
+	npctalk "你沒有通過測試。 如果你想再次嘗試，請和我談談。", instance_npcname("Receptionist#1_0et");
 	end;
 
 }
@@ -1402,13 +1402,13 @@ OnInstanceInit:
 	.@n$ = "[ Tournament Guide ]";
 	ignoretimeout 1;
 	if (checkquest(9308) != -1) {
-		switch(select("Leave the Arena and receive your reward:End Conversation")) {
+		switch(select("離開競技場並領取你的獎勵:結束對話")) {
 			case 1:
 				mes .@n$;
-				mes "You won the competition!","Congratulations!";
+				mes "你贏得了比賽！","恭喜！";
 				next;
 				mes .@n$;
-				mes "By the way, the Academy Master has","something to tell you!";
+				mes "順帶一提，學院院長有","話要對你說！";
 				next;
 				cutin "acamaster_a.bmp",2;
 				.@n2$ = "[ Geffen Academy Master ]";
@@ -1446,25 +1446,25 @@ OnInstanceInit:
 	}
 	mes .@n$;
 	if ('GMT_1QUE <22) {
-		mes "Congratulations on winning the "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" round!";
+		mes "恭喜你贏得了第 "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" 回合！";
 		.@menu$ = "Begin the "+callfunc("F_GetNumSuffix",('GMT_1QUE-9))+" match.";
 	}
 	else {
-	mes "Congratulations! You've defeated every other opponent in Group A! Good luck on the final!";
+	mes "恭喜！ 你已經擊敗了 A 組中的所有其他對手！ 祝你在決賽中好運！";
 	.@menu$ = "Begin the final match.";
 	}
 	next;
 	
-			switch(select(.@menu$,"End Conversation")) {
+			switch(select(.@menu$,"結束對話")) {
 			case 1:
 					mes .@n$;
-					mes "Winners of each round will receive ^55CC55Geffen Magic Tournament Coins^000000 as a reward.";
+					mes "每一輪的獲勝者將獲得 ^55CC55吉芬魔法大賽硬幣^000000 作為獎勵。";
 					next;
 					mes .@n$;
-					mes "Bring the coins to the ^55CC55Geffen Coin Operator^000000 to exchange them for special equipment.";
+					mes "將硬幣帶到 ^55CC55吉芬硬幣兌換員^000000 處，以兌換特殊裝備。";
 					next;
 					mes .@n$;
-					mes "The "+callfunc("F_GetNumSuffix",('GMT_1QUE-9))+" match of Group A is about to begin!";
+					mes "A 組的第 "+callfunc("F_GetNumSuffix",('GMT_1QUE-9))+" 場比賽即將開始！";
 					close2;
 					getitem 6671, 'reward['GMT_1QUE-11];
 					hideonnpc instance_npcname("Tournament Healer#1");
@@ -1525,8 +1525,8 @@ OnInstanceInit:
 					end;
 			case 2:
 				mes .@n$; // KURAMA END CONVERSATION TEXT
-				mes "Need more time to prepare I see.";
-				mes "Not a problem, talk to me when you're ready.";
+				mes "看來你需要更多時間準備。";
+				mes "沒問題，當你準備好時再來找我。";
 				close;
 		}
 
@@ -1548,13 +1548,13 @@ OnStart:
 	switch ('GMT_1QUE) {
 		case 11:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
-			npctalk "Ladies and Gentlemen!";
+			npctalk "女士們先生們！";
 			sleep 3000;
-			npctalk "I do my best to be as loud as I can!";
+			npctalk "我盡我所能大聲說話！";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			enablenpc instance_npcname("Arhi#1");
 			sleep 3000;
-			npctalk "The Geffen Magic Tournament will now commence!";
+			npctalk "吉芬魔法大賽現在開始！";
 			sleep 1000;
 			.@spec = rand(70,257);
 			showscript "Tournament Spectator: Wow~!!! Looks fun~~!! Yahoo~!",getnpcid(0,instance_npcname("Tournament Spectator#"+.@spec));
@@ -1567,266 +1567,266 @@ OnStart:
 			sleep 500;
 			donpcevent instance_npcname("Arhi#1")+"::OnActivate";
 			sleep 500;
-			npctalk "We are starting the 1st match for Group A";
+			npctalk "我們將開始 A 組的第一場比賽";
 			sleep 2000;
-			npctalk "On this corner, "+('sex?"he":"she")+" looks weak enough to lose in the 1st match!";
+			npctalk "在這個角落，"+('sex?"他":"她")+"看起來弱到足以在第一場比賽中落敗！";
 			sleep 3000;
-			npctalk "Give a big welcome to the unknown competitor! "+'charname$+"~!";
+			npctalk "熱烈歡迎這位不知名的競爭者！ "+'charname$+"~！";
 			sleep 2000;
-			npctalk "And on the other corner, Arhi the Novice! Give it your best shot!";
+			npctalk "而在另一個角落，新手阿爾希！ 盡你所能！";
 			end;
 		case 12:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "The 2nd match of Group A is about to begin!";
+			npctalk "A 組的第二場比賽即將開始！";
 			sleep 3000;
-			npctalk "On this corner, the competitor who exceeded our expectations by getting past the first round!";
+			npctalk "在這個角落，這位參賽者超出了我們的期望，通過了第一輪！";
 			sleep 3000;
-			npctalk "The extremely weak looking competitor, "+'charname$+"!";
+			npctalk "看起來非常虛弱的參賽者，"+'charname$+"！";
 			sleep 3000;
 			donpcevent instance_npcname("Dio Anemos#1")+"::OnActivate";
 			sleep 500;
-			npctalk "And "+('sex ? "his" : "her")+" opponent...";
+			npctalk "而"+('sex ? "他的" : "她的")+"對手...";
 			sleep 3000;
-			npctalk "Despite his skipping classes at the Magic Academy...";
+			npctalk "儘管他翹了魔法學院的課...";
 			sleep 3000;
-			npctalk "A crowd favorite! A big round of applause to the Magician Apprentice, Dio Anemos!";
+			npctalk "一位廣受歡迎的人！ 熱烈掌聲歡迎魔法學徒，迪奧·阿尼莫斯！";
 			end;
 		case 13:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "The 3rd match of Group A is about to begin!";
+			npctalk "A 組的第三場比賽即將開始！";
 			sleep 2000;
-			npctalk "Welcome back our unlikely competitor, "+'charname$+"!";
+			npctalk "歡迎回來我們不太可能的參賽者，"+'charname$+"！";
 			sleep 3000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent...";
+			npctalk "而"+('sex ? "他的" : "她的")+"對手...";
 			sleep 2000;
 			if ('GMTQuest == 1) {
 				donpcevent instance_npcname("Geffen Gangster#n1")+"::OnActivate";
 				sleep 500;
-				npctalk "Whose looks give off a creepy air about him...";
+				npctalk "他的長相給人一種毛骨悚然的感覺...";
 				sleep 3000;
-				npctalk "A member of the Curvy Woman Loving club~!! Geffen Gangster!";
+				npctalk "熱愛曲線女人的俱樂部成員~！！ 吉芬黑幫！";
 			} else if ('GMTQuest == 2) {
 				donpcevent instance_npcname("Geffen Bully#n1")+"::OnActivate";
 				sleep 500;
-				npctalk "With a face only a mother can love!";
+				npctalk "一張只有母親才會愛的臉！";
 				sleep 3000;
-				npctalk "The ruthless Geffen Bully!";
+				npctalk "無情的吉芬惡霸！";
 			} else {
 				donpcevent instance_npcname("Geffen Shoplifter#n1")+"::OnActivate";
 				sleep 500;
-				npctalk "With a mischievous grin on her face!";
+				npctalk "臉上帶著頑皮的笑容！";
 				sleep 3000;
-				npctalk "The Geffen Thief Guild's Guildmaster! Geffen Shoplifter!";
+				npctalk "吉芬小偷公會的公會長！ 吉芬扒手！";
 			}
 			end;
 		case 14:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "The surprise of this year's Tournament~!";
+			npctalk "今年錦標賽的驚喜~！";
 			sleep 3000;
-			npctalk "The unrivaled warrior! "+'charname$+"!";
+			npctalk "無人能及的戰士！"+'charname$+"！";
 			sleep 3000;
 			donpcevent instance_npcname("Faymont#1")+"::OnActivate";
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 3000;
-			npctalk "Entering the ring with pomp and circumstance.";
+			npctalk "在盛況與儀式中進入競技場。";
 			sleep 3000;
-			npctalk "Prontera's pride and style, Faymont!";
-			npctalk "Oh~ A player from Prontera ah!", instance_npcname("Prontera Spectator#a1");
+			npctalk "普隆德拉的驕傲與風格，菲蒙！";
+			npctalk "喔～來自普隆德拉的玩家啊！", instance_npcname("Prontera Spectator#a1");
 			sleep 2000;
-			npctalk "Do not give Prontera a bad name!!", instance_npcname("Prontera Spectator#a2");
+			npctalk "別讓普隆德拉蒙羞了！！", instance_npcname("Prontera Spectator#a2");
 			end;
 		case 15:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "This isn't just a fluke ladies and gents!";
+			npctalk "這不只是僥倖，女士先生們！";
 			sleep 3000;
-			npctalk "The remarkable rookie! "+'charname$+"!";
+			npctalk "傑出的菜鳥！"+'charname$+"！";
 			sleep 3000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 500;
 			donpcevent instance_npcname("Ordre#1")+"::OnActivate";
 			sleep 3000;
-			npctalk "One who promises to fight with honor!";
+			npctalk "承諾會以榮譽作戰的人！";
 			sleep 3000;
-			npctalk "The self-proclaimed master of battle, Ordre!";
+			npctalk "自稱的戰鬥大師，奧德雷！";
 			end;
 		case 16:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "Suddenly, the incredibly powerful!";
+			npctalk "突然出現，難以置信的強大！";
 			sleep 3000;
-			npctalk "Super rookie of this year's tournament~! "+'charname$+"!";
+			npctalk "今年錦標賽的超級菜鳥～！"+'charname$+"！";
 			sleep 3000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 500;
 			donpcevent instance_npcname("Blut Hase#1")+"::OnActivate";
 			sleep 3000;
-			npctalk "Cute on the outside, but cruely destroys enemies!";
+			npctalk "外表可愛，卻殘酷地摧毀敵人！";
 			sleep 3000;
-			npctalk "Bloody Rabbit Ears~!! Blut Hase!";
+			npctalk "血腥兔耳～！！布魯特·哈澤！";
 			end;
 		case 17:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "Onwards to the 7th Round!";
+			npctalk "前往第七回合！";
 			sleep 3000;
-			npctalk "Welcome back "+'charname$+"!";
+			npctalk "歡迎回來"+'charname$+"！";
 			sleep 3000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 2000;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-			npctalk "A competitor more evil than any we've seen before!";
+			npctalk "一位比我們之前見過的任何人都還要邪惡的競爭者！";
 			sleep 500;
 			donpcevent instance_npcname("Kuro Akuma#1")+"::OnActivate";
 			sleep 3000;
-			npctalk "The Devil's Tooth, Kuro Akuma!";
+			npctalk "惡魔之牙，黑惡魔！";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
 		case 18:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "Starting up Round 8 for Group A!";
+			npctalk "A組第八回合即將開始！";
 			sleep 3000;
-			npctalk "The darling of this year's tournament!";
+			npctalk "今年錦標賽的寵兒！";
 			sleep 3000;
-			npctalk "Rune-Midgarts newest star, "+'charname$+"!";
+			npctalk "盧恩-米德加茲最新的明星，"+'charname$+"！";
 			sleep 2000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 2000;
-			npctalk "They look very strong!", instance_npcname("Payon Spectator#a1");
+			npctalk "他們看起來非常強壯！", instance_npcname("Payon Spectator#a1");
 			sleep 250;
 			donpcevent instance_npcname("Ifodes#1")+"::OnActivate";
 			sleep 250;
-			npctalk "Looks good and strong ah!", instance_npcname("Veins Spectator#a1");
+			npctalk "看起來又棒又強壯啊！", instance_npcname("Veins Spectator#a1");
 			sleep 1000;
-			npctalk "Slow as a turtle, fast as a hare!";
+			npctalk "慢如烏龜，快如脫兔！";
 			sleep 3000;
-			npctalk "The maniac of Rune-Midgarts! Ifodes!";
+			npctalk "盧恩-米德加茲的狂人！伊芙德！";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
 		case 19:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "We have now entered the 9th Round of this competition!";
+			npctalk "我們現在進入這次比賽的第九回合！";
 			sleep 3000;
-			npctalk "Nobody can stop "+('sex ? "him" : "her")+"!";
+			npctalk "沒人能阻止"+('sex ? "他" : "她")+"！";
 			sleep 3000;
-			npctalk ""+('sex ? "His" : "Her")+" strength has been recognized by the people! "+'charname$;
+			npctalk ""+('sex ? "他的" : "她的")+"力量已經被人們認可！"+'charname$;
 			sleep 2000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 500;
 			donpcevent instance_npcname("Licheniyes#1")+"::OnActivate";
 			sleep 500;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			sleep 1000;
-			npctalk "She might look like a nice lady, but you better watch out!";
+			npctalk "她看起來可能像個好女人，但你最好小心！";
 			sleep 3000;
-			npctalk "She'll attack you with the swiftness of a snake!";
+			npctalk "她會像蛇一樣迅速地攻擊你！";
 			sleep 3000;
-			npctalk "The Lady of Death! Licheniyes!";
+			npctalk "死亡女士！莉奇尼耶斯！";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
 		case 20:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "Let us begin the 10th Round of Group A!";
+			npctalk "讓我們開始A組第十回合！";
 			sleep 3000;
-			npctalk "In this corner, back to entertain us again!";
+			npctalk "在這個角落，再次回來娛樂我們！";
 			sleep 3000;
-			npctalk "None other than the incredible "+'charname$+"!";
+			npctalk "不是別人，正是令人難以置信的"+'charname$+"！";
 			sleep 1000;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			sleep 1000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 1000;
-			npctalk "Seductress of Rune-Midgarts...";
+			npctalk "盧恩-米德加茲的誘惑者...";
 			sleep 500;
 			donpcevent instance_npcname("Odoric#1")+"::OnActivate";
 			sleep 500;
-			npctalk "You can't look away from her curves!";
+			npctalk "你無法將目光從她的曲線移開！";
 			sleep 3000;
-			npctalk "The Songstress of Death! Odoric!";
+			npctalk "死亡的歌姬！奧多里克！";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
 		case 21:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "We're getting closer to the end, next up is Quarter-Finals!";
+			npctalk "我們越來越接近尾聲了，接下來是四分之一決賽！";
 			sleep 3000;
-			npctalk "The winning never ends with "+'charname$+"!";
+			npctalk "與"+'charname$+"一起勝利永不停止！";
 			sleep 2000;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			sleep 1000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "還有"+('sex ? "他的" : "她的")+"對手～！！！";
 			sleep 500;
 			donpcevent instance_npcname("Ju#1")+"::OnActivate";
 			sleep 250;
-			npctalk "I can smell blood...",instance_npcname("Loki#a2");
+			npctalk "我能聞到血腥味...",instance_npcname("Loki#a2");
 			sleep 1000;
-			npctalk "Oh... A fierce competitor, is not it?",instance_npcname("Iris#a2");
+			npctalk "喔... 一個兇猛的競爭者，不是嗎？",instance_npcname("Iris#a2");
 			sleep 500;
-			npctalk "Hidden behind a shroud of mystery...";
+			npctalk "隱藏在神秘的面紗之後...";
 			sleep 3000;
-			npctalk "Master of power and speed! Ju!";
+			npctalk "力量與速度的主宰！Ju！";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
 		case 22:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "We are now at the Semi-Finals of this competition, this match will decide the winner for Group A!";
+			npctalk "我們現在處於這次競賽的準決賽，這場比賽將決定 A 組的獲勝者！";
 			sleep 3000;
-			npctalk "Winning against all odds, Group A's Dark Horse, "+'charname$+"!";
+			npctalk "戰勝一切困難，A 組的黑馬，"+'charname$+"！";
 			sleep 3000;
-			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
+			npctalk "以及"+('sex ? "他的" : "她的")+"對手～！！！";
 			if ('half) {
 				sleep 500;
 				donpcevent instance_npcname("Dwigh#1")+"::OnActivate";
 				sleep 1500;
-				npctalk "Chief Professor of the Mage Academy, loved by her many disciples!";
+				npctalk "魔法學院的首席教授，受到許多門徒的愛戴！";
 				sleep 1000;
 				donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 				sleep 2000;
-				npctalk "Commander of battle and wits! Dwigh!";
+				npctalk "戰鬥與智慧的指揮官！Dwigh！";
 			}	else {
 				sleep 2000;
-				npctalk "An Alchemist from Aldebaran, the city of science!";
+				npctalk "來自科學之都艾爾貝塔的煉金術士！";
 				sleep 500;
 				donpcevent instance_npcname("Fay Kanavian#1")+"::OnActivate";
 				sleep 500;
 				donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 				sleep 2000;
-				npctalk "Fay Kanavian and her homunculus, Alphonse!";
+				npctalk "Fay Kanavian 和她的 ???????????，阿爾方斯！";
 				}
 			end;
 		case 23:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
-			npctalk "A previously anonymous fighter";
+			npctalk "一位先前默默無名的戰士";
 			sleep 3000;
-			npctalk "Despite this, unmatched in Group A!";
+			npctalk "儘管如此，在 A 組中無人能及！";
 			sleep 2000;
-			npctalk "The most talked about competitor this year!";
+			npctalk "今年最受關注的參賽者！";
 			sleep 3000;
-			npctalk "The unrivaled! "+'charname$+"!";
+			npctalk "無與倫比的！"+'charname$+"！";
 			sleep 3000;
-			npctalk "Aha, this match looks like it will be interesting.",instance_npcname("Loki#a2");
+			npctalk "啊哈，這場比賽看起來會很有趣。",instance_npcname("Loki#a2");
 			sleep 3000;
-			npctalk "And the champion of Group B~!!!";
+			npctalk "以及 B 組的冠軍～！！！";
 			sleep 1500;
 			donpcevent instance_npcname("Fenrir#f")+"::OnActivate";
 			sleep 1500;
-			npctalk "A Warlock with incredible powers!";
+			npctalk "一位擁有驚人力量的術士！";
 			sleep 3000;
-			npctalk "A competitor who swept through Group B like a hurricane!";
+			npctalk "一位像颶風一樣席捲 B 組的競爭者！";
 			sleep 1000;
-			npctalk "Oh! This match is going to be exciting!",instance_npcname("Chaos#a2");
+			npctalk "哦！這場比賽將會很精彩！",instance_npcname("Chaos#a2");
 			sleep 2000;
-			npctalk "Is there any Wizard stronger in all of Rune-Midgarts?!";
+			npctalk "在整個盧恩-米德加爾特大陸，還有比她更強大的巫師嗎？！";
 			sleep 3000;
-			npctalk "The Blue Wizard! Fenris Fenrir~!!";
+			npctalk "藍色巫師！芬里思·芬里爾～！！";
 			end;
 	}
 
@@ -1836,14 +1836,14 @@ OnTalk1:
 	
 OnTalk2:
 	if ('GMT_1QUE == 22) {
-		npctalk "The final match of Group A is finished~! Congratulations "+'charname$+"!"; 
+		npctalk "A 組的決賽結束了~! 恭喜 "+'charname$+"!";
 	}
 	else {
-		npctalk "The "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" match of Group A is finished~! Congratulations "+'charname$+"!"; 
+		npctalk "A 組的第 "+callfunc("F_GetNumSuffix",('GMT_1QUE-10'))+" 場比賽結束了~! 恭喜 "+'charname$+"!";
 		sleep 6000;
-		npctalk "You may take some time to heal your wounds.";
+		npctalk "您可以花一些時間來治癒您的傷口。";
 		sleep 6000;
-		npctalk "Please speak with the Tournament Guide when you are ready for the next round.";
+		npctalk "當您準備好進行下一輪比賽時，請與錦標賽嚮導交談。";
 		sleep 3000;
 	}
 	switch ('GMT_1QUE) {
@@ -1857,31 +1857,31 @@ OnTalk2:
 	case 21:
 		break;
 	case 13:
-		npctalk "Fenris Fenrir has 3 consecutive victories in Group B~!";
+		npctalk "芬里思·芬里爾在 B 組中取得 3 連勝～！";
 		sleep 3000;
 		break;
 	case 16:
-		npctalk "Okay~! There is news from Group B!";
+		npctalk "好的~! 這是來自 B 組的消息！";
 		sleep 3000;
-		npctalk "While all of the other competitors are doing their best,";
+		npctalk "當所有其他參賽者都盡力而為時，";
 		sleep 3000;
-		npctalk "Fenrir is taking the tournament by storm, and has won 5 consecutive matches!";
+		npctalk "芬里爾正以風暴般的速度參加比賽，並已贏得 5 連勝！";
 		sleep 1000;
 		break;
 	case 19:
-		npctalk "This is getting exciting! More news from Group B!";
+		npctalk "這越來越令人興奮了！更多來自 B 組的消息！";
 		sleep 3000;
-		npctalk "Fenris Fenrir is continuing her reign of dominance~! Those in Group A better beware!";
+		npctalk "芬里思·芬里爾繼續著她的統治地位～！A 組的選手最好小心！";
 		sleep 2000;
 		break;
 	case 22:
-		npctalk "Group B has completed their 12th match as well~!";
+		npctalk "B 組也已完成第 12 場比賽～！";
 		sleep 3000;
-		npctalk "Have you heard of Tetra Vortex? There is a competitor using this mysterious spell!";
+		npctalk "您聽說過四重漩渦嗎？有一位參賽者正在使用這個神秘的法術！";
 		sleep 3000;
-		npctalk "Her name is none other than Fenris Fenrir!";
+		npctalk "她的名字不是別人，正是芬里思·芬里爾！";
 		sleep 3000;
-		npctalk "The final match of this tournament is bound to be challenging!";
+		npctalk "本次比賽的決賽注定會充滿挑戰！";
 		sleep 1000;
 		break;
 	}
@@ -1891,14 +1891,14 @@ OnTalk2:
 	end;
 
 OnTalk3:
-	npctalk "The Final Round has started! Let's get it on!";
+	npctalk "決賽已經開始！讓我們開始吧！";
 	end;
 OnTalk4:
-	npctalk "The Final Match of this year's Geffen Magic Tournament is finished~!";
+	npctalk "今年吉芬魔法大賽的決賽結束了~! ";
 	sleep 3000;
-	npctalk "Everyone! Thank you for supporting the Geffen Magic Tournament~!!";
+	npctalk "各位！感謝您對吉芬魔法大賽的支持～！！";
 	sleep 3000;
-	npctalk "This year's Geffen Magic Tournament Champion is "+'charname$+"~!!";
+	npctalk "今年吉芬魔法大賽的冠軍是 "+'charname$+"～！！";
 	donpcevent instance_npcname("#FireworksControl")+"::OnWin";
 	end;
 
@@ -2054,7 +2054,7 @@ OnMobDead:
 			end;
 	}
 	
-	mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: "+'charname$+" has won the round!",bc_blue;
+	mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: "+'charname$+" 贏得了這回合！",bc_blue;
 	donpcevent instance_npcname("Geffen Academy Master")+"::OnTalk2";
 	end;
 OnTimer1000:
@@ -2067,13 +2067,13 @@ OnTimer1000:
 	}
 	
 	switch('timeout) {
-		case 240: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 4 minutes, this match is getting heated!",bc_blue; break;
-		case 180: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 3 minutes, the match has gotten extremely heated!",bc_blue; break;
-		case 120: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 2 minutes, we're racing towards the end!",bc_blue; break;
-		case  90: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 1 minute 30 seconds, the bout is halfway over!",bc_blue; break;
-		case  60: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 1 minute, the end of the match is nearing!",bc_blue; break;
-		case  30: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time remaining is 30 seconds, turn coming to an end!",bc_blue; break;
-		case  10: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 10 seconds remaining!",bc_blue; break;
+		case 240: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 4 分鐘，這場比賽變得越來越激烈！",bc_blue; break;
+		case 180: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 3 分鐘，比賽變得非常激烈！",bc_blue; break;
+		case 120: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 2 分鐘，我們正在衝向終點！",bc_blue; break;
+		case  90: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 1 分 30 秒，比賽已經過半！",bc_blue; break;
+		case  60: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 1 分鐘，比賽即將結束！",bc_blue; break;
+		case  30: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 30 秒，回合即將結束！",bc_blue; break;
+		case  10: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 剩下 10 秒！",bc_blue; break;
 		case   5: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 5!",bc_blue; break;
 		case   4: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 4!",bc_blue; break;
 		case   3: mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 3!",bc_blue; break;
@@ -2088,7 +2088,7 @@ OnTimer1000:
 	initnpctimer;
 	end;
 OnTimeout2:
-	mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: Time's up! The judges will decide the victor for this round!",bc_blue;	
+	mapannounce instance_mapname("1@ge_st"), "<Magic Tournament Broadcast>: 時間到！評審將決定這回合的勝利者！",bc_blue;
 	
 	setcell instance_mapname("1@ge_st"), 50, 50, 50, 50, cell_walkable, 1;
 	if (unitexists('BossID))
@@ -2104,13 +2104,13 @@ OnTimeout2:
 	
 	sleep 3000;
 	hideoffnpc instance_npcname("Geffen Academy Master");
-//	npctalk "The votes are in... And the winner is...",instance_npcname("Geffen Academy Master");
+//	npctalk "投票結果出來了... 獲勝者是...",instance_npcname("Geffen Academy Master");
 //	sleep 1500;
-	npctalk "1st judge's score! "+rand(100)+" - "+rand(100)+"", "Geffen Academy Master";
+	npctalk "第一位評審的得分！"+rand(100)+" - "+rand(100)+"", "吉芬學院院長";
 	sleep 1500;
-	npctalk "2nd judge's score! "+rand(100)+" - "+rand(100)+"", "Geffen Academy Master";
+	npctalk "第二位評審的得分！"+rand(100)+" - "+rand(100)+"", "吉芬學院院長";
 	sleep 1500;
-	npctalk "3rd judge's score! "+rand(100)+" - "+rand(100)+"", "Geffen Academy Master";
+	npctalk "第三位評審的得分！"+rand(100)+" - "+rand(100)+"", "吉芬學院院長";
 	sleep 1500;
 	
 	switch ('GMT_1QUE) {
@@ -2207,12 +2207,12 @@ OnTimeout2:
 			break;
 	}
 	
-	npctalk "The winner of the "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" match in Group A by judge's decision is...! "+.@defeat$, "Geffen Academy Master";
+	npctalk "A 組第 "+callfunc("F_GetNumSuffix",('GMT_1QUE-10'))+" 場比賽的獲勝者由評審決定是...！"+.@defeat$, "吉芬學院院長";
 	sleep 1500;
 	//donpcevent instance_npcname("#DEATHGMT")+"::OnLoseRound";
-	npctalk "Give a warm round of applause to the losing competitor.", "Geffen Academy Master";
+	npctalk "給予失敗的競爭者熱烈的掌聲。", "吉芬學院院長";
 	sleep 1500;
-	npctalk "Defeated competitors please leave the arena!", "Geffen Academy Master";
+	npctalk "失敗的競爭者請離開競技場！", "吉芬學院院長";
 	sleep 3000;
 	movenpc instance_npcname("#gefmagic_warp02"),120,213;
 	movenpc instance_npcname("#invisGMTquests"),120,61;
@@ -2251,7 +2251,7 @@ OnTimer10000:
 		getunitdata 'BossID,.@bossdata;
 		getunitdata 'HomID,.@homdata;
 			if (distance(.@bossdata[6],.@bossdata[7],.@homdata[6],.@homdata[7]) > 10) {
-				unittalk 'BossID,"Alphonse, come!";
+				unittalk 'BossID,"阿爾方斯，來吧！";
 				sleep 500;
 				if (unitexists('HomID))
 					unitwarp 'HomID, instance_mapname("1@ge_st"),.@bossdata[6],.@bossdata[7];
@@ -2261,7 +2261,7 @@ OnTimer10000:
 		if (mobcount(instance_mapname("1@ge_st"),instance_npcname("#GMTHomun")+"::OnHomJR")) { end; }
 		if (unitexists('BossID)) {
 			getunitdata 'BossID,.@bossdata;
-			unittalk 'BossID, "Alphonse, I'll revive you!";
+			unittalk 'BossID, "阿爾方斯，我會讓你復活！";
 			areamonster instance_mapname("1@ge_st"),.@bossdata[6]-2,.@bossdata[7]-2,.@bossdata[6]+2,.@bossdata[7]+2,"--ja--",2566,3,instance_npcname("#GMTHomun")+"::OnHomJR";
 		}
 	}
@@ -2287,17 +2287,17 @@ OnEnd:
 
 
 1@ge_st,111,57,4	script	Tournament Healer#1	569,{ //83649 (hide) 
-	mes "[ Tournament Healer ]";
-	mes "The previous round's winner can receive a heal from me.";
+	mes "[ 錦標賽治療師 ]";
+	mes "上一輪的獲勝者可以從我這裡獲得治療。";
 	next;
-		if (select ("Heal", "Cancel") == 2) {
-			mes "[ Tournament Healer ]";
-			mes "Guess you don't need to be healed.";
+		if (select ("治療", "取消") == 2) {
+			mes "[ 錦標賽治療師 ]";
+			mes "看來你不需要治療。";
 			close;
 		}
-	mes "[ Tournament Healer ]";
-	mes "Enjoy.";
-	mes "Good luck on the next round!";
+	mes "[ 錦標賽治療師 ]";
+	mes "請享用。";
+	mes "祝你下一輪好運！";
 	percentheal 100,100;
 	specialeffect2 EF_HEAL;
 	close2;
@@ -2492,17 +2492,17 @@ end;
 
 OnActivate:
 	enablenpc instance_npcname("Arhi#1");
-	npctalk "The first match always makes me nervous~!";
+	npctalk "第一場比賽總是讓我感到緊張～！";
 	sleep 2000;
-	npctalk "Can I win?";
+	npctalk "我能贏嗎？";
 	sleep 3000;
-	npctalk "I guess it will be okay, this "+('sex ? "guy" : "girl")+" seems weak.";
+	npctalk "我想還可以，這個 "+('sex ? "guy" : "girl")+" 看起來很弱。";
 	sleep 3000;
-	npctalk "Okay, just relax~!";
+	npctalk "好吧，放輕鬆～！";
 	sleep 3000;
-	npctalk "Ah... Finally, It's going to start soon!";
+	npctalk "啊... 終於，就要開始了！";
 	sleep 3000;
-	npctalk "Just relax~!";
+	npctalk "放輕鬆～！";
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2510,15 +2510,15 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Arhi#1");
 	sleep 1000;
-	npctalk "Ah... I lost the first match...";
+	npctalk "啊... 我輸掉了第一場比賽...";
 	sleep 3000;
-	npctalk "How can I face my family...";
+	npctalk "我該如何面對我的家人...";
 	sleep 3000;
-	npctalk "So shameful...";
+	npctalk "太丟臉了...";
 	sleep 3000;
-	npctalk "Ah... My friends will laugh at me...";
+	npctalk "啊... 我的朋友們會嘲笑我的...";
 	sleep 3000;
-	npctalk "Sob...";
+	npctalk "嗚...";
 	sleep 1000;	
 	hideonnpc instance_npcname("Arhi#1");
 	sleep 1000;
@@ -2530,13 +2530,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Arhi#1");
 	sleep 1000;
-	npctalk "I knew I would win!";
+	npctalk "我就知道我會贏！";
 	sleep 3000;
-	npctalk "I'm so relieved!";
+	npctalk "我太放心了！";
 	sleep 3000;
-	npctalk "I was able to beat a weak competitor.";
+	npctalk "我能夠擊敗一個弱小的競爭者。";
 	sleep 3000;
-	npctalk "Yahoo!";
+	npctalk "萬歲！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2547,36 +2547,36 @@ OnVictory:
 end;
 
 OnActivate:
-	npctalk "Second round huh...";
+	npctalk "第二輪啊...";
 	sleep 2000;
-	npctalk "You look like a weak competitor.";
+	npctalk "你看起來像個弱小的競爭者。";
 	sleep 3000;
-	npctalk "I think I've got a good chance against you.";
+	npctalk "我認為我有很大的機會擊敗你。";
 	sleep 3000;
-	npctalk "I wish the match would start already...";
+	npctalk "我希望比賽已經開始...";
 	sleep 3000;
-	npctalk "If I finish it quickly maybe I can go buy some cookies!";
+	npctalk "如果我快速結束，也許我可以去買些餅乾！";
 	sleep 3000;
-	npctalk "Okay then let's start!";
+	npctalk "好吧，那我們開始吧！";
 	sleep 2000;
-	npctalk "Boring...",instance_npcname("Loki#a2");
+	npctalk "無聊...",instance_npcname("Loki#a2");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Dio Anemos#1");
 	sleep 1000;
-	npctalk "Oh my god....";
+	npctalk "我的天啊....";
 	sleep 2000;
-	npctalk "I lost...";
+	npctalk "我輸了...";
 	sleep 2000;
-	npctalk "Ah... and to this random loser too...";
+	npctalk "啊... 而且還輸給這個隨機的失敗者...";
 	sleep 3000;
-	npctalk "My skills have gotten worse...";
+	npctalk "我的技能變得更糟了...";
 	sleep 3000;
-	npctalk "This is so sad...";
+	npctalk "這太令人難過了...";
 	sleep 2000;
-	npctalk "Ahhhh! Why?...";
+	npctalk "啊啊啊！為什麼？...";
 	sleep 1000;
 	hideonnpc instance_npcname("Dio Anemos#1");
 	sleep 1000;
@@ -2587,13 +2587,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Dio Anemos#1");
 	sleep 1000;
-	npctalk "Phew... That was easy.";
+	npctalk "呼... 這太容易了。";
 	sleep 3000;
-	npctalk "You should go home and ask your mommy to feed you!";
+	npctalk "你應該回家並要求你的媽媽餵你！";
 	sleep 3000;
-	npctalk "Ha ha ha ha~!!!!";
+	npctalk "哈哈哈～!!!!";
 	sleep 3000;
-	npctalk "Time to get ready for my next match.";
+	npctalk "該為我的下一場比賽做準備了。";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2604,17 +2604,17 @@ OnVictory:
 end;
 
 OnActivate:
-	npctalk "Hmmm, you're that kid from before...";
+	npctalk "嗯，你是之前那個孩子...";
 	sleep 3000;
-	npctalk "I've got a lesson to teach you!";
+	npctalk "我有一課要教你！";
 	sleep 3000;
-	npctalk "It's my turn to beat you!";
+	npctalk "輪到我打敗你了！";
 	sleep 3000;
-	npctalk "First I'll take care of you, and then I'll go back for that Kafra...";
+	npctalk "首先我會處理你，然後我會回去找那個卡普拉...";
 	sleep 3000;
-	npctalk "Watcha got punk?!";
+	npctalk "你有什麼能耐，小鬼？！";
 	sleep 3000;
-	npctalk "Prepare to die!";
+	npctalk "準備去死吧！";
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2622,17 +2622,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Gangster#n1");
 	sleep 1000;
-	npctalk "I was defeated! This doesn't make any sense!";
+	npctalk "我被打敗了！這沒有道理！";
 	sleep 2000;
-	npctalk "I can't believe I lost to you!";
+	npctalk "我不敢相信我輸給你了！";
 	sleep 3000;
-	npctalk "To be embarrassed in front of the Kafra with the luscious legs...!";
+	npctalk "竟然在有著誘人雙腿的卡普拉面前出醜...！";
 	sleep 3000;
-	npctalk "Sob.. This can't be happening!";
+	npctalk "嗚.. 這不可能發生！";
 	sleep 2000;
-	npctalk "I shouldn't have to go through this depression alone!";
+	npctalk "我不應該獨自承受這種沮喪！";
 	sleep 2000;
-	npctalk "I'll have to go to see the Kafra gal' in Prontera hu-hu-hu...";
+	npctalk "我得去看看普隆德拉的卡普拉姐姐 呼呼呼...";
 	sleep 1000;
 	hideonnpc instance_npcname("Geffen Gangster#n1");
 	sleep 1000;
@@ -2642,13 +2642,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Gangster#n1");
 	sleep 1000;
-	npctalk "This is my real ability!";
+	npctalk "這才是我的真正實力!";
 	sleep 3000;
-	npctalk "Hu hu... That... Kafra...!";
+	npctalk "呼呼... 那個... 卡普拉...!";
 	sleep 3000;
-	npctalk "I want to go back to my Kafra~!!";
+	npctalk "我想回到我的卡普拉那邊~!!";
 	sleep 3000;
-	npctalk "Hu hu hu hu hu...";
+	npctalk "呼 呼 呼 呼 呼...";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2658,17 +2658,17 @@ OnVictory:
 end;
 
 OnActivate:
-	npctalk "Just you wait, you'll be immediately disabled!";
+	npctalk "給我等著，我會立刻讓你失去作用!";
 	sleep 3000;
-	npctalk "I will beat you down today!";
+	npctalk "今天我要打倒你!";
 	sleep 3000;
-	npctalk "Give me your zeny!";
+	npctalk "把你的錢交出來!";
 	sleep 3000;
-	npctalk "I'll send you crying home!";
+	npctalk "我會把你打得哭著回家!";
 	sleep 3000;
-	npctalk "I will make you experience my 20 years of bullying.";
+	npctalk "我會讓你體驗我20年來的霸凌。";
 	sleep 3000;
-	npctalk "You're dead!";
+	npctalk "你死定了!";
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2676,15 +2676,15 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Bully#n1");
 	sleep 1000;
-	npctalk "I can't believe you beat me...";
+	npctalk "真不敢相信你打敗了我...";
 	sleep 3000;
-	npctalk "It can't be!";
+	npctalk "不可能!";
 	sleep 3000;
-	npctalk "This can't be! I only wanted to get more zeny!";
+	npctalk "不可能！我只是想多賺點錢!";
 	sleep 3000;
-	npctalk "Now I'll be the laughing stock of all of Geffen!";
+	npctalk "現在我會成為吉芬所有人的笑柄!";
 	sleep 3000;
-	npctalk "Ah! Ahhh!! It can't be!!!";
+	npctalk "啊！啊啊！！不可能!!!";
 	sleep 1000;
 	hideonnpc instance_npcname("Geffen Bully#n1");
 	sleep 1000;
@@ -2694,13 +2694,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Bully#n1");
 	sleep 1000;
-	npctalk "You! How much zeny do you have left?";
+	npctalk "你！你還剩下多少錢？";
 	sleep 3000;
-	npctalk "You messed with me once before!";
+	npctalk "你之前就惹過我一次了!";
 	sleep 3000;
-	npctalk "And now I've left you speechless!";
+	npctalk "現在我讓你啞口無言!";
 	sleep 3000;
-	npctalk "Never show your face in Geffen again!";
+	npctalk "永遠不要再在吉芬露面!";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2711,17 +2711,17 @@ OnVictory:
 end;
 
 OnActivate:
-	npctalk "There are so many people gathered here.";
+	npctalk "這裡聚集了好多人。";
 	sleep 3000;
-	npctalk "I thought there'd be something good to steal here";
+	npctalk "我以為這裡會有好東西可以偷";
 	sleep 3000;
-	npctalk "But I can't steal anything because of all the attention it'll cause.";
+	npctalk "但因為太引人注目了，我什麼都偷不到。";
 	sleep 3000;
-	npctalk "Ah... This is no good...";
+	npctalk "啊... 這可不行...";
 	sleep 2000;
-	npctalk "I guess I'll just participate in the tournament...";
+	npctalk "我想我還是參加比賽好了...";
 	sleep 2000;
-	npctalk "Well~! Let's win anyway!";
+	npctalk "好啦~! 總之贏就對了!";
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2729,17 +2729,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Shoplifter#n1");
 	sleep 1000;
-	npctalk "Oh my god... I was defeated.";
+	npctalk "我的天啊... 我被打敗了。";
 	sleep 2000;
-	npctalk "I have been spending too much time stealing.";
+	npctalk "我花了太多時間在偷東西了。";
 	sleep 2000;
-	npctalk "My battle power has been reduced.";
+	npctalk "我的戰鬥力已經下降了。";
 	sleep 3000;
-	npctalk "Ah... It can't be...";
+	npctalk "啊... 不可能吧...";
 	sleep 2000;
-	npctalk "I'll need to train more if I want to keep my position as Guild Leader...";
+	npctalk "如果我想保住我公會會長的位置，我就需要更加努力訓練...";
 	sleep 3000;
-	npctalk "Fine, I'm outta here!";
+	npctalk "好吧，我走了!";
 	sleep 1000;
 	hideonnpc instance_npcname("Geffen Shoplifter#n1");
 	sleep 1000;
@@ -2749,13 +2749,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Shoplifter#n1");
 	sleep 1000;
-	npctalk "I know, I'm really good.";
+	npctalk "我知道，我真的很棒。";
 	sleep 3000;
-	npctalk "Okay! Time to keep winning~!!";
+	npctalk "好！繼續贏下去吧~!!";
 	sleep 3000;
-	npctalk "I should take as many rewards as possible~!";
+	npctalk "我應該盡可能多拿點獎勵~!";
 	sleep 3000;
-	npctalk "You should go home~ Bye~!";
+	npctalk "你該回家了~ 掰~!";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2766,18 +2766,18 @@ end;
 
 OnActivate:
 	enablenpc instance_npcname("Faymont#1");
-	npctalk "Well would you look at that... this competitor seems...";
+	npctalk "嗯，看看這個... 這個競爭者似乎...";
 	sleep 2000;
-	npctalk "Like he's just gotten lucky up until now!";
+	npctalk "就像到目前為止只是走運而已!";
 	sleep 3000;
-	npctalk "I really don't want to get my hands dirty.";
+	npctalk "我真的不想弄髒我的手。";
 	sleep 3000;
-	npctalk "I'll handle this in a sophisticated way...";
+	npctalk "我會用一種老練的方式處理...";
 	sleep 3000;
-	npctalk "Ahem... Looks like we're about to start now.";
+	npctalk "咳咳... 看起來我們要開始了。";
 	sleep 3000;
-	npctalk "Maybe if I finish this quickly, I can buy that new headdress...";
-	npctalk "Come on!", instance_npcname("Prontera Spectator#a1");
+	npctalk "如果我能快點結束，也許我就能買到那個新的頭飾了...";
+	npctalk "來吧!", instance_npcname("Prontera Spectator#a1");
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2785,17 +2785,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Faymont#1");
 	sleep 1000;
-	npctalk "How could... How could I lose?!...";
+	npctalk "怎麼可能... 我怎麼可能輸了？！...";
 	sleep 2000;
-	npctalk "And to the one "+('sex ? "guy" : "girl")+" with no taste...";
+	npctalk "而且還是輸給那個沒品味的"+('sex ? "guy" : "girl")+"...";
 	sleep 2000;
-	npctalk "How shameful...";
+	npctalk "太丟臉了...";
 	sleep 2000;
-	npctalk "My fans will be disappointed at me for losing...";
+	npctalk "我的粉絲會因為我輸了而對我感到失望...";
 	sleep 3000;
-	npctalk "Ahh.... What's the quickest way out of here?";
+	npctalk "啊.... 離開這裡最快的方法是什麼？";
 	sleep 3000;
-	npctalk "I can't show my face around here any longer...";
+	npctalk "我不能再在這裡露面了...";
 	sleep 1000;
 	hideonnpc instance_npcname("Faymont#1");
 	sleep 1000;
@@ -2806,13 +2806,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Faymont#1");
 	sleep 1000;
-	npctalk "Can you see the difference between you and me? Noble and shallow.";
+	npctalk "你看得出你和我之間的差別嗎？高尚和淺薄。";
 	sleep 3000;
-	npctalk "This tournament is pointless.";
+	npctalk "這場錦標賽毫無意義。";
 	sleep 3000;
-	npctalk "What kind of shallow man will I have to fight with next?";
+	npctalk "接下來我會和什麼樣的淺薄之人戰鬥呢？";
 	sleep 3000;
-	npctalk "No matter, I'll just prepare for the next match.";
+	npctalk "沒關係，我只要為下一場比賽做準備就好。";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2823,20 +2823,20 @@ end;
 
 OnActivate:
 	enablenpc instance_npcname("Ordre#1");
-	npctalk "One! Two! One! Two!";
+	npctalk "一！二！一！二！";
 	sleep 2000;
-	npctalk "Let's climb the ladder one step at a time!";
+	npctalk "讓我們一步一步爬上梯子！";
 	sleep 2000;
-	npctalk "I've been training so hard!";
+	npctalk "我一直都很努力地訓練！";
 	sleep 3000;
-	npctalk "I'm not about to give up now!";
+	npctalk "我現在不能放棄！";
 	sleep 3000;
-	npctalk "I can't lose after coming so far";
+	npctalk "都走到這一步了，我不能輸";
 	sleep 3000;
-	npctalk "Now~! Let's do our best for those in the audience!";
+	npctalk "現在～！讓我們為了觀眾們盡力吧！";
 	sleep 3000;
-	npctalk "Shall we begin?";
-	npctalk "What? Is this really the level of competition?",instance_npcname("Chaos#a2");
+	npctalk "要開始了嗎？";
+	npctalk "什麼？這真的是比賽的水準嗎？",instance_npcname("Chaos#a2");
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -2844,17 +2844,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Ordre#1");
 	sleep 1000;
-	npctalk "Defeated...";
+	npctalk "被打敗了...";
 	sleep 2000;
-	npctalk "I need more practice...";
+	npctalk "我需要更多的練習...";
 	sleep 2000;
-	npctalk "I need more training...";
+	npctalk "我需要更多的訓練...";
 	sleep 3000;
-	npctalk "I'll train twice as hard as before!";
+	npctalk "我要比以前更努力地訓練兩倍！";
 	sleep 3000;
-	npctalk "I must start over.";
+	npctalk "我必須重新開始。";
 	sleep 2000;
-	npctalk "Let's go.";
+	npctalk "我們走吧。";
 	sleep 1000;
 	hideonnpc instance_npcname("Ordre#1");
 	sleep 1000;
@@ -2865,13 +2865,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Ordre#1");
 	sleep 1000;
-	npctalk "I won!";
+	npctalk "我贏了！";
 	sleep 3000;
-	npctalk "As long as you try... you can get what you want!";
+	npctalk "只要你嘗試...你就能得到你想要的！";
 	sleep 3000;
-	npctalk "Let's show respect to this competition!";
+	npctalk "讓我們尊重這場比賽！";
 	sleep 3000;
-	npctalk "I'm ready for the next match!!";
+	npctalk "我已經準備好迎接下一場比賽了！！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2882,19 +2882,19 @@ OnVictory:
 end;
 
 OnActivate:
-	npctalk "You've gotten this far.";
+	npctalk "你已經走到這一步了。";
 	sleep 2000;
-	npctalk "I imagine by now the rest of the competitors are quite strong";
+	npctalk "我想現在其他的競爭者應該都很強。";
 	sleep 3000;
-	npctalk "But I did not build my reputation for nothing!";
+	npctalk "但我並不是浪得虛名！";
 	sleep 3000;
-	npctalk "Fear my Bunny Band!";
+	npctalk "害怕我的兔耳髮圈吧！";
 	sleep 3000;
-	npctalk "You are but an obstacle in my way!";
+	npctalk "你只是我路上的絆腳石！";
 	sleep 1000;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 	sleep 2000;
-	npctalk "You will be sacrificed on my path to victory!";
+	npctalk "你將會成為我通往勝利的祭品！";
 	sleep 1000;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 	sleep 1000;
@@ -2904,17 +2904,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Blut Hase#1");
 	sleep 1000;
-	npctalk "I will not lose!";
+	npctalk "我不會輸的！";
 	sleep 1000;
-	npctalk "My reputation... My popularity...";
+	npctalk "我的名聲...我的人氣...";
 	sleep 3000;
-	npctalk "I will lose them both...";
+	npctalk "我將會失去它們...";
 	sleep 3000;
-	npctalk "I cannot accept this result!";
+	npctalk "我無法接受這個結果！";
 	sleep 3000;
-	npctalk "I will regain my reputation!";
+	npctalk "我會重拾我的名聲！";
 	sleep 2000;
-	npctalk "Next time I will be the winner!";
+	npctalk "下次我會是贏家！";
 	sleep 1000;
 	hideonnpc instance_npcname("Blut Hase#1");
 	sleep 1000;
@@ -2925,13 +2925,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Blut Hase#1");
 	sleep 1000;
-	npctalk "In terms of reputation or popularity...";
+	npctalk "無論是名聲還是人氣...";
 	sleep 3000;
-	npctalk "It was impossible for me to lose!";
+	npctalk "我都不可能輸的！";
 	sleep 3000;
-	npctalk "I will be known as Ultra Rabbit's Blood instead of Rabbit's Bloody Ear now!";
+	npctalk "我將會被稱為終極兔子的血，而不是兔子的血腥耳朵了！";
 	sleep 3000;
-	npctalk "Ha ha ha ha ha~!!";
+	npctalk "哈哈哈哈哈～！！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2940,17 +2940,17 @@ OnVictory:
 1@ge_st,114,50,4	script	Kuro Akuma#1	675,{
 end;
 OnActivate:
-	npctalk "Finally the 7th game has started ~!";
+	npctalk "終於第7場比賽開始了～！";
 	sleep 2000;
-	npctalk "You've never met anyone as evil as me ~!";
+	npctalk "你從來沒遇過像我這麼邪惡的人～！";
 	sleep 3000;
-	npctalk "You are lucky~!";
+	npctalk "你很幸運～！";
 	sleep 3000;
-	npctalk "This will be a good experience for you~!";
+	npctalk "這對你來說會是個很好的經驗～！";
 	sleep 3000;
-	npctalk "Nobody who's faced me has ever survived~!";
+	npctalk "沒有人面對我還能活下來的～！";
 	sleep 3000;
-	npctalk "I will destroy you if I must~!";
+	npctalk "如果必要的話，我會摧毀你～！";
 	sleep 1000;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 	sleep 1000;
@@ -2960,15 +2960,15 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Kuro Akuma#1");
 	sleep 1000;
-	npctalk "Oh my god...";
+	npctalk "我的天啊...";
 	sleep 3000;
-	npctalk "I am The Devil's Tooth...";
+	npctalk "我是惡魔之牙...";
 	sleep 2000;
-	npctalk "And I have lost this match...";
+	npctalk "而我輸掉了這場比賽...";
 	sleep 3000;
 	npctalk "Yach, yikes, ah, ah, ah! Yikes ah, ah, ah!!";
 	sleep 3000;
-	npctalk "I can't lose! I'll have my revenge!";
+	npctalk "我不能輸！我會復仇的！";
 	sleep 2000;
 	hideonnpc instance_npcname("Kuro Akuma#1");
 	sleep 1000;
@@ -2979,13 +2979,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Kuro Akuma#1");
 	sleep 1000;
-	npctalk "How is it~! My Power~!";
+	npctalk "如何啊~! 我的力量~! ";
 	sleep 3000;
-	npctalk "I took pity on you and decided not to send you to hell~!";
+	npctalk "我可憐你，決定不送你去地獄~! ";
 	sleep 3000;
-	npctalk "You should appreciate that!";
+	npctalk "你應該感謝我！";
 	sleep 3000;
-	npctalk "Now, I shall prepare for my next match~!";
+	npctalk "現在，我將準備我的下一場比賽~! ";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -2995,17 +2995,17 @@ OnVictory:
 1@ge_st,114,50,4	script	Ifodes#1	676,{
 end;
 OnActivate:
-	npctalk "At long last, the 8th game has started.";
+	npctalk "終於，第 8 場比賽開始了。";
 	sleep 3000;
-	npctalk "No one can pierce my defenses!";
+	npctalk "沒有人可以穿透我的防禦！";
 	sleep 3000;
-	npctalk "But I can surely get past yours.";
+	npctalk "但我一定能突破你的防禦。";
 	sleep 2000;
-	npctalk "Therefore, you stand no chance!";
+	npctalk "因此，你毫無勝算！";
 	sleep 2000;
-	npctalk "Once the match has started, your laughter will turn into tears!";
+	npctalk "一旦比賽開始，你的笑聲就會變成眼淚！";
 	sleep 2000;
-	npctalk "Shall we start?";
+	npctalk "我們要開始了嗎？";
 	sleep 1000;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 	sleep 1000;
@@ -3015,15 +3015,15 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Ifodes#1");
 	sleep 1000;
-	npctalk "I will not lose this tournament!";
+	npctalk "我不會輸掉這次比賽！";
 	sleep 3000;
-	npctalk "This is nonsense.";
+	npctalk "這太荒謬了。";
 	sleep 2000;
-	npctalk "How could this happen?";
+	npctalk "這怎麼可能發生？";
 	sleep 3000;
-	npctalk "I can't understand!";
+	npctalk "我無法理解！";
 	sleep 3000;
-	npctalk "Arrgggh!";
+	npctalk "啊啊啊！";
 	sleep 2000;
 	hideonnpc instance_npcname("Ifodes#1");
 	sleep 1000;
@@ -3034,11 +3034,11 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Ifodes#1");
 	sleep 1000;
-	npctalk "You can't penetrate my defense!";
+	npctalk "你無法穿透我的防禦！";
 	sleep 3000;
-	npctalk "You can't even protect yourself from my powerful attacks!";
+	npctalk "你甚至無法保護自己免受我強大的攻擊！";
 	sleep 3000;
-	npctalk "Wahahaha~!!";
+	npctalk "哇哈哈哈~!!";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3048,36 +3048,36 @@ OnVictory:
 1@ge_st,114,50,4	script	Licheniyes#1	677,{
 end;
 OnActivate:
-	npctalk "Ho ho ho~!!";
+	npctalk "呵呵呵~!!";
 	sleep 3000;
-	npctalk "The competitor of the 9th match looks scary~!";
+	npctalk "第 9 場比賽的競爭者看起來很可怕~! ";
 	sleep 3000;
-	npctalk "You don't scare me though~!";
+	npctalk "不過你嚇不倒我~! ";
 	sleep 2000;
-	npctalk "I'm a lady~!";
+	npctalk "我是一位女士~! ";
 	sleep 2000;
-	npctalk "But once this match starts...!";
+	npctalk "但一旦比賽開始...！";
 	sleep 2000;
-	npctalk "*Giggling*... I will bite you!";
+	npctalk "*咯咯笑*... 我會咬你的！";
 	sleep 1000;
 	npctalk "good horror players ...", instance_npcname("Payon Spectator#a1");
 	sleep 1000;
-	npctalk "Do not be afraid ah, dark horse contestant!", instance_npcname("Prontera Spectator#a1");
+	npctalk "不要害怕啊，黑馬選手！", instance_npcname("Prontera Spectator#a1");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Licheniyes#1");
 	sleep 1000;
-	npctalk "You try to beat me with cruelty, a lady like me...";
+	npctalk "你試圖用殘酷來擊敗我，像我這樣的女士...";
 	sleep 3000;
-	npctalk "I am very sad...";
+	npctalk "我很難過...";
 	sleep 2000;
-	npctalk "Sob...";
+	npctalk "嗚嗚...";
 	sleep 3000;
-	npctalk "But, next time we meet...";
+	npctalk "但是，下次我們見面...";
 	sleep 3000;
-	npctalk "I will destroy you with little effort!";
+	npctalk "我會毫不費力地摧毀你！";
 	sleep 1000;
 	hideonnpc instance_npcname("Licheniyes#1");
 	sleep 1000;
@@ -3088,13 +3088,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Licheniyes#1");
 	sleep 1000;
-	npctalk "Oh ho ho ho~~! I knew I would win~!";
+	npctalk "噢呵呵呵呵~~！我就知道我會贏~！";
 	sleep 3000;
-	npctalk "Oh my! Oh my! I am very sorry~!";
+	npctalk "哎呀！哎呀！我非常抱歉~! ";
 	sleep 3000;
-	npctalk "Ah, Ah~ I need to prepare next match!";
+	npctalk "啊，啊~ 我需要準備下一場比賽！";
 	sleep 3000;
-	npctalk "I'm so giddy to find out who I'm up against next!~";
+	npctalk "我很高興能知道我的下一個對手是誰！~";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3104,19 +3104,19 @@ OnVictory:
 1@ge_st,114,50,4	script	Odoric#1	678,{
 end;
 OnActivate:
-	npctalk "Lu lu~ What a fun tournament!";
+	npctalk "嚕嚕~ 多麼有趣的比賽啊！";
 	sleep 3000;
-	npctalk "Dance~ Dance~ Bewitching dance~!";
+	npctalk "跳舞~ 跳舞~ 迷人的舞蹈~！";
 	sleep 3000;
-	npctalk "Everyone is mesmerized by my magical dance!";
+	npctalk "每個人都被我神奇的舞蹈迷住了！";
 	sleep 3000;
-	npctalk "You will be captured by my charm~!";
+	npctalk "你將被我的魅力所俘虜~! ";
 	sleep 2000;
-	npctalk "Now, feast on my magical dance!";
+	npctalk "現在，盡情享受我神奇的舞蹈吧！";
 	sleep 2000;
-	npctalk "Lah, Lah, Lah, Lah~~!";
+	npctalk "啦，啦，啦，啦~~！";
 	sleep 1000;
-	npctalk "How beautiful!", instance_npcname("Veins Spectator#a1");
+	npctalk "多麼美麗！", instance_npcname("Veins Spectator#a1");
 	sleep 1000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
@@ -3124,17 +3124,17 @@ OnActivate:
 OnDefeat:
 	hideoffnpc instance_npcname("Odoric#1");
 	sleep 1000;
-	npctalk "Sob...";
+	npctalk "嗚嗚...";
 	sleep 3000;
-	npctalk "I lost, even though I did my best...";
+	npctalk "我輸了，即使我已經盡力了...";
 	sleep 2000;
-	npctalk "My charming poses...";
+	npctalk "我迷人的姿勢...";
 	sleep 3000;
-	npctalk "They didn't work... Sob...";
+	npctalk "它們沒有用... 嗚嗚...";
 	sleep 3000;
-	npctalk "I'm so sad that I lost here...";
+	npctalk "我為在這裡輸掉而感到非常難過...";
 	sleep 2000;
-	npctalk "I have to leave~!";
+	npctalk "我必須離開了~! ";
 	sleep 1000;
 	hideonnpc instance_npcname("Odoric#1");
 	sleep 1000;
@@ -3145,13 +3145,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Odoric#1");
 	sleep 1000;
-	npctalk "Even you... Against my fascinating dance moves...";
+	npctalk "連你都... 抵擋不了我迷人的舞步嗎...";
 	sleep 3000;
-	npctalk "You're nothing special~!!";
+	npctalk "你沒什麼特別的啦～！！";
 	sleep 3000;
-	npctalk "You did a good job getting to this point~!!";
+	npctalk "你能走到這裡已經很棒了～！！";
 	sleep 3000;
-	npctalk "I need to get ready for my next match now~";
+	npctalk "我得為我的下一場比賽做準備了～";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3161,36 +3161,36 @@ OnVictory:
 1@ge_st,114,50,4	script	Ju#1	679,{
 end;
 OnActivate:
-	npctalk "Another match has started...";
+	npctalk "另一場比賽開始了...";
 	sleep 3000;
-	npctalk "A real battle is a serious matter...";
+	npctalk "真正的戰鬥是嚴肅的事情...";
 	sleep 3000;
-	npctalk "It is something to be feared!";
+	npctalk "那是令人畏懼的！";
 	sleep 3000;
-	npctalk "All of these novices who spent their time only training";
+	npctalk "所有這些只花時間訓練的菜鳥們";
 	sleep 3000;
-	npctalk "They will never know the true meaning of battle!";
+	npctalk "他們永遠不會知道戰鬥的真諦！";
 	sleep 3000;
-	npctalk "I will make sure to handle them as fast as possible.";
+	npctalk "我會確保盡快解決他們。";
 	sleep 3000;
-	npctalk "My heart is beating so fast! I'm so nervous!",instance_npcname("Lydia#a2");
+	npctalk "我的心跳好快！我好緊張！",instance_npcname("莉迪亞#a2");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Ju#1");
 	sleep 1000;
-	npctalk "Sob... defeated...";
+	npctalk "嗚... 戰敗了...";
 	sleep 3000;
-	npctalk "You're stronger than I thought...";
+	npctalk "你比我想像的還要強...";
 	sleep 3000;
-	npctalk "You must have experienced many cruel battles.";
+	npctalk "你一定經歷過許多殘酷的戰鬥。";
 	sleep 3000;
-	npctalk "Sob... Victory was the only thing in my mind...";
+	npctalk "嗚... 勝利是我腦海中唯一的東西...";
 	sleep 3000;
-	npctalk "I wish you luck on your following matches.";
+	npctalk "祝你在接下來的比賽中好運。";
 	sleep 3000;
-	npctalk "You better not lose after defeating me!";
+	npctalk "擊敗我之後，你最好別輸了！";
 	sleep 2000;
 	hideonnpc instance_npcname("Ju#1");
 	sleep 1000;
@@ -3201,13 +3201,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Ju#1");
 	sleep 1000;
-	npctalk "This is not a game.";
+	npctalk "這不是一場遊戲。";
 	sleep 3000;
-	npctalk "This is real battle.";
+	npctalk "這是真正的戰鬥。";
 	sleep 3000;
-	npctalk "Yeahhhh !!";
+	npctalk "耶～！！";
 	sleep 3000;
-	npctalk "The real game is battle!";
+	npctalk "真正的遊戲是戰鬥！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3217,48 +3217,48 @@ OnVictory:
 1@ge_st,114,50,4	script	Dwigh#1	680,{
 end;
 OnActivate:
-	npctalk "Semi-Finals huh...";
+	npctalk "準決賽啊...";
 	sleep 2000;
-	npctalk "I can see the end...";
+	npctalk "我可以看到終點了...";
 	sleep 3000;
-	npctalk "You must be a decent fighter, making it all the way here...";
+	npctalk "你能一路走到這裡，一定是一位像樣的戰士...";
 	sleep 3000;
-	npctalk "But I came to here for my students.";
+	npctalk "但我為了我的學生來到這裡。";
 	sleep 3000;
-	npctalk "People who are important to me are watching this battle!";
+	npctalk "對我重要的人正在觀看這場戰鬥！";
 	sleep 3000;
-	npctalk "Wow, teacher!",instance_npcname("Magic Academy Student#22");
-	npctalk "Teacher, show 'em what you've got!",instance_npcname("Magic Academy Student#3");
-	npctalk "What a great teacher, I want to be like her!",instance_npcname("Magic Academy Student#4");
+	npctalk "哇，老師！",instance_npcname("魔法學院學生#22");
+	npctalk "老師，讓他們看看你的實力！",instance_npcname("魔法學院學生#3");
+	npctalk "多麼偉大的老師，我想變得像她一樣！",instance_npcname("魔法學院學生#4");
 	sleep 2000;
-	npctalk "I can't imagine teacher losing here~!",instance_npcname("Magic Academy Student#1");
-	npctalk "Everyone cheer loudly for our teacher!",instance_npcname("Magic Academy Student#5");
+	npctalk "我無法想像老師會在這裡輸掉～！",instance_npcname("魔法學院學生#1");
+	npctalk "大家大聲為我們的老師加油！",instance_npcname("魔法學院學生#5");
 	sleep 2000;
-	npctalk "I can't lose in front of my students!";
+	npctalk "我不能在我的學生面前輸掉！";
 	sleep 2000;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	sleep 1000;
-	npctalk "Ahh!~ Go teacher~!!",instance_npcname("Magic Academy Student#5");
+	npctalk "啊！～加油老師～！！",instance_npcname("魔法學院學生#5");
 	sleep 1000;
-	npctalk "Go! Go! Teacher~!!",instance_npcname("Magic Academy Student#22");
-	npctalk "Teacher! She's the one~!!",instance_npcname("Magic Academy Student#3");
-	npctalk "If she can't do it~!!",instance_npcname("Magic Academy Student#4");
-	npctalk "No one can~!!",instance_npcname("Magic Academy Student#1");
-	npctalk "Teacher~!!",instance_npcname("Magic Academy Student#5");
+	npctalk "加油！加油！老師～！！",instance_npcname("魔法學院學生#22");
+	npctalk "老師！就是她～！！",instance_npcname("魔法學院學生#3");
+	npctalk "如果她做不到～！！",instance_npcname("魔法學院學生#4");
+	npctalk "就沒有人能做到了～！！",instance_npcname("魔法學院學生#1");
+	npctalk "老師～！！",instance_npcname("魔法學院學生#5");
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Dwigh#1");
 	sleep 1000;
-	npctalk "If I had just won one more game, I could have been in the finals...";
+	npctalk "如果我再贏一場比賽，我就能進入決賽了...";
 	sleep 3000;
-	npctalk "I'm ashamed for losing in front of my students...";
+	npctalk "我很慚愧在我的學生面前輸掉...";
 	sleep 3000;
-	npctalk "But the competition was too strong.";
+	npctalk "但競爭太激烈了。";
 	sleep 3000;
-	npctalk "I admit defeat.";
+	npctalk "我承認失敗。";
 	sleep 3000;
-	npctalk "According to my students, Fenrir's strength should still be above me, I wish you luck.";
+	npctalk "根據我的學生說法，芬里爾的力量應該仍然在我之上，祝你好運。";
 	sleep 2000;
 	hideonnpc instance_npcname("Dwigh#1");
 	sleep 1000;
@@ -3269,13 +3269,13 @@ OnDefeat:
 OnVictory:
 	hideoffnpc instance_npcname("Dwigh#1");
 	sleep 1000;
-	npctalk "Ugh... It was a tough match.";
+	npctalk "嗚... 這是一場艱苦的比賽。";
 	sleep 3000;
-	npctalk "But I am happy to have won.";
+	npctalk "但我很高興能贏。";
 	sleep 3000;
-	npctalk "I will do my best for my students.";
+	npctalk "我會為我的學生盡我所能。";
 	sleep 3000;
-	npctalk "I have just one more match to win!";
+	npctalk "我只剩下最後一場比賽要贏了！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3296,19 +3296,19 @@ OnDefeat:
 
 OnTalk1:
     cutin "paycana_a", 2;
-    npctalk "You~ I've never heard about you before~!";
+    npctalk "你～！我以前從未聽說過你～！";
     sleep2 4000;
-    npctalk "You must know, all of the spectators are cheering for me!";
+    npctalk "你一定知道，所有的觀眾都在為我歡呼！";
     sleep2 4000;
-    npctalk "If you want to keep your life you should run now~!";
+    npctalk "如果你想保住性命，現在就該逃跑～！";
     sleep2 4000;
-    npctalk "Unless you want to experience the strength of my masterpiece, Alphonse!";
+    npctalk "除非你想體驗我的傑作，阿爾方斯的實力！";
     sleep2 4000;
-    npctalk "You HAVE seen my Alphonse, right?";
+    npctalk "你應該看過我的阿爾方斯吧？";
     sleep2 4000;
     donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
     sleep2 1000;
-    npctalk "Once this match starts, you will see his full power!";
+    npctalk "一旦比賽開始，你就會看到他的全部力量！";
     sleep2 2000;
     cutin "", 255;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
@@ -3316,15 +3316,15 @@ OnTalk1:
 
 OnTalk2:
     cutin "paycana_b ", 2;
-    npctalk "I actually lost...";
+    npctalk "我竟然輸了...";
     sleep2 3000;
-    npctalk "Alphonse... I gave you my heart and soul...";
+    npctalk "阿爾方斯... 我把我的心和靈魂都給了你...";
     sleep2 3000;
-    npctalk "I was supposed to make it to the finals...";
+    npctalk "我本來應該能進入決賽的...";
     sleep2 3000;
-    npctalk "And face Fenris Fenrir...";
+    npctalk "然後面對芬里絲·芬里爾...";
     sleep2 3000;
-    npctalk "I wanted to fight her so bad!";
+    npctalk "我超想跟她打一場的！";
     sleep2 2000;
     cutin "", 255;
 	hideonnpc instance_npcname("Fay Kanavian#1");
@@ -3336,13 +3336,13 @@ OnTalk2:
 OnVictory:
 	hideoffnpc instance_npcname("Fay Kanavian#1");
 	sleep 1000;
-	npctalk "My abilities are amazing~!";
+	npctalk "我的能力超棒的～！";
 	sleep 3000;
-	npctalk "This tournament is but a game to me, and not at all important.";
+	npctalk "這場錦標賽對我來說只是一場遊戲，一點都不重要。";
 	sleep 3000;
-	npctalk "But Fenrir has reached the finals by winning every single round...";
+	npctalk "但是芬里爾靠著贏下每一輪比賽進入了決賽...";
 	sleep 3000;
-	npctalk "I will defeat her and win this tournament!";
+	npctalk "我會擊敗她，贏得這場錦標賽！";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3389,41 +3389,41 @@ OnDefeat:
 
 OnTalk1:
     cutin "fenrir_b", 1;
-    npctalk "The final match...";
+    npctalk "最終對決...";
     sleep2 1000;
-    npctalk "Fenrir is going to win without a doubt~!", instance_npcname("Payon Spectator#a1");
+    npctalk "毫無疑問芬里爾會贏的～！", instance_npcname("Payon Spectator#a1");
     sleep2 1000;
-    npctalk "I am Fenris Fenrir.";
+    npctalk "我是芬里絲·芬里爾。";
     sleep2 1000;
-    npctalk "Hey, do your best!",instance_npcname("Iris#a2");
+    npctalk "嘿，盡你所能！",instance_npcname("Iris#a2");
     sleep2 2000;
-    npctalk "You... made it here.";
+    npctalk "你... 走到這裡了。";
     sleep2 2000;
-    npctalk "I am sure that this will be a hard fought match.";
+    npctalk "我相信這會是一場艱苦的比賽。";
     sleep2 1000;
-    npctalk "Wow! I'm so excited!",instance_npcname("Lydia#a2");
-    npctalk "Fenrir, please give me an autograph!", instance_npcname("Prontera Spectator#a2");
+    npctalk "哇！我好興奮！",instance_npcname("Lydia#a2");
+    npctalk "芬里爾，請給我簽名！", instance_npcname("Prontera Spectator#a2");
     sleep2 2000;
-    npctalk "I will do my best to fight you fairly.";
+    npctalk "我會盡我所能公平地與你戰鬥。";
 	sleep2 2000;
-    npctalk "Then, should we start the final match?";
+    npctalk "那麼，我們該開始決賽了嗎？";
     cutin "", 255;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnTalk2:
     cutin "fenrir_a", 1;
-    npctalk "Uh... I am defeated.";
+    npctalk "呃... 我被打敗了。";
     sleep2 2000;
-    npctalk "How did you get to be so strong?";
+    npctalk "你怎麼變得這麼強？";
     sleep2 3000;
-    npctalk "I am completely defeated...";
+    npctalk "我完全被打敗了...";
     sleep2 3000;
-    npctalk "This world is full of surprises...";
+    npctalk "這個世界充滿了驚喜...";
     sleep2 3000;
-    npctalk "Congratulations on your victory "+'charname$+".";
+    npctalk "恭喜你獲得勝利 " + 'charname$' + "。";
     sleep2 2000;
-    npctalk "However, next time, I won't lose!";
+    npctalk "但是，下次我不會輸的！";
     sleep2 2000;
     cutin "", 255;
 	if (checkquest(9307) != -1)
@@ -3436,13 +3436,13 @@ OnTalk2:
 OnVictory:
 	hideoffnpc instance_npcname("Fenrir#f");
 	sleep 1000;
-	npctalk "Thank you~ It was a good match.";
+	npctalk "謝謝～ 這是一場很棒的比賽。";
 	sleep 3000;
-	npctalk "It feels good to be the winner.";
+	npctalk "當贏家的感覺真好。";
 	sleep 3000;
-	npctalk "I hope to see you again.";
+	npctalk "我希望再次見到你。";
 	sleep 3000;
-	npctalk "I have to go... My friends are waiting for me.";
+	npctalk "我得走了... 我的朋友們在等我。";
 	sleep 5000;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
@@ -3498,7 +3498,7 @@ OnEnable:
 	hideoffnpc instance_npcname("Tournament Guide#gefMT");
 	hideoffnpc instance_npcname("Geffen Academy Master");
 	sleep 1000;
-	npctalk "The other contestants want to congratulate you on winning as well!",instance_npcname("Fenrir#q1");
+	npctalk "其他的參賽者也想恭喜你獲勝！",instance_npcname("Fenrir#q1");
 	end;
 
 OnInstanceInit:
@@ -3715,7 +3715,7 @@ OnLoseRound:
 			break;
 	}
 	
-	npctalk ""+.@defeat$+" has won the "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" Round of Group A!",instance_npcname("Geffen Academy Master");
+	npctalk ""+.@defeat$+" 贏得了 " + callfunc("F_GetNumSuffix",('GMT_1QUE-10')) + " A 組的回合！",instance_npcname("Geffen Academy Master");
 	
 		switch ('GMT_1QUE) {
 			case 11:
@@ -3807,10 +3807,10 @@ OnLoseRound:
 	if(checkquest(9314) != -1) {
 		cutin "ep14_roki01.bmp", 2;
 		mes .@n$;
-		mes "That's a pretty good score.";
+		mes "那是個相當不錯的分數。";
 		next;
 		mes .@n$;
-		mes "Please take this present.";
+		mes "請收下這份禮物。";
 		setarray .items,501,502,503,504,505,506,608,607;
 		getitem .items[rand(0,7)],1;
 		erasequest 9314;
@@ -3820,8 +3820,8 @@ OnLoseRound:
 	
 	cutin "ep14_roki01", 2;
 	mes .@n$;
-	mes "Let's take a rain check on our match.";
-	mes "We'll fight next time we meet...";
+	mes "我們改天再比吧。";
+	mes "我們下次見面再戰...";
 	close2;
 	cutin "", 255;
 	end;
@@ -3843,10 +3843,10 @@ OnEnable:
 	if(checkquest(9312) != -1) {
 		cutin "lydia_a.bmp",2;
 		mes .@n$;
-		mes "Good game~!";
+		mes "好遊戲～！";
 		next;
 		mes .@n$;
-		mes "I want to give you a reward even if you lost~!";
+		mes "即使你輸了，我也想給你一個獎勵～！";
 		setarray .items,501,502,503,504,505,506,608,607;
 		getitem .items[rand(0,7)],1;
 		erasequest 9312;
@@ -3855,7 +3855,7 @@ OnEnable:
 	}
 	cutin "lydia_a.bmp",2;
 	mes .@n$;
-	mes "I hope to see you again.";
+	mes "我希望再次見到你。";
 	close2;
 	cutin "", 255;
 	end;
@@ -3876,12 +3876,12 @@ OnEnable:
 	if(checkquest(9310) != -1) {
 		cutin "hero_iris_01.bmp",2;
 		mes .@n$;
-		mes "I enjoyed watching your round~";
-		mes "Bad luck this year huh?~";
-		mes "Wish you luck next year.";
+		mes "我很喜歡看你的回合～";
+		mes "今年運氣不好嗎？～";
+		mes "祝你明年好運。";
 		next;
 		mes .@n$;
-		mes "Take this to cheer you up.";
+		mes "拿這個來振作起來。";
 		setarray .items,501,502,503,504,505,506,608,607;
 		getitem .items[rand(0,7)],1;
 		erasequest 9310;
@@ -3891,7 +3891,7 @@ OnEnable:
 	
 	cutin "hero_iris_01.bmp",2;
 	mes .@n$;
-	mes "Think we'll meet again?";
+	mes "你覺得我們會再見面嗎？";
 	close2;
 	cutin "", 255;
 	end;
@@ -3912,12 +3912,12 @@ OnEnable:
 		if(checkquest(9311) != -1) {
 			cutin "hero_chaos_01.bmp",2;
 			mes .@n$;
-			mes "That was a good match~!";
-			mes "Not bad at all~!";
+			mes "那是一場很棒的比賽～！";
+			mes "一點也不差～！";
 			next;
 			mes .@n$;
-			mes "You have been very impressive today.";
-			mes "I want to give you a present~!";
+			mes "你今天表現得非常出色。";
+			mes "我想給你一份禮物～！";
 			setarray .items,501,502,503,504,505,506,608,607;
 			getitem .items[rand(0,7)],1;
 			erasequest 9311;
@@ -3926,7 +3926,7 @@ OnEnable:
 		}
 	cutin "hero_chaos_01.bmp",2;
 	mes .@n$;
-	mes "I hope to see you again next time~!";
+	mes "我希望下次能再見到你～！";
 	close2;
 	cutin "", 255;
 	end;
@@ -3947,12 +3947,12 @@ OnEnable:
 	if(checkquest(9313) != -1) {
 		cutin "fenrir_a.bmp",2;
 		mes .@n$;
-		mes "It was a good game.";
-		mes "Hope you get farther next time.";
+		mes "這是一場很棒的比賽。";
+		mes "希望你下次能走得更遠。";
 		next;
 		mes .@n$;
-		mes "Take this gift.";
-		mes "Keep trying harder~!";
+		mes "收下這份禮物。";
+		mes "繼續努力～！";
 		setarray .items,501,502,503,504,505,506,608,607;
 		getitem .items[rand(0,7)],1;
 		erasequest 9313;
@@ -3961,7 +3961,7 @@ OnEnable:
 	}
 	cutin "fenrir_a.bmp",2;
 	mes .@n$;
-	mes "I hope to see you again adventurer!";
+	mes "我希望再次見到你，冒險者！";
 	close2;
 	cutin "", 255;
 	end;
@@ -3978,7 +3978,7 @@ OnEnable:
 // Cutscenes
 
 
-//炟炟炟炟炟炟炟炟炟
+//?????????
 //   Event 1
 //__________________
 1@gef,159,172,6	duplicate(#gmt_dummy)	Geffen Gangster#1	682
@@ -3988,7 +3988,7 @@ OnEnable:
 1@gef,167,169,6	duplicate(#gmt_dummy)	Geffen Gangster#22	682
 1@gef,166,168,6	duplicate(#gmt_dummy)	Geffen Gangster#33	682
 1@gef,170,168,4	duplicate(#gmt_dummy)	Iris#Gef1	666
-1@gef,169,167,2	duplicate(#gmt_dummy)	Kafra Employee#1	114
+1@gef,169,167,2	duplicate(#gmt_dummy)	卡普拉職員#1	114
 1@gef,173,167,4	duplicate(#gmt_dummy)	Chaos#Gef1	683
 1@gef,168,168,4	duplicate(#gmt_dummy)	Chaos#Gef2	683
 1@gef,162,174,4	duplicate(#gmt_dummy)	Chaos#3	683
@@ -4004,7 +4004,7 @@ OnTouch:
 	hideoffnpc instance_npcname("Geffen Gangster#1");
 	hideoffnpc instance_npcname("Geffen Gangster#2");
 	hideoffnpc instance_npcname("Geffen Gangster#3");
-	hideoffnpc instance_npcname("Kafra Employee#1");
+	hideoffnpc instance_npcname("卡普拉職員#1");
 	'gmt_char_name$ = strcharinfo(0);
 	'GMTQuest = 1;
 
@@ -4018,12 +4018,12 @@ OnTimer1000:
 	'gmt_timer_evt1++;
 	
 	switch('gmt_timer_evt1) {
-		case 1: npctalk "Geffen Gangster : Hey girl~", instance_npcname("Geffen Gangster#1"); break;
-		case 3: npctalk "Geffen Gangster : Whoo~ You have beautiful legs~!", instance_npcname("Geffen Gangster#2"); break;
-		case 5: npctalk "Kafra Employee : What are you doing?", instance_npcname("Kafra Employee#1"); break;
-		case 10: npctalk "Geffen Gangster : What do you think I'm doing~?", instance_npcname("Geffen Gangster#3"); break;
-		case 13: npctalk "Kafra Employee : You creep! Get away~!", instance_npcname("Kafra Employee#1"); break;
-		case 15: npctalk "Geffen Gangster : How dare you!", instance_npcname("Geffen Gangster#1");	break;
+		case 1: npctalk "吉芬流氓：嘿，女孩～", instance_npcname("Geffen Gangster#1"); break;
+		case 3: npctalk "吉芬流氓：喔～妳有雙美腿～！", instance_npcname("Geffen Gangster#2"); break;
+		case 5: npctalk "卡普拉職員：你在做什麼？", instance_npcname("卡普拉職員#1"); break;
+		case 10: npctalk "吉芬流氓：你覺得我在做什麼～？", instance_npcname("Geffen Gangster#3"); break;
+		case 13: npctalk "卡普拉職員：你這變態！滾開～！", instance_npcname("卡普拉職員#1"); break;
+		case 15: npctalk "吉芬流氓：你竟敢！", instance_npcname("Geffen Gangster#1");	break;
 		case 16:
 			hideonnpc instance_npcname("Geffen Gangster#1");
 			hideonnpc instance_npcname("Geffen Gangster#2");
@@ -4032,11 +4032,11 @@ OnTimer1000:
 			hideoffnpc instance_npcname("Geffen Gangster#22");
 			hideoffnpc instance_npcname("Geffen Gangster#33");
 			break;
-		case 19: npctalk "Geffen Gangster : Wanna have some fun?", instance_npcname("Geffen Gangster#11"); break;
-		case 20: npctalk "Geffen Gangster : We won't bite!", instance_npcname("Geffen Gangster#22"); break;
-		case 21: npctalk "Geffen Gangster : Unless...", instance_npcname("Geffen Gangster#33"); break;
-		case 23: npctalk "Kafra Employee : Help me~!!!", instance_npcname("Kafra Employee#1"); break;
-		case 25: unittalk 'gmt_account_id, "What can I do? I have to help."; break;
+		case 19: npctalk "吉芬流氓：想玩玩嗎？", instance_npcname("Geffen Gangster#11"); break;
+		case 20: npctalk "吉芬流氓：我們不會咬妳的！", instance_npcname("Geffen Gangster#22"); break;
+		case 21: npctalk "吉芬流氓：除非...", instance_npcname("Geffen Gangster#33"); break;
+		case 23: npctalk "卡普拉職員：救命啊～！！！", instance_npcname("卡普拉職員#1"); break;
+		case 25: unittalk 'gmt_account_id, "我能做什麼？我必須幫忙。"; break;
 		case 27:
 			enablenpc instance_npcname("#Event 1 start 2");
 			stopnpctimer;
@@ -4062,13 +4062,13 @@ OnTimer1000:
 	'gmt_timer_evt1++;
 	
 	switch('gmt_timer_evt1) {
-		case 1: unittalk 'gmt_account_id, "You bastards! Leave her alone!"; break;
-		case 3: npctalk "Geffen Gangster : What's with your attitude?", instance_npcname("Geffen Gangster#11"); break;
-		case 4: npctalk "Geffen Gangster : You're such an idiot!", instance_npcname("Geffen Gangster#22"); break;
-		case 5: npctalk "Geffen Gangster : Who're you calling bastards!?", instance_npcname("Geffen Gangster#33"); break;
-		case 8: npctalk "Kafra Employee : Please help me~!", instance_npcname("Kafra Employee#1"); break;
+		case 1: unittalk 'gmt_account_id, "你們這些混蛋！放開她！"; break;
+		case 3: npctalk "吉芬流氓：你這是什麼態度？", instance_npcname("Geffen Gangster#11"); break;
+		case 4: npctalk "吉芬流氓：你真是個白痴！", instance_npcname("Geffen Gangster#22"); break;
+		case 5: npctalk "吉芬流氓：你說誰是混蛋！？", instance_npcname("Geffen Gangster#33"); break;
+		case 8: npctalk "卡普拉職員：請救救我～！", instance_npcname("卡普拉職員#1"); break;
 		case 9:
-			unittalk 'gmt_account_id, "Time to teach them a lesson~!";
+			unittalk 'gmt_account_id, "是時候給他們一點教訓了～！";
 			hideonnpc instance_npcname("Geffen Gangster#11");
 			hideonnpc instance_npcname("Geffen Gangster#22");
 			hideonnpc instance_npcname("Geffen Gangster#33");
@@ -4112,22 +4112,22 @@ OnTimer1000:
 			specialeffect EF_POTION_BERSERK, AREA, instance_npcname("Geffen Gangster#1");
 			specialeffect EF_POTION_BERSERK, AREA, instance_npcname("Geffen Gangster#2");
 			specialeffect EF_POTION_BERSERK, AREA, instance_npcname("Geffen Gangster#3");
-			npctalk "Geffen Gangster : You're pretty good...!", instance_npcname("Geffen Gangster#1");
-			npctalk "Geffen Gangster : We should stop playing around...", instance_npcname("Geffen Gangster#2");
-			npctalk "Geffen Gangster : You're gonna pay the price!", instance_npcname("Geffen Gangster#3");
+			npctalk "吉芬流氓：你還挺厲害的...！", instance_npcname("Geffen Gangster#1");
+			npctalk "吉芬流氓：我們應該停止玩鬧了...", instance_npcname("Geffen Gangster#2");
+			npctalk "吉芬流氓：你會付出代價的！", instance_npcname("Geffen Gangster#3");
 			break;
-		case 4: npctalk "Kafra Employee : No... I'm scared...!", instance_npcname("Kafra Employee#1"); break;
+		case 4: npctalk "卡普拉員工 : 不... 我好害怕...!", instance_npcname("卡普拉職員#1"); break;
 		case 5:
 			hideoffnpc instance_npcname("Iris#Gef1");
-			npctalk "Iris : Hey, you stop right there~!!", instance_npcname("Iris#Gef1");
+			npctalk "愛麗絲 : 嘿，你給我停下來～！！", instance_npcname("Iris#Gef1");
 			break;
-		case 8: npctalk "Iris : That's enough.", instance_npcname("Iris#Gef1"); break;
-		case 11: npctalk "Iris : I won't forgive you~!", instance_npcname("Iris#Gef1"); break;
+		case 8: npctalk "愛麗絲 : 夠了。", instance_npcname("Iris#Gef1"); break;
+		case 11: npctalk "愛麗絲 : 我不會原諒你的～！", instance_npcname("Iris#Gef1"); break;
 		case 13: specialeffect EF_POTION1, AREA, instance_npcname("Iris#Gef1"); break;
 		case 14:
-			npctalk "Geffen Gangster : Why hello there, are you scared?", instance_npcname("Geffen Gangster#1");
-			npctalk "Geffen Gangster : You're pretty cute. Do you want to play with us too?", instance_npcname("Geffen Gangster#2");
-			npctalk "Geffen Gangster : Aren't I your type babe?~", instance_npcname("Geffen Gangster#3");
+			npctalk "吉芬流氓 : 嘿，妳好啊，妳害怕了嗎？", instance_npcname("Geffen Gangster#1");
+			npctalk "吉芬流氓 : 妳真可愛。妳要不要也和我們一起玩啊？", instance_npcname("Geffen Gangster#2");
+			npctalk "吉芬流氓 : 難道我不是妳喜歡的類型嗎？寶貝～", instance_npcname("Geffen Gangster#3");
 			break;
 		case 18:
 			hideonnpc instance_npcname("Geffen Gangster#1");
@@ -4137,21 +4137,21 @@ OnTimer1000:
 			hideoffnpc instance_npcname("Geffen Gangster#22");
 			hideoffnpc instance_npcname("Geffen Gangster#33");
 			break;
-		case 22: mapannounce instance_mapname("1@gef"), "Stop right there! Jerks!", 0x00ebff; break;
+		case 22: mapannounce instance_mapname("1@gef"), "住手！你們這些混蛋！", 0x00ebff; break;
 		case 23: hideoffnpc instance_npcname("Chaos#Gef1"); break;
 		case 25: specialeffect EF_POTION_CON, AREA, instance_npcname("Chaos#Gef1"); break;
-		case 26: npctalk "Chaos : Are you clowns harassing Iris?", instance_npcname("Chaos#Gef1"); break;
-		case 30: npctalk "Chaos : I think I need to teach someone a lesson!", instance_npcname("Chaos#Gef1"); break;
+		case 26: npctalk "混沌 : 你們這些小丑是在騷擾愛麗絲嗎？", instance_npcname("Chaos#Gef1"); break;
+		case 30: npctalk "混沌 : 我想我需要給某人一個教訓！", instance_npcname("Chaos#Gef1"); break;
 		case 31:
 			specialeffect EF_LOCKON, AREA, instance_npcname("Geffen Gangster#11");
 			specialeffect EF_LOCKON, AREA, instance_npcname("Geffen Gangster#22");
 			specialeffect EF_LOCKON, AREA, instance_npcname("Geffen Gangster#33");
-			npctalk "Chaos : Come and fight me!", instance_npcname("Chaos#Gef2");
+			npctalk "混沌 : 來跟我打！", instance_npcname("Chaos#Gef2");
 			hideonnpc instance_npcname("Chaos#Gef1");
 			hideoffnpc instance_npcname("Chaos#Gef2");
 			break;
 		case 34:
-			npctalk "Chaos : Bash~!!!", instance_npcname("Chaos#Gef2");
+			npctalk "混沌 : 狂擊～！！！", instance_npcname("Chaos#Gef2");
 			specialeffect EF_HIT2, AREA, instance_npcname("Chaos#Gef2");
 			specialeffect EF_BASH, AREA, instance_npcname("Geffen Gangster#11");
 			specialeffect EF_BASH, AREA, instance_npcname("Geffen Gangster#22");
@@ -4166,16 +4166,16 @@ OnTimer1000:
 			hideoffnpc instance_npcname("Geffen Gangster#3");
 			break;
 		case 36:
-			npctalk "Geffen Gangster : Ugh...", instance_npcname("Geffen Gangster#1");
-			npctalk "Geffen Gangster : Strong...", instance_npcname("Geffen Gangster#2");
-			npctalk "Geffen Gangster : Too strong...", instance_npcname("Geffen Gangster#3");
+			npctalk "吉芬流氓 : 嗚...", instance_npcname("Geffen Gangster#1");
+			npctalk "吉芬流氓 : 好強...", instance_npcname("Geffen Gangster#2");
+			npctalk "吉芬流氓 : 太強了...", instance_npcname("Geffen Gangster#3");
 			break;
 		case 39:
 			hideonnpc instance_npcname("Chaos#Gef2");
 			hideoffnpc instance_npcname("Chaos#3");
 			break;
 		case 42:
-			npctalk "Chaos : I'm not done yet!! Magnum Break~!", instance_npcname("Chaos#3");
+			npctalk "混沌 : 我還沒結束呢！！ 火焰衝擊～！", instance_npcname("Chaos#3");
 			specialeffect EF_MAGNUMBREAK, AREA, instance_npcname("Geffen Gangster#1");
 			specialeffect EF_MAGNUMBREAK, AREA, instance_npcname("Geffen Gangster#2");
 			specialeffect EF_MAGNUMBREAK, AREA, instance_npcname("Geffen Gangster#3");
@@ -4195,36 +4195,36 @@ OnTimer1000:
 			
 			if (attachrid('gmt_account_id)) {
 				cutin "hero_iris_01.bmp", 2;
-				mes "[Iris]", "Are you okay?", "There have been so many jerks everywhere we go..."; next;
+				mes "[愛麗絲]", "你還好嗎？", "我們去到哪裡都有這麼多混蛋..."; next;
 				cutin "", 255;
-				mes "[Kafra]", "Thanks for helping me out.", "Who are you?"; next;
+				mes "[卡普拉]", "謝謝你幫助我。", "你是誰？"; next;
 				cutin "hero_iris_01.bmp", 2;
-				mes "[Iris]", "I am Iris~", "I am travelling with my good friend Chaos~!"; next;
-				mes "[Iris]", "I am not the one you should thank.", "Thank that adventurer, " + strcharinfo(0) + ".", "It could have been much worse."; next;
+				mes "[愛麗絲]", "我是愛麗絲～", "我和我的好朋友混沌一起旅行～！"; next;
+				mes "[愛麗絲]", "你不應該感謝我。", "感謝那位冒險者，" + strcharinfo(0) + "。", "情況可能會更糟。"; next;
 				cutin "", 255;
-				mes "[Kafra]", "Thank you " + strcharinfo(0) + ".", "You saved me."; next;
+				mes "[卡普拉]", "謝謝你 " + strcharinfo(0) + "。", "你救了我。"; next;
 				cutin "hero_iris_01.bmp", 2;
-				mes "[Iris]", "It's pretty rare to meet someone as righteous as " + strcharinfo(0) + "."; next;
-				mes "[Iris]", "I'm on my way to see the Geffen Magic Tournament with Chaos.", "Are you on your way there too, " + strcharinfo(0) + "?"; next;
+				mes "[愛麗絲]", "像 " + strcharinfo(0) + " 這樣正直的人已經很少見了。"; next;
+				mes "[愛麗絲]", "我和混沌正要去參加吉芬魔法大賽。", "你也正要去那裡嗎，" + strcharinfo(0) + "？"; next;
 				cutin "hero_chaos_01.bmp", 2;
-				mes "[Chaos]", "Yes, you seem strong enough to be in the Tournament."; next;
-				mes "[Chaos]", "Just know that Fenrir plans on joining as well, so it won't be that easy."; next;
-				mes "[Chaos]", "This is my favorite magic buff scroll, so take it as a token of our appreciation.";
+				mes "[混沌]", "是的，你似乎夠強大可以參加錦標賽。"; next;
+				mes "[混沌]", "要知道芬里爾也計劃參加，所以不會那麼容易。"; next;
+				mes "[混沌]", "這是我最喜歡的魔法增益卷軸，所以把它當作我們的謝意。";
 				sc_start4 SC_GEFFEN_MAGIC3, 3600000, 5, 0, 0, 0, 10000, 1;
 				atcommand "@effect 220";
 				next;
-				mes "[Chaos]", "It will be useful in the Magic Tournament.", "Let's go Iris~!", "It's going to start soon~!"; next;
+				mes "[混沌]", "它在魔法錦標賽中會很有用。", "我們走吧，愛麗絲～！", "它很快就要開始了～！"; next;
 				cutin "hero_iris_01.bmp", 2;
-				mes "[Iris]", "Yes~! Go " + strcharinfo(0) + "~", "Kafra, wish us luck~!", "Do your best " + strcharinfo(0) + ".";
+				mes "[愛麗絲]", "是的～！加油 " + strcharinfo(0) + "～", "卡普拉，祝我們好運～！", "盡你所能吧 " + strcharinfo(0) + "。";
 				close2;
 				cutin "", 255;
 				hideonnpc instance_npcname("Iris#Gef1");
                 hideonnpc instance_npcname("Chaos#Gef1");
-                hideonnpc instance_npcname("Kafra Employee#1");
+                hideonnpc instance_npcname("卡普拉職員#1");
 				sleep2 2000;
-				unittalk 'gmt_account_id, "They sure are brave...";
+				unittalk 'gmt_account_id, "他們真的很勇敢...";
 				sleep2 2000;
-				unittalk 'gmt_account_id, "Should we apply for the Magic Tournament now?";
+				unittalk 'gmt_account_id, "我們現在應該申請魔法大賽嗎？";
 				end;
 			}
 			
@@ -4235,7 +4235,7 @@ OnTimer1000:
 	end;
 }
 
-//炟炟炟炟炟炟炟炟炟
+//?????????
 //   Event 2
 //__________________
 1@gef,75,172,4	duplicate(#gmt_dummy)	Geffen Bully#1	681
@@ -4273,25 +4273,25 @@ OnTimer1000:
 	'gmt_timer_evt2++;
 	
 	switch('gmt_timer_evt2) {
-		case 5: npctalk "Geffen Bully : Hey you! Yeah you~", instance_npcname("Geffen Bully#1"); break;
-		case 7: npctalk "Magic Academy Student : Yea... yeah? Me...? Do you mean me?", instance_npcname("Magic Academy Student#11"); break;
-		case 8: npctalk "Geffen Bully : Yes, you! Come over here!", instance_npcname("Geffen Bully#2"); break;
-		case 9: npctalk "Geffen Bully : Hurry! You have 3 seconds!", instance_npcname("Geffen Bully#3"); break;
-		case 11: npctalk "Geffen Bully : 3...", instance_npcname("Geffen Bully#3"); break;
-		case 12: npctalk "Geffen Bully : 2...", instance_npcname("Geffen Bully#3"); break;
-		case 13: npctalk "Geffen Bully : 1...", instance_npcname("Geffen Bully#3"); break;
+		case 5: npctalk "吉芬惡霸 : 嘿，你！ 對，就是你～", instance_npcname("Geffen Bully#1"); break;
+		case 7: npctalk "魔法學院學生 : 耶... 耶？我...？你是指我嗎？", instance_npcname("Magic Academy Student#11"); break;
+		case 8: npctalk "吉芬惡霸 : 沒錯，就是你！過來這裡！", instance_npcname("Geffen Bully#2"); break;
+		case 9: npctalk "吉芬惡霸 : 快點！你只有 3 秒鐘！", instance_npcname("Geffen Bully#3"); break;
+		case 11: npctalk "吉芬惡霸 : 3...", instance_npcname("Geffen Bully#3"); break;
+		case 12: npctalk "吉芬惡霸 : 2...", instance_npcname("Geffen Bully#3"); break;
+		case 13: npctalk "吉芬惡霸 : 1...", instance_npcname("Geffen Bully#3"); break;
 		case 14:
 			hideonnpc instance_npcname("Magic Academy Student#11");
 			hideoffnpc instance_npcname("Magic Academy Student#22");
 			break;
-		case 17: npctalk "Geffen Bully : You! How much zeny do you have?", instance_npcname("Geffen Bully#1"); break;
-		case 20: npctalk "Magic Academy Student : What... huh?", instance_npcname("Magic Academy Student#22"); break;
-		case 23: npctalk "Geffen Bully : Did I stutter? I said, how much zeny do you have! You idiot!", instance_npcname("Geffen Bully#2"); break;
-		case 27: npctalk "Magic Academy Student : I don't have any zeny... I'm but a student...", instance_npcname("Magic Academy Student#22"); break;
-		case 30: npctalk "Geffen Bully : Do I have to beat the zeny out of you?!", instance_npcname("Geffen Bully#3"); break;
-		case 33: npctalk "Magic Academy Student : Ugh... I told you, I don't have any zeny!", instance_npcname("Magic Academy Student#22"); break;
+		case 17: npctalk "吉芬惡霸 : 你！ 你有多少錢？", instance_npcname("Geffen Bully#1"); break;
+		case 20: npctalk "魔法學院學生 : 什麼... 蛤？", instance_npcname("Magic Academy Student#22"); break;
+		case 23: npctalk "吉芬惡霸 : 我有口吃嗎？ 我說，你有多少錢！ 你這白痴！", instance_npcname("Geffen Bully#2"); break;
+		case 27: npctalk "魔法學院學生 : 我沒有錢... 我只是一個學生...", instance_npcname("Magic Academy Student#22"); break;
+		case 30: npctalk "吉芬惡霸 : 我要從你身上把錢打出來嗎？！", instance_npcname("Geffen Bully#3"); break;
+		case 33: npctalk "魔法學院學生 : 嗚... 我告訴你，我沒有錢！", instance_npcname("Magic Academy Student#22"); break;
 		case 36:
-			unittalk 'gmt_account_id, "What should I do? I have to help!";
+			unittalk 'gmt_account_id, "我該怎麼辦？ 我必須幫忙！";
 			enablenpc instance_npcname("#Event 2 start 2");
 			hideoffnpc instance_npcname("#Event 2 start 2");
 			stopnpctimer;
@@ -4317,13 +4317,13 @@ OnTimer1000:
 	'gmt_timer_evt2++;
 	
 	switch('gmt_timer_evt2) {
-		case 2: unittalk 'gmt_account_id, "You! Bullies! Stop!"; break;
-		case 3: npctalk "Geffen Bully : You ready for a beating?", instance_npcname("Geffen Bully#1"); break;
-		case 4: npctalk "Geffen Bully : I've been waiting to have some fun...", instance_npcname("Geffen Bully#2"); break;
-		case 5: npctalk "Geffen Bully : Say hello to my little friends!", instance_npcname("Geffen Bully#3"); break;
-		case 7: npctalk "Magic Academy Student : Please help me~", instance_npcname("Magic Academy Student#22"); break;
+		case 2: unittalk 'gmt_account_id, "你們！ 惡霸！ 住手！"; break;
+		case 3: npctalk "吉芬惡霸 : 你準備好挨揍了嗎？", instance_npcname("Geffen Bully#1"); break;
+		case 4: npctalk "吉芬惡霸 : 我一直在等著找點樂子...", instance_npcname("Geffen Bully#2"); break;
+		case 5: npctalk "吉芬惡霸 : 向我的朋友們問好吧！", instance_npcname("Geffen Bully#3"); break;
+		case 7: npctalk "魔法學院學生 : 請救救我～", instance_npcname("Magic Academy Student#22"); break;
 		case 9:
-			unittalk 'gmt_account_id, "I have to help!";
+			unittalk 'gmt_account_id, "我必須幫忙！";
 			attachrid 'gmt_account_id;
 			specialeffect2 EF_LOCKON;
 			detachrid;
@@ -4360,26 +4360,26 @@ OnMobKilled:
 			
 			switch($gmt_timer_evt2) {
 				case 0:
-					npctalk "Geffen Bully : He has surprisingly good skills.", instance_npcname("Geffen Bully#1");
-					npctalk "Geffen Bully : This isn't good...", instance_npcname("Geffen Bully#2");
-					npctalk "Geffen Bully : 1 slap for 10 wins. No... You get 10 slaps for 1 win.", instance_npcname("Geffen Bully#3");
+					npctalk "吉芬惡霸 : 他有出乎意料的好技巧。", instance_npcname("Geffen Bully#1");
+					npctalk "吉芬惡霸 : 這不太妙...", instance_npcname("Geffen Bully#2");
+					npctalk "吉芬惡霸 : 一個巴掌換 10 場勝利。 不... 你用 10 個巴掌換 1 場勝利。", instance_npcname("Geffen Bully#3");
 					break;
 				case 3:
 					hideonnpc instance_npcname("Magic Academy Student#22");
 					hideoffnpc instance_npcname("Magic Academy Student#11");
 					sleep2 500;
-					npctalk "Magic Academy Student : I'm scared~! Help me...", instance_npcname("Magic Academy Student#11");
+					npctalk "魔法學院學生 : 我好害怕～！ 救命...", instance_npcname("Magic Academy Student#11");
 					break;
 				case 6: hideoffnpc instance_npcname("Fenrir#1"); break;
-				case 7: npctalk "Fenrir : Hello. Are you going to stop now?", instance_npcname("Fenrir#1"); break;
-				case 10: npctalk "Fenrir : This is really uncomfortable. I can't just sit back and watch.", instance_npcname("Fenrir#1"); break;
+				case 7: npctalk "芬里爾 : 你好。 你們現在要停手了嗎？", instance_npcname("Fenrir#1"); break;
+				case 10: npctalk "芬里爾 : 這真的很不舒服。 我不能只是坐視不管。", instance_npcname("Fenrir#1"); break;
 				case 13:
-					npctalk "Fenrir : Stop harassing her. I won't forgive you.", instance_npcname("Fenrir#1");
+					npctalk "芬里爾 : 別再騷擾她了。 我不會原諒你們的。", instance_npcname("Fenrir#1");
 					specialeffect EF_POTION1, AREA, instance_npcname("Fenrir#1");
 					break;
-				case 15: npctalk "Geffen Bully : Hey~ You look rich, you must have a lot of zeny right?", instance_npcname("Geffen Bully#1"); break;
-				case 17: npctalk "Geffen Bully : What's a rich girl like you doing around here?~", instance_npcname("Geffen Bully#2"); break;
-				case 19: npctalk "Geffen Bully : Hey! Rich girl~! How much zeny do you got?", instance_npcname("Geffen Bully#3"); break;
+				case 15: npctalk "吉芬惡霸 : 嘿～ 你看起來很有錢，你一定有很多錢，對吧？", instance_npcname("Geffen Bully#1"); break;
+				case 17: npctalk "吉芬惡霸 : 像你這樣的有錢女孩在這裡做什麼？～", instance_npcname("Geffen Bully#2"); break;
+				case 19: npctalk "吉芬惡霸 : 嘿！ 有錢女孩～！ 你有多少錢？", instance_npcname("Geffen Bully#3"); break;
 				case 22:
 					hideonnpc instance_npcname("Geffen Bully#1");
 					hideonnpc instance_npcname("Geffen Bully#2");
@@ -4390,7 +4390,7 @@ OnMobKilled:
 					break;
 				case 23:
 					emotion ET_SURPRISE, getnpcid(0, instance_npcname("Fenrir#1"));
-					mapannounce instance_mapname("1@gef"), "Take your dirty hands off of me.", 0x00ebff;
+					mapannounce instance_mapname("1@gef"), "把你們的髒手從我身上拿開。", 0x00ebff;
 					break;
 				case 25:
 					hideoffnpc instance_npcname("Loki#1");
@@ -4398,7 +4398,7 @@ OnMobKilled:
 					specialeffect EF_POISONREACT, AREA, instance_npcname("Loki#1");
 					sleep2 1500;
 					specialeffect EF_SONICBLOW, AREA, instance_npcname("Loki#1");
-					npctalk "Loki : Hmph!", instance_npcname("Loki#1");
+					npctalk "洛基 : 哼！", instance_npcname("Loki#1");
 					sleep2 500;
 					specialeffect EF_VENOMDUST, AREA, instance_npcname("Loki#1");
 					specialeffect EF_SONICBLOWHIT, AREA, instance_npcname("Geffen Bully#33");
@@ -4408,12 +4408,12 @@ OnMobKilled:
 					hideonnpc instance_npcname("Geffen Bully#33");
 					hideoffnpc instance_npcname("Geffen Bully#3");
 					break;
-				case 26: npctalk "Geffen Bully : Yikes!", instance_npcname("Geffen Bully#3"); break;
+				case 26: npctalk "吉芬惡霸 : 哇！", instance_npcname("Geffen Bully#3"); break;
 				case 27:
 					hideonnpc instance_npcname("Loki#1");
 					hideoffnpc instance_npcname("Loki#2");
 					sleep2 750;
-					npctalk "Loki : Take this.", instance_npcname("Loki#2");
+					npctalk "洛基 : 拿去吧。", instance_npcname("Loki#2");
 					sleep2 500;
 					specialeffect EF_STRIPARMOR, AREA, instance_npcname("Geffen Bully#22");
 					specialeffect EF_SONICBLOWHIT, AREA, instance_npcname("Geffen Bully#22");
@@ -4424,11 +4424,11 @@ OnMobKilled:
 					hideoffnpc instance_npcname("Geffen Bully#2");
 					break;
 				case 28:
-					npctalk "Geffen Bully : Ugh, uuurgh! What the?!", instance_npcname("Geffen Bully#2");
+					npctalk "吉芬惡霸 : 嗚，嗚嗚！ 什麼？！", instance_npcname("Geffen Bully#2");
 					hideonnpc instance_npcname("Loki#2");
 					hideoffnpc instance_npcname("Loki#3");
 					sleep2 750;
-					npctalk "Loki : Change your mind yet?", instance_npcname("Loki#3");
+					npctalk "洛基 : 改變主意了嗎？", instance_npcname("Loki#3");
 					sleep2 500;
 					specialeffect EF_STRIPSHIELD, AREA, instance_npcname("Geffen Bully#11");
 					specialeffect EF_SONICBLOWHIT, AREA, instance_npcname("Geffen Bully#11");
@@ -4438,19 +4438,19 @@ OnMobKilled:
 					hideonnpc instance_npcname("Geffen Bully#11");
 					hideoffnpc instance_npcname("Geffen Bully#1");
 					break;
-				case 29: npctalk "Geffen Bully : Ugh, urgh, urgh! GAAAAAAH!!", instance_npcname("Geffen Bully#1"); break;
-				case 31: npctalk "Loki : If you don't want to taste my Katar, leave now.", instance_npcname("Loki#3"); break;
-				case 34: npctalk "Loki : Get out of my sight.", instance_npcname("Loki#3"); break;
-				case 36: npctalk "Geffen Bully : Oh, oh! Time to go!", instance_npcname("Geffen Bully#1"); break;
-				case 38: npctalk "Geffen Bully : Please... spare my life...", instance_npcname("Geffen Bully#2"); break;
-				case 40: npctalk "Geffen Bully : Let's get away!~!!!!!", instance_npcname("Geffen Bully#3"); break;
+				case 29: npctalk "吉芬惡霸 : 嗚，嗚，嗚！ 嘎啊啊啊啊！！", instance_npcname("Geffen Bully#1"); break;
+				case 31: npctalk "洛基 : 如果你們不想嚐嚐我的卡塔爾，現在就離開。", instance_npcname("Loki#3"); break;
+				case 34: npctalk "洛基 : 滾出我的視線。", instance_npcname("Loki#3"); break;
+				case 36: npctalk "吉芬惡霸 : 喔，喔！ 該走了！", instance_npcname("Geffen Bully#1"); break;
+				case 38: npctalk "吉芬惡霸 : 請... 饒我一命...", instance_npcname("Geffen Bully#2"); break;
+				case 40: npctalk "吉芬惡霸 : 我們快走吧！～！！！！！", instance_npcname("Geffen Bully#3"); break;
 				case 41:
-					npctalk "Loki : You have 10 seconds.", instance_npcname("Loki#3");
+					npctalk "洛基 : 你們有 10 秒鐘。", instance_npcname("Loki#3");
 					specialeffect EF_SONICBLOW, AREA, instance_npcname("Loki#3");
 					break;
 				case 43:
 					specialeffect EF_SLOWPOISON, AREA, instance_npcname("Loki#3");
-					npctalk "Loki : 10... 9...", instance_npcname("Loki#3");
+					npctalk "洛基 : 10... 9...", instance_npcname("Loki#3");
 					sleep2 500;
 					specialeffect EF_STRIPWEAPON, AREA, instance_npcname("Loki#3");
 					specialeffect EF_POISONREACT, AREA, instance_npcname("Loki#3");
@@ -4460,16 +4460,16 @@ OnMobKilled:
 					specialeffect EF_ENCHANTPOISON, AREA, instance_npcname("Loki#3");
 					sleep2 500;
 					emotion ET_KIK, getnpcid(0, instance_npcname("Loki#3"));
-					npctalk "Loki : 3... 2...", instance_npcname("Loki#3");
+					npctalk "洛基 : 3... 2...", instance_npcname("Loki#3");
 					sleep2 500;
-					npctalk "Geffen Bully : What?! You went from from 9 to 3 seconds!!", instance_npcname("Geffen Bully#1");
-					npctalk "Geffen Bully : Screw this, let's run~!!!!!!!!!", instance_npcname("Geffen Bully#2");
-					npctalk "Geffen Bully : I will have my revenge~!!", instance_npcname("Geffen Bully#3");
+					npctalk "吉芬惡霸 : 什麼？！ 你直接從 9 秒跳到 3 秒！！", instance_npcname("Geffen Bully#1");
+					npctalk "吉芬惡霸 : 管他的，我們快逃吧～！！！！！", instance_npcname("Geffen Bully#2");
+					npctalk "吉芬惡霸 : 我會報仇的～！！", instance_npcname("Geffen Bully#3");
 					break;
 				case 46:
 					specialeffect EF_SOULBREAKER, AREA, instance_npcname("Loki#3");
 					specialeffect EF_VENOMDUST, AREA, instance_npcname("Loki#3");
-					npctalk "Loki : 1...", instance_npcname("Loki#3");
+					npctalk "洛基 : 1...", instance_npcname("Loki#3");
 					sleep2 330;
 					hideonnpc instance_npcname("Geffen Bully#1");
 					hideonnpc instance_npcname("Geffen Bully#2");
@@ -4482,29 +4482,29 @@ OnMobKilled:
 				case 49:
 					attachrid('gmt_account_id);
 					cutin "fenrir_a.bmp", 2;
-					mes "[Fenrir]", "Are you okay?", "Where are all these punks coming from anyways?"; next;
+					mes "[芬里爾]", "妳還好嗎？", "這些小混混到底從哪裡來的？"; next;
 					cutin "", 255;
-					mes "[Magic Academy Student]", "Thanks for helping me.", "Who are you?"; next;
+					mes "[魔法學院學生]", "謝謝你幫助我。", "你是誰？"; next;
 					cutin "fenrir_a.bmp", 2;
-					mes "[Fenrir]", "I am Fenris Fenrir."; next;
-					mes "[Fenrir]", "Thank " + strcharinfo(0) + ".", "It would have been much worse if "+('sex?"he":"she")+" hadn't shown up."; next;
+					mes "[芬里爾]", "我是芬里斯·芬里爾。"; next;
+					mes "[芬里爾]", "感謝 " + strcharinfo(0) + "。", "如果"+( 'sex?"他":"她' )+"沒有出現，情況會更糟。"; next;
 					cutin "", 255;
-					mes "[Magic Academy Student]", "Thank you so much " + strcharinfo(0) + ".", "You saved me."; next;
+					mes "[魔法學院學生]", "非常感謝你 " + strcharinfo(0) + "。", "你救了我。"; next;
 					cutin "fenrir_a.bmp", 2;
-					mes "[Fenrir]", "You don't meet many people like " + strcharinfo(0) + " these days.", "You're a good person."; next;
-					mes "[Fenrir]", "I was on the way to register for the Geffen Magic Tournament with Loki."; next;
-					mes "[Fenrir]", "I have a feeling that you will register too " + strcharinfo(0) + ".", "I hope to meet you in the finals of the Tournament."; next;
+					mes "[芬里爾]", "現在像 " + strcharinfo(0) + " 這樣的人不多見了。", "你是個好人。"; next;
+					mes "[芬里爾]", "我和洛基正要去報名參加吉芬魔法大賽。"; next;
+					mes "[芬里爾]", "我有預感你也會報名的 " + strcharinfo(0) + "。", "我希望能在錦標賽的決賽中見到你。"; next;
 					cutin "ep14_roki01.bmp", 2;
-					mes "[Loki]", "Oh yeah?", "" + strcharinfo(0) + " is going to register?", "That's interesting."; next;
-					mes "[Loki]", "I have a spare magic buff scroll.", "I will give it to you as a present.";
+					mes "[洛基]", "喔，是嗎？", "" + strcharinfo(0) + " 要報名嗎？", "真有趣。"; next;
+					mes "[洛基]", "我有一個備用的魔法增益卷軸。", "我會把它當作禮物送給你。";
 					sc_start4 SC_GEFFEN_MAGIC2, 3600000, 5, 0, 0, 0, 10000, 1;
 					atcommand "@effect 220";
 					next;
-					mes "[Loki]", "I doubt that you can beat Fenrir at the Tournament.", "Her fighting prowess is unmatched."; next;
-					mes "[Loki]", "Fenrir, it's time to register.", "Let's hurry."; next;
+					mes "[洛基]", "我懷疑你能在錦標賽中擊敗芬里爾。", "她的戰鬥能力無與倫比。"; next;
+					mes "[洛基]", "芬里爾，該報名了。", "我們趕快吧。"; next;
 					cutin "fenrir_a.bmp", 2;
-					mes "[Fenrir]", "Yes~! I almost forgot.", "It was nice meeting you " + strcharinfo(0) + "~!"; next;
-					mes "[Fenrir]", "I hope to meet you in combat soon.";
+					mes "[芬里爾]", "好耶~! 差點忘了。", "很高興認識你 " + strcharinfo(0) + "~!"; next;
+					mes "[芬里爾]", "希望很快能在戰鬥中見到你。";
 					close2;
 					cutin "", 255;
 					hideonnpc instance_npcname("Fenrir#1");
@@ -4512,9 +4512,9 @@ OnMobKilled:
 					sleep2 1000;
 					hideonnpc instance_npcname("Magic Academy Student#11");
 					sleep2 3000;
-					unittalk $gmt_account_id, "It was fun meeting Fenrir.";
+					unittalk $gmt_account_id, "很高興認識芬里爾。";
 					sleep2 2000;
-					unittalk $gmt_account_id, "I should register for the Magic Tournament.";
+					unittalk $gmt_account_id, "我應該報名魔法錦標賽。";
 					end;
 			}
 			
@@ -4525,7 +4525,7 @@ OnMobKilled:
 	end;
 }
 
-//炟炟炟炟炟炟炟炟炟
+//?????????
 //   Event 3
 //__________________
 1@gef,111,146,4	duplicate(#gmt_dummy)	Geffen Resident#1	67
@@ -4537,15 +4537,15 @@ OnTouch:
 	if ('gmt_chase != 1) end;
 	if ('gmt_event != 0) end;
 	'gmt_event = 3;
-	unittalk 'gmt_account_id, "Thief! Give that zeny back!! Don't move!!";
+	unittalk 'gmt_account_id, "小偷！把錢還來！！別動！！";
 	sleep2 3000;
-	npctalk "Geffen Shoplifter : Threatening me?~!! Yeah, boo hoo! You really scare me~!!", instance_npcname("Geffen Shoplifter#1");
+	npctalk "吉芬小偷 : 威脅我？~!! 嗚嗚嗚！你真的嚇到我了~!!", instance_npcname("Geffen Shoplifter#1");
 	sleep2 2000;
-	npctalk "Geffen Shoplifter : Catch me if you can~!!", instance_npcname("Geffen Shoplifter#1");
+	npctalk "吉芬小偷 : 有本事就來抓我啊~!!", instance_npcname("Geffen Shoplifter#1");
 	sleep2 2000;
-	npctalk "Geffen Resident : Please find my paycheck...", instance_npcname("Geffen Resident#1");
+	npctalk "吉芬居民 : 請幫我找回我的薪水...", instance_npcname("Geffen Resident#1");
 	sleep2 3000;
-	unittalk 'gmt_account_id, "I have you now!";
+	unittalk 'gmt_account_id, "我抓到你了！";
 	hideonnpc instance_npcname("Geffen Shoplifter#1");
 	hideoffnpc instance_npcname("Geffen Shoplifter#2");
 	'gmt_chase = 2;
@@ -4560,10 +4560,10 @@ OnTouch:
 	if('OnTouchOnce5) end;
 	set 'OnTouchOnce5,1;
 	if (Zeny > 2000) Zeny -= 2000;
-	npctalk "Geffen Shoplifter : Are you following me? Thanks for the 2,000 zeny~!", instance_npcname("Geffen Shoplifter#2");
+	npctalk "吉芬小偷 : 你在跟蹤我嗎？謝謝你的2,000元~!", instance_npcname("Geffen Shoplifter#2");
 	atcommand "@effect 18";
 	sleep2 3000;
-	unittalk 'gmt_account_id, "Hey~ Stop right there! Thief!";
+	unittalk 'gmt_account_id, "嘿~ 你給我站住！小偷！";
 	sleep2 3000;
 	hideonnpc instance_npcname("Geffen Shoplifter#2");
 	hideoffnpc instance_npcname("Geffen Shoplifter#3");
@@ -4578,10 +4578,10 @@ OnTouch:
 	if('OnTouchOnce6) end;
 	set 'OnTouchOnce6,1;
 	if (Zeny > 2000) Zeny -= 2000;
-	npctalk "Geffen Shoplifter : Woohoo~ Catch me if you can~! 4,000 large! Easy~!", instance_npcname("Geffen Shoplifter#3");
+	npctalk "吉芬小偷 : 哇呼~ 有本事就來抓我啊~! 4,000大洋！真輕鬆~!", instance_npcname("Geffen Shoplifter#3");
 	atcommand "@effect 18";
 	sleep2 3000;
-	unittalk 'gmt_account_id, "I will beat you down once I catch you!";
+	unittalk 'gmt_account_id, "我抓到你的時候一定揍扁你！";
 	sleep2 3000;
 	hideonnpc instance_npcname("Geffen Shoplifter#3");
 	hideoffnpc instance_npcname("Geffen Shoplifter#11");
@@ -4596,10 +4596,10 @@ OnTouch:
 	if('OnTouchOnce7) end;
 	set 'OnTouchOnce7,1;
 	if (Zeny > 2000) Zeny -= 2000;
-	npctalk "Geffen Shoplifter : You're annoying me~! I like it! 6,000 zeny~!", instance_npcname("Geffen Shoplifter#11");
+	npctalk "吉芬小偷 : 你真煩人~! 我喜歡！ 6,000元~!", instance_npcname("Geffen Shoplifter#11");
 	atcommand "@effect 18";
 	sleep2 3000;
-	unittalk 'gmt_account_id, "Stop right there you filthy thief!";
+	unittalk 'gmt_account_id, "你這骯髒的賊給我站住！";
 	sleep2 3000;
 	hideonnpc instance_npcname("Geffen Shoplifter#11");
 	hideoffnpc instance_npcname("Geffen Shoplifter#22");
@@ -4614,10 +4614,10 @@ OnTouch:
 	if('OnTouchOnce8) end;
 	set 'OnTouchOnce8,1;
 	if (Zeny > 2000) Zeny -= 2000;
-	npctalk "Geffen Shoplifter : Calling me a rat? Yoink~ 8,000 zeny~!", instance_npcname("Geffen Shoplifter#22");
+	npctalk "吉芬小偷 : 叫我老鼠？ 搶走~ 8,000元~!", instance_npcname("Geffen Shoplifter#22");
 	atcommand "@effect 18";
 	sleep2 3000;
-	unittalk 'gmt_account_id, "Would you stop?!";
+	unittalk 'gmt_account_id, "你可以停手了嗎？！";
 	sleep2 3000;
 	hideonnpc instance_npcname("Geffen Shoplifter#22");
 	hideoffnpc instance_npcname("Geffen Shoplifter#33");
@@ -4632,12 +4632,12 @@ OnTouch:
 	if('OnTouchOnce9) end;
 	set 'OnTouchOnce9,1;
 	if (Zeny > 2000) Zeny -= 2000;
-	npctalk "Geffen Shoplifter : Stop following me. It's driving me crazy! 10,000 zeny~!", instance_npcname("Geffen Shoplifter#33");
+	npctalk "吉芬小偷 : 別再跟蹤我了。你快逼瘋我了！ 10,000元~!", instance_npcname("Geffen Shoplifter#33");
 	atcommand "@effect 18";
 	sleep2 3000;
-	unittalk 'gmt_account_id, "You can't run away anymore. I've got you now!";
+	unittalk 'gmt_account_id, "你跑不掉了。我抓到你了！";
 	sleep2 3000;
-	npctalk "Geffen Shoplifter : You really piss me off! I'm gonna have to beat you down!", instance_npcname("Geffen Shoplifter#33");
+	npctalk "吉芬小偷 : 你真的惹毛我了！我非得揍扁你！", instance_npcname("Geffen Shoplifter#33");
 	sleep2 3000;
 	hideonnpc instance_npcname("Geffen Shoplifter#33");
 	monster instance_mapname("1@gef"), 114, 137, "Geffen Shoplifter", 2914, 1, instance_npcname("Geffen Shoplifter#33") + "::OnMobKilled";
@@ -4656,84 +4656,84 @@ OnTimer1000:
 	
 	switch('gmt_timer_evt3) {
 		case 1: specialeffect EF_PATTACK, AREA, instance_npcname("Geffen Shoplifter#1"); break;
-		case 4: npctalk "Geffen Shoplifter : Ugh, I shouldn't fight toe to toe with anyone...", instance_npcname("Geffen Shoplifter#1"); break;
-		case 7: unittalk 'gmt_account_id, "Don't want to be in a fair fight, huh thief?"; break;
-		case 10: npctalk "Geffen Shoplifter : Umm... stealing zeny is my job~ I did nothing wrong~!", instance_npcname("Geffen Shoplifter#1"); break;
-		case 13: unittalk 'gmt_account_id, "What? You're stealing from needy people."; break;
-		case 16: npctalk "Geffen Shoplifter : Well, it has been fun~! I'm outta here~", instance_npcname("Geffen Shoplifter#1"); break;
-		case 17: unittalk 'gmt_account_id, "Hey! Give back what you stole thief!"; break;
-		case 20: npctalk "Geffen Shoplifter : Hahaha~! You'll get nothing~!", instance_npcname("Geffen Shoplifter#1"); break;
+		case 4: npctalk "吉芬小偷 : 嗚，我不應該跟任何人正面交鋒...", instance_npcname("Geffen Shoplifter#1"); break;
+		case 7: unittalk 'gmt_account_id, "不想公平對決，是吧，小偷？"; break;
+		case 10: npctalk "吉芬小偷 : 嗯...偷錢是我的工作~ 我沒做錯任何事~!", instance_npcname("Geffen Shoplifter#1"); break;
+		case 13: unittalk 'gmt_account_id, "什麼？你正在偷走那些需要幫助的人的錢。"; break;
+		case 16: npctalk "吉芬小偷 : 好啦，玩得很開心~! 我走啦~", instance_npcname("Geffen Shoplifter#1"); break;
+		case 17: unittalk 'gmt_account_id, "嘿！把偷的東西還回來，小偷！"; break;
+		case 20: npctalk "吉芬小偷 : 哈哈哈~! 你什麼都得不到~!", instance_npcname("Geffen Shoplifter#1"); break;
 		case 22: hideonnpc instance_npcname("Geffen Shoplifter#1"); break;
 		case 24:
 			if (attachrid('gmt_account_id)) {
-				mes "[Geffen Resident]", "My monthly salary...", "What am I gonna do?", "I have to eat..."; next;
-				mes "[Geffen Resident]", "You're not a thief are you?", "I don't know what to do about my zeny being stolen."; next;
-				mes "[Lydia]", "Woo, yeah, what a day~", "It seems like all these thieves in Geffen are rich.", "They may be good at stealing but they're easy to steal from too.";
+				mes "[吉芬居民]", "我的月薪...", "我該怎麼辦？", "我得吃飯啊..."; next;
+				mes "[吉芬居民]", "你不是小偷吧？", "我不知道該怎麼辦才好，我的錢被偷走了。"; next;
+				mes "[莉迪亞]", "呼，耶，真是美好的一天~", "看來所有在吉芬的這些小偷都很有錢。", "他們可能很擅長偷竊，但也很容易被偷。";
 				cutin "lydia_a.bmp", 0;
 				next;
 				hideoffnpc instance_npcname("Lydia#1");
-				mes "[Lydia]", "Hey, why are you crying?", "What happened?"; next;
-				mes "You tell Lydia about the shoplifters.";
+				mes "[莉迪亞]", "嘿，你為什麼在哭？", "發生什麼事了？"; next;
+				mes "你告訴莉迪亞關於小偷的事。";
 				cutin "", 255;
 				next;
-				mes "[Geffen Resident]", "What am I going to do?", "*sobbing*"; next;
-				mes "[Lydia]", "(I stole this envelope from one of those thug-looking guys)", "....", "How much zeny was stolen from you?";
+				mes "[吉芬居民]", "我該怎麼辦？", "*啜泣*"; next;
+				mes "[莉迪亞]", "(我從其中一個看起來像流氓的傢伙那裡偷了這個信封)", "....", "你被偷了多少錢？";
 				cutin "lydia_a.bmp", 0;
 				next;
-				mes "[Geffen Resident]", "1,000,000 zeny!", "It's everything that I had.";
+				mes "[吉芬居民]", "1,000,000元！", "這是我所有的錢。";
 				cutin "", 255;
 				next;
-				mes "[Lydia]", "Whoa! That's the same amount as what's in this envelope that I stole from that shoplifter.";
+				mes "[莉迪亞]", "哇！這和我從那個小偷那裡偷來的這個信封裡的金額一樣。";
 				cutin "lydia_a.bmp", 0;
 				next;
-				mes "[Lydia]", "Maybe this is what you are looking for?", "Check it out!"; next;
-				mes "[Geffen Resident]", "Let me see...", "Wait, this has to be my zeny!", "Thank you very much for finding it!";
+				mes "[莉迪亞]", "也許這就是你在找的東西？", "看看吧！"; next;
+				mes "[吉芬居民]", "讓我看看...", "等等，這一定是我的錢！", "非常感謝你幫我找到它！";
 				cutin "", 255;
 				next;
 				hideonnpc instance_npcname("Geffen Resident#1");
 				hideoffnpc instance_npcname("Geffen Resident#2");
-				mes "[Lydia]", "Well... Um, that is...", "I didn't say I was gonna give it back to you...";
+				mes "[莉迪亞]", "嗯... 這個嘛，那就是...", "我沒說我要把它還給你...";
 				cutin "lydia_a.bmp", 0;
 				next;
-				mes "[Geffen Resident]", "Thank you very much!!", "I will never forget your kindness~!", "I'm putting it in the bank right now!", "Have a good day~!!! Zap~!!";
+				mes "[吉芬居民]", "非常感謝你！！", "我永遠不會忘記你的好意~！", "我現在就把它存到銀行！", "祝你有美好的一天~!!! 咻~!!";
 				cutin "", 255;
 				next;
 				hideonnpc instance_npcname("Geffen Resident#2");
-				mes "[Lydia]", "......", "I guess... I did a good thing...?";
+				mes "[莉迪亞]", "......", "我想...我做了一件好事...？";
 				cutin "lydia_a.bmp", 0;
 				next;
-				mes "You tell Lydia about your stolen zeny.";
+				mes "你告訴莉迪亞關於你被偷的錢。";
 				cutin "", 255;
 				next;
-				mes "[Lydia]";
-				mes "So, are you asking me for more zeny?";
-				mes "Zeny doesn't grow on trees you know!";
+				mes "[莉迪亞]";
+				mes "所以，你是要我給你更多的錢嗎？";
+				mes "錢不是從樹上長出來的，你知道嗎！";
 				cutin "lydia_a.bmp", 0;
 				next;
-				mes "[Lydia]";
-				mes "I mean it is hers so...";
-				mes "I'll just consider it a donation to the Geffen Magic Tournament.";
+				mes "[莉迪亞]";
+				mes "我的意思是那是她的錢，所以...";
+				mes "我就把它當作是對吉芬魔法錦標賽的捐款。";
 				next;
-				mes "[Lydia]";
-				mes "Well, I can't give away any Tournament participants any zeny...";
+				mes "[莉迪亞]";
+				mes "嗯，我不能給任何錦標賽的參與者任何錢...";
 				next;
-				mes "[Lydia]";
-				mes "I stole this magic scroll from another thief, so don't worry about taking it.";
+				mes "[莉迪亞]";
+				mes "我從另一個小偷那裡偷了這個魔法卷軸，所以不用擔心拿走它。";
 				sc_start4 SC_GEFFEN_MAGIC1, 3600000, 5, 0, 0, 0, 10000, 1; // flag = 1
 				atcommand "@effect 220";
 				next;
-				mes "[Lydia]";
-				mes "I need to get to the Geffen Magic Tournament.";
-				mes "Gotta go!";
+				mes "[莉迪亞]";
+				mes "我需要去吉芬魔法錦標賽了。";
+				mes "我得走了！";
 				close2;
 				cutin "", 255;
 				hideonnpc instance_npcname("Lydia#1");
 				sleep2 2000;
-				unittalk 'gmt_account_id, "She disappeared before I could thank her...";
+				unittalk 'gmt_account_id, "我還沒來得及感謝她，她就消失了...";
 				sleep2 3000;
-				unittalk 'gmt_account_id, "She seems like a good person...";
+				unittalk 'gmt_account_id, "她看起來像個好人...";
 				sleep2 3000;
-				unittalk 'gmt_account_id, "Well, time to register for the Magic Tournament.";
+				unittalk 'gmt_account_id, "好，該去報名魔法錦標賽了。";
 				stopnpctimer;
 				end;
 			}
@@ -4765,15 +4765,15 @@ OnTimer1000:
 	'gmt_timer_evt3++;
 	
 	switch('gmt_timer_evt3) {
-		case 1: npctalk "Geffen Resident : A thief...! A thief~!!", instance_npcname("Geffen Resident#1"); break;
-		case 3: npctalk "Geffen Resident : Help me~!! Someone stole my paycheck!", instance_npcname("Geffen Resident#1"); break;
+		case 1: npctalk "吉芬居民 : 小偷...! 小偷~!!", instance_npcname("Geffen Resident#1"); break;
+		case 3: npctalk "吉芬居民 : 救命啊~!! 有人偷了我的薪水！", instance_npcname("Geffen Resident#1"); break;
 		case 6: 
 			hideoffnpc instance_npcname("Geffen Shoplifter#1");
 			'gmt_chase = 1;
 			break;
-		case 8: npctalk "Geffen Shoplifter : Damn... Someone saw me...", instance_npcname("Geffen Shoplifter#1"); break;
+		case 8: npctalk "吉芬小偷 : 該死... 有人看到我了...", instance_npcname("Geffen Shoplifter#1"); break;
 		case 11:
-			unittalk 'gmt_account_id, "What can I do? I gotta help.";
+			unittalk 'gmt_account_id, "我能做什麼？我必須幫忙。";
 			stopnpctimer;
 			end;
 	}
@@ -4789,7 +4789,7 @@ OnInstanceInit:
 	hideonnpc instance_npcname("Geffen Gangster#1");
 	hideonnpc instance_npcname("Geffen Gangster#2");
 	hideonnpc instance_npcname("Geffen Gangster#3");
-	hideonnpc instance_npcname("Kafra Employee#1");
+	hideonnpc instance_npcname("卡普拉職員#1");
 	hideonnpc instance_npcname("Geffen Gangster#11");
 	hideonnpc instance_npcname("Geffen Gangster#22");
 	hideonnpc instance_npcname("Geffen Gangster#33");

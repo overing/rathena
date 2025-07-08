@@ -22,31 +22,31 @@
 //============================================================
 brasilis,297,307,5	script	Angelo#br	1_M_04,{
 	if (BaseLevel < 40) {
-		mes "[Angelo]";
-		mes "Pets went out the village~!!";
-		mes "Gosh... what can I do... ?";
+		mes "[安傑羅]";
+		mes "寵物們跑出村莊了～！！";
+		mes "哎呀... 我該怎麼辦... ?";
 		close;
 	}
 	if (checkquest(9032,PLAYTIME) == 2) {
 		erasequest 9032;
 	}
 	if (checkquest(9032,PLAYTIME) == 0) {
-		mes "[Angelo]";
-		mes "The day is not finished yet.";
-		mes "You can only help once a day. Hehe.";
+		mes "[安傑羅]";
+		mes "今天還沒結束。";
+		mes "你一天只能幫忙一次。呵呵。";
 		close;
 	}
 	if (checkquest(9030) == 1) {
-		mes "[Angelo]";
-		mes "My pets are in the field outside of the village.";
-		mes "Why did they leave? Please find them.";
+		mes "[安傑羅]";
+		mes "我的寵物們在村莊外面的田野裡。";
+		mes "牠們為什麼要離開？請幫我找到牠們。";
 		close;
 	}
 	if (checkquest(9031) == 1) {
-		mes "[Angelo]";
-		mes "Oh, thank you. You found all of 3 puppies.";
-		mes "Thanks a lot.";
-		mes "I hope this is useful to you. hoho.";
+		mes "[安傑羅]";
+		mes "喔，謝謝你。你找到了全部的 3 隻小狗。";
+		mes "非常感謝。";
+		mes "我希望這對你有用。呵呵。";
 		if (VIP_SCRIPT && vip_status(VIP_STATUS_ACTIVE))
 			getexp 75000,0;
 		else
@@ -62,14 +62,14 @@ brasilis,297,307,5	script	Angelo#br	1_M_04,{
 		}
 		close;
 	}
-	mes "[Angelo]";
-	mes "Are you an adventurer? You came here right on time.";
-	mes "Puppies have been disappearing.";
-	mes "And someone said that they saw them out on the field just outside the village....";
+	mes "[安傑羅]";
+	mes "你是個冒險者嗎？你來得正是時候。";
+	mes "小狗們一直在消失。";
+	mes "而且有人說他們看到牠們在村莊外面的田野上....";
 	next;
-	mes "[Angelo]";
-	mes "It's pretty difficult and dangerous to find 'em.";
-	mes "You have to find ^0000FF3 puppies^000000.";
+	mes "[安傑羅]";
+	mes "要找到牠們非常困難且危險。";
+	mes "你必須找到 ^0000FF3 隻小狗^000000。";
 	setquest 9030;
 	close;
 
@@ -89,23 +89,23 @@ OnGo:
 }
 
 -	script	Puppy#bra	-1,{
-	mes "[Puppy]";
-	mes "bow! wow wow!";
+	mes "[小狗]";
+	mes "汪！汪汪汪！";
 	if (checkquest(9030) == 1) {
 		if (brazil_kid < 3) {
 			next;
 			brazil_kid++;
 			mes "[" + strcharinfo(0) + "]";
 			if (brazil_kid == 3) {
-				mes "Good. I found all 3 puppies.";
-				mes "Now I need to go tell Angelo.";
+				mes "太好了。我找到了全部 3 隻小狗。";
+				mes "現在我需要去告訴安傑羅。";
 				brazil_kid = 0;
 				erasequest 9030;
 				setquest 9031;
 			}
 			else {
-				mes "Ah... who's a good puppy?";
-				mes "Ok, where are the others?";
+				mes "啊... 誰是乖狗狗？";
+				mes "好吧，其他隻在哪裡？";
 			}
 			if (compare(strnpcinfo(2),"1")) setarray .@i[0],2,3;
 			else if (compare(strnpcinfo(2),"2")) setarray .@i[0],1,3;
@@ -156,71 +156,70 @@ brasilis,192,133,6	script	Lucia#brasilis	4_F_BRZ_WOMAN,{
 	}
 	--------------------------------------------------- */
 	if (BaseLevel < 40) {
-		mes "[Lucia]";
-		mes "Hello.";
-		mes "I'm worried about ^FF0000Strange Hydra^000000's on";
-		mes "the south beach.";
-		mes "I hope some experienced adventurers";
-		mes "will come to help.";
+		mes "[露西亞]";
+		mes "哈囉。";
+		mes "我很擔心在南海灘上的 ^FF0000奇怪九頭蛇^000000。";
+		mes "我希望一些有經驗的冒險者";
+		mes "會來幫忙。";
 		emotion ET_OHNO;
 		close;
 	}
 	.@nQState1 = checkquest(9028);
 	.@nQState2 = checkquest(9029);
 	if (.@nQState1 == -1) {
-		mes "[Lucia]";
-		mes "Hello.";
-		mes "Have you come here to hunt ^FF0000Strange Hydra^000000s?";
+		mes "[露西亞]";
+		mes "哈囉。";
+		mes "你是來獵捕 ^FF0000奇怪九頭蛇^000000 的嗎？";
 		next;
-		switch(select("Yes.:No.:^006400What is happening here?^000000")) {
+		switch(select("是的。:不用了。:^006400這裡發生什麼事了？^000000")) {
 		case 1:
 			setquest 9028;
 			getitem 12408,1; //Hydra_Ball
-			mes "[Lucia]";
-			mes "Here, take this ^006400Hydra Ball^000000.";
-			mes "Use it to capture a ^FF0000Strange Hydra^8B4513.^000000";
-			mes "I hope you can do it~!";
+			mes "[露西亞]";
+			mes "來，拿這個 ^006400九頭蛇球^000000。";
+			mes "用它來捕捉一隻 ^FF0000奇怪九頭蛇^8B4513.^000000";
+			mes "我希望你可以做到～！";
 			close;
 		case 2:
-			mes "[Lucia]";
-			mes "Ah, I misunderstood.";
-			mes "See you then.";
+			mes "[露西亞]";
+			mes "啊，我誤會了。";
+			mes "再見了。";
 			close;
 		case 3:
 		L_WhatHappen:
-			mes "[Lucia]";
-			mes "One day ^FF0000Strange Hydra^000000s";
-			mes "came here and surrounded the town.";
-			mes "We're not sure what attracted them but some say that it's because of you adventurers.";
+			mes "[露西亞]";
+			mes "有一天 ^FF0000奇怪九頭蛇^000000";
+			mes "來到這裡並包圍了城鎮。";
+			mes "我們不確定是什麼吸引了牠們，但有些人說是因為你們這些冒險者。";
 			next;
-			mes "[Lucia]";
-			mes "In any case, to contain the ^FF0000Strange Hydra^000000s,";
-			mes "you have to use this specially designed tool a.k.a. a ^8B4513Hydra Ball^000000";
+			mes "[露西亞]";
+			mes "無論如何，為了控制住 ^FF0000奇怪九頭蛇^000000，";
+			mes "你必須使用這種特別設計的工具，也就是 ^8B4513九頭蛇球^000000。";
 			next;
-			mes "[Lucia]";
-			mes "If you still have the ^006400Hydra Ball^000000,";
-			mes "please use it on the ^FF0000Strange Hydra^000000s that";
-			mes "you can find at the beach.";
-			mes "If you are lucky, the tool will work perfectly.";
+			mes "[露西亞]";
+			mes "如果你還有 ^006400九頭蛇球^000000，";
+			mes "請用它來對付你在海灘上";
+			mes "可以找到的 ^FF0000奇怪九頭蛇^000000。";
+			mes "如果你夠幸運，這個工具會完美地運作。";
 			next;
-			mes "[Lucia]";
-			mes "I hope many adventurers";
-			mes "volunteer for this job.";
+			mes "[露西亞]";
+			mes "我希望有很多冒險者";
+			mes "自願來做這件事。";
 			mes " ";
-			mes "I really hate Hydra!";
+			mes "我真的很討厭九頭蛇！";
 			emotion ET_CRY;
 			close;
 		}
 	}
 	else if ((.@nQState1 == 0) || (.@nQState1 == 1)) {
 		if (countitem(6221) > 0) {
-			mes "[Lucia]";
-			mes "Hello, you really did it!";
+			mes "[露西亞]";
+			mes "哈囉，你真的做到了！";
 			if (checkweight(11502,3)) {
 				//mes "I don't have enough ^006400Hydra Ball^000000s to give you."; //Poorly translated by iRO?
-				mes "I hope you will come";
-				mes "again to help me.";
-				mes "Have a nice day~!";
+				mes "我希望你會再來";
+				mes "幫助我。";
+				mes "祝你有美好的一天～！";
 				delitem 6221,1; //Mystic_Leaf_Cat_Ball
 				completequest 9028;
 				//recall_completequest 9029;
@@ -239,27 +238,27 @@ brasilis,192,133,6	script	Lucia#brasilis	4_F_BRZ_WOMAN,{
 			}
 			else {
 				mes " ";
-				mes "I'd like to reward you,";
-				mes "however your bags are full.";
-				mes "Please make room and come back!";
+				mes "我想獎勵你，";
+				mes "但是你的包包滿了。";
+				mes "請清出空間再回來！";
 				close;
 			}
 		}
 		else {
-			mes "[Lucia]";
+			mes "[露西亞]";
 			if (countitem(12408) < 1) {
-				mes "Did you need another ^006400Hydra Ball^000000?";
-				mes "I will give you one more.";
+				mes "你需要另一個 ^006400九頭蛇球^000000 嗎？";
+				mes "我會再給你一個。";
 				getitem 12408,1; //Leaf_Cat_Ball
 				close;
 			}
 			else {
-				mes "Any problems?";
+				mes "有什麼問題嗎？";
 				next;
-				switch(select("No.:^006400Tell me again what happened^000000")) {
+				switch(select("沒有。:^006400請再告訴我發生了什麼事^000000")) {
 				case 1:
-					mes "[Lucia]";
-					mes "Ok, please do me a favor.";
+					mes "[露西亞]";
+					mes "好吧，請幫我一個忙。";
 					close;
 				case 2:
 					goto L_WhatHappen;
@@ -268,34 +267,34 @@ brasilis,192,133,6	script	Lucia#brasilis	4_F_BRZ_WOMAN,{
 		}
 	}
 	else {
-		mes "[Lucia]";
-		mes "Oh, ^0000FF"+strcharinfo(0)+"^000000 you're back.";
+		mes "[露西亞]";
+		mes "喔，^0000FF"+strcharinfo(0)+"^000000 你回來了。";
 		.@nCheckTime = checkquest(9029,PLAYTIME);
 		if ((.@nCheckTime == 0) || (.@nCheckTime == 1)) {
-			mes "I'm so grateful for your help.";
-			mes "Each ^006400Hydra Ball^000000 is provided ^006400every 24 hours^000000";
-			mes "Please come at the appropriate time.";
+			mes "我非常感謝你的幫助。";
+			mes "每個 ^006400九頭蛇球^000000 都會在 ^006400每 24 小時^000000 提供";
+			mes "請在適當的時間來。";
 			close;
 		}
 		else {
 			//recall_completequest 9028;
 			if (.@nQState1 > -1) erasequest 9028;
 			completequest 9029;
-			mes "Did you come here to hunt ^FF0000Strange Hydra^000000s?";
+			mes "你是來獵捕 ^FF0000奇怪九頭蛇^000000 的嗎？";
 			next;
-			switch(select("Yes.:No.:^006400What is happening here?^000000")) {
+			switch(select("是的。:不用了。:^006400這裡發生什麼事了？^000000")) {
 			case 1:
 				setquest 9028;
 				getitem 12408,1; //Leaf_Cat_Ball
-				mes "[Lucia]";
-				mes "Here, take this ^006400Hydra Ball^000000.";
-				mes "Use it to capture a ^FF0000Strange Hydra^8B4513.^000000";
-				mes "I hope you can do it~!";
+				mes "[露西亞]";
+				mes "來，拿這個 ^006400九頭蛇球^000000。";
+				mes "用它來捕捉一隻 ^FF0000奇怪九頭蛇^8B4513.^000000";
+				mes "我希望你可以做到～！";
 				close;
 			case 2:
-				mes "[Lucia]";
-				mes "Ah, I misunderstood.";
-				mes "See you then.";
+				mes "[露西亞]";
+				mes "啊，我誤會了。";
+				mes "再見了。";
 				close;
 			case 3:
 				goto L_WhatHappen;
@@ -319,95 +318,95 @@ OnTimer7000:
 //============================================================
 brasilis,187,162,5	script	Candy Maker	4_M_BRZ_MAN1,{
 	if (!checkweight(1201,1)) {
-		mes "- You can't start the quest. Please reduce the weight in your inventory. -";
+		mes "- 你無法開始任務。請減少你背包的重量。 -";
 		close;
 	}
 	if (brazil_gua == 0) {
-		mes "[Candy Maker]";
-		mes "Yo, do you know a berry called ^FF0000Guarana^000000?";
+		mes "[糖果製造商]";
+		mes "嘿，你知道一種叫做 ^FF0000瓜拿納^000000 的莓果嗎？";
 		next;
-		mes "[Candy Maker]";
-		mes "Guarana is a really special berry raised in a specific area, it relieves physical fatigue, and gives power to the body. It even detoxes waste from the body.";
+		mes "[糖果製造商]";
+		mes "瓜拿納是一種非常特別的莓果，在特定的區域種植，它可以減輕身體疲勞，並給予身體力量。它甚至可以排出體內的廢物。";
 		next;
-		mes "[Candy Maker]";
-		mes "I used to sell the candy made of it back in the day.";
-		mes "I got a prize sometimes every year in the <annual best product contest>. Those were the good 'ol days.";
+		mes "[糖果製造商]";
+		mes "我過去常常販賣用它製成的糖果。";
+		mes "我偶爾會在 <年度最佳產品競賽> 中獲得獎項。那些都是美好的日子。";
 		next;
-		mes "[Candy Maker]";
-		mes "Since then, the output of that fruit has reduced and the price has gone up so now candy ingredients were changed to coconuts or other tropical fruits instead. I miss the guarana candy.";
+		mes "[糖果製造商]";
+		mes "從那時起，這種水果的產量減少，價格上漲，所以現在糖果的成分改為椰子或其他熱帶水果。我懷念瓜拿納糖果。";
 		next;
-		switch(select("How can I taste this guarana candy?:End conversation.")) {
+		switch(select("我如何才能嚐到這種瓜拿納糖果？:結束對話。")) {
 		case 1:
-			mes "[Candy Maker]";
-			mes "Hmm? I already sold out of all my old supply.";
+			mes "[糖果製造商]";
+			mes "嗯？我已經賣光了所有的舊貨。";
 			next;
-			mes "[Candy Maker]";
-			mes "But if you can find some guarana, I can make it for you.";
+			mes "[糖果製造商]";
+			mes "但如果你能找到一些瓜拿納，我可以為你製作。";
 			next;
-			switch(select("How do I find guarana?:End conversation.")) {
+			switch(select("我如何找到瓜拿納？:結束對話。")) {
 			case 1:
-				mes "[Candy Maker]";
-				mes "Will you find the guarana?? Hoooooh~";
+				mes "[糖果製造商]";
+				mes "你會找到瓜拿納嗎?? 呼喔～";
 				next;
-				mes "[Candy Maker]";
-				mes "Can you find it?";
-				mes "It's probably very expensive.";
-				mes "Trading isn't my thing. Let me think.";
+				mes "[糖果製造商]";
+				mes "你能找到嗎？";
+				mes "它可能非常昂貴。";
+				mes "交易不是我的強項。讓我想想。";
 				next;
-				mes "[Candy Maker]";
-				mes "Let me introduce you to someone with whom I used to do guarana business with.";
-				mes "He might still be dealing it.";
+				mes "[糖果製造商]";
+				mes "讓我介紹你認識一個我過去常和他做瓜拿納生意的人。";
+				mes "他可能還在從事這方面的交易。";
 				next;
-				mes "[Candy Maker]";
-				mes "His name is Cherto.";
-				mes "If you can't find him in the city, go to museum.";
-				mes "He's a vain person so he likes to act big.";
-				mes "He's probably wandering in the museum trying to show off to someone for sure.";
+				mes "[糖果製造商]";
+				mes "他的名字是切爾托。";
+				mes "如果你在城市裡找不到他，就去博物館。";
+				mes "他是一個虛榮的人，所以他喜歡裝腔作勢。";
+				mes "他可能在博物館裡閒逛，想向某人炫耀。";
 				brazil_gua = 1;
 				setquest 2192;
 				close;
 			case 2:
-				mes "[Candy Maker]";
-				mes "Don't you want to try the guarana candy?";
+				mes "[糖果製造商]";
+				mes "你不想嚐嚐瓜拿納糖果嗎？";
 				close;
 			}
 		case 2:
-			mes "[Candy Maker]";
-			mes "Those were the good 'ole days...";
+			mes "[糖果製造者]";
+			mes "那些是美好的舊時光...";
 			close;
 		}
 	}
 	else if (brazil_gua == 1) {
-		mes "[Candy Maker]";
-		mes "If you want to get the guarana, find Cherto.";
-		mes "Maybe he will be in the museum.";
+		mes "[糖果製造者]";
+		mes "如果你想要獲得瓜拉納，去找契爾托。";
+		mes "也許他會在博物館裡。";
 		close;
 	}
 	else if (brazil_gua == 10) {
 		if (!countitem(6237)) {
-			mes "- The guarana that I had has disappeared. -";
+			mes "- 我擁有的瓜拉納消失了。 -";
 			close;
 		}
 		delitem 6237,1; //Guarana_Fruit
-		mes "[Candy Maker]";
-		mes "Did you get the guarana?";
+		mes "[糖果製造者]";
+		mes "你拿到瓜拉納了嗎？";
 		next;
-		mes "- You give the guarana to him. -";
+		mes "- 你把瓜拉納給了他。 -";
 		next;
-		mes "[Candy Maker]";
-		mes "Wow! You have special talent.";
-		mes "It's the best thing I have ever seen so far. Cool~!";
+		mes "[糖果製造者]";
+		mes "哇！你有特殊的天賦。";
+		mes "這是我目前見過最好的東西。酷~！";
 		next;
-		mes "[Candy Maker]";
-		mes "Good, let's make the candy~!";
-		mes "Long time no see my wonderful guarana candy...";
+		mes "[糖果製造者]";
+		mes "很好，讓我們來做糖果吧~！";
+		mes "好久沒看到我美妙的瓜拉納糖果了...";
 		next;
-		mes "- hash hash hash hash hash hash -";
-		mes "- hash hash hash hash hash hash -";
+		mes "- 咻 咻 咻 咻 咻 咻 -";
+		mes "- 咻 咻 咻 咻 咻 咻 -";
 		next;
-		mes "[Candy Maker]";
-		mes "Look! It's the popular guarana candy.";
-		mes "Try to savor its amazing taste hey~ take it easy. hahaha!!";
+		mes "[糖果製造者]";
+		mes "看！這是流行的瓜拉納糖果。";
+		mes "試著品嚐它令人驚嘆的味道，嘿~ 放輕鬆。哈哈哈！！";
 		brazil_gua = 11;
 		completequest 2200;
 		getitem 12414,1; //Guarana_Candy
@@ -420,234 +419,234 @@ brasilis,187,162,5	script	Candy Maker	4_M_BRZ_MAN1,{
 		close;
 	}
 	else if (brazil_gua == 11) {
-		mes "[Candy Maker]";
-		mes "Guarana candy. That was the most unique masterpiece in my life for sure!";
+		mes "[糖果製造者]";
+		mes "瓜拉納糖果。那肯定是我生命中最獨特的傑作！";
 		next;
-		mes "[Candy Maker]";
-		mes "Since you helped me, guarana supply has been steadily rising.";
-		mes "So, naturally I'm back to making guarana candy.";
+		mes "[糖果製造者]";
+		mes "自從你幫助我之後，瓜拉納的供應一直在穩步上升。";
+		mes "所以，我自然又回來製作瓜拉納糖果了。";
 		next;
-		mes "[Candy Maker]";
-		mes "What about it? Wanna buy some?";
-		mes "It's 4000 zeny each.";
+		mes "[糖果製造者]";
+		mes "怎麼樣？想買一些嗎？";
+		mes "一個 4000 zeny。";
 		next;
-		switch(select("Buy a Guarana Candy.:Cancel.")) {
+		switch(select("購買瓜拉納糖果。:取消。")) {
 		case 1:
 			if (Zeny > 3999) {
-				mes "[Candy Maker]";
-				mes "Here is a delicious guarana candy.";
+				mes "[糖果製造者]";
+				mes "這是美味的瓜拉納糖果。";
 				Zeny = Zeny-4000;
 				getitem 12414,1; //Guarana_Candy
 				close;
 			}
 			else {
-				mes "[Candy Maker]";
-				mes "What? You should say before if you don't have money!";
-				mes "Even if you are poor, I can't give this away for free.";
+				mes "[糖果製造者]";
+				mes "什麼？如果你沒有錢，你應該先說！";
+				mes "即使你很窮，我也不能免費送給你。";
 				close;
 			}
 		case 2:
-			mes "[Candy Maker]";
-			mes "Sometimes some people don't like it due to it's arousal effect.";
+			mes "[糖果製造者]";
+			mes "有時候有些人不喜歡它，因為它有興奮的作用。";
 			close;
 		}
 		close;
 	}
 	else {
-		mes "[Candy Maker]";
-		mes "Guarana candy. That was the most unique masterpiece in my life for sure!";
+		mes "[糖果製造者]";
+		mes "瓜拉納糖果。那肯定是我生命中最獨特的傑作！";
 		close;
 	}
 }
 
 bra_in01,95,179,3	script	Cherto	4_M_BRZ_MAN2,{
 	if (brazil_gua <= 1) {
-		mes "[Cherto]";
-		mes "Hmm... hey man, you are from outside, aren't you?";
+		mes "[契爾托]";
+		mes "嗯... 嘿，老兄，你從外面來的，不是嗎？";
 		next;
-		mes "[Cherto]";
-		mes "Cherto can figure it out even if it's the first time. You can't trick Cherto.";
-		mes "Cherto has sharp eyes like an eagle! Hahaha!";
+		mes "[契爾托]";
+		mes "即使是第一次，契爾托也能弄清楚。你無法欺騙契爾托。";
+		mes "契爾托有像老鷹一樣銳利的眼睛！哈哈哈！";
 		next;
-		mes "[Cherto]";
-		mes "Ok, ok. Yes, yes. I see!";
+		mes "[契爾托]";
+		mes "好，好。是，是。我明白了！";
 		next;
-		mes "[Cherto]";
-		mes "Anyway, you arrived in Brasilis but don't know what to do?";
-		mes "Am I right?";
-		mes "You don't know how fortunate you are to have found a really proper helper as myself.";
+		mes "[契爾托]";
+		mes "總之，你到了巴西里斯，但不知道該做什麼？";
+		mes "我說的對嗎？";
+		mes "你不知道你有多幸運能找到像我這樣真正合適的幫手。";
 		next;
-		mes "[Cherto]";
-		mes "Cherto takes it by your expression that you want to say, ''You are a master!'' Right?";
-		mes "Cherto, I can read and figure out all at once! That is written in your face!";
+		mes "[契爾托]";
+		mes "契爾托從你的表情中得知你想說，「你是一位大師！」對吧？";
+		mes "契爾托，我可以一次性讀懂並理解一切！這都寫在你的臉上！";
 		next;
 		if (brazil_gua == 0) {
-			mes "[Cherto]";
-			mes "Cherto would love to stay here and explain everything to you but he is a busy man.";
+			mes "[契爾托]";
+			mes "契爾托很樂意留在這裡向你解釋一切，但他是一個忙碌的人。";
 			close;
 		}
 		else {// brazil_gua == 1
-			mes "[Cherto]";
-			mes "If you have a curious thing to ask to Cherto. Cherto will be kind enough to answer.";
+			mes "[契爾托]";
+			mes "如果你有好奇的事情要問契爾托。契爾托會很樂意回答。";
 			next;
-			select("Guarana?");
-			mes "[Cherto]";
-			mes "What? Do you want to find a guarana?";
+			select("瓜拉納？");
+			mes "[契爾托]";
+			mes "什麼？你想找到瓜拉納嗎？";
 			next;
-			mes "[Cherto]";
-			mes "Guarana is only raised in this area, it has a soft inside and is coverd with a light fur.";
-			mes "It seems a little bit weird but the flower is really big and smells beautiful.";
+			mes "[契爾托]";
+			mes "瓜拉納只在這個地區生長，它裡面很軟，外面覆蓋著一層淡淡的毛皮。";
+			mes "它看起來有點奇怪，但花朵真的很大，聞起來很香。";
 			next;
-			mes "[Cherto]";
-			mes "A long time ago, guarana was used to relieve desease and thirst. But recently it's getting popular to revitalize body power and increase blood circulation.";
+			mes "[契爾托]";
+			mes "很久以前，瓜拉納被用來緩解疾病和口渴。但最近它越來越受歡迎，可以活化身體機能，增加血液循環。";
 			next;
-			mes "[Cherto]";
-			mes "Although it has such great effects, Cherto is sorry to inform you that we can't get it anymore.";
+			mes "[契爾托]";
+			mes "雖然它有這麼棒的效果，但契爾托很抱歉地通知你，我們再也拿不到了。";
 			next;
-			select("Whaaaat??");
-			mes "[Cherto]";
-			mes "For a while now, guarana berries haven't been growing here.";
+			select("什麼？？");
+			mes "[契爾托]";
+			mes "有一段時間了，瓜拉納漿果一直沒有在這裡生長。";
 			next;
-			mes "[Cherto]";
-			mes "Even if Cherto managed to find one, it will rot quickly.";
+			mes "[契爾托]";
+			mes "即使契爾托設法找到一個，它也會很快腐爛。";
 			next;
-			mes "[Cherto]";
-			mes "If only it didn't happen!";
+			mes "[契爾托]";
+			mes "如果沒有發生就好了！";
 			next;
-			select("What are you talking about?");
-			mes "[Cherto]";
-			mes "Quiet!!!!!!!!!!!!!!!!";
-			mes "This story has been forbidden! Someone might be listening to our conversation...";
+			select("你在說什麼？");
+			mes "[契爾托]";
+			mes "安靜!!!!!!!!!!!!!!!!";
+			mes "這個故事是被禁止的！有人可能正在聽我們的談話...";
 			next;
-			mes "[Cherto]";
-			mes "If Cherto tells you, you might get us into trouble. But you look like you really wanna know so let me give you a tip.";
-			mes "Come closer. Cherto will whisper so nobody can listen in.";
+			mes "[契爾托]";
+			mes "如果契爾托告訴你，你可能會給我們帶來麻煩。但你看起來真的很想知道，所以讓我給你一個提示。";
+			mes "靠近一點。契爾托會耳語，這樣就沒人能聽到了。";
 			brazil_gua = 2;
 			close;
 		}
 	}
 	else if (brazil_gua == 2) {
-		mes "[Cherto]";
-		mes "A Guarana boy was born.";
+		mes "[契爾托]";
+		mes "瓜拉納男孩誕生了。";
 		next;
-		select("Guarana kid?");
-		mes "[Cherto]";
-		mes "There was woman who was an expert botanist.";
-		mes "The woman was really popular to all living creatures.";
+		select("瓜拉納小孩？");
+		mes "[契爾托]";
+		mes "有一位女性是一位植物學專家。";
+		mes "這位女性在所有生物中都很受歡迎。";
 		next;
-		mes "[Cherto]";
-		mes "At around the time her baby was born, she started a guarana farm. For some reason, her brothers were jealous so they destroyed the farm and disappeared.";
-		mes "That kind of story...";
+		mes "[契爾托]";
+		mes "在她的小孩出生的前後，她開始了一個瓜拉納農場。由於某些原因，她的兄弟們很嫉妒，所以他們摧毀了農場並消失了。";
+		mes "就是這樣的故事...";
 		next;
-		mes "[Cherto]";
-		mes "We can't be sure that baby was born in the world but since that time, all guarana in Brasilis disappeared.";
+		mes "[契爾托]";
+		mes "我們不能確定那個孩子是否出生在這個世界上，但自那時起，巴西里斯的所有瓜拉納都消失了。";
 		next;
-		mes "[Cherto]";
-		mes "Who is the guarana kid?";
-		mes "Pedro who is famous as a greedy man?";
-		mes "Meto who can't endure about all the fruits?";
-		mes "Hovenue who is gloomy?";
-		mes "They might know~!";
+		mes "[契爾托]";
+		mes "誰是瓜拉納小孩？";
+		mes "佩德羅，以貪婪聞名？";
+		mes "梅托，無法忍受所有的水果？";
+		mes "霍文努，陰沉沉的？";
+		mes "他們可能知道~！";
 		next;
-		mes "[Cherto]";
-		mes "What about you?";
-		mes "Who is the guarana kid?";
-		mes "Will you figure out it? hohohhhhh~";
+		mes "[契爾托]";
+		mes "你呢？";
+		mes "誰是瓜拉納小孩？";
+		mes "你會弄清楚嗎？呵呵呵呵~";
 		brazil_gua = 3;
 		changequest 2192,2193;
 		close;
 	}
 	else if (brazil_gua == 3) {
-		mes "[Cherto]";
-		mes "Can you find the guarana kid?";
-		mes "Maybe yes? Maybe no?";
+		mes "[契爾托]";
+		mes "你能找到瓜拉納小孩嗎？";
+		mes "也許可以？也許不行？";
 		close;
 	}
 	else if (brazil_gua == 4) {
-		mes "[Cherto]";
-		mes "Did you find guarana kid?";
+		mes "[契爾托]";
+		mes "你找到瓜拉納小孩了嗎？";
 		next;
-		mes "- I tell Cherto about the kid making animal-like sounds. -";
+		mes "- 我告訴契爾托關於那個發出動物般聲音的小孩。 -";
 		next;
-		mes "[Cherto]";
-		mes "Hoooh. That's unbelievable.";
-		mes "That kid might be a guarana kid. Sure...";
-		mes "According to the story the kid can have conversations with animals.";
+		mes "[契爾托]";
+		mes "喔喔。這令人難以置信。";
+		mes "那個小孩可能是瓜拉納小孩。當然...";
+		mes "根據故事，那個小孩可以和動物交談。";
 		next;
-		mes "[Cherto]";
-		mes "If he can make crying sounds of animals, they might be able to converse!";
+		mes "[契爾托]";
+		mes "如果他能發出動物的哭聲，他們也許就能交談了！";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Now, what can I do?";
-		mes "If he is the kid from the legend, is there any way to raise the guarana again?";
+		mes "現在，我能做什麼？";
+		mes "如果他是傳說中的那個小孩，有什麼方法可以再次種植瓜拉納嗎？";
 		next;
-		mes "[Cherto]";
-		mes "Haha!! What'd Cherto say?";
-		mes "Cherto knows all~!!";
-		mes "Cherto's already thought";
-		mes "of the next step.";
+		mes "[契爾托]";
+		mes "哈哈！！契爾托說了什麼？";
+		mes "契爾托什麼都知道~！！";
+		mes "契爾托已經想好了";
+		mes "下一步該怎麼做。";
 		next;
-		mes "[Cherto]";
-		mes "In Brasilis there is an expert Mage.";
-		mes "His name is Paje.";
-		mes "Take this note over to him.";
-		mes "He will show the solution for you and the kid.";
+		mes "[契爾托]";
+		mes "在巴西里斯有一位法術專家。";
+		mes "他的名字是帕耶。";
+		mes "把這張紙條拿給他。";
+		mes "他會告訴你和那個小孩的解決方案。";
 		brazil_gua = 5;
 		changequest 2194,2195;
 		close;
 	}
 	else {
-		mes "[Cherto]";
-		mes "hoho tickle~tickle~~~~!!!";
+		mes "[切爾托]";
+		mes "hoho 搔癢~搔癢~~~~!!!";
 		close;
 	}
 }
 
 brasilis,203,64,3	script	Strange Kid#bra	4_M_KID1,{
 	if (brazil_gua < 3) {
-		mes "[Strange Kid]";
+		mes "[奇怪的小孩]";
 		mes "................";
 		close;
 	}
 	else if (brazil_gua == 3) {
-		mes "[Strange Kid]";
+		mes "[奇怪的小孩]";
 		mes "................";
 		next;
-		if(select("Try to talk.:Pretend to pass by.") == 2) {
-			mes "[Strange Kid]";
+		if(select("試著和他說話.:假裝路過。") == 2) {
+			mes "[奇怪的小孩]";
 			mes "................";
 			close;
 		}
-		mes "What can I say to him?";
+		mes "我該跟他說什麼？";
 		next;
 		while(1) {
-			switch(select("What's your name?:How old are you?:What are you doing?:End conversation.")) {
+			switch(select("你叫什麼名字？:你幾歲了？:你在做什麼？:結束對話。")) {
 			case 1:
-				mes "[Strange Kid]";
+				mes "[奇怪的小孩]";
 				mes "Kaaaaaaao~";
 				mes "Grrrrrrrrr - kaaan-";
 				next;
 				break;
 			case 2:
-				mes "[Strange Kid]";
+				mes "[奇怪的小孩]";
 				mes "Booooowoooooo-";
 				mes "Booooowoooooo- -";
 				next;
 				break;
 			case 3:
-				mes "[Strange Kid]";
-				mes "chamber pot braeee chamber pot brae chamber pot brae -";
+				mes "[奇怪的小孩]";
+				mes "尿壺 braeee 尿壺 brae 尿壺 brae -";
 				mes "Bbeeeebbeee -";
 				next;
 				break;
 			case 4:
-				mes "[Strange Kid]";
+				mes "[奇怪的小孩]";
 				mes "Kaaaaaaao~";
 				mes "Grrrrrrrrr - kaaan-";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "He makes strange sound like an animals.";
-				mes "Should I ask advice from Cherto?";
+				mes "他發出像動物一樣的奇怪聲音。";
+				mes "我該向切爾托請教嗎？";
 				brazil_gua = 4;
 				changequest 2193,2194;
 				close;
@@ -656,88 +655,88 @@ brasilis,203,64,3	script	Strange Kid#bra	4_M_KID1,{
 	}
 	else if (brazil_gua == 4) {
 		mes "["+strcharinfo(0)+"]";
-		mes "He makes strange sounds like an animal.";
-		mes "Should I ask advice from Cherto?";
+		mes "他發出像動物一樣的奇怪聲音。";
+		mes "我該向切爾托請教嗎？";
 		close;
 	}
 	else if ((brazil_gua > 4) && (brazil_gua < 9)) {
-		mes "[Strange Kid]";
-		mes "Ah...? ah.....?";
+		mes "[奇怪的小孩]";
+		mes "啊...? 啊.....?";
 		close;
 	}
 	else if (brazil_gua == 9) {
-		mes "[Strange Kid]";
-		mes "ah... ahah.....";
+		mes "[奇怪的小孩]";
+		mes "啊... 啊哈.....";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "I don't have a story but there are lots of friends waiting outside.";
+		mes "我沒有故事，但外面有很多朋友在等你。";
 		next;
-		mes "- You give the feather, fresh meat and branch of grapes to the kid -";
+		mes "- 你把羽毛、新鮮的肉和葡萄枝給了小孩 -";
 		next;
-		mes "[Strange Kid]";
-		mes "Ah.............";
+		mes "[奇怪的小孩]";
+		mes "啊.............";
 		next;
-		mes "[Strange Kid]";
-		mes "Un, uhh....";
-		mes "mooo... mommy.....";
+		mes "[奇怪的小孩]";
+		mes "嗯，呃....";
+		mes "哞... 媽咪.....";
 		next;
-		mes "[Strange Kid]";
-		mes "Ah..........";
-		mes "bird....";
+		mes "[奇怪的小孩]";
+		mes "啊..........";
+		mes "鳥....";
 		mes "mon, mon, mon...key......";
 		mes "boo, booow...........";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Dog?!";
-		mes "kkk yes. Lots of friends want to meet you.";
-		mes "Don't be lonely anymore and be happy with your friends.";
+		mes "狗？!";
+		mes "kkk 是的。 很多朋友想見你。";
+		mes "別再孤單了，和你的朋友們一起快樂吧。";
 		next;
-		mes "[Strange Kid]";
-		mes "ah....he...hehe....";
+		mes "[奇怪的小孩]";
+		mes "啊....he...呵呵....";
 		next;
-		mes "- He starts to smile lightly and laughs. -";
+		mes "- 他開始輕輕微笑並大笑。 -";
 		next;
-		mes "[Strange Kid]";
-		mes "Ye......yes.......";
-		mes "tha... than......thank......yo.........you.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Alright such a cute smile!";
-		mes "Be a happy kid as always.";
-		next;
-		mes "[Strange Kid]";
-		mes "Uh......";
+		mes "[奇怪的小孩]";
+		mes "耶......是的.......";
+		mes "謝... 謝......謝謝......你.........你。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "what?";
+		mes "好棒的可愛笑容！";
+		mes "永遠做個快樂的孩子。";
 		next;
-		mes "[Strange Kid]";
-		mes "hey..........";
+		mes "[奇怪的小孩]";
+		mes "呃......";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Do you want to say anything?";
+		mes "什麼？";
 		next;
-		mes "- You get closer and pretend to take caution. -";
+		mes "[奇怪的小孩]";
+		mes "嘿..........";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "你想說什麼嗎？";
+		next;
+		mes "- 你靠近並假裝小心。 -";
 		next;
 		emotion ET_CHUP;
-		mes "(kiss~)";
+		mes "(啾~)";
 		next;
-		mes "- The kid laughs again lightly then puts something in your hand. -";
+		mes "- 孩子再次輕輕地笑起來，然後把東西放在你的手中。 -";
 		next;
-		mes "- It's a fresh berry that's colored red and hard. -";
+		mes "- 這是一個鮮紅且堅硬的新鮮漿果。 -";
 		next;
-		mes "[Strange Kid]";
+		mes "[奇怪的小孩]";
 		mes "ga...ra..........na...";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Oops, guarana berry?";
-		mes "Ah! Thank you very much!";
+		mes "哎呀，瓜拉納漿果？";
+		mes "啊！非常感謝你！";
 		emotion ET_CHUPCHUP, playerattached();
 		emotion ET_SMILE;
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "If I have this, I can make a guarana candy.";
-		mes "I better find that Candy Maker!";
+		mes "如果我有了這個，我就可以製作瓜拉納糖果。";
+		mes "我最好找到那個糖果製造商！";
 		brazil_gua = 10;
 		changequest 2199,2200;
 		getitem 6237,1; //Guarana_Fruit
@@ -745,59 +744,59 @@ brasilis,203,64,3	script	Strange Kid#bra	4_M_KID1,{
 	}
 	else if (brazil_gua == 10) {
 		if (!countitem(6237)) {
-			mes "[Strange Kid]";
-			mes "He.........";
+			mes "[奇怪的小孩]";
+			mes "他.........";
 			getitem 6237,1; //Guarana_Fruit
 			close;
 		}
 	}
 	else {
-		mes "- The kid is smiling. -";
+		mes "- 孩子正在微笑。 -";
 		close;
 	}
 }
 
 brasilis,56,224,7	script	Mage Paje#bra	4_M_BIBI,{
-	mes "[Mage Paje]";
+	mes "[法師派傑]";
 	mes "Abracadabra~";
 	specialeffect EF_POISONHIT,AREA,"Poring#bra";
 	setarray .@display[0],800,876,909;
 	setnpcdisplay "Poring#bra",.@display[rand(3)];
 	if (brazil_gua != 5) close;
 	next;
-	mes "[Mage Paje]";
-	mes "Ohoooh~!";
-	mes "I have a guest.";
-	mes "Good to see you.";
-	mes "I am the Mage Paje.";
+	mes "[法師派傑]";
+	mes "Ohoooh~! ";
+	mes "我有客人。";
+	mes "很高興見到你。";
+	mes "我是法師派傑。";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "Hello. Mr. Cherto told me to find you.";
+	mes "你好。 切爾托先生叫我來找你。";
 	next;
-	mes "[Mage Paje]";
-	mes "Um.. Mr. Cherto? What's happened?";
-	mes "Have you come here to ask about lots of weird rumors?";
+	mes "[法師派傑]";
+	mes "嗯... 切爾托先生？ 發生什麼事了？";
+	mes "你來這裡是要詢問一堆奇怪的謠言嗎？";
 	next;
-	mes "- You give the note to Paje-";
+	mes "- 你把紙條給了派傑 -";
 	next;
-	mes "[Mage Paje]";
+	mes "[法師派傑]";
 	mes "Ohoooh~";
-	mes "Hmm gosh.. that's what happened.";
+	mes "嗯，天啊... 原來是這樣。";
 	next;
-	mes "[Mage Paje]";
-	mes "I can't help you directly.";
-	mes "But I will give you simple magic so you can figure it out by yourself.";
+	mes "[法師派傑]";
+	mes "我無法直接幫助你。";
+	mes "但我會給你一個簡單的魔法，這樣你就可以自己弄清楚。";
 	next;
-	select("What kind of magic?");
-	mes "[Mage Paje]";
-	mes "It's a magic that will make you appear as an animal to other animals. Pretty cool huh?";
+	select("什麼樣的魔法？");
+	mes "[法師派傑]";
+	mes "這是一個會讓你像動物一樣出現在其他動物面前的魔法。 很酷吧？";
 	next;
-	mes "[Mage Paje]";
-	mes "Ok~ I will give you the magic.";
-	mes "Most animals are really sensitive so they might be aware of it. Find a Toucan in the field that's oblivious to the spell. You'll know when you talk to it.";
+	mes "[法師派傑]";
+	mes "好~ 我會給你魔法。";
+	mes "大多數動物都很敏感，所以牠們可能會注意到。 在野外找到一隻沒有注意到法術的巨嘴鳥。 當你和牠說話時，你就會知道了。";
 	next;
-	mes "[Mage Paje]";
-	mes "Good luck~!";
+	mes "[法師派傑]";
+	mes "祝你好運~! ";
 	brazil_gua = 6;
 	changequest 2195,2196;
 	specialeffect2 EF_ASSUMPTIO;
@@ -809,48 +808,48 @@ brasilis,59,226,3	script	Poring#bra	4_PORING,{}
 bra_fild01,75,83,5	script	Toucan#bra	2073,2,2,{
 OnTouch:
 	if (brazil_gua == 6) {
-		mes "[Toucan]";
+		mes "[巨嘴鳥]";
 		mes "Baaeecc!";
-		mes "I've never seen you before.";
+		mes "我從未見過你。";
 		mes "Baaeec!";
 		next;
-		mes "[Toucan]";
-		mes "It's the middle of the new and old continent... I know I've never seen you before but you seem familiar, like a woman dancing a samba. ";
+		mes "[巨嘴鳥]";
+		mes "這裡是新舊大陸的交界處... 我知道我從未見過你，但你讓我覺得很熟悉，就像一個跳森巴舞的女人。";
 		next;
-		select("What are you talking about?");
-		mes "[Toucan]";
-		mes "I can feel some similar power like guarana kid. bbaaaeeeccc!";
+		select("你在說什麼？");
+		mes "[巨嘴鳥]";
+		mes "我可以感受到一些和瓜拉納小孩相似的力量。bbaaaeeeccc!";
 		next;
-		mes "[Toucan]";
-		mes "That kid has had a really lonely time, baaecc! Perhaps you are a friend of him? Baaeec!!";
+		mes "[巨嘴鳥]";
+		mes "那個孩子度過了一段非常孤單的時光，baaecc! 也許你是他的朋友？Baaeec!!";
 		next;
-		select("Not yet... but I want to be a friend.");
-		mes "[Toucan]";
-		mes "The kid who received care from guarana woman is also a friend of animals. Bbaaeecc!";
+		select("還不是... 但我想成為朋友。");
+		mes "[巨嘴鳥]";
+		mes "受到瓜拉納女人照顧的孩子也是動物的朋友。Bbaaeecc!";
 		next;
-		mes "[Toucan]";
-		mes "I'd like to give the symbol of a toucan representative for the kid. Bbaaeecc!";
+		mes "[巨嘴鳥]";
+		mes "我想把代表巨嘴鳥的象徵送給那個孩子。Bbaaeecc!";
 		next;
-		mes "[Toucan]";
-		mes "If you want to relieve his loneliness, can you help me?";
+		mes "[巨嘴鳥]";
+		mes "如果你想減輕他的孤獨，你能幫我嗎？";
 		next;
-		select("Absolutely!");
-		mes "[Toucan]";
-		mes "It's my feather.";
-		mes "Send it to the kid.";
-		mes "We will keep our promise of friendship between guarana kid and Toucan forever. Bbaaeecc!";
+		select("當然！");
+		mes "[巨嘴鳥]";
+		mes "這是我的羽毛。";
+		mes "把它送給那個孩子。";
+		mes "我們將永遠遵守瓜拉納小孩和巨嘴鳥之間的友誼承諾。Bbaaeecc!";
 		next;
-		mes "- You take a feather from Toucan. - ";
+		mes "- 你從巨嘴鳥那裡拿走了一根羽毛。 - ";
 		next;
-		mes "[Toucan]";
-		mes "There have to be others around here like me.";
-		mes "Why don't you find a jaguar Bbaaeecc!";
+		mes "[巨嘴鳥]";
+		mes "這裡一定還有其他像我一樣的。";
+		mes "你為什麼不去找一隻美洲虎呢？Bbaaeecc!";
 		next;
-		mes "[Toucan]";
-		mes "I will give a blessing from Toucan to you.";
+		mes "[巨嘴鳥]";
+		mes "我將給你來自巨嘴鳥的祝福。";
 		next;
-		mes "[Toucan]";
-		mes "Fly fly far away. bbaaaeeeccckkk--!";
+		mes "[巨嘴鳥]";
+		mes "飛吧，飛遠一點。bbaaaeeeccckkk--!";
 		brazil_gua = 7;
 		changequest 2196,2197;
 		specialeffect2 EF_SEISMICWEAPON;
@@ -859,7 +858,7 @@ OnTouch:
 		end;
 	}
 	else {
-		mes "[Toucan]";
+		mes "[巨嘴鳥]";
 		mes "Bbbaaeec~! Baaeec~!";
 		close;
 	}
@@ -869,51 +868,51 @@ OnTouch:
 bra_fild01,34,184,5	script	Jaguar#bra	2072,2,2,{
 OnTouch_:
 	if (brazil_gua == 7) {
-		mes "[Jaguar]";
+		mes "[美洲虎]";
 		mes "Hhooww..hhooww.....";
 		next;
-		mes "[Jaguar]";
-		mes "Smelling! This smell is from a human!";
-		mes "Somewhere, a human!";
-		mes "I got it. You are!!!";
+		mes "[美洲虎]";
+		mes "聞到了！這味道是從人類身上來的！";
+		mes "某個地方，有人類！";
+		mes "我找到了。是你！！！";
 		specialeffect EF_HIT1,AREA,"Jaguar#bra";
 		emotion ET_HUK, playerattached();
 		next;
-		mes "[Jaguar]";
-		mes "Don't be afraid human.";
-		mes "I don't have enough power to hunt humans, just waiting time to end my lifetime in this jungle.";
+		mes "[美洲虎]";
+		mes "別害怕，人類。";
+		mes "我沒有足夠的力量獵殺人類，只是在等待我在這個叢林中結束生命。";
 		next;
-		mes "[Jaguar]";
-		mes "Anyway you can talk with me, are you a guarana kid?";
+		mes "[美洲虎]";
+		mes "總之你能和我說話，你是瓜拉納小孩嗎？";
 		next;
-		select("Yes? N...o......actually....");
-		mes "[Jaguar]";
-		mes "The son of guarana woman became our friend also.";
-		mes "They treated all life preciously.";
-		mes "I hope you are same the as her.";
+		select("是？不......其實....");
+		mes "[美洲虎]";
+		mes "瓜拉納女人的兒子也成為了我們的朋友。";
+		mes "他們珍視所有生命。";
+		mes "我希望你和她一樣。";
 		next;
-		mes "[Jaguar]";
-		mes "Bird's chirpings informed me.";
-		mes "The son of guarana woman has a diseased heart.";
-		mes "Her brothers made him lonely, don't you think?";
+		mes "[美洲虎]";
+		mes "鳥兒的鳴叫告訴了我。";
+		mes "瓜拉納女人的兒子患有心臟病。";
+		mes "她的兄弟們讓他感到孤單，你不覺得嗎？";
 		next;
-		mes "[Jaguar]";
-		mes "Here is fresh meat that I hunted just a few days ago.";
-		mes "Take it and give it to the poor kid.";
+		mes "[美洲虎]";
+		mes "這是我幾天前獵到的新鮮肉。";
+		mes "拿去給那個可憐的孩子吧。";
 		next;
-		mes "[Jaguar]";
-		mes "I can give this tiny thing to you so, don't forget it.";
-		mes "The jungle will welcome you whenever!";
+		mes "[美洲虎]";
+		mes "我可以給你這個小東西，所以別忘了它。";
+		mes "叢林隨時歡迎你！";
 		next;
-		mes "- You get fresh meat from Jaguar. -";
+		mes "- 你從美洲虎那裡得到新鮮的肉。 -";
 		next;
-		mes "[Jaguar]";
-		mes "Monkey, who's always meddling with others, wants to meet you.";
+		mes "[美洲虎]";
+		mes "總是愛管閒事的猴子想見你。";
 		next;
-		mes "[Jaguar]";
-		mes "I will give you a Jaguar's high blessing.";
-		mes "Go to monkey by flowing through the wind like a bee.";
-		mes "Let's meet again my friend!";
+		mes "[美洲虎]";
+		mes "我會給你美洲虎的崇高祝福。";
+		mes "像蜜蜂一樣順著風去見猴子吧。";
+		mes "我們再見，我的朋友！";
 		brazil_gua = 8;
 		changequest 2197,2198;
 		close2;
@@ -921,7 +920,7 @@ OnTouch_:
 		end;
 	}
 	else {
-		mes "[Jaguar]";
+		mes "[美洲虎]";
 		mes "krrrrrr....";
 		close;
 	}
@@ -932,45 +931,45 @@ bra_fild01,245,53,3	script	#Monkeybra	1057,{}
 
 bra_fild01,245,52,3	script	Monkey#bra	HIDDEN_NPC,{
 	if (brazil_gua == 8) {
-		mes "[Monkey]";
-		mes "What is it??!!";
-		mes "We don't tolerate humans? Get out~!!";
+		mes "[猴子]";
+		mes "是什麼事??!!";
+		mes "我們不容忍人類？滾出去~!!";
 		next;
-		mes "[Monkey]";
-		mes "Nono... wait.... that scent!!";
-		mes "I can smell Jaguar from you, who are you?";
-		mes "Gosh, maybe there's no jaguar without fur and weird shape!";
+		mes "[猴子]";
+		mes "不不... 等等.... 那是什麼氣味!!";
+		mes "我聞到你身上有美洲虎的味道，你是誰？";
+		mes "天啊，也許有些美洲虎沒有毛而且形狀怪異！";
 		next;
 		mes "["+strcharinfo(0)+"]";
 		mes "........................";
-		mes "Are you saying that I look like an animal?!?!";
+		mes "你是說我長得像動物嗎?!?!";
 		next;
-		mes "[Monkey]";
-		mes "Uh? Aren't you a jaguar?";
+		mes "[猴子]";
+		mes "呃？你不是美洲虎嗎？";
 		next;
-		mes "[Monkey]";
-		mes "Ahhha. Jaguar send you to me, right?? kkkikkki";
-		mes "But you don't look like guarana kid.";
+		mes "[猴子]";
+		mes "啊哈。美洲虎派你來的，對吧?? kkkikkki";
+		mes "但你看起來不像瓜拉納小孩。";
 		next;
-		select("I've come here to help him.");
-		mes "[Monkey]";
-		mes "I heard guarana kid became lonely, is he?";
-		mes "We are experts in acrobatic acts, does kid like it?? kkkickkksk!";
+		select("我是來幫助他的。");
+		mes "[猴子]";
+		mes "我聽說瓜拉納小孩很孤單，是嗎？";
+		mes "我們是雜技專家，小孩喜歡嗎?? kkkickkksk!";
 		next;
-		mes "[Monkey]";
-		mes "Give this branch of grapes to guarana kid.";
-		mes "We will make him have fun during the whole night whenever he comes to us!! kkkickkksk!";
+		mes "[猴子]";
+		mes "把這串葡萄給瓜拉納小孩。";
+		mes "無論他什麼時候來找我們，我們都會讓他整晚都玩得很開心!! kkkickkksk!";
 		next;
-		mes "- You get a bunch of grapes from Monkey. -";
+		mes "- 你從猴子那裡得到一串葡萄。 -";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Good~ Now it's time to go back to the kid~!!";
+		mes "好~ 現在該回去找那個孩子了~!!";
 		brazil_gua = 9;
 		changequest 2198,2199;
 		close;
 	}
 	else {
-		mes "[Monkey]";
+		mes "[猴子]";
 		mes "kkkickkksk!";
 		close;
 	}
@@ -980,56 +979,56 @@ bra_fild01,245,52,3	script	Monkey#bra	HIDDEN_NPC,{
 //============================================================
 brasilis,203,286,3	script	Botanist Karmen#bra	4_F_HUWOMAN,{
 	if (brazil_regia == 0) {
-		mes "[Karmen]";
-		mes "Brasilis' climate is special.";
-		mes "This climate offers special cases in botany classes different from any other regions of the world.";
+		mes "[卡門]";
+		mes "巴西里斯的氣候很特別。";
+		mes "這種氣候在植物學課程中提供了不同於世界任何其他地區的特殊案例。";
 		next;
-		mes "[Karmen]";
-		mes "The plants here have robust frames and are clear and colorful.";
-		mes "Here the plants are really huge and we can feel their presence.";
+		mes "[卡門]";
+		mes "這裡的植物有強壯的骨架，而且清晰多彩。";
+		mes "這裡的植物真的很大，我們可以感受到它們的存在。";
 		next;
-		mes "[Karmen]";
-		mes "One of them, a Water Lily, is a really gorgeous and unique plant.";
-		mes "This flower is quite sensitive so it doesn't bloom everywhere.";
+		mes "[卡門]";
+		mes "其中之一，一種睡蓮，是一種非常華麗和獨特的植物。";
+		mes "這種花非常敏感，所以不會到處開花。";
 		next;
-		if(select("Interesting.:End conversation.") == 2) {
-			mes "[Karmen]";
-			mes "I guess you aren't interested in botany.";
+		if(select("很有趣。:結束對話。") == 2) {
+			mes "[卡門]";
+			mes "我想你對植物學不感興趣。";
 			close;
 		}
-		mes "[Karmen]";
-		mes "It doesn't appear easily and it is a mysterious flower even to the natives, so the Brasilis people believe that a person will get great luck if someone finds it.";
+		mes "[卡門]";
+		mes "它不容易出現，即使對當地人來說也是一種神秘的花朵，因此巴西里斯人相信，如果有人找到它，就會獲得巨大的好運。";
 		next;
-		mes "[Karmen]";
-		mes "As a botanist, I have been hanging around here to find the lucky flower but as I expected, it hasn't shown itself yet.";
+		mes "[卡門]";
+		mes "作為一名植物學家，我一直在這裡徘徊，尋找那朵幸運之花，但正如我所料，它還沒有出現。";
 		next;
-		mes "[Karmen]";
-		mes "I believe that with enough perseverence, this flower will show me it's beautiful brilliance.";
+		mes "[卡門]";
+		mes "我相信只要有足夠的毅力，這朵花就會向我展示它美麗的光輝。";
 		next;
-		mes "[Karmen]";
-		mes "Ah, if you are interested more in the Water Lily story, find someone named Marta.";
-		mes "She is wise and knows lots of stories here in Brasilis.";
+		mes "[卡門]";
+		mes "啊，如果你對睡蓮的故事更感興趣，那就找一個名叫瑪爾塔的人。";
+		mes "她很聰明，而且知道許多巴西里斯的故事。";
 		brazil_regia = 1;
 		setquest 2201;
 		close;
 	}
 	else if (brazil_regia == 1) {
-		mes "[Karmen]";
-		mes "Ah, if you are interested more in the Water Lily story, find someone named Marta.";
-		mes "She is wise and knows lots of stories here in Brasilis.";
+		mes "[卡門]";
+		mes "啊，如果你對睡蓮的故事更感興趣，那就找一個名叫瑪爾塔的人。";
+		mes "她很聰明，而且知道許多巴西里斯的故事。";
 		close;
 	}
 	else if (brazil_regia == 9) {
-		mes "- You show a lotus flower to Karmen and talk about the story so far. -";
+		mes "- 你向卡門展示一朵蓮花，並講述到目前為止的故事。 -";
 		next;
-		mes "[Karmen]";
-		mes "Wow!! You had a really good experience.";
-		mes "So~~~ the water lily lives in the depths of brasilis, right?";
-		mes "I wil try to find it again by myself, I won't give up!!";
+		mes "[卡門]";
+		mes "哇！！你有一個非常好的經驗。";
+		mes "所以~~~ 睡蓮生活在巴西里斯的深處，對吧？";
+		mes "我會嘗試自己再次找到它，我不會放棄的！！";
 		next;
-		mes "[Karmen]";
-		mes "I am so grateful that I met you.";
-		mes "The water lily must truly be a lucky flower. hahaha";
+		mes "[卡門]";
+		mes "我很感激能遇到你。";
+		mes "睡蓮一定真的是一朵幸運的花。哈哈哈";
 		brazil_regia = 10;
 		completequest 2207;
 		if (VIP_SCRIPT && vip_status(VIP_STATUS_ACTIVE))
@@ -1039,166 +1038,166 @@ brasilis,203,286,3	script	Botanist Karmen#bra	4_F_HUWOMAN,{
 		close;
 	}
 	else {
-		mes "[Karmen]";
-		mes "This climate offers special cases in botany classes different from any other regions of the world.";
+		mes "[卡門]";
+		mes "這裡的氣候在植物學課程中提供了與世界其他地區不同的特殊案例。";
 		next;
-		mes "[Karmen]";
-		mes "The plants here have robust frames and are clear and colorful.";
-		mes "Here the plants are really huge and we can feel their presence.";
+		mes "[卡門]";
+		mes "這裡的植物有著強健的骨架，而且清晰且色彩鮮豔。";
+		mes "這裡的植物真的非常巨大，我們可以感受到它們的存在。";
 		next;
-		mes "[Karmen]";
-		mes "It's a botanist's dream.";
+		mes "[卡門]";
+		mes "這裡是植物學家的夢想。";
 		close;
 	}
 }
 
 bra_in01,142,27,5	script	Marta#bra	4_F_BRZ_INDOLD,{
 	if (brazil_regia == 1) {
-		mes "[Brasilis Boy]";
-		mes "Grandma! That person has a weird smell.";
+		mes "[巴西少年]";
+		mes "奶奶！那個人身上有奇怪的味道。";
 		next;
-		mes "[Marta]";
-		mes "This person isn't from here.";
-		mes "Say hello to our guest.";
+		mes "[瑪爾塔]";
+		mes "這個人不是這裡來的。";
+		mes "跟我們的客人打聲招呼。";
 		next;
-		mes "[Brasilis Boy]";
-		mes "heee~ hi!!";
-		mes "I am Kaka!!";
-		mes "Whats your name?";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "I am "+strcharinfo(0)+".";
-		next;
-		mes "[Brasilis Boy]";
-		mes "The outsider has a weird name!";
-		mes "Thas ok! If we keep talking we'll be friends! Cheer up!";
-		next;
-		mes "[Marta]";
-		mes "Hehe...";
-		mes "So, why have you come here stranger~?";
+		mes "[巴西少年]";
+		mes "嘻～你好！！";
+		mes "我是卡卡！！";
+		mes "你叫什麼名字？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "I heard you knows lots of stories, is that true?";
+		mes "我是"+strcharinfo(0)+"。";
 		next;
-		mes "[Kaka]";
-		mes "Wooo! how you know my grandma knows lots of stories, amazing~?";
-		mes "Grandma is really wise and kind so, I heard lotsa things.";
+		mes "[巴西少年]";
+		mes "這個外來者的名字真奇怪！";
+		mes "沒關係！如果我們繼續聊天，我們就會成為朋友！振作起來！";
 		next;
-		mes "[Marta]";
-		mes "Hehe. Kaka always listens to many stories every night, he really likes my stories.";
-		mes "Kaka always makes me happy because he asks so many curious things. That is pure happiness.";
-		next;
-		mes "[Marta]";
-		mes "Ok, Kaka why don't you invite our guest today to our small meeting?";
-		next;
-		mes "[Kaka]";
-		mes "Ok grandma~!!";
-		next;
-		mes "[Marta]";
-		mes "Hey~ do you have special story that you want to listen to?";
+		mes "[瑪爾塔]";
+		mes "呵呵...";
+		mes "所以，陌生人，你來這裡做什麼呢～？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "About the mysterious water lily?";
+		mes "我聽說妳知道很多故事，是真的嗎？";
 		next;
-		mes "[Marta]";
-		mes "Water lily....";
-		mes "It's from a long long time ago.";
+		mes "[卡卡]";
+		mes "哇！你怎麼知道我的奶奶知道很多故事，太神奇了～？";
+		mes "奶奶非常聰明又善良，所以我聽過很多故事。";
 		next;
-		mes "[Marta]";
-		mes "Before Brasilis was established.";
-		mes "A tribe that lived with the giant waterfall and jungle as friends spent their whole time with nature.";
+		mes "[瑪爾塔]";
+		mes "呵呵。卡卡每天晚上都會聽很多故事，他真的很喜歡我的故事。";
+		mes "卡卡總是讓我感到快樂，因為他總是問很多好奇的事情。那是純粹的幸福。";
 		next;
-		mes "[Marta]";
-		mes "One of tribe chiefs had a pretty daughter called 'Naia'.";
+		mes "[瑪爾塔]";
+		mes "好的，卡卡，你何不邀請今天的客人來參加我們的小聚會呢？";
 		next;
-		mes "[Marta]";
-		mes "Naia liked listening to stories like Kaka so, her mom told her stories every night about nature and gods.";
+		mes "[卡卡]";
+		mes "好的，奶奶～！！";
 		next;
-		mes "[Kaka]";
-		mes "Woooa, she's just like me!";
-		mes "Maybe she would be pretty... hehe.";
+		mes "[瑪爾塔]";
+		mes "嘿～你有特別想聽的故事嗎？";
 		next;
-		mes "[Marta]";
-		mes "According to her mother...";
-		mes "If the moon in the sky loves some woman in the earth, he turns her into a star so that they can stay together forever.";
+		mes "["+strcharinfo(0)+"]";
+		mes "關於神秘的睡蓮？";
 		next;
-		mes "[Marta]";
-		mes "After Naia heard this story, she went to her dad to ask if it was true or not.";
+		mes "[瑪爾塔]";
+		mes "睡蓮....";
+		mes "那是很久很久以前的事了。";
 		next;
-		mes "[Kaka]";
-		mes "So, what did he say?";
+		mes "[瑪爾塔]";
+		mes "在巴西利斯建立之前。";
+		mes "一個與巨型瀑布和叢林為伍的部落，將他們所有的時間都與大自然共度。";
 		next;
-		mes "[Marta]";
-		mes "^3131FF'My dear, Naia the moon is one of the bravest men. But he can no longer have a bride. So you can't become a star... Sorry~.^000000";
+		mes "[瑪爾塔]";
+		mes "其中一位部落首領有一個漂亮的女兒，名叫 '娜伊亞'。";
 		next;
-		mes "[Kaka]";
-		mes "Did Naia wants to be the bride of the man?";
+		mes "[瑪爾塔]";
+		mes "娜伊亞像卡卡一樣喜歡聽故事，所以她的媽媽每天晚上都會告訴她關於大自然和神的故事。";
 		next;
-		mes "[Marta]";
-		mes "Yes Kaka, imagine the moon how beautiful and mysterious, that's just ideal for girls.";
+		mes "[卡卡]";
+		mes "哇，她跟我一樣！";
+		mes "也許她會很漂亮... 呵呵。";
 		next;
-		mes "[Kaka]";
-		mes "But the moon doesn't meet a human as his wife anymore? What was going on with Naia?";
+		mes "[瑪爾塔]";
+		mes "根據她母親的說法...";
+		mes "如果天空中的月亮愛上了地球上的某個女人，他會把她變成一顆星星，這樣他們就可以永遠在一起。";
 		next;
-		mes "[Marta]";
-		mes "Naia was really a nice girl.";
+		mes "[瑪爾塔]";
+		mes "在娜伊亞聽完這個故事後，她去問她的父親這是真是假。";
 		next;
-		mes "[Marta]";
-		mes "Although her parents tried to prevent her, she still went to the forest to meet the moon every night.";
-		mes "Sadly, even with all of her effort, the moon didn't show any reaction to her.";
+		mes "[卡卡]";
+		mes "那麼，他說了什麼？";
 		next;
-		mes "[Marta]";
-		mes "One day she also went to the top of the mountain to be closer to him. She decided to take a rest for a while around the lake.";
+		mes "[瑪爾塔]";
+		mes "^3131FF'我親愛的娜伊亞，月亮是最勇敢的人之一。但他不能再有新娘了。所以妳不能變成星星... 對不起～。^000000";
 		next;
-		mes "[Marta]";
-		mes "That's when.. Naia saw it.";
-		mes "It was the moon he was shining beautifully over the waving lake lightly.";
+		mes "[卡卡]";
+		mes "娜伊亞想成為月亮的妻子嗎？";
 		next;
-		mes "[Kaka]";
-		mes "I know, it's just the moon reflecting on the water. Right?!";
+		mes "[瑪爾塔]";
+		mes "是的，卡卡，想像一下月亮是多麼美麗而神秘，那簡直是女孩們的理想對象。";
 		next;
-		mes "[Marta]";
-		mes "Yes, but to her, the image made her fall into the lake without hesitating and drowned.";
+		mes "[卡卡]";
+		mes "但是月亮不再娶人類為妻了嗎？娜伊亞發生了什麼事？";
 		next;
-		mes "[Kaka]";
-		mes "Oh no.";
+		mes "[瑪爾塔]";
+		mes "娜伊亞真的是個好女孩。";
 		next;
-		mes "[Marta]";
-		mes "The moon was also watching her from the sky.";
-		mes "He felt sad and pitied her. So he decided to turn her into a beautiful flower to thank her for her love.";
+		mes "[瑪爾塔]";
+		mes "儘管她的父母試圖阻止她，但她仍然每天晚上去森林與月亮相遇。";
+		mes "可悲的是，即使她付出了所有的努力，月亮也沒有對她表現出任何反應。";
 		next;
-		mes "[Marta]";
-		mes "That is the story of the mysterious flower people called the Brasilis Water Flower.";
-		mes "This Naia flower appears as light white during daytime but in the night turns into red due to it's love connection to the moon.";
+		mes "[瑪爾塔]";
+		mes "有一天，她也爬到山頂，為了更接近他。她決定在湖邊休息一下。";
 		next;
-		mes "[Kaka]";
-		mes "How sad but beautiful!";
+		mes "[瑪爾塔]";
+		mes "就在那時...娜伊亞看到了它。";
+		mes "那是月亮，他正在輕輕地在波光粼粼的湖面上美麗地閃耀著光芒。";
 		next;
-		mes "[Marta]";
-		mes "How about you stranger?";
-		mes "Did you enjoy this story?";
-		mes "If you want to listen to another story, just come to me.";
-		mes "If you don't mind playing with my grandson a ~ little. hoohoo.";
+		mes "[卡卡]";
+		mes "我知道，那只是月亮在水中的倒影。對吧？！";
+		next;
+		mes "[瑪爾塔]";
+		mes "是的，但在她看來，這個景象讓她毫不猶豫地掉進了湖裡並溺水了。";
+		next;
+		mes "[卡卡]";
+		mes "噢，不。";
+		next;
+		mes "[瑪爾塔]";
+		mes "月亮也在天上注視著她。";
+		mes "他感到悲傷並憐憫她。所以他決定把她變成一朵美麗的花，以感謝她的愛。";
+		next;
+		mes "[瑪爾塔]";
+		mes "這就是人們稱之為巴西利斯水花的神秘花朵的故事。";
+		mes "這種娜伊亞花在白天呈現淺白色，但在夜晚則因其與月亮的愛戀而變成紅色。";
+		next;
+		mes "[卡卡]";
+		mes "多麼悲傷但美麗啊！";
+		next;
+		mes "[瑪爾塔]";
+		mes "你呢，陌生人？";
+		mes "你喜歡這個故事嗎？";
+		mes "如果你想聽另一個故事，就來找我吧。";
+		mes "如果你不介意跟我的孫子玩一～下。呵呵。";
 		brazil_regia = 2;
 		close;
 	}
 	else if (brazil_regia > 1) {
-		mes "[Kaka]";
-		mes "My grandma is really a bit tired doing some tribe stuff!";
-		mes "Could you come another day?";
+		mes "[卡卡]";
+		mes "我奶奶做一些部落的事情真的有點累了！";
+		mes "你可以改天再來嗎？";
 		close;
 	}
 	else {
-		mes "[Marta]";
-		mes "You are not from around here.";
-		mes "I can sense a strange earth smell.";
+		mes "[瑪爾塔]";
+		mes "你不是這裡的人。";
+		mes "我可以聞到一種奇怪的泥土氣味。";
 		next;
-		mes "[Marta]";
-		mes "But your eyes shine with strength.";
-		mes "Indeed you are spreading out spirit and will from your whole body.";
+		mes "[瑪爾塔]";
+		mes "但是你的眼睛閃爍著力量。";
+		mes "的確，你正在從你的全身散發出精神和意志。";
 		next;
-		mes "[Marta]";
-		mes "If you work at it you will be a great person someday.";
+		mes "[瑪爾塔]";
+		mes "如果你努力，總有一天你會成為一個偉大的人。";
 		close;
 	}
 }
@@ -1206,261 +1205,261 @@ bra_in01,145,27,3	duplicate(Marta#bra)	Brasilis Boy#bra	472
 
 brasilis,270,145,5	script	Brasilis Girl#bra	4_F_BRZ_INDIAN,5,5,{
 	if (!checkweight(1201,1)) {
-		mes "- wait a second!! -";
-		mes "- you have too many items -";
-		mes "- so you can't get any more items. -";
-		mes "- make your body lighter -";
-		mes "- then try again. -";
+		mes "- 等一下！！ -";
+		mes "- 你的物品太多了 -";
+		mes "- 所以你不能再獲得任何物品了。 -";
+		mes "- 讓你的身體更輕 -";
+		mes "- 然後再試一次。 -";
 		close;
 	}
 	if (brazil_regia == 2) {
-		mes "[Distant Sound]";
-		mes "Jasira!!!";
-		mes "Where are you going again?!!";
-		mes "come back~, please!!";
+		mes "[遠處的聲音]";
+		mes "潔西拉！！！";
+		mes "妳又要去哪裡了？！！";
+		mes "回來～，拜託！！";
 		next;
-		mes "[Brasilis Girl]";
-		mes "Mom, I have to go out!!";
+		mes "[巴西女孩]";
+		mes "媽媽，我必須出去！！";
 		next;
-		mes "[Distant Sound]";
-		mes "No way~!! You shouldn't!!";
+		mes "[遠處的聲音]";
+		mes "不行～！！妳不應該！！";
 		next;
-		mes "[Brasilis Girl]";
-		mes "Gosh.. today also failed.";
+		mes "[巴西利斯女孩]";
+		mes "哎呀... 今天也失敗了。";
 		next;
-		mes "[Brasilis Girl]";
+		mes "[巴西利斯女孩]";
 		mes "......";
-		mes "What's up? Why are you looking at me?";
-		mes "I don't want to be a showgirl!! Get out!!";
+		mes "怎麼了？ 為什麼你看著我？";
+		mes "我不想當個舞孃!! 走開!!";
 		next;
-		if(select("Nothing, sorry.:What's wrong?") == 1) {
-			mes "[Brasilis Girl]";
-			mes "I am so sad!!!";
+		if(select("沒事，抱歉。:怎麼了？") == 1) {
+			mes "[巴西利斯女孩]";
+			mes "我好難過!!!";
 			close;
 		}
-		mes "[Brasilis Girl]";
-		mes "It's not your business.";
-		mes "You are just an outsider!";
+		mes "[巴西利斯女孩]";
+		mes "不關你的事。";
+		mes "你只是一個外人!";
 		next;
-		if(select("How rude!:Just trying to help.") == 1) {
-			mes "[Brasilis Girl]";
-			mes "What's it matter to you that I'm rude??!!";
+		if(select("真沒禮貌!:只是想幫忙。") == 1) {
+			mes "[巴西利斯女孩]";
+			mes "我沒禮貌關你什麼事??!!";
 			close;
 		}
 		mes "["+strcharinfo(0)+"]";
-		mes "I know that I'm just passing by but I might be able to help you. What do you think?";
+		mes "我知道我只是路過，但我或許能幫你。你覺得呢？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "This kind of meeting could be more than just a coincidence.";
+		mes "這種相遇可能不只是巧合。";
 		next;
-		mes "[Brasilis Girl]";
+		mes "[巴西利斯女孩]";
 		mes "......................";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Hmm can you tell me your name?";
+		mes "嗯，你可以告訴我你的名字嗎？";
 		next;
-		mes "[Brasilis Girl]";
+		mes "[巴西利斯女孩]";
 		mes "ja...";
-		mes "Jasira.";
-		mes "My name is Jasira.";
+		mes "賈希拉。";
+		mes "我的名字是賈希拉。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Nice name~.";
-		mes "Jasira what's going on?";
+		mes "好名字~。";
+		mes "賈希拉，發生什麼事了？";
 		next;
-		mes "[Jasira]";
+		mes "[賈希拉]";
 		mes ".............";
 		next;
-		mes "[Jasira]";
-		mes "I have to meet 'Jasi' but I can't go out....";
+		mes "[賈希拉]";
+		mes "我必須去見 '賈西'，但我不能出去....";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "who is Jasi?";
-		mes "Your.... lover?";
+		mes "賈西是誰？";
+		mes "你的.... 愛人？";
 		next;
 		emotion ET_HUK;
-		mes "[Jasira]";
-		mes "l...o...v...e...lover??!!";
-		mes "No way~";
+		mes "[賈希拉]";
+		mes "愛...人...愛人??!!";
+		mes "不可能啦~";
 		next;
-		mes "[Jasira]";
-		mes "If he is my lover, it would be great... but...";
+		mes "[賈希拉]";
+		mes "如果他是我的愛人，那就太好了... 但是...";
 		next;
-		mes "[Jasira]";
-		mes "Jasi is......";
-		mes "the great moon.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "The moon?";
-		mes "Maybe... are you talking about the moon from the story?";
-		next;
-		mes "[Jasira]";
-		mes "Yeah!";
-		mes "Dear Jasi is from the moon from the sky!";
+		mes "[賈希拉]";
+		mes "賈西是......";
+		mes "偉大的月亮。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Why are you thinking like that?";
+		mes "月亮？";
+		mes "也許... 你說的是故事裡的月亮嗎？";
 		next;
-		mes "[Jasira]";
-		mes "Cuz' Jasi is really gorgeous and the most important thing is he is taking care of the water lily in Brasilis.";
+		mes "[賈希拉]";
+		mes "對!";
+		mes "親愛的賈西是來自天空中的月亮!";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "你為什麼會這麼想？";
+		next;
+		mes "[賈希拉]";
+		mes "因為賈西真的很棒，最重要的是他在照顧巴西利斯的水蓮。";
 		next;
 		emotion ET_HUK, playerattached();
 		mes "["+strcharinfo(0)+"]";
-		mes "Brasilis water lily??!!";
-		mes "Isn't it the uniqe flower?";
+		mes "巴西利斯水蓮??!!";
+		mes "那不是獨特的花嗎？";
 		next;
-		mes "[Jasira]";
-		mes "Right. It's a really mysterious flower and difficult to find.";
-		mes "But around Jasi there are lots of water lilies.";
-		mes "That's why I believe Jasi is the moon.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Where is Jasi?";
-		next;
-		mes "[Jasira]";
-		mes "He is deep inside the Jungle.";
-		mes "As you can see I am so weak so, I've been staying home. But once, I was strong enough to leave this village.";
-		next;
-		mes "[Jasira]";
-		mes "I just wandered the jungle and fell down somewhere and that's where I saw him.";
-		mes "He was so nice. He helped heal me and guided me back home.";
-		mes "That was really really great time.";
-		next;
-		mes "[Jasira]";
-		mes "Since I came back home, my parents punished me.";
-		mes "I can understand why they are worrying but i missed Jasi a lot!";
+		mes "[賈希拉]";
+		mes "沒錯。 它是一種非常神秘且難以找到的花。";
+		mes "但在賈西周圍有很多水蓮。";
+		mes "所以我相信賈西是月亮。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Why don't you meet him after recovering your strength?";
+		mes "賈西在哪裡？";
 		next;
-		mes "[Jasira]";
+		mes "[賈希拉]";
+		mes "他在叢林的深處。";
+		mes "如你所見，我很虛弱，所以我一直待在家裡。 但曾經，我有足夠的力量離開這個村莊。";
+		next;
+		mes "[賈希拉]";
+		mes "我只是在叢林裡漫遊，然後在某個地方摔倒，然後在那裡見到他。";
+		mes "他很好。 他幫助我治癒並引導我回家。";
+		mes "那真是太棒了。";
+		next;
+		mes "[賈希拉]";
+		mes "自從我回家後，我的父母懲罰了我。";
+		mes "我可以理解他們為什麼擔心，但我非常想念賈西！";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "為什麼不在恢復體力後去見他？";
+		next;
+		mes "[賈希拉]";
 		mes ".................";
-		mes "I wanna see him right now...";
+		mes "我現在就想見他...";
 		next;
-		if(select("Help Jasira.:Ignore her.") == 2) {
+		if(select("幫助賈希拉。:忽略她。") == 2) {
 			mes "["+strcharinfo(0)+"]";
-			mes "Sorry I can't help you. Cheer up!";
+			mes "抱歉我不能幫你。 振作起來!";
 			next;
-			mes "[Jasira]";
-			mes "Crying........";
+			mes "[賈希拉]";
+			mes "哭泣........";
 			close;
 		}
 		mes "["+strcharinfo(0)+"]";
-		mes "Jasira I came here to find the Brasilis water lily.";
-		mes "Don't you think fate has brought us together?";
+		mes "賈希拉，我來這裡是為了尋找巴西利斯水蓮。";
+		mes "你不覺得命運把我們帶到了一起嗎？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "If you tell me how to find Jasi, I can help you.";
+		mes "如果你告訴我如何找到賈西，我可以幫助你。";
 		next;
-		mes "[Jasira]";
-		mes "Really? But I don't know exactly how to get there. I was just wandering around when I met him.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Can't you remember anything?";
-		mes "If you know something you've gotta tell me.";
-		next;
-		mes "[Jasira]";
-		mes "Let's see... I was wandering around a waterfall then fell down into the water then I was sucked into somewhere.";
+		mes "[賈希拉]";
+		mes "真的嗎？ 但我不知道如何到達那裡。 我只是四處閒逛時遇到他的。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Good, that's better than nothing! I will look for a similar place.";
+		mes "你什麼都不記得嗎？";
+		mes "如果你知道什麼，你必須告訴我。";
 		next;
-		mes "[Jasira]";
-		mes "I gave you your information, so can you do me a favor?";
-		mes "It's really simple...";
+		mes "[賈希拉]";
+		mes "讓我想想... 我在瀑布周圍閒逛，然後掉進水裡，然後被吸到某個地方。";
 		next;
-		mes "[Jasira]";
-		mes "I'd like to give a delicious fruit.";
-		mes "The place where Jas seemed cozy but I didn't see any food around... So if he sees a yummy fruit he will be happy!";
+		mes "["+strcharinfo(0)+"]";
+		mes "很好，總比沒有好！ 我會尋找類似的地方。";
 		next;
-		mes "[Jasira]";
-		mes "Give him 10 Banana and tell him that I really miss him.";
-		mes "Sorry for ignoring you before. Please, only you can help me!";
+		mes "[賈希拉]";
+		mes "我告訴你情報了，所以你可以幫我一個忙嗎？";
+		mes "這真的很簡單...";
+		next;
+		mes "[賈希拉]";
+		mes "我想給他美味的水果。";
+		mes "賈西的地方看起來很舒適，但我沒有看到任何食物... 所以如果他看到美味的水果，他會很高興的！";
+		next;
+		mes "[賈希拉]";
+		mes "給他 10 個香蕉，告訴他我真的很想他。";
+		mes "抱歉之前忽略了你。 拜託，只有你能幫助我！";
 		brazil_regia = 3;
 		changequest 2201,2202;
 		close;
 	}
 	else if ((brazil_regia == 3) || (brazil_regia == 4)) {
-		mes "[Jasira]";
-		mes "If you meet Jasi, give him 10 Bananas.";
-		mes "Let's see... I was wandering around a waterfall then fell down into the water then I was sucked into somewhere.";
+		mes "[賈希拉]";
+		mes "如果你遇到賈西，給他 10 根香蕉。";
+		mes "讓我想想... 我在瀑布周圍閒逛，然後掉進水裡，然後被吸到某個地方。";
 		next;
-		mes "[Jasira]";
-		mes "If you can't find the way, go up to the waterfall and ask the kids in Brasilis village.";
-		mes "I heard one of the children went to a strange place before. He might've gone to the same place as me!";
+		mes "[賈希拉]";
+		mes "如果你找不到路，就到瀑布上去問巴西利斯村的孩子們。";
+		mes "我聽說其中一個孩子之前去過一個奇怪的地方。 他可能去過和我一樣的地方！";
 		close;
 	}
 	else if (brazil_regia == 5) {
-		mes "[Jasira]";
-		mes "Did you meet Jasi?";
-		mes "Did you talk about me?";
-		mes "You didn't? Uh? Stupid! Gosh~!";
+		mes "[賈希拉]";
+		mes "你見到賈西了嗎？";
+		mes "你有提到我嗎？";
+		mes "你沒有？ 呃？ 笨蛋！ 天啊~！";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Hey girl~ you've got a short temper.";
-		mes "I did see him and I talked about you!";
+		mes "嘿，女孩~ 你的脾氣很暴躁。";
+		mes "我確實見到他了，而且我提到了你！";
 		next;
-		mes "[Jasira]";
-		mes "Did you?";
-		mes "What did he say?";
-		mes "Does he remember me?";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "That you have a really good heart~";
-		mes "I told him that you will try to meet him when your condition gets better.";
-		next;
-		mes "[Jasira]";
-		mes "Yeahhhhh!!";
-		mes "Thank you! You are more reliable than I thought you would be.";
+		mes "[賈希拉]";
+		mes "真的嗎？";
+		mes "他說了什麼？";
+		mes "他還記得我嗎？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Anyway, I'm looking for a fruit that's brown and has a hard shell.";
-		mes "It has juice inside and can be used as a cup to drink out of.";
+		mes "說你心地善良~";
+		mes "我告訴他，當你的狀況好轉時，你會試著去見他。";
 		next;
-		mes "[Jasira]";
-		mes "Duh! You mean a coconut right?!";
-		mes "They're everywhere here in Brasilis.";
+		mes "[賈希拉]";
+		mes "耶~~~~!!";
+		mes "謝謝你！ 你比我想像的更可靠。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Thanks Jasira!";
+		mes "總之，我正在找一種棕色的，而且有硬殼的水果。";
+		mes "裡面有果汁，可以當作杯子來喝。";
+		next;
+		mes "[賈希拉]";
+		mes "廢話！你說的是椰子吧？！";
+		mes "在巴西里斯到處都是。";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "謝謝妳，賈希拉！";
 		brazil_regia = 6;
 		changequest 2204,2205;
 		close;
 	}
 	else if ((brazil_regia == 6) || (brazil_regia == 7)) {
-		mes "[Jasira]";
-		mes "I should take care of my strength by myself!";
-		mes "I can't just lie in my bed forever. Don't you agree?";
+		mes "[賈希拉]";
+		mes "我應該自己振作起來！";
+		mes "我不能永遠躺在床上。你不覺得嗎？";
 		close;
 	}
 	else if (brazil_regia == 8) {
-		mes "[Jasira]";
-		mes "Uh? Why have you come back?";
+		mes "[賈希拉]";
+		mes "呃？你回來幹嘛？";
 		next;
-		mes "- You tell her what Jasi told you to tell her -";
+		mes "- 你告訴她賈西要你轉告她的話 -";
 		next;
-		mes "[Jasira]";
-		mes "Oh... really?";
-		mes "Did he say that?";
-		mes "Gosh! Gosh!!!";
+		mes "[賈希拉]";
+		mes "喔...真的嗎？";
+		mes "他說了這個？";
+		mes "天啊！天啊！！！";
 		mes "Kkkkkaaaaa - !!";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Thanks to you, I was able to get a flower.";
-		mes "Thanks a lot!!";
+		mes "託你的福，我才能拿到花。";
+		mes "非常感謝！！";
 		next;
-		mes "[Jasira]";
-		mes "Wooow. It's so beautiful.";
+		mes "[賈希拉]";
+		mes "哇嗚，好漂亮。";
 		next;
-		mes "[Jasira]";
-		mes "Ah... can I see it for a second?";
+		mes "[賈希拉]";
+		mes "啊...我可以看一眼嗎？";
 		next;
-		mes "[Jasira]";
-		mes "Surprise~!!";
-		mes "I've been working on this hat while you were gone and now it's complete with the water lily flower!";
+		mes "[賈希拉]";
+		mes "驚喜～！！";
+		mes "在你離開的期間，我一直在製作這頂帽子，現在完成了，還加上了睡蓮花！";
 		next;
-		mes "[Jasira]";
-		mes "I know, I know! I'm the best...";
+		mes "[賈希拉]";
+		mes "我知道，我知道！我是最棒的...";
 		delitem 7553,1; //Lotus_Flower - untradable
 		brazil_regia = 9;
 		changequest 2206,2207;
@@ -1469,20 +1468,20 @@ brasilis,270,145,5	script	Brasilis Girl#bra	4_F_BRZ_INDIAN,5,5,{
 		close;
 	}
 	else if (brazil_regia > 8) {
-		mes "[Jasira]";
-		mes "I just need to get a little bit stronger!";
-		mes "I can't just lie in bed forever. My Jasi is waiting for me~";
+		mes "[賈希拉]";
+		mes "我只需要變得更強壯一點！";
+		mes "我不能永遠躺在床上。我的賈西在等我～";
 		close;
 	}
 	else {
-		mes "[Distant Sound]";
-		mes "Jasira!!!";
-		mes "Where are you going again?!!";
-		mes "Come back~, please!!";
+		mes "[遠處的聲音]";
+		mes "賈希拉！！！";
+		mes "妳又要去哪裡？！！";
+		mes "回來～，拜託！！";
 		next;
-		mes "[Brasilis Girl]";
-		mes "Please mom~!";
-		mes "Please let me go!";
+		mes "[巴西里斯女孩]";
+		mes "拜託嘛，媽媽～！";
+		mes "拜託讓我去！";
 		close;
 	}
 	end;
@@ -1495,110 +1494,110 @@ OnTouch:
 
 bra_dun02,67,205,5	script	Recluse#bra	4_M_BRZ_JACI,3,3,{
 	if (brazil_regia == 3) {
-		mes "[Recluse]";
-		mes "Oh, I haven't seen another person in such a long time.";
+		mes "[隱士]";
+		mes "喔，我已經很久沒見到其他人了。";
 		next;
-		if(select("Keep going.:Are you the moon?") == 1) {
-			mes "[Recluse]";
-			mes "You don't have specific business with me.";
+		if(select("繼續走。:你是月亮嗎？") == 1) {
+			mes "[隱士]";
+			mes "你沒有什麼特別的事找我。";
 			close;
 		}
-		mes "[Recluse]";
-		mes "Moon?";
-		mes "My name is Jasi.";
-		mes "My family has worked to take care of the water lily from generation to generation.";
+		mes "[隱士]";
+		mes "月亮？";
+		mes "我的名字是賈西。";
+		mes "我的家族世世代代都在照顧睡蓮。";
 		next;
-		mes "[Jasi]";
-		mes "Basically the Brasilis water lily is too shy to appear in front of people so, they only bloom in rare places. I guess they like it here, though, that's why I've been staying here for such a long time.";
+		mes "[賈西]";
+		mes "基本上，巴西里斯睡蓮太害羞了，不會在人們面前出現，所以只會在稀有的地方開花。我想它們喜歡這裡，這就是我長期待在這裡的原因。";
 		next;
-		mes "[Jasi]";
-		mes "My family has taken care of the water lily calmly to prevent harm from people's hand or monsters.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Do you remember a girl named Jasi.";
-		next;
-		mes "[Jasi]";
-		mes "Ja...si..........";
-		mes "Ah!! a hurry scurry girl. ";
-		mes "Gosh.. I was in trouble due to that girl.";
+		mes "[賈西]";
+		mes "我的家族一直平靜地照顧著睡蓮，以防止人們的手或怪物的傷害。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Trouble?";
+		mes "你還記得一個叫做賈希拉的女孩嗎。";
 		next;
-		mes "[Jasi]";
-		mes "One day a young lady appeared with lots of scars so I helped her. Then suddenly she tried to pick up the water lily and asked me to accept her as my wife or make her into a water lily what a nutcase!";
-		next;
-		mes "[Jasi]";
-		mes "I was barely able to calm down and send her to the village.";
-		mes "My life is that water lily so I didn't want anything embarrassing to happen.";
+		mes "[賈西]";
+		mes "賈...希..........";
+		mes "啊！！一個毛毛躁躁的女孩。";
+		mes "天啊.. 我因為那個女孩而陷入困境。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "This is a gift from Jasira to say sorry for that time.";
-		mes "She is really sad that can't come here by herself due to private difficulties.";
+		mes "困境？";
+		next;
+		mes "[賈西]";
+		mes "有一天，一位年輕女士帶著許多傷疤出現，所以我幫助了她。然後她突然試圖摘睡蓮，並要求我接受她作為我的妻子，或者把她變成睡蓮，真是個瘋子！";
+		next;
+		mes "[賈西]";
+		mes "我好不容易才讓她冷靜下來，然後把她送回村莊。";
+		mes "我的生命就是那朵睡蓮，所以我不想發生任何令人尷尬的事情。";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "這是賈希拉送的禮物，為那時候的事情道歉。";
+		mes "她因為私人的困難而無法親自來這裡，真的很難過。";
 		next;
 		if (countitem(513) < 10) {
-			mes "[Jasi]";
-			mes "What are you saying?";
+			mes "[賈西]";
+			mes "你在說什麼？";
 			next;
-			mes "- Oh yeah, I forgot to bring 10 Bananas -";
+			mes "- 喔，對了，我忘了帶 10 根香蕉 -";
 			close;
 		}
-		mes "[Jasi]";
-		mes "Ah! Bananas! Wow it's been a long time. She's pretty considerate isn't she?";
+		mes "[賈西]";
+		mes "啊！香蕉！哇，很久沒吃了。她真體貼，不是嗎？";
 		next;
-		mes "[Jasi]";
-		mes "Anyway is that all the business you have with me?";
+		mes "[賈西]";
+		mes "總之，你找我就這些事嗎？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Umm honestly I was wondering to find water lily and met you by coincidence. Jasira told me her sad story so that's what led me here.";
+		mes "嗯... 老實說，我本來想找睡蓮，結果偶然遇到了你。賈希拉告訴我她悲傷的故事，所以才帶我來到這裡。";
 		next;
-		mes "[Jasi]";
-		mes "I got it.";
-		mes "As you can see, there are lots of Brasilis water lily around here.";
-		mes "If you make sure that you won't destroy them you can appreciate them as you wish.";
+		mes "[賈西]";
+		mes "我明白了。";
+		mes "如你所見，這裡有很多巴西里斯睡蓮。";
+		mes "如果你確保你不會破壞它們，你可以隨心所欲地欣賞它們。";
 		brazil_regia = 4;
 		changequest 2202,2203;
 		close;
 	}
 	else if (brazil_regia == 4) {
-		mes "[Jasi]";
-		mes "Did you enjoy the water lily?";
+		mes "[賈西]";
+		mes "你喜歡睡蓮嗎？";
 		close;
 	}
 	else if (brazil_regia == 5) {
-		mes "[Jasi]";
-		mes "I forgot what the name of that fruit was...";
+		mes "[賈西]";
+		mes "我忘記那種水果叫什麼名字了...";
 		close;
 	}
 	else if (brazil_regia == 6) {
 		if (countitem(11515) < 5) {
-			mes "[Jasi]";
-			mes "I forgot what the name of that fruit was...";
+			mes "[賈西]";
+			mes "我忘記那種水果叫什麼名字了...";
 			close;
 		}
 		else {
-			mes "[Jasi]";
-			mes "Did you find the fruit?";
-			mes "Oh right this is....?";
+			mes "[賈西]";
+			mes "你找到水果了嗎？";
+			mes "喔，對了，這是....？";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "It's called a 'coconut'.";
+			mes "它叫做『椰子』。";
 			next;
-			mes "[Jasi]";
-			mes "Ahah! COCONUT!!";
-			mes "Now I remember thank you very much. I can't remember the last time I had this fruit.";
+			mes "[賈西]";
+			mes "啊哈！椰子！！";
+			mes "現在我想起來了，非常感謝你。我不記得上次吃這種水果是什麼時候了。";
 			next;
-			mes "[Jasi]";
-			mes "I guess I should keep my promise.";
-			mes "You can take one Water lily.";
+			mes "[賈西]";
+			mes "我想我應該信守我的承諾。";
+			mes "你可以拿一朵睡蓮。";
 			next;
-			mes "[Jasi]";
-			mes "I hope the Brasilis water lily will understand me.";
-			mes "You better grab the flower while you have a chance~";
+			mes "[賈西]";
+			mes "我希望巴西里斯睡蓮能理解我。";
+			mes "你最好趁有機會的時候抓住花～";
 			next;
-			mes "[Jasi]";
-			mes "Oh, can you tell that girl Jasira something for me?";
-			mes "Tell her that I am not the moon from the story, but I want to become the moon to shine only for her.";
+			mes "[賈西]";
+			mes "喔，你可以幫我告訴那個女孩賈希拉一些話嗎？";
+			mes "告訴她，我不是故事裡的月亮，但我希望成為只為她閃耀的月亮。";
 			delitem 11515,5; //Coconut
 			brazil_regia = 7;
 			changequest 2205,2206;
@@ -1606,8 +1605,8 @@ bra_dun02,67,205,5	script	Recluse#bra	4_M_BRZ_JACI,3,3,{
 		}
 	}
 	else {
-		mes "[Jasi]";
-		mes "The flowers blooming from the Water lily today is wonderful.";
+		mes "[賈西]";
+		mes "今天從睡蓮盛開的花朵非常美麗。";
 		close;
 	}
 	end;
@@ -1619,107 +1618,107 @@ OnTouchNPC:
 
 bra_dun02,71,200,3	script	Water lily#bra	HIDDEN_NPC,{
 	if (brazil_regia == 4) {
-		mes "An unusual Water lily is blooming here. You can't stop staring at it, knowing that few people have seen this flower bloom.";
+		mes "這裡盛開著一朵不尋常的睡蓮。你忍不住盯著它看，因為你知道很少有人見過這朵花盛開。";
 		next;
-		if(select("Pick up the flower.:Keep gazing.") == 2) {
-			mes "- You can't avoid staring at it's beauty. -";
+		if(select("摘下花。:繼續凝視。") == 2) {
+			mes "- 你無法避免地被它的美麗所吸引。 -";
 			close;
 		}
-		mes "[Jasi]";
-		mes "Uh! What are you doing??!!";
+		mes "[賈西]";
+		mes "呃！你在做什麼??！！";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "There is a person who really needs this flower, can I just take one of 'em?";
+		mes "有一個人真的很需要這朵花，我可以拿一朵嗎？";
 		next;
-		mes "[Jasi]";
-		mes "As I said earlier, I am the guardian of this water lily.";
-		mes "I can't just stand by here and watch you pluck even a single flower from it.";
+		mes "[賈西]";
+		mes "正如我之前所說的，我是這朵睡蓮的守護者。";
+		mes "我不能袖手旁觀，看你摘下哪怕一朵花。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Hey man~ I brought these delicious fruits for you... try it! They are really well matured and fresh bananas.";
+		mes "嘿 老兄~ 我帶了這些美味的水果給你... 試試看！它們真的是很成熟又新鮮的香蕉。";
 		next;
 		if (countitem(513) < 10) {
-			mes "[Jasi]";
-			mes "What are you saying?";
+			mes "[雅希]";
+			mes "你在說什麼？";
 			next;
-			mes "- Oh yeah, I forgot to bring 10 Bananas -";
+			mes "- 喔 對了，我忘了帶 10 根香蕉 -";
 			close;
 		}
-		mes "[Jasi]";
-		mes "Hmm... It's been so long since I've had this fruit.";
+		mes "[雅希]";
+		mes "嗯... 我已經很久沒吃這種水果了。";
 		next;
-		mes "[Jasi]";
-		mes "I will just try one. That's all.";
+		mes "[雅希]";
+		mes "我只試吃一根。 就這樣。";
 		next;
-		mes "- munch -";
-		mes "- mumble mumble mumble -";
+		mes "- 嚼嚼 -";
+		mes "- 咕嚕咕嚕咕嚕 -";
 		specialeffect EF_POTION7,AREA,"Recluse#bra";
 		next;
-		mes "[Jasi]";
-		mes "Uh, this taste... is!";
-		mes "I remember my mom baking these into a tasty bread!";
+		mes "[雅希]";
+		mes "喔，這個味道... 是！";
+		mes "我記得我媽媽把這些烤成美味的麵包！";
 		next;
-		mes "[Jasi]";
-		mes "It makes me miss my childhood.";
+		mes "[雅希]";
+		mes "這讓我想念我的童年。";
 		next;
 		emotion ET_HUK, getnpcid(0, "Recluse#bra");
-		mes "[Jasi]";
-		mes "Hoho!!!!";
-		mes "I've been here for as long as I can remember...";
-		mes "I don't have enough time to even do simple things like eat delicious fruit.";
+		mes "[雅希]";
+		mes "呵呵!!!!";
+		mes "我從有記憶以來就一直待在這裡...";
+		mes "我甚至沒有足夠的時間去做像吃美味水果這樣簡單的事情。";
 		next;
-		mes "[Jasi]";
-		mes "It was a really delicious banana.";
-		mes "But rules are rules!";
-		mes "I must do my duty.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Please! I just need one flower~ What can I do to convince you?";
-		next;
-		mes "[Jasi]";
-		mes "Rules are rules, what do you want from me?";
+		mes "[雅希]";
+		mes "這真的是一根很美味的香蕉。";
+		mes "但規則就是規則！";
+		mes "我必須盡我的職責。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Didn't that banana remind you of your childhood? What can I get for you?";
+		mes "拜託！ 我只需要一朵花～ 我該怎麼說服你？";
 		next;
-		mes "[Jasi]";
-		mes "Now that you mention it, there is one fruit that I really miss.";
-		mes "It was my favorite when I was young but I don't remember what it was called.";
+		mes "[雅希]";
+		mes "規則就是規則，你想要我怎樣？";
 		next;
-		mes "[Jasi]";
-		mes "It's brown and has a hard shell around it. It has juice inside and you can use it as a cup when you're done eating the fruit.";
-		mes "Do you know what it is?";
+		mes "["+strcharinfo(0)+"]";
+		mes "難道那根香蕉沒有讓你回想起你的童年嗎？ 我能為你做些什麼？";
 		next;
-		mes "[Jasi]";
-		mes "If you bring 5 of those things, I will reconsider your suggestion.";
+		mes "[雅希]";
+		mes "既然你提到了，我確實有一種水果非常想念。";
+		mes "那是我小時候最喜歡的，但我不記得它叫什麼名字了。";
+		next;
+		mes "[雅希]";
+		mes "它是棕色的，外面有一層堅硬的外殼。 裡面有果汁，你吃完水果後可以用它當作杯子。";
+		mes "你知道它是什麼嗎？";
+		next;
+		mes "[雅希]";
+		mes "如果你帶 5 個那種東西來，我會重新考慮你的建議。";
 		delitem 513,10; //Banana
 		brazil_regia = 5;
 		changequest 2203,2204;
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Ok so I have to bring 5 fruits with hard shells.";
-		mes "Hmm what is it?";
+		mes "好吧，所以我必須帶 5 個帶有堅硬外殼的水果。";
+		mes "嗯，那是什麼呢？";
 		close;
 	}
 	else if (brazil_regia == 5) {
-		mes "[Jasi]";
-		mes "It was my favorite when I was young but I don't remember what it was called.";
+		mes "[雅希]";
+		mes "那是我小時候最喜歡的，但我不記得它叫什麼名字了。";
 		next;
-		mes "[Jasi]";
-		mes "It's brown and has a hard shell around it. It has juice inside and you can use it as a cup when you're done eating the fruit.";
-		mes "Do you know what it is?";
+		mes "[雅希]";
+		mes "它是棕色的，外面有一層堅硬的外殼。 裡面有果汁，你吃完水果後可以用它當作杯子。";
+		mes "你知道它是什麼嗎？";
 		close;
 	}
 	else if (brazil_regia == 7) {
 		if (!checkweight(1201,1)) {
-			mes "- wait a second!! -";
-			mes "- you have too many items -";
-			mes "- so you can't get any more items. -";
-			mes "- make your body lighter -";
-			mes "- then try again. -";
+			mes "- 等一下！！ -";
+			mes "- 你的物品太多了 -";
+			mes "- 所以你不能再獲得任何物品。 -";
+			mes "- 讓你的身體輕一點 -";
+			mes "- 然後再試一次。 -";
 			close;
 		}
-		mes "- You take a beautiful water lily carefully in your hands. -";
+		mes "- 你小心翼翼地將一朵美麗的睡蓮捧在手中。 -";
 		brazil_regia = 8;
 		getitem 7553,1; //Lotus_Flower
 		close;
@@ -1731,217 +1730,217 @@ bra_dun02,71,200,3	script	Water lily#bra	HIDDEN_NPC,{
 brasilis,185,246,5	script	Pedro#bra	1_M_SIZ,{
 	if (brazil_ghost == 0) {
 		OnTalk:
-		mes "[Pedro]";
-		mes "Wow it's really a great statue!";
+		mes "[佩德羅]";
+		mes "哇，這真是一座很棒的雕像！";
 		next;
-		mes "[Mariana]";
-		mes "It is, isn't it?";
-		mes "This statue is called Verass Monument.";
+		mes "[瑪麗安娜]";
+		mes "是啊，對吧？";
+		mes "這座雕像叫做維拉斯紀念碑。";
 		next;
-		mes "[Mariana]";
-		mes "A long time ago there was a really brave adventurer named Verass, thanks to his dedicated exploration, Brasilis was able to develop into this great city.";
+		mes "[瑪麗安娜]";
+		mes "很久以前，有一位非常勇敢的冒險家名叫維拉斯，由於他竭盡心力的探索，巴西里斯才能發展成這座偉大的城市。";
 		next;
-		mes "[Pedro]";
-		mes "Awesome!!";
-		mes "i wanna become a real man like Verass.";
+		mes "[佩德羅]";
+		mes "太棒了！！";
+		mes "我想成為像維拉斯一樣真正的男子漢。";
 		next;
-		mes "[Mariana]";
-		mes "Pedro, you can become whatever you want.";
+		mes "[瑪麗安娜]";
+		mes "佩德羅，你可以成為任何你想成為的人。";
 		next;
-		mes "[Pedro]";
-		mes "Mariana is so smart, isn't she? hehe.";
+		mes "[佩德羅]";
+		mes "瑪麗安娜真是太聰明了，不是嗎？呵呵。";
 		next;
-		mes "[Fabio]";
-		mes "Ooooh! You love her don't you!";
+		mes "[法比奧]";
+		mes "噢噢噢！ 你喜歡她，對吧！";
 		next;
-		mes "[Daniel]";
-		mes "Wooooaaaa Pedro and Mari sitting in a tree!";
+		mes "[丹尼爾]";
+		mes "哇喔喔喔喔 佩德羅和瑪麗坐在樹上！";
 		next;
-		mes "[Fabio]";
-		mes "Woooo k-i-s-s-i-n-g~!!!";
+		mes "[法比奧]";
+		mes "哇喔喔 k-i-s-s-i-n-g~!!!";
 		next;
-		mes "[Daniel]";
-		mes "Nya nya nya!";
+		mes "[丹尼爾]";
+		mes "呀 呀 呀！";
 		next;
-		mes "[Fabio]";
-		mes "Hahahahaha.";
+		mes "[法比奧]";
+		mes "哈哈哈哈哈。";
 		next;
-		mes "[Pedro]";
-		mes "Stop acting like babies!";
+		mes "[佩德羅]";
+		mes "別像個小孩子一樣！";
 		next;
-		mes "[Mariana]";
-		mes "Boys~!";
+		mes "[瑪麗安娜]";
+		mes "孩子們～！";
 		next;
-		mes "[Daniel]";
-		mes "Yah yah...";
-		mes "Hey guys, did you hear that something happened a few days ago?";
+		mes "[丹尼爾]";
+		mes "是 是...";
+		mes "嘿，你們聽說了嗎，幾天前發生了一些事情？";
 		next;
-		mes "[Mariana]";
-		mes "Oh yeah~ I heard that something really scary happened.";
+		mes "[瑪麗安娜]";
+		mes "喔，對～ 我聽說發生了一些非常可怕的事情。";
 		next;
-		mes "[Fabio]";
-		mes "Uh, yeah that's why Mariana got scared of going ot the bathroom for 3 days and everything was stinky. Ewwww~";
+		mes "[法比奧]";
+		mes "呃，是啊，這就是為什麼瑪麗安娜害怕去廁所 3 天，而且到處都臭臭的。 噁～";
 		next;
-		mes "[Daniel]";
-		mes "Ha ha ha! Smelly Mari!";
+		mes "[丹尼爾]";
+		mes "哈哈哈！ 臭瑪麗！";
 		next;
-		mes "[Mariana]";
-		mes "I hate you~!";
-		mes "Stop spreading rumors about me. I'm not scared of the bathroom.";
-		mes "Pedro, do you think that I stink?";
+		mes "[瑪麗安娜]";
+		mes "我討厭你～！";
+		mes "別再散布關於我的謠言了。 我才不怕廁所。";
+		mes "佩德羅，你覺得我臭嗎？";
 		next;
-		mes "[Pedro]";
-		mes "Uh? Uh?";
-		mes "N......no... no way.";
-		mes "Hey guys~ be nice to her~";
+		mes "[佩德羅]";
+		mes "呃？ 呃？";
+		mes "不......不... 沒那回事。";
+		mes "嘿，你們～ 對她好一點～";
 		next;
-		mes "[Fabio]";
+		mes "[法比奧]";
 		mes "kkkickkkkkkkkick";
 		next;
-		mes "[Daniel]";
+		mes "[丹尼爾]";
 		mes "kkkickkkkkkkk";
 		next;
-		if(select("Walk by.:Ask about the gossip.") == 1) {
-			mes "[Fabio]";
-			mes "Mariana~ smells~ Nya nya~";
+		if(select("走開。:詢問八卦。") == 1) {
+			mes "[法比奧]";
+			mes "瑪麗安娜～ 臭臭～ 呀 呀～";
 			next;
-			mes "[Daniel]";
-			mes "Oh man you stink too~! Nya nya~";
+			mes "[丹尼爾]";
+			mes "喔，老兄，你也一樣臭～！ 呀 呀～";
 			close;
 		}
-		mes "[Fabio]";
-		mes "Haven't you heard?";
-		mes "The ghost story in the art museum.";
+		mes "[法比奧]";
+		mes "你沒聽說嗎？";
+		mes "美術館裡的鬼故事。";
 		next;
-		mes "[Daniel]";
-		mes "Ooohhhh! Scary~~~!";
+		mes "[丹尼爾]";
+		mes "喔喔喔喔！ 好可怕~~~！";
 		next;
-		select("Can you tell me more?");
-		mes "[Fabio]";
-		mes "A coupla days ago we went to the art museum for a picnic at school.";
-		mes "You know nothing special, just a ordinary field trip.";
+		select("你可以告訴我更多嗎？");
+		mes "[法比奧]";
+		mes "幾天前我們去美術館野餐。";
+		mes "你知道的，沒什麼特別的，只是一次普通的校外教學。";
 		next;
-		mes "[Fabio]";
-		mes "Museums are boring so me and some friends snuck away from the group~!";
+		mes "[法比歐]";
+		mes "博物館太無聊了，所以我跟一些朋友偷偷從隊伍裡溜走了～！";
 		next;
-		mes "[Fabio]";
-		mes "That's when we heard a scream echoing through the whole museum.";
+		mes "[法比歐]";
+		mes "那時我們聽到一聲尖叫聲迴盪在整個博物館裡。";
 		next;
-		mes "[Daniel]";
+		mes "[丹尼爾]";
 		mes "kkakkakkaaaah!!";
 		mes "kkieeeeeeh!";
 		mes "kehkeh..";
 		next;
-		mes "[Mariana]";
-		mes "I heard the scream too...";
-		mes "You boys are always making noises where you're not supposed to.";
+		mes "[瑪麗安娜]";
+		mes "我也聽到了尖叫聲...";
+		mes "你們這些男孩總是在不該吵鬧的地方製造噪音。";
 		next;
-		mes "[Pedro]";
-		mes "What else are we supposed to do? If we don't do it someone else will.";
+		mes "[佩德羅]";
+		mes "不然我們還能做什麼？如果我們不做，別人也會做。";
 		next;
 		emotion ET_FRET, getnpcid(0, "Mariana#bra");
-		mes "[Mariana]";
-		mes "Argh~ Boys are so frustrating sometimes.";
+		mes "[瑪麗安娜]";
+		mes "唉～ 有時候男孩們真令人沮喪。";
 		next;
-		select("So then what happened?");
-		mes "[Fabio]";
-		mes "Daniel and me guessed something weird was goin' on so we ran to where we thought the screams were comin' from.";
+		select("然後發生了什麼事？");
+		mes "[法比歐]";
+		mes "丹尼爾和我猜測發生了一些奇怪的事情，所以我們跑到我們認為尖叫聲傳來的地方。";
 		next;
-		mes "[Fabio]";
-		mes "They were coming from the bathroom.";
-		mes "Some kids got so scared that they started screaming too and closing their eyes. It got pretty bad.";
+		mes "[法比歐]";
+		mes "它們是從浴室傳來的。";
+		mes "有些孩子嚇壞了，也開始尖叫和閉上眼睛。情況變得非常糟糕。";
 		next;
-		mes "[Daniel]";
-		mes "I think you pissed or pooped your pants. It smelled freakin' gross.";
+		mes "[丹尼爾]";
+		mes "我想你嚇到尿褲子或拉褲子了。聞起來超噁的。";
 		next;
-		mes "[Fabio]";
-		mes "Nah uh~ Your mom pissed her pants~ Nyah!";
+		mes "[法比歐]";
+		mes "才沒有～ 是你媽尿褲子～ Nyah!";
 		next;
-		mes "[Daniel]";
-		mes "Nah uh~ You~ pissed your pants~";
+		mes "[丹尼爾]";
+		mes "才沒有～ 是你～ 尿褲子～";
 		next;
-		mes "[Fabio]";
-		mes "Anyway, so yeah, anyway that's how the rumor of the ghost in the museum started.";
+		mes "[法比歐]";
+		mes "總之，是的，總之這就是博物館裡有鬼的謠言是怎麼開始的。";
 		next;
-		mes "[Daniel]";
-		mes "Liar, there's no such thing as ghosts~";
+		mes "[丹尼爾]";
+		mes "騙子，根本沒有鬼這種東西～";
 		next;
-		select("So was it a ghost?");
-		mes "[Fabio]";
-		mes "How should I know?";
-		mes "No one could say they saw one and no one wanted to get in trouble from the teachers.";
+		select("所以真的是鬼嗎？");
+		mes "[法比歐]";
+		mes "我怎麼會知道？";
+		mes "沒有人能說他們看到鬼，也沒有人想被老師找麻煩。";
 		next;
-		mes "[Pedro]";
-		mes "I heard if you say special magic words that the ghost will come out.";
+		mes "[佩德羅]";
+		mes "我聽說如果你說出特殊的魔法咒語，鬼就會出來。";
 		next;
-		mes "[Daniel]";
-		mes "Quit butting into our conversation Pedro.";
+		mes "[丹尼爾]";
+		mes "別插嘴我們的談話，佩德羅。";
 		next;
-		mes "[Fabio]";
-		mes "Yah, what are you talking about, Pedro?";
-		mes "So did you see the ghost?";
+		mes "[法比歐]";
+		mes "對啊，你在說什麼啊，佩德羅？";
+		mes "所以你有看到鬼嗎？";
 		next;
-		mes "[Pedro]";
-		mes "N... no. I'm scared of ghosts.";
-		mes "But my friends said they saw one and they're not liars.";
+		mes "[佩德羅]";
+		mes "沒... 沒有。我害怕鬼。";
+		mes "但我朋友們說他們看到了，而且他們不是騙子。";
 		next;
-		select("Did anyone tell you the magic words?");
-		mes "[Pedro]";
-		mes "I heard it in a kind of song.";
-		mes "the special magic words are...";
+		select("有人告訴你魔法咒語嗎？");
+		mes "[佩德羅]";
+		mes "我是在一首歌裡聽到的。";
+		mes "特殊的魔法咒語是...";
 		next;
-		mes "[Pedro]";
-		mes "'^3131FFMother the door won't open!^000000'";
-		mes "'^FF0000Turn the key as many times as there are colors in the rainbow.^000000'";
-		mes "'^3131FFMother the water is flooding!^000000'";
-		mes "'^FF0000If the moon disappears 3 times, don't worry.^000000'";
-		mes "'^3131FFMother the drought has started!^000000'";
-		mes "'^FF0000Don't worry, the waterfall will help it.^000000'";
-		mes "'^3131FFMother where are my friends?^000000'";
-		mes "'^FF0000Your 7 friends are sleeping. now it's time to wake them.^000000'";
-		mes "'^3131FFWhere are you mom?^000000'";
+		mes "[佩德羅]";
+		mes "'^3131FF媽媽，門打不開！^000000'";
+		mes "'^FF0000將鑰匙轉動彩虹顏色的次數。^000000'";
+		mes "'^3131FF媽媽，水淹進來了！^000000'";
+		mes "'^FF0000如果月亮消失 3 次，別擔心。^000000'";
+		mes "'^3131FF媽媽，旱災開始了！^000000'";
+		mes "'^FF0000別擔心，瀑布會幫助它的。^000000'";
+		mes "'^3131FF媽媽，我的朋友們在哪裡？^000000'";
+		mes "'^FF0000你的 7 個朋友正在睡覺。現在是時候叫醒他們了。^000000'";
+		mes "'^3131FF媽媽你在哪裡？^000000'";
 		next;
-		mes "[Mariana]";
-		mes "Umm it seems like a riddle.";
+		mes "[瑪麗安娜]";
+		mes "嗯... 它看起來像一個謎語。";
 		next;
-		select("Wanna help me find this ghost?");
-		mes "[Pedro]";
-		mes "You're on your own pal~.";
+		select("想幫我找到這隻鬼嗎？");
+		mes "[佩德羅]";
+		mes "你只能靠自己了～。";
 		next;
-		mes "[Mariana]";
-		mes "I don't like scary things!";
+		mes "[瑪麗安娜]";
+		mes "我不喜歡可怕的東西！";
 		next;
-		mes "[Fabio]";
-		mes "Pfft, I can't believe you're gonna believe that story.";
+		mes "[法比歐]";
+		mes "切，我真不敢相信你會相信那個故事。";
 		next;
-		mes "[Daniel]";
-		mes "I'll do whatever Fabio does, as always!";
+		mes "[丹尼爾]";
+		mes "我會做任何法比歐做的事情，一如既往！";
 		next;
-		mes "[Fabio]";
-		mes "Maybe you're just scared...";
+		mes "[法比歐]";
+		mes "也許你只是害怕了...";
 		brazil_ghost = 1;
 		setquest 2208;
 		close;
 	}
 	else if (brazil_ghost == 1) {
-		mes "[Pedro]";
-		mes "Do you wanna hear the magic words again?";
+		mes "[佩德羅]";
+		mes "你想再聽一次魔法咒語嗎？";
 		next;
-		mes "[Pedro]";
-		mes "'^3131FFMother the door won't open!^000000'";
-		mes "'^FF0000Turn the key as many times as there are colors in the rainbow.^000000'";
-		mes "'^3131FFMother the water is flooding!^000000'";
-		mes "'^FF0000If the moon disappears 3 times, don't worry.^000000'";
-		mes "'^3131FFMother the drought has started!^000000'";
-		mes "'^FF0000Don't worry, the waterfall will help it.^000000'";
-		mes "'^3131FFMother where are my friends?^000000'";
-		mes "'^FF0000Your 7 friends are sleeping. now it's time to wake them.^000000'";
-		mes "'^3131FFWhere are you mom?^000000'";
+		mes "[佩德羅]";
+		mes "'^3131FF媽媽，門打不開！^000000'";
+		mes "'^FF0000將鑰匙轉動彩虹顏色的次數。^000000'";
+		mes "'^3131FF媽媽，水淹進來了！^000000'";
+		mes "'^FF0000如果月亮消失 3 次，別擔心。^000000'";
+		mes "'^3131FF媽媽，旱災開始了！^000000'";
+		mes "'^FF0000別擔心，瀑布會幫助它的。^000000'";
+		mes "'^3131FF媽媽，我的朋友們在哪裡？^000000'";
+		mes "'^FF0000你的 7 個朋友正在睡覺。現在是時候叫醒他們了。^000000'";
+		mes "'^3131FF媽媽你在哪裡？^000000'";
 		close;
 	}
 	else {
-		mes "[Pedro]";
-		mes "I wonder what I need to do to have a statue made of me?";
+		mes "[佩德羅]";
+		mes "我想知道我需要做什麼才能製作一個我的雕像？";
 		close;
 	}
 }
@@ -1952,14 +1951,14 @@ brasilis,187,244,1	script	Mariana#bra	1_F_MARIA,{
 		end;
 	}
 	else if (brazil_ghost == 1) {
-		mes "[Mariana]";
-		mes "Can you guys stop talking about the ghosts?";
-		mes "I've already got goosebumps all over.";
+		mes "[瑪麗安娜]";
+		mes "你們可以不要再說鬼的事了嗎？";
+		mes "我已經全身起雞皮疙瘩了。";
 		close;
 	}
 	else {
-		mes "[Mariana]";
-		mes "Why do Fabio and Daniel always bother us?";
+		mes "[瑪麗安娜]";
+		mes "為什麼法比歐和丹尼爾總是打擾我們？";
 		close;
 	}
 }
@@ -1970,16 +1969,16 @@ brasilis,181,250,5	script	Fabio#bra	4_M_KID1,{
 		end;
 	}
 	else if (brazil_ghost == 1) {
-		mes "[Fabio]";
-		mes "You still wasting your time with that ghost story?";
+		mes "[法比歐]";
+		mes "你還在浪費時間在那鬼故事上？";
 		close;
 	}
 	else {
-		mes "[Fabio]";
-		mes "Mariana, wanna see something cool?";
+		mes "[法比歐]";
+		mes "瑪麗安娜，想看看酷東西嗎？";
 		next;
-		mes "[Mariana]";
-		mes "kkkkkkkaaaaaacck!! Bugs!! Get 'em away!";
+		mes "[瑪麗安娜]";
+		mes "kkkkkkkaaaaaacck!! 蟲！！ 拿走它們！";
 		close;
 	}
 }
@@ -1990,24 +1989,24 @@ brasilis,180,249,5	script	Daniel#bra	4_M_KID1,{
 		end;
 	}
 	else if (brazil_ghost == 1) {
-		mes "[Daniel]";
+		mes "[丹尼爾]";
 		mes "Nyah nyah nyah~";
 		close;
 	}
 	else {
-		mes "[Daniel]";
-		mes "Keke Here~ I found more bugs~";
+		mes "[丹尼爾]";
+		mes "Keke Here~ 我找到更多蟲了～";
 		close;
 	}
 }
 
 bra_in01,149,184,3	script	Door#bra	CLEAR_NPC,{
 	if (brazil_ghost > 0) {
-		mes "- A key is inserted in the locked door.-";
+		mes "- 一把鑰匙插進了鎖住的門裡。-";
 		next;
-		switch(select("Turn the key.:Ignore it.")) {
+		switch(select("轉動鑰匙:忽略它.")) {
 		case 1:
-			mes "You start saying the first line of the magic words.";
+			mes "你開始說魔法咒語的第一句。";
 			input .@input$;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -2016,100 +2015,100 @@ bra_in01,149,184,3	script	Door#bra	CLEAR_NPC,{
 			.@braspell$ = "Mother the door won't open!";
 			.@chkspell = compare(.@braspell$,.@input$);
 			if (!.@chkspell) {
-				mes "Seems like you said something wrong.";
+				mes "看來你說錯了。";
 				close;
 			}
 			else {
 				if (brazil_ghost == 2) {
-					mes "[Sobbing Voice]";
-					mes "'^FF0000Turn the key as many times as there are colors in the rainbow.^000000'";
+					mes "[啜泣聲]";
+					mes "'^FF0000將鑰匙轉動彩虹顏色的次數。^000000'";
 					next;
-					switch(select("Open the door:Knock on the door.:Turn the key.:Take the key out.")) {
+					switch(select("打開門:敲門:轉動鑰匙:取出鑰匙.")) {
 					case 1:
-						mes "The door is locked.";
-						mes "So nothing happens.";
+						mes "門是鎖住的。";
+						mes "所以什麼也沒發生。";
 						close;
 					case 2:
-						mes "How many times should I try to knock?";
+						mes "我應該嘗試敲幾次？";
 						input .@input,0,999;
 						next;
-						mes "You knocked on the door "+.@input+" times.";
+						mes "你敲了門 "+.@input+" 次。";
 						next;
-						mes "But, nothing happens.";
+						mes "但是，什麼也沒發生。";
 						close;
 					case 3:
-						mes "How many times should I turn the key?";
+						mes "我應該轉動鑰匙幾次呢？";
 						input .@input,0,999;
 						next;
 						if (.@input == 7) {
-							mes "You turn the key 7 times.";
+							mes "你轉動鑰匙 7 次。";
 							next;
-							mes "Click! Click! Click!";
-							mes "Click! Click! Click!";
-							mes "Click...!";
+							mes "喀嚓！喀嚓！喀嚓！";
+							mes "喀嚓！喀嚓！喀嚓！";
+							mes "喀嚓...！";
 							next;
-							mes "[Distant Sound]";
+							mes "[遠處的聲音]";
 							mes "^FF0000kkkkhee- hihihihi!!!^000000";
-							mes "You hear water flushing.";
+							mes "你聽到沖水的聲音。";
 							next;
 							specialeffect2 EF_VENOMDUST;
-							mes "Faint laughing can be heard off in the direction of the toilet.";
+							mes "在廁所的方向隱約可以聽到笑聲。";
 							brazil_ghost = 3;
 							changequest 2208,60351;
 							close;
 						}
 						else {
-							mes "You turned over the key "+.@input+" times.";
+							mes "你轉動鑰匙 "+.@input+" 次。";
 							next;
-							mes "But nothing doesn't happened.";
+							mes "但是什麼都沒發生。";
 							close;
 						}
 					case 4:
-						mes "How many times should I insert the key into the door?";
+						mes "我應該將鑰匙插入門幾次呢？";
 						input .@input,0,999;
 						next;
-						mes "You inserted the key "+.@input+" times.";
+						mes "你將鑰匙插入 "+.@input+" 次。";
 						next;
-						mes "But nothing happened.";
+						mes "但是什麼都沒發生。";
 						close;
 					}
 				}
 				else {
-					mes "Mother the door won't open!";
+					mes "媽媽，門打不開！";
 					close;
 				}
 			}
 		case 2:
-			mes "You do nothing.";
+			mes "你什麼也沒做。";
 			close;
 		}
 	}
 	else {
-		mes "- A key is inserted in the locked door.-";
+		mes "- 一把鑰匙插在鎖上的門上。-";
 		close;
 	}
 }
 
 bra_in01,144,187,3	script	Toilet#bra	CLEAR_NPC,{
 	if (brazil_ghost > 0) {
-		mes "- Looks like an ordinary toilet -";
+		mes "- 看起來像是普通的馬桶 -";
 		next;
 		if (brazil_ghost > 6) {
-			switch(select("Flush the toilet.:Doing nothing.")) {
+			switch(select("沖馬桶。:什麼都不做。")) {
 			case 1:
-				mes "After flushing the toilet, you suddenly feel dizzy and are suddenly swept away somewhere.";
+				mes "沖完馬桶後，你突然感到暈眩，然後突然被沖到某個地方。";
 				specialeffect2 EF_WATERFALL_SMALL_T2_90;
 				close2;
 				warp "bra_in01",206,102;
 				end;
 			case 2:
-				mes "The water in the toilet looks gross.";
+				mes "馬桶裡的水看起來很噁心。";
 				close;
 			}
 		}
-		switch(select("Use the toilet:Ignore.")) {
+		switch(select("使用馬桶:忽略。")) {
 		case 1:
-			mes "- What was the second line to that spell now? -";
+			mes "- 現在那咒語的第二句是什麼來著？ -";
 			input .@input$;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -2118,71 +2117,71 @@ bra_in01,144,187,3	script	Toilet#bra	CLEAR_NPC,{
 			.@braspell$ = "Mother the water is flooding!";
 			.@chkspell = compare(.@braspell$,.@input$);
 			if (!.@chkspell) {
-				mes "Seems like you said something wrong.";
+				mes "看來你說錯了什麼。";
 				close;
 			}
 			else {
 				if (brazil_ghost == 3) {
-					mes "[Sobbing Voice]";
-					mes "^FF0000If the moon disappears 3 times... don't worry.....^000000";
+					mes "[啜泣聲]";
+					mes "^FF0000如果月亮消失 3 次...別擔心.....^000000";
 					next;
-					switch(select("Flush the toilet.:Close the lid.")) {
+					switch(select("沖馬桶。:蓋上蓋子。")) {
 					case 1:
-						mes "How many times should I flush?";
+						mes "我應該沖幾次？";
 						input .@input,0,999;
 						next;
 						if (.@input == 3) {
-							mes "You flush the toilet 3 times.";
+							mes "你沖馬桶 3 次。";
 							next;
 							mes "qwaaaaaaaaa!";
 							mes "kwaaaaaaaaaa!";
 							mes "kwaaaaaaaaaaaaaaaaaaa!";
 							next;
-							mes "[Distant Sound]";
+							mes "[遠處的聲音]";
 							mes "^FF0000kkkkhee- hihihihi!!!^000000";
-							mes "Suddenly the sink sounds like water is flowing freely from it.";
+							mes "突然水槽聽起來像水從裡面自由流出。";
 							next;
 							specialeffect2 EF_VENOMDUST;
-							mes "Faint laughing can be heard off in the direction of the faucet.";
+							mes "在水龍頭的方向隱約可以聽到笑聲。";
 							brazil_ghost = 4;
 							changequest 60351,60352;
 							close;
 						}
 						else {
-							mes "You flush the toilet "+.@input+" times.";
+							mes "你沖馬桶 "+.@input+" 次。";
 							next;
-							mes "But nothing happens.";
+							mes "但是什麼都沒發生。";
 							close;
 						}
 					case 2:
-						mes "You close the lid of the toilet.";
-						mes "Nothing seems to be happening.";
+						mes "你蓋上馬桶蓋。";
+						mes "似乎沒有任何事情發生。";
 						close;
 					}
 				}
 				else {
-					mes "Nothing happens.";
+					mes "什麼都沒發生。";
 					close;
 				}
 			}
 		case 2:
-			mes "You do nothing.";
+			mes "你什麼也沒做。";
 			close;
 		}
 	}
 	else {
-		mes "- Looks like an ordinary toilet -";
+		mes "- 看起來像是普通的馬桶 -";
 		close;
 	}
 }
 
 bra_in01,134,189,3	script	Faucet#bra	CLEAR_NPC,{
 	if (brazil_ghost > 0) {
-		mes "- It seems like an ordinary faucet -";
+		mes "- 看起來像是普通的水龍頭 -";
 		next;
-		switch(select("Examine it.:Ignore.")) {
+		switch(select("檢查它。:忽略。")) {
 		case 1:
-			mes "- What was the next line to that spell now? -";
+			mes "- 現在那咒語的下一句是什麼來著？ -";
 			input .@input$;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -2191,73 +2190,73 @@ bra_in01,134,189,3	script	Faucet#bra	CLEAR_NPC,{
 			.@braspell$ = "Mother the drought has started!";
 			.@chkspell = compare(.@braspell$,.@input$);
 			if (!.@chkspell) {
-				mes "Seems like you said something wrong.";
+				mes "看來你說錯了什麼。";
 				close;
 			}
 			else {
 				if (brazil_ghost == 4) {
-					mes "[Sobbing Voice]";
-					mes "^FF0000Don't worry... the waterfall will help it....^000000";
+					mes "[啜泣聲]";
+					mes "^FF0000別擔心...瀑布會幫助它的....^000000";
 					next;
-					switch(select("Tap on the faucet.:Turn on the water.")) {
+					switch(select("輕敲水龍頭。:打開水。")) {
 					case 1:
-						mes "How many times will you tap the faucet?";
+						mes "你將輕敲水龍頭幾次？";
 						input .@input,0,999;
 						next;
-						mes "You tap the faucet "+.@input+" times.";
+						mes "你輕敲水龍頭 "+.@input+" 次。";
 						next;
-						mes "But nothing happens.";
+						mes "但是什麼都沒發生。";
 						close;
 					case 2:
-						mes "How many times should I turn the water on?";
+						mes "我應該打開水幾次呢？";
 						input .@input,0,999;
 						next;
 						if (.@input == 1) {
-							mes "You turn the faucet on once.";
+							mes "你打開水龍頭一次。";
 							next;
 							mes "swwwaaaaaaa-";
 							next;
-							mes "[Distant Sound]";
+							mes "[遠方的聲音]";
 							mes "^FF0000kkkkhee- hihihihi!!!^000000";
-							mes "You see the carpet move.";
+							mes "你看到地毯移動了。";
 							next;
 							specialeffect2 EF_VENOMDUST;
-							mes "Faint laughing can be heard off in the direction of the carpet.";
+							mes "可以聽到從地毯的方向傳來微弱的笑聲。";
 							brazil_ghost = 5;
 							changequest 60352,60353;
 							close;
 						}
 						else {
-							mes "You turn the faucet on "+.@input+" times.";
+							mes "你打開水龍頭 "+.@input+" 次。";
 							next;
-							mes "But nothing happens.";
+							mes "但是什麼也沒發生。";
 							close;
 						}
 					}
 				}
 				else {
-					mes "Nothing happens.";
+					mes "什麼也沒發生。";
 					close;
 				}
 			}
 		case 2:
-			mes "You do nothing.";
+			mes "你什麼也沒做。";
 			close;
 		}
 	}
 	else {
-		mes "- It seems like an ordinary faucet -";
+		mes "- 這看起來像是一個普通的水龍頭 -";
 		close;
 	}
 }
 
 bra_in01,138,184,3	script	Carpet#bra	CLEAR_NPC,{
 	if (brazil_ghost > 0) {
-		mes "- A carpet with an intricate pattern on it -";
+		mes "- 一張有著複雜圖案的地毯 -";
 		next;
-		switch(select("Examine it.:Ignore.")) {
+		switch(select("檢查它。:忽略。")) {
 		case 1:
-			mes "- What was the next line to that spell now? -";
+			mes "- 現在，那句咒語的下一句是什麼來著？ -";
 			input .@input$;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -2266,80 +2265,80 @@ bra_in01,138,184,3	script	Carpet#bra	CLEAR_NPC,{
 			.@braspell$ = "Mother where are my friends?";
 			.@chkspell = compare(.@braspell$,.@input$);
 			if (!.@chkspell) {
-				mes "Seems like you said something wrong.";
+				mes "似乎你說錯了什麼。";
 				close;
 			}
 			else {
 				if (brazil_ghost == 5) {
-					mes "[Sobbing Voice]";
-					mes "^FF0000your 7 friends....are...sleeping... now it...'s time ....to wake them........^000000";
+					mes "[啜泣聲]";
+					mes "^FF0000你7個朋友....正在...睡覺... 現在是....喚醒他們的時候了........^000000";
 					next;
-					switch(select("Jump on the carpet.:Lie on the carpet.:Shake the carpet.")) {
+					switch(select("跳到地毯上。:躺在地毯上。:搖晃地毯。")) {
 					case 1:
-						mes "How many times should I jump?";
+						mes "我應該跳幾次？";
 						input .@input,0,999;
 						next;
-						mes "You jump on the carpet "+.@input+" times.";
+						mes "你跳到地毯上 "+.@input+" 次。";
 						next;
-						mes "But nothing happens.";
+						mes "但是什麼也沒發生。";
 						close;
 					case 2:
-						mes "How many times should I lie on the carpet?";
+						mes "我應該躺在地毯上幾次？";
 						input .@input,0,999;
 						next;
-						mes "You lie on the carpet "+.@input+" times.";
+						mes "你躺在地毯上 "+.@input+" 次。";
 						next;
-						mes "But nothing happens.";
+						mes "但是什麼也沒發生。";
 						close;
 					case 3:
-						mes "How many times should I shake the carpet?";
+						mes "我應該搖晃地毯幾次？";
 						input .@input,0,999;
 						next;
 						if (.@input == 7) {
-							mes "You shake the carpet 7 times.";
+							mes "你搖晃地毯 7 次。";
 							next;
-							mes "- fly~ fly~ fly~ fly~ fly~ fly~ fly~ -";
+							mes "- 飛吧～ 飛吧～ 飛吧～ 飛吧～ 飛吧～ 飛吧～ 飛吧～ -";
 							next;
-							mes "[Distant Sound]";
+							mes "[遠方的聲音]";
 							mes "^FF0000kkkkhee- hihihihi!!!^000000";
 							next;
 							specialeffect2 EF_VENOMDUST;
-							mes "Faint laughing can be heard off in the direction of the mirror.";
+							mes "可以聽到從鏡子的方向傳來微弱的笑聲。";
 							brazil_ghost = 6;
 							changequest 60353,60354;
 							close;
 						}
 						else {
-							mes "You shake the carpet "+.@input+" times.";
+							mes "你搖晃地毯 "+.@input+" 次。";
 							next;
-							mes "But nothing happens.";
+							mes "但是什麼也沒發生。";
 							close;
 						}
 					}
 				}
 				else {
-					mes "Nothing happens.";
+					mes "什麼也沒發生。";
 					close;
 				}
 			}
 		case 2:
-			mes "You do nothing.";
+			mes "你什麼也沒做。";
 			close;
 		}
 	}
 	else {
-		mes "- A carpet with an intricate pattern on it -";
+		mes "- 一張有著複雜圖案的地毯 -";
 		close;
 	}
 }
 
 bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 	if (brazil_ghost > 0) {
-		mes "- You can see a clean mirror without any marks or dust -";
+		mes "- 你可以看到一面乾淨的鏡子，沒有任何痕跡或灰塵 -";
 		next;
-		switch(select("Examine it.:Ignore.")) {
+		switch(select("檢查它。:忽略。")) {
 		case 1:
-			mes "- What was the next line to that spell now? -";
+			mes "- 現在，那句咒語的下一句是什麼來著？ -";
 			input .@input$;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -2348,46 +2347,46 @@ bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 			.@braspell$ = "Where are you mom?";
 			.@chkspell = compare(.@braspell$,.@input$);
 			if (!.@chkspell) {
-				mes "Seems like you said something wrong.";
+				mes "似乎你說錯了什麼。";
 				close;
 			}
 			else {
 				if (brazil_ghost == 6) {
-					mes "[Distant Sound]";
+					mes "[遠方的聲音]";
 					mes "^FF0000kihe! hit! hit! hit! hit!^000000";
 					next;
-					mes "[Distant Sound]";
+					mes "[遠方的聲音]";
 					mes "^FF0000kihe! hit! hit! hit! hit!^000000";
 					mes "^FF0000kihe! hit! hit! hit! hit!^000000";
 					next;
-					mes "[Distant Sound]";
-					mes "Behind you...";
+					mes "[遠方的聲音]";
+					mes "在你身後...";
 					enablenpc "Ghost#bra";
 					next;
 					emotion ET_HUK, playerattached();
 					mes "["+strcharinfo(0)+"]";
-					mes "The stories about the ghost are true~!";
+					mes "關於鬼魂的故事是真的～！";
 					next;
-					mes "[Ghost]";
-					mes "^FF0000my baby....^000000";
+					mes "[鬼魂]";
+					mes "^FF0000我的寶貝....^000000";
 					next;
-					mes "[Ghost]";
-					mes "^FF0000I can't see.... my eye....^000000";
-					mes "^FF0000What's going on....?^000000";
+					mes "[鬼魂]";
+					mes "^FF0000我看不到.... 我的眼睛....^000000";
+					mes "^FF0000發生什麼事了....?^000000";
 					next;
-					mes "- You take a deep breath and then look at the Ghost and notice it has an eye patch -";
+					mes "- 你深吸一口氣，然後看著鬼魂，注意到他戴著一個眼罩 -";
 					next;
-					mes "[Ghost]";
-					mes "^FF0000My eyes are so tight... can you take this off?^000000";
+					mes "[鬼魂]";
+					mes "^FF0000我的眼睛好緊.... 你能把它拿掉嗎？^000000";
 					next;
-					mes "You step carefully towards the ghost.";
+					mes "你小心翼翼地走向鬼魂。";
 					next;
-					mes "His face was covered with dust making strange contortions with it's face.";
+					mes "他的臉上佈滿灰塵，臉上的表情顯得奇怪而扭曲。";
 					next;
-					mes "[Ghost]";
-					mes "^FF0000Come on help mom.....^000000";
+					mes "[鬼魂]";
+					mes "^FF0000來吧，幫幫媽媽.....^000000";
 					next;
-					switch(select("Take the eye bandage off.:Run away~.")) {
+					switch(select("拿掉眼罩。:跑開～。")) {
 					case 1:
 						while(1) {
 							.@cpudice = rand(1,6);
@@ -2400,8 +2399,8 @@ bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 						}
 						if (.@cpudice > .@pcdice) {
 							specialeffect2 EF_DEVIL;
-							mes "[Ghost]";
-							mes "^FF0000Go away!^000000";
+							mes "[幽靈]";
+							mes "^FF0000走開！^000000";
 							brazil_ghost = 1;
 							changequest 60354,2208;
 							percentheal -50,-50;
@@ -2412,9 +2411,9 @@ bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 						}
 						else {
 							emotion ET_STARE, playerattached();
-							mes "[Ghost]";
-							mes "^FF0000Ahh!^000000";
-							mes "The Ghost disappeared into the toilet.";
+							mes "[幽靈]";
+							mes "^FF0000啊！^000000";
+							mes "幽靈消失在廁所裡了。";
 							brazil_ghost = 7;
 							changequest 60354,60355;
 							close2;
@@ -2423,7 +2422,7 @@ bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 							end;
 						}
 					case 2:
-						mes "You run away from the ghost.";
+						mes "你從幽靈那裡逃走了。";
 						close2;
 						brazil_ghost = 1;
 						changequest 60354,2208;
@@ -2434,17 +2433,17 @@ bra_in01,151,180,3	script	Mirror#bra	CLEAR_NPC,{
 					close;
 				}
 				else {
-					mes "Nothing happens.";
+					mes "什麼都沒發生。";
 					close;
 				}
 			}
 		case 2:
-			mes "You do nothing.";
+			mes "你什麼都沒做。";
 			close;
 		}
 	}
 	else {
-		mes "- You can see a clean mirror without any marks or dust -";
+		mes "- 你可以看到一面乾淨的鏡子，沒有任何痕跡或灰塵 -";
 		close;
 	}
 }
@@ -2459,86 +2458,86 @@ OnInit:
 
 bra_in01,7,181,5	script	Curator#bra	4_M_BRZ_MAN2,{
 	if (BaseLevel < 40) {
-		mes "[Curator]";
-		mes "I'm sorry but this area is under construction right now.";
+		mes "[館長]";
+		mes "抱歉，這個區域目前正在施工。";
 		close;
 	}
 	if ((brazil_ghost > 0) && (brazil_ghost < 7)) {
 		if (countitem(11515) > 0) {
-			mes "[Curator]";
-			mes "What can I do for you?";
+			mes "[館長]";
+			mes "有什麼我可以幫你的嗎？";
 			next;
-			select("I need to use the bathroom.");
-			mes "[Curator]";
-			mes "Sorry we are remodeling inside right now so, it's closed.";
-			mes "Please use the other one.";
+			select("我需要使用洗手間。");
+			mes "[館長]";
+			mes "抱歉，我們現在正在重新裝修內部，所以它關閉了。";
+			mes "請使用另一個。";
 			next;
-			switch(select("But I forgot something inside.:Give up.")) {
+			switch(select("但我忘了一些東西在裡面。:放棄。")) {
 			case 1:
-				mes "[Curator]";
-				mes "That's tooooo bad.";
-				mes "But my manager ordered me to stop anyone from entering this bathroom so, I should follow his orders.";
+				mes "[館長]";
+				mes "那太可惜了。";
+				mes "但是我的經理命令我阻止任何人進入這個洗手間，所以我應該聽從他的命令。";
 				next;
-				select("It's such a hot day!");
-				mes "[Curator]";
-				mes "It's always hot in Brasilis but today is ridiculously hot.";
-				mes "Maybe I need to drink some coconut juice to cool down.";
+				select("今天真是太熱了！");
+				mes "[館長]";
+				mes "在巴西里斯總是這麼熱，但今天熱得太離譜了。";
+				mes "也許我需要喝一些椰子汁來降溫。";
 				next;
-				mes "You give a coconut to the Curator.";
+				mes "你給了館長一顆椰子。";
 				next;
-				mes "[Curator]";
-				mes "Oh really can I have it?";
-				mes "Thanks a lot!";
+				mes "[館長]";
+				mes "喔真的嗎，我可以要嗎？";
+				mes "非常感謝！";
 				next;
-				mes "[Curator]";
-				mes "Pay it forward right?";
-				mes "Ok I'll let you through this one time.";
+				mes "[館長]";
+				mes "善有善報，對吧？";
+				mes "好吧，我就讓你通過這一次。";
 				next;
-				mes "The curator looks around calmly then opens the door.";
+				mes "館長平靜地環顧四周，然後打開了門。";
 				delitem 11515,1; //Coconut
 				brazil_ghost = 2;
 				close2;
 				warp "bra_in01",138,176;
 				end;
 			case 2:
-				mes "You give up trying to enter.";
+				mes "你放棄嘗試進入。";
 				close;
 			}
 		}
 		else {
-			mes "[Curator]";
-			mes "What can I do for you?";
+			mes "[館長]";
+			mes "有什麼我可以幫你的嗎？";
 			next;
-			select("I need to use the bathroom.");
-			mes "[Curator]";
-			mes "Sorry we are remodeling inside right now so, it's closed.";
-			mes "Please use the other one.";
+			select("我需要使用洗手間。");
+			mes "[館長]";
+			mes "抱歉，我們現在正在重新裝修內部，所以它關閉了。";
+			mes "請使用另一個。";
 			next;
-			switch(select("But I forgot something inside.:Give up.")) {
+			switch(select("但我忘了一些東西在裡面。:放棄。")) {
 			case 1:
-				mes "[Curator]";
-				mes "That's tooooo bad.";
-				mes "But my manager ordered me to stop anyone from entering this bathroom so, I should follow his orders.";
+				mes "[館長]";
+				mes "那太可惜了。";
+				mes "但是我的經理命令我阻止任何人進入這個洗手間，所以我應該聽從他的命令。";
 				next;
-				select("It's such a hot day!");
-				mes "[Curator]";
-				mes "It's always hot in Brasilis but today is ridiculously hot.";
-				mes "Maybe I need to drink some coconut juice to cool down.";
+				select("今天真是太熱了！");
+				mes "[館長]";
+				mes "在巴西里斯總是這麼熱，但今天熱得太離譜了。";
+				mes "也許我需要喝一些椰子汁來降溫。";
 				close;
 			case 2:
-				mes "You give up trying to enter.";
+				mes "你放棄嘗試進入。";
 				close;
 			}
 		}
 	}
 	else if (brazil_ghost > 6) {
-		mes "[Curator]";
-		mes "Hey thanks for the Coconut earlier it really helped me cool down.";
+		mes "[館長]";
+		mes "嘿，謝謝你之前的椰子，它真的幫助我降溫了。";
 		close;
 	}
 	else {
-		mes "[Curator]";
-		mes "Is it just me? Or is it hotter than it's ever been today!";
+		mes "[館長]";
+		mes "只有我這樣覺得嗎？還是今天比以往任何時候都熱！";
 		close;
 	}
 }
@@ -2548,7 +2547,7 @@ OnTouch_:
 	if (brazil_ghost > 6)
 		warp "bra_in01",138,176;
 	else {
-		mes "The entrance has been blocked.";
+		mes "入口已被封鎖。";
 		close;
 	}
 	end;
@@ -2560,28 +2559,28 @@ bra_in01,206,98,0	warp	tobath#bra	1,1,bra_in01,138,176
 bra_in01,206,188,1	script	Open Manhole#todunbra	CLEAR_NPC,{
 	if (brazil_ghost == 7) {
 		enablenpc "Ghost#bra_end";
-		mes "[Ghost]";
-		mes "I am a ghost who died while wandering the jungle many years ago.";
+		mes "[幽靈]";
+		mes "我是一個多年前在叢林中遊蕩時死去的幽靈。";
 		next;
-		mes "[Ghost]";
-		mes "I found a pipeline in the jungle and followed the voice of a man to this very spot.";
+		mes "[幽靈]";
+		mes "我在叢林中找到了一條管道，然後跟著一個男人的聲音來到了這個地方。";
 		next;
-		mes "[Ghost]";
-		mes "That's also where I hurt one of my eyes while walking around in the dark.";
+		mes "[幽靈]";
+		mes "那也是我在黑暗中行走時弄傷我的一隻眼睛的地方。";
 		next;
-		mes "[Ghost]";
-		mes "I wandered these sewers for days until I found the end of this line connected to the toilet in the museum. I shouted forever begging for help but no one answered my calls.";
+		mes "[幽靈]";
+		mes "我在這些下水道裡遊蕩了好幾天，直到我找到連接到博物館廁所的這條線的盡頭。我永遠大聲呼救，但沒有人回應我的呼喚。";
 		next;
-		mes "[Ghost]";
-		mes "You finally answered my call but it's already way too late. Thank you for at least checking. No one else has bothered to this day.";
+		mes "[幽靈]";
+		mes "你終於回應了我的呼喚，但這已經太遲了。謝謝你至少來看看。直到今天，沒有其他人費心。";
 		next;
-		mes "[Ghost]";
-		mes "There are many dangerous creatures at the end of this sewer.";
-		mes "You seem brave though. I bet you wouldn't worry about the monsters there anyways.";
+		mes "[幽靈]";
+		mes "在這條下水道的盡頭有許多危險的生物。";
+		mes "不過你似乎很勇敢。我打賭你根本不用擔心那裡的怪物。";
 		next;
-		mes "[Ghost]";
-		mes "I guess now I can finally rest in peace.";
-		mes "Thank you friend.";
+		mes "[幽靈]";
+		mes "我想現在我終於可以安息了。";
+		mes "謝謝你，朋友。";
 		brazil_ghost = 8;
 		//completequest 2208;
 		completequest 60355;
@@ -2604,21 +2603,21 @@ bra_dun01,87,43,1	script	Pipe#bra	CLEAR_NPC,{
 
 bra_fild01,323,136,1	script	Pipe#brafild	CLEAR_NPC,{
 	if (brazil_ghost > 6) {
-		mes "You see a rusty pipe. It seems to be linked to somewhere beneath the jungle.";
+		mes "你看到一根生鏽的管子。它似乎連接到叢林下方的某個地方。";
 		next;
-		switch(select("Examine it:Ignore.")) {
+		switch(select("檢查它:忽略。")) {
 		case 1:
-			mes "You swim through a gap in the pipe and are swept by a sudden rush of water.";
+			mes "你游過管道中的一個缺口，被突然湧來的水沖走。";
 			close2;
 			warp "bra_in01",206,182;
 			end;
 		case 2:
-			mes "It might be dangerous, I better not act rashly.";
+			mes "這可能很危險，我最好不要輕舉妄動。";
 			close;
 		}
 	}
 	else {
-		mes "You see a rusty pipe. It seems to be linked to somewhere beneath the jungle.";
+		mes "你看到一根生鏽的管子。它似乎連接到叢林下方的某個地方。";
 		close;
 	}
 }
@@ -2636,35 +2635,34 @@ OnInit:
 brasilis,315,334,5	script	Shaman#nk	4_F_BRZ_INDOLD,{
 	.@iara_re = checkquest(4135,PLAYTIME);
 	if ((.@iara_re == 0) || (.@iara_re == 1)) {
-		mes "[Anori]";
-		mes "I'm still preparing.";
-		mes "I don't require your help at this time.";
-		mes "Please come back later...";
+		mes "[阿諾里]";
+		mes "我還在準備中。";
+		mes "目前我不需要你的幫助。";
+		mes "請稍後再來...";
 		close;
 	}
 	else {
 		if (checkquest(4135) > 1) erasequest 4135;
 		.@iara_q = checkquest(4133);
 		if ((.@iara_q == 0) || (.@iara_q == 1)) {
-			mes "[Anori]";
-			mes "To block Iara ";
-			mes "seducing the tribes";
-			mes "we need a purifying potion...";
+			mes "[阿諾里]";
+			mes "為了阻止伊亞拉";
+			mes "誘惑部落";
+			mes "我們需要一種淨化藥水...";
 			next;
-			mes "[Anori]";
-			mes "Did you bring the materials";
-			mes "to make the purifying potion?";
+			mes "[阿諾里]";
+			mes "你帶了製作淨化藥水的材料了嗎？";
 			next;
 			if ((countitem(950) > 19) && (countitem(7172) > 9) && (countitem(1054) > 2)) {
-				mes "[Anori]";
-				mes "Um... it seems to be okay.";
-				mes "I'll make you a potion which will";
-				mes "weaken Iara's power.";
+				mes "[阿諾里]";
+				mes "嗯... 似乎還可以。";
+				mes "我會為你製作一種藥水，它會";
+				mes "削弱伊亞拉的力量。";
 				next;
-				mes "[Anori]";
-				mes "Let's see grind this...";
-				mes "and mix in that...";
-				mes "then add some magic...";
+				mes "[阿諾里]";
+				mes "讓我想想... 磨碎這個...";
+				mes "然後混合那個...";
+				mes "然後加入一些魔法...";
 				next;
 				setquest 4135;
 				erasequest 4133;
@@ -2674,158 +2672,157 @@ brasilis,315,334,5	script	Shaman#nk	4_F_BRZ_INDOLD,{
 				delitem 7172,10; //Leopard_Talon
 				delitem 1054,3; //Lip_Of_Ancient_Fish
 				getitem 11517,2; //Puri_Potion
-				mes "[Anori]";
-				mes "Here, it's completed.";
-				mes "Take this.";
-				mes "It will make Iara stop";
-				mes "training at the cave";
-				mes "for a while.";
+				mes "[阿諾里]";
+				mes "好了，完成了。";
+				mes "拿著這個。";
+				mes "它會讓伊亞拉停止";
+				mes "在洞穴裡訓練";
+				mes "一段時間。";
 				next;
-				mes "[Anori]";
-				mes "Please block the Iara threatening the security of the tribe.";
+				mes "[阿諾里]";
+				mes "請阻止威脅部落安全的伊亞拉。";
 				close;
 			}
 			else {
-				mes "[Anori]";
-				mes "You haven't brought enough materials yet.";
-				mes "We cannot make the purification potion with only these.";
+				mes "[阿諾里]";
+				mes "你還沒有帶足夠的材料。";
+				mes "我們不能僅用這些來製作淨化藥水。";
 				close;
 			}
 		}
 		else {
 			if (BaseLevel < 40) {
-				mes "[Anori]";
-				mes "Ah... we need a strong adventurer.";
-				mes "The tribe is facing a major threat.";
+				mes "[阿諾里]";
+				mes "啊... 我們需要一位強大的冒險家。";
+				mes "部落正受到重大威脅。";
 				close;
 			}
 			.@re_q = checkquest(4134);
 			if (.@re_q == 2) {
-				mes "[Anori]";
-				mes "you are...";
-				mes "the adventurer who came for the";
-				mes "purification potion...";
+				mes "[阿諾里]";
+				mes "你是...";
+				mes "為了淨化藥水而來的";
+				mes "冒險者...";
 				next;
-				mes "[Anori]";
-				mes "Maybe because of the purification potion...";
-				mes "After that, the Iara stopped seducing tribesmen but the effect didn't last long.";
+				mes "[阿諾里]";
+				mes "或許是因為淨化藥水...";
+				mes "之後，伊阿拉停止了誘惑部落人民，但效果並沒有持續太久。";
 				next;
-				mes "[Anori]";
-				mes "Could you get the same";
-				mes "materials as before...";
-				mes "I need your power.";
+				mes "[阿諾里]";
+				mes "你能否取得跟之前一樣的";
+				mes "材料...";
+				mes "我需要你的力量。";
 				next;
-				switch(select("No.:Okay, I'll do it.")) {
+				switch(select("不用了。:好的，我會做的。")) {
 				case 1:
-					mes "[Anori]";
-					mes "This, ah...";
-					mes "There is no other way.";
+					mes "[阿諾里]";
+					mes "這個，唉...";
+					mes "沒有其他辦法了。";
 					close;
 				case 2:
-					mes "[Anori]";
-					mes "You are truly brave!";
-					mes "I, on behalf of the tribe,";
-					mes "offer you my thanks.";
+					mes "[阿諾里]";
+					mes "你真是太勇敢了！";
+					mes "我，代表部落，";
+					mes "向你表達我的感謝。";
 					next;
-					mes "[Anori]";
-					mes "Materials are the same as before.";
-					mes "If you just get^ff0000 20 Hearts of Mermaids,";
-					mes "10 Leopard Claws and";
-					mes "3 Ancient Lips^000000,";
-					mes "I will make you a potion that purifies evil spirits";
-					mes "by using a secret formula handed down to the tribe.";
+					mes "[阿諾里]";
+					mes "材料跟之前一樣。";
+					mes "只要取得^ff0000 20 個美人魚的心臟、";
+					mes "10 個豹爪和";
+					mes "3 個遠古之嘴^000000，";
+					mes "我會用部落相傳的秘方";
+					mes "為你製作一種淨化邪靈的藥水。";
 					next;
-					mes "[Anori]";
-					mes "The destiny of the tribe is up to you.";
-					mes "please get the materials quickly.";
-					mes "I will be preparing to make";
-					mes "the purification potion right here.";
+					mes "[阿諾里]";
+					mes "部落的命運取決於你。";
+					mes "請盡快取得材料。";
+					mes "我會在這裡準備製作";
+					mes "淨化藥水。";
 					setquest 4133;
 					close;
 				}
 			}
 			else {
-				mes "[Anori]";
-				mes "There are some people I haven't seen before around here.";
-				mes "It's a good sign...";
+				mes "[阿諾里]";
+				mes "這裡有一些我以前沒見過的人。";
+				mes "這是個好兆頭...";
 				next;
-				mes "[Anori]";
-				mes "Hey you...";
-				mes "Could you listen to my stories for a moment.";
-				mes "There's an emergency in our tribe.";
+				mes "[阿諾里]";
+				mes "嘿，你...";
+				mes "你可以聽我說個故事嗎？";
+				mes "我們的部落發生了緊急情況。";
 				next;
-				if(select("No.:Okay.") == 1) {
-					mes "[Anori]";
-					mes "You are a heartless person...";
-					mes "You don't seem the helpful type.";
-					mes "Just keep on going your way.";
+				if(select("不用了。:好的。") == 1) {
+					mes "[阿諾里]";
+					mes "你真是個無情的人...";
+					mes "你看起來不像會幫忙的人。";
+					mes "就這樣走你的路吧。";
 					close;
 				}
-				mes "[Anori]";
-				mes "Thank you, I met a kind person.";
-				mes "It's a secret of our tribe that";
-				mes "you cannot tell anyone.";
+				mes "[阿諾里]";
+				mes "謝謝你，我遇到了一個好心人。";
+				mes "這是我們部落的秘密，";
+				mes "你不能告訴任何人。";
 				next;
-				mes "[Anori]";
-				mes "Lately young men from";
-				mes "the tribe are disappearing.";
-				mes "Our entire tribe is being threatened.";
+				mes "[阿諾里]";
+				mes "最近，來自";
+				mes "部落的年輕人正在消失。";
+				mes "我們整個部落都受到了威脅。";
 				next;
-				mes "[Anori]";
-				mes "It is likely because of a witch called Iara.";
-				mes "She is a water nymph seducing the hearts of young tribesmen at a cave behind the waterfall.";
+				mes "[阿諾里]";
+				mes "這很可能是因為一個名叫伊阿拉的女巫。";
+				mes "她是一個在瀑布後面的洞穴裡，誘惑年輕部落人民的水妖。";
 				next;
-				mes "[Anori]";
-				mes "How can I stop these young tribesmen?";
-				mes "But I discovered a way to make a purification potion to reverse the effects of the Iara's spells.";
+				mes "[阿諾里]";
+				mes "我該如何阻止這些年輕的部落人民呢？";
+				mes "但我發現了一種製作淨化藥水的方法，可以逆轉伊阿拉法術的效果。";
 				next;
-				mes "[Anori]";
-				mes "This potion has been handed down from many generations in our tribe.";
-				mes "This purification potion possesses the power to cleanse evil spirits.";
+				mes "[阿諾里]";
+				mes "這種藥水是我們部落世世代代相傳的。";
+				mes "這種淨化藥水擁有淨化邪靈的力量。";
 				next;
-				mes "[Anori]";
-				mes "If you could get the materials";
-				mes "I will make you";
-				mes "the purification potion.";
-				mes "Could you do that for me?";
+				mes "[阿諾里]";
+				mes "如果你能取得材料";
+				mes "我會為你製作";
+				mes "淨化藥水。";
+				mes "你能為我做這件事嗎？";
 				next;
-				switch(select("No.:Yes, I can.")) {
+				switch(select("不用了。:是的，我可以。")) {
 				case 1:
-					mes "[Anori]";
-					mes "Hm...";
-					mes "Well, then.";
-					mes "If you change your mind you can come to me again.";
+					mes "[阿諾里]";
+					mes "嗯...";
+					mes "好吧，那麼。";
+					mes "如果你改變主意，你可以再來找我。";
 					next;
-					mes "[Anori]";
-					mes "You shouldn't talk about";
-					mes "what you heard now to anyone";
-					mes "It's kind of embarrassing...";
+					mes "[阿諾里]";
+					mes "你不應該跟任何人";
+					mes "談論你現在聽到的事";
+					mes "這有點令人尷尬...";
 					close;
 				case 2:
-					mes "[Anori]";
-					mes "Oh! You are the savior";
-					mes "of our tribe indeed.";
-					mes "On behalf of the tribe, I offer you my thanks.";
+					mes "[阿諾里]";
+					mes "哦！你真是我們部落的救星";
+					mes "我代表部落，向你表達我的感謝。";
 					next;
-					mes "[Anori]";
-					mes "Well, what we need is this.";
-					mes "It's all you can get from near here.";
-					mes "Note down well.";
+					mes "[阿諾里]";
+					mes "嗯，我們需要的是這個。";
+					mes "這都是你可以在附近取得的。";
+					mes "好好記住。";
 					next;
-					mes "[Anori]";
-					mes "^ff0000 20 Hearts of Mermaids";
-					mes "10 Leopard Claws";
-					mes "3 Ancient Lips^000000";
-					mes "are the only ones that are needed as the materials.";
+					mes "[阿諾里]";
+					mes "^ff0000 20 個美人魚的心臟";
+					mes "10 個豹爪";
+					mes "3 個遠古之嘴^000000";
+					mes "是唯一需要的材料。";
 					next;
-					mes "[Anori]";
-					mes "When you get those, I will make you a potion that purifies evil spirits using a secret formula handed down to the tribe.";
+					mes "[阿諾里]";
+					mes "當你取得這些材料時，我會用部落相傳的秘方為你製作一種淨化邪靈的藥水。";
 					setquest 4133;
 					next;
-					mes "[Anori]";
-					mes "The destiny of the tribe is up to you.";
-					mes "I hope you move quickly.";
-					mes "Even at this moment, the village men are being seduced and slipping way...";
+					mes "[阿諾里]";
+					mes "部落的命運取決於你。";
+					mes "我希望你趕快行動。";
+					mes "即使在這個時刻，村裡的人們也正在被誘惑並漸漸迷失...";
 					close;
 				}
 			}
@@ -2836,27 +2833,27 @@ brasilis,315,334,5	script	Shaman#nk	4_F_BRZ_INDOLD,{
 bra_dun02,157,74,5	script	Iara#nk	4_F_BRZ_WOMAN,2,2,{
 	if (countitem(11517) > 0) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "Should I use a Purification Potion?";
+		mes "我應該使用淨化藥水嗎？";
 		next;
-		switch(select("Yes.:No.")) {
+		switch(select("是的。:不用了。")) {
 		case 1:
 			specialeffect EF_MAPPILLAR;
-			mes "[Iara]";
-			mes "Ah...this light is...";
-			mes "It's like getting cleansed of evil thoughts";
-			mes "from deep within my heart.";
+			mes "[伊阿拉]";
+			mes "啊...這道光是...";
+			mes "就像從我內心深處洗去邪惡的想法";
+			mes "一樣。";
 			next;
-			mes "[Iara]";
-			mes "At last I can forget the curse that I placed on myself when I drowned in the water.";
+			mes "[伊阿拉]";
+			mes "我終於可以忘記我溺水時對自己下的詛咒了。";
 			next;
-			mes "[Iara]";
-			mes "Do you think I can be born again as a kind water nymph?";
+			mes "[伊阿拉]";
+			mes "你認為我可以重生為一個善良的水妖嗎？";
 			next;
 			specialeffect EF_GHOST;
-			mes "[Iara]";
-			mes "Ah... Thank you for helping me recover my consciousness for a while.";
-			mes "But... I think that the curse has been with me too long.";
-			mes "Get away from me quickly.";
+			mes "[伊阿拉]";
+			mes "啊...謝謝你幫助我恢復了一段時間的意識。";
+			mes "但是...我認為這個詛咒已經伴隨我太久了。";
+			mes "趕快離開我。";
 			delitem 11517,1; //Puri_Potion
 			if (checkre(0)) {
 				percentheal 100,100;
@@ -2872,69 +2869,69 @@ bra_dun02,157,74,5	script	Iara#nk	4_F_BRZ_WOMAN,2,2,{
 			consumeitem 12048; //Int_Dish03
 			consumeitem 12068; //Luk_Dish03
 			next;
-			mes "[Iara]";
-			mes "Ahhh~...";
+			mes "[伊阿拉]";
+			mes "啊~~~...";
 			specialeffect EF_DEVIL;
 			next;
-			mes "[Iara]";
-			mes "The curse is too strong for me to keep contained.";
-			mes "Leave now while you are safe.";
+			mes "[伊阿拉]";
+			mes "這個詛咒太強大了，我無法控制住它。";
+			mes "趁你還安全，現在就離開。";
 			close;
 		case 2:
 			mes "[" + strcharinfo(0) + "]";
-			mes "(I guess I should ignore her.)";
+			mes "（我想我應該忽略她。）";
 			close;
 		}
 	}
 	else {
-		mes "[Iara]";
-		mes "Aaaaaaaaaaaaaaaaaaaaaah.";
-		mes "Eeeeeeeeeeeeeeeeeeeh.";
-		mes "Oooooooooooooooooh.";
+		mes "[伊阿拉]";
+		mes "啊啊啊啊啊啊啊啊啊啊啊。";
+		mes "欸欸欸欸欸欸欸欸欸欸欸。";
+		mes "喔喔喔喔喔喔喔喔喔喔喔。";
 		if (rand(1,2) == 1)
 			sc_start SC_CURSE,60000,0;
 		else
 			sc_start SC_CONFUSION,60000,0;
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "Ugh! What's this strange voice?";
+		mes "嗚！這奇怪的聲音是什麼？";
 		close;
 	}
 	end;
 
 OnTouch:
 	if (countitem(11517) < 1) {
-		mes "[Iara]";
-		mes "Aaaaaaaaaaaaaaaaaaaaaah.";
-		mes "Eeeeeeeeeeeeeeeeeeeh.";
-		mes "Oooooooooooooooooh.";
+		mes "[伊阿拉]";
+		mes "啊啊啊啊啊啊啊啊啊啊啊。";
+		mes "欸欸欸欸欸欸欸欸欸欸欸。";
+		mes "喔喔喔喔喔喔喔喔喔喔喔。";
 		if (rand(1,2) == 1)
 			sc_start SC_CURSE,60000,0;
 		else
 			sc_start SC_CONFUSION,60000,0;
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "Ugh! What's this strange voice?";
+		mes "嗚！這奇怪的聲音是什麼？";
 		close;
 	}
 	end;
 }
 
 bra_fild01,188,301,5	script	Native Warrior#nk	4_M_BRZ_INDIAN,{
-	mes "[Native Warrior]";
-	mes "Ah... the face I would never forget even in my dreams.";
+	mes "[原住民戰士]";
+	mes "啊...這張臉即使在夢裡我也永遠不會忘記。";
 	next;
-	mes "[Native Warrior]";
-	mes "When will she come out of the waterfall again...?";
+	mes "[原住民戰士]";
+	mes "她什麼時候會再次從瀑布裡出來呢...?";
 	next;
 	if ((checkquest(4133) >= 0) || (checkquest(4134) >= 0)) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "(Wh...what's this guy?)";
+		mes "（這...這傢伙是什麼？）";
 	}
 	else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "(This guy will never";
-		mes "get over Iara's curse...)";
+		mes "（這傢伙永遠無法";
+		mes "擺脫伊阿拉的詛咒...）";
 	}
 	close;
 }

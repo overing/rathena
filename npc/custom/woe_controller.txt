@@ -216,8 +216,8 @@ OnMinute00:
 
 function Disp_Owner {
 	set .@o, getcastledata(getarg(0),1);
-	if (.@o) announce "The ["+getcastlename(getarg(0))+"] castle "+((getarg(1))?"has been conquered":"is currently held")+" by the ["+getguildname(.@o)+"] guild.",bc_all|bc_woe;
-	else announce "The ["+getcastlename(getarg(0))+"] castle is currently unoccupied.",bc_all|bc_woe;
+	if (.@o) announce "["+getcastlename(getarg(0))+"] 城堡 "+((getarg(1))?"已被":"目前由")+" ["+getguildname(.@o)+"] 公會佔領。",bc_all|bc_woe;
+	else announce "["+getcastlename(getarg(0))+"] 城堡目前無人佔領。",bc_all|bc_woe;
 	return;
 }
 function Add_Zero {
@@ -370,7 +370,7 @@ OnPCLoadMapEvent:
 
 OnMenu:
 while(1) {
-	mes "[WOE Information]";
+	mes "[WOE 資訊]";
 	if (agitcheck() || agitcheck2() || agitcheck3()) {
 		if (.Active[0]) {
 			for(set .@i,0; .@i<.Size; set .@i,.@i+4) {
@@ -379,12 +379,12 @@ while(1) {
 					break;
 				}
 			}
-			mes "The War of Emperium is ^0055FFactive^000000 until ^FF0000"+Add_Zero(.@i)+"^000000 in the following regions:";
+			mes "帝國戰役在以下區域是 ^0055FF啟用中^000000 直到 ^FF0000"+Add_Zero(.@i)+"^000000：";
 			mes " ";
 			for(set .@i,0; .@i < .total_region; set .@i,.@i+1)
 				if (.Active[1]&(1<<.@i)) mes " > ^777777"+.Regions$[.@i]+"^000000";
 		} else
-			mes "The War of Emperium is ^0055FFactive^000000.";
+			mes "帝國戰役是 ^0055FF啟用中^000000。";
 	} else {
 		for(set .@i,0; .@i<.Size; set .@i,.@i+4)
 			if ((gettime(DT_DAYOFWEEK) == $WOE_CONTROL[.@i] && gettime(DT_HOUR) <= $WOE_CONTROL[.@i+1]) || gettime(DT_DAYOFWEEK) < $WOE_CONTROL[.@i]) {
@@ -393,15 +393,15 @@ while(1) {
 			}
 		if (!getarraysize(.@time))
 			setarray .@time[0],$WOE_CONTROL[0],$WOE_CONTROL[1];
-		mes "The War of Emperium is ^777777inactive^000000.";
+		mes "帝國戰役是 ^777777未啟用^000000。";
 		if (.Size) {
 			mes " ";
-			mes "The next session will begin";
-			mes "on ^0055FF"+.Days$[.@time[0]]+"^000000 at "+Add_Zero(.@time[1])+"^000000.";
+			mes "下一個時段將開始於";
+			mes "^0055FF"+.Days$[.@time[0]]+"^000000 的 "+Add_Zero(.@time[1])+"^000000。";
 		}
 	}
 	next;
-	switch(select(""+((.CastleWarp || .Active[1])?" ~ Warp to castles...":"")+": ~ Check schedule...: ~ View castle owners...:"+((getgmlevel()<.GMAccess || !getgmlevel())?"":" ~ Manage sessions...")+": ~ ^777777Cancel^000000")) {
+	switch(select(""+((.CastleWarp || .Active[1])?" ~ 傳送到城堡...":"")+": ~ 檢查時間表...: ~ 查看城堡所有者...:"+((getgmlevel()<.GMAccess || !getgmlevel())?"":" ~ 管理時段...")+": ~ ^777777取消^000000")) {
 	case 1:
 		if (.CastleWarp) set .@clr$,"^0055FF";
 		set .@menu$,"";
@@ -423,7 +423,7 @@ while(1) {
 		warp .Map$[.@index],.MapX[.@index],.MapY[.@index];
 		close;
 	case 2:
-		mes "[Schedule]";
+		mes "[時間表]";
 		if (.Size) {
 			freeloop(1);
 			for(set .@i,0; .@i<.Size; set .@i,.@i+4) {
@@ -434,18 +434,18 @@ while(1) {
 			}
 			freeloop(0);
 		} else
-			mes "No times are configured.";
+			mes "沒有設定時間。";
 		next;
 		break;
 	case 3:
-		mes "[Castle Ownership]";
+		mes "[城堡所有權]";
 		for(set .@i,0; .@i < .total_region; set .@i,.@i+1) {
 			set .@k, .@i*5;
 			mes "> ^FF0000"+.Regions$[.@i]+"^000000";
 			for(set .@j,0; .@j<.size_region[.@i]; set .@j,.@j+1) {
 				.@index = getd( ".castle_index_in_region_" + .@i + "[" + .@j + "]" );
 				set .@t, getcastledata(.Castles$[.@index],1);
-				mes "  ~ "+getcastlename(.Castles$[.@index])+": "+((.@t)?"^0055FF"+getguildname(.@t):"^777777unoccupied")+"^000000";
+				mes "  ~ "+getcastlename(.Castles$[.@index])+": "+((.@t)?"^0055FF"+getguildname(.@t):"^777777無人佔領")+"^000000";
 			}
 			if (.@i < 5) mes " ";
 		}
@@ -453,25 +453,25 @@ while(1) {
 		break;
 	case 4:
 	while(1) {
-		mes "[Session Manager]";
-		mes "There are ^0055FF"+(.Size/4)+" session(s)^000000 configured.";
-		mes "What would you like to do?";
+		mes "[時段管理器]";
+		mes "已配置 ^0055FF"+(.Size/4)+" 個時段^000000。";
+		mes "您想做什麼？";
 		next;
-		switch(select(" ~ Add a session...: ~ Delete a session...: ~ Reload settings...:"+((agitcheck() || agitcheck2() || agitcheck3())?" ~ End WOE session...":"")+": ~ ^777777Go back^000000")) {
+		switch(select(" ~ 新增一個時段...: ~ 刪除一個時段...: ~ 重新載入設定...:"+((agitcheck() || agitcheck2() || agitcheck3())?" ~ 結束 WOE 時段...":"")+": ~ ^777777返回^000000")) {
 		case 1:
-			mes "[New Session]";
-			mes "Select a day.";
+			mes "[新增時段]";
+			mes "選擇一天。";
 			next;
 			set .@Day, select(" ~ "+implode(.Days$,": ~ "))-1;
-			mes "[New Session]";
-			mes "Select a start time for ^0055FF"+.Days$[.@Day]+"^000000.";
+			mes "[新增時段]";
+			mes "為 ^0055FF"+.Days$[.@Day]+"^000000 選擇一個開始時間。";
 			next;
 			set .@menu$,"";
 			for(set .@i,0; .@i<23; set .@i,.@i+1)
 				set .@menu$, .@menu$+" ~ "+Add_Zero(.@i,1)+":";
 			set .@Start, select(.@menu$)-1;
-			mes "[New Session]";
-			mes "Select an end time for ^0055FF"+.Days$[.@Day]+"^000000.";
+			mes "[新增時段]";
+			mes "為 ^0055FF"+.Days$[.@Day]+"^000000 選擇一個結束時間。";
 			next;
 			set .@menu$,"";
 			for(set .@i,.@Start+1; .@i<24; set.@i,.@i+1)
@@ -482,8 +482,8 @@ while(1) {
 				   ((.@Start >= $WOE_CONTROL[.@i+1] && .@Start < $WOE_CONTROL[.@i+2]) ||
 				    (.@End > $WOE_CONTROL[.@i+1] && .@End <= $WOE_CONTROL[.@i+2]) ||
 				    (.@Start <= $WOE_CONTROL[.@i+1] && .@End >= $WOE_CONTROL[.@i+2]))) {
-					mes "[New Session]";
-					mes "The chosen times overlap with an existing session.";
+					mes "[新時段]";
+					mes "選定的時間與現有時段重疊。";
 					next;
 					set .@d,1;
 					break;
@@ -491,11 +491,11 @@ while(1) {
 			if (.@d) { set .@d,0; break; }
 			set .@Castle,0;
 			while(1) {
-				mes "[New Session]";
+				mes "[新時段]";
 				mes "^0055FF"+.Days$[.@Day]+" ("+Add_Zero(.@Start)+"-"+Add_Zero(.@End)+")^000000";
-				mes " > Castles:";
+				mes " > 城堡:";
 				if (!.@Castle)
-					mes "   ~ ^777777(none selected)^000000";
+					mes "   ~ ^777777(未選擇)^000000";
 				else {
 					for(set .@i,0; .@i<.total_castle; set .@i,.@i+1) {
 						.@string$ = ( .@Castle&(1<<.@i) ) ? "   ~ "+getcastlename(.Castles$[.@i])+" ("+.Castles$[.@i]+")" : "";
@@ -510,10 +510,10 @@ while(1) {
 				if (.@i)
 					set .@Castle, .@Castle^(1<<(.@i-1));
 				else {
-					mes "[New Session]";
-					mes "Are you sure?";
+					mes "[新時段]";
+					mes "您確定嗎？";
 					next;
-					switch(select(" ~ ^0055FFAdd session...^000000: ~ Continue selecting castles...: ~ ^777777Cancel^000000")) {
+					switch(select(" ~ ^0055FF新增時段...^000000: ~ 繼續選擇城堡...: ~ ^777777取消^000000")) {
 					case 1:
 						for(set .@i,0; .@i<.Size; set .@i,.@i+4) {
 							if ((.@Day == $WOE_CONTROL[.@i] && .@End <= $WOE_CONTROL[.@i+1]) || .@Day < $WOE_CONTROL[.@i]) {
@@ -526,8 +526,8 @@ while(1) {
 						setarray $WOE_CONTROL[.@i], .@Day, .@Start, .@End, .@Castle;
 						set .Size, getarraysize($WOE_CONTROL);
 					case 3:
-						mes "[New Session]";
-						mes ((.@d)?"Session added.":"cancelled.");
+						mes "[新時段]";
+						mes ((.@d)?"時段已新增。":"已取消。");
 						next;
 						set .@d,1;
 					case 2:
@@ -538,13 +538,13 @@ while(1) {
 			}
 			break;
 		case 2:
-			mes "[Remove Session]";
+			mes "[移除時段]";
 			if (!.Size) {
-				mes "There are no sessions configured.";
+				mes "尚未設定任何時段。";
 				next;
 				break;
 			}
-			mes "Select a session to remove.";
+			mes "選擇要移除的時段。";
 			next;
 			set .@menu$,"";
 			for(set .@i,0; .@i<.Size; set .@i,.@i+4)
@@ -552,58 +552,58 @@ while(1) {
 			set .@menu$, .@menu$+" ~ ^777777Cancel^000000";
 			set .@i, select(.@menu$)-1;
 			if (.@i == (.Size/4)) break;
-			mes "[Remove Session]";
-			mes "Delete ^0055FF"+.Days$[$WOE_CONTROL[.@i*4]]+"'s^000000 session?";
-			mes "This action cannot be undone.";
+			mes "[移除時段]";
+			mes "刪除 ^0055FF"+.Days$[$WOE_CONTROL[.@i*4]]+" 的^000000時段？";
+			mes "此動作無法還原。";
 			next;
-			set .@j, select(" ~ ^FF0000Delete session...^000000: ~ ^777777Cancel^000000");
-			mes "[Remove Session]";
+			set .@j, select(" ~ ^FF0000刪除時段...^000000: ~ ^777777取消^000000");
+			mes "[移除時段]";
 			if (.@j == 2)
-				mes "cancelled.";
+				mes "已取消。";
 			else {
 				deletearray $WOE_CONTROL[.@i*4],4;
 				set .Size, getarraysize($WOE_CONTROL);
-				mes "Session deleted.";
+				mes "時段已刪除。";
 			}
 			next;
 			break;
 		case 3:
-			mes "[Reload Settings]";
-			mes "This will trigger all events related to new session configurations, if any.";
+			mes "[重新載入設定]";
+			mes "如果有的話，這將觸發所有與新時段設定相關的事件。";
 			if (agitcheck() || agitcheck2() || agitcheck3()) {
 				mes " ";
-				mes "Be aware that this will disrupt the current WOE session.";
+				mes "請注意，這將中斷目前的 WOE 時段。";
 			}
 			next;
-			set .@i, select(" ~ ^0055FFReload settings...^000000: ~ ^777777Cancel^000000");
-			mes "[Reload Settings]";
-			if (.@i == 2) mes "cancelled.";
+			set .@i, select(" ~ ^0055FF重新載入設定...^000000: ~ ^777777取消^000000");
+			mes "[重新載入設定]";
+			if (.@i == 2) mes "已取消。";
 			else {
 				set .Init,1;
 				donpcevent "WOE_CONTROL::OnMinute00";
-				mes "Variables have been re-initialized.";
+				mes "變數已重新初始化。";
 			}
 			next;
 			break;
 		case 4:
-			mes "[Force Agit End]";
+			mes "[強制結束 Agit]";
 			if (!agitcheck() && !agitcheck2() && !agitcheck3())  {
-				mes "WOE has already ended.";
+				mes "WOE 已經結束。";
 				next;
 				break;
 			}
-			mes "This command will safely execute all AgitEnd events.";
+			mes "此命令將安全地執行所有 AgitEnd 事件。";
 			mes " ";
-			mes "Kill the current WOE session?";
+			mes "結束目前的 WOE 時段？";
 			next;
-			set .@i, select(" ~ ^FF0000End session...^000000:"+((.Options&1)?" ~ ^FF0000End session without rewards...^000000":"")+": ~ ^777777Cancel^000000");
-			mes "[Force Agit End]";
+			set .@i, select(" ~ ^FF0000結束時段...^000000:"+((.Options&1)?" ~ ^FF0000結束時段但不發放獎勵...^000000":"")+": ~ ^777777取消^000000");
+			mes "[強制結束 Agit]";
 			if (.@i == 3)
-				mes "cancelled.";
+				mes "已取消。";
 			else {
 				set .ForceEnd, .@i;
 				donpcevent "WOE_CONTROL::OnWOEEnd";
-				mes "WOE session terminated.";
+				mes "WOE 時段已終止。";
 			}
 			next;
 			break;

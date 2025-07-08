@@ -30,275 +30,271 @@
 
 // Bard Jet
 //============================================================
-payon_in02,67,65,3	script	Bard Jet#tu	1_M_BARD,{
-	mes "[Jet]";
-	mes "Every god never grows old";
-	mes "Because of beautiful";
-	mes "Goddess, Idun.";
-	mes "Keeper of the apples of youth";
-	mes "Goddess of immortality.";
+payon_in02,67,65,3	script	吟遊詩人 傑特#tu	1_M_BARD,{
+	mes "[傑特]";
+	mes "每個神都不會變老";
+	mes "因為有美麗的";
+	mes "女神，伊登。";
+	mes "青春蘋果的守護者";
+	mes "不朽的女神。";
 	next;
-	mes "[Jet]";
+	mes "[傑特]";
 	if (BaseJob == Job_Archer){
-		mes "Ooh, you're an Archer?";
-		mes "There was a time when I too";
-		mes "was an Archer. But I've changed jobs, so now I entertain the masses with my songs and humor.";
+		mes "喔，你是弓箭手嗎？";
+		mes "我曾經也是個弓箭手。但我轉職了，現在我用我的歌聲和幽默來娛樂大眾。";
 		next;
-		mes "[Jet]";
-		mes "Speaking of which...";
-		mes "Let me tell you a joke!";
-		mes "Trust me, it's hilarious~";
-		mes "^333333*Ahem*^000000";
+		mes "[傑特]";
+		mes "說到這個...";
+		mes "讓我跟你說個笑話！";
+		mes "相信我，它很爆笑～";
+		mes "^333333*清喉嚨*^000000";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Jet]";
-		mes "A termite walks";
-		mes "into a bar and says,";
-		mes "'Is the bar tender here?'";
-		mes "Hahahahaha!";
-		mes "Bwehehehehe!";
+		mes "[傑特]";
+		mes "一隻白蟻走進";
+		mes "酒吧然後說，";
+		mes "「酒保在嗎？」";
+		mes "哈哈哈！";
+		mes "喔呵呵呵呵！";
 		emotion ET_THROB;
 		next;
-		mes "[Jet]";
-		mes "Hahaha~!";
-		mes "Goodness,";
-		mes "I'm funny!";
-		mes "Now, you try!";
-		mes "Come on, make";
-		mes "up a joke~!";
+		mes "[傑特]";
+		mes "哈哈哈～！";
+		mes "天啊，";
+		mes "我真幽默！";
+		mes "現在，換你試試！";
+		mes "來吧，編個";
+		mes "笑話吧～！";
 		emotion ET_KIK;
 		next;
 		if (Sex == SEX_MALE) {
-			select("A joke, eh?");
+			select("笑話，嗯？");
 			specialeffect2 EF_TALK_FROSTJOKE;
-			mes "[Jet]";
-			mes "Oh...";
-			mes "My...";
-			mes "God...";
+			mes "[傑特]";
+			mes "喔...";
+			mes "我的...";
+			mes "天啊...";
 			next;
-			mes "[Jet]";
-			mes "That was the greatest";
-			mes "joke I've ever heard in my";
-			mes "life! You really have a natural";
-			mes "talent for showmanship! You";
-			mes "just have to become a Bard!";
+			mes "[傑特]";
+			mes "這是我這輩子";
+			mes "聽過最好笑的";
+			mes "笑話了！你真的有天生的";
+			mes "表演天賦！你";
+			mes "一定要成為吟遊詩人！";
 		} else {
-			select("Scream!");
+			select("尖叫！");
 			specialeffect2 EF_TALK_SCREAM;
-			mes "[Jet]";
-			mes "W-Wow...";
-			mes "I don't know why, but that was truly amazing. You must have";
-			mes "what it takes to become a Dancer...";
+			mes "[傑特]";
+			mes "哇...哇...";
+			mes "我不知道為什麼，但這真的太棒了。你一定";
+			mes "具備成為舞孃的條件...";
 		}
 		emotion ET_BEST;
 		next;
-		mes "[Jet]";
-		mes "But before any of that, you've got to get rid of the Archer look, no?";
+		mes "[傑特]";
+		mes "但在那之前，你得先擺脫弓箭手的樣子，不是嗎？";
 		next;
-		mes "[Jet]";
-		mes "Actually I'm a member of";
-		mes "the ^3131FFArcher's Guild^000000 'Icarus' which is to the ^3131FFleft of the job change office^000000. You should be able to";
-		mes "learn a lot from there.";
+		mes "[傑特]";
+		mes "其實我是^3131FF弓箭手公會「伊卡洛斯」^000000的成員，它在^3131FF轉職所的左邊^000000。你應該可以";
+		mes "從那裡學到很多東西。";
 		next;
-		mes "[Jet]";
-		mes "Now now, go learn";
-		mes "everything and change";
-		mes "jobs so that you can";
-		mes "come play with me!";
+		mes "[傑特]";
+		mes "現在，去學習";
+		mes "一切並且轉職，";
+		mes "這樣你就可以";
+		mes "來跟我一起玩了！";
 	} else if (BaseJob == Job_Bard){
-		mes "Ooh...!";
-		mes "You're...!";
+		mes "喔...！";
+		mes "你是...！";
 		next;
 		specialeffect2 EF_TALK_FROSTJOKE;
-		//specialeffect EF_TALK_FROSTJOKE,AREA,"Bard Jet#tu";
+		//specialeffect EF_TALK_FROSTJOKE,AREA,"吟遊詩人 傑特#tu";
 		emotion ET_BEST;
-		mes "[Jet]";
-		mes "Let's see...";
-		mes "I've been working";
-		mes "on a new joke here,";
-		mes "but I could use some";
-		mes "feedback. You ready?";
+		mes "[傑特]";
+		mes "讓我想想...";
+		mes "我一直在研究";
+		mes "一個新的笑話，";
+		mes "但我需要一些";
+		mes "回饋。你準備好了嗎？";
 		next;
-		mes "[Jet]";
-		mes "What did the male";
-		mes "Merchant say to the";
-		mes "dancing Isis? Give up?";
+		mes "[傑特]";
+		mes "一位男性";
+		mes "商人對跳舞的";
+		mes "伊西斯說了什麼？放棄了嗎？";
 		next;
-		mes "[Jet]";
-		mes "'Mammonite!'";
-		mes "Get it? 'Cuz he";
-		mes "throws money at her";
-		mes "and the word Mammonite";
-		mes "sounds-- wait. It's not funny";
-		mes "if I have to explain it, huh?";
+		mes "[傑特]";
+		mes "「瑪門主義者！」";
+		mes "懂了嗎？因為他";
+		mes "把錢扔向她，";
+		mes "而且瑪門主義者";
+		mes "聽起來--等等。如果";
+		mes "我必須解釋，那就不好笑了，是嗎？";
 	} else if (BaseJob == Job_Dancer){
-		mes "Ooh...!";
-		mes "Hello, hello!";
-		mes "Wouldn't it be";
-		mes "nice if we could";
-		mes "perform together";
-		mes "one of these days?";
+		mes "喔...！";
+		mes "哈囉，哈囉！";
+		mes "如果有一天";
+		mes "我們可以一起";
+		mes "表演";
+		mes "那該有多好？";
 	} else {
-		mes "You look bored...";
-		mes "Is life really that";
-		mes "mundane and tiresome?";
-		mes "Then... I shall make";
-		mes "you laugh...";
+		mes "你看起來很無聊...";
+		mes "生活真的有那麼";
+		mes "平凡和乏味嗎？";
+		mes "那麼...我將讓你";
+		mes "發笑...";
 		next;
-		mes "[Jet]";
-		mes "^333333*Ahem*^000000";
-		mes "These are the";
-		mes "famous last words";
-		mes "of a mafia hit man...";
+		mes "[傑特]";
+		mes "^333333*清喉嚨*^000000";
+		mes "這些是";
+		mes "黑手黨殺手的";
+		mes "著名遺言...";
 		next;
-		mes "[Jet]";
-		mes "'Who put the";
-		mes "violin in this";
-		mes "violin case?!'";
-		mes "Bwahahahahahahah!";
-		mes "Get the joke?";
+		mes "[傑特]";
+		mes "「誰把";
+		mes "小提琴放在這個";
+		mes "小提琴盒裡？！」";
+		mes "哇哈哈哈哈哈哈！";
+		mes "懂這個笑話嗎？";
 	}
 	close;
 }
 
 // Sign
 //============================================================
-pay_arche,127,154,4	script	Sign#arc	2_BOARD1,{
+pay_arche,127,154,4	script	路標#arc	2_BOARD1,{
 	mes " ";
-	mes " Archer Job Change Office ---> ";
-	mes " <--- Icarus ";
+	mes " 弓箭手轉職處 ---> ";
+	mes " <--- 伊卡洛斯 ";
 	mes " ";
 	close;
 }
 
 // Master Kavaruk
 //============================================================
-payon_in02,54,13,3	script	Master Kavaruk	1_M_JOBTESTER,{
-	mes "[Master Kavaruk]";
-	mes "Hello, young one.";
-	mes "I am Master Kavaruk";
-	mes "of the Icarus Archer Guild.";
-	mes "I bid you welcome.";
+payon_in02,54,13,3	script	卡瓦魯克大師	1_M_JOBTESTER,{
+	mes "[卡瓦魯克大師]";
+	mes "你好，年輕人。";
+	mes "我是伊卡洛斯弓箭手公會的";
+	mes "卡瓦魯克大師。";
+	mes "我向你表示歡迎。";
 	next;
-	switch(select("Ask about 'Icarus.':Ask about recent news.:Talk about Archers.")) {
+	switch(select("詢問關於「伊卡洛斯」的事情:詢問最近的新聞:談論弓箭手。")) {
 	case 1:
-		mes "[Master Kavaruk]";
-		mes "Have you ever";
-		mes "heard the story";
-		mes "of Icarus before?";
+		mes "[卡瓦魯克大師]";
+		mes "你曾經";
+		mes "聽過";
+		mes "伊卡洛斯的故事嗎？";
 		next;
-		mes "[Master Kavaruk]";
-		mes "Icarus was a brave young man who flew through the sky using wings held together by beeswax. Out of curiosity, he flew too close to the sun, his wings melted, and he fell to his death.";
+		mes "[卡瓦魯克大師]";
+		mes "伊卡洛斯是一位勇敢的年輕人，他使用用蜂蠟連接的翅膀在天空中飛行。出於好奇，他飛得太靠近太陽，他的翅膀融化了，然後他墜落身亡。";
 		next;
-		mes "[Master Kavaruk]";
-		mes "Although his is a tragic story, Icarus had a courageous heart";
-		mes "that we should look up to as";
-		mes "our standard.";
+		mes "[卡瓦魯克大師]";
+		mes "雖然這是一個悲慘的故事，但伊卡洛斯有一顆勇敢的心";
+		mes "我們應該將其視為";
+		mes "我們的榜樣。";
 		next;
-		mes "[Master Kavaruk]";
-		mes "The members of our guild are those who not only wish to be brave, but to reach out for our dreams like Icarus did. Our members are aspiring Archers, former Archers and current Archers.";
+		mes "[卡瓦魯克大師]";
+		mes "我們公會的成員不僅希望勇敢，而且像伊卡洛斯一樣，渴望實現我們的夢想。我們的成員是有抱負的弓箭手、前弓箭手和現任弓箭手。";
 		next;
-		mes "[Master Kavaruk]";
+		mes "[卡瓦魯克大師]";
 		if (Class == Job_Novice){
-			mes "If you'd like to become an Archer, why don't you go around and learn";
-			mes "a few things about the profession? I'm sure you'll be able to hear plenty of stories around here.";
+			mes "如果你想成為弓箭手，何不四處走走，了解";
+			mes "一些關於這個職業的事情？我相信你可以在這裡聽到很多故事。";
 		}
 		else if(Class == Job_Archer){
-			mes "Since you're an Archer, you might";
-			mes "benefit from going around and listening to everyone else's battle experiences. Becoming familiar with different fight scenarios will help you in the future.";
+			mes "既然你是弓箭手，你或許";
+			mes "可以從四處走動，聆聽其他人的戰鬥經驗中受益。熟悉不同的戰鬥情境將在未來幫助你。";
 		}
 		else if (BaseJob == Job_Hunter){
-			mes "[Master Kavaruk]";
-			mes "Arpesto is waiting";
-			mes "outside. Since he's a";
-			mes "veteran hunter, he can";
-			mes "be of great help to you.";
+			mes "[卡瓦魯克大師]";
+			mes "阿佩斯托在外面";
+			mes "等候。由於他是個";
+			mes "資深獵人，他可以";
+			mes "對你很有幫助。";
 		}
 		else if (BaseJob == Job_Dancer){
-			mes "In fact, a few of our";
-			mes "members specialize in";
-			mes "capturing the fascination";
-			mes "of those watching with their";
-			mes "graceful dances, just like you.";
+			mes "事實上，我們的一些";
+			mes "成員擅長於";
+			mes "以他們優美的舞蹈";
+			mes "捕捉觀眾的魅力，就像你一樣。";
 			next;
-			mes "[Master Kavaruk]";
-			mes "...But I don't seem to see";
-			mes "any of them around here right now. They never seem to remain in one";
-			mes "place for very long. Still, I'm sure of them will turn up here";
-			mes "one of these days.";
+			mes "[卡瓦魯克大師]";
+			mes "...但我現在似乎沒有看到";
+			mes "他們中的任何一個在這裡。他們似乎從不在一個";
+			mes "地方停留太久。不過，我相信他們中的一些人";
+			mes "總有一天會出現在這裡。";
 		}
 		else if (BaseJob == Job_Bard){
-			mes "In fact, a few of our members";
-			mes "are highly skilled in singing and entertaining their allies, much in the same way you do.";
+			mes "事實上，我們的一些成員";
+			mes "非常擅長唱歌和娛樂他們的盟友，就像你一樣。";
 			next;
-			mes "[Master Kavaruk]";
-			mes "...But I don't seem to see any of them around here right now. They always wander wherever the wind takes them, but I'm sure one of them will wander back here one";
-			mes "of these days.";
+			mes "[卡瓦魯克大師]";
+			mes "...但我現在似乎沒有看到他們中的任何一個在這裡。他們總是隨風漂流，但我相信他們中的一個總有一天會回到這裡";
+			mes "的日子。";
 		}
 		else {
-			mes "They happen to know a lot of information about jobs related to Archers. Why don't you speak to them and learn more about";
-			mes "these other jobs?";
+			mes "他們碰巧知道很多關於與弓箭手相關的職業的資訊。何不和他們談談，了解更多關於";
+			mes "這些其他職業的事情？";
 		}
 		close;
 	case 2:
-		mes "[Master Kavaruk]";
+		mes "[卡瓦魯克大師]";
 		if (BaseJob == Job_Archer) {
 			if(tu_archer02 == 0){
-				mes "Oh, it's a good thing";
-				mes "you're here, "+strcharinfo(0)+".";
-				mes "I've just received request for support from the Alchemist";
-				mes "Guild in Al De Baran.";
+				mes "喔，你來了真是太好了，"+strcharinfo(0)+"。";
+				mes "我剛收到來自艾爾貝塔的鍊金術士";
+				mes "公會的支援請求。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "They've been taking care";
-				mes "of a Flora field as a way of supplying their funds, but recently some stray cats seem to have been destroying the plants there.";
+				mes "[卡瓦魯克大師]";
+				mes "他們一直在照顧";
+				mes "一塊植物田，作為";
+				mes "提供資金的一種方式，但最近一些流浪貓似乎一直在破壞那裡的植物。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "Although the Alchemists have been using Alchemy to summon the Flora again to keep the field running, it's causing a strain on their resources.";
+				mes "[卡瓦魯克大師]";
+				mes "雖然鍊金術士們一直在使用鍊金術來再次召喚植物以維持植物田的運作，但這對他們的資源造成了壓力。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "They are willing to give rewards for bringing materials such as ^3131FFManeater Blossoms^000000 and ^3131FFStems^000000 which will help them restore";
-				mes "their Flora.";
+				mes "[卡瓦魯克大師]";
+				mes "他們願意提供獎勵，以換取諸如^3131FF食人花花苞^000000和^3131FF莖^000000之類的材料，這些材料將幫助他們恢復";
+				mes "他們的植物。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "If you're interested, it would probably be best to speak to the Alchemist Guild member who is waiting to hear from us at the ^3131FFshop next to the road south of Icarus^000000.";
+				mes "[卡瓦魯克大師]";
+				mes "如果你有興趣，最好與在^3131FF伊卡洛斯以南道路旁的商店^000000等候我們消息的鍊金術士公會成員交談。";
 				tu_archer02 = 1;
 				close;
 			} else if(tu_archer02 == 1){
-				mes "Hmmm...";
+				mes "嗯...";
 				mes "..........";
 				next;
-				select("Is something the matter?");
-				mes "[Master Kavaruk]";
-				mes "Actually, we have a problem.";
-				mes "The position of master seems to have a lot of power, but I always need to remain here. I don't have the luxury of being able to leave my post.";
+				select("有什麼事嗎？");
+				mes "[卡瓦魯克大師]";
+				mes "實際上，我們遇到了一個問題。";
+				mes "大師的位置似乎擁有很多權力，但我總是需要待在這裡。我沒有離開崗位的餘裕。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "I asked a member of Icarus to";
-				mes "wander about the Rune-Midgarts Kingdom and gather news and information about what has been going on recently.";
+				mes "[卡瓦魯克大師]";
+				mes "我請伊卡洛斯的一位成員";
+				mes "在盧恩-米德加茲王國四處遊蕩，收集最近發生的新聞和資訊。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "He has been sending me letters containing detailed information, but all of a sudden, I've lost contact with him. I'm concerned over what may have happened.";
+				mes "[卡瓦魯克大師]";
+				mes "他一直寄給我包含詳細資訊的信件，但突然間，我與他失去了聯繫。我很擔心可能發生了什麼事。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "Would you please go find";
-				mes "^3131FFArthail of the Wind^000000 for me? Although he doesn't like people, I've ordered for him to wander within the crowds to gather information.";
+				mes "[卡瓦魯克大師]";
+				mes "你可以幫我找到";
+				mes "^3131FF風之亞爾泰爾^000000 嗎？雖然他不喜歡人，但我已經命令他到人群中遊蕩以收集資訊。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "Please find out if he is all right and help him with whatever he";
-				mes "may need. In the meantime, I will be waiting to hear from you. Thank you very much.";
+				mes "[卡瓦魯克大師]";
+				mes "請找出他是否安好，並盡可能地幫助他。同時，我會等你的消息。非常感謝。";
 				tu_archer02 = 2;
 				close;
 			} else if(tu_archer02 == 2){
-				mes "Find Arthail";
-				mes "of the Wind for me.";
-				mes "He must be somewhere";
-				mes "in Prontera...";
+				mes "幫我找到風之亞爾泰爾";
+				mes "。";
+				mes "他一定在普隆德拉的某個地方";
+				mes "...";
 				close;
 			} else if(tu_archer02 == 9){
-				mes "Hmmm, I see. Thank you";
-				mes "for bringing me the news. As Arthail has said, I shall wait until he has more news for me.";
-				mes "You should also train and prepare for the future as well.";
+				mes "嗯，我明白了。感謝你";
+				mes "帶給我的消息。正如亞爾泰爾所說，我會等到他有更多消息給我。";
+				mes "你也應該訓練並為未來做好準備。";
 				tu_archer02 = 10;
 				if (checkre(3))
 					getexp 1000,1000;
@@ -307,449 +303,443 @@ payon_in02,54,13,3	script	Master Kavaruk	1_M_JOBTESTER,{
 				close;
 			}
 		}
-		mes "I don't know...";
-		mes "Recently, I haven't heard any noteworthy news. For now, the warmth of the sun seems to be protecting the peace here.";
+		mes "我不知道...";
+		mes "最近，我沒有聽到任何值得注意的消息。目前，陽光的溫暖似乎正在保護此地的和平。";
 		next;
-		mes "[Master Kavaruk]";
-		mes "But if I hear of";
-		mes "any interesting rumors,";
-		mes "I will let you know.";
+		mes "[卡瓦魯克大師]";
+		mes "但如果我聽到";
+		mes "任何有趣的謠言，";
+		mes "我會告訴你的。";
 		close;
 	case 3:
-		mes "[Master Kavaruk]";
+		mes "[卡瓦魯克大師]";
 		if(tu_archer01 < 1){
 			if(Class == Job_Novice || Class == Job_Baby){
-				mes "Ah...";
-				mes "So are you";
-				mes "interested in";
-				mes "becoming an Archer?";
+				mes "啊...";
+				mes "所以你有興趣";
+				mes "成為弓箭手嗎？";
 			} else if (Class == Job_Archer_High || BaseJob == Job_Dancer || BaseJob == Job_Bard){
-				mes "Although I can't deny that you're an expert, I suppose it is a good idea to review the basics of archery from time to time. Would you like to try some refresher training?";
+				mes "雖然我不能否認你是個專家，但我想不時地複習一下弓箭的基本知識是個好主意。你想試試一些複習訓練嗎？";
 			} else if (BaseJob == Job_Hunter){
-				mes "[Master Kavaruk]";
-				mes "Arpesto is waiting";
-				mes "outside. Since he's a";
-				mes "veteran hunter, he can";
-				mes "be of great help to you.";
+				mes "[卡瓦魯克大師]";
+				mes "阿爾佩斯托在外面";
+				mes "等著。由於他是一位";
+				mes "資深獵人，他可以";
+				mes "給你很大的幫助。";
 				close;
 			} else if(Class == Job_Archer || Class == Job_Baby_Archer){
-				mes "As an Archer, I can see that you'd want to make sure that you have a strong grasp on the fundamentals";
-				mes "of our job. Would you like some specialized instruction?";
+				mes "身為弓箭手，我可以理解你想確保你對我們職業的基礎知識有很強的掌握。你想要一些專業指導嗎？";
 			} else {
-				mes "Although you may not be able";
-				mes "to directly apply archery related knowledge, it's a good idea to understand the capabilities of";
-				mes "your Archer allies.";
+				mes "雖然你可能無法直接應用";
+				mes "弓箭相關的知識，但了解";
+				mes "你的弓箭手盟友的能力是個好主意。";
 				next;
-				mes "[Master Kavaruk]";
-				mes "How would you like";
-				mes "some specialized instruction to learn more about the Archer job?";
+				mes "[卡瓦魯克大師]";
+				mes "你想要";
+				mes "一些專業指導來了解更多關於弓箭手職業的資訊嗎？";
 			}
 			next;
-			switch(select("Yes:No")){
+			switch(select("是:否")){
 			case 1:
 				tu_archer01 = 1;
-				mes "[Master Kavaruk]";
-				mes "Ah yes. Well then, please";
-				mes "take this message over to ^3131FFSeisner^000000 who is in the Training Grounds west of Icarus.";
+				mes "[卡瓦魯克大師]";
+				mes "啊，是的。那麼，請";
+				mes "把這封信帶給在伊卡洛斯西方的訓練場的 ^3131FF賽斯納^000000。";
 				next;
-				mes "^3355FFYou've received";
-				mes "Kavaruk's message";
-				mes "for Seisner.^000000";
+				mes "^3355FF你收到了";
+				mes "卡瓦魯克給賽斯納";
+				mes "的訊息。^000000";
 				next;
-				mes "[Master Kavaruk]";
-				mes "Seisner is very diligent,";
-				mes "composed, intelligent and";
-				mes "extremely capable. I believe";
-				mes "that you can learn much from her.";
+				mes "[卡瓦魯克大師]";
+				mes "賽斯納非常勤奮，";
+				mes "冷靜，聰明，而且";
+				mes "非常有能力。我相信";
+				mes "你可以從她身上學到很多東西。";
 				close;
 			case 2:
-				mes "[Master Kavaruk]";
-				mes "Ah, I see. Well,";
-				mes "Icarus will always welcome";
-				mes "you with open arms. If you";
-				mes "ever change your mind, feel";
-				mes "free to come back.";
+				mes "[卡瓦魯克大師]";
+				mes "啊，我明白了。嗯，";
+				mes "伊卡洛斯將永遠以";
+				mes "張開雙臂歡迎你。如果你";
+				mes "改變主意，隨時";
+				mes "回來。";
 				close;
 			}
 		} else if(tu_archer01 == 1 || tu_archer01 == 2){
-			mes "Hmm...?";
-			mes "What are you still";
-			mes "doing here? Go to the";
-			mes "hills west of Icarus and";
-			mes "talk to ^3131FFSeisner^000000 to begin your special training.";
+			mes "嗯...？";
+			mes "你還在這裡";
+			mes "做什麼？去伊卡洛斯";
+			mes "西邊的山丘，和";
+			mes "^3131FF賽斯納^000000 談談，開始你的特殊訓練。";
 			close;
 		} else if(tu_archer01 == 3){
-			mes "So "+strcharinfo(0)+",";
-			mes "Did you have a good experience? Learning theory alone is never too enjoyable, but it is necessary.";
+			mes "所以 "+strcharinfo(0)+",";
+			mes "你有很好的體驗嗎？單獨學習理論永遠不會太愉快，但這是必要的。";
 			next;
-			mes "[Master Kavaruk]";
+			mes "[卡瓦魯克大師]";
 			if (BaseJob == Job_Archer){
-				mes "Now it is time to experience the principles you've just learned firsthand. Go speak to ^3131FFReidin Corse^000000, who is just outside of this building, and he'll tell you about the different skills.";
+				mes "現在是親身體驗你剛學到的原理的時候了。去和 ^3131FF雷丁·科爾斯^000000 說話，他就在這棟建築外面，他會告訴你不同的技能。";
 				tu_archer01 = 4;
 			} else {
-				mes "Still, there's no need for you to do any field training since only Archers can actually participate";
-				mes "in that.";
+				mes "不過，你不需要做任何實地訓練，因為只有弓箭手才能實際參與";
+				mes "那樣的訓練。";
 			}
 			close;
 		} else if(tu_archer01 == 4 && BaseJob == Job_Archer) {
-			mes "Reidin Corse is just outside of this building. Didn't you see him on your way in?";
+			mes "雷丁·科爾斯就在這棟建築外面。你進來的時候沒看到他嗎？";
 			close;
 		}
 	}
-	mes "You're great";
-	mes "just as you are now.";
-	mes "Still, if you feel like you need something, speak to any of the guild members and listen to their life experiences.";
+	mes "你現在這樣就很棒了。";
+	mes "不過，如果你覺得需要什麼，就和任何一位公會成員談談，聽聽他們的人生經驗。";
 	close;
 }
 
 // Reidin Corse
 //============================================================
-pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
-	mes "[Reidin Corse]";
+pay_arche,103,165,5	script	雷丁·科爾斯#tu	4_M_REIDIN_KURS,{
+	mes "[雷丁·科爾斯]";
 	if (checkweight(1201,1) == 0) {
-		mes "[Reidin Corse]";
-		mes "Why are you carrying";
-		mes "so much stuff? You better put everything you don't need into Kafra Storage.";
+		mes "[雷丁·科爾斯]";
+		mes "你為什麼要帶";
+		mes "這麼多東西？你最好把所有不需要的東西都放到卡普拉倉庫裡。";
 		close;
 	}
 	if(MaxWeight - Weight < 2000){
-		mes "Hey, you're carrying an";
-		mes "awful lot of stuff. You ought";
-		mes "to put some of your things";
-		mes "into Kafra Storage...";
+		mes "嘿，你帶了";
+		mes "一堆東西。你應該";
+		mes "把一些東西";
+		mes "放到卡普拉倉庫裡...";
 		close;
 	}
 	if(tu_archer01 > 0 && (BaseJob != Job_Hunter && BaseJob != Job_Bard && BaseJob != Job_Dancer || Upper == 2)){
 		if(tu_archer01 == 4){
-			mes "Ah, what is it?";
-			mes "Can I help you";
-			mes "with something?";
+			mes "啊，什麼事？";
+			mes "我可以幫你";
+			mes "做些什麼嗎？";
 			next;
-			switch(select("Tell me about skills.:Er, not really...")) {
+			switch(select("告訴我關於技能的事。:呃，其實沒有...")) {
 			case 1:
-				mes "[Reidin Corse]";
-				mes "Huh. So Master";
-				mes "Kavaruk told you";
-				mes "to come to me, eh?";
-				mes "Alright. Okay.";
+				mes "[雷丁·科爾斯]";
+				mes "嗯。所以卡瓦魯克";
+				mes "大師叫你";
+				mes "來找我，是嗎？";
+				mes "好吧。好的。";
 				emotion ET_KIK;
 				next;
 				break;
 			case 2:
-				mes "[Reidin Corse]";
-				mes "Huh...?";
-				mes "Alright. You sure";
-				mes "you've got nothing";
-				mes "to ask me? You had";
-				mes "that look, you know?";
+				mes "[雷丁·科爾斯]";
+				mes "嗯...？";
+				mes "好吧。你確定";
+				mes "你沒什麼事";
+				mes "要問我嗎？你有";
+				mes "那種表情，你知道嗎？";
 				close;
 			}
-			mes "[Reidin Corse]";
-			mes "Fine. I'm an incredibly";
-			mes "busy guy, but I'll make time for you. I'll teach you what I know about Archer skills... On one condition!";
+			mes "[雷丁·科爾斯]";
+			mes "很好。我是一個非常";
+			mes "忙碌的人，但我會為你騰出時間。我會教你我所知道的關於弓箭手技能的知識...但有一個條件！";
 			next;
-			mes "[Reidin Corse]";
-			mes "From here on out, you gotta";
-			mes "call me ^3131FFChief^000000, got it? Stick with me and you'll become the second best archer in the world! How";
-			mes "about it, kid?";
+			mes "[雷丁·科爾斯]";
+			mes "從現在開始，你得";
+			mes "叫我 ^3131FF老大^000000，明白了嗎？跟著我，你就會成為世界上第二棒的弓箭手！怎麼樣";
+			mes "，孩子？";
 			next;
-			switch(select("You got it, Chief!:Ugh, no thanks~!")) {
+			switch(select("我明白了，老大！:呃，不用了~!")) {
 			case 1:
-				mes "[Reidin Corse]";
-				mes "Ho ho!";
-				mes "That's the way to go!";
-				mes "Good good~ Call me Chief";
-				mes "from now on, you hear?";
+				mes "[雷丁·科爾斯]";
+				mes "吼吼！";
+				mes "這才是對的！";
+				mes "很好很好~ 從現在開始叫我老大，聽到了嗎？";
 				next;
 				break;
 			case 2:
-				mes "[Reidin Corse]";
-				mes "Huh? What kind of attitude";
-				mes "is that? Ah, I get it. You're not mature enough to recognize greatness when it's right";
-				mes "before you.";
+				mes "[雷丁·科爾斯]";
+				mes "嗯？那是什麼態度？";
+				mes "啊，我明白了。你還不夠成熟，無法在你面前認識偉大之處。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Don't worry...";
-				mes "When you come crawlin'";
-				mes "back, I'll reconsider";
-				mes "teaching you.";
+				mes "[雷丁·科爾斯]";
+				mes "別擔心...";
+				mes "當你爬回來";
+				mes "的時候，我會重新考慮";
+				mes "教你。";
 				close;
 			}
-			mes "[Reidin Corse]";
-			mes "Let's see...";
-			mes "How much do you know?";
-			mes "Mmmmmmmmmm...";
+			mes "[雷丁·科爾斯]";
+			mes "讓我想想...";
+			mes "你知道多少？";
+			mes "嗯嗯嗯嗯嗯嗯...";
 			next;
-			mes "^3355FFReidin Corse narrows his experienced eyes and sizes you up.^000000";
+			mes "^3355FF雷丁·科爾斯眯起他經驗豐富的眼睛，打量著你。^000000";
 			next;
-			mes "[Reidin Corse]";
+			mes "[瑞丁·科爾斯]";
 			if(JobLevel > 39)
-				mes "Hey! You're ready to change jobs, aren't you? Don't waste time here and just get a new job already! Eh, or you can ask Master Kavaruk for something to do.";
+				mes "嘿！你準備好轉職了，不是嗎？別在這裡浪費時間了，直接去轉職吧！呃，或者你可以去問卡瓦魯克大師有沒有什麼事情可以做。";
 			else if(JobLevel < 5){
-				mes "Alright! We got a fresh Archer here! You're lucky you came to me, I'm the best teacher you can find! But let me warn you, I teach at a really fast pace, so try to keep";
-				mes "up. Okay? Good.";
+				mes "很好！我們這裡來了一位新鮮的弓箭手！你很幸運能來找我，我是你能找到的最好的老師！但我要警告你，我的教學進度非常快，所以盡量跟上。";
+				mes "可以嗎？很好。";
 				next;
 				tu_archer01 = 5;
-				mes "[Reidin Corse]";
-				mes "Okay, I'm ready to begin the lessons! Come back over here once you've got your bow and arrows and everything else ready, got it?";
+				mes "[瑞丁·科爾斯]";
+				mes "好了，我準備開始上課了！等你準備好弓箭和其他所有東西後，再回到這裡來，知道了嗎？";
 			} else {
-				mes "Okay. It looks like you know";
-				mes "some stuff. But even if you're";
-				mes "a little experienced, there's still room for you to learn. So try and keep up, got it?";
+				mes "好的。看起來你";
+				mes "懂一些東西。但即使你";
+				mes "有點經驗，你仍然有學習的空間。所以盡量跟上，知道了嗎？";
 				next;
 				tu_archer01 = 5;
-				mes "[Reidin Corse]";
-				mes "Well, I'm ready to teach whenever you're ready to learn. Come back once your bow and arrows and everything else is ready, alright?";
+				mes "[瑞丁·科爾斯]";
+				mes "嗯，我隨時準備好教學，只要你準備好學習。等你準備好弓箭和其他所有東西後再回來，好嗎？";
 			}
 			close;
 		} else if(tu_archer01 == 5){
-			mes "You ready? I think it's fair to remind you that I won't tolerate any complaining! Just do what";
-			mes "I say and you'll be the second best Archer in the world! After me, of course~";
+			mes "你準備好了嗎？我覺得有必要提醒你，我不會容忍任何抱怨！只要做";
+			mes "我說的，你就會成為世界上第二好的弓箭手！當然，僅次於我～";
 			next;
-			mes "[Reidin Corse]";
-			mes "If you don't like it, you can just quit! No reason to stick around";
-			mes "if you can't keep up with the Chief, anyway.";
+			mes "[瑞丁·科爾斯]";
+			mes "如果你不喜歡，你可以直接退出！沒理由待在";
+			mes "這裡，如果你跟不上首領的話。";
 			next;
-			switch(select("Please teach me... Chief!:I want to quit.")) {
+			switch(select("請教導我... 首領！:我想退出。")) {
 			case 1:
-				mes "[Reidin Corse]";
-				mes "That's what I'm talkin' about! Yeah! Just trust me and you'll learn almost everything about Archer skills! Let's get started!";
+				mes "[瑞丁·科爾斯]";
+				mes "這正是我要說的！耶！只要相信我，你幾乎可以學到所有關於弓箭手技能的知識！讓我們開始吧！";
 				next;
-				select("Yes, Chief!");
+				select("是的，首領！");
 				emotion ET_OK;
-				mes "[Reidin Corse]";
-				mes "Great...!";
-				mes "I like your style!";
+				mes "[瑞丁·科爾斯]";
+				mes "太棒了...！";
+				mes "我喜歡你的風格！";
 				next;
-				mes "[Reidin Corse]";
-				mes "Now, open your Skill Window (Alt+S). You oughta be able to see two skills: ^FF0000Owl's Eye^000000 and ^FF0000Double Strafe^000000. First, I'll talk about Owl's Eye.";
+				mes "[瑞丁·科爾斯]";
+				mes "現在，打開你的技能視窗（Alt+S）。你應該能看到兩個技能：^FF0000梟之眼^000000 和 ^FF0000二連矢^000000。首先，我將談談梟之眼。";
 				next;
-				mes "[Reidin Corse]";
-				mes "We Archers need to be able to preceive the movements of our targets from far away. Now, even during the night, nothing can escape the eyes of an owl.";
+				mes "[瑞丁·科爾斯]";
+				mes "我們弓箭手需要能夠從遠處感知我們目標的移動。現在，即使在夜晚，也沒有任何東西可以逃脫貓頭鷹的眼睛。";
 				next;
-				mes "[Reidin Corse]";
-				mes "So we gotta train our vision so that we see the way owls do. Now";
-				mes "if you can't aim at your targets, you'd be horrible at archery, right? You gotta have Accuracy!";
+				mes "[瑞丁·科爾斯]";
+				mes "所以我們必須訓練我們的視力，以便我們像貓頭鷹一樣看東西。現在";
+				mes "如果你無法瞄準你的目標，你的箭術會很糟糕，對吧？你必須有命中率！";
 				next;
-				mes "[Reidin Corse]";
+				mes "[瑞丁·科爾斯]";
 				.@skill_owl = getskilllv("AC_OWL");
 				if(.@skill_owl < 3){
 					tu_archer01 = 6;
-					mes "Now, your first assignment";
-					mes "is to learn ^3131FFLevel 3 Owl's Eye^000000!";
+					mes "現在，你的第一個任務";
+					mes "是學習 ^3131FF梟之眼 Lv3^000000！";
 					if (checkre(0))
-						mes "From Morocc, if you travel south, you can fight Condors for your training.";
+						mes "從摩洛哥往南走，你可以與禿鷹戰鬥來進行訓練。";
 					else
-						mes "From Prontera, if you travel south, south and then west, you can fight Condors for your training.";
+						mes "從普隆德拉往南、往南然後往西走，你可以與禿鷹戰鬥來進行訓練。";
 					next;
-					mes "[Reidin Corse]";
-					mes "You can head somewhere";
-					mes "else if you want, but if you don't know any training areas, then";
-					mes "just follow my great advice.";
+					mes "[瑞丁·科爾斯]";
+					mes "如果你願意，你可以去別的地方";
+					mes "，但如果你不知道任何訓練區域，那麼";
+					mes "就聽從我的偉大建議吧。";
 					next;
-					switch(select("I'll follow your advice, Chief!:I'll hunt somewhere else...")) {
+					switch(select("我會聽從你的建議，首領！:我會在別的地方狩獵...")) {
 					case 1:
-						mes "[Reidin Corse]";
+						mes "[瑞丁·科爾斯]";
 						if (checkre(0)) {
-							mes "I'll send you to";
-							mes "Morocc for now,";
-							mes "so don't forget the";
-							mes "directions I gave you.";
-							mes "Travel ^3131FFsouth^000000.";
+							mes "我現在送你去";
+							mes "摩洛哥，";
+							mes "所以別忘了";
+							mes "我給你的指示。";
+							mes "往 ^3131FF南^000000 走。";
 						} else {
-							mes "I'll send you to";
-							mes "Prontera for now,";
-							mes "so don't forget the";
-							mes "directions I gave you.";
-							mes "Travel ^3131FFsouth^000000, ^3131FFsouth^000000,";
-							mes "and then ^3131FFwest^000000.";
+							mes "我現在送你去";
+							mes "普隆德拉，";
+							mes "所以別忘了";
+							mes "我給你的指示。";
+							mes "往 ^3131FF南^000000、^3131FF南^000000、";
+							mes "然後往 ^3131FF西^000000 走。";
 						}
 						next;
-						switch(select("Leave right away~:W-wait, let me get ready!")) {
+						switch(select("馬上離開～:等...等等，讓我想準備一下！")) {
 						case 1:
-							mes "[Reidin Corse]";
-							mes "When you struggle";
-							mes "through the hardships";
-							mes "of training, just think";
-							mes "about trying to become as";
-							mes "good as the greatest Archer";
-							mes "ever: me.";
+							mes "[瑞丁·科爾斯]";
+							mes "當你掙扎";
+							mes "在訓練的";
+							mes "艱辛中時，只要想想";
+							mes "試圖變得像";
+							mes "有史以來最偉大的弓箭手";
+							mes "一樣好：我。";
 							emotion ET_THINK;
 							next;
-							mes "[Reidin Corse]";
-							mes "Okay...!";
-							mes "Off you go!";
+							mes "[瑞丁·科爾斯]";
+							mes "好的...！";
+							mes "出發吧！";
 							if (checkre(0)) {
-								mes "To Morocc!";
+								mes "前往摩洛哥！";
 								close2;
 								warp "morocc",156,46;
 							} else {
-								mes "To Prontera!";
+								mes "前往普隆德拉！";
 								close2;
 								warp "prontera",116,72;
 							}
 							end;
 						case 2:
-							mes "[Reidin Corse]";
-							mes "Hm...?";
-							mes "What do you possibly";
-							mes "need to prepare? Alright,";
-							mes "do whatever it is you";
-							mes "need to do...";
+							mes "[瑞丁·科爾斯]";
+							mes "嗯...？";
+							mes "你到底";
+							mes "需要準備什麼？好吧，";
+							mes "做任何你需要";
+							mes "做的事情吧...";
 							close;
 						}
 					case 2:
 						emotion ET_FRET;
-						mes "[Reidin Corse]";
-						mes "Say what...?";
-						mes "Alright, then.";
-						mes "But the next time";
-						mes "you come here, you better";
-						mes "know Level 3 Owl's Eye!";
+						mes "[瑞丁·科爾斯]";
+						mes "你說什麼...？";
+						mes "好吧，那樣吧。";
+						mes "但下次";
+						mes "你來這裡時，你最好";
+						mes "已經學會了梟之眼 Lv3！";
 						close;
 					}
 
 				} else {
 					emotion ET_ANGER;
-					mes "Huh. So you already know a little about Owl's Eye already, huh? Well then, I guess I oughta talk about something you don't know about!";
+					mes "嗯。所以你已經知道一點關於梟之眼的知識了，是嗎？那麼，我想我應該談談一些你不知道的事情！";
 					tu_archer01 = 7;
 					getexp 500,0;
 					close;
 				}
 				break;
 			case 2:
-				mes "[Reidin Corse]";
-				mes "Huh. Okay.";
-				mes "And here I was";
-				mes "getting ready to";
-				mes "teach you all my";
-				mes "archery secrets!";
+				mes "[瑞丁·科爾斯]";
+				mes "嗯。好的。";
+				mes "我還";
+				mes "準備好";
+				mes "教你我所有的";
+				mes "箭術秘訣呢！";
 				close;
 			}
 		} else if(tu_archer01 == 6){
 			.@owl = getskilllv(43);
 			if(.@owl > 2){
-				mes "Ah, you're";
-				mes "finally back.";
-				mes "You've kept me";
-				mes "waiting for a while!";
+				mes "啊，你";
+				mes "終於回來了。";
+				mes "你讓";
+				mes "我等了很久！";
 				next;
 				emotion ET_SURPRISE;
-				mes "[Reidin Corse]";
-				mes "Ah, but your eyes look a lot sharper than they used to be.";
-				mes "Here, this is a small, special reward for you.";
+				mes "[瑞丁·科爾斯]";
+				mes "啊，但你的眼睛看起來比以前銳利多了。來，這是一個小小的、特別的獎勵給你。";
 				specialeffect2 EF_WIND;
 				tu_archer01 = 7;
 				getexp 500,0;
 				next;
 				emotion ET_HNG;
-				mes "[Reidin Corse]";
-				mes "Not bad, but you really should master Owl's Eye. That means";
-				mes "you need to learn it all the way";
-				mes "up to Level 10!";
+				mes "[瑞丁·科爾斯]";
+				mes "還不錯，但你真的應該精通梟之眼。這意味著";
+				mes "你需要把它學到";
+				mes "Lv10！";
 				next;
-				mes "[Reidin Corse]";
-				mes "Now, I guess I'll";
-				mes "talk about a different";
-				mes "skill in my next lecture, kay?";
-				mes "Come back when you're ready";
-				mes "to learn something new~";
+				mes "[瑞丁·科爾斯]";
+				mes "現在，我想我會";
+				mes "在下一次講座中談論";
+				mes "不同的技能，好嗎？";
+				mes "當你準備好";
+				mes "學習新東西時再回來～";
 				close;
 			} else {
-				mes "Hey! I told";
-				mes "you to learn";
-				mes "Level 3 Owl's Eye!";
-				mes "Try not to learn something";
-				mes "else by accident, okay?";
+				mes "嘿！我告訴";
+				mes "你要學習";
+				mes "梟之眼 Lv3！";
+				mes "盡量不要不小心學到";
+				mes "別的東西，好嗎？";
 				close;
 			}
 		} else if(tu_archer01 == 7){
-			mes "Alright, open";
-			mes "your Skill Window.";
-			mes "Since you have Level 3";
-			mes "Owl's Eye, now you oughta be";
-			mes "able to see the Vulture's Eye";
-			mes "skill in the list too.";
+			mes "好了，打開";
+			mes "你的技能視窗。";
+			mes "既然你有梟之眼 Lv3，現在你應該也能";
+			mes "在列表中看到禿鷹之眼";
+			mes "技能了。";
 			next;
-			mes "[Reidin Corse]";
-			mes "Now when you think";
-			mes "about vultures, what";
-			mes "exactly comes to mind?";
+			mes "[瑞丁·科爾斯]";
+			mes "現在當你想到";
+			mes "禿鷹時，你會";
+			mes "想到什麼？";
 			next;
-			switch(select("Sharp, precise eyes.:You, Chief.")) {
+			switch(select("銳利、精準的眼睛。:你，首領。")) {
 			case 1:
-				mes "[Reidin Corse]";
-				mes "Exactly!";
+				mes "[瑞丁·科爾斯]";
+				mes "沒錯！";
 				break;
 			case 2:
 				emotion ET_BIGTHROB;
-				mes "[Reidin Corse]";
-				mes "Hahahaha!";
-				mes "Well, I am famous";
-				mes "for my incredible";
-				mes "vision and precision!";
-				mes "^333333*Ahem*^000000 Anyway...";
+				mes "[瑞丁·科爾斯]";
+				mes "哈哈哈！";
+				mes "嗯，我的確以";
+				mes "我驚人的";
+				mes "視力和精準度聞名！";
+				mes "^333333*咳咳*^000000 總之...";
 				break;
 			}
 			next;
-			mes "[Reidin Corse]";
-			mes "Vultures circle the sky, find a target on the ground, and then very swiftly swoop down and ensnare their prey in their claws.";
+			mes "[瑞丁·科爾斯]";
+			mes "禿鷹在空中盤旋，找到地面上的目標，然後非常迅速地俯衝下來，用爪子抓住獵物。";
 			next;
 			emotion ET_THROB;
-			mes "[Reidin Corse]";
-			mes "No doubt about it.";
-			mes "Vultures are awesome!";
+			mes "[蕾汀·科爾斯]";
+			mes "毫無疑問。";
+			mes "禿鷹真是太棒了！";
 			next;
-			mes "[Reidin Corse]";
-			mes "The ^3131FFVulture's Eye^000000 skill allows";
-			mes "you to train your vision to be like a vulture's. You'll increase your Attack Accuracy and can target enemies from further away.";
+			mes "[蕾汀·科爾斯]";
+			mes "^3131FF禿鷹之眼^000000技能讓你";
+			mes "能像禿鷹一樣訓練你的視力。你將增加你的攻擊命中率，並且可以從更遠的地方瞄準敵人。";
 			next;
 			emotion ET_STARE_ABOUT;
-			mes "[Reidin Corse]";
-			mes "I know that you can attack";
-			mes "from a distance now, but don't";
-			mes "be satisfied with just your current attack range. Learn Vulture's Eye so you can attack from even further distances.";
+			mes "[蕾汀·科爾斯]";
+			mes "我知道你現在可以";
+			mes "從遠距離攻擊了，但是不要";
+			mes "只滿足於你目前的攻擊範圍。學習禿鷹之眼，這樣你就可以從更遠的距離攻擊。";
 			next;
-			mes "[Reidin Corse]";
-			mes "Now for your";
-			mes "second assignment!";
-			mes "Go hunt Mandagora!";
-			mes "Mandagora don't move,";
-			mes "so they're perfect for target";
-			mes "practice from a distance!";
+			mes "[蕾汀·科爾斯]";
+			mes "現在是你的";
+			mes "第二個任務！";
+			mes "去狩獵曼陀羅魔花！";
+			mes "曼陀羅魔花不會移動，";
+			mes "所以它們非常適合從";
+			mes "遠距離進行目標練習！";
 			next;
 			.@eagle = getskilllv("AC_VULTURE");
 			if(.@eagle < 3){
 				if (checkre(0))
-					mes "Alright, Mandagora usually live around Geffen. I can send you to Geffen, so just travel north from there to find";
+					mes "好的，曼陀羅魔花通常生活在吉芬附近。我可以送你去吉芬，然後從那裡往北走就能找到";
 				else
-					mes "Alright, Mandagora usually live around Mt. Mjolnir. I can send you to Prontera, so just travel north, then east from there to find";
-				mes "some of them.";
+					mes "好的，曼陀羅魔花通常生活在妙勒尼山脈附近。我可以送你去普隆德拉，然後從那裡往北，再往東走就能找到";
+				mes "一些它們。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Remember, the most";
-				mes "important thing is to level the Vulture's Eye skill and test the distance of your attack range.";
+				mes "[蕾汀·科爾斯]";
+				mes "記住，最";
+				mes "重要的是提升禿鷹之眼的技能等級，並測試你的攻擊範圍。";
 				if(MaxWeight - Weight < 1000){
-					mes "You've got plenty of arrows";
-					mes "for that, so go for it!";
+					mes "你有很多箭";
+					mes "可以用，所以加油吧！";
 					tu_archer01 = 8;
 				} else {
 					next;
-					mes "[Reidin Corse]";
-					mes "Here's a little something to encourage you. Since Mandagora are Earth property monsters, these Fire Arrows will work really well.";
+					mes "[蕾汀·科爾斯]";
+					mes "這裡有一些東西可以鼓勵你。由於曼陀羅魔花是地屬性的魔物，這些火焰箭會非常有效。";
 					tu_archer01 = 8;
 					getitem 1752,300; //Fire_Arrow
 				}
 				next;
-				mes "[Reidin Corse]";
-				mes "Alright~";
-				mes "Ready to go?";
+				mes "[蕾汀·科爾斯]";
+				mes "好的～";
+				mes "準備好";
+				mes "出發了嗎？";
 				next;
-				switch(select("Let's go!:W-wait a minute!")) {
+				switch(select("出發吧！:等一下！")) {;
 				case 1:
-					mes "[Reidin Corse]";
-					mes "Alright...!";
-					mes "Get a move on!";
+					mes "[蕾汀·科爾斯]";
+					mes "好的...！";
+					mes "快點行動！";
 					close2;
 					if (checkre(0))
 						warp "geffen",120,39;
@@ -757,21 +747,21 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 						warp "prontera",116,72;
 					end;
 				case 2:
-					mes "[Reidin Corse]";
-					mes "You still need";
-					mes "to get ready?";
-					mes "Hurry it up!";
+					mes "[蕾汀·科爾斯]";
+					mes "你還需要";
+					mes "準備嗎？";
+					mes "快點！";
 					close;
 				}
 			} else {
-				mes "Eh?";
-				mes "Wait a minute...";
+				mes "欸？";
+				mes "等一下...";
 				emotion ET_QUESTION;
 				next;
-				mes "[Reidin Corse]";
-				mes "You already";
-				mes "learned Vulture's Eye!";
-				mes "Why did I spend so much time explaining about it? Well, I guess we're ready to move on to the next lesson...";
+				mes "[蕾汀·科爾斯]";
+				mes "你已經";
+				mes "學會禿鷹之眼了！";
+				mes "我為什麼要花這麼多時間解釋它呢？好吧，我想我們準備好進入下一課了...";
 				tu_archer01 = 9;
 				getitem 1752,500; //Fire_Arrow
 				close;
@@ -780,20 +770,20 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 			.@eagle = getskilllv("AC_VULTURE");
 			if(.@eagle < 3){
 				if (checkre(0))
-					mes "Mandagora lives in the area north of Geffen. Learn up to Level 3 Vulture's Eye and get acquainted with your attack range.";
+					mes "曼陀羅魔花生活在吉芬以北的地區。學習到3級的禿鷹之眼，並熟悉你的攻擊範圍。";
 				else
-					mes "Mandagora lives in the area north and east of Prontera. Learn up to Level 3 Vulture's Eye and get acquainted with your attack range.";
+					mes "曼陀羅魔花生活在普隆德拉的北部和東部地區。學習到3級的禿鷹之眼，並熟悉你的攻擊範圍。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Okay...";
-				mes "Are you";
-				mes "ready to go?";
+				mes "[蕾汀·科爾斯]";
+				mes "好吧...";
+				mes "你";
+				mes "準備好出發了嗎？";
 				next;
-				switch(select("Go.:Wait a moment.")) {
+				switch(select("出發。:等一下。")) {;
 				case 1:
-					mes "[Reidin Corse]";
-					mes "Alright...!";
-					mes "Get a move on!";
+					mes "[蕾汀·科爾斯]";
+					mes "好的...！";
+					mes "快點行動！";
 					close2;
 					if (checkre(0))
 						warp "geffen",120,39;
@@ -801,66 +791,65 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 						warp "prontera",116,72;
 					end;
 				case 2:
-					mes "[Reidin Corse]";
-					mes "You still need";
-					mes "to get ready?";
-					mes "Hurry it up!";
+					mes "[蕾汀·科爾斯]";
+					mes "你還需要";
+					mes "準備嗎？";
+					mes "快點！";
 					close;
 				}
 			} else {
-				mes "Ah, so you've learned";
-				mes "a little something about Vulture's Eye! What do you think about it now? Ah, and here's a little reward for you before I start the next lesson~";
+				mes "啊，所以你已經學到";
+				mes "了一些關於禿鷹之眼的知識！你現在覺得怎麼樣？啊，這是一個小小的獎勵，給你，在我開始下一課之前～";
 				tu_archer01 = 9;
 				getitem 1752,500; //Fire_Arrow
 				close;
 			}
 		} else if(tu_archer01 == 9){
-			mes "Okay...";
-			mes "Up till now we've";
-			mes "studied Passive Skills.";
-			mes "You know, Owl's Eye";
-			mes "and Vulture's Eye.";
+			mes "好的...";
+			mes "到目前為止，我們";
+			mes "學習了被動技能。";
+			mes "你知道，貓頭鷹之眼";
+			mes "和禿鷹之眼。";
 			next;
-			mes "[Reidin Corse]";
-			mes "Even though you may not be doing anything, Passive Skills are always in effect. Now, it's time for me to teach you about an Active Skill";
-			mes "for Archers. Ready?";
+			mes "[蕾汀·科爾斯]";
+			mes "即使你可能什麼都沒做，被動技能也總是有效的。現在，是時候教你弓箭手的 ???????? 技能了。準備好了嗎？";
 			next;
-			mes "[Reidin Corse]";
-			mes "Today I'll tell";
-			mes "you all about";
-			mes "^3131FFDouble Strafe^000000!";
-			mes "Whaddya think?";
-			mes "Exciting, yes?";
+			mes "[蕾汀·科爾斯]";
+			mes "今天我會告訴";
+			mes "你所有關於";
+			mes "^3131FF二連箭^000000！";
+			mes "你覺得怎麼樣？";
+			mes "很刺激，對吧？";
 			next;
 			.@eagle = getskilllv("AC_DOUBLE");
 			if(.@eagle > 2){
 				mes "["+strcharinfo(0)+"]";
-				mes "I...";
-				mes "I already know";
-				mes "about Double Strafe.";
+				mes "我...";
+				mes "我已經知道";
+				mes "關於二連箭了。";
 				next;
-				mes "[Reidin Corse]";
+				mes "[蕾汀·科爾斯]";
 				mes "...";
 				mes "......";
 				next;
-				mes "[Reidin Corse]";
-				mes "^333333*Sigh*^000000";
-				mes "Next lesson...";
+				mes "[蕾汀·科爾斯]";
+				mes "^333333*嘆氣*^000000";
+				mes "下一課...";
 				tu_archer01 = 10;
 				close;
 			} else {
-				mes "[Reidin Corse]";
-				mes "Just like its name, Double Strafe allows you to attack enemies with your arrows twice in a row! Booyah~";
+				mes "[蕾汀·科爾斯]";
+				mes "就像它的名字一樣，二連箭允許你連續兩次用箭攻擊敵人！ Booyah~";
 				next;
-				mes "[Reidin Corse]";
-				mes "As Double Strafe's level rises, its attack strength also increases. If you master this skill, you can do a great amount of damage to your enemies!";
+				mes "[蕾汀·科爾斯]";
+				mes "隨著二連箭等級的提高，它的攻擊力也會增加。如果你掌握了這個技能，你可以對敵人造成大量的傷害！";
 				next;
-				mes "[Reidin Corse]";
-				mes "Hold your bow and arrow";
-				mes "like this, concentrate, aim,";
-				mes "then fire twice with all your";
-				mes "might! Practice Double Strafe";
-				mes "enough and you'll get used to it!";
+				mes "[蕾汀·科爾斯]";
+				mes "像這樣握住你的弓箭，";
+				mes "集中精神，瞄準，";
+				mes "然後用你所有的";
+				mes "力量射擊兩次！";
+				mes "多練習二連箭，你就會習慣的！";
 				next;
 				tu_archer01 = 10;
 				if(.@eagle == 0){
@@ -870,78 +859,78 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 				}
 				emotion ET_BEST;
 				next;
-				mes "[Reidin Corse]";
-				mes "Now, there's another skill known as ^FF0000Arrow Shower^000000. Where Double Strafe uses 2 Arrows, Arrow Shower fires a bunch of arrows at once.";
+				mes "[蕾汀·科爾斯]";
+				mes "現在，還有另一個技能叫做 ^FF0000箭雨^000000。二連箭使用 2 支箭，而箭雨一次發射一大堆箭。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Not even I can handle";
-				mes "Arrow Shower all that well since it's really hard. Still, maybe if you trained more at it, you'd manage to pull it off?";
+				mes "[蕾汀·科爾斯]";
+				mes "甚至連我都無法很好地";
+				mes "掌握箭雨，因為它真的很?。不過，如果你多加訓練，也許你能成功？";
 				emotion ET_SMILE;
 				close;
 			}
 		} else if(tu_archer01 == 10){
 			if (checkre(0)) {
-				mes "Now, I've taught you a lot of stuff and I wanna make sure you retain all of it. That's why I want you to take this midterm. Your mission: ^FF0000Attack the Rockers^000000!";
+				mes "現在，我已經教了你很多東西，我想確保你記住所有這些。這就是為什麼我希望你參加這次期中考試。你的任務：^FF0000攻擊搖滾蝗蟲^000000！";
 				emotion ET_BEST;
 				next;
-				mes "[Reidin Corse]";
-				mes "Rockers live just southwest of Prontera.";
+				mes "[蕾汀·科爾斯]";
+				mes "搖滾蝗蟲住在普隆德拉西南方。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Be aware that Rockers are earth element monsters!! ^3131FFSo they should be weak against fire^000000.";
+				mes "[蕾汀·科爾斯]";
+				mes "要注意搖滾蝗蟲是地屬性魔物！! ^3131FF所以它們應該會被火屬性剋制^000000。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Now go and bring ^3131FF10 Grasshopper's Leg^000000 from hunting Rockers.";
-				mes "Bring all of that and you pass~";
+				mes "[蕾汀·科爾斯]";
+				mes "現在去從狩獵搖滾蝗蟲中帶回 ^3131FF10 個蚱蜢的腿^000000。";
+				mes "全部帶回來，你就通過了～";
 				next;
-				mes "[Reidin Corse]";
-				mes "It's easier to find them if you pass by the southern gate of Prontera and then head west. Alright, off you go, " + strcharinfo(0) + "~";
+				mes "[蕾汀·科爾斯]";
+				mes "如果你經過普隆德拉南門然後向西走，更容易找到它們。好吧，去吧，" + strcharinfo(0) + "~";
 			} else {
-				mes "Now, I've taught you a lot of stuff and I wanna make sure you retain all of it. That's why I want you to take this midterm. Your mission: ^FF0000Attack the Rockers^000000!";
+				mes "現在，我已經教了你很多東西，我想確保你記住所有這些。這就是為什麼我希望你參加這次期中考試。你的任務：^FF0000攻擊搖滾蝗蟲^000000！";
 				emotion ET_BEST;
 				next;
-				mes "[Reidin Corse]";
-				mes "There's a ship that";
-				mes "leads to Byalan Island in Izlude, Prontera's satellite city. Ride that ship to Byalan Island.";
+				mes "[蕾汀·科爾斯]";
+				mes "在普隆德拉的衛星城市伊茲魯德，";
+				mes "有一艘船可以通往斐揚島。乘坐那艘船前往斐揚島。";
 				next;
-				mes "[Reidin Corse]";
-				mes "In the center of that island is the entrance to a dungeon where a lot of Hydras live. Remember that it's a water dungeon, and that ^3131FFWater resists Fire^000000, ^3131FFbut is weak against Wind^000000.";
+				mes "[蕾汀·科爾斯]";
+				mes "那個島的中心是通往一個地牢的入口，那裡住著很多海葵。記住那是一個水屬性地牢，並且 ^3131FF水屬性抗火^000000, ^3131FF但是被風屬性剋制^000000。";
 				next;
-				mes "[Reidin Corse]";
-				mes "Now go and bring ^3131FF10 Tentacles^000000";
-				mes "from hunting Hydra and ^3131FF1 Crystal Blue^000000, which you can get from hunting the Mushrooms there.";
-				mes "Bring all of that and you pass~";
+				mes "[蕾汀·科爾斯]";
+				mes "現在去從狩獵海葵中帶回 ^3131FF10 個觸手^000000";
+				mes "和 ^3131FF1 個水晶藍^000000，你可以從那裡的蘑菇身上獲得。";
+				mes "全部帶回來，你就通過了～";
 				next;
-				mes "[Reidin Corse]";
-				mes "It's easier to find Izlude if you pass by Prontera, so head towards the fields near Prontera. Alright, off you go, " + strcharinfo(0) + "~";
+				mes "[蕾汀·科爾斯]";
+				mes "如果你經過普隆德拉更容易找到伊茲魯德，所以前往普隆德拉附近的田野。好吧，去吧，" + strcharinfo(0) + "~";
 			}
 			tu_archer01 = 11;
 			close;
 		} else if(tu_archer01 == 11){// Grasshopper's_Leg
 			if (checkre(0) && countitem(940) < 10) {
-				mes "Hey...";
-				mes "You gotta bring";
-				mes "^3131FF10 Grasshopper's Leg^000000 to pass my midterm! Go back to the southwest area of Prontera and get them!";
+				mes "嘿...";
+				mes "你必須帶";
+				mes "^3131FF10 個蚱蜢的腿^000000 才能通過我的期中考！回到普隆德拉的西南地區去拿！";
 				close;
 			} else if (!checkre(0) && (countitem(962) < 10 || countitem(991) == 0)) {
-				mes "Hey...";
-				mes "You gotta bring";
-				mes "^3131FF10 Tentacles^000000 and";
-				mes "^3131FF1 Crystal Blue^000000 to pass my midterm! Go back to the dungeon on Byalan Island and get them!";
+				mes "嘿...";
+				mes "你必須帶";
+				mes "^3131FF10 個觸手^000000 和";
+				mes "^3131FF1 個水晶藍^000000 才能通過我的期中考！回到沉沒之船地下城去取得它們！";
 				close;
 			}
 			if(MaxWeight - Weight < 1000){
-				mes "Why are you carrying";
-				mes "so much stuff? You better put everything you don't need into Kafra Storage.";
+				mes "你為什麼帶著";
+				mes "這麼多東西？你最好把不需要的東西都放到卡普拉倉庫裡。";
 				close;
 			} else {
-				mes "Hey, you're back!";
-				mes "Let's see now...";
+				mes "嘿，你回來了！";
+				mes "讓我想想...";
 				next;
 				emotion ET_BEST;
-				mes "[Reidin Corse]";
-				mes "Good! You pass.";
-				mes "Don't forget that you gotta keep training and improve your skills. Before you know it, you'll be an expert almost as good as me!";
+				mes "[雷丁·科爾斯]";
+				mes "很好！你通過了。";
+				mes "別忘了你必須繼續訓練並提升你的技能。在你意識到之前，你就會變成像我一樣厲害的專家！";
 				specialeffect2 EF_WIND;
 				tu_archer01 = 12;
 				if (checkre(0))
@@ -951,71 +940,71 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 				close;
 			}
 		} else if(tu_archer01 == 12){
-			mes "Alright, now there's only";
-			mes "one more skill you need to know about. Personally, I think this one is crucial for every Archer...";
+			mes "好了，現在你只需要知道";
+			mes "一個技能了。就我個人而言，我認為這對每個弓箭手來說都至關重要...";
 			next;
-			mes "[Reidin Corse]";
-			mes "Open your Skill Window.";
-			mes "Make sure that you learn";
-			mes "^FF0000Increase Concentration^000000.";
-			mes "Now, how can I describe";
-			mes "how to do it?";
+			mes "[雷丁·科爾斯]";
+			mes "打開你的技能視窗。";
+			mes "確保你學習了";
+			mes "^FF0000提高集中力^000000。";
+			mes "現在，我該如何描述";
+			mes "該怎麼做呢？";
 			next;
-			mes "[Reidin Corse]";
-			mes "I guess that first, you gotta quiet your mind and enter a state of complete concentration. Steadily draw your bowstring back. If there's even a millisecond of imbalance, you'll miss.";
+			mes "[雷丁·科爾斯]";
+			mes "我想首先，你必須靜下心來，進入完全專注的狀態。穩定地拉開你的弓弦。如果哪怕只有一毫秒的不平衡，你就會錯失目標。";
 			next;
-			mes "[Reidin Corse]";
-			mes "We use Increase Concentration";
-			mes "to keep ourselves calm and focused to ^3131FFmaximize certain abilities and stats^000000. This skill enhances our performance as Archers immensely!";
+			mes "[雷丁·科爾斯]";
+			mes "我們使用提高集中力";
+			mes "來保持冷靜和專注，以^3131FF最大化某些能力和屬性^000000。這個技能極大地增強了我們作為弓箭手的表現！";
 			next;
-			mes "[Reidin Corse]";
-			mes "You might not be able";
-			mes "to see it now, but as you become more skilled, you'll eventually recognize all the benefits of this skill.";
+			mes "[雷丁·科爾斯]";
+			mes "你現在可能還無法";
+			mes "看到它，但隨著你變得更加熟練，你最終會認識到這個技能的所有好處。";
 			tu_archer01 = 13;
 			close;
 		} else if(tu_archer01 == 13){
-			mes "^333333*Sigh*^000000";
-			mes "It was a pain in the";
-			mes "ass, but we're finally";
-			mes "done with all of your lessons.";
+			mes "^333333*嘆氣*^000000";
+			mes "真是";
+			mes "一件痛苦的事，但我們終於";
+			mes "完成了你所有的課程。";
 			emotion ET_HNG;
 			next;
-			mes "[Reidin Corse]";
-			mes "Ah, but it's not time for";
-			mes "you to relax yet! Since I've given you a midterm, it's only fitting that I also give you a final!";
+			mes "[雷丁·科爾斯]";
+			mes "啊，但現在還不是";
+			mes "你放鬆的時候！既然我已經給你做了一個期中考，那麼我也應該給你一個期末考！";
 			next;
-			mes "[Reidin Corse]";
-			mes "Surprised, huh?";
-			mes "Well, this test is a little harder, but I'll help you out so there's";
-			mes "no need for you to fret.";
+			mes "[雷丁·科爾斯]";
+			mes "很驚訝吧？";
+			mes "嗯，這個測試有點難，但我會幫助你，所以";
+			mes "你沒必要擔心。";
 			next;
-			mes "[Reidin Corse]";
+			mes "[雷丁·科爾斯]";
 			if (checkre(0)) {
-				mes "Now, go into the forest east of Payon and hunt Spores and Wormtails. Your test will be to bring back ^3131FF10 Mushroom Spores^000000 and";
-				mes "^3131FF10 Pointed Scales^000000.";
+				mes "現在，去斐揚東邊的森林裡，獵捕孢子和蟲蛹。你的測試是帶回 ^3131FF10 個蘑菇孢子^000000 和";
+				mes "^3131FF10 個尖銳鱗片^000000。";
 			} else {
-				mes "Now, go to Mt. Mjolnir and hunt Floras. Your test will be to bring back ^3131FF5 Maneater Blossoms^000000 and";
-				mes "^3131FF20 Stems^000000.";
+				mes "現在，去妙勒尼山脈獵捕花草。你的測試是帶回 ^3131FF5 個食人花花苞^000000 和";
+				mes "^3131FF20 個莖^000000。";
 			}
 			next;
-			mes "[Reidin Corse]";
-			mes "I know it's a little dangerous,";
-			mes "but I've got a pal who'll be there to help you. Of course, she's still in training, but...";
+			mes "[雷丁·科爾斯]";
+			mes "我知道這有點危險，";
+			mes "但我有個朋友會在那裡幫助你。當然，她還在訓練中，但是...";
 			next;
-			mes "[Reidin Corse]";
-			mes "Oh...";
-			mes "And one last thing.";
-			mes "Take some of these.";
+			mes "[雷丁·科爾斯]";
+			mes "哦...";
+			mes "還有一件事。";
+			mes "拿走這些。";
 			next;
-			mes "[Reidin Corse]";
+			mes "[雷丁·科爾斯]";
 			if(MaxWeight - Weight < 2100){
-				mes "H-hey!";
-				mes "Why are you carrying";
-				mes "so much stuff? You better put everything you don't need into Kafra Storage.";
+				mes "嘿-嘿！";
+				mes "你為什麼帶著";
+				mes "這麼多東西？你最好把不需要的東西都放到卡普拉倉庫裡。";
 				close;
 			} else {
-				mes "This stuff is just a little something to encourage you, so don't take it the wrong way! Now hurry up, get what I asked for,";
-				mes "and come back!";
+				mes "這些東西只是一些鼓勵你的小東西，所以別誤會我的意思！現在快點，拿到我要求的東西，";
+				mes "然後回來！";
 				tu_archer01 = 14;
 				getitem 601,10; //Wing_Of_Fly
 				getitem 501,10; //Red_Potion
@@ -1024,57 +1013,57 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 			}
 		} else if((tu_archer01 == 14) || (tu_archer01 == 15)){
 			if (checkre(0) && (countitem(906) < 10 || countitem(921) < 10)) {// Pointed_Scale, Mushroom_Spore
-				mes "Remember, you";
-				mes "need to head into";
-				mes "the forest east of Payon and get me";
-				mes "^3131FF10 Mushroom Spores^000000";
-				mes "and ^3131FF10 Pointed Scales^000000.";
+				mes "記住，你";
+				mes "需要前往";
+				mes "斐揚東邊的森林，幫我取得";
+				mes "^3131FF10 個蘑菇孢子^000000";
+				mes "和 ^3131FF10 個尖銳鱗片^000000。";
 				close;
 			} else if (!checkre(0) && (countitem(1032) < 5 || countitem(905) < 20)) {
-				mes "Remember, you";
-				mes "need to head over to";
-				mes "Mt. Mjolnir and get me";
-				mes "^3131FF5 Maneater Blossoms^000000";
-				mes "and ^3131FF20 Stems^000000.";
+				mes "記住，你";
+				mes "需要前往";
+				mes "妙勒尼山脈，幫我取得";
+				mes "^3131FF5 個食人花花苞^000000";
+				mes "和 ^3131FF20 個莖^000000。";
 				next;
-				mes "[Reidin Corse]";
-				mes "From Prontera, you'd get to Mt. Mjolnir by traveling ^3131FFnorth^000000, ^3131FFnorth^000000 and then ^3131FFeast^000000. But if you want,";
-				mes "I can just send you there.";
+				mes "[雷丁·科爾斯]";
+				mes "從普隆德拉出發，你可以 ^3131FFnorth^000000, ^3131FFnorth^000000 然後 ^3131FFeast^000000 前往妙勒尼山脈。但如果你願意，";
+				mes "我可以把你直接傳送到那裡。";
 				next;
-				switch(select("Go!:W-Wait!")) {
+				switch(select("去吧！:等一下！")) {
 				case 1:
-					mes "[Reidin Corse]";
-					mes "Alright!";
-					mes "Oh, and if you get";
-					mes "the chance, give a hello to my Acolyte pal over there for me~";
+					mes "[雷丁·科爾斯]";
+					mes "好的！";
+					mes "哦，如果你有";
+					mes "機會，幫我向我的服事朋友問聲好~";
 					emotion ET_SMILE;
 					close2;
 					warp "mjolnir_11",25,221;
 					end;
 				case 2:
-					mes "[Reidin Corse]";
-					mes "Huh?";
-					mes "Um, sure. But";
-					mes "there's no reason to";
-					mes "get so nervous, even if";
-					mes "this my final exam for you.";
+					mes "[雷丁·科爾斯]";
+					mes "蛤？";
+					mes "嗯，好的。但是";
+					mes "沒有理由這麼";
+					mes "緊張，即使";
+					mes "這是我給你的期末考。";
 					close;
 				}
 			}
-			mes "Ha-ha~!";
-			mes "You look more like";
-			mes "a veteran than a rookie";
-			mes "now! Yeap, I can see it";
-			mes "in your eyes.";
+			mes "哈哈～！";
+			mes "你現在看起來更像";
+			mes "一個老手，而不是一個菜鳥";
+			mes "了！是的，我可以從";
+			mes "你的眼神中看出來。";
 			next;
-			mes "[Reidin Corse]";
-			mes "Right, did you get a chance to meet my Acolyte pal, Mafra? She's pretty shy, but I hope you two got along.";
+			mes "[雷丁·科爾斯]";
+			mes "對了，你有沒有機會見到我的服事朋友瑪芙拉？她很害羞，但我希望你們兩個相處融洽。";
 			next;
-			mes "[Reidin Corse]";
-			mes "I'm happy to tell";
-			mes "you that you've passed";
-			mes "my final exam! Here, take";
-			mes "this little reward!";
+			mes "[雷丁·科爾斯]";
+			mes "我很樂意告訴";
+			mes "你，你已經通過了";
+			mes "我的期末考！來，拿走";
+			mes "這個小小的獎勵！";
 			specialeffect2 EF_WIND;
 			tu_archer01 = 16;
 			if (checkre(3))
@@ -1083,283 +1072,284 @@ pay_arche,103,165,5	script	Reidin Corse#tu	4_M_REIDIN_KURS,{
 				getexp 3000,3000;
 			getitem 1770,500; //Iron_Arrow
 			next;
-			mes "[Reidin Corse]";
-			mes "Well, it's like you're a full fledged Archer now. Honestly,";
-			mes "I've got nothing more to teach you. Well, about archery, anyway.";
+			mes "[雷丁·科爾斯]";
+			mes "嗯，你現在就像一個成熟的弓箭手了。老實說，";
+			mes "我沒什麼可以再教你的了。嗯，至少在射箭方面是這樣。";
 			emotion ET_SMILE;
 			next;
-			mes "[Reidin Corse]";
-			mes "Well, if you talk to him, Master Kavaruk might have something for you to do. He happens to have me running around to doing errands";
-			mes "for him too. That creep!";
+			mes "[雷丁·科爾斯]";
+			mes "嗯，如果你和他談談，卡瓦魯克大師可能會有一些事情讓你做。他碰巧也讓我四處奔波幫他跑腿";
+			mes "那傢伙！";
 			emotion ET_HNG;
 			next;
-			mes "[Reidin Corse]";
-			mes "Well, "+ strcharinfo(0) +",";
-			mes "It'd make me really happy if you get to the point where you develop a true love for the art of archery. I'll see you sometime, okay?";
+			mes "[雷丁·科爾斯]";
+			mes "嗯，"+ strcharinfo(0) +"，";
+			mes "如果你能發展出對射箭藝術的真正熱愛，我會非常高興的。我們有時間再見，好嗎？";
 			emotion ET_BEST;
 			close;
 		} else if(tu_archer01 == 16){
-			mes "I really like this town.";
-			mes "There's so much lush greenery";
-			mes "and the birds are always singing. Payon really is peaceful.";
+			mes "我真的很喜歡這個小鎮。";
+			mes "這裡有這麼多茂盛的綠色植物";
+			mes "而且鳥兒總是歌唱。斐揚真的很和平。";
 			next;
-			mes "[Reidin Corse]";
-			mes "Of course, I've got friends here that I can trust with my life. We always argue, but we all want what's best for each other.";
+			mes "[雷丁·科爾斯]";
+			mes "當然，我這裡也有我可以託付生命的朋友。我們總是爭吵，但我們都希望對方一切都好。";
 			emotion ET_HNG;
 			next;
-			mes "[Reidin Corse]";
-			mes "Wouldn't you";
-			mes "agree that it's";
-			mes "wonderful to have";
-			mes "great friends?";
+			mes "[雷丁·科爾斯]";
+			mes "你不覺得";
+			mes "擁有";
+			mes "很棒的朋友";
+			mes "是一件很棒的事嗎？";
 			close;
 		} else {
-			mes "I really like this town.";
-			mes "Everything is green and birds singing all around.. such a peaceful place Payon is.";
+			mes "我真的很喜歡這個小鎮。";
+			mes "到處都是綠色的植物和鳥兒的歌唱聲... 斐揚真是個寧靜的地方。";
 			next;
-			mes "[Reidin Corse]";
-			mes "I feel so happy laying in the grass and looking up at the sky.";
+			mes "[雷丁·科爾斯]";
+			mes "我喜歡躺在草地上，抬頭看著天空，感覺真好。";
 			next;
-			mes "[Reidin Corse]";
-			mes "It might also be because I have my trustable friends here with me. Haha.";
-			mes "We always argue, but we care for each other deep down inside.";
+			mes "[雷丁·科爾斯]";
+			mes "也可能是因為我身邊有我信任的朋友。哈哈。";
+			mes "我們總是爭吵，但我們內心深處關心著彼此。";
 			emotion ET_HNG;
 			next;
-			mes "[Reidin Corse]";
-			mes "..'friend' is a wonderful word. Don't you agree?";
+			mes "[雷丁·科爾斯]";
+			mes "...'朋友'是一個很棒的詞。你不覺得嗎？";
 			close;
 		}
 	}
-	mes "Allow me to introduce myself. I'm the Archer of all Archers, ^3131FFReidin Corse^000000, Master of the Icarus Guild!";
+	mes "請允許我自我介紹。我是弓箭手中的弓箭手，^3131FF雷丁·科爾斯^000000，伊卡洛斯公會的大師！";
 	next;
 	emotion ET_BEST;
-	mes "[Reidin Corse]";
-	mes "Right now, we're having a special event! The application fee for the Icarus Guild has been slashed by 50%! Join now and there'll be no annual fees!";
+	mes "[雷丁·科爾斯]";
+	mes "現在，我們正在舉辦一個特別活動！伊卡洛斯公會的申請費已經削減了 50%！現在加入，將沒有年費！";
 	next;
 	emotion ET_THROB;
-	mes "[Reidin Corse]";
-	mes "During our special event, we'll have no job class restrictions!";
-	mes "As an added bonus, all new male members will be introduced to beautiful Dancer girls!";
+	mes "[雷丁·科爾斯]";
+	mes "在我們的特別活動期間，我們將沒有職業類別限制！";
+	mes "作為額外獎勵，所有新的男性會員將被介紹給美麗的舞孃女孩！";
 	next;
 	emotion ET_SMILE;
-	mes "[Reidin Corse]";
-	mes "And new female members will have the special opportunity to go out on a date with me! Don't miss out!";
+	mes "[雷丁·科爾斯]";
+	mes "而新的女性會員將有特殊的機會和我約會！不要錯過！";
 	next;
 	emotion ET_MONEY;
-	mes "[Reidin Corse]";
-	mes "Join right now";
-	mes "for a one time fee of only ^3131FF1,000,000, zeny^000000! Hurry and join the Icarus Guild while";
-	mes "this offer still lasts!";
+	mes "[雷丁·科爾斯]";
+	mes "現在就加入";
+	mes "只需一次性支付 ^3131FF1,000,000 zeny^000000！趕快加入伊卡洛斯公會，趁";
+	mes "這個優惠仍然有效！";
 	next;
 	emotion ET_HNG, getnpcid(0, "Arpesto");
-	mes "[Arpesto]";
-	mes "Reidin...";
-	mes "Stop messing around.";
-	mes "Hey there, kid. The real";
-	mes "master of the Icarus Guild";
-	mes "is in that building.";
+	mes "[阿爾佩斯托]";
+	mes "雷丁...";
+	mes "別再胡鬧了。";
+	mes "嘿，孩子。真正的";
+	mes "伊卡洛斯公會大師";
+	mes "就在那棟建築裡。";
 	next;
 	emotion ET_HUK;
-	mes "[Reidin Corse]";
-	mes "Arpesto...!";
-	mes "Why'd you...?!";
+	mes "[雷丁·科爾斯]";
+	mes "阿爾佩斯托...!";
+	mes "你為什麼...?!";
 	next;
 	emotion ET_ANGER;
-	mes "[Reidin Corse]";
-	mes "^333333*Sigh*^000000";
-	mes "You got me, you got me.";
-	mes "There's no application fee.";
-	mes "But I'll still date all of";
-	mes "those cute girls...";
+	mes "[雷丁·科爾斯]";
+	mes "^333333*嘆氣*^000000";
+	mes "你逮到我了，你逮到我了。";
+	mes "沒有申請費。";
+	mes "但我還是會約會所有的";
+	mes "可愛的女孩們...";
 	close;
 }
 
 // Seisner
 //============================================================
-pay_arche,84,139,3	script	Seisner	4_F_JOB_HUNTER,{
+pay_arche,84,139,3	script	賽絲納	4_F_JOB_HUNTER,{
 	specialeffect EF_HIT2,AREA,"#Target";
-	mes "[Seisner]";
-	mes "Aaaah!";
-	mes "Double Strafe!";
+	mes "[賽絲納]";
+	mes "啊啊啊!";
+	mes "二連箭!";
 	specialeffect EF_HIT2,AREA,"#Target";
 	next;
-	mes "[Seisner]";
-	mes "I did it!";
-	mes "Only an Archer";
-	mes "could make that shot!";
+	mes "[賽絲納]";
+	mes "我成功了!";
+	mes "只有弓箭手";
+	mes "才能射出那一箭!";
 	next;
-	mes "[Seisner]";
-	mes "Now, there are some";
-	mes "Thief class people who also use arrows, but they're better suited to using Knives. We Archers are";
-	mes "the arrow specialists!";
+	mes "[賽絲納]";
+	mes "現在，有些";
+	mes "盜賊職業的人也會使用箭，但他們更適合使用匕首。我們弓箭手是";
+	mes "箭的專家!";
 	if(tu_archer01 == 1 || tu_archer01 > 2){
 		next;
-		mes "^3355FFYou show Seisner";
-		mes "the letter that Master";
-		mes "Kavaruk has written";
-		mes "to her for you.^000000";
+		mes "^3355FF你向賽絲納";
+		mes "展示了卡瓦魯克大師";
+		mes "為你寫的信。^000000";
 		next;
-		mes "[Seisner]";
-		mes "So Master Kavaruk";
-		mes "wants me to teach you";
-		mes "about Archers and Archery? Alright, what would you like to know more about?";
+		mes "[賽絲納]";
+		mes "所以卡瓦魯克大師";
+		mes "想讓我教你";
+		mes "關於弓箭手和弓箭術的知識嗎？";
+		mes "好的，你想知道更多關於什麼的?";
 		while(1){
 			next;
-			switch(select("About Archers.:Stats for Archers:End Conversation.")){
+			switch(select("關於弓箭手。:弓箭手的素質:結束對話。")){
 			case 1:
-				mes "[Seisner]";
-				mes "Archers specialize";
-				mes "in shooting ^3131FFarrows^000000. We usually attack from a distance, but before we increase our Dodge Rate, we're pretty weak when it comes to one on one battles.";
+				mes "[賽絲納]";
+				mes "弓箭手專精";
+				mes "於射出^3131FF箭^000000。我們通常從遠處攻擊，但在我們提高迴避率之前，我們在單打獨鬥方面非常弱。";
 				next;
-				mes "[Seisner]";
-				mes "Therefore, Archers tend to attack before the enemy gets too close.";
-				mes "We also like to party with other people who can offer close";
-				mes "range protection.";
+				mes "[賽絲納]";
+				mes "因此，弓箭手傾向於在敵人靠得太近之前發動攻擊。";
+				mes "我們也喜歡和可以提供近距離";
+				mes "保護的人們組隊。";
 				next;
-				mes "[Seisner]";
-				mes "Now, only Novices can";
-				mes "become Archers after reaching";
-				mes "Job Level 10 and learning all of the Basic Skills.";
+				mes "[賽絲納]";
+				mes "現在，只有初心者可以";
+				mes "在達到";
+				mes "職業等級 10 並學習所有基本技能後才能成為弓箭手。";
 				next;
-				mes "[Seisner]";
-				mes "Well experienced Archers can move on and change to the Second Job Class, becoming ^3131FFHunters^000000, ^3131FFBards^000000 if they are male, or ^3131FFDancers^000000 if they are female.";
+				mes "[賽絲納]";
+				mes "經驗豐富的弓箭手可以繼續前進並轉職為第二個職業，成為 ^3131FF獵人^000000，如果是男性則成為 ^3131FF吟遊詩人^000000，如果是女性則成為 ^3131FF舞者^000000。";
 				next;
-				mes "[Seisner]";
-				mes "If you reach Level 99";
-				mes "as a Second Job Class character, you can change to a Transcendent Class with Valkyrie's help.";
+				mes "[賽絲納]";
+				mes "如果你作為二轉職業角色";
+				mes "達到 99 級，你可以在女武神的幫助下轉職為超越職業。";
 				next;
-				mes "[Seisner]";
-				mes "Hunters can ultimately transcend into ^3131FFSnipers^000000, Bards into ^3131FFMinstrels^000000, and Dancers into ^3131FFGypsies^000000. I know that's pretty complex.";
+				mes "[賽絲納]";
+				mes "獵人最終可以超越成為 ^3131FF狙擊手^000000，吟遊詩人成為 ^3131FF樂師^000000，舞者成為 ^3131FF吉普賽舞者^000000。我知道這非常複雜。";
 				if(tu_archer01 == 1) tu_archer01 = 2;
 				break;
 			case 2:
-				mes "[Seisner]";
-				mes "So you want to";
-				mes "know more about Stats";
-				mes "and how they affect Archer abilities? I'll do my best to explain.";
+				mes "[賽絲納]";
+				mes "所以你想";
+				mes "知道更多關於素質";
+				mes "以及它們如何影響弓箭手的能力嗎？";
+				mes "我會盡力解釋。";
 				next;
 				while(1) {
-					switch(select("STR:^3131FFAGI^000000:VIT:^FF9900INT^000000:^FF3131DEX^000000:LUK:End Conversation.")) {
+					switch(select("STR:^3131FFAGI^000000:VIT:^FF9900INT^000000:^FF3131DEX^000000:LUK:結束對話。")) {
 					case 1:
-						mes "[Seisner]";
-						mes "STR typically increases the damage of attacks. However, Archer class characters use weapons that rely on ^FF3131DEX^000000 to increase their damage.";
+						mes "[賽絲納]";
+						mes "STR 通常會增加攻擊的傷害。但是，弓箭手職業角色使用依賴 ^FF3131DEX^000000 來增加傷害的武器。";
 						next;
-						mes "[Seisner]";
-						mes "In a sense, STR might not be necessary for Archers, although I'm sure there are skills or situations where STR will come in handy.";
+						mes "[賽絲納]";
+						mes "從某種意義上說，STR 對於弓箭手來說可能不是必需的，儘管我確信在某些技能或情況下 STR 會派上用場。";
 						next;
-						mes "[Seisner]";
-						mes "For instance, if you run out of arrows (which is every Archer's nightmare) and need to equip a Knife, having some STR might";
-						mes "be helpful.";
+						mes "[賽絲納]";
+						mes "例如，如果你用完了箭（這是每個弓箭手的噩夢）並且需要裝備匕首，那麼擁有一些 STR 可能";
+						mes "會有幫助。";
 						next;
-						mes "[Seisner]";
-						mes "Increasing STR will also";
-						mes "increase the amount of weight";
-						mes "that any character can carry. So if you have more STR, you can carry around more arrows.";
+						mes "[賽絲納]";
+						mes "增加 STR 也會";
+						mes "增加任何角色可以攜帶的重量。";
+						mes "因此，如果你有更多的 STR，你可以攜帶更多的箭。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 2:
-						mes "[Seisner]";
-						mes "^FF3131AGI^000000 as you know, ";
-						mes "^3131Ffincreases Attack Speed";
-						mes "(ASPD)^000000 and affects ^3131FF Dodge Rate^000000.";
+						mes "[賽絲納]";
+						mes "^FF3131AGI^000000 如你所知，";
+						mes "^3131FF 提高攻擊速度";
+						mes "(ASPD)^000000 並影響 ^3131FF 迴避率^000000。";
 						next;
-						mes "[Seisner]";
-						mes "One of the drawbacks of being an Archer is having weaker strength and lower Dodge Rate. However, the Dodge Rate disadvantage is lessened by increasing your ^FF3131AGI^000000.";
+						mes "[賽絲納]";
+						mes "作為一名弓箭手的缺點之一是力量較弱且迴避率較低。但是，通過增加你的 ^FF3131AGI^000000 可以減少迴避率的劣勢。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 3:
-						mes "[Seisner]";
-						mes "^3131FFVIT^000000 will increase";
-						mes "your Maximum HP and";
-						mes "resistance to damage.";
+						mes "[賽絲納]";
+						mes "^3131FFVIT^000000 會增加";
+						mes "你的最大生命值";
+						mes "和對傷害的抵抗力。";
 						next;
-						mes "[Seisner]";
-						mes "Although Archers don't";
-						mes "specialize in having any special kind of defense, having VIT will help alleviate the defensive weakness of the Archer class.";
+						mes "[賽絲納]";
+						mes "雖然弓箭手並不";
+						mes "專精於擁有任何特殊類型的防禦，但擁有 VIT 將有助於減輕弓箭手職業的防禦弱點。";
 						next;
-						mes "[Seisner]";
-						mes "VIT might be helpful";
-						mes "depending on how you use it. Still, I wouldn't recommend focusing too much on increasing your VIT if you're an Archer.";
+						mes "[賽絲納]";
+						mes "VIT 可能會有幫助";
+						mes "取決於你如何使用它。儘管如此，如果你是弓箭手，我不建議你過於關注增加你的 VIT。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 4:
-						mes "[Seisner]";
-						mes "^FF0000INT^000000 is more";
-						mes "important to the";
-						mes "Archer class than";
-						mes "you would think~";
+						mes "[賽絲納]";
+						mes "^FF0000INT^000000 對";
+						mes "弓箭手職業來說比";
+						mes "你想像的";
+						mes "更重要~";
 						next;
-						mes "[Seisner]";
-						mes "As you increase ^FF0000INT^000000, you'll raise your Maximum SP, meaning you";
-						mes "can use special skills more often.";
+						mes "[賽絲納]";
+						mes "當你增加 ^FF0000INT^000000 時，你會提高你的最大 SP，這意味著你";
+						mes "可以更頻繁地使用特殊技能。";
 						next;
-						mes "[Seisner]";
-						mes "For Hunters, one of the Second Job Classes for Archers, having higher INT will increase the damage inflicted by ^3131FFFalcons^000000.";
+						mes "[賽絲納]";
+						mes "對於獵人來說，弓箭手的第二個職業之一，擁有更高的 INT 將增加 ^3131FFF 獵鷹^000000 造成的傷害。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 5:
-						mes "[Seisner]";
-						mes "Now DEX is almost";
-						mes "without a doubt the";
-						mes "most important stat";
-						mes "for any Archer.";
+						mes "[賽絲納]";
+						mes "現在 DEX 幾乎";
+						mes "毫無疑問是";
+						mes "任何弓箭手";
+						mes "最重要的素質。";
 						next;
-						mes "[Seisner]";
-						mes "^FF3131DEX^000000 ^3131Ffincreases the damage^000000";
-						mes "of Archer class weapons that fire arrows. These include ^3131FFBows^000000, ^3131FFInstruments^000000 and ^3131FFWhips^000000.";
+						mes "[賽絲納]";
+						mes "^FF3131DEX^000000 ^3131FF 增加傷害^000000";
+						mes "使用弓箭的弓箭手職業武器的傷害。這些包括 ^3131FF 弓^000000、^3131FF 樂器^000000 和 ^3131FF 鞭子^000000。";
 						next;
-						mes "[Seisner]";
-						mes "Dexterity enhances an Archer's ability to hit weak points and do more damage, which is why weapons that use arrows don't rely on STR like weapons used by other classes.";
+						mes "[賽絲納]";
+						mes "靈巧性增強了弓箭手擊中弱點並造成更多傷害的能力，這就是為什麼使用弓箭的武器不像其他職業使用的武器那樣依賴 STR。";
 						next;
-						mes "[Seisner]";
-						mes "Just like any other class, ^FF3131DEX^000000 increases ^3131FFAccuracy (HIT)^000000 and slightly enhances Attack Speed (ASPD).";
+						mes "[賽絲納]";
+						mes "就像任何其他職業一樣，^FF3131DEX^000000 增加 ^3131FF 命中率 (HIT)^000000 並略微提高攻擊速度 (ASPD)。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 6:
-						mes "[Seisner]";
-						mes "^FF0000LUK^000000 affects your";
-						mes "Perfect Dodge rate";
-						mes "and Critical rate.";
+						mes "[賽絲納]";
+						mes "^FF0000LUK^000000 影響你的";
+						mes "完美迴避率";
+						mes "和暴擊率。";
 						next;
-						mes "[Seisner]";
-						mes "For Hunters, one of the Second Classes for the Archer, LUK increases the chance of ^3131FFBlitz Beat^000000 occurring automatically. So Hunters who rely on their Falcons might want to invest in LUK.";
+						mes "[賽絲納]";
+						mes "對於獵人來說，弓箭手的第二個職業之一，LUK 增加了 ^3131FF 閃電衝擊^000000 自動發生的機率。因此，依賴獵鷹的獵人可能想要投資 LUK。";
 						next;
 						if(tu_archer01 == 1) tu_archer01 = 2;
 						continue;
 					case 7:
-						mes "[Seisner]";
-						mes "So is there";
-						mes "anything else that";
-						mes "you want to ask me?";
+						mes "[賽絲納]";
+						mes "所以還有";
+						mes "其他的事情";
+						mes "你想問我的嗎？";
 						break;
 					}
 					break;
 				}
 				break;
 			case 3:
-				mes "[Seisner]";
-				mes "Once an Archer shoots an arrow,";
-				mes "he can't stop its flight or change his target. That's why Archers need to be level headed and really careful in battle.";
+				mes "[賽絲納]";
+				mes "一旦弓箭手射出一支箭，";
+				mes "他就無法阻止它的飛行或改變他的目標。這就是為什麼弓箭手需要保持冷靜並且在戰鬥中非常小心。";
 				next;
-				mes "[Seisner]";
-				mes "Someday, I'd like to become a great Archer and use my skills for the good of Rune-Midgarts.";
+				mes "[賽絲納]";
+				mes "總有一天，我想成為一名偉大的弓箭手，並利用我的技能為盧恩-米德加茲的利益服務。";
 				close;
 			}
 		}
 	} else if(tu_archer01 == 2){
 		next;
-		mes "[Seisner]";
-		mes "Thanks for listening.";
-		mes "I know I gave you a lot of information, but I think it's important that everyone";
-		mes "understands archery.";
+		mes "[賽絲納]";
+		mes "謝謝你的聆聽。";
+		mes "我知道我給了你很多信息，但我認為重要的是每個人";
+		mes "都了解弓箭術。";
 		next;
-		mes "[Seisner]";
-		mes "If you feel comfortable enough with the knowledge I've taught you, you should go back to Master Kavaruk. But if you still have questions, you can always come and ask me.";
+		mes "[賽絲納]";
+		mes "如果你對我教你的知識感到足夠自在，你應該回到卡瓦魯克大師身邊。但如果你還有疑問，你可以隨時來問我。";
 		close2;
 		specialeffect2 EF_WIND;
 		tu_archer01 = 3;
@@ -1384,72 +1374,72 @@ pay_arche,76,135,3	script	#Target	HIDDEN_NPC,{ end; }
 // Acolyte
 //============================================================
 -	script	::Acolyte_Tu	-1,{
-	mes "[Acolyte]";
+	mes "[服事]";
 	if(tu_archer01 == 14){
 		if(gettime(DT_HOUR) >= 18 && gettime(DT_HOUR) < 22){
-			mes "H-hello!";
-			mes "Umm, umm...";
-			mes "Are you R-Reidin Corse's";
-			mes "friend t-too?";
+			mes "你-你好!";
+			mes "嗯，嗯...";
+			mes "你是雷-雷丁·科爾斯";
+			mes "的朋友嗎？";
 			next;
-			mes "[Acolyte]";
-			mes "M-my name is Mafra.";
-			mes "Ever since he saved my life, Reidin has a-always been a good f-friend to me. He's such a great Archer";
-			mes "and a really nice person!";
+			mes "[服事]";
+			mes "我-我的名字是瑪芙拉。";
+			mes "自從他救了我的性命以來，雷丁一直都是我的好朋友。他是個很棒的弓箭手";
+			mes "而且是個非常好的人!";
 			next;
-			mes "[Acolyte]";
-			mes "Um, and...";
-			mes "Uh... Oh no~";
-			mes "What am I supposed";
-			mes "t-to tell you...?";
+			mes "[服事]";
+			mes "嗯，還有...";
+			mes "呃... 糟糕~";
+			mes "我應該";
+			mes "告訴你什麼好呢...?";
 			emotion ET_PROFUSELY_SWEAT;
 			next;
-			mes "[Acolyte]";
-			mes "Oh, since I'm training to be an Acolyte, I'm supposed to help out the people he's teaching. So...";
-			mes "Let's h-help each other train!";
-			mes "Um, is that okay?";
+			mes "[服事]";
+			mes "喔，因為我正在訓練成為服事，我應該要幫助那些他正在教導的人。所以...";
+			mes "讓我們互相幫忙訓練吧！";
+			mes "嗯，這樣可以嗎？";
 			next;
-			switch(select("Sure.:No thanks.:Reidin Corse is mine!")) {
+			switch(select("當然可以。:不用了，謝謝。:雷丁?柯爾斯是我的！")) {
 			case 1:
-				mes "[Acolyte]";
-				mes "Wow!";
-				mes "Thank you, thank you!";
-				mes "I''ll try my very best!";
+				mes "[服事]";
+				mes "哇！";
+				mes "謝謝你，謝謝你！";
+				mes "我會盡我所能的！";
 				tu_archer01 = 15;
 				close;
 			case 2:
-				mes "[Acolyte]";
-				mes "Oh... Oh.";
-				mes "I'm so sorry.";
-				mes "If you don't need";
-				mes "my help, I guess";
-				mes "that's alright...";
+				mes "[服事]";
+				mes "喔... 喔。";
+				mes "我很抱歉。";
+				mes "如果你不需要";
+				mes "我的幫助，我想";
+				mes "這樣也可以...";
 				emotion ET_CRY;
 				close;
 			case 3:
-				mes "[Acolyte]";
-				mes "Eh?!";
-				mes "R-really?";
-				mes "I guess he doesn't";
-				mes "need to tell me if";
-				mes "he already has a girlfriend...";
+				mes "[服事]";
+				mes "欸？！";
+				mes "真...真的嗎？";
+				mes "我想他不需要";
+				mes "告訴我他是否";
+				mes "已經有女朋友了...";
 				next;
-				mes "[Acolyte]";
+				mes "[服事]";
 				if(Sex == SEX_MALE){
-					mes "W-wait!";
-					mes "Y-you're a man!";
-					mes "D-d-d-don't tease me";
-					mes "like that! I'm serious!";
+					mes "等...等一下！";
+					mes "你...你是個男人！";
+					mes "不...不要這樣戲弄我";
+					mes "好嗎！我是認真的！";
 				} else {
-					mes "And he's so brave";
-					mes "and funny and smart.";
-					mes "Y-you're lucky to have him.";
-					mes "^333333*Sniff*^000000 I... I...";
+					mes "而且他是如此的勇敢";
+					mes "而且有趣又聰明。";
+					mes "你...你很幸運能擁有他。";
+					mes "^333333*抽泣*^000000 我...我...";
 					next;
-					mes "[Acolyte]";
-					mes "^333333*Sniffle*^000000";
-					mes "I'll d-do my best to help you!";
-					mes "I wish you both happiness! (Waaaaaah~!)";
+					mes "[服事]";
+					mes "^333333*啜泣*^000000";
+					mes "我會盡我所能幫助你的！";
+					mes "我祝你們幸福！（哇啊啊～！）";
 				}
 				tu_archer01 = 15;
 				close;
@@ -1457,14 +1447,14 @@ pay_arche,76,135,3	script	#Target	HIDDEN_NPC,{ end; }
 		}
 		else {
 			mes "^666666Zzzzz...^000000";
-			mes "Wh-wha...?";
-			mes "Who are you?";
+			mes "什...什麼...?";
+			mes "你是誰？";
 			specialeffect EF_SLEEPATTACK;
 			next;
-			mes "[Acolyte]";
-			mes "Wait, I know...";
-			mes "Y-you're... ^666666*Yawn*^000000";
-			mes "So sleepy. Take this for now...";
+			mes "[服事]";
+			mes "等等，我知道...";
+			mes "你...你是... ^666666*呵欠*^000000";
+			mes "好睏。先拿去用吧...";
 			switch(rand(4)) {
 				case 0: npcskill "AL_HEAL",3,90,62; break;
 				case 1: npcskill "AL_HEAL",9,90,62; break;
@@ -1486,25 +1476,25 @@ pay_arche,76,135,3	script	#Target	HIDDEN_NPC,{ end; }
 	else if(tu_archer01 == 15){
 		if((gettime(DT_HOUR) >= 18) && (gettime(DT_HOUR) < 22)){
 			mes "^666666Zzzzz...^000000";
-			mes "Wh-wha...?";
-			mes "Who are you?";
+			mes "什...什麼...?";
+			mes "你是誰？";
 			specialeffect EF_SLEEPATTACK;
 			next;
-			mes "[Acolyte]";
-			mes "Reidin Corse?";
-			mes "I can't believe";
-			mes "I feel asleep fo--";
+			mes "[服事]";
+			mes "雷丁?柯爾斯？";
+			mes "我不敢相信";
+			mes "我睡著了這——";
 			mes "^666666Zzzzzzz...^000000";
 			next;
-			mes "[Acolyte]";
-			mes "^666666Zzzz^000000--Oooh!";
-			mes "J-just take this before";
-			mes "I fall asleep again~! ^666666*Yawn*^000000";
+			mes "[服事]";
+			mes "^666666Zzzz^000000--喔！";
+			mes "在...在我再次睡著之前";
+			mes "先拿去用吧～！^666666*呵欠*^000000";
 		} else {
-			mes "Okay~!";
-			mes "Let me try";
-			mes "casting a spell";
-			mes "to help you! Yaa~p!";
+			mes "好喔～！";
+			mes "讓我試試看";
+			mes "施放一個法術";
+			mes "來幫助你！呀～！";
 		}
 		switch(rand(4)) {
 			case 0: npcskill "AL_HEAL",3,90,62; break;
@@ -1524,9 +1514,9 @@ pay_arche,76,135,3	script	#Target	HIDDEN_NPC,{ end; }
 		close;
 	}
 	mes "...";
-	mes "W-why does";
-	mes "traveling make";
-	mes "me sooo sleepy...?";
+	mes "為...為什麼";
+	mes "旅行會讓我";
+	mes "這麼想睡覺...?";
 	mes "^666666Zzzzzzzz...^000000";
 	specialeffect EF_SLEEPATTACK;
 	close;
@@ -1534,32 +1524,31 @@ pay_arche,76,135,3	script	#Target	HIDDEN_NPC,{ end; }
 
 // Alchemist Guildmember
 //============================================================
-pay_arche,130,113,3	script	Alchemist Guildmember#tu	2_M_ALCHE,{
-	mes "[Alchemist Guildmember]";
+pay_arche,130,113,3	script	鍊金術師公會成員#tu	2_M_ALCHE,{
+	mes "[鍊金術師公會成員]";
 	if(tu_archer02 > 0){
 		if((countitem(1032) > 0) || (countitem(905) > 0 )){	// Blossom_Of_Maneater & Stem
-			mes "Great...!";
-			mes "I've been waiting";
-			mes "for the Icarus Guild";
-			mes "to send somebody";
-			mes "to help us! Finally!";
+			mes "太棒了...！";
+			mes "我一直在等";
+			mes "伊卡洛斯公會";
+			mes "派人來";
+			mes "幫助我們！終於來了！";
 			emotion ET_CRY;
 			next;
-			mes "[Alchemist Guildmember]";
-			mes "Would you like to sell ^3131FFStems^000000";
-			mes "and ^3131FFManeater Blossoms^000000 to";
-			mes "the Alchemist Guild? We'll buy";
-			mes "each Stem for ^3131FF30 Zeny^000000 and each";
-			mes "Maneater Blossom for ^3131FF130 Zeny^000000.";
+			mes "[鍊金術師公會成員]";
+			mes "您是否想將 ^3131FF莖^000000";
+			mes "和 ^3131FF食人花花苞^000000 賣給";
+			mes "鍊金術師公會？ 我們將以每株 ^3131FF30 Zeny^000000 的價格購買";
+			mes "每株莖，以及每株 ^3131FF130 Zeny^000000 的價格購買食人花花苞。";
 			next;
-			switch(select("Sell all Stems and Maneater Blossoms:Don't sell anything.")) {
+			switch(select("賣掉所有的莖和食人花花苞:什麼都不賣。")) {
 			case 1:
-				mes "[Alchemist Guildmember]";
-				mes "Thank you very much!";
-				mes "This will really help";
-				mes "us in maintaining our";
-				mes "Flora field! I really";
-				mes "appreciate your help~";
+				mes "[鍊金術師公會成員]";
+				mes "非常感謝您！";
+				mes "這將對我們";
+				mes "維護植物田";
+				mes "真的很有幫助！ 我真的很";
+				mes "感謝您的幫助～";
 
 				.@alche_f = countitem(1032); // Blossom_Of_Maneater
 				.@alche_s = countitem(905); // Stem
@@ -1571,146 +1560,144 @@ pay_arche,130,113,3	script	Alchemist Guildmember#tu	2_M_ALCHE,{
 				Zeny = Zeny+.@total_zeny;
 				close;
 			case 2:
-				mes "[Alchemist Guildmember]";
-				mes "Seriously...";
-				mes "I'm on the verge of begging!";
-				mes "The Alchemist Guild really needs lots of new supplies to keep our Flora field running!";
+				mes "[鍊金術師公會成員]";
+				mes "說真的...";
+				mes "我快要乞求了！";
+				mes "鍊金術師公會真的需要大量的新物資，才能維持我們的植物田運作！";
 				emotion ET_CRY;
 				close;
 			}
 		} else {
-			mes "I don't know if you've heard";
-			mes "from Kavaruk, but our Flora field is getting ruined by stray cats.";
+			mes "我不知道您是否從";
+			mes "卡瓦魯克那裡聽說過，但我們的植物田正在被流浪貓摧毀。";
 			emotion ET_CRY;
 			next;
-			mes "[Alchemist Guildmember]";
-			mes "No matter how much we chase";
-			mes "them away, they always manage to come back. We really have no choice but to replace what they destroy.";
+			mes "[鍊金術師公會成員]";
+			mes "無論我們怎麼趕";
+			mes "牠們走，牠們總是設法回來。 我們真的別無選擇，只能更換牠們破壞的東西。";
 			next;
-			mes "[Alchemist Guildmember]";
-			mes "We'll reward you if you can bring us ^3131FFStems^000000 and ^3131FFManeater Blossoms^000000";
-			mes "to help us in our field maintenance efforts. These Flora are crucial since they provide funds for our guild. Without them...";
+			mes "[鍊金術師公會成員]";
+			mes "如果您能帶給我們 ^3131FF莖^000000 和 ^3131FF食人花花苞^000000，我們將獎勵您，";
+			mes "以幫助我們進行田野維護工作。 這些植物非常重要，因為它們為我們的公會提供資金。 沒有它們...";
 			close;
 		}
 	}
-	mes "^666666*Sigh...*^000000";
-	mes "Isn't anyone coming";
-	mes "to help us? We're facing";
-	mes "a really huge crisis here!";
+	mes "^666666*嘆氣...*^000000";
+	mes "沒有人要來";
+	mes "幫助我們嗎？ 我們正面臨";
+	mes "一場非常巨大的危機！";
 	close;
 }
 
 // Arthail
 //============================================================
-prontera,126,335,5	script	Arthail	1_M_BARD,{
-	mes "[Arthail]";
+prontera,126,335,5	script	阿爾泰爾	1_M_BARD,{
+	mes "[阿爾泰爾]";
 	if(tu_archer02 < 3){
-		mes "I am the Bard";
-		mes "who sings only for";
-		mes "himself. The gentle";
-		mes "breeze is the only";
-		mes "audience I have.";
+		mes "我是吟遊詩人";
+		mes "只為";
+		mes "自己歌唱。 溫柔";
+		mes "的微風是我唯一的";
+		mes "聽眾。";
 		next;
-		mes "[Arthail]";
-		mes "I am Arthail";
-		mes "of the Wind.";
-		mes "I sing for no man,";
-		mes "so you had best be on";
-		mes "your way. I'm sorry, but";
-		mes "I have no songs to share.";
+		mes "[阿爾泰爾]";
+		mes "我是風之";
+		mes "阿爾泰爾。";
+		mes "我不為任何人歌唱，";
+		mes "所以你最好走你的";
+		mes "路。我很抱歉，但是";
+		mes "我沒有歌曲可以分享。";
 		if(tu_archer02 == 2) {
 			next;
-			select("Master Kavaruk told me to find you!");
-			mes "[Arthail]";
-			mes "Really now?";
-			mes "I suppose it";
-			mes "can't be helped.";
-			mes "I really should";
-			mes "have contacted him.";
+			select("卡瓦魯克大師叫我來找你！");
+			mes "[阿爾泰爾]";
+			mes "真的嗎？";
+			mes "我想這是";
+			mes "沒辦法的事。";
+			mes "我真的應該";
+			mes "與他聯繫。";
 			next;
-			mes "[Arthail]";
-			mes "However, I'm very tired from the long trip. I'm exhausted from the crowding of this city and the hundreds of talking people.";
-			mes "I can't handle it all...";
+			mes "[阿爾泰爾]";
+			mes "然而，我因為長途旅行而感到非常疲倦。 我厭倦了這個城市擁擠的人群和數百個說話的人。";
+			mes "我無法應付這一切...";
 			next;
-			mes "[Arthail]";
-			mes "Why can't I be like everyone else? It seems that as I approach people, my heart retreats further away from them. I wonder why that is?";
+			mes "[阿爾泰爾]";
+			mes "為什麼我不能像其他人一樣？ 似乎當我接近人們時，我的心卻離他們越來越遠。 我想知道為什麼會這樣？";
 			next;
-			mes "[Arthail]";
-			mes "I became a Bard to try to fix this social complex of mine, but to";
-			mes "no avail. Still, I feel much more at ease when I sing. Ah, but I've said too much already.";
+			mes "[阿爾泰爾]";
+			mes "我成為吟遊詩人是為了嘗試解決我的這種社交情結，但";
+			mes "沒有用。 儘管如此，當我唱歌時，我感覺更加自在。 啊，但是我已經說得太多了。";
 			next;
-			mes "[Arthail]";
-			mes "Master Kavaruk";
-			mes "asked you to help";
-			mes "me? Well then, I have";
-			mes "a favor to ask of you.";
+			mes "[阿爾泰爾]";
+			mes "卡瓦魯克大師";
+			mes "請你來幫";
+			mes "我？ 那麼，我有一個";
+			mes "請求要拜託你。";
 			next;
-			mes "[Arthail]";
-			mes "Here in the capital of the";
-			mes "Rune-Midgarts Kingdom, there's supposed to be a fountain in the central plaza. Everyone seems to stop and chat over there.";
+			mes "[阿爾泰爾]";
+			mes "在這個盧恩-米德加爾特王國的首都，應該在中央廣場上有一座噴泉。 似乎每個人都會停下來在那裡聊天。";
 			next;
-			mes "[Arthail]";
-			mes "However, I have a fear of other people and I can't bring myself to go near the crowds of people there. It's embarassing for me to admit this as a Bard...";
+			mes "[阿爾泰爾]";
+			mes "但是，我害怕其他人，我無法讓自己靠近那裡的人群。 作為吟遊詩人，承認這一點讓我很尷尬...";
 			next;
-			mes "[Arthail]";
-			mes "Would you please go and see if there's any news being spread around in that area for me?";
+			mes "[阿爾泰爾]";
+			mes "您是否可以去看看，在那裡是否流傳著任何消息？";
 			tu_archer02 = 3;
 		}
 	}
 	else if(tu_archer02 == 3){
-		mes "I'm ashamed to ask,";
-		mes "but would you go the fountain in Prontera's central plaza and see";
-		mes "if there's any news?";
+		mes "我很慚愧地問，";
+		mes "您是否可以去普隆德拉中央廣場的噴泉看看";
+		mes "是否有任何消息？";
 	}
 	else if(tu_archer02 == 4){
-		mes "I see...";
-		mes "Nothing much.";
-		mes "Another person";
-		mes "found an Emperium";
-		mes "and is starting a";
-		mes "brand new guild...";
+		mes "我知道了...";
+		mes "沒什麼特別的。";
+		mes "又有人";
+		mes "找到了神之金屬";
+		mes "並且正在創立一個";
+		mes "全新的公會...";
 		next;
-		mes "[Arthail]";
-		mes "^3131FFEmperium^000000...";
-		mes "There are a lot of ambitious people in Morocc that want one of those. Even in my hometown of Payon,";
-		mes "there are people clamoring to obtain one...";
+		mes "[阿爾泰爾]";
+		mes "^3131FF神之金屬^000000...";
+		mes "在夢羅克有很多有野心的人想要得到它。 甚至在我故鄉的沛雍，";
+		mes "也有人吵著要得到它...";
 		next;
-		mes "[Arthail]";
-		mes "Supposedly, having an Emperium";
-		mes "will give you the power to change the world. People are bound to be attracted to it.";
+		mes "[阿爾泰爾]";
+		mes "據說，擁有神之金屬";
+		mes "會給你改變世界的力量。 人們一定會被它吸引。";
 		next;
-		mes "[Arthail]";
-		mes "Hmm...?";
-		mes "I sense something";
-		mes "dark and ominous...";
-		mes "I wonder what it could be?";
+		mes "[阿爾泰爾]";
+		mes "嗯...?";
+		mes "我感覺到一些";
+		mes "黑暗和不祥的預兆...";
+		mes "我想知道那會是什麼？";
 		emotion ET_SCRATCH;
 		next;
-		mes "[Arthail]";
-		mes "I'm probably just stressed and exhausted. I'll feel better once";
-		mes "I get some rest. Would you like to join me and listen to the flowing water?";
+		mes "[阿爾泰爾]";
+		mes "我可能只是壓力太大而且筋疲力盡。 休息一下後我會感覺更好。 你想加入我一起聽流水聲嗎？";
 		next;
-		mes "[Arthail]";
-		mes "It's not the greatest feeling if you stay here for too long, but the sound of this water reminds me of home. Did you see the lake by the Icarus Guild? These waters remind me of that place.";
+		mes "[阿爾泰爾]";
+		mes "如果你在這裡待太久，感覺不會很好，但是這個水聲讓我想起了家。 你有看到伊卡洛斯公會旁邊的湖嗎？ 這些水讓我想起那個地方。";
 		next;
-		mes "[Arthail]";
-		mes "^333333*Yawn...*^000000";
-		mes "I haven't talked";
-		mes "like this in so long.";
-		mes "I'm so tired, I think";
-		mes "I'll rest just a little...";
+		mes "[阿爾泰爾]";
+		mes "^333333*呵欠...*^000000";
+		mes "我已經很久";
+		mes "沒有這樣說話了。";
+		mes "我好累，我想";
+		mes "我稍微休息一下...";
 		next;
-		mes "[Arthail]";
+		mes "[阿爾泰爾]";
 		mes "..........";
 		next;
-		mes "^3355FFArthail of the Wind";
-		mes "has fallen fast asleep.^000000";
+		mes "^3355FF風之阿爾泰爾";
+		mes "已沉沉入睡。^000000";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Ah...";
-		mes "So peaceful~";
+		mes "啊...";
+		mes "好平靜喔~";
 		next;
-		mes "^3355FFThe rhythm of the lapping waters gently eases you into a state of perfect relaxation. The cold, crisp water would feel so refreshing if you dipped your feet into it...^000000";
+		mes "^3355FF海浪拍打的節奏輕柔地引導你進入完美的放鬆狀態。 如果你將腳浸入其中，冰冷清澈的海水會感覺非常清爽...^000000";
 		//sound "se_subterranean_waterwave.wav" 1 0 0
 		next;
 		mes "[???]";
@@ -1718,9 +1705,9 @@ prontera,126,335,5	script	Arthail	1_M_BARD,{
 		soundeffectall "se_littlewaves02.wav",0;
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Huh?";
-		mes "What was";
-		mes "that noise?";
+		mes "咦？";
+		mes "剛才那是什麼";
+		mes "聲音？";
 		next;
 		mes "[????]";
 		mes "AAAAAAAAAAAAAAAHHHHHHHHHHH!!!!!";
@@ -1728,47 +1715,48 @@ prontera,126,335,5	script	Arthail	1_M_BARD,{
 		soundeffectall "se_scream_w01.wav",0;
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "What the--?!";
-		mes "That sounds like";
-		mes "screams coming from";
-		mes "inside Prontera Castle!";
+		mes "什麼--？！";
+		mes "聽起來像是";
+		mes "從";
+		mes "普隆德拉城堡裡";
+		mes "傳來的尖叫聲！";
 		next;
-		mes "^3355FFYou try to wake Arthail";
-		mes "but he's deeply asleep";
-		mes "and won't budge at all.^000000";
+		mes "^3355FF你試著叫醒阿爾泰爾";
+		mes "但他睡得很熟";
+		mes "完全不會醒來。^000000";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "I can't help it then.";
-		mes "I'd better go check";
-		mes "this out on my own.";
+		mes "那我也沒辦法了。";
+		mes "我最好自己去";
+		mes "查看一下。";
 		tu_archer02 = 5;
 	}
 	else if(tu_archer02 > 4 && tu_archer02 < 7)
 		mes "^333333Zzzzz...^000000";
 	else if(tu_archer02 == 8){
-		mes "Where did you go?";
-		mes "I thought you might have been kidnapped since you weren't";
-		mes "here when I woke up.";
+		mes "你去哪裡了？";
+		mes "我以為你可能被綁架了，因為我醒來時你不在";
+		mes "這裡。";
 		next;
-		mes "[Arthail]";
-		mes "So everyone said nothing";
-		mes "happened when you asked";
-		mes "about the shrieks you heard?";
-		mes "That's really peculiar...";
+		mes "[阿爾泰爾]";
+		mes "所以大家說當你詢問";
+		mes "你聽到的尖叫聲時，";
+		mes "沒有發生任何事？";
+		mes "這真是奇怪...";
 		next;
-		mes "[Arthail]";
-		mes "Even the Emperium you mentioned earlier. I thought it was supposed to be a rare item, but why is it so easy for so many people to get";
-		mes "one? It's very strange...";
+		mes "[阿爾泰爾]";
+		mes "甚至是你之前提到的神之金屬。 我以為它應該是很稀有的物品，但為什麼這麼多人這麼容易就能";
+		mes "得到一個？這非常奇怪...";
 		next;
-		mes "[Arthail]";
-		mes "Huh. I better investigate this";
-		mes "a little more, so I'll stay here to gather more information. For now, you should head back to Payon and let Master Kavaruk know that I'm doing alright.";
+		mes "[阿爾泰爾]";
+		mes "嗯。我最好多調查";
+		mes "一下，所以我會待在這裡收集更多資訊。 目前，你應該回到裴揚，讓卡瓦魯克大師知道我一切都好。";
 		next;
-		mes "[Arthail]";
-		mes "And one day...";
-		mes "I guess I'll finally";
-		mes "have a song that";
-		mes "I can share with you.";
+		mes "[阿爾泰爾]";
+		mes "總有一天...";
+		mes "我想我終於";
+		mes "會有一首歌";
+		mes "可以和你分享。";
 		tu_archer02 = 9;
 	}
 	else {
@@ -1780,111 +1768,109 @@ prontera,126,335,5	script	Arthail	1_M_BARD,{
 
 // New Guild Master
 //============================================================
-prontera,167,281,3	script	New Guild Master#tu	4_M_MONK,{
-	mes "[New Guild Master]";
-	mes "Hearken, all";
-	mes "of you who seek";
-	mes "fame and glory!";
+prontera,167,281,3	script	新任公會會長#tu	4_M_MONK,{
+	mes "[新任公會會長]";
+	mes "聽好了，所有";
+	mes "追求";
+	mes "名聲和榮耀的人！";
 	next;
-	mes "[New Guild Master]";
-	mes "I hold in my hand this ^3131FFEmperium^000000, sign that I am favored by destiny! Brave ones, I bid you, lend me";
-	mes "your power!";
+	mes "[新任公會會長]";
+	mes "我手中握有這個 ^3131FF神之金屬^000000，這是我受到命運眷顧的象徵！ 勇敢的人們，我請求你們，將你們的";
+	mes "力量借給我！";
 	next;
-	mes "[New Guild Master]";
-	mes "Nothing can stop us!";
-	mes "So long as this jewel";
-	mes "is in my possession,";
-	mes "those who call themselves";
-	mes "my comrades will never";
-	mes "know the taste of defeat!";
+	mes "[新任公會會長]";
+	mes "沒有任何事物可以阻止我們！";
+	mes "只要這顆寶石";
+	mes "在我手中，";
+	mes "那些稱自己為";
+	mes "我的同伴的人，將永遠";
+	mes "不會知道失敗的滋味！";
 	if(tu_archer02 == 3) tu_archer02 = 4;
 	close;
 }
 
 // Mage
 //============================================================
-prontera,144,301,5	script	Mage#tu	2_F_MAGICMASTER,{
-	mes "[Mage]";
-	mes "Did you see that";
-	mes "new guild master?";
-	mes "Talk about getting";
-	mes "on your soapbox!";
+prontera,144,301,5	script	魔法師#tu	2_F_MAGICMASTER,{
+	mes "[魔法師]";
+	mes "你有看到那個";
+	mes "新任公會會長嗎？";
+	mes "真是愛";
+	mes "誇大其詞！";
 	next;
 	emotion ET_HNG;
-	mes "[Mage]";
-	mes "Doesn't he know that there";
-	mes "are a lot of famous guilds around nowadays? Why would anyone want";
-	mes "to join his small no-name guild?";
+	mes "[魔法師]";
+	mes "他難道不知道現在";
+	mes "有很多有名的公會嗎？ 為什麼會有人想要";
+	mes "加入他那間小小的無名公會？";
 	next;
-	mes "[Mage]";
-	mes "Now, if I become a Wizard,";
-	mes "I'm going to join the best guild around. Casting spells to help the strongest Knights and the most powerful Priests would make me";
-	mes "look really cool!";
+	mes "[魔法師]";
+	mes "現在，如果我成為巫師，";
+	mes "我要加入最強的公會。 施放法術來幫助最強的騎士和最強大的祭司會讓我";
+	mes "看起來非常酷！";
 	next;
-	mes "[Mage]";
-	mes "Bwahahah!";
-	mes "Just thinking";
-	mes "about it makes";
-	mes "me so excited!";
+	mes "[魔法師]";
+	mes "哇哈哈哈！";
+	mes "光是想想";
+	mes "就讓我感到";
+	mes "非常興奮！";
 	close;
 }
 
 // Minister
 //============================================================
--	script	Minister#tu_	-1,{
-	mes "[Minister]";
-	mes "The royal family";
-	mes "is extremely busy";
-	mes "at the moment, handling";
-	mes "our nation's administration.";
+-	script	大臣#tu_	-1,{
+	mes "[大臣]";
+	mes "王室";
+	mes "目前非常忙碌，正在處理";
+	mes "我們國家的行政事務。";
 	if(tu_archer02 == 5){
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "I heard screams";
-		mes "from outside! Did";
-		mes "something happen?";
+		mes "我聽到外面";
+		mes "傳來尖叫聲！ 發生";
+		mes "什麼事了嗎？";
 		next;
-		mes "[Minister]";
+		mes "[大臣]";
 		mes "...";
 		mes "......";
 		next;
-		mes "[Minister]";
-		mes "Ah, there are a few stray cats running around, those Wild Roses, so those noises you heard must have been them. Everything is fine here in the palace.";
+		mes "[大臣]";
+		mes "啊，有一些流浪貓在附近跑來跑去，那些野玫瑰，所以你聽到的那些噪音一定是牠們發出來的。 皇宮裡一切都很好。";
 		tu_archer02 = 6;
 	}
 	else if(tu_archer02 == 7){
 		next;
-		mes "^3355FFThe urgency that the Minister expressed earlier has been";
-		mes "replaced with a stone cold feeling of sternness. He probably won't tell you much more information,";
-		mes "no matter how much you ask him.";
+		mes "^3355FF大臣先前表現出的急迫感已經";
+		mes "被一種冷酷的嚴厲感所取代。 無論你問他多少問題，他可能都不會告訴你更多資訊。";
 	}
 	else if(tu_acolyte01 == 25){
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Um...";
-		mes "I hear that";
-		mes "the royal family";
-		mes "might be in sort of";
-		mes "trouble. Is there any";
-		mes "way I could help?";
+		mes "嗯...";
+		mes "我聽到";
+		mes "王室";
+		mes "可能遇到";
+		mes "了一些麻煩。 有沒有";
+		mes "我可以幫忙的地方？";
 		next;
-		mes "[Minister]";
+		mes "[大臣]";
 		mes "...";
 		mes "......";
 		next;
-		mes "[Minister]";
-		mes "You must be mistaken.";
-		mes "The royal family is fine,";
-		mes "especially since our";
-		mes "kingdom is at peace.";
+		mes "[大臣]";
+		mes "你一定是搞錯了。";
+		mes "王室一切都很好，";
+		mes "特別是我們的";
+		mes "王國正處於和平時期。";
 		next;
-		mes "[Minister]";
-		mes "Perhaps you've gotten that idea because it's very difficult to meet any member of the royal family. Please understand that they're";
-		mes "all very busy trying to serve";
-		mes "the people.";
+		mes "[大臣]";
+		mes "也許你會有這種想法，是因為很難見到任何王室成員。 請理解他們";
+		mes "都非常忙於為";
+		mes "人民服務。";
 		next;
-		mes "[Minister]";
-		mes "As a holy servant, I'm sure that you'll find plenty of other people who have need of your help and abilities outside of the palace.";
+		mes "[大臣]";
+		mes "作為一位神聖的僕人，我相信你一定會在皇宮之外找到許多其他需要你的幫助和能力的人。";
 	}
 	close;
 }
@@ -1895,10 +1881,10 @@ prontera,144,301,5	script	Mage#tu	2_F_MAGICMASTER,{
 	end;
 OnTouch_:
 	if(tu_archer02 == 6) {
-		mes "[Minister]";
-		mes "Contact the";
-		mes "Prontera Church.";
-		mes "Hurry, this is urgent!";
+		mes "[大臣]";
+		mes "聯絡";
+		mes "普隆德拉教堂。";
+		mes "快，這很緊急！";
 		tu_archer02 = 7;
 		close;
 	}
@@ -1907,45 +1893,45 @@ OnTouch_:
 
 // Bishop Maugins
 //============================================================
-monk_in,19,43,1	script	Bishop Maugins	1_M_PASTOR,{
-	mes "[Bishop Maugins]";
+monk_in,19,43,1	script	莫金斯主教	1_M_PASTOR,{
+	mes "[莫金斯主教]";
 	if(tu_archer02 == 7){
-		mes "Greetings.";
-		mes "I doubt that you're here to change to the Monk job, but may I help you with something? Perhaps you're";
-		mes "here for a confession?";
+		mes "您好。";
+		mes "我懷疑您來這裡是要轉職成武僧，但我可以幫您做些什麼嗎？ 也許您是";
+		mes "來這裡告解的？";
 		next;
-		mes "[Bishop Maugins]";
-		mes "Hm? Work related to";
-		mes "the Palace? Yes, I'm in";
-		mes "charge of that area. So";
-		mes "how may I help you?";
+		mes "[莫金斯主教]";
+		mes "嗯？ 與皇宮";
+		mes "相關的工作？ 是的，我";
+		mes "負責那個區域。 那麼";
+		mes "我可以如何幫助您？";
 		next;
-		if (select("Has something happened to the Kingdom?:Nothing.") == 1) {
-			mes "[Bishop Maugins]";
+		if (select("王國發生了什麼事嗎？:沒事。") == 1) {
+			mes "[莫金斯主教]";
 			mes "...!!";
 			next;
-			mes "[Bishop Maugins]";
+			mes "[莫金斯主教]";
 			mes "...";
 			mes "......";
 			next;
-			mes "[Bishop Maugins]";
-			mes "Ho ho~";
-			mes "Of course not!";
-			mes "The king and I regularly write to each other, but I haven't heard of anything in particular. Please don't worry yourself.";
+			mes "[莫金斯主教]";
+			mes "呵呵~";
+			mes "當然沒有！";
+			mes "國王和我定期通信，但我沒有聽說任何特別的事情。 請不要擔心。";
 			next;
 			tu_archer02 = 8;
 		}
-		mes "[Bishop Maugins]";
-		mes "Good luck on";
-		mes "your journeys,";
-		mes "brave adventurer.";
+		mes "[莫金斯主教]";
+		mes "祝您旅途";
+		mes "順利，";
+		mes "勇敢的冒險者。";
 		npcskill "AL_INCAGI",10,0,0;
 		npcskill "AL_BLESSING",10,0,0;
 		close;
 	}
-	mes "I'm sorry, but I have";
-	mes "some pressing matter";
-	mes "to think about right now.";
-	mes "Would you come back later?";
+	mes "我很抱歉，但我現在";
+	mes "有一些緊迫的事情";
+	mes "需要考慮。";
+	mes "您可以晚點再來嗎？";
 	close;
 }

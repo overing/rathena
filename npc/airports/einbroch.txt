@@ -12,23 +12,23 @@
 //= 1.0 First version.
 //============================================================ 
 
-airport,143,43,5	script	Airport Staff#airport1a::airport1	90,{
-	mes "[Airport Staff]";
-	mes "Welcome to the";
-	mes "Einbroch Airport,";
-	mes "where we offer nonstop";
-	mes "flights to the cities of";
-	mes "Juno, Lighthalzen and Hugel.";
+airport,143,43,5	script	機場人員#airport1a::airport1	90,{
+	mes "[機場人員]";
+	mes "歡迎來到";
+	mes "音博洛克機場，";
+	mes "我們提供直達";
+	mes "朱諾、里希塔樂鎮和毀葛";
+	mes "等城市的航班。";
 	next;
-	if (select("Board the Airship:Cancel") == 1) {
-		mes "[Airport Staff]";
-		mes "The Airship boarding fee";
-		mes "is 1,200 zeny, but if you've";
-		mes "got a Free Ticket for Airship,";
-		mes "the fee will be waived. Will";
-		mes "you board the Airship?";
+	if (select("搭乘飛空艇:取消") == 1) {
+		mes "[機場人員]";
+		mes "飛空艇的搭乘費用";
+		mes "是 1,200 Zeny，但如果您有";
+		mes "飛空艇免費搭乘券，";
+		mes "則可免除費用。您要";
+		mes "搭乘飛空艇嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			if (countitem(7311) > 0) {
 				delitem 7311,1; //Free_Flying_Ship_Ticket
 				warp "airport",148,51;
@@ -39,72 +39,71 @@ airport,143,43,5	script	Airport Staff#airport1a::airport1	90,{
 				warp "airport",148,51;
 				end;
 			}
-			mes "[Airport Staff]";
-			mes "I'm sorry, but you don't";
-			mes "have a Free Ticket for";
-			mes "Airship and you don't have";
-			mes "enough zeny for boarding";
-			mes "the Airship. Remember, the";
-			mes "boarding fee is 1,200 zeny.";
+			mes "[機場人員]";
+			mes "很抱歉，您沒有";
+			mes "飛空艇免費搭乘券";
+			mes "也沒有足夠的Zeny";
+			mes "搭乘飛空艇。請記住，";
+			mes "搭乘費用是 1,200 Zeny。";
 			close;
 		}
 	}
-	mes "[Airport Staff]";
-	mes "Thank you and";
-	mes "have a nice day.";
+	mes "[機場人員]";
+	mes "謝謝您，";
+	mes "祝您有個愉快的一天。";
 	close;
 }
 
-airport,158,43,5	duplicate(airport1)	Airport Staff#airport1b	90
-airport,126,43,5	duplicate(airport1)	Airport Staff#airport1c	90
+airport,158,43,5	duplicate(airport1)	機場人員#airport1b	90
+airport,126,43,5	duplicate(airport1)	機場人員#airport1c	90
 
-airport,143,49,3	script	Arrival Staff#airport2a::airport2	90,{
-	mes "[Arrival Staff]";
-	mes "Welcome to Einbroch Airport.";
-	mes "If you are arriving from your";
-	mes "flight, let me guide you to the";
-	mes "main terminal. Otherwise, please board the Airship to depart to";
-	mes "Juno, Lighthalzen and Hugel.";
+airport,143,49,3	script	抵達人員#airport2a::airport2	90,{
+	mes "[抵達人員]";
+	mes "歡迎來到音博洛克機場。";
+	mes "如果您是搭乘航班抵達，";
+	mes "讓我引導您前往";
+	mes "主要航廈。否則，請搭乘飛空艇前往";
+	mes "朱諾、里希塔樂鎮和毀葛。";
 	next;
-	if (select("Exit to main terminal.:Cancel.") == 1) {
-		mes "[Arrival Staff]";
-		mes "Once you're in the main terminal, you will need to pay the fee again";
-		mes "to board an Airship. You should";
-		mes "only exit if the city of Einbroch";
-		mes "is your intended destination.";
-		mes "Proceed to the main terminal?";
+	if (select("前往主要航廈:取消。") == 1) {
+		mes "[抵達人員]";
+		mes "一旦您進入主要航廈，您將需要再次支付費用";
+		mes "才能搭乘飛空艇。您應該";
+		mes "只有在音博洛克市";
+		mes "是您的預定目的地時才離開。";
+		mes "要前往主要航廈嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			warp "airport",142,40;
 			end;
 		}
 	}
-	mes "[Arrival Staff]";
-	mes "Alright, thank you";
-	mes "for your patronage";
-	mes "and I hope you have";
-	mes "a pleasant flight~";
+	mes "[抵達人員]";
+	mes "好的，謝謝";
+	mes "您的惠顧";
+	mes "我希望您有一個";
+	mes "愉快的飛行~";
 	close;
 }
 
 airport,126,51,3	duplicate(airport2)	Arrival Staff#airport2b	90
 airport,158,50,3	duplicate(airport2)	Arrival Staff#airport2c	90
 
-einbroch,94,267,3	script	Airship Staff#ein01	91,{
-	mes "[Airship Staff]";
-	mes "Welcome to the";
-	mes "Einbroch Airport.";
-	mes "Please use this door to";
-	mes "board the Airship which stops";
-	mes "over Juno, Lighthalzen and";
-	mes "Hugel in the Schwarzwald Republic.";
+einbroch,94,267,3	script	飛空艇人員#ein01	91,{
+	mes "[飛空艇人員]";
+	mes "歡迎來到";
+	mes "音博洛克機場。";
+	mes "請使用此門";
+	mes "搭乘飛空艇，它會停靠";
+	mes "在朱諾、里希塔樂鎮和";
+	mes "史瓦茲發德共和國的毀葛。";
 	next;
-	mes "[Airship Staff]";
-	mes "Otherwise, if Einbroch is";
-	mes "your intended destination,";
-	mes "please head down the stairs";
-	mes "and ask the Arrival Staff to lead";
-	mes "you to the main terminal. Thank";
-	mes "you, and enjoy your travels.";
+	mes "[飛空艇人員]";
+	mes "否則，如果音博洛克是";
+	mes "您的預定目的地，";
+	mes "請下樓梯";
+	mes "並請抵達人員引導";
+	mes "您前往主要航廈。謝謝";
+	mes "您，祝您旅途愉快。";
 	close;
 }

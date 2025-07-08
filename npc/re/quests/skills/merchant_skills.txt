@@ -10,73 +10,73 @@
 alberta,47,37,5	script	Cart Remodel Expert	4_M_REPAIR,{
 	.@max_skill_lvl = 1;
 	if (cart_remodel == 0) {
-		mes "[Jason]";
-		mes "The original pushcart is beautiful!";
+		mes "[傑森]";
+		mes "原本的推車真是太棒了！";
 		next;
-		mes "[Jason]";
-		mes "The solid grey color pushcart.";
+		mes "[傑森]";
+		mes "堅固的灰色推車。";
 		next;
-		mes "[Jason]";
-		mes "I can remodel it into new cute designs.";
+		mes "[傑森]";
+		mes "我可以將它改造成全新的可愛設計。";
 		next;
-		switch( select( "What is Pushcart Decoration?", "Learn Pushcart Decoration", "End Dialog" ) ) {
+		switch( select( "什麼是推車裝飾？", "學習推車裝飾", "結束對話" ) ) {
 		case 1:
-			mes "[Jason]";
-			mes "I would like to completely remodel the poor pushcart.";
+			mes "[傑森]";
+			mes "我想徹底改造這可憐的推車。";
 			next;
-			mes "[Jason]";
-			mes "A little remodel isn't enough, don't you agree?";
+			mes "[傑森]";
+			mes "稍微改造一下是不夠的，你不覺得嗎？";
 			next;
-			mes "[Jason]";
-			mes "Therefore I have invented some new designs.";
+			mes "[傑森]";
+			mes "因此，我發明了一些新的設計。";
 			next;
-			mes "[Jason]";
-			mes "It is cute and refreshing!";
+			mes "[傑森]";
+			mes "既可愛又令人耳目一新！";
 			close;
 		case 2:
 			if (BaseClass != Job_Merchant) {
-				mes "[Jason]";
-				mes "Why do you want learn Pushcart Decoration? Don't disturb me!";
+				mes "[傑森]";
+				mes "你為什麼想學習推車裝飾？別打擾我！";
 				close;
 			}
 			if (countitem(6606) == 0) {
-				mes "[Jason]";
-				mes "It is difficult to learn the Pushcart Decoration.";
+				mes "[傑森]";
+				mes "學習推車裝飾是很困難的。";
 				next;
-				mes "[Jason]";
-				mes "I will teach you if you bring the ^3131FFCute Cart Remodel Coupon^000000 to me.";
+				mes "[傑森]";
+				mes "如果你帶著 ^3131FF可愛手推車改造券^000000 來，我就教你。";
 				close;
 			}
-			mes "[Jason]";
-			mes "You have brought the Cute Cart Remodel Coupon. Are you sure you want to learn Pushcart Decoration?";
+			mes "[傑森]";
+			mes "你帶了可愛手推車改造券。你確定要學習推車裝飾嗎？";
 			next;
-			if (select("YES", "NO") == 2) {
-				mes "[Jason]";
-				mes "Come again after you have changed your mind!";
+			if (select("是", "否") == 2) {
+				mes "[傑森]";
+				mes "等你改變心意後再來吧！";
 				close;
 			}
-			mes "[Jason]";
-			mes "Alright! Follow me.";
+			mes "[傑森]";
+			mes "好吧！跟我來。";
 			next;
-			mes "[Jason]";
-			mes "This design";
-			mes "needs to catch the pushcart...";
+			mes "[傑森]";
+			mes "這個設計";
+			mes "需要抓住推車...";
 			next;
-			mes "[Jason]";
-			mes "This design";
-			mes "needs to catch the pushcart.";
-			mes "Then add this....";
+			mes "[傑森]";
+			mes "這個設計";
+			mes "需要抓住推車。";
+			mes "然後加上這個....";
 			mes "...";
 			next;
-			mes "[Jason]";
-			mes "You are a genius! You have learned it!";
+			mes "[傑森]";
+			mes "你是個天才！你學會了！";
 			next;
-			mes "[Jason]";
-			mes "Now is your turn to do it.";
-			mes "Press Alt+S to change your pushcart!";
+			mes "[傑森]";
+			mes "現在輪到你來做了。";
+			mes "按下 Alt+S 來改變你的推車！";
 			next;
-			mes "[Jason]";
-			mes "This is the new cute design pushcart. You are one of our family now...!";
+			mes "[傑森]";
+			mes "這是新的可愛設計推車。你現在是我們的一份子了...！";
 			delitem 6606,1;	// P_Cart_C
 			cart_remodel = 1;
 			skill "MC_CARTDECORATE",1,SKILL_PERM;
@@ -85,68 +85,68 @@ alberta,47,37,5	script	Cart Remodel Expert	4_M_REPAIR,{
 			close;
 		}
 	}
-	mes "[Jason]";
-	mes "Have you decorated the pushcart?";
+	mes "[傑森]";
+	mes "你裝飾推車了嗎？";
 	next;
-	switch( select( "Is there more to learn?", "I forgot how to decorate my pushcart" ) ) {
+	switch( select( "還有更多要學的嗎？", "我忘記如何裝飾我的推車了" ) ) {
 	case 1:
 		if (cart_remodel == .@max_skill_lvl) {
-			mes "[Jason]";
-			mes "No. I am still exploring new designs. I will teach you once I have learned it.";
+			mes "[傑森]";
+			mes "沒有。我還在探索新的設計。一旦我學會了，我就會教你。";
 			close;
 		}
-		mes "[Jason]";
-		mes "I have something to teach, do you want to learn?";
+		mes "[傑森]";
+		mes "我有些東西可以教，你想學嗎？";
 		next;
-		mes "[Jason]";
-		mes "I need a ^3131FFCute Cart Remodel Coupon^000000.";
+		mes "[傑森]";
+		mes "我需要一張 ^3131FF可愛手推車改造券^000000。";
 		next;
-		if (select("I want to learn", "No") == 2) {
-			mes "[Jason]";
-			mes "You can come back anytime.";
+		if (select("我想學", "不要") == 2) {
+			mes "[傑森]";
+			mes "你隨時都可以回來。";
 			close;
 		}
 		if (countitem(6606) < 0) {
-			mes "[Jason]";
-			mes "You don't have any Cute Cart Remodel Coupon?";
+			mes "[傑森]";
+			mes "你沒有任何可愛手推車改造券？";
 			close;
 		}
-		mes "[Jason]";
-		mes "Ok, let's begin!";
+		mes "[傑森]";
+		mes "好吧，讓我們開始吧！";
 		next;
-		mes "[Jason]";
-		mes "Doing it like this is better.";
-		mes "Do that like this as well...";
+		mes "[傑森]";
+		mes "這樣做會更好。";
+		mes "那樣也這樣做...";
 		next;
-		mes "[Jason]";
+		mes "[傑森]";
 		mes "....";
-		mes "Let's do it!";
+		mes "讓我們開始吧！";
 		next;
-		mes "[Jason]";
-		mes "I have taught you the skill, you can try it now.";
+		mes "[傑森]";
+		mes "我已經教了你技能，你現在可以試試看。";
 		delitem 6606,1;	// P_Cart_C
 		cart_remodel++;
 		skill "MC_CARTDECORATE", cart_remodel ,SKILL_PERM;
 		close;
 	case 2:
-		mes "[Jason]";
-		mes "Oh? Let me see.";
+		mes "[傑森]";
+		mes "喔？讓看看。";
 		next;
 		if (BaseClass != Job_Merchant) {
-			mes "[Jason]";
-			mes "Please come again after you can use the pushcart!";
+			mes "[傑森]";
+			mes "等你學會使用推車後再來吧！";
 			close;
 		}
-		mes "[Jason]";
-		mes "Do you not remember what I have taught you?";
-		mes "I have taught you this method.";
+		mes "[傑森]";
+		mes "你不記得我教你的東西了嗎？";
+		mes "我教了你這個方法。";
 		next;
-		mes "[Jason]";
-		mes "You have forgotten?";
-		mes "Let's recall now!";
+		mes "[傑森]";
+		mes "你忘記了？";
+		mes "現在讓我們回憶一下！";
 		next;
-		mes "[Jason]";
-		mes "Think carefully, you will remember it again.";
+		mes "[傑森]";
+		mes "仔細想想，你會再次記起來的。";
 		skill "MC_CARTDECORATE",1,SKILL_PERM;
 		close;
 	}

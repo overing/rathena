@@ -11,47 +11,47 @@
 // Charleston
 verus04,69,108,5	script	Mass Charleston#1	4_F_CHARLESTON01,{
 	if (!checkweight(1201,1) || (MaxWeight - Weight) < 1000) {
-		mes "^ff0000You have carried too many items, please reduce it and come back later.^000000";
+		mes "^ff0000你攜帶了過多的物品，請減少數量後再來。^000000";
 		close;
 	}
 	cutin "dalle01.bmp",2;
 	if (countitem(6752) < 10) {
 		if (isbegin_quest(13186) == 0) {
-			mes "[Mass Charleston]";
-			mes "I don't know where you can find Charleston Components,";
+			mes "[馬斯·查爾斯頓]";
+			mes "我不知道在哪裡可以找到查爾斯頓零件，";
 			next;
-			mes "[Mass Charleston]";
-			mes "but if you have 10 or more, then I can exchange them with factory products.";
+			mes "[馬斯·查爾斯頓]";
+			mes "但如果你有10個或更多，我可以把它們換成工廠產品。";
 			close3;
 		}
-		mes "[Mass Charleston]";
-		mes "A series of trials and errors was made before the mass version of Charleston was developed.";
+		mes "[馬斯·查爾斯頓]";
+		mes "在量產版的查爾斯頓開發出來之前，進行了一系列的試驗和錯誤。";
 		next;
-		mes "[Mass Charleston]";
-		mes "I don't mean to depreciate myself, but mass versions are mass versions; they're cost-effective and practical, but never as good as the high-end versions.";
+		mes "[馬斯·查爾斯頓]";
+		mes "我不是要貶低自己，但量產版就是量產版；它們具有成本效益和實用性，但永遠不如高端版本。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Some Charlestons, especially in the development stage, are equipped with more advanced features. To study them, I need more components.";
+		mes "[馬斯·查爾斯頓]";
+		mes "一些查爾斯頓，尤其是在開發階段，配備了更先進的功能。為了研究它們，我需要更多的零件。";
 		next;
-		mes "[Mass Charleston]";
-		mes "If you have 10 or more Charleston Components, then I can exchange them with factory products.";
+		mes "[馬斯·查爾斯頓]";
+		mes "如果你有10個或更多查爾斯頓零件，我可以把它們換成工廠產品。";
 		close3;
 	}
-	mes "[Mass Charleston]";
-	mes "You got some nice parts on you! Would you like to exchange it with the goods produced in the factory?";
+	mes "[馬斯·查爾斯頓]";
+	mes "你有一些不錯的零件！你想把它們換成工廠生產的商品嗎？";
 	next;
-	mes "[Mass Charleston]";
-	mes "Is a collection of Charleston advantages in a commodity, but can not be sold separately, IF bring good parts can be exchanged for you.";
+	mes "[馬斯·查爾斯頓]";
+	mes "是一個商品中查爾斯頓優勢的集合，但不能單獨出售，如果帶好零件可以為您更換。";
 	next;
-	.@s = select( "Quit.", "Exchange Reinforced parts", "Exchange Supplementary device" ) - 2;
+	.@s = select( "離開。", "兌換強化零件", "兌換輔助裝置" ) - 2;
 	if (.@s == -1) {
-		mes "[Mass Charleston]";
-		mes "I'll see you next time!";
+		mes "[馬斯·查爾斯頓]";
+		mes "下次再見！";
 		close3;
 	}
 	setarray .@job_aft$[0], "Reinforced parts", "Supplementary device";
-	mes "[Mass Charleston]";
-	mes "Which part of " + .@job_aft$[.@s] + " do you want to select?";
+	mes "[馬斯·查爾斯頓]";
+	mes "你想要選擇 " + .@job_aft$[.@s] + " 的哪個部分？";
 	next;
 	switch(.@s) {
 	case 0:
@@ -67,53 +67,53 @@ verus04,69,108,5	script	Mass Charleston#1	4_F_CHARLESTON01,{
 			2995;	// Supplement_Part_Dex
 		break;
 	default:
-		mes "[Mass Charleston]";
-		mes "I'll see you next time!";
+		mes "[馬斯·查爾斯頓]";
+		mes "下次再見！";
 		close;
 	}
 	// custom translation from here
-	.@index = select( "Quit.", getitemname(.@item[0]) + " (garment)", getitemname(.@item[1]) + " (Shoes)", getitemname(.@item[2]) + " (Accessory)" ) - 2;
+	.@index = select( "離開。", getitemname(.@item[0]) + " (披肩)", getitemname(.@item[1]) + " (鞋子)", getitemname(.@item[2]) + " (飾品)" ) - 2;
 	if (.@index == -1) {
-		mes "[Mass Charleston]";
-		mes "I'll see you next time!";
+		mes "[馬斯·查爾斯頓]";
+		mes "下次再見！";
 		close3;
 	}
 	if (countitem(6752) < 10) {
-		mes "[Mass Charleston]";
-		mes "If you find enough Charleston parts, can you come to me again?";
+		mes "[馬斯·查爾斯頓]";
+		mes "如果你找到足夠的查爾斯頓零件，可以再來找我嗎？";
 		close3;
 	}
 	delitem 6752,10;	// Charleston_Parts
 	getitem .@item[.@index],1;
-	mes "[Mass Charleston]";
-	mes "Exchanged 10 " + getitemname(6752) + " for " + .@job_aft$[.@s] + ". If you find more part, come to me again!";
+	mes "[馬斯·查爾斯頓]";
+	mes "用 10 個 " + getitemname(6752) + " 換了 " + .@job_aft$[.@s] + "。如果你找到更多零件，再來找我！";
 	close3;
 }
 
 verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 	disable_items;
 	if (!checkweight(1201,1)) {
-		mes "You have too many types of items. Lighten your inventory first.";
+		mes "你攜帶了太多種類的物品。先整理你的背包。";
 		close;
 	}
 	if ((MaxWeight - Weight) < 10000) {
-		mes "The items in your inventory are weighing you down. Lighten your weight first.";
+		mes "你背包裡的物品讓你負重過重。先減輕你的重量。";
 		close;
 	}
 	cutin "dalle01.bmp",2;
-	mes "[Mass Charleston]";
-	mes "I can upgrade the Charleston Factory products. Let me know if you're interested.";
+	mes "[馬斯·查爾斯頓]";
+	mes "我可以升級查爾斯頓工廠的產品。如果你有興趣，請告訴我。";
 	next;
-	switch( select( "More information.", "Add abilities to your product.", "Reset product." ) ) {
+	switch( select( "更多資訊。", "為你的產品新增能力。", "重置產品。" ) ) {
 	case 1:
-		mes "[Mass Charleston]";
-		mes "Each Upgrade/resetting attempt costs 100,000 zeny and 1 Charleston Component.";
+		mes "[馬斯·查爾斯頓]";
+		mes "每次嘗試升級/重置需要花費 100,000 zeny 和 1 個查爾斯頓零件。";
 		next;
-		mes "[Mass Charleston]";
-		mes "I also provide a wider selection of Upgrade options for Charleston Equipment at ^ff0000+9^000000 or above.";
+		mes "[馬斯·查爾斯頓]";
+		mes "我也為 +9 或以上的查爾斯頓裝備提供更廣泛的升級選項。^ff0000+9^000000";
 		next;
-		mes "[Mass Charleston]";
-		mes "Rest assured, my Upgrade technology does not involve accidental damage on the item's Upgrade level or equipped cards.";
+		mes "[馬斯·查爾斯頓]";
+		mes "請放心，我的升級技術不涉及意外損壞物品的升級等級或已裝備的卡片。";
 		close3;
 	case 2:
 		.@type_action = 1;
@@ -125,22 +125,22 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 		break;
 	}
 	if (Zeny < 100000 || countitem(6752) < 1) {
-		mes "[Mass Charleston]";
-		mes "" + .@string$ + " a Charleston product costs 1 Charleston Component and 100,000 zeny. Please know that all the expenses go into " + strtolower(.@string$) + " your product.";
+		mes "[馬斯·查爾斯頓]";
+		mes "" + .@string$ + " 一個查爾斯頓產品需要花費 1 個查爾斯頓零件和 100,000 zeny。請注意，所有費用都用於 " + strtolower(.@string$) + " 您的產品。";
 		close3;
 	}
-	mes "[Mass Charleston]";
-	mes "Please make sure you're equipped with the Equipment you want to upgrade.";
+	mes "[馬斯·查爾斯頓]";
+	mes "請確保你已裝備想要升級的裝備。";
 	next;
-	.@s = select( "Let me go equip it.", "Footgear", "Garment", "Clothes", "Accessory" ) - 2;
+	.@s = select( "讓我去裝備。", "鞋子", "披肩", "衣服", "飾品" ) - 2;
 	if (.@s == -1) {
-		mes "[Mass Charleston]";
-		mes "Sure, please come back after you do.";
+		mes "[馬斯·查爾斯頓]";
+		mes "好的，請完成後再來。";
 		close3;
 	}
 	if (Zeny < 100000 || countitem(6752) < 1) {
-		mes "[Mass Charleston]";
-		mes "Things needed for commodity upgrades seem inadequate!";
+		mes "[馬斯·查爾斯頓]";
+		mes "商品升級所需的東西似乎不足！";
 		close3;
 	}
 	setarray .@eq_num[0], EQI_SHOES, EQI_GARMENT, EQI_ARMOR, EQI_ACC_R;
@@ -153,8 +153,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 
 	switch(.@item_id) {
 	case -1:
-		mes "[Mass Charleston]";
-		mes "Because it is a customized upgrade be sure to wear equipment.";
+		mes "[馬斯·查爾斯頓]";
+		mes "因為它是定制升級，請務必穿戴裝備。";
 		close3;
 	case 15111:	// Upgrade_Part_Plate
 		.@en_type = 3;
@@ -197,9 +197,9 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 		.@max_slot = 2;
 		break;
 	default:
-		mes "[Mass Charleston]";
+		mes "[馬斯·查爾斯頓]";
 		mes "^990099" + getequipname(.@part) + "^000000??";
-		mes "I'm not interested in this Equipment.";
+		mes "我對這個裝備不感興趣。";
 		close3;
 	}
 
@@ -216,49 +216,49 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				"Advanced Shoes upgrade",
 				"Accessory upgrade";
 			if (.@menu_en_type$[.@en_type] == "" || .@menu_en_type$[.@en_type_9] == "") {
-				mes "[Mass Charleston]";
-				mes "Something's not right!";
+				mes "[馬斯·查爾斯頓]";
+				mes "有些不對勁！";
 				close3;
 			}
-			mes "[Mass Charleston]";
-			mes "This is a considerable level of enhanced equipment, this type can give enhanced expansion performance, choose from the following series of desirable to strengthen it!";
+			mes "[馬斯·查爾斯頓]";
+			mes "這是一個相當高水平的強化裝備，這種類型可以給予強化擴展性能，從以下一系列的強化方式中選擇你想要的！";
 			next;
 			if (select( .@menu_en_type$[.@en_type], .@menu_en_type$[.@en_type_9] ) == 2)
 				.@en_type = .@en_type_9;
 		}
 		if (.@card[3] < 1 && .@max_slot < 4) {
 			.@slot = 4;
-			mes "[Mass Charleston]";
-			mes "I'll be Upgrading the first ability. The existing Upgrade level and cards will not be damaged. Do you want to continue?";
+			mes "[馬斯·查爾斯頓]";
+			mes "我將升級第一個能力。現有的升級等級和卡片不會損壞。你想要繼續嗎？";
 			next;
-			if (select( "I'll come back later.", "Continue." ) == 1) {
-				mes "[Mass Charleston]";
-				mes "No problem. Come back if you change your mind.";
+			if (select( "我晚點再來。", "繼續。" ) == 1) {
+				mes "[馬斯·查爾斯頓]";
+				mes "沒問題。如果你改變主意，就再來吧。";
 				close3;
 			}
 		}
 		else if (.@card[2] < 1 && .@max_slot < 3) {
 			.@slot = 3;
-			mes "[Mass Charleston]";
-			mes "I'll be Upgrading the second ability. The existing Upgrade level and cards will not be damaged.";
+			mes "[馬斯·查爾斯頓]";
+			mes "我將升級第二個能力。現有的升級等級和卡片不會損壞。";
 			next;
-			mes "[Mass Charleston]";
-			mes "Though there is a slight chance of failure, in which case the existing Upgrade level will be reset. What would you like to do?";
+			mes "[馬斯·查爾斯頓]";
+			mes "雖然有很小的失敗機率，在這種情況下，現有的升級等級將會被重置。你想要怎麼做？";
 			next;
-			if (select( "I'll come back later.", "Continue." ) == 1) {
-				mes "[Mass Charleston]";
-				mes "No problem. Come back if you change your mind.";
+			if (select( "我晚點再來。", "繼續。" ) == 1) {
+				mes "[馬斯·查爾斯頓]";
+				mes "沒問題。如果你改變主意，就再來吧。";
 				close3;
 			}
 		}
 		else if (.@card[1] < 1 && .@max_slot < 2) {
 			.@slot = 2;
-			mes "[Mass Charleston]";
-			mes "I'll be Upgrading the 3rd ability. This highest Upgrade stage incurs a  chance of ^990000destroying the Equipment or resetting its existing Upgrade level.^000000 Do you want to continue?";
+			mes "[馬斯·查爾斯頓]";
+			mes "我將升級第 3 個能力。這個最高的升級階段會造成 ^990000摧毀裝備或重置其現有升級等級^000000 的機率。你想要繼續嗎？";
 			next;
-			if (select( "I'll come back later.", "Continue." ) == 1) {
-				mes "[Mass Charleston]";
-				mes "No problem. Come back if you change your mind.";
+			if (select( "我晚點再來。", "繼續。" ) == 1) {
+				mes "[馬斯·查爾斯頓]";
+				mes "沒問題。如果你改變主意，就再來吧。";
 				close3;
 			}
 		}
@@ -266,8 +266,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 			.@slot = 1;
 		else {
 			cutin "dalle02.bmp",2;
-			mes "[Mass Charleston]";
-			mes "This Equipment is Upgraded to the maximum level. Please bring something else.";
+			mes "[馬斯·查爾斯頓]";
+			mes "此裝備已升級到最高等級。請帶別的東西來。";
 			close3;
 		}
 		switch(.@en_type) {
@@ -285,8 +285,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 300;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[馬斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -341,8 +341,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[馬斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -397,8 +397,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[馬斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -451,8 +451,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[麥斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -514,8 +514,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[麥斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -580,8 +580,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[麥斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -634,8 +634,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 310;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[麥斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -694,8 +694,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 				.@en_brk2 = 111;
 			}
 			else {
-				mes "[Mass Charleston]";
-				mes "An unknown error has occurred.";
+				mes "[麥斯·查爾斯頓]";
+				mes "發生了未知的錯誤。";
 				close3;
 			}
 			.@r = rand( .@en_brk1, .@en_brk2 );
@@ -714,13 +714,13 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 			else .@en_name = 0;
 			break;
 		default:
-			mes "[Mass Charleston]";
-			mes "An unknown error has occurred.";
+			mes "[麥斯·查爾斯頓]";
+			mes "發生了未知的錯誤。";
 			close3;
 		}
 		if (Zeny < 100000 || countitem(6752) < 1) {
-			mes "[Mass Charleston]";
-			mes "Things needed for commodity upgrades seem inadequate!";
+			mes "[麥斯·查爾斯頓]";
+			mes "商品升級所需的東西似乎不足！";
 			close3;
 		}
 
@@ -728,8 +728,8 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 		if (callfunc("F_IsEquipIDHack", .@part, .@item_id) ||
 				callfunc("F_IsEquipCardHack", .@part, .@card_saved[0], .@card_saved[1], .@card_saved[2], .@card_saved[3]) ||
 				callfunc("F_IsEquipRefineHack", .@part, .@refine)) {
-			mes "[Mass Charleston]";
-			mes "An unknown error has occurred.";
+			mes "[麥斯·查爾斯頓]";
+			mes "發生了未知的錯誤。";
 			close3;
 		}
 
@@ -742,21 +742,21 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 		case 0:
 			cutin "dalle02.bmp",2;
 			specialeffect2 EF_SHIELDCHARGE;
-			mes "[Mass Charleston]";
-			mes "Since the balance of power does not match, the given existing ability has been destroyed. It is unfortunate but please try again next time.";// unknown text
+			mes "[麥斯·查爾斯頓]";
+			mes "由於力量的平衡不匹配，因此給定的現有能力已被摧毀。很不幸，但請下次再試。";
 			getitem2 .@item_id,1,1,.@refine,0, .@card[0], .@card[1], .@card[2], .@card[3];
 			close3;
 		case 9:
 			cutin "dalle04.bmp",2;
 			specialeffect2 EF_SUI_EXPLOSION;
-			mes "[Mass Charleston]";
-			mes "This!";
-			mes "I'm sorry but the equipment has been destroyed.";// unknown text
+			mes "[麥斯·查爾斯頓]";
+			mes "這個！";
+			mes "很抱歉，裝備已被摧毀。";
 			close3;
 		default:
 			specialeffect2 EF_REPAIRWEAPON;
-			mes "[Mass Charleston]";
-			mes "^990000Socket" + .@slot + "^000000 will be Upgrade.";
+			mes "[麥斯·查爾斯頓]";
+			mes "^990000插槽" + .@slot + "^000000 將被升級。";
 			getitem2 .@item_id,1,1,.@refine,0, .@card[0], .@card[1], .@card[2], .@card[3];
 			close3;
 		}
@@ -767,16 +767,16 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 		if (getiteminfo(.@card[2], ITEMINFO_SUBTYPE) == CARD_ENCHANT) .@card[2] = 0;
 		if (getiteminfo(.@card[3], ITEMINFO_SUBTYPE) == CARD_ENCHANT) .@card[3] = 0;
 		specialeffect2 EF_REPAIRWEAPON;
-		mes "[Mass Charleston]";
-		mes "Reset the product's abilities.";
+		mes "[麥斯·查爾斯頓]";
+		mes "重置產品的能力。";
 		delitem 6752,1;	// Charleston_Parts
 		Zeny -= 100000;
 		delequip .@part;
 		getitem2 .@item_id,1,1,.@refine,0, .@card[0], .@card[1], .@card[2], .@card[3];
 		close3;
 	dfault:
-		mes "[Mass Charleston]";
-		mes "An unknown error has occurred.";
+		mes "[麥斯·查爾斯頓]";
+		mes "發生了未知的錯誤。";
 		close3;
 	}
 	end;
@@ -784,221 +784,221 @@ verus04,71,106,5	script	Mass Charleston#2	4_F_CHARLESTON01,{
 
 verus04,63,112,4	script	Mass Charleston#3	4_F_CHARLESTON01,{
 	if (!checkweight(1201,1) || (MaxWeight - Weight) < 1000) {
-		mes "^ff0000You have carried too many items, please reduce it and come back later.^000000";
+		mes "^ff0000你攜帶了太多物品，請減少後再來。^000000";
 		close;
 	}
 	cutin "dalle03.bmp",2;
-	mes "[Mass Charleston]";
-	mes "Eh, do I have a customer? Activating Salesman mode...";
+	mes "[麥斯·查爾斯頓]";
+	mes "咦，有客人嗎？啟動推銷員模式...";
 	next;
 	cutin "dalle01.bmp",2;
-	mes "[Mass Charleston]";
-	mes "Charleston Factory's best-selling items: ^FF0000Upgrade Part Plate^000000 and ^FF0000Supplement Part Str^000000 now on sale!";
+	mes "[麥斯·查爾斯頓]";
+	mes "查爾斯頓工廠最暢銷的商品：^FF0000升級零件板^000000和^FF0000輔助零件 Str^000000 現正發售！";
 	next;
-	mes "[Mass Charleston]";
-	mes "For only ^FF00003,999,999^000000 zeny! Get yourself the ultra-performance action gears!";
+	mes "[麥斯·查爾斯頓]";
+	mes "只需 ^FF00003,999,999^000000 Zeny！為自己購買超高性能的動作裝備！";
 	next;
-	mes "[Mass Charleston]";
-	mes "Also available is the ^FF0000Pilebuncker^000000 ^FF0000Upgrade^000000 service!";
+	mes "[麥斯·查爾斯頓]";
+	mes "還有 ^FF0000Pilebuncker^000000 ^FF0000升級^000000 服務！";
 	next;
-	switch( select( "Talk.", "Exchange Upgrade Parts.", "Exchange Supplementary devices.", "Upgrade Pilebuncker." ) ) {
+	switch( select( "談話。", "交換升級零件。", "交換輔助裝置。", "升級 Pilebuncker。" ) ) {
 	case 1:
 		if (isbegin_quest(13186) == 0) {
-			mes "[Mass Charleston]";
-			mes "The Charleston Factory shut down, but its technology and products remain with us.";
+			mes "[麥斯·查爾斯頓]";
+			mes "查爾斯頓工廠關閉了，但它的技術和產品仍然存在於我們這裡。";
 			next;
-			mes "[Mass Charleston]";
-			mes "Oh, haven't you heard the news? Oops, my bad. Please forget I said that.";
+			mes "[麥斯·查爾斯頓]";
+			mes "哦，你沒聽說這個消息嗎？ 哎呀，我的錯。 請忘記我說的話。";
 			close3;
 		}
 		cutin "dalle03.bmp",2;
-		mes "[Mass Charleston]";
-		mes "I'm a mass version Charleston. I wasn't even given a serial number. Who knows how many copies of me were made? It could be a hundred, maybe even a thousand.";
+		mes "[麥斯·查爾斯頓]";
+		mes "我是一個量產版的查爾斯頓。我甚至沒有被賦予序列號。誰知道有多少個我的複製品被製造出來？可能是一百個，甚至一千個。";
 		next;
-		mes "[Mass Charleston]";
-		mes "The original Charleston is standing over there, but...";
+		mes "[麥斯·查爾斯頓]";
+		mes "最初的查爾斯頓站在那邊，但是...";
 		next;
-		mes "[Mass Charleston]";
-		mes "By the time Charlestons 1 and 2 escaped the factory, they're severely damaged. The battle that took place that day was incredible.";
+		mes "[麥斯·查爾斯頓]";
+		mes "當查爾斯頓 1 號和 2 號逃離工廠時，他們已經嚴重受損。那天發生的戰鬥令人難以置信。";
 		next;
-		mes "[Mass Charleston]";
-		mes "I can still remember Charlestons 1 and 2 destroying Dr. Ve's numerous creatures like it was yesterday.";
+		mes "[麥斯·查爾斯頓]";
+		mes "我仍然可以記得查爾斯頓 1 號和 2 號摧毀維博士無數生物的情景，彷彿就在昨天。";
 		next;
-		mes "[Mass Charleston]";
-		mes "They also destroyed the mass version Charlestons modified by Dr. Ve to his bidding.";
+		mes "[麥斯·查爾斯頓]";
+		mes "他們還摧毀了由維博士修改為聽命於他的量產版查爾斯頓。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Of course there are others--like us here working on product upgrades--that were lucky enough to escape Dr. Ve's clutches and meet Charleston 1, who saved us all.";
+		mes "[麥斯·查爾斯頓]";
+		mes "當然還有其他人 - 就像我們在這裡從事產品升級工作的人一樣 - 幸運地逃脫了維博士的魔爪，並遇到了查爾斯頓 1 號，他拯救了我們所有人。";
 		next;
-		mes "[Mass Charleston]";
-		mes "After escaping with the modified Charleston 3, we came here.";
+		mes "[麥斯·查爾斯頓]";
+		mes "在帶著改裝過的查爾斯頓 3 號逃脫後，我們來到了這裡。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Just so you know, this place was already in shambles when we arrived. We had nothing to do with its destruction. Perhaps...";
+		mes "[麥斯·查爾斯頓]";
+		mes "只是想讓你知道，當我們到達時，這個地方已經是一片廢墟了。它的毀滅與我們無關。也許...";
 		next;
-		mes "[Mass Charleston]";
-		mes "Sorry I sidetracked. Anyway, this is the problem.";
+		mes "[麥斯·查爾斯頓]";
+		mes "抱歉，我離題了。無論如何，這就是問題所在。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Charlestons 1 and 2 were destroyed to a point of impairment. They tried to repair each other, to no avail.";
+		mes "[麥斯·查爾斯頓]";
+		mes "查爾斯頓 1 號和 2 號被摧毀到功能受損的程度。 他們試圖互相修復，但無濟於事。";
 		next;
-		mes "[Mass Charleston]";
-		mes "They realized they're damaged beyond repair. They salvaged however many parts they could, and built one body with one OS.";
+		mes "[麥斯·查爾斯頓]";
+		mes "他們意識到自己損壞到無法修復的地步。 他們盡可能地搶救了零件，並用一個操作系統構建了一個身體。";
 		next;
-		mes "[Mass Charleston]";
-		mes "And that's the newly built body. They blamed themselves for the destruction of the factory, and wanted to fix it. I'm afraid their data is corrupted or missing important memory.";
+		mes "[麥斯·查爾斯頓]";
+		mes "那就是新建的身體。 她們將工廠的毀滅歸咎於自己，並想修復它。 恐怕她們的數據已損壞或缺少重要的記憶。";
 		next;
-		mes "[Mass Charleston]";
-		mes "The characteristics of the data show more traits of Charleston 2, while the access method of the OS is more similar to that of Charleston 1. Charleston 1 always was the more sentimental one.";
+		mes "[麥斯·查爾斯頓]";
+		mes "數據的特徵顯示出更多查爾斯頓 2 號的特徵，而操作系統的訪問方法更類似於查爾斯頓 1 號。查爾斯頓 1 號一直比較多愁善感。";
 		next;
-		mes "[Mass Charleston]";
-		mes "I don't know if the new Charleston is Charleston 1 or 2. I can't even tell what it misses or remembers the most.";
+		mes "[麥斯·查爾斯頓]";
+		mes "我不知道新的查爾斯頓是查爾斯頓 1 號還是 2 號。 我什至無法分辨她最想念或記得什麼。";
 		next;
-		mes "[Mass Charleston]";
-		mes "She keeps blaming herself for losing her data, for letting down her friends. Every time we try to console her,";
+		mes "[麥斯·查爾斯頓]";
+		mes "她一直自責丟失了她的數據，讓她的朋友們失望了。 每次我們試圖安慰她，";
 		next;
-		mes "[Mass Charleston]";
-		mes "she would say she doesn't have the heart or brain to remember or know. I wonder if she knows";
+		mes "[麥斯·查爾斯頓]";
+		mes "她會說她沒有心思或大腦去記住或知道。 我想知道她是否知道";
 		next;
-		mes "[Mass Charleston]";
-		mes "that the memories of Humans fade and get distorted or glorified with time.";
+		mes "[麥斯·查爾斯頓]";
+		mes "人類的記憶會隨著時間的推移而褪色、扭曲或美化。";
 		next;
-		mes "[Mass Charleston]";
-		mes "And that Humans learn from their mistakes and failures. I read that from those paper memory devices called ^FF0000books^000000 in the factory.";
+		mes "[麥斯·查爾斯頓]";
+		mes "人類從錯誤和失敗中學習。 我從工廠那些被稱為 ^FF0000書籍^000000 的紙質記憶設備中讀到過。";
 		next;
-		mes "[Mass Charleston]";
-		mes "There was a small study in the ^FF0000south wing of the factory^000000. Later, it was turned into a robot development room.";
+		mes "[麥斯·查爾斯頓]";
+		mes "在 ^FF0000工廠南翼^000000 有一個小型研究室。 後來，它變成了一個機器人開發室。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Maybe the Charleston is more like the Humans than the rest of us. I just hope she doesn't have to be so sad.";
+		mes "[麥斯·查爾斯頓]";
+		mes "也許查爾斯頓更像人類，而不是我們其他人。 我只是希望她不必那麼悲傷。";
 		next;
-		mes "[Mass Charleston]";
-		mes "I feel so congested in the OS that I ranted. Perhaps I need to defragment my memory.";
+		mes "[麥斯·查爾斯頓]";
+		mes "我感到操作系統非常擁擠，以至於我發洩了。 也許我需要整理我的記憶。";
 		close3;
 	case 2:
-		mes "[Mass Charleston]";
-		mes "Upgrade Part Plate";
-		mes "Class: Armor, indestructible.";
-		mes "-10% damage from Small and Medium monsters.";
-		mes "-10% damage from Large monsters when Upgraded to +7.";
-		mes "Additional -5% damage from Small and Medium monsters when Upgraded to +9.";
+		mes "[麥斯·查爾斯頓]";
+		mes "升級零件板";
+		mes "種類：盔甲，堅不可摧。";
+		mes "來自小型和中型怪物的傷害 -10%。";
+		mes "升級到 +7 時，來自大型怪物的傷害額外 -10%。";
+		mes "升級到 +9 時，來自小型和中型怪物的傷害額外 -5%。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Weight: 300";
-		mes "Required Level: 100";
+		mes "[麥斯·查爾斯頓]";
+		mes "重量：300";
+		mes "需要等級：100";
 		callsub S_Buy, 15111;	// Upgrade_Part_Plate
 	case 3:
-		mes "[Mass Charleston]";
-		mes "Supplement Part Str";
-		mes "ATK+ 5%!";
-		mes "Additional ATK +1% every 4 Upgrade levels.";
-		mes "Use with Vitality/Agility/Dexterity supplementary devices for best results.";
+		mes "[麥斯·查爾斯頓]";
+		mes "輔助零件 Str";
+		mes "ATK+ 5%！";
+		mes "每升級 4 級，額外 ATK +1%。";
+		mes "與 Vitality/Agility/Dexterity 輔助裝置配合使用，效果最佳。";
 		next;
-		mes "[Mass Charleston]";
-		mes "Weight: 200";
-		mes "Required Level: 100";
+		mes "[麻斯·查爾斯頓]";
+		mes "重量: 200";
+		mes "需要等級: 100";
 		callsub S_Buy, 15110;	// Supplement_Part_Str
 	case 4:
-		mes "[Mass Charleston]";
-		mes "The last masterpiece of the Charleston Factory! You'll never find such fine Equipment anywhere else.";
+		mes "[麻斯·查爾斯頓]";
+		mes "查爾斯頓工廠的最後傑作！你在其他地方絕對找不到這麼好的裝備。";
 		next;
-		mes "[Mass Charleston]";
-		mes "To Upgrade Pilebuncker,";
-		mes "^FF00001 Pilebuncker^000000,";
-		mes "^FF0000300 Dented Iron Plates^000000,";
-		mes "and ^FF000015 Broken Engines^000000 are required.";
+		mes "[麻斯·查爾斯頓]";
+		mes "要升級打樁機，";
+		mes "^FF00001 打樁機^000000，";
+		mes "^FF0000300 凹陷的鐵板^000000，";
+		mes "以及 ^FF000015 損壞的引擎^000000 是必要的。";
 		next;
-		switch( select( "Pilebuncker S", "Pilebuncker P", "Pilebuncker T" ) ) {
+		switch( select( "打樁機 S", "打樁機 P", "打樁機 T" ) ) {
 		case 1:
-			mes "[Mass Charleston]";
-			mes "Pilebuncker S";
-			mes "Class: Blunt Weapon";
+			mes "[麻斯·查爾斯頓]";
+			mes "打樁機 S";
+			mes "種類: 鈍器";
 			mes "ATK: 400";
-			mes "Attack Speed bonus every 2 Upgrade levels.";
+			mes "每升級 2 級，攻擊速度加成。";
 			next;
-			mes "[Mass Charleston]";
-			mes "Weight: 300";
-			mes "Weapon Level: 4";
-			mes "Required Level: 130";
-			mes "Mechanic only. Comes with 1 Card socket.";
+			mes "[麻斯·查爾斯頓]";
+			mes "重量: 300";
+			mes "武器等級: 4";
+			mes "需要等級: 130";
+			mes "僅限機匠。附帶 1 個卡片插槽。";
 			.@item_id = 16030;	// Pilebuncker_S
 			break;
 		case 2:
-			mes "[Mass Charleston]";
-			mes "Pilebuncker P";
-			mes "Class: Blunt Weapon";
+			mes "[麻斯·查爾斯頓]";
+			mes "打樁機 P";
+			mes "種類: 鈍器";
 			mes "ATK: 450";
-			mes "ATK +5 every Upgrade level.";
+			mes "每升級 1 級，ATK +5。";
 			next;
-			mes "[Mass Charleston]";
-			mes "Weight: 400";
-			mes "Weapon Level: 4";
-			mes "Required Level: 130";
-			mes "Mechanic only.";
+			mes "[麻斯·查爾斯頓]";
+			mes "重量: 400";
+			mes "武器等級: 4";
+			mes "需要等級: 130";
+			mes "僅限機匠。";
 			.@item_id = 16031;	// Pilebuncker_P
 			break;
 		case 3:
-			mes "[Mass Charleston]";
-			mes "Pilebuncker T";
-			mes "Class: Blunt Weapon";
+			mes "[麻斯·查爾斯頓]";
+			mes "打樁機 T";
+			mes "種類: 鈍器";
 			mes "ATK: 400";
-			mes "SP cost -1% every Upgrade level.";
+			mes "每升級 1 級，SP 消耗 -1%。";
 			next;
-			mes "[Mass Charleston]";
-			mes "Weight: 350";
-			mes "Weapon Level: 4";
-			mes "Required Level: 130";
-			mes "Mechanic only. Comes with 1 Card socket.";
+			mes "[麻斯·查爾斯頓]";
+			mes "重量: 350";
+			mes "武器等級: 4";
+			mes "需要等級: 130";
+			mes "僅限機匠。附帶 1 個卡片插槽。";
 			.@item_id = 16032;	// Pilebuncker_T
 			break;
 		}
 		break;
 	}
 	next;
-	mes "[Mass Charleston]";
-	mes "Do you really want to Upgrade ^FF0000" + getitemname(.@item_id) + "^000000?";
+	mes "[麻斯·查爾斯頓]";
+	mes "你真的想要升級 ^FF0000" + getitemname(.@item_id) + "^000000 嗎？";
 	next;
-	if (select( "I suggest you reconsider.", "Buy." ) == 1) {
-		mes "[Mass Charleston]";
-		mes "It's a good buy, but you still need to make your decision carefully.";
+	if (select( "我建議你重新考慮。", "購買。" ) == 1) {
+		mes "[麻斯·查爾斯頓]";
+		mes "這是個好東西，但你仍然需要仔細考慮你的決定。";
 		close;
 	}
 	if (countitem(6751) > 299 && countitem(6750) > 14 && countitem(1549) > 0) {
-		mes "[Mass Charleston]";
-		mes "You won't regret it! She's a Charleston factory!";
+		mes "[麻斯·查爾斯頓]";
+		mes "你不會後悔的！她是查爾斯頓工廠出品！";
 		delitem 6751,300;	// Distorted_Iron_Plate
 		delitem 6750,15;	// Wrong_Engine
 		delitem 1549,1;		// Pilebuncker
 		getitem .@item_id,1;
 		close3;
 	}
-	mes "[Mass Charleston]";
-	mes "Not enough materials for the Upgrade.";
+	mes "[麻斯·查爾斯頓]";
+	mes "沒有足夠的材料來升級。";
 	close3;
 
 S_Buy:
 	.@item_id = getarg(0);
-	mes "^FF0000Mechanic only^000000";
-	mes "^FF0000Price: 3,999,999 zeny^000000";
+	mes "^FF0000僅限機匠^000000";
+	mes "^FF0000價格: 3,999,999 zeny^000000";
 	next;
-	mes "[Mass Charleston]";
-	mes "Do you really want to buy ^FF0000" + getitemname(.@item_id) + "^000000?";
+	mes "[麻斯·查爾斯頓]";
+	mes "你真的想要購買 ^FF0000" + getitemname(.@item_id) + "^000000 嗎？";
 	next;
-	if (select( "I suggest you reconsider.", "Buy." ) == 1) {
-		mes "[Mass Charleston]";
-		mes "It's a good buy, but you still need to make your decision carefully.";
+	if (select( "我建議你重新考慮。", "購買。" ) == 1) {
+		mes "[麻斯·查爾斯頓]";
+		mes "這是個好東西，但你仍然需要仔細考慮你的決定。";
 		close3;
 	}
 	//if (Zeny >= 3999998) {// typo?
 	if (Zeny >= 3999999) {
-		mes "[Mass Charleston]";
-		mes "You won't regret it! She's a Charleston factory!";
+		mes "[麻斯·查爾斯頓]";
+		mes "你不會後悔的！她是查爾斯頓工廠出品！";
 		Zeny -= 3999999;
 		getitem .@item_id,1;
 		close3;
 	}
-	mes "[Mass Charleston]";
-	mes "Good commodity value is not uncommon, please confirm your pocket depth!";
+	mes "[麻斯·查爾斯頓]";
+	mes "好的商品價值並不罕見，請確認您的口袋深度！";
 	close3;
 }
 
@@ -1007,19 +1007,19 @@ S_Buy:
 verus04,161,222,4	script	Grandpa picking up scrap iron	1_M_HOF,{
 	switch( isbegin_quest(12368) ) {
 	case 0:
-		mes "[Grandpa picking up scrap iron]";
-		mes "There are two pieces of scrap iron I see the value of not Fibonacci to pick up and sell to the recycling bin, the result is not willing to deal with me.";
+		mes "[撿破爛的爺爺]";
+		mes "有兩塊廢鐵我看有價值不斐去找回收桶賣，結果不願意跟我交易。";
 		next;
-		mes "[Grandpa picking up scrap iron]";
-		mes "Because it's not iron? Each resource recycling are not willing to buy, is nerve-racking!";
+		mes "[撿破爛的爺爺]";
+		mes "因為它不是鐵嗎？每個資源回收都不願意買，真傷腦筋！";
 		close;
 	case 1:
-		mes "[Grandpa picking up scrap iron]";
-		mes "Hey! Did you just talk to that piece of junk? Or am I losing my sight?";
+		mes "[撿破爛的爺爺]";
+		mes "嘿！你剛才是不是在跟那塊垃圾說話？還是我老眼昏花了？";
 		close;
 	case 2:
-		mes "[Grandpa picking up scrap iron]";
-		mes "Oh, my God! That can't be sold to the Recycle Bin!";
+		mes "[撿破爛的爺爺]";
+		mes "我的天啊！那東西不能賣給回收桶啊！";
 		close;
 	}
 }
@@ -1027,45 +1027,45 @@ verus04,161,222,4	script	Grandpa picking up scrap iron	1_M_HOF,{
 verus04,163,219,4	script	PLUTO_09#pa0829	4_SCR_AT_ROBOTS,{
 	disable_items;
 	if (checkweight(1201,1) == 0 || (MaxWeight - Weight) < 10000) {
-		mes "^ff0000You have carried too many items, please reduce it and come back later.^000000";
+		mes "^ff0000您攜帶的物品太多了，請減少一些，稍後再來。^000000";
 		close;
 	}
 	if (isbegin_quest(12368) < 2) {
-		mes "^0000ffAlthough the LCD still dim, but does not seem to work anymore.^000000";
+		mes "^0000ff雖然LCD仍然昏暗，但似乎無法再工作了。^000000";
 		close;
 	}
-	mes "^0000ffWhen the strange dinosaur pattern appears, go to the introduction screen.^000000";
+	mes "^0000ff當出現奇怪的恐龍圖案時，前往介紹畫面。^000000";
 	next;
-	mes "[PLUTO_09]";
-	mes "" + strcharinfo(0) + ",";
-	mes "Hello. How can I help you?";
+	mes "[普魯托_09]";
+	mes "" + strcharinfo(0) + "，";
+	mes "哈囉。有什麼我可以幫你的嗎？";
 	next;
-	switch( select( "Note", "Old Fuel and Huge Metal Scrap to exchange for gear.", "Design drawings for the production of Enchantment" ) ) {
+	switch( select( "筆記", "用舊燃料和巨大的金屬廢料交換裝備。", "用於生產附魔的設計圖" ) ) {
 	case 1:
-		mes "^0000ffDinosaur forward screen appears and a description of the cute girl voice.^000000";
+		mes "^0000ff出現恐龍前進畫面和可愛女孩聲音的描述。^000000";
 		next;
-		mes "[PLUTO_09]";
-		mes "This is 100 years since the genesis of the new PLUTO_09.";
+		mes "[普魯托_09]";
+		mes "這是自創世紀以來 100 年的新 PLUTO_09。";
 		next;
-		mes "[PLUTO_09]";
-		mes "Bring Huge Metal Scrap and Old Fuel can help you make useful to you Equipment Oh~";
+		mes "[普魯托_09]";
+		mes "帶上巨大的金屬廢料和舊燃料可以幫你做出對你有用的裝備喔～";
 		next;
-		mes "[PLUTO_09]";
-		mes "Do you want to make enchantment equipment? You bring the tank! I can make enchant with a design for you. Oh, good luck.";
+		mes "[普魯托_09]";
+		mes "你想製作附魔裝備嗎？你帶上水箱！我可以為你製作帶有設計的附魔。喔，祝你好運。";
 		next;
-		mes "[PLUTO_09]";
-		mes "This is the Tyrannosaurus rex that appeared in the dinosaur fairy tale, very beautiful... (Continue to appear boring dinosaur story)";
+		mes "[普魯托_09]";
+		mes "這是出現在恐龍童話中的霸王龍，非常漂亮...(繼續出現無聊的恐龍故事)";
 		next;
-		mes "^0000ffIn this introduction to the screen, presumed that the psychological state of the robot maker is extremely unstable.^000000";
+		mes "^0000ff在此畫面的介紹中，推測機器人製造者的心理狀態極度不穩定。^000000";
 		close;
 	case 2:
 		setarray .@id[0],20773,15128; // Excelion_Wing, Excelion_Suit
-		mes "[PLUTO_09]";
-		mes "Production equipment needs ^0000ff10 Huge Metal Scrap and 5 Old Fuel^000000.";
+		mes "[普魯托_09]";
+		mes "生產設備需要 ^0000ff10 巨大的金屬廢料和 5 個舊燃料^000000。";
 		next;
-		switch( select( "Quit.", "Making the " + getitemname(.@id[0]), "Making the " + getitemname(.@id[1]) ) ) {
+		switch( select( "離開。", "製作 " + getitemname(.@id[0]), "製作 " + getitemname(.@id[1]) ) ) {
 		case 1:
-			mes "^0000ffDinosaurs gazed at the picture here after staying a bit closed.^000000";
+			mes "^0000ff恐龍在這裡凝視著畫面後稍微閉合。^000000";
 			close;
 		case 2:
 			.@item_id = .@id[0];
@@ -1075,16 +1075,16 @@ verus04,163,219,4	script	PLUTO_09#pa0829	4_SCR_AT_ROBOTS,{
 			break;
 		}
 		if (countitem(6961) < 10 || countitem(6962) < 5) {
-			mes "[PLUTO_09]";
-			mes "I have already talked about the production equipment needs ^0000ff10 " + getitemname(6961) + " and 5 " + getitemname(6962) + "^000000, you don't have enough.";
+			mes "[普魯托_09]";
+			mes "我已經說過生產設備需要 ^0000ff10 " + getitemname(6961) + " 和 5 " + getitemname(6962) + "^000000，你沒有足夠的材料。";
 			close;
 		}
 		specialeffect EF_SPELLBREAKER;
 		delitem 6962,5;// OldTank
 		delitem 6961,10;// LargeScrap
 		getitem .@item_id,1;
-		mes "[PLUTO_09]";
-		mes "Your equipment is ready. Let's see if it fits.";
+		mes "[普魯托_09]";
+		mes "你的裝備準備好了。讓我們看看它是否合適。";
 		close;
 	case 3:
 		while(1) {
@@ -1092,13 +1092,13 @@ verus04,163,219,4	script	PLUTO_09#pa0829	4_SCR_AT_ROBOTS,{
 				.@string$ = "^aaaaaaInsufficient fuel for making design drawings.^000000";
 			else
 				.@string$ = "Production design (^ff0000 success rate 30%^000000)";
-			mes "[PLUTO_09]";
-			mes "If you give me 5 " + getitemname(6962) + ", I can do the production of design drawings look!";
+			mes "[普魯托_09]";
+			mes "如果你給我 5 個 " + getitemname(6962) + "，我可以做設計圖的生產喔！";
 			mes "----------";
-			mes "^0000ffLittle dinosaur running around on the screen.^000000";
+			mes "^0000ff小恐龍在螢幕上四處奔跑。^000000";
 			next;
-			if (select( "Quit.", .@string$ ) == 1) {
-				mes "^0000ffIt's over after showing that the dinosaurs are stuffing themselves.^000000";
+			if (select( "離開。", .@string$ ) == 1) {
+				mes "^0000ff在顯示恐龍正在填充自己的東西後就結束了。^000000";
 				close;
 			}
 			.@fail = false;
@@ -1140,22 +1140,22 @@ verus04,163,219,4	script	PLUTO_09#pa0829	4_SCR_AT_ROBOTS,{
 					.@en_name = 7054;	// Brigan
 			}
 			if (countitem(6962) < 5)
-				mes "^0000ffThe picture shows the dinosaur silently looking at the empty bowl, it may be an error message when the material is insufficient!^000000";
+				mes "^0000ff畫面顯示恐龍默默地看著空碗，這可能是材料不足時的錯誤訊息！^000000";
 			else {
 				specialeffect EF_SPELLBREAKER;
 				delitem 6962,5;// OldTank
 				getitem .@en_name,1;
-				mes "[PLUTO_09]";
+				mes "[普魯托_09]";
 				if (.@fail)
-					mes "What a pity, the design failed.";
+					mes "真可惜，設計失敗了。";
 				else
-					mes "Great, the design was made.";
+					mes "太棒了，設計完成了。";
 			}
 			next;
 		}
 		end;
 	default:
-		mes "^0000ffA screen showing howling that a dinosaur may not understand the command.^000000";
+		mes "^0000ff螢幕顯示恐龍可能無法理解該指令的嚎叫。^000000";
 		close;
 	}
 	end;
@@ -1164,63 +1164,63 @@ verus04,163,219,4	script	PLUTO_09#pa0829	4_SCR_AT_ROBOTS,{
 verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 	disable_items;
 	if (checkweight(1201,1) == 0 || (MaxWeight - Weight) < 10000) {
-		mes "^ff0000You have carried too many items, please reduce it and come back later.^000000";
+		mes "^ff0000你攜帶的物品太多了，請減少攜帶量後再回來。^000000";
 		close;
 	}
 	switch( isbegin_quest(12368) ) {
 	case 0:
-		mes "Blurred LCD screen may be frightened or happy and intense shaking, perhaps due to lack of power and can not complete the presentation.";
+		mes "模糊的 LCD 螢幕可能因為害怕或快樂而劇烈晃動，也許是因為電力不足，無法完成演示。";
 		next;
-		if (select( "Just ignore it.", "Press every button." ) == 1) {
-			mes "It may be a pre-scrap robot that is common everywhere and doesn't require much attention.";
+		if (select( "直接忽略它。", "按下每個按鈕。" ) == 1) {
+			mes "它可能是一個到處可見的廢棄機器人，不需要太多的關注。";
 			close;
 		}
 		mes "[?????]";
-		mes "Hello! I'm MARS_01, an exploration robot. Currently, I have entered hibernation mode to save power. The related functions are set as follows.";
+		mes "你好！我是 MARS_01，一個探勘機器人。目前，我已進入休眠模式以節省電力。相關功能設定如下。";
 		next;
-		if (select( "Interrupt the machine", "Supply of fuel" ) == 1) {
-			mes "The robot re-enters hibernation mode after a faint sound.";
+		if (select( "中斷機器", "供應燃料" ) == 1) {
+			mes "機器人在發出微弱的聲音後重新進入休眠模式。";
 			close;
 		}
 		mes "[MARS_01]";
-		mes "We are super power robot, as long as the old oil 1 will let me and the companion PLUTO has more than 90% of the power.";
+		mes "我們是超強大的機器人，只要有舊燃料 1 個，就能讓我跟夥伴冥王星擁有超過 90% 的電力。";
 		next;
 		mes "[MARS_01]";
-		mes "If you find Old Fuel, please insert the fuel into the mouth of the bottom of the screen, so you can lift the hibernation mode.";
+		mes "如果您找到舊燃料，請將燃料插入螢幕底部的嘴巴，這樣您就可以解除休眠模式。";
 		setquest 12368;	// Operate the old robot
 		close;
 	case 1:
 		if (countitem(6962) < 1) {
 			mes "[MARS_01]";
-			mes "If you find 1 " + getitemname(6962) + ", please insert the fuel into the mouth of the bottom of the screen, so you can lift the hibernation mode.";
+			mes "如果您找到 1 個 " + getitemname(6962) + "，請將燃料插入螢幕底部的嘴巴，這樣您就可以解除休眠模式。";
 			close;
 		}
-		mes "Maybe we ran out of power when we went looking for fuel. should we put in the fuel?";
+		mes "也許我們在尋找燃料時耗盡了電力。我們應該放入燃料嗎？";
 		next;
-		if (select( "Quit.", "Put in the fuel" ) == 1) {
-			mes "The old robot may be running out of power and not responding at all.";
+		if (select( "離開。", "放入燃料" ) == 1) {
+			mes "老舊的機器人可能耗盡了電力，完全沒有反應。";
 			close;
 		}
-		mes "When the fuel is put in, the sound screen opens.";
-		npctalk "Whoa, whoa?! It moves!!!", "Grandpa picking up scrap iron";
+		mes "當燃料放入時，聲音螢幕打開。";
+		npctalk "哇，哇？！它動了！！！", "撿破爛的爺爺";
 		next;
 		mes "[MARS_01]";
-		mes "Start the inspection system and confirm the damage of each part.";
+		mes "啟動檢查系統並確認每個部件的損壞情況。";
 		next;
 		mes "[MARS_01]";
-		mes "Power meter 10%, dashboard normal, body skeleton 13%, perform mining operations well.";
+		mes "電量計 10%，儀表板正常，身體骨架 13%，採礦作業良好。";
 		next;
 		mes "[MARS_01]";
-		mes "Pluto_09 began to inject energy for mining auxiliary robot.";
-		npctalk "Energy response confirmed. It's working.", "PLUTO_09#pa0829";
+		mes "Pluto_09 開始為採礦輔助機器人注入能量。";
+		npctalk "能量反應已確認。它正在運作。", "PLUTO_09#pa0829";
 		next;
 		mes "[MARS_01]";
-		mes "Thank you for getting me started, I will reset the person who started me to be a manager.";
+		mes "感謝您啟動我，我將重置啟動我的人為管理者。";
 		next;
-		select("Enter a name.");
+		select("輸入名稱。");
 		mes "[MARS_01]";
 		mes "" + strcharinfo(0) + ",";
-		mes "Hello! The fuel has been fully charged.";
+		mes "你好！燃料已充滿。";
 		delitem 6962,1;// OldTank
 		completequest 12368;
 		close;
@@ -1229,23 +1229,23 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 	}
 	mes "[MARS_01]";
 	mes "" + strcharinfo(0) + ",";
-	mes "Hello! Can I help you?";
+	mes "你好！我可以幫你什麼嗎？";
 	next;
-	switch( select( "Note", "Enhanced " + getitemname(20773), "Enhanced " + getitemname(15128) ) ) {	// Excelion_Wing, Excelion_Suit
+	switch( select( "說明", "強化 " + getitemname(20773), "強化 " + getitemname(15128) ) ) {	// Excelion_Wing, Excelion_Suit
 	case 1:
-		mes "^0000ffSoon the instructions again.^000000";
+		mes "^0000ff很快再次收到指示。^000000";
 		next;
 		mes "[MARS_01]";
-		mes "While waiting for the new owner, we continue to update to the latest version.";
+		mes "在等待新主人的同時，我們會繼續更新到最新版本。";
 		next;
 		mes "[MARS_01]";
-		mes "If you bring aak Seri Wong propulsion wing, aak Seri Wong jacket equipment and strengthen the design, I will strengthen the equipment according to the design.";
+		mes "如果您攜帶 aak Seri Wong 推進翼、aak Seri Wong 外套裝備並加強設計，我將根據設計來強化裝備。";
 		next;
 		mes "[MARS_01]";
-		mes "According to the standard design drawings of the operation, the equipment will not be damaged during the process, but the number of maximum upgrade will change depending on the type of equipment.";
+		mes "根據操作的標準設計圖，在此過程中設備不會損壞，但是最大升級次數會根據設備的類型而變化。";
 		next;
 		mes "[MARS_01]";
-		mes "Welcome back again~";
+		mes "歡迎再次光臨～";
 		close;
 	case 2:
 		.@part = EQI_GARMENT;
@@ -1288,12 +1288,12 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 	}
 	mes "[MARS_01]";
 	mes "" + strcharinfo(0) + ",";
-	mes "Choose the enchant you want to use!";
+	mes "選擇您想要使用的附魔！";
 	next;
-	.@s = select("Quit.:" + .@menu$) - 2;
+	.@s = select("離開.:" + .@menu$) - 2;
 	if (.@s < 0) {
 		mes "[MARS_01]";
-		mes "So far.";
+		mes "到此為止。";
 		close;
 	}
 	.@s *= 5;
@@ -1307,7 +1307,7 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 
 	if (countitem(.@item_req) < 1) {
 		mes "[MARS_01]";
-		mes "So far.";
+		mes "到此為止。";
 		close;
 	}
 	if (.@part == EQI_ARMOR)
@@ -1316,14 +1316,14 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 		.@max_num_enchant = .@list[.@s+3];
 	else {
 		mes "[MARS_01]";
-		mes "Please contact the administrator.";
+		mes "請聯繫管理員。";
 		close;
 	}
 
 	// anti-hack
 	if (callfunc("F_IsEquipIDHack", .@part, .@equip_id) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@part, .@equip_refine)) {
 		mes "[MARS_01]";
-		mes "Did you remove your gear?";
+		mes "您是否取下了您的裝備？";
 		close;
 	}
 
@@ -1334,29 +1334,29 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 
 	if (.@max_num_enchant < 1) {
 		mes "[MARS_01]";
-		mes "The design you choose is incompatible with the equipment.";
+		mes "您選擇的設計與設備不相容。";
 		close;
 	}
 	if (.@first_slot_only > 0 && .@card[3] != 0) {
 		mes "[MARS_01]";
-		mes "This design is only for the first time to strengthen the use, but the equipment has other performance, please use other design to strengthen it!";
+		mes "此設計僅供首次加強使用，但該設備具有其他性能，請使用其他設計來加強它！";
 		close;
 	}
 	if (.@slot_sum >= .@max_num_enchant) {
 		mes "[MARS_01]";
-		mes "The maximum number of enchants is " + .@max_num_enchant + ". The item has reached the upper limit.";
+		mes "最大附魔次數為 " + .@max_num_enchant + "。該物品已達到上限。";
 		close;
 	}
 	if (.@card[1] != 0) {
 		mes "[MARS_01]";
-		mes "The number of equipment has reached the limit.";
+		mes "裝備的數量已達到上限。";
 		close;
 	}
 
 	// anti-hack
 	if (callfunc("F_IsEquipIDHack", .@part, .@equip_id) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@part, .@equip_refine)) {
 		mes "[MARS_01]";
-		mes "Please pay special attention if the equipment will be removed.";
+		mes "如果設備將被移除，請特別注意。";
 		close;
 	}
 
@@ -1366,17 +1366,17 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 		break;
 	default:
 		mes "[MARS_01]";
-		mes "The product does not have a serial number, does not meet the specifications of the product can not be strengthened.";
+		mes "該產品沒有序列號，不符合產品規格，無法強化。";
 		close;
 	}
 	mes "[MARS_01]^0000ff";
-	mes "Choose " + getequipname(.@part) + " + " + getitemname(.@item_req) + ",";
+	mes "選擇 " + getequipname(.@part) + " + " + getitemname(.@item_req) + ",";
 	mes "^000000------------------";
-	mes "Your selected design can be upgraded to the equipment limit ^0000ff" + .@max_num_enchant + " the same design, ^000000so far, enhanced ^0000ff" + .@slot_sum + " times^000000, do you want to continue?";
+	mes "您選擇的設計可以升級到設備上限 ^0000ff" + .@max_num_enchant + " 相同的設計，^000000到目前為止，已強化 ^0000ff" + .@slot_sum + " 次^000000，您要繼續嗎？";
 	next;
-	if (select( "I'll think about it...", "Go on." ) == 1) {
+	if (select( "我會考慮一下...", "繼續。" ) == 1) {
 		mes "[MARS_01]";
-		mes "Come back next time you need me~";
+		mes "下次需要我時再回來～";
 		close;
 	}
 
@@ -1398,15 +1398,15 @@ verus04,165,217,4	script	MARS_01#pa0829	4_SCR_MT_ROBOTS,{
 	}
 	else {
 		mes "[MARS_01]";
-		mes "The equipment has reached the upper limit of strengthening Hello!";
+		mes "裝備已達到強化的上限，您好！";
 		close;
 	}
 	specialeffect2 EF_REPAIRWEAPON;
 	mes "[MARS_01]";
 	if (.@enchant_count < 5)
-		mes "The first equipment has been upgraded ^990000" + .@enchant_count + " times^000000.";
+		mes "第一件裝備已經升級 ^990000" + .@enchant_count + " 次^000000。";
 	else
-		mes "For additional performance equipment^990000 ^000000 upgrade.";	// never displayed
+		mes "用於額外性能設備^990000 ^000000升級。";	// never displayed
 
 	delitem .@item_req, 1;
 	delequip .@part;

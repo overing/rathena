@@ -15,81 +15,81 @@
 
 //Entrance Flags
 yuno,48,101,6	script	Notice	722,{
-	mes "^FF0000[ Treasure Hunter Guild House ]^000000";
+	mes "^FF0000[ 尋寶獵人公會 ]^000000";
 	mes " ";
-	mes "Welcome to the Treasure Hunter's Guild House.";
-	mes "Feel free to drop in and look around";
-	mes "and feel free to become a member if you wish.";
+	mes "歡迎來到尋寶獵人公會。";
+	mes "歡迎隨時進來參觀";
+	mes "如果你想成為會員也隨時歡迎。";
 	mes " ";
-	mes "For membership applications please talk to Keegan";
+	mes "關於會員申請請與樓上走廊底的奇肯談談";
 	mes "up the stairs and down the hall.";
 	close;
 }
 //Saver Girl;
 yuno_in01,32,178,3	script	Ahlma	94,{
-	mes "[Ahlma]";
+	mes "[艾瑪]";
 	if (Event_THQS == 0) goto N_Member;
-	mes "Welcome to The Treasure Hunter Guild.";
-	mes "How may I help you?";
+	mes "歡迎來到尋寶獵人公會。";
+	mes "有什麼我可以幫你的嗎？";
 	next;
 	menu "Save",-,"Quit",N_Quit;
-	mes "[Ahlma]";
-	mes "Ok, saved. Thank you ~ See you soon~";
+	mes "[艾瑪]";
+	mes "好的，已儲存。謝謝～再見～";
 	savepoint "yuno_in01",34,176;
 	close;
 N_Quit:
-	mes "[Ahlma]";
-	mes "Well if you think you are safe, good on you.";
+	mes "[艾瑪]";
+	mes "嗯，如果你覺得安全，那就好。";
 	close;
 N_Member:
-	mes "Sorry, members only.";
+	mes "抱歉，僅限會員。";
 	close;
 }
 //Retired Smile mask girl;
 yuno_in01,33,162,3	script	Smile Helper	92,{
-	mes "[Smile Gal]";
-	mes "Oh man...I am so sick of";
-	mes "trading Mr. Smile masks for crap.";
+	mes "[微笑小姐]";
+	mes "噢，天啊...我真是受夠了";
+	mes "用微笑面具換取垃圾。";
 	mes " ";
-	mes "You ask me for one and you'll find yourself 10 pounds lighter!";
+	mes "你敢跟我要求一個，我讓你少個十磅！";
 	close;
 }
 //Usless Female Assasin;
 yuno_in01,22,162,6	script	Female Assasin	725,{
-	mes "[Sharlet]";
+	mes "[夏蕾特]";
 	if (Event_THQS > 0) goto N_Member;
-	mes "Umm sorry I'm not gonna waste my time talking to you if you aren't even a member!";
+	mes "嗯...抱歉，如果你連會員都不是，我才懶得浪費時間跟你說話！";
 	close;
 N_Member:
 	set @TEMP,rand(1,2);
 	if (@TEMP == 1) goto N_Chat1;
 	if (@TEMP == 2) goto N_Chat2;
-	mes "How are you reading this???";
-	mes "Well unless you are reading the code :)";
+	mes "你怎麼讀到這個的???";
+	mes "除非你正在讀程式碼 :)";
 	close;
 N_Chat1:
-	mes "Ahh welcome fellow Treasure Hunter "+strcharinfo(0)+".";
-	mes "Did you hear about that brave man that went into Glast Heim alone?! He must be crazy.";
+	mes "歡迎你，尋寶獵人 "+strcharinfo(0)+"。";
+	mes "你有沒有聽說那個獨自闖入古城格拉斯頓海姆的勇敢的人？！他一定是瘋了。";
 	close;
 N_Chat2:
-	mes ""+strcharinfo(0)+" don't you have something better you could be doing? Like a quest.";
+	mes ""+strcharinfo(0)+" 你沒有什麼更好的事情可以做嗎？例如任務。";
 	close;
 }
 //another useless member
 yuno_in01,25,162,6	script	Female Wizard	123,{
-	mes "[Sasha]";
+	mes "[莎夏]";
 	if (Event_THQS > 0) goto N_Member;
-	mes "Umm sorry I'm not gonna waste my time talking to you if you aren't even a member!";
+	mes "嗯...抱歉，如果你連會員都不是，我才懶得浪費時間跟你說話！";
 	close;
 N_Member:
 	set @TEMP,rand(2);
 	if (@TEMP == 1) goto N_Chat;
-	mes "Ahh welcome fellow Treasure Hunter "+strcharinfo(0)+".";
-	mes "Did you hear about that goat man running around in the trees?";
+	mes "歡迎你，尋寶獵人 "+strcharinfo(0)+"。";
+	mes "你有沒有聽說那個在樹林裡到處跑的山羊人？";
 	mes " ";
-	mes "Apparently his name is Baphomet and he has been running around the Forest Maze out side of Prontera for quite some time now.";
+	mes "顯然他的名字叫巴風特，而且他在普隆德拉外的森林迷宮裡跑來跑去已經有一段時間了。";
 	close;
 N_Chat:
-	mes ""+strcharinfo(0)+" don't you have something better you could be doing? Like a quest.";
+	mes ""+strcharinfo(0)+" 你沒有什麼更好的事情可以做嗎？例如任務。";
 	close;
 }

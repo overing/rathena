@@ -34,443 +34,444 @@
 alberta_in,53,43,6	script	Merchant#mer	86,{
 	if (Upper == 1) {
 		if (Class == Job_Novice_High && (ADVJOB == Job_Whitesmith || ADVJOB == Job_Creator)) {
-			mes "[Chief Mahnsoo]";
-			mes "Long time no see!";
-			mes "Hey, you didn't quit";
-			mes "your business, did you?";
-			mes "What happened?";
+			mes "[曼蘇族長]";
+			mes "好久不見了！";
+			mes "嘿，你沒放棄";
+			mes "你的事業，對吧？";
+			mes "發生什麼事了？";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Whoa...";
-			mes "You've actually been to Valhalla?! Wow, you've come a long way...";
+			mes "[曼蘇族長]";
+			mes "哇...";
+			mes "你真的去過瓦爾哈拉了？！哇，你進步很多...";
 			next;
 			if (!callfunc("F_CanChangeJob")) {
-				mes "[Chief Mahnsoo]";
-				mes "Hmmm...";
-				mes "It seems that you're not ready to become a Merchant again. Go finish learning the Basic Novice Skills first.";
+				mes "[曼蘇族長]";
+				mes "嗯...";
+				mes "看來你還沒準備好再次成為商人。先去完成基本初心者技能的學習。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "Don't worry, we'll always have a Merchant position open for you. Just come back when you're ready, okay?";
+				mes "[曼蘇族長]";
+				mes "別擔心，我們永遠都會為你保留一個商人的位置。準備好的時候再來吧，好嗎？";
 				close;
 			}
-			mes "[Chief Mahnsoo]";
-			mes "I guess it's destiny that we meet like this once more. Alright. Once again, let me change you into a Merchant!";
+			mes "[曼蘇族長]";
+			mes "我想像這樣再次相遇是命運。好吧。讓我再次把你變成商人！";
 			next;
 			skill "NV_TRICKDEAD",0,SKILL_PERM;
 			jobchange Job_Merchant_High;
 			skill "MC_CARTREVOLUTION",1,SKILL_PERM;
 			skill "MC_CHANGECART",1,SKILL_PERM;
 			skill "MC_LOUD",1,SKILL_PERM;
-			mes "[Chief Mahnsoo]";
-			mes "Ah~ How nostalgic. Just like old times! Alright, do your best!";
+			mes "[曼蘇族長]";
+			mes "啊~ 多麼令人懷念。就像以前一樣！好吧，盡你所能吧！";
 			close;
 		}
 		else {
-			mes "[Chief Mahnsoo]";
-			mes "^333333*Sigh*^000000";
-			mes "I'm so bored...";
-			mes "When will I hear from my lovely Blossom?";
+			mes "[曼蘇族長]";
+			mes "^333333*嘆氣*^000000";
+			mes "我好無聊...";
+			mes "我什麼時候才能收到我可愛的布拉瑟姆的消息？";
 			close;
 		}
 	}
 	if (BaseJob == Job_Merchant) {
-		mes "[Chief Mahnsoo]";
-		mes "Hello there!";
-		mes "How do you like";
-		mes "being a Merchant?";
+		mes "[曼蘇族長]";
+		mes "你好啊！";
+		mes "你覺得";
+		mes "當商人";
+		mes "怎麼樣？";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Having a way with";
-		mes "money certainly";
-		mes "has its perks,";
-		mes "does it not?";
+		mes "[曼蘇族長]";
+		mes "擅長";
+		mes "與金錢打交道";
+		mes "當然";
+		mes "有好處，";
+		mes "不是嗎？";
 		close;
 	}
 	else if (BaseJob != Job_Merchant && BaseJob != Job_Novice) {
-		mes "[Chief Mahnsoo]";
-		mes "We Merchants hate people who are two faced. It's bad for business.";
+		mes "[曼蘇族長]";
+		mes "我們商人討厭兩面三刀的人。這對生意不好。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "People who always try to take advantage of other people by selling things at a ridiculous price just so they can make money that they'll waste are the worst.";
+		mes "[曼蘇族長]";
+		mes "總是想以荒謬的價格出售商品來佔別人便宜，只為了賺取他們會浪費的金錢的人是最糟糕的。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Well, in any case, we only accept Novices for job changes to the Merchant class. But I appreciate your interest in what we do.";
+		mes "[曼蘇族長]";
+		mes "嗯，無論如何，我們只接受初心者轉職為商人。但我很感謝你對我們所做的事情的興趣。";
 		close;
 	}
 	else if (job_merchant_q == 9) {
-		mes "[Chief Mahnsoo]";
-		mes "Hello there,";
-		mes ""+ strcharinfo(0) +".";
+		mes "[曼蘇族長]";
+		mes "你好，";
+		mes ""+ strcharinfo(0) +"。";
 		set job_merchant_q,0;
 		set job_merchant_q2,0;
 		set quest_alb_01,0;
-		mes "Unfortunately, you failed to earn your Merchant License this time.";
+		mes "很遺憾，你這次未能獲得你的商人執照。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "I'll erase your records, so come back anytime when you want to reapply.";
+		mes "[曼蘇族長]";
+		mes "我會清除你的記錄，所以想重新申請的時候隨時回來。";
 		close;
 	}
 	else if (job_merchant_q == 8 || job_merchant_q == 7) {
-		mes "[Chief Mahnsoo]";
-		mes "Hello there,";
-		mes ""+ strcharinfo(0) +".";
-		mes "I'm pleased to tell you";
-		mes "that I have good news!";
+		mes "[曼蘇族長]";
+		mes "你好，";
+		mes ""+ strcharinfo(0) +"。";
+		mes "我很高興地告訴你";
+		mes "我帶來了好消息！";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "The Merchant Guild accepted your application. You've proven that you are fully qualified to become a Merchant.";
+		mes "[曼蘇族長]";
+		mes "商人公會接受了你的申請。你已經證明你完全有資格成為一名商人。";
 		if (job_merchant_q == 7) {
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "The only thing to take care of is your Membership Fee.";
-			mes "Are you ready?";
+			mes "[曼蘇族長]";
+			mes "唯一需要處理的是你的會員費。";
+			mes "你準備好了嗎？";
 			next;
-			switch(select("Pay the rest of the 500 Zeny:Quit")) {
+			switch(select("支付剩餘的 500 Zeny:離開")) {
 			case 1:
-				mes "[Chief Mahnsoo]";
+				mes "[曼蘇族長]";
 				if (Zeny < 500) {
-					mes "Hmmm...";
-					mes "I suppose you currently don't have enough zeny to pay the rest of your Membership fee right now.";
+					mes "嗯...";
+					mes "我想你目前沒有足夠的Zeny來支付剩餘的會員費。";
 					next;
-					mes "[Chief Mahnsoo]";
-					mes "Please return when you have earned the 500 zeny that you need to become a Merchant.";
+					mes "[曼蘇族長]";
+					mes "請在你賺到成為商人所需的500 Zeny後再回來。";
 					close;
 				}
 				set Zeny, Zeny-500;
-				mes "Ah yes...!";
-				mes "Now your";
-				mes "membership";
-				mes "is paid in full.";
+				mes "啊，是的...！";
+				mes "現在你的";
+				mes "會員資格";
+				mes "已全部付清。";
 				break;
 			case 2:
-				mes "[Chief Mahnsoo]";
-				mes "I suppose you need some time to gather some zeny to pay your membership fee. Please come";
-				mes "back as soon as you're ready.";
+				mes "[曼蘇族長]";
+				mes "我想你需要一些時間來積攢一些 Zeny 來支付你的會員費。請";
+				mes "準備好後盡快回來。";
 				close;
 			}
 		}
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Congratulations!";
+		mes "[曼蘇族長]";
+		mes "恭喜你！";
 		callfunc "Job_Change",Job_Merchant;
 		callfunc "F_ClearJobVar";
 		for ( .@quest_id = 1009; .@quest_id <= 1012; .@quest_id++ ) {
 			if (isbegin_quest(.@quest_id) == 1)
 				completequest .@quest_id;
 		}
-		mes "I'm very pleased that you are joining the Merchant Guild and hope that you will play an active part in Rune-Midgarts' economy.";
+		mes "我非常高興你加入商人公會，並希望你能在盧恩-米德加爾特的經濟中發揮積極的作用。";
 		next;
 		if (quest_alb_01 == 1) {
-			mes "[Chief Mahnsoo]";
-			mes "*Ahem* Aaaaand let me give you a little bit of money for delivering that message to Blossom for me.";
-			mes "I hope you'll help me again next time~";
+			mes "[曼蘇族長]";
+			mes "*清嗓子* 還有，讓我給你一點錢，因為你替我給布拉瑟姆送信了。";
+			mes "我希望下次你還能幫我~";
 			set Zeny, Zeny+200;
 			set quest_alb_01,2;
 		}
 		else {
-			mes "[Chief Mahnsoo]";
-			mes "The message you were supposed to deliver as per my request? You've forgotten about that? Oh well. Good work!";
+			mes "[曼蘇族長]";
+			mes "你應該按照我的要求傳達的信息？你忘記了嗎？喔，好吧。做得好！";
 		}
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Our goal is to control 20 % of the world's income! We're going to need young, eager people like you!";
+		mes "[曼蘇族長]";
+		mes "我們的目標是控制世界收入的 20%！我們需要像你這樣年輕、熱切的人！";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "But overall, we'll also be happy just to make loads of money.";
-		mes "But we all know that~";
+		mes "[曼蘇族長]";
+		mes "但總體而言，我們也很樂意賺很多錢。";
+		mes "但我們都知道~";
 		close;
 	}
 	else if (job_merchant_q2 && job_merchant_q > 0 && job_merchant_q < 7) {
-		mes "[Chief Mahnsoo]";
+		mes "[曼蘇族長]";
 		if (job_merchant_q2 == 1 || job_merchant_q2 == 2) {
-			mes "First, get the delivery package from the storehouse, and then take it to the former Swordman's Association in Prontera.";
+			mes "首先，從倉庫裡拿到送貨包裹，然後把它送到普隆德拉的前劍士協會。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "When you get there, give the package to the Kafra Employee stationed near there. Her name is Blossom. Did you get all that?";
+			mes "[曼蘇族長]";
+			mes "到達那裡後，將包裹交給駐紮在那附近的卡普拉員工。她的名字是布拉瑟姆。你都記住了嗎？";
 			next;
 			if (job_merchant_q2 == 1) {
-				mes "[Chief Mahnsoo]";
-				mes "Remember, the Serial Number of the package is ^3355FF2485741^000000.";
+				mes "[曼蘇族長]";
+				mes "請記住，包裹的序列號是 ^3355FF2485741^000000。";
 			}
 			else {
-				mes "[Chief Mahnsoo]";
-				mes "Remember, the Serial Number of the package is ^3355FF2328137^000000.";
+				mes "[曼蘇族長]";
+				mes "請記住，包裹的序列號是 ^3355FF2328137^000000。";
 			}
 		}
 		else if (job_merchant_q2 == 3 || job_merchant_q2 == 4) {
-			mes "First, get the delivery package from the storehouse, and then take it to the Mage Guild in Geffen.";
+			mes "首先，從倉庫裡拿到送貨包裹，然後把它送到吉芬的魔法師公會。";
 			next;
 			if (job_merchant_q2 == 3) {
-				mes "[Chief Mahnsoo]";
-				mes "When you get there, give the package to the Mage Guildsman in charge. Remember, the packages Serial Number is ^3355FF2989396^000000.";
+				mes "[曼蘇族長]";
+				mes "到達那裡後，將包裹交給負責的魔法師公會人員。請記住，包裹的序列號是 ^3355FF2989396^000000。";
 			}
 			else {
-				mes "[Chief Mahnsoo]";
-				mes "When you get there, give the package to the Mage Guildsman in charge. Remember, the packages Serial Number is ^3355FF2191737^000000.";
+				mes "[曼蘇族長]";
+				mes "到達那裡後，將包裹交給負責的魔法師公會人員。請記住，包裹的序列號是 ^3355FF2191737^000000。";
 			}
 		}
 		else if (job_merchant_q2 == 5 || job_merchant_q2 == 6) {
-			mes "First, get the delivery package from the storehouse, and then take it to Morocc.";
+			mes "首先，從倉庫裡拿到送貨包裹，然後把它送到夢羅克。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "You'll have to find Java Dullihan, the Dyemaker, so that you can deliver the product he ordered.";
+			mes "[曼蘇族長]";
+			mes "你必須找到染色匠爪哇·杜利漢，這樣你才能交付他訂購的產品。";
 			next;
 			if (job_merchant_q2 == 5) {
-				mes "[Chief Mahnsoo]";
-				mes "But he's a little forgetful, so give it to one of his students. Remember, the package's Serial Number is ^3355FF3012685^000000.";
+				mes "[曼蘇族長]";
+				mes "但他有點健忘，所以把它交給他的學生之一。請記住，包裹的序列號是 ^3355FF3012685^000000。";
 			}
 			else {
-				mes "[Chief Mahnsoo]";
-				mes "But he's a little forgetful, give it to one of his students. Remember, the package's Serial Number is ^3355FF3487372^000000.";
+				mes "[曼蘇族長]";
+				mes "但他有點健忘，把它交給他的學生之一。請記住，包裹的序列號是 ^3355FF3487372^000000。";
 			}
 		}
 		else if (job_merchant_q2 == 7 || job_merchant_q2 == 8) {
-			mes "First, get the package from the storehouse, and then give it to the Kafra Employee stationed on Byalan Island. Her name is Blossom.";
+			mes "首先，從倉庫裡拿到包裹，然後把它交給駐紮在斐揚島上的卡普拉員工。她的名字是布拉瑟姆。";
 			next;
 			if (job_merchant_q2 == 7) {
-				mes "[Chief Mahnsoo]";
-				mes "Remember, the package's Serial Number is ^3355FF3318702^000000.";
+				mes "[馬恩蘇族長]";
+				mes "記住，包裹的序號是 ^3355FF3318702^000000。";
 			}
 			else {
-				mes "[Chief Mahnsoo]";
-				mes "Remember, the package's Serial Number is ^3355FF3543625^000000.";
+				mes "[馬恩蘇族長]";
+				mes "記住，包裹的序號是 ^3355FF3543625^000000。";
 			}
 		}
 		if (job_merchant_q2 == 7 || job_merchant_q2 == 8) {
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Aaaannnnd...";
-			mes "Don't forget to deliver that message for me~";
+			mes "[馬恩蘇族長]";
+			mes "嗯～～～～...";
+			mes "別忘了幫我帶個口信喔～";
 		}
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Don't forget your destination and the package's Serial Number.";
-		mes "You'll need to tell them";
-		mes "to the storekeeper.";
+		mes "[馬恩蘇族長]";
+		mes "別忘了你的目的地和包裹的序號。";
+		mes "你需要告訴他們";
+		mes "給倉庫管理員。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "The storehouse is in the room";
-		mes "to my right. There, you can talk";
-		mes "to the storekeeper, and he'll";
-		mes "help you out.";
+		mes "[馬恩蘇族長]";
+		mes "倉庫就在我右邊的房間";
+		mes "在那裡，你可以跟";
+		mes "倉庫管理員說話，他會";
+		mes "幫助你的。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "After you make the delivery, return to the storehouse and give the receipt to the storekeeper.";
-		mes "Then, come back";
-		mes "and see me.";
+		mes "[馬恩蘇族長]";
+		mes "送貨之後，回到倉庫把收據交給倉庫管理員。";
+		mes "然後，回來";
+		mes "找我。";
 		next;
-		mes "[Chief Mahnsoo]";
-		mes "Is that clear?";
-		mes "Alright, that's";
-		mes "the spirit.";
-		mes "Take care!";
+		mes "[馬恩蘇族長]";
+		mes "清楚了嗎？";
+		mes "好，這才是";
+		mes "精神。";
+		mes "小心！";
 		close;
 	}
 	else {
-		mes "[Chief Mahnsoo]";
-		mes "So, what brings you to";
-		mes "the Merchant Association?";
-		mes "Is there anything";
-		mes "I can help you with?";
+		mes "[馬恩蘇族長]";
+		mes "所以，是什麼風把你吹到";
+		mes "商人公會來了？";
+		mes "有什麼事";
+		mes "我可以幫忙的嗎？";
 		next;
-		switch(select("I want to be a Merchant.:Tell me about Merchants.:Tell me the requirements.:Nope.")) {
+		switch(select("我想成為商人。:告訴我關於商人的事。:告訴我所需條件。:不用了。")) {
 		case 1:
-			mes "[Chief Mahnsoo]";
-			mes "Do you want to";
-			mes "be a Merchant?";
-			mes "Well...";
+			mes "[馬恩蘇族長]";
+			mes "你想";
+			mes "成為商人嗎？";
+			mes "嗯...";
 			next;
 			if (!callfunc("F_CanChangeJob")) {
-				mes "[Chief Mahnsoo]";
-				mes "First, you have to be a Novice with Job Level 10. Once you do that, make sure you learn all of the Basic Skills.";
+				mes "[馬恩蘇族長]";
+				mes "首先，你必須是 Job Level 10 的初心者。 一旦你做到了，確保你學會了所有的基本技能。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "We're not just";
-				mes "simple money makers!";
-				mes "We pride ourselves on having standards and only accepting qualified applicants!";
+				mes "[馬恩蘇族長]";
+				mes "我們不只是";
+				mes "單純的賺錢機器！";
+				mes "我們以擁有標準並且只接受合格的申請人而自豪！";
 				close;
 			}
-			mes "[Chief Mahnsoo]";
-			mes "Alright, you'll need to fill out this application and prepare 1,000 Zeny for your Membership Fee.";
+			mes "[馬恩蘇族長]";
+			mes "好的，你需要填寫這份申請表，並準備 1,000 Zeny 作為你的會員費。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Oh...!";
-			mes "If you don't have all the money,";
-			mes "I can just take 500 Zeny now.";
-			mes "You can pay the rest after you";
-			mes "pass the test and earn your";
-			mes "Merchant Guild License.";
+			mes "[馬恩蘇族長]";
+			mes "喔...！";
+			mes "如果你沒有足夠的錢，";
+			mes "我可以現在只收你 500 Zeny。";
+			mes "你可以在通過測試並獲得你的";
+			mes "商人公會執照後支付剩餘的費用。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "So what do you think?";
-			mes "Are you ready to join now?";
+			mes "[馬恩蘇族長]";
+			mes "你覺得怎麼樣？";
+			mes "你準備好現在加入了嗎？";
 			next;
-			if (select("Yes, I will.:Ummm, maybe later...") ==1 ) {
-				mes "[Chief Mahnsoo]";
-				mes "Let me check if you";
-				mes "filled out everything";
-				mes "on your application form...";
+			if (select("是的，我願意。:嗯...，也許晚點再說...") ==1 ) {
+				mes "[馬恩蘇族長]";
+				mes "讓我檢查一下你是否";
+				mes "填寫了所有";
+				mes "申請表上的內容...";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "Hmm... ";
+				mes "[馬恩蘇族長]";
+				mes "嗯... ";
 				mes "" + strcharinfo(0) + "...";
-				mes "That's a nice name.";
+				mes "真是個好名字。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "This application will";
-				mes "only be registered once";
-				mes "the Membership Fee is paid.";
-				mes "How do you wish to";
-				mes "handle the fee?";
+				mes "[馬恩蘇族長]";
+				mes "此申請僅在";
+				mes "支付會員費後";
+				mes "才會被登記。";
+				mes "你希望如何";
+				mes "處理費用？";
 				next;
-				switch(select("Pay all 1,000 Zeny now!:Two payments of 500 Zeny.:Quit")) {
+				switch(select("現在支付全部 1,000 Zeny！:分兩次支付，每次 500 Zeny。:離開")) {
 				case 1:
-					mes "[Chief Mahnsoo]";
+					mes "[馬恩蘇族長]";
 					if (Zeny >= 1000) {
 						set job_merchant_q,2;
 						set Zeny, Zeny-1000;
-						mes "Alright~";
-						mes "That's 1,000 zeny.";
-						mes "Excellent, excellent.";
+						mes "好的～";
+						mes "那是 1,000 zeny。";
+						mes "很好，很好。";
 					}
 					else {
-						mes "It seems don't have enough zeny to pay all of the fee right now. Why don't you just pay 500 zeny now? Think about it.";
+						mes "看來你現在沒有足夠的zeny來支付全部費用。 為什麼不現在支付 500 zeny？ 考慮一下。";
 						close;
 					}
 					break;
 				case 2:
-					mes "[Chief Mahnsoo]";
+					mes "[馬恩蘇族長]";
 					if (Zeny >= 500) {
 						set job_merchant_q,1;
 						set Zeny, Zeny-500;
-						mes "Let's see...";
-						mes "That's 500 Zeny. Although I don't think splitting payment is a good idea for any Merchant, it's alright since you're still learning.";
+						mes "讓我想想...";
+						mes "這是 500 Zeny。 雖然我認為對於任何商人來說，分期付款都不是一個好主意，但你還在學習中，所以沒關係。";
 					}
 					else {
-						mes "Hmm...";
-						mes "It seems you don't have the funds to pay half of the membership fee. Please come back once you collect the zeny that you need.";
+						mes "嗯...";
+						mes "看來你沒有資金支付一半的會員費。 請在收集到你需要的 zeny 後再來。";
 						close;
 					}
 					break;
 				case 3:
-					mes "[Chief Mahnsoo]";
-					mes "Feel free to return anytime";
-					mes "when you are ready, alright?";
+					mes "[馬恩蘇族長]";
+					mes "當你準備好的時候，隨時";
+					mes "回來吧，好嗎？";
 					close;
 				}
 			}
 			else {
-				mes "[Chief Mahnsoo]";
-				mes "You don't have enough zeny now? That's no problem. Take your time and come back when you're";
-				mes "ready, okay?";
+				mes "[馬恩蘇族長]";
+				mes "你現在沒有足夠的 zeny 嗎？ 沒問題。慢慢來，等你";
+				mes "準備好了再回來，好嗎？";
 				close;
 			}
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Alright, you're now on the list of applicants. Ah, before I get started let me say just one thing.";
+			mes "[馬恩蘇族長]";
+			mes "好的，你現在在申請人名單上了。 啊，在我開始之前，讓我想說一件事。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "There are some dumb and greedy people out there who do not know what it means to be a Merchant.";
-			mes "I hope you won't turn out to be like them, will you?";
+			mes "[馬恩蘇族長]";
+			mes "外面有一些愚蠢和貪婪的人，他們不知道成為商人意味著什麼。";
+			mes "我希望你不會變成他們那樣，對吧？";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Now, let me";
-			mes "explain what you";
-			mes "need to do for the";
-			mes "Merchant License Test.";
+			mes "[馬恩蘇族長]";
+			mes "現在，讓我";
+			mes "解釋一下你";
+			mes "需要做什麼才能通過";
+			mes "商人執照測試。";
 			next;
-			mes "[Chief Mahnsoo]";
+			mes "[馬恩蘇族長]";
 			switch(rand(1,4)) {
 			case 1:
-				mes "First, get the delivery package from the storehouse, then go to the former Swordman's Association in Prontera.";
+				mes "首先，從倉庫裡拿到交付的包裹，然後去普隆德拉的前劍士協會。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "When you get there, visit the Kafra Employee stationed there. Her name is Blossom. Did you get";
-				mes "all of that?";
+				mes "[馬恩蘇族長]";
+				mes "當你到達那裡時，去拜訪駐紮在那裡的卡普拉員工。她的名字是 Blossom（布拉瑟姆）。你都";
+				mes "記住了嗎？";
 				callsub S_GiveSerial,2485741,1,2328137,2,1009;
 				break;
 			case 2:
-				mes "First, get the delivery package from the storehouse, and then go to the Mage Guild in Geffen. When you get there, visit the Mage Guildsman in charge.";
+				mes "首先，從倉庫裡拿到交付的包裹，然後去吉芬的法師公會。當你到達那裡時，去拜訪負責的法師公會人員。";
 				callsub S_GiveSerial,2989396,3,2191737,4,1010;
 				break;
 			case 3:
-				mes "First, get the delivery package from the storehouse, and then go to Morocc. There you must find Java Dullihan, the dyemaker.";
+				mes "首先，從倉庫裡拿到交付的包裹，然後去夢羅克。在那裡你必須找到 Java Dullihan，染料匠。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "He's a bit forgetful, so you should probably give the package to one of his students.";
+				mes "[馬恩蘇族長]";
+				mes "他有點健忘，所以你最好把包裹給他的一個學生。";
 				callsub S_GiveSerial,3012685,5,3487372,6,1011;
 				break;
 			case 4:
-				mes "First, get the delivery package from the storehouse, and then give it to the Kafra Employee stationed on Byalan Island.";
+				mes "首先，從倉庫裡拿到交付的包裹，然後把它交給駐紮在斐揚島的卡普拉員工。";
 				callsub S_GiveSerial,3318702,7,3543625,8,1012;
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "Ummmm...";
-				mes "And I also have";
-				mes "a bit of a personal";
-				mes "request for you.";
+				mes "[馬恩蘇族長]";
+				mes "嗯...";
+				mes "而且我還有";
+				mes "一點私人的";
+				mes "請求給你。";
 				next;
-				mes "[Chief Mahnsoo]";
-				mes "Would you please give her this message when you deliver the package? Please~";
+				mes "[馬恩蘇族長]";
+				mes "當你送包裹的時候，請幫我把這個訊息也帶給她好嗎？拜託～";
 				getitem 1072,1; //Delivery_Message
 				break;
 			}
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Don't forget your destination and the package's Serial Number. You will need to tell those to the storekeeper in the storehouse to the right of me.";
+			mes "[馬恩蘇族長]";
+			mes "別忘了你的目的地和包裹的序號。你需要告訴在我右邊的倉庫管理員。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "After the delivery, give the receipt to the storekeeper, and then come back and see me.";
+			mes "[馬恩蘇族長]";
+			mes "送貨之後，把收據交給倉庫管理員，然後回來找我。";
 			next;
-			mes "[Chief Mahnsoo]";
-			mes "Is that clear?";
-			mes "Alright, that's";
-			mes "the spirit.";
-			mes "Take care!";
+			mes "[馬恩蘇族長]";
+			mes "清楚了嗎？";
+			mes "好，這才是";
+			mes "精神。";
+			mes "小心！";
 			close;
 		case 2:
-			mes "[Chief Mahnsoo]";
-			mes "Merchant?";
-			mes "Well, we basically sell goods to make money. That is the way";
-			mes "of the Merchant.";
+			mes "[馬恩蘇族長]";
+			mes "商人？";
+			mes "嗯，我們基本上是販賣商品來賺錢。這就是";
+			mes "商人的方式。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "I guess we may not be the best at fighting, and we don't have many special attacks. We've got no healing skills...";
+			mes "我想我們可能不是最擅長戰鬥的，而且我們沒有很多特殊攻擊。我們沒有任何治療技能……";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "But we can buy goods at lower prices from NPC shops and sell them at a higher price to other people~";
+			mes "但是我們可以以較低的價格從 NPC 商店購買商品，並以較高的價格賣給其他人～";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Our ultimate attack skill is 'Mammonite.' The strength of Mammonite comes from the anger";
-			mes "when we're forced to throw away perfectly good zeny.";
+			mes "我們的終極攻擊技能是 '金錢攻擊'。金錢攻擊的力量來自憤怒";
+			mes "當我們被迫扔掉完美的好錢幣時。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Throwing away zeny like that";
-			mes "causes a deadly rage to well up in the heart of any Merchant!";
-			mes "Just thinking about it";
-			mes "makes my blood boil!";
+			mes "像那樣扔掉錢幣";
+			mes "會導致致命的憤怒在任何商人的心中湧起！";
+			mes "光是想想";
+			mes "就讓我熱血沸騰！";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Anyway, we can use most";
-			mes "weapons except Bows, Rods, and Two-Handed Swords. But we can always sell those.";
+			mes "總之，除了弓、杖和雙手劍之外，我們可以使用大多數";
+			mes "武器。但我們總是能賣掉那些。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Yes...";
-			mes "We Merchants generally";
-			mes "have money on our minds...";
+			mes "是的……";
+			mes "我們商人通常";
+			mes "腦子裡只有錢……";
 			close;
 		case 3:
 			mes "[Chief Mahnsoo]";
-			mes "There are three conditions that must be fulfilled before you can become a Merchant.";
+			mes "在你能成為商人之前，必須滿足三個條件。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "First, You have to be a Novice with Job Level 10, and have learned all of the Basic Skills.";
+			mes "首先，你必須是職業等級 10 的初心者，並且已經學會了所有的基本技能。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Second, You have to pay a 1,000 Zeny Membership Fee. I believe any Merchant candidate should be able to earn 1,000 Zeny with ease.";
+			mes "其次，你必須支付 1,000 Zeny 的會員費。我相信任何商人候選人都應該能夠輕鬆賺到 1,000 Zeny。";
 			next;
 			mes "[Chief Mahnsoo]";
-			mes "Third, there is a License Test to test your physical strength and sense of direction. You will deliver a package to a specific person in a specific location.";
+			mes "第三，有一個執照測試來測試你的體力和方向感。你將把一個包裹送到特定地點的特定人士手中。";
 			close;
 		case 4:
 			close;
@@ -480,9 +481,9 @@ alberta_in,53,43,6	script	Merchant#mer	86,{
 S_GiveSerial:
 	next;
 	mes "[Chief Mahnsoo]";
-	mes "Remember...";
-	mes "The package's";
-	mes "Serial Number is";
+	mes "記住……";
+	mes "包裹的";
+	mes "序號是";
 	if (rand(2)) {
 		mes "^3355FF"+getarg(0)+"^000000.";
 		set job_merchant_q2,getarg(1);
@@ -498,39 +499,39 @@ S_GiveSerial:
 alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 	if (BaseJob == Job_Merchant) {
 		mes "[Union Staff Kay]";
-		mes "Heya pal.";
-		mes "How ya doin'?";
+		mes "嘿，夥計。";
+		mes "你好嗎？";
 		close;
 	}
 	else if (BaseJob != Job_Merchant && BaseJob != Job_Novice) {
 		mes "[Union Staff Kay]";
-		mes "Hey you. We don't have any open positions for part time work. If you wanna earn some zeny, you'll hafta look elsewhere.";
+		mes "嘿，你。我們沒有任何兼職工作的職位空缺。如果你想賺一些錢幣，你必須去別處找。";
 		close;
 	}
 	else if (job_merchant_q == 9) {
 		mes "[Union Staff Kay]";
-		mes "Hey you. Yeah, you.";
-		mes "If you wanna restart the test, go visit Mahnsoo in the other room. Then we can talk.";
+		mes "嘿，你。是的，你。";
+		mes "如果你想重新開始測試，去另一個房間找馬恩蘇。然後我們可以談談。";
 		close;
 	}
 	else if (job_merchant_q == 8 || job_merchant_q == 7) {
 		mes "[Union Staff Kay]";
-		mes "Alright! Everything looks perfect! I'll report your success to the guildmaster. Now go talk to Chief Mahnsoo, yeah?";
+		mes "好的！一切看起來都很完美！我會向公會長報告你的成功。現在去和馬恩蘇酋長談談，好嗎？";
 		close;
 	}
 	else if (job_merchant_q == 6 || job_merchant_q == 5) {
 		mes " [Union Staff Kay] ";
-		mes "Oh, yeah? Okay, lemme check. Your name is " + strcharinfo(0) + "? Alright, your destination was...";
+		mes "哦，是嗎？好的，讓我檢查一下。你的名字是 " + strcharinfo(0) + " 嗎？好的，你的目的地是……";
 		next;
 		mes "[Union Staff Kay]";
 		if (job_merchant_q2 == 1 || job_merchant_q2 == 2)
-			mes "Wow! You met the Kafra babe in Prontera?! Lucky you~ ...Receipt?";
+			mes "哇！你在普隆德拉遇到了卡普拉美女？！你真幸運～…收據呢？";
 		else if (job_merchant_q2 == 3 || job_merchant_q2 == 4)
-			mes "Geffen Magic Academy. Okay, receipt?";
+			mes "吉芬魔法學院。好的，收據呢？";
 		else if (job_merchant_q2 == 5 || job_merchant_q2 == 6)
-			mes "The dyemaker in Morocc. Not bad. Receipt?";
+			mes "夢羅克的染料匠。不錯。收據呢？";
 		else if (job_merchant_q2 == 7 || job_merchant_q2 == 8)
-			mes "Oh hohohoho~! The Kafra Babe on Byalan Island?! Awesome! Anyway, did you bring the receipt?";
+			mes "哦呵呵呵呵～！在斐揚島的卡普拉美女？！太棒了！總之，你帶收據了嗎？";
 
 		if (job_merchant_q2 == 1 && countitem(1073) != 0)
 			delitem 1073,1; //Merchant_Voucher_1
@@ -552,17 +553,17 @@ alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 			next;
 			set job_merchant_q,9;
 			mes " [Union Staff Kay] ";
-			mes "Wait a sec.";
-			mes "Where's the receipt?";
-			mes "What happened?";
+			mes "等一下。";
+			mes "收據在哪裡？";
+			mes "發生什麼事了？";
 			next;
 			mes " [Union Staff Kay] ";
-			mes "If you don't have the receipt, you fail the test! You better talk to Mahnsoo if you wanna retake it, alright? Pay attention next time!";
+			mes "如果你沒有收據，你就沒有通過測試！如果你想重考，最好和馬恩蘇談談，好嗎？下次注意！";
 			close;
 		}
 		next;
 		mes " [Union Staff Kay] ";
-		mes "...Great! Everything's perfect! I'll report your success to the Guildmaster. You should talk to Chief Mahnsoo now, alright?";
+		mes "...太好了！一切都很完美！我會向公會長報告你的成功。你現在應該和馬恩蘇酋長談談，好嗎？";
 		close2;
 		if (job_merchant_q == 6)
 			set job_merchant_q,8;
@@ -572,58 +573,59 @@ alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 	}
 	else if (job_merchant_q == 4 || job_merchant_q == 3 && countitem(1081) == 0 && countitem(1082) == 0 && countitem(1091) == 0) {
 		mes " [Union Staff Kay] ";
-		mes "Huh?";
-		mes "You're back?";
-		mes "So how did";
-		mes "the delivery go?";
+		mes "嗯？";
+		mes "你回來了？";
+		mes "那麼";
+		mes "送貨情況";
+		mes "如何？";
 		next;
-		if (select("*Sob* I lost the package.:Fine.") == 1) {
+		if (select("*啜泣* 我把包裹弄丟了。:很好。") == 1) {
 			set job_merchant_q,9;
 			mes "[Union Staff Kay]";
-			mes "Are you kidding me? You'll fail the test if you lose the package!";
+			mes "你在開玩笑嗎？如果你弄丟包裹，你就會考試不及格！";
 			next;
 			mes "[Union Staff Kay]";
-			mes "Awwww man. Well, if you wanna restart the test, talk to Mahnsoo, okay? You're lucky you're getting another chance!";
+			mes "哎呀。好吧，如果你想重新開始測試，和馬恩蘇談談，好嗎？你很幸運能有另一次機會！";
 			close;
 		}
 		mes "[Union Staff Kay]";
-		mes "Huh...";
-		mes "Okay...";
+		mes "嗯……";
+		mes "好吧……";
 		close;
 	}
 	else if (job_merchant_q == 4 || job_merchant_q == 3 && countitem(1081) != 0 || countitem(1082) != 0 || countitem(1091) != 0) {
 		mes "[Union Staff Kay]";
-		mes "Hey, what are you still doing here? Shouldn't you be on your way already?";
+		mes "嘿，你還在這裡做什麼？你不應該已經在路上了嗎？";
 		next;
-		if (select("I need a new package.:Oh, yeah. You're right!") == 1) {
+		if (select("我需要一個新的包裹。:哦，是的。你說的對！") == 1) {
 			if (countitem(1081) == 0 && countitem(1082) == 0 && countitem(1083) == 0 && countitem(1091) == 0) {
 				mes "[Union Staff Kay]";
-				mes "Wha--?";
-				mes "So where did";
-				mes "the package go?";
-				mes "Where is it?!";
+				mes "什麼--？";
+				mes "那麼";
+				mes "包裹去哪裡了？";
+				mes "它在哪裡？！";
 				next;
-				if (select("*Sob* I lost it!:I have it right here.") == 1) {
+				if (select("*啜泣* 我把它弄丟了！:我把它放在這裡。") == 1) {
 					set job_merchant_q,9;
 					mes "[Union Staff Kay]";
-					mes "You...";
-					mes "Lost it?!";
-					mes "You failed the test!";
+					mes "你……";
+					mes "弄丟了？！";
+					mes "你沒通過測試！";
 					next;
 					mes "[Union Staff Kay]";
-					mes "*Sigh* If you want to restart the test, go visit Mahnsoo in the other room, alright?";
+					mes "*嘆氣* 如果你想重新開始測試，去另一個房間找馬恩蘇，好嗎？";
 					close;
 				}
 				mes "[Union Staff Kay]";
-				mes "Huh.";
-				mes "I thought";
-				mes "you lost it.";
-				mes "You don't";
-				mes "need a new one.";
+				mes "嗯。";
+				mes "我以為";
+				mes "你把它弄丟了。";
+				mes "你不需要";
+				mes "一個新的。";
 				close;
 			}
 			mes "[Union Staff Kay]";
-			mes "*Sigh* Man, you're starting to become a pain in the ass. Hold on, lemme cancel your record...";
+			mes "*嘆氣* 伙計，你開始變得越來越煩人了。等等，讓我取消你的記錄……";
 			if (countitem(1081) != 0)
 				delitem 1081,1; //Merchant_Box_1
 			else if (countitem(1082) != 0)
@@ -636,81 +638,80 @@ alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 				set job_merchant_q,1;
 			next;
 			mes "[Union Staff Kay]";
-			mes "I need some time to get everything in order, so come back later.";
+			mes "我需要一些時間來整理一切，所以晚點再來。";
 			close;
 		}
 		mes "[Union Staff Kay]";
-		mes "What a bummer...";
+		mes "真掃興……";
 		close;
 	}
 	else if ((job_merchant_q == 0 || job_merchant_q == 1 || job_merchant_q == 2)) {
 		set where_village,0;
 		mes "[Union Staff Kay]";
-		mes "Hey there.";
-		mes "what brings";
-		mes "you here?";
+		mes "嘿。";
+		mes "是什麼";
+		mes "帶你來這裡？";
 		next;
-		switch(select("My Merchant License test.:I'm looking for part time work.:Nothing.")) {
+		switch(select("我的商人執照考試。:我正在找兼職工作。:沒事。")) {
 		case 1:
-			mes "[Union Staff Kay]";
-			mes "I see.";
-			mes "Alright.";
-			mes "So what's";
-			mes "your name?";
-			mes "" + strcharinfo(0) + "...?";
+			mes "[聯合會職員凱]";
+			mes "我明白了。";
+			mes "好的。";
+			mes "那麼你的";
+			mes "名字是？";
+			mes "" + strcharinfo(0) + "...？";
 			next;
 			if (job_merchant_q == 0) {
-				mes "[Union Staff Kay]";
-				mes "Huh. Your name's not on my list. Did you apply for the job change quest or what?";
+				mes "[聯合會職員凱]";
+				mes "嗯。我的名單上沒有你的名字。你有申請轉職任務嗎？";
 				next;
-				mes "[Union Staff Kay]";
-				mes "You gotta apply first by talking to Chief Mahnsoo in the center";
-				mes "of this building, okay?";
+				mes "[聯合會職員凱]";
+				mes "你必須先向這棟建築物中央的曼蘇長官申請，知道嗎？";
 				close;
 			}
-			mes "[Union Staff Kay]";
-			mes "Alright, there you go. Lemme give you the package. Now, choose the destination of the delivery.";
+			mes "[聯合會職員凱]";
+			mes "好的，給你包裹。現在，選擇運送目的地。";
 			next;
-			switch(select("Prontera.:Geffen.:Morocc.:Byalan Island.")) {
+			switch(select("普隆德拉.:吉芬.:夢羅克.:艾音布羅克。")) {
 			case 1: set .@where_village,1; break;
 			case 2: set .@where_village,2; break;
 			case 3: set .@where_village,3; break;
 			case 4: set .@where_village,4; break;
 			}
-			mes "[Union Staff Kay]";
-			mes "Okay, now you need to give me the package's Serial Number. If you wanna cancel, just enter '0', alright?";
+			mes "[聯合會職員凱]";
+			mes "好的，現在請給我包裹的序號。如果你想取消，就輸入'0'，知道了嗎？";
 			next;
 			while(1) {
 				while(1) {
 					input .@input;
 					if (.@input == 0) {
-						mes "[Union Staff Kay]";
-						mes "Are you sure that you wanna cancel?";
-						if (select("Yes.:Let me try again.") == 1) {
-							mes "Alright, we'll cancel for now.";
+						mes "[聯合會職員凱]";
+						mes "你確定要取消嗎？";
+						if (select("是的.:讓我再試一次。") == 1) {
+							mes "好的，我們現在取消。";
 							close;
 						}
 						next;
 					}
 					else if (.@input < 1000000 || .@input > 5000000) {
-						mes "[Union Staff Kay]";
-						mes "Hey hey. That number's not valid! Enter a value from 1000000 to 5000000. got it?";
+						mes "[聯合會職員凱]";
+						mes "喂喂。這個號碼無效！請輸入 1000000 到 5000000 之間的值。知道了嗎？";
 						next;
 					}
 					else 
 						break;
 				}
-				mes "[Union Staff Kay]";
+				mes "[聯合會職員凱]";
 				if (.@where_village == 1)
-					mes "Destination is Prontera. The Serial Number is " + .@input + ". Are you positive?";
+					mes "目的地是普隆德拉。序號是 " + .@input + "。你確定嗎？";
 				else if (.@where_village == 2)
-					mes "Destination is Geffen. Phew! That's really far! The Serial Number is " + .@input + ". Are you positive?";
+					mes "目的地是吉芬。呼！真遠！序號是 " + .@input + "。你確定嗎？";
 				else if (.@where_village == 3)
-					mes "Destination is Morocc. That's pretty far away! The Serial Number is " + .@input + ". Are you positive?";
+					mes "目的地是夢羅克。那也很遠！序號是 " + .@input + "。你確定嗎？";
 				else
-					mes "Lucky you! Your destination is Byalan Island. The Serial Number is " + .@input + ". Are you positive?";
+					mes "你真幸運！你的目的地是艾音布羅克。序號是 " + .@input + "。你確定嗎？";
 				next;
-				if (select("Positive.:Whoops! Wrong number!") == 1) {
+				if (select("確定。:哎呀！號碼錯了！") == 1) {
 					break;
 				}
 			}
@@ -750,23 +751,23 @@ alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 				set job_merchant_q,4;
 			else if (job_merchant_q == 1)
 				set job_merchant_q,3;
-			mes "[Union Staff Kay]";
-			mes "Alright. Take this package and guard it with your life until it's safely delivered to the customer. Don't lose this thing, got it?";
+			mes "[聯合會職員凱]";
+			mes "好的。拿著這個包裹，用你的生命保護它，直到它安全地送到客戶手中。別弄丟了，知道了嗎？";
 			next;
-			mes "[Union Staff Kay]";
-			mes "Well then, I wish you luck. Remember, you gotta bring me";
-			mes "a receipt once you finish the delivery, okay?";
+			mes "[聯合會職員凱]";
+			mes "那麼，祝你好運。記住，完成交付後，你必須給我";
+			mes "一張收據，知道嗎？";
 			close;
 		case 2:
-			mes "[Union Staff Kay]";
-			mes "Part time job? Sorry pal, no jobs yet. The Paymaster's department can never balance our budget...";
+			mes "[聯合會職員凱]";
+			mes "兼職工作？抱歉，夥伴，還沒有工作。薪資部門永遠無法平衡我們的預算...";
 			close;
 		case 3:
-			mes "[Union Staff Kay]";
-			mes "Nothing, eh?";
-			mes "I guess you enjoy";
-			mes "bothering people for";
-			mes "no reason then, yeah?";
+			mes "[聯合會職員凱]";
+			mes "沒有嗎？";
+			mes "我猜你很享受";
+			mes "沒事找事打擾";
+			mes "別人，是嗎？";
 			close;
 		}
 	}
@@ -774,55 +775,55 @@ alberta_in,28,29,2	script	Merchant Guildsman#mer	83,{
 
 morocc_in,140,102,4	script	Student#mer	86,{
 	if ((job_merchant_q == 4) || (job_merchant_q == 3)) {
-		mes "[Dyer's Student]";
-		mes "You're from";
-		mes "the Merchant Guild?";
-		mes "Yes! You've come to";
-		mes "the right place.";
+		mes "[染色師的學生]";
+		mes "你是";
+		mes "商人公會來的？";
+		mes "是的！你來對";
+		mes "地方了。";
 		next;
-		mes "[Dyer's Student]";
+		mes "[染色師的學生]";
 		if (countitem(1081) == 1 || countitem(1082) == 1 || countitem(1091) == 1) {
-			mes "Okay~";
-			mes "Please set the";
-			mes "package down";
-			mes "over there.";
+			mes "好的～";
+			mes "請把";
+			mes "包裹放下";
+			mes "在那邊。";
 		}
 		else {
-			mes "But...";
-			mes "Where's the";
-			mes "package I ordered?";
-			mes "That's strange...";
+			mes "但是...";
+			mes "我訂購的";
+			mes "包裹呢？";
+			mes "真奇怪...";
 			close;
 		}
 		next;
-		mes "[Dyer's Student]";
-		mes "Let me check the Serial Number of the package so I can give you the receipt, okay?";
+		mes "[染色師的學生]";
+		mes "讓我檢查包裹的序號，這樣我才能給你收據，好嗎？";
 		next;
-		mes "[Dyer's Student]";
+		mes "[染色師的學生]";
 		if (job_merchant_q2 == 5 && countitem(1081) != 0) {
 			mes "3012685...";
-			mes "That's right.";
-			mes "Here's your";
-			mes "receipt.";
+			mes "沒錯。";
+			mes "這是你的";
+			mes "收據。";
 			delitem 1081,1; //Merchant_Box_1
 			getitem 1077,1; //Merchant_Voucher_5
 		}
 		else if (job_merchant_q2 == 6 && countitem(1082) != 0) {
 			mes "3487372...";
-			mes "That's right.";
-			mes "Here's your";
-			mes "receipt.";
+			mes "沒錯。";
+			mes "這是你的";
+			mes "收據。";
 			delitem 1082,1; //Merchant_Box_2
 			getitem 1078,1; //Merchant_Voucher_6
 		}
 		else {
-			mes "Excuse me, but...";
+			mes "不好意思，但是...";
 			if (job_merchant_q2 == 5)
-				mes "I don't think this is the package we ordered. The Serial Number should be 3012685. See?";
+				mes "我不認為這是我們訂購的包裹。序號應該是 3012685。看到了嗎？";
 			else if (job_merchant_q2 == 6)
-				mes "I don't think this is the package we ordered. The Serial Number should be 3487372. See?";
+				mes "我不認為這是我們訂購的包裹。序號應該是 3487372。看到了嗎？";
 			else
-				mes "I don't think this is the package we ordered. The Serial Number should be 3012685 or 3487372. Well, one of those two...";
+				mes "我不認為這是我們訂購的包裹。序號應該是 3012685 或 3487372。嗯，其中一個...";
 			close;
 		}
 		if (job_merchant_q == 4)
@@ -830,87 +831,87 @@ morocc_in,140,102,4	script	Student#mer	86,{
 		else if (job_merchant_q == 3)
 			set job_merchant_q,5;
 		next;
-		mes "[Dyer's Student]";
-		mes "Thanks a lot!";
-		mes "See you again";
-		mes "sometime!";
+		mes "[染色師的學生]";
+		mes "非常感謝！";
+		mes "下次";
+		mes "再見！";
 		close;
 	}
 	else if (job_merchant_q == 6 || job_merchant_q == 5 && job_merchant_q2 == 6 || job_merchant_q2 == 5) {
-		mes "[Dyer's Student]";
-		mes "Oh...";
-		mes "You're gonna";
-		mes "go back? Okay";
-		mes "then, take care!";
+		mes "[染色師的學生]";
+		mes "喔...";
+		mes "你要";
+		mes "回去了？好吧";
+		mes "那，保重！";
 		close;
 	}
 	else {
-		mes "[Dyer's Student]";
-		mes "Mr. Java Dullihan is the one and only, the best dye maker on the Midgard continent.";
+		mes "[染色師的學生]";
+		mes "Java Dullihan 先生是米德加爾特大陸上唯一也是最棒的染料製造者。";
 		next;
-		mes "[Dyer's Student]";
-		mes "Aaaand I'm proud to say that I'm his student! Someday, I'll be able to make really beautiful dyes too!";
+		mes "[染色師的學生]";
+		mes "而且我很自豪地說我是他的學生！總有一天，我也能製作出非常美麗的染料！";
 		next;
-		mes "[Dyer's Student]";
-		mes "Of course, I'm still learning the basics right now, but someday...";
+		mes "[染色師的學生]";
+		mes "當然，我現在還在學習基礎知識，但總有一天...";
 		close;
 	}
 }
 
 geffen_in,155,122,4	script	Guild Staff#mer	47,{
 	if (job_merchant_q == 4 || job_merchant_q == 3) {
-		mes "[Guild Staff]";
-		mes "Ah, you must be with the Merchant Guild. Finally, my package has arrived! Alright...!";
+		mes "[公會職員]";
+		mes "啊，你一定是商人公會的人。終於，我的包裹送到了！好的...！";
 		next;
-		mes "[Guild Staff]";
+		mes "[公會職員]";
 		if (countitem(1081) == 1 || countitem(1082) == 1 || countitem(1091) == 1) {
-			mes "You must be very tired";
-			mes "from having to travel";
-			mes "in this kind";
-			mes "of weather...";
+			mes "你在這種";
+			mes "天氣下旅行";
+			mes "一定很";
+			mes "累...";
 		}
 		else {
-			mes "Wait...";
-			mes "Where's the";
-			mes "package?";
+			mes "等等...";
+			mes "包裹";
+			mes "呢？";
 			close;
 		}
 		next;
-		mes "[Guild Staff]";
-		mes "Alright, let me";
-		mes "check the Serial Number...";
+		mes "[公會職員]";
+		mes "好的，讓我";
+		mes "檢查一下序號...";
 		if (job_merchant_q2 == 3 && countitem(1081) != 0) {
-			mes "2989396. Yes, this is what we ordered. Here is your receipt.";
+			mes "2989396。是的，這是我們訂購的。這是你的收據。";
 			delitem 1081,1; //Merchant_Box_1
 			getitem 1075,1; //Merchant_Voucher_3
 		}
 		else if (job_merchant_q2 == 4 && countitem(1082) != 0) {
-			mes "2191737. Yes, this is what we ordered. Here is your receipt.";
+			mes "2191737。是的，這是我們訂購的。這是你的收據。";
 			delitem 1082,1; //Merchant_Box_2
 			getitem 1076,1; //Merchant_Voucher_4
 		}
 		else {
-			mes "Uh oh, this is the wrong number. This isn't what we ordered...";
+			mes "喔喔，這是錯誤的號碼。這不是我們訂購的...";
 			next;
-			mes "[Guild Staff]";
+			mes "[公會職員]";
 			if (job_merchant_q2 == 3) {
-				mes "The Serial Number";
-				mes "should be 2989396.";
+				mes "序號";
+				mes "應該是 2989396。";
 			}
 			else if (job_merchant_q2 == 4) {
-				mes "The Serial Number";
-				mes "should be 2191737.";
+				mes "序號";
+				mes "應該是 2191737。";
 			}
 			else {
-				mes "The Serial Number";
-				mes "should be 2989396";
-				mes "or 2191737, one of";
-				mes "those two.";
+				mes "序號";
+				mes "應該是 2989396";
+				mes "或是 2191737，其中";
+				mes "一個。";
 			}
-			mes "Look here!";
-			mes "Don't you see";
-			mes "something";
-			mes "is wrong?";
+			mes "看看這裡！";
+			mes "你不覺得";
+			mes "哪裡怪怪的";
+			mes "嗎？";
 			close;
 		}
 		if (job_merchant_q == 4)
@@ -918,91 +919,91 @@ geffen_in,155,122,4	script	Guild Staff#mer	47,{
 		else if (job_merchant_q == 3)
 			set job_merchant_q,5;
 		next;
-		mes "[Guild Staff]";
-		mes "Heh heh~";
-		mes "Thank you!";
-		mes "Bye bye!";
+		mes "[公會職員]";
+		mes "呵呵～";
+		mes "謝謝你！";
+		mes "再見！";
 		close;
 	}
 	else if (job_merchant_q == 6 || job_merchant_q == 5 && job_merchant_q2 == 4 || job_merchant_q2 == 3) {
-		mes "[Guild Staff]";
-		mes "Hello,";
-		mes "Merchant Guildsman~";
-		mes "I give you my thanks.";
+		mes "[公會職員]";
+		mes "你好，";
+		mes "商人公會的人員～";
+		mes "感謝你。";
 		close;
 	}
 	else {
-		mes "[Guild Staff]";
-		mes "My package should have arrived by now. Huh. I guess the Merchant Guild might be running a little late...";
+		mes "[公會職員]";
+		mes "我的包裹應該已經送到了。嗯。我想商人公會可能稍微晚了一點...";
 		close;
 	}
 }
 
-prontera,248,42,0	script	Kafra Employee#mer	116,{
+prontera,248,42,0	script	卡普拉職員#mer	116,{
 	cutin "kafra_02",2;
 	if (job_merchant_q == 6 || job_merchant_q == 5) && (job_merchant_q2 == 2 || job_merchant_q2 == 1) {
-		mes "[Kafra Employee]";
-		mes "Oh! Thank you for";
-		mes "traveling such a long";
-		mes "way to come over here~";
+		mes "[卡普拉職員]";
+		mes "喔！謝謝你";
+		mes "走了這麼遠的路";
+		mes "特地過來一趟～";
 		close2;
 		cutin "",255;
 		end;
 	}
 	else if (job_merchant_q == 4 || job_merchant_q == 3) {
-		mes "[Kafra Employee]";
-		mes "A delivery from";
-		mes "the Merchant Guild?";
-		mes "Oh, yes, please set";
-		mes "it down right over there...";
+		mes "[卡普拉職員]";
+		mes "來自";
+		mes "商人公會的貨物？";
+		mes "喔，是的，請把它";
+		mes "放在那邊...";
 		if (countitem(1081) == 1 || countitem(1082) == 1 || countitem(1091) == 1) {
-			mes "You must be really tired";
-			mes "after carrying it for so long!";
+			mes "你一定累壞了";
+			mes "搬了這麼久！";
 		}
 		else {
-			mes "W-wait. Didn't you bring it?";
-			mes "Where's the package?";
+			mes "等一下。你不是帶來了嗎？";
+			mes "包裹在哪裡？";
 			close2;
 			cutin "",255;
 			end;
 		}
 		next;
-		mes "[Kafra Employee]";
-		mes "Now, let me check";
-		mes "the serial number...";
+		mes "[卡普拉職員]";
+		mes "現在，讓我檢查";
+		mes "一下序號...";
 		if (job_merchant_q2 == 1 && countitem(1081) != 0) {
-			mes "2485741. Right, this is";
-			mes "the one we ordered. Oh,";
-			mes "and don't forget this receipt!";
+			mes "2485741。沒錯，這是";
+			mes "我們訂購的那個。喔，";
+			mes "別忘了這張收據！";
 			next;
 			delitem 1081,1; //Merchant_Box_1
 			getitem 1073,1; //Merchant_Voucher_1
 		}
 		else if (job_merchant_q2 == 2 && countitem(1082) != 0) {
-			mes "2328137. Right, this is";
-			mes "the one we ordered. Oh,";
-			mes "and don't forget this receipt!";
+			mes "2328137。沒錯，這是";
+			mes "我們訂購的那個。喔，";
+			mes "別忘了這張收據！";
 			next;
 			delitem 1082,1; //Merchant_Box_2
 			getitem 1074,1; //Merchant_Voucher_2
 		}
 		else {
-			mes "Mmmm? Hold on. This is";
-			mes "the wrong package. What we";
+			mes "嗯嗯？等等。這";
+			mes "不是我們要的包裹。我們";
 			if (job_merchant_q2 == 1)
-				mes "ordered had the serial number 2485741. I'm sure it's not this.";
+				mes "訂購的那個序號是 2485741。我確定不是這個。";
 			else if (job_merchant_q2 == 2)
-				mes "ordered had the serial number 2328137. I'm sure it's not this.";
+				mes "訂購的那個序號是 2328137。我確定不是這個。";
 			else
-				mes "ordered had the serial number 2485741 or 2328137.";
+				mes "訂購的那個序號是 2485741 或是 2328137。";
 			next;
-			mes "[Kafra Employee]";
-			mes "I'm afraid there";
-			mes "must be some kind";
-			mes "of mistake. Perhaps";
-			mes "you should go back to";
-			mes "the Merchant Guild to";
-			mes "clear up this situation?";
+			mes "[卡普拉職員]";
+			mes "恐怕這裡面";
+			mes "一定有什麼";
+			mes "誤會。或許";
+			mes "你應該回到";
+			mes "商人公會去";
+			mes "把這個情況弄清楚？";
 			close2;
 			cutin "",255;
 			end;
@@ -1011,35 +1012,35 @@ prontera,248,42,0	script	Kafra Employee#mer	116,{
 			set job_merchant_q,6;
 		else if (job_merchant_q == 3)
 			set job_merchant_q,5;
-		mes "[Kafra Employee]";
-		mes "Thanks again";
-		mes "for going through";
-		mes "all of that trouble~";
+		mes "[卡普拉職員]";
+		mes "再次感謝您";
+		mes "費了這麼多的";
+		mes "功夫～";
 		close2;
 		cutin "",255;
 		end;
 	}
 	else {
-		mes "[Kafra Employee]";
-		mes "Welcome to the";
-		mes "Kafra Corportation,";
-		mes "where the service is";
-		mes "always on your side~";
+		mes "[卡普拉職員]";
+		mes "歡迎來到";
+		mes "卡普拉企業，";
+		mes "我們永遠站在";
+		mes "您這邊為您服務～";
 		next;
-		mes "[Kafra Employee]";
-		mes "As you can see, the";
-		mes "Swordman Assocation";
-		mes "has moved to Izlude, a";
-		mes "satellite city of Prontera.";
-		mes "Currently, we offer a Teleport";
-		mes "Service to Izlude for 600 zeny.";
+		mes "[卡普拉職員]";
+		mes "您可以看到，";
+		mes "劍士協會";
+		mes "已經搬到艾爾貝塔，";
+		mes "普隆德拉的衛星城市。";
+		mes "目前，我們提供傳送";
+		mes "到艾爾貝塔的服務，費用是 600 zeny。";
 		next;
-		if (select("Use:Cancel") == 1) {
+		if (select("使用:取消") == 1) {
 			if (Zeny < 600) {
-				mes "[Kafra Employee]";
-				mes "I'm sorry, but you";
-				mes "don't have enough zeny";
-				mes "for this Teleport Service.";
+				mes "[卡普拉職員]";
+				mes "很抱歉，您的";
+				mes "zeny 不夠";
+				mes "使用此傳送服務。";
 				close2;
 				cutin "",255;
 				end;
@@ -1056,62 +1057,62 @@ prontera,248,42,0	script	Kafra Employee#mer	116,{
 	}
 }
 
-//izlu2dun,106,58,4	script	Kafra Employee#mer	116,{
+//izlu2dun,106,58,4	script	卡普拉職員#mer	116,{
 function	script	F_MercKafra	{
 	if ((job_merchant_q == 6 || job_merchant_q == 5) && (job_merchant_q2 == 8 || job_merchant_q2 == 7)) {
-		mes "[Kafra Employee]";
-		mes "Oh hello~";
-		mes "Um, is there";
-		mes "some special reason";
-		mes "as to why you're here?";
+		mes "[卡普拉職員]";
+		mes "您好～";
+		mes "嗯，您來這裡";
+		mes "是有什麼特別";
+		mes "的原因嗎？";
 		close2;
 		cutin "",255;
 		end;
 	}
 	else if (job_merchant_q == 4 || job_merchant_q == 3) {
-		mes "[Kafra Employee]";
-		mes "A delivery from";
-		mes "the Merchant Guild?";
-		mes "Oh, yes, please set";
-		mes "it down right over there...";
+		mes "[卡普拉職員]";
+		mes "來自";
+		mes "商人公會的貨物？";
+		mes "喔，是的，請把它";
+		mes "放在那邊...";
 		if (countitem(1081) == 1 || countitem(1082) == 1 || countitem(1091) == 1) {
-			mes "You must be really tired";
-			mes "after carrying it for so long!";
+			mes "你一定累壞了";
+			mes "搬了這麼久！";
 		}
 		else {
-			mes "W-wait. Didn't you bring it?";
-			mes "Where's the package?";
+			mes "等一下。你不是帶來了嗎？";
+			mes "包裹在哪裡？";
 			close2;
 			cutin "",255;
 			end;
 		}
 		next;
-		mes "[Kafra Employee]";
-		mes "Now, let me check";
-		mes "the serial number...";
+		mes "[卡普拉職員]";
+		mes "現在，讓我檢查";
+		mes "一下序號...";
 		if (job_merchant_q2 == 7 && countitem(1081) != 0) {
-			mes "3318702. Right, this is";
-			mes "the one we ordered. Oh,";
-			mes "and don't forget this receipt!";
+			mes "3318702。沒錯，這是";
+			mes "我們訂購的那個。喔，";
+			mes "別忘了這張收據！";
 			delitem 1081,1; //Merchant_Box_1
 			getitem 1079,1; //Merchant_Voucher_7
 		}
 		else if (job_merchant_q2 == 8 && countitem(1082) != 0) {
-			mes "3543625. Right, this is";
-			mes "the one we ordered. Oh,";
-			mes "and don't forget this receipt!";
+			mes "3543625。沒錯，這是";
+			mes "我們訂購的那個。喔，";
+			mes "別忘了這張收據！";
 			delitem 1082,1; //Merchant_Box_2
 			getitem 1080,1; //Merchant_Voucher_8
 		}
 		else {
-			mes "Mmmm? Hold on. This is";
-			mes "the wrong package. What we";
+			mes "嗯嗯？等等。這";
+			mes "不是我們要的包裹。我們";
 			if (job_merchant_q2 == 7)
-				mes "ordered had the serial number 3318702. I'm sure it's not this.";
+				mes "訂購的那個序號是 3318702。我確定不是這個。";
 			else if (job_merchant_q2 == 8)
-				mes "ordered had the serial number 3543625. I'm sure it's not this.";
+				mes "訂購的那個序號是 3543625。我確定不是這個。";
 			else
-				mes "ordered had the serial number 3318702 or 3543625.";
+				mes "訂購的那個序號是 3318702 或是 3543625。";
 			close2;
 			cutin "",255;
 			end;
@@ -1122,31 +1123,31 @@ function	script	F_MercKafra	{
 			set job_merchant_q,5;
 		next;
 		if (countitem(1072) != 0 && quest_alb_01 == 0) {
-			select("This is from Chief Mahnsoo of the Merchant Guild...");
+			select("這是來自商人公會會長曼蘇的信...");
 			delitem 1072,1; //Delivery_Message
 			set quest_alb_01,1;
-			mes "[Kafra Employee]";
-			mes "Oh~! A letter from";
-			mes "Mahnsoo! Thank you";
-			mes "so much, I've been dying";
-			mes "to hear from him. How is";
-			mes "he doing, is he alright?";
-			mes "I can't wait to read it...";
+			mes "[卡普拉職員]";
+			mes "喔～！曼蘇的";
+			mes "來信！非常";
+			mes "感謝你，我一直";
+			mes "很想收到他的消息。他";
+			mes "過得如何，一切安好嗎？";
+			mes "我等不及要讀信了...";
 			next;
-			mes "[Kafra Employee]";
-			mes "Oh, thank you for";
-			mes "going through all the";
-			mes "trouble of delivering all";
-			mes "of this. This isn't anything";
-			mes "special, but please take it.";
-			mes "Well, see you again~";
+			mes "[卡普拉職員]";
+			mes "喔，感謝您";
+			mes "費了這麼大的";
+			mes "功夫送來";
+			mes "這些東西。這沒什麼";
+			mes "特別的，但請收下。";
+			mes "那麼，再見～";
 			getitem 513,3; //Banana
 		}
 		else {
-			mes "[Kafra Employee]";
-			mes "Thanks again";
-			mes "for going through";
-			mes "all of that trouble~";
+			mes "[卡普拉職員]";
+			mes "再次感謝您";
+			mes "費了這麼多的";
+			mes "功夫～";
 		}
 		close2;
 		cutin "",255;

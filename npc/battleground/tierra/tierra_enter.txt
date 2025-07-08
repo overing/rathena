@@ -15,54 +15,54 @@ bat_room,124,178,5	script	Tierra Gorge Officer#01a	418,{
 	if (getbattleflag("feature.bgqueue"))
 		end;
 	if (checkweight(1201,1) == 0) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶的 -";
+		mes "- 物品太多了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 等你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Guillaume Army Officer]";
-	mes "Let's show the power of the Guillaume Army to those stinky Croixs!";
+	mes "[紀堯姆軍隊軍官]";
+	mes "讓我們向那些臭氣熏天的克羅伊軍隊展示紀堯姆軍隊的力量！";
 	next;
-	switch(select("I want to join your army!:End Conversation")) {
+	switch(select("我想加入你的軍隊！:結束對話")) {
 	case 1:
 		if ((BaseJob == Job_Novice) || (BaseJob == Job_Super_Novice)) {
-			mes "[Guillaume Army Officer]";
-			mes "I'm very pleased that you want to join us and fight the Croix Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+			mes "[紀堯姆軍隊軍官]";
+			mes "我很高興你想加入我們並與克羅伊軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場上送死。";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Guillaume Army Officer]";
-				mes "I'm very pleased that you want to join us and fight the Croix Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+				mes "[紀堯姆軍隊軍官]";
+				mes "我很高興你想加入我們並與克羅伊軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場上送死。";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if ((.@chk_urtime == 0)|| (.@chk_urtime == 1)) {
-					mes "[Guillaume Army Officer]";
-					mes "You seem to have just returned from the battlefield.";
-					mes "It's too early for you to go back. Go rest, and leave the enemies to us!";
+					mes "[紀堯姆軍隊軍官]";
+					mes "你似乎剛從戰場回來。";
+					mes "現在回去還太早了。去休息吧，把敵人交給我們！";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a01");
 					if (.@mapcount > 0) {
-						mes "[Guillaume Army Officer]";
-						mes "I've received a report informing me that an elite corps has been dispatched to the battlefield fighting the Croixs already.";
-						mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+						mes "[紀堯姆軍隊軍官]";
+						mes "我收到一份報告，通知我一支精銳部隊已經被派往戰場與克羅伊軍隊作戰。";
+						mes "你何不去等一會兒？我建議你在那之前磨礪你的武器並準備你的補給。";
 					}
 					else {
 						if ($@TierraBG1) {
-							mes "[Guillaume Army Officer]";
-							mes "An elite corps is already standing by to be dispatched to the battlefield.";
-							mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+							mes "[紀堯姆軍隊軍官]";
+							mes "一支精銳部隊已經待命，準備被派往戰場。";
+							mes "你何不去等一會兒？我建議你在那之前磨礪你的武器並準備你的補給。";
 						}
 						else {
-							mes "[Guillaume Army Officer]";
-							mes "You definitely seem to be ready for battle!";
-							mes "Go show the Croixs what fear truly means!";
-							mes "Today, our cry of victory shall echo all over the battlefield!";
+							mes "[紀堯姆軍隊軍官]";
+							mes "你肯定看起來已經準備好戰鬥了！";
+							mes "去向克羅伊軍隊展示恐懼的真正含義吧！";
+							mes "今天，我們的勝利吶喊將響徹整個戰場！";
 							close2;
 							warp "bat_room",57,223;
 							end;
@@ -73,8 +73,8 @@ bat_room,124,178,5	script	Tierra Gorge Officer#01a	418,{
 		}
 		break;
 	case 2:
-		mes "[Guillaume Army Officer]";
-		mes "Today, we shall be victorious!";
+		mes "[紀堯姆軍隊軍官]";
+		mes "今天，我們必將勝利！";
 		break;
 	}
 	close;
@@ -84,54 +84,54 @@ bat_room,140,178,5	script	Tierra Gorge Officer#02a	418,{
 	if (getbattleflag("feature.bgqueue"))
 		end;
 	if (checkweight(1201,1) == 0) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶的 -";
+		mes "- 物品太多了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 等你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Guillaume Army Officer]";
-	mes "Let's show the power of the Guillaume Army to those stinky Croixs!";
+	mes "[紀堯姆軍隊軍官]";
+	mes "讓我們向那些臭氣熏天的克羅伊軍隊展示紀堯姆軍隊的力量！";
 	next;
-	switch(select("I want to join your army!:End Conversation")) {
+	switch(select("我想加入你的軍隊！:結束對話")) {
 	case 1:
 		if ((BaseJob == Job_Novice) || (BaseJob == Job_Super_Novice)) {
-			mes "[Guillaume Army Officer]";
-			mes "I'm very pleased that you want to join us and fight the Croix Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+			mes "[紀堯姆軍隊軍官]";
+			mes "我很高興你想加入我們並與克羅伊軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場上送死。";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Guillaume Army Officer]";
-				mes "I'm very pleased that you want to join us and fight the Croix Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+				mes "[紀堯姆軍隊軍官]";
+				mes "我很高興你想加入我們並與克羅伊軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場上送死。";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if (.@chk_urtime == 1) {
-					mes "[Guillaume Army Officer]";
-					mes "You seem to have just returned from the battlefield.";
-					mes "It's too early for you to go back. Go rest, and leave the enemies to us!";
+					mes "[紀堯姆軍隊軍官]";
+					mes "你似乎剛從戰場回來。";
+					mes "現在回去還太早了。去休息吧，把敵人交給我們！";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Guillaume Army Officer]";
-						mes "I've received a report informing me that an elite corps has been dispatched to the battlefield fighting the Croixs already.";
-						mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+						mes "[紀堯姆軍隊軍官]";
+						mes "我收到一份報告，通知我一支精銳部隊已經被派往戰場與克羅伊軍隊作戰。";
+						mes "你何不去等一會兒？我建議你在那之前磨礪你的武器並準備你的補給。";
 					}
 					else {
 						if ($@TierraBG2) {
-							mes "[Guillaume Army Officer]";
-							mes "An elite corps is already standing by to be dispatched to the battlefield.";
-							mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+							mes "[紀堯姆軍隊軍官]";
+							mes "一支精銳部隊已經待命，準備被派往戰場。";
+							mes "你何不去等一會兒？我建議你在那之前磨礪你的武器並準備你的補給。";
 						}
 						else {
-							mes "[Guillaume Army Officer]";
-							mes "You definitely seem to be ready for battle!";
-							mes "Go show the Croixs what fear truly means!";
-							mes "Today, our cry of victory shall echo all over the battlefield!";
+							mes "[紀堯姆軍隊軍官]";
+							mes "你肯定看起來已經準備好戰鬥了！";
+							mes "去向克羅伊軍隊展示恐懼的真正含義吧！";
+							mes "今天，我們的勝利吶喊將響徹整個戰場！";
 							close2;
 							warp "bat_room",114,223;
 							end;
@@ -142,74 +142,74 @@ bat_room,140,178,5	script	Tierra Gorge Officer#02a	418,{
 		}
 		break;
 	case 2:
-		mes "[Guillaume Army Officer]";
-		mes "Today, we shall be victorious!";
+		mes "[紀堯姆軍隊軍官]";
+		mes "今天，我們必將勝利！";
 		break;
 	}
 	close;
 }
 
 bat_room,127,178,5	script	Guillaume Knight#1	417,{
-	mes "[Guillaume Knight]";
-	mes "Tierra Gorge consists of two steep sides placed vertically, and has ration depots for the Guillaume and Croix Armies at the 11 and 7 o'clock directions.";
+	mes "[紀堯姆騎士]";
+	mes "提爾峽谷由兩個垂直的陡峭側面組成，並在 11 點和 7 點方向設有紀堯姆軍隊和克羅伊軍隊的口糧倉庫。";
 	next;
-	mes "[Guillaume Knight]";
-	mes "The battle starts at your army's ship, and the goal is to advance and destroy your enemy's rations depot faster than they can destroy yours.";
+	mes "[紀堯姆騎士]";
+	mes "戰鬥從你軍隊的船隻開始，目標是比敵人更快地推進並摧毀敵人的口糧倉庫。";
 	next;
-	mes "[Guillaume Knight]";
-	mes "The healer of the battlefield will resurrect soldiers once every 25 seconds so that they can rejoin the battle.";
-	mes "The army that captures the neutral flag in the center of the battlefield will be rewarded with extra regeneration points, meaning their soldiers will resurrect more than the other side, giving them an advantage.";
+	mes "[紀堯姆騎士]";
+	mes "戰場的治療師將每 25 秒復活一次士兵，以便他們可以重新加入戰鬥。";
+	mes "佔領戰場中心的 ??????????? 的軍隊將獲得額外的 ????????????????? ???? 作為獎勵，這意味著他們的士兵將比對方更多地復活，從而使他們獲得優勢。";
 	next;
-	mes "[Guillaume Knight]";
-	mes "Those two rations depots are connected to each other through short and narrow paths, but the gates are blocked with barricades.";
-	mes "Think and move as quickly as you can. The victory of your army relies on your contribution.";
+	mes "[紀堯姆騎士]";
+	mes "這兩個口糧倉庫通過短而窄的道路相互連接，但大門被路障堵住。";
+	mes "盡可能快地思考和行動。你軍隊的勝利取決於你的貢獻。";
 	next;
-	mes "[Guillaume Knight]";
+	mes "[紀堯姆騎士]";
 	if (getbattleflag("feature.bgqueue"))
-		mes "If you are ready, start by clicking the ^0000FFbattle button from the interface^000000.";
+		mes "如果你準備好了，首先點擊介面上的 ^0000FF戰鬥按鈕^000000。";
 	else {
-		mes "Please remember: when you join a battle, you will receive a token which indicates the set duration for which you cannot participate in the same type of battle.";
-		mes "You may check the duration by pressing the Alt+U keys.";
+		mes "請記住：當你加入戰鬥時，你將收到一個權杖，表明你無法參加同一類型戰鬥的設定持續時間。";
+		mes "你可以通過按 Alt+U 鍵來查看持續時間。";
 	}
 	next;
-	mes "[Guillaume Knight]";
+	mes "[紀堯姆騎士]";
 	if (getbattleflag("feature.bgqueue"))
-		mes "Please bear in mind once you cancel, ^0000FFyou may not reapply for 1 minute^000000!";
+		mes "請記住，一旦取消，^0000FF你可能無法在 1 分鐘內重新申請^000000！";
 	else
-		mes "Are you ready to battle? Then apply with the recruiter next to me!";
+		mes "你準備好戰鬥了嗎？那就向我旁邊的徵兵人員申請吧！";
 	close;
 }
 
 bat_room,143,178,5	duplicate(Guillaume Knight#1)	Guillaume Knight#2	417
 
 bat_room,127,121,1	script	Croix Knight#1	413,{
-	mes "[Croix Knight]";
-	mes "Tierra Gorge consists of two steep sides placed vertically, and has ration depots for the Guillaume and Croix Armies at the 11 and 7 o'clock directions.";
+	mes "[克羅伊茲騎士]";
+	mes "提耶拉峽谷由兩個垂直放置的陡峭側面組成，並在 11 點鐘和 7 點鐘方向設有紀堯姆和克羅伊茲軍隊的口糧倉庫。";
 	next;
-	mes "[Croix Knight]";
-	mes "The battle starts at your army's ship, and the goal is to advance and destroy your enemy's rations depot faster than they can destroy yours.";
+	mes "[克羅伊茲騎士]";
+	mes "戰鬥從你軍隊的船隻開始，目標是推進並比你的敵人更快地摧毀他們的口糧倉庫。";
 	next;
-	mes "[Croix Knight]";
-	mes "The healer of the battlefield will resurrect soldiers once every 25 seconds so that they can rejoin the battle.";
-	mes "The army that captures the neutral flag in the center of the battlefield will be rewarded with extra regeneration points, meaning their soldiers will resurrect more than the other side, giving them an advantage.";
+	mes "[克羅伊茲騎士]";
+	mes "戰場的治療師每 25 秒復活一次士兵，以便他們可以重新加入戰鬥。";
+	mes "佔領戰場中心的中立旗幟的軍隊將獲得額外的恢復點獎勵，這意味著他們的士兵復活的次數將比另一方多，從而使他們佔據優勢。";
 	next;
-	mes "[Croix Knight]";
-	mes "Those two rations depots are connected to each other through short and narrow paths, but the gates are blocked with barricades.";
-	mes "Think and move as quickly as you can. The victory of your army relies on your contribution.";
+	mes "[克羅伊茲騎士]";
+	mes "這兩個口糧倉庫通過短而窄的路徑相互連接，但大門被路障阻擋。";
+	mes "盡可能快地思考和行動。你軍隊的勝利取決於你的貢獻。";
 	next;
-	mes "[Croix Knight]";
+	mes "[克羅伊茲騎士]";
 	if (getbattleflag("feature.bgqueue"))
-		mes "If you are ready, start by clicking the ^0000FFbattle button from the interface^000000.";
+		mes "如果你準備好了，請從界面點擊 ^0000FF戰鬥按鈕^000000 開始。";
 	else {
-		mes "Please remember: when you join a battle, you will receive a token which indicates the set duration for which you cannot participate in the same type of battle.";
-		mes "You may check the duration by pressing the Alt+U keys.";
+		mes "請記住：當你加入戰鬥時，你將收到一個令牌，指示你不能參與同一類型戰鬥的設定持續時間。";
+		mes "你可以通過按 Alt+U 鍵來查看持續時間。";
 	}
 	next;
-	mes "[Croix Knight]";
+	mes "[克羅伊茲騎士]";
 	if (getbattleflag("feature.bgqueue"))
-		mes "Please bear in mind once you cancel, ^0000FFyou may not reapply for 1 minute^000000!";
+		mes "請記住，一旦你取消，^0000FF你可能無法在 1 分鐘內重新申請^000000！";
 	else
-		mes "Are you ready to battle? Then apply with the recruiter next to me!";
+		mes "你準備好戰鬥了嗎？然後向我旁邊的徵募員申請！";
 	close;
 }
 
@@ -221,54 +221,54 @@ bat_room,125,121,1	script	Tierra Gorge Officer#01b	414,{
 	if (getbattleflag("feature.bgqueue"))
 		end;
 	if (checkweight(1201,1) == 0) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶了 -";
+		mes "- 太多的物品。 -";
+		mes "- 請再試一次 -";
+		mes "- 在你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Croix Army Officer]";
-	mes "Let's show the power of the Croix Army to those stinky Guillaumes!";
+	mes "[克羅伊茲軍隊軍官]";
+	mes "讓我們向那些臭氣熏天的紀堯姆人展示克羅伊茲軍隊的力量！";
 	next;
-	switch(select("I want to join your army!:End Conversation")) {
+	switch(select("我想加入你的軍隊！:結束對話")) {
 	case 1:
 		if ((BaseJob == Job_Novice) || (BaseJob == Job_Super_Novice)) {
-			mes "[Croix Army Officer]";
-			mes "I'm very pleased that you want to join us and fight the Guillaume Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+			mes "[克羅伊茲軍隊軍官]";
+			mes "我很高興你想加入我們並與紀堯姆軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場送死。";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Croix Army Officer]";
-				mes "I'm very pleased that you want to join us and fight the Guillaume Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+				mes "[克羅伊茲軍隊軍官]";
+				mes "我很高興你想加入我們並與紀堯姆軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場送死。";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if ((.@chk_urtime == 0)|| (.@chk_urtime == 1)) {
-					mes "[Croix Army Officer]";
-					mes "You seem to have just returned from the battlefield.";
-					mes "It's too early for you to go back. Go rest, and leave the enemies to us!";
+					mes "[克羅伊茲軍隊軍官]";
+					mes "你似乎剛從戰場回來。";
+					mes "你現在回去還太早。去休息一下，把敵人留給我們！";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Croix Army Officer]";
-						mes "I've received a report informing me that an elite corps has been dispatched to the battlefield fighting the Guillaume already.";
-						mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+						mes "[克羅伊茲軍隊軍官]";
+						mes "我收到一份報告，通知我一支精銳部隊已被派往戰場，與紀堯姆作戰。";
+						mes "你為什麼不去等一會兒？我建議你磨利你的武器並準備你的補給品，直到那時。";
 					}
 					else {
 						if ($@TierraBG1) {
-							mes "[Croix Army Officer]";
-							mes "An elite corps is already standing by to be dispatched to the battlefield.";
-							mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+							mes "[克羅伊茲軍隊軍官]";
+							mes "一支精銳部隊已經待命，準備被派往戰場。";
+							mes "你為什麼不去等一會兒？我建議你磨利你的武器並準備你的補給品，直到那時。";
 						}
 						else {
-							mes "[Croix Army Officer]";
-							mes "You definitely seem to be ready for battle!";
-							mes "Go show the Guillaumes what fear truly means!";
-							mes "Today, our cry of victory shall echo all over the battlefield!";
+							mes "[克羅伊茲軍隊軍官]";
+							mes "你似乎真的準備好戰鬥了！";
+							mes "去讓紀堯姆人真正明白恐懼的含義！";
+							mes "今天，我們的勝利呼聲將響徹整個戰場！";
 							close2;
 							warp "bat_room",57,207;
 							end;
@@ -279,8 +279,8 @@ bat_room,125,121,1	script	Tierra Gorge Officer#01b	414,{
 		}
 		break;
 	case 2:
-		mes "[Croix Army Officer]";
-		mes "Today, we shall be victorious!";
+		mes "[克羅伊茲軍隊軍官]";
+		mes "今天，我們必將勝利！";
 		break;
 	}
 	close;
@@ -290,54 +290,54 @@ bat_room,140,121,1	script	Tierra Gorge Officer#02b	414,{
 	if (getbattleflag("feature.bgqueue"))
 		end;
 	if (checkweight(1201,1) == 0) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶了 -";
+		mes "- 太多的物品。 -";
+		mes "- 請再試一次 -";
+		mes "- 在你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Croix Army Officer]";
-	mes "Let's show the power of the Croix Army to those stinky Guillaumes!";
+	mes "[克羅伊茲軍隊軍官]";
+	mes "讓我們向那些臭氣熏天的紀堯姆人展示克羅伊茲軍隊的力量！";
 	next;
-	switch(select("I want to join your army!:End Conversation")) {
+	switch(select("我想加入你的軍隊！:結束對話")) {
 	case 1:
 		if ((BaseJob == Job_Novice) || (BaseJob == Job_Super_Novice)) {
-			mes "[Croix Army Officer]";
-			mes "I'm very pleased that you want to join us and fight the Guillaume Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+			mes "[克羅伊茲軍隊軍官]";
+			mes "我很高興你想加入我們並與紀堯姆軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場送死。";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Croix Army Officer]";
-				mes "I'm very pleased that you want to join us and fight the Guillaume Army, but I'm sorry: I can't send a rookie like you to die on the cruel battlefield.";
+				mes "[克羅伊茲軍隊軍官]";
+				mes "我很高興你想加入我們並與紀堯姆軍隊作戰，但很抱歉：我不能派像你這樣的新手去殘酷的戰場送死。";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if (.@chk_urtime == 1) {
-					mes "[Croix Army Officer]";
-					mes "You seem to have just returned from the battlefield.";
-					mes "It's too early for you to go back. Go rest, and leave the enemies to us!";
+					mes "[克羅伊茲軍隊軍官]";
+					mes "你似乎剛從戰場回來。";
+					mes "你現在回去還太早。去休息一下，把敵人留給我們！";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Croix Army Officer]";
-						mes "I've received a report informing me that an elite corps has been dispatched to the battlefield fighting the Guillaume already.";
-						mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+						mes "[克羅伊茲軍隊軍官]";
+						mes "我收到一份報告，通知我一支精銳部隊已被派往戰場，與紀堯姆作戰。";
+						mes "你為什麼不去等一會兒？我建議你磨利你的武器並準備你的補給品，直到那時。";
 					}
 					else {
 						if ($@TierraBG2) {
-							mes "[Croix Army Officer]";
-							mes "An elite corps is already standing by to be dispatched to the battlefield.";
-							mes "Why don't you go wait for a while? I suggest you sharpen your weapons and prepare your supplies until then.";
+							mes "[克羅伊茲軍隊軍官]";
+							mes "一支精銳部隊已經待命，準備被派往戰場。";
+							mes "你為什麼不去等一會兒？我建議你磨利你的武器並準備你的補給品，直到那時。";
 						}
 						else {
-							mes "[Croix Army Officer]";
-							mes "You definitely seem to be ready for battle!";
-							mes "Go show the Guillaumes what fear truly means!";
-							mes "Today, our cry of victory shall echo all over the battlefield!";
+							mes "[克羅伊茲軍隊軍官]";
+							mes "你似乎真的準備好戰鬥了！";
+							mes "去讓紀堯姆人真正明白恐懼的含義！";
+							mes "今天，我們的勝利呼聲將響徹整個戰場！";
 							close2;
 							warp "bat_room",114,207;
 							end;
@@ -348,8 +348,8 @@ bat_room,140,121,1	script	Tierra Gorge Officer#02b	414,{
 		}
 		break;
 	case 2:
-		mes "[Croix Army Officer]";
-		mes "Today, we shall be victorious!";
+		mes "[克羅伊茲軍隊軍官]";
+		mes "今天，我們必將勝利！";
 		break;
 	}
 	close;

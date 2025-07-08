@@ -19,68 +19,68 @@ valkyrie,44,47,5	script	High Wizard#Valkyrie	735,{
 	if (ADVJOB == 0 ||  Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[High Wizard]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[高等巫師]";
+			mes "恭喜。";
+			mes "向戰士們致敬！";
 			close;
 		}
-		mes "[High Wizard]";
-		mes "We High Wizards have";
-		mes "the responsibility of";
-		mes "using our destructive magic";
-		mes "for the right purposes.";
+		mes "[高等巫師]";
+		mes "我們高等巫師有";
+		mes "責任去";
+		mes "為了正確的目的";
+		mes "使用我們具有破壞性的魔法。";
 		next;
-		mes "[High Wizard]";
-		mes "A lifetime of training";
-		mes "is required before becoming";
-		mes "a High Wizard. Can you imagine";
-		mes "what would happen if our power";
-		mes "was placed in the wrong hands?!";
+		mes "[高等巫師]";
+		mes "要成為";
+		mes "高等巫師，需要";
+		mes "一生的訓練。你能想像";
+		mes "如果我們的力量";
+		mes "被放在錯誤的人手中會發生什麼事嗎？！";
 		close;
 	}
 	else if (ADVJOB == Job_High_Wizard && Class == Job_Mage_High && JobLevel > 39) {
-		mes "[High Wizard]";
-		mes "It is time.";
-		mes "And Midgard has";
-		mes "need of those who can";
-		mes "wield the strongest of magic...";
+		mes "[高等巫師]";
+		mes "時機到了。";
+		mes "而米德加爾特";
+		mes "需要那些能";
+		mes "運用最強大魔法的人...";
 		next;
-		mes "[High Wizard]";
-		mes "Would you like to";
-		mes "become a High Wizard?";
+		mes "[高等巫師]";
+		mes "你想成為";
+		mes "高等巫師嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[High Wizard]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honors to the warriors!";
+		if (select("不要。:是的。") == 1) {
+			mes "[高等巫師]";
+			mes "當你準備好時，";
+			mes "隨時可以回來。";
+			mes "向戰士們致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[High Wizard]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[高等巫師]";
+			mes "你仍然有可能學習更多技能。請在使用";
+			mes "完所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_high_Wizard;
 		set ADVJOB,0;
-		mes "[High Wizard]";
-		mes "Congratulations.";
-		mes "As a High Wizard,";
-		mes "I hope use you use";
-		mes "your powers to bring";
-		mes "peace to the oppressed.";
+		mes "[高等巫師]";
+		mes "恭喜。";
+		mes "身為一位高等巫師，";
+		mes "我希望你使用";
+		mes "你的力量來為";
+		mes "受壓迫者帶來和平。";
 		close;
 	}
-	mes "[High Wizard]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[高等巫師]";
+	mes "歡迎來到";
+	mes "瓦爾哈拉，";
+	mes "榮譽殿堂。";
 	next;
-	mes "[High Wizard]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[高等巫師]";
+	mes "請";
+	mes "在這裡";
+	mes "好好放鬆。";
+	mes "向戰士們致敬！";
 	close;
 }

@@ -5,17 +5,17 @@
 //============================================================
 
 malangdo,218,101,3	script	Malangdo Guide#Malangdo	4_CAT_SAILOR3,{
-	mes "[Malangdo Guide]";
-	mes "Nice to meet you, welcome to ^8C4210Malangdo^000000. The island of cat paw!";
-	mes "Need some guidance?";
+	mes "[馬朗島嚮導]";
+	mes "很高興見到你，歡迎來到 ^8C4210馬朗島^000000。貓掌之島！";
+	mes "需要一些指引嗎？";
 	F_Navi("[Malangdo Guide]");
 	while(1) {
 		next;
-		switch(select("[ Major Facilities ]:[ Trader & Assistant ]:Clear Mini-Map:Cancel")) {
+		switch(select("[ 主要設施 ]:[ 商人和助理 ]:清除小地圖:取消")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Cat Gamers Director ]:[ Special Vending Machine ]:[ Coin Exchanger ]:[ Starry Coral ]:Previous Menu")) {
+				switch(select("[ 貓咪遊戲總監 ]:[ 特殊販賣機 ]:[ 硬幣兌換商 ]:[ 星星珊瑚 ]:上一個選單")) {
 				case 1:
 					callsub L_Mark, F_Navi("Cat Gamers Director","malangdo,119,137","FF0000");
 					viewpoint 1,119,137,0,0xFF0000;
@@ -45,7 +45,7 @@ malangdo,218,101,3	script	Malangdo Guide#Malangdo	4_CAT_SAILOR3,{
 		case 2:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Chief Thomas ]:[ Stinky Merchant ]:[ Wandering Merchant ]:[ Inn Owner ]:[ Storekeeper ]:[ Tool Dealer ]:[ Portali ]:[ Clink ]:[ Holink ]:[ Roving Merchant ]:Previous Menu")) {
+				switch(select("[ 湯瑪士隊長 ]:[ 臭臭商人 ]:[ 流浪商人 ]:[ 旅館老闆 ]:[ 雜貨商 ]:[ 工具商人 ]:[ 波塔利 ]:[ 克林克 ]:[ 霍林克 ]:[ 流動商人 ]:上一個選單")) {
 				case 1:
 					callsub L_Mark, F_Navi("Chief Thomas","malangdo,164,163","0A9696");
 					viewpoint 1,164,163,4,0x0A9696;
@@ -103,9 +103,9 @@ malangdo,218,101,3	script	Malangdo Guide#Malangdo	4_CAT_SAILOR3,{
 			}
 			break;
 		case 3:
-			mes "[Malangdo Guide]";
-			mes "I will remove all marks from your Mini-Map.";
-			mes "Need more help?";
+			mes "[馬朗島嚮導]";
+			mes "我將移除你小地圖上的所有標記。";
+			mes "需要更多幫助嗎？";
 			viewpoint 2,1,1,0,0xFFFFFF;
 			viewpoint 2,1,1,1,0xFFFFFF;
 			viewpoint 2,1,1,2,0xFFFFFF;
@@ -122,14 +122,14 @@ malangdo,218,101,3	script	Malangdo Guide#Malangdo	4_CAT_SAILOR3,{
 			viewpoint 2,1,1,13,0xFFFFFF;
 			break;
 		case 4:
-			mes "[Malangdo Guide]";
-			mes "I wish you a pleasant trip.";
+			mes "[馬朗島嚮導]";
+			mes "祝你旅途愉快。";
 			close;
 		}
 	}
 L_Mark:
-	mes "[Malangdo Guide]";
-	mes "I will show you the location of the " + getarg(0);
-	mes "Do you need other information?";
+	mes "[馬朗島嚮導]";
+	mes "我將向你展示 " + getarg(0) + " 的位置";
+	mes "你是否需要其他資訊？";
 	return;
 }

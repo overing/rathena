@@ -21,12 +21,12 @@ mora,20,159,0	warp	bifrost_field0004	1,1,bif_fild02,99,308
 mora,56,25,0	warp	bifrost_field0005	1,1,bif_fild02,176,162
 
 -	script	bifrost_field0000	-1,{
-	mes "At the end of the small path through the bright flower garden";
-	mes "is an entrance to something that looks like a small hill.";
+	mes "在穿過明亮花園的小徑盡頭";
+	mes "有一個入口，看起來像一個小山丘。";
 	next;
-	if(select("Knock-knock:Is this a wormhole?") == 1) {
-		mes "When you knock on the door-like thing just for fun,";
-		mes "the door clicks open and you feel some mysterious force pulling you inside.";
+	if(select("叩叩:這裡是蟲洞嗎？") == 1) {
+		mes "當你只是為了好玩而敲門時，";
+		mes "門喀?一聲打開，你感覺到一股神秘的力量將你拉了進去。";
 		close2;
 		switch(atoi(charat(strnpcinfo(2),9))) {
 			case 1: warp "mora",179,74; end;

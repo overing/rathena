@@ -28,158 +28,155 @@
 //= 2.2 Updated to match AEGIS script and Added Quest Log commands. [Kisuka]
 //============================================================ 
 
-que_ng,152,167,3	script	Master Miller	901,{
+que_ng,152,167,3	script	米勒大師	901,{
 	if (Upper == 2) {
-		mes "[Master Miller]";
-		mes "Well, aren't you an";
-		mes "adorable little child~";
-		mes "Where's your mommy?";
-		mes "This place is dangerous, so";
-		mes "please go home soon, okay?";
+		mes "[米勒大師]";
+		mes "哎呀，你不是個";
+		mes "可愛的小孩嗎～";
+		mes "你的媽咪在哪裡？";
+		mes "這裡很危險，所以";
+		mes "請快點回家，好嗎？";
 		close;
 	}
 	if (Class == Job_Novice) {
 		if (!callfunc("F_CanChangeJob")) {
-			mes "[Master Miller]";
-			mes "Interested in becoming";
-			mes "a Gunslinger, eh? You've";
-			mes "got potential, but you're";
-			mes "not yet experienced enough.";
-			mes "Just train yourself a bit more,";
-			mes "and then come back, you hear?";
+			mes "[米勒大師]";
+			mes "有興趣成為";
+			mes "神槍手，嗯？你很有";
+			mes "潛力，但是你還";
+			mes "不夠有經驗。";
+			mes "多訓練一下自己，";
+			mes "然後再回來，聽到了嗎？";
 			close;
 		}
 		if (GUNS_Q == 0) {
-			mes "[Master Miller]";
-			mes "I'm Miller, a full time";
-			mes "Gunslinger drillmaster, and";
-			mes "full time guardian for Lady";
-			mes "Selena. Now, what do you";
-			mes "need? If it's not important, then I can't make the time for you.";
+			mes "[米勒大師]";
+			mes "我是米勒，全職的";
+			mes "神槍手訓練教官，還有";
+			mes "瑟雷娜女士的全職";
+			mes "守護者。那麼，你";
+			mes "需要什麼？如果不重要的話，我就沒有時間理你。";
 			next;
-			if(select("Nothing.:I want to become a Gunslinger.") == 1) {
-				mes "[Master Miller]";
-				mes "Don't waste my time.";
-				mes "If you do want to become";
-				mes "a Gunslinger, then come";
-				mes "back and talk to me.";
+			if(select("沒事。:我想成為神槍手。") == 1) {
+				mes "[米勒大師]";
+				mes "別浪費我的時間。";
+				mes "如果你真的想成為";
+				mes "神槍手，就回來";
+				mes "跟我說。";
 				close;
 			}
-			mes "[Master Miller]";
-			mes "Hm. You're pretty young, but";
-			mes "your eyes tell me that you're";
-			mes "pretty ambitious. You'll need to pass our interview and educational";
-			mes "course to become a Gunslinger. Do you want to apply for the job?";
+			mes "[米勒大師]";
+			mes "嗯。你很年輕，但是";
+			mes "你的眼神告訴我你";
+			mes "很有野心。你需要通過我們的面試和教育";
+			mes "課程才能成為神槍手。你想申請這個職位嗎？";
 			next;
-			if(select("Give me some time to think.:Sure!") == 1) {
-				mes "[Master Miller]";
-				mes "Understandable.";
-				mes "If you do decide that";
-				mes "you want to become";
-				mes "a Gunslinger, then let";
-				mes "me know right away.";
-				mes "I'll get you started.";
+			if(select("給我一些時間考慮。:當然!") == 1) {
+				mes "[米勒大師]";
+				mes "可以理解。";
+				mes "如果你決定";
+				mes "要成為";
+				mes "神槍手，那就";
+				mes "馬上讓我知道。";
+				mes "我會讓你開始。";
 				close;
 			}
-			mes "[Master Miller]";
-			mes "Great, great. Alright then,";
-			mes "let's get you started. Take";
-			mes "this letter to Mr. Wise Bull";
-			mes "Horn in Payon. He's a shaman";
-			mes "that will judge whether or not";
-			mes "you qualify to be a Gunslinger.";
+			mes "[米勒大師]";
+			mes "很好，很好。那麼，";
+			mes "讓我來讓你開始。把";
+			mes "這封信帶給在沛雍的智者公牛";
+			mes "霍恩。他是一位薩滿，";
+			mes "他會判斷你是否";
+			mes "有資格成為神槍手。";
 			set GUNS_Q,1;
 			setquest 6020;
 			close;
 		}
 		else if (GUNS_Q == 1) {
-			mes "[Master Miller]";
-			mes "Take that letter of";
-			mes "introduction I've written";
-			mes "for you to Mr. Wise Bull";
-			mes "Horn in Payon. He'll test";
-			mes "you to see if you're really";
-			mes "Gunslinger material.";
+			mes "[米勒大師]";
+			mes "把這封我為你寫的";
+			mes "介紹信帶給在沛雍的智者公牛";
+			mes "霍恩。他會測試";
+			mes "你，看看你是否真的是";
+			mes "神槍手的料。";
 			close;
 		}
 		else if (GUNS_Q == 2) {
-			mes "[Master Miller]";
-			mes "Hmm... Wise Bull Horn";
-			mes "asked you to collect the";
-			mes "items you need to make the";
-			mes "voucher? Hm. I guess that's";
-			mes "part of his qualification test.";
+			mes "[米勒大師]";
+			mes "嗯... 智者公牛霍恩";
+			mes "要你收集製作";
+			mes "憑證所需的物品？";
+			mes "嗯。我想那是";
+			mes "他的資格測試的一部分。";
 			close;
 		}
 		else if (GUNS_Q == 3) {
-			mes "[Master Miller]";
-			mes "Wise Bull Horn asked";
-			mes "you to bring him some";
-			mes "Milk? He must really like";
-			mes "you if he's already asking";
-			mes "for favors. Good luck, friend.";
+			mes "[米勒大師]";
+			mes "智者公牛霍恩要";
+			mes "你帶一些";
+			mes "牛奶給他？他一定很喜歡";
+			mes "你，才會已經要求";
+			mes "你幫忙。祝你好運，朋友。";
 			close;
 		}
 		else if (GUNS_Q == 4) {
-			mes "[Master Miller]";
-			mes "I expect to hear good";
-			mes "news from you soon. You";
-			mes "know, I have no doubt that";
-			mes "you'll become a Gunslinger.";
+			mes "[米勒大師]";
+			mes "我期待很快聽到你的好";
+			mes "消息。你知道，我毫不懷疑";
+			mes "你會成為一名神槍手。";
 			close;
 		}
 		else if (GUNS_Q == 5) {
 			if (SkillPoint != 0) {
-				mes "[Master Miller]";
-				mes "Hey, you have leftover";
-				mes "Skill Points. You better";
-				mes "use them all up before you";
-				mes "come and talk to me again.";
+				mes "[米勒大師]";
+				mes "嘿，你還有剩餘的";
+				mes "技能點數。你最好";
+				mes "在你再來跟我說話之前";
+				mes "把他們都用完。";
 				close;
 			}
-			mes "[Master Miller]";
-			mes "Oh, you've brought a";
-			mes "voucher from Wise Bull Horn?";
-			mes "It's been a while since he's";
-			mes "given one to anybody, so";
-			mes "I'm really proud of you!";
+			mes "[米勒大師]";
+			mes "喔，你帶來了";
+			mes "智者公牛霍恩的憑證？";
+			mes "他已經很久沒有";
+			mes "給任何人憑證了，所以";
+			mes "我真為你感到驕傲！";
 			next;
-			mes "[Master Miller]";
-			mes "If Wise Bull Horn approves,";
-			mes "then I have no reason to";
-			mes "reject you. Alright then, I'll";
-			mes "promote you to a Gunslinger.";
-			mes "But first, let me explain";
-			mes "our job in more detail.";
+			mes "[米勒大師]";
+			mes "如果智者公牛霍恩批准，";
+			mes "那麼我沒有理由";
+			mes "拒絕你。好吧，那麼，我會";
+			mes "晉升你為神槍手。";
+			mes "但首先，讓我詳細說明";
+			mes "我們的工作。";
 			next;
-			mes "[Master Miller]";
-			mes "As a Gunslinger, you must";
-			mes "keep your gun with you at";
-			mes "all times. The Gunslinger";
-			mes "Guild keeps track of every Gun";
-			mes "and Bullet, so you can only get";
-			mes "them from our guild members.";
+			mes "[米勒大師]";
+			mes "作為一名神槍手，你必須";
+			mes "隨時攜帶你的槍。";
+			mes "神槍手";
+			mes "公會會追蹤每一把槍";
+			mes "和子彈，所以你只能從我們的公會成員那裡獲得。";
 			next;
-			mes "[Master Miller]";
-			mes "Don't worry, Gunslinger";
-			mes "Guildsmen can be found almost";
-			mes "anywhere these days. Anyway,";
-			mes "it has to be this way by order of our guild leader, Lady Selena.";
+			mes "[米勒大師]";
+			mes "別擔心，神槍手";
+			mes "公會成員現在幾乎到處都";
+			mes "可以找到。無論如何，";
+			mes "這必須按照我們公會領袖瑟雷娜女士的命令進行。";
 			next;
-			mes "[Master Miller]";
-			mes "You might get the chance to";
-			mes "meet her one of these days.";
-			mes "Anyway, just now that we have";
-			mes "to regulate Gun and Bullet sales to keep them away from evil";
-			mes "or irresponsible folk.";
+			mes "[米勒大師]";
+			mes "你可能會有一天";
+			mes "有機會見到她。";
+			mes "無論如何，只要知道我們有";
+			mes "必須監管槍和子彈的銷售，以防止它們落入邪惡";
+			mes "或不負責任的人手中。";
 			next;
-			mes "[Master Miller]";
-			mes "In any case, it's always";
-			mes "a pleasure for me to talk";
-			mes "to another Gunslinger, so";
-			mes "let's keep in touch. May the";
-			mes "power of the earth protect";
-			mes "you in all of your adventures~";
+			mes "[米勒大師]";
+			mes "無論如何，我總是";
+			mes "很高興能與另一位神槍手";
+			mes "交談，所以";
+			mes "讓我們保持聯繫。願";
+			mes "大地的力量保佑";
+			mes "你在你所有的冒險中～";
 			callfunc "Job_Change",Job_Gunslinger;
 			set GUNS_Q,6;
 			completequest 6024;
@@ -197,105 +194,105 @@ que_ng,152,167,3	script	Master Miller	901,{
 		}
 	} else {
 		if (Class == Job_Gunslinger) {
-			mes "[Master Miller]";
-			mes "Oh! Long time, no see,";
-			mes "friend. How have you been?";
-			mes "I hope you've been keeping";
-			mes "you Gun well maintained.";
-			mes "Take care of it, and it'll take";
-			mes "care of you. Remember it.";
+			mes "[米勒大師]";
+			mes "喔！好久不見，";
+			mes "朋友。你最近好嗎？";
+			mes "我希望你有好好地";
+			mes "保養你的槍。";
+			mes "照顧好它，它會照顧";
+			mes "你。記住它。";
 			close;
 		} else {
-			mes "[Master Miller]";
-			mes "If you don't have";
-			mes "any business with me,";
-			mes "then please go on your way.";
+			mes "[米勒大師]";
+			mes "如果你沒有";
+			mes "任何事情要跟我談，";
+			mes "那就請你離開吧。";
 			close;
 		}
 	}
 }
 
-payon,184,65,3	script	Wise Bull Horn	866,{
+payon,184,65,3	script	智者公牛霍恩	866,{
 	if (GUNS_Q == 1) {
-		mes "[Wise Bull Horn]";
-		mes "Hello, young wolf.";
-		mes "What business has";
-		mes "brought you before me?";
+		mes "[智者公牛霍恩]";
+		mes "你好，年輕的狼。";
+		mes "是什麼事";
+		mes "把你帶到我面前？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "Mr. Miller sent me to";
-		mes "deliver this letter to you.";
-		mes "Actually, I'm interested in";
-		mes "becoming a Gunslinger...";
+		mes "米勒先生派我來";
+		mes "把這封信交給你。";
+		mes "實際上，我對";
+		mes "成為神槍手感興趣... ";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "Miller, you said?";
-		mes "Hm, the Black Fox doesn't";
-		mes "give introductions for anyone";
-		mes "he doesn't believe will make";
-		mes "a good Gunslinger. Yes, I think";
-		mes "I know why he sent you to me.";
+		mes "[智者公牛霍恩]";
+		mes "米勒，你說的？";
+		mes "嗯，黑狐狸不會";
+		mes "為任何他不相信會成為";
+		mes "優秀神槍手的人";
+		mes "寫介紹信。是的，我想";
+		mes "我知道他為什麼派你來找我了。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "I can see it in your eyes:";
-		mes "you've got a warm heart and a";
-		mes "strong sense of responsibility.";
-		mes "All you need is the blessing";
-		mes "of the Earth to protect you";
-		mes "as a Gunslinger.";
+		mes "[智者公牛霍恩]";
+		mes "我可以從你的眼睛裡看到：";
+		mes "你有一顆溫暖的心和";
+		mes "強烈的責任感。";
+		mes "你所需要的只是";
+		mes "大地的祝福來保護你";
+		mes "作為一名神槍手。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "I can make a voucher that";
-		mes "will demonstrate your desire";
-		mes "to become a warrior of the";
-		mes "earth for you to present to";
-		mes "Gunslinger drillmasters.";
-		mes "I shall need these items...";
+		mes "[智者公牛霍恩]";
+		mes "我可以製作一張憑證，";
+		mes "這將證明你渴望";
+		mes "成為大地戰士，以便你";
+		mes "將其提交給";
+		mes "神槍手訓練教官。";
+		mes "我需要這些物品... ";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "^3355FF1 Trunk^000000,";
-		mes "^3355FF3 Fluffs^000000,";
-		mes "^3355FF3 Zargons^000000,";
-		mes "^3355FF10 Shells^000000,";
-		mes "^3355FF3 Green Herbs^000000, and";
-		mes "^3355FF3 Rainbow Shells^000000.";
+		mes "[智者公牛霍恩]";
+		mes "^3355FF1 樹幹^000000,";
+		mes "^3355FF3 絨毛^000000,";
+		mes "^3355FF3 札貢^000000,";
+		mes "^3355FF10 貝殼^000000,";
+		mes "^3355FF3 綠色藥草^000000, 和";
+		mes "^3355FF3 彩虹貝殼^000000.";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "After I complete the";
-		mes "voucher, you may bring";
-		mes "it to Black Fox, and he";
-		mes "will help you achieve";
-		mes "your goal of becoming";
-		mes "a Gunslinger.";
+		mes "[智者公牛霍恩]";
+		mes "在我完成";
+		mes "憑證後，你可以將";
+		mes "它帶給黑狐狸，他";
+		mes "會幫助你實現";
+		mes "你成為";
+		mes "神槍手的目標。";
 		set GUNS_Q,2;
 		changequest 6020,6021;
 		close;
 	}
 	else if (GUNS_Q == 2) {
 		if (countitem(912) < 3 || countitem(914) < 3 || countitem(1019) < 1 || countitem(935) < 10 || countitem(511) < 3 || countitem(1013) < 3) {
-			mes "[Wise Bull Horn]";
-			mes "I can make a voucher that";
-			mes "will demonstrate your desire";
-			mes "to become a warrior of the";
-			mes "earth for you to present to";
-			mes "Gunslinger drillmasters.";
-			mes "I shall need these items...";
+			mes "[智者公牛霍恩]";
+			mes "我可以製作一張憑證，";
+			mes "這將證明你渴望";
+			mes "成為大地戰士，以便你";
+			mes "將其提交給";
+			mes "神槍手訓練教官。";
+			mes "我需要這些物品... ";
 			next;
-			mes "[Wise Bull Horn]";
-			mes "^3355FF1 Trunk^000000,";
-			mes "^3355FF3 Fluffs^000000,";
-			mes "^3355FF3 Zargons^000000,";
-			mes "^3355FF10 Shells^000000,";
-			mes "^3355FF3 Green Herbs^000000, and";
-			mes "^3355FF3 Rainbow Shells^000000.";
+			mes "[智者公牛霍恩]";
+			mes "^3355FF1 樹幹^000000,";
+			mes "^3355FF3 絨毛^000000,";
+			mes "^3355FF3 札貢^000000,";
+			mes "^3355FF10 貝殼^000000,";
+			mes "^3355FF3 綠色藥草^000000, 和";
+			mes "^3355FF3 彩虹貝殼^000000.";
 			next;
-			mes "[Wise Bull Horn]";
-			mes "After I complete the";
-			mes "voucher, you may bring";
-			mes "it to Black Fox, and he";
-			mes "will help you achieve";
-			mes "your goal of becoming";
-			mes "a Gunslinger.";
+			mes "[智者公牛霍恩]";
+			mes "在我完成";
+			mes "憑證後，你可以將";
+			mes "它帶給黑狐狸，他";
+			mes "會幫助你實現";
+			mes "你成為";
+			mes "神槍手的目標。";
 			close;
 		}
 		delitem 912,3; // Zargon
@@ -306,89 +303,89 @@ payon,184,65,3	script	Wise Bull Horn	866,{
 		delitem 1013,3; // Colorful_Shell
 		set GUNS_Q,3;
 		changequest 6021,6022;
-		mes "[Wise Bull Horn]";
-		mes "Ah, you've returned";
-		mes "with everything I need.";
-		mes "Please give me some time";
-		mes "to make the voucher. If you";
-		mes "come back in a little while,";
-		mes "I should be finished with it.";
+		mes "[智者公牛霍恩]";
+		mes "啊，你帶著";
+		mes "我需要的東西回來了。";
+		mes "請給我一些時間";
+		mes "來製作憑證。如果你";
+		mes "過一會兒再回來，";
+		mes "我應該就能完成了。";
 		close;
 	}
 	else if (GUNS_Q == 3) {
-		mes "[Wise Bull Horn]";
-		mes "Oh, you've arrived just";
-		mes "in time. It's been a while";
-		mes "since I've made one of these vouchers, so I might be a little";
-		mes "rusty. Still, this really takes me back to the days of my youth.";
+		mes "[智者公牛霍恩]";
+		mes "喔，你來得正是時候。";
+		mes "我已經有一段時間";
+		mes "沒有製作這些憑證了，所以我可能會有點";
+		mes "生疏。不過，這真的讓我想起了我的年輕時代。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "I've been serving in this";
-		mes "position of choosing worthy";
-		mes "recipients of Gunslinger";
-		mes "vouchers for a few decades";
-		mes "now. But before that, I was a";
-		mes "young adventurer just like you.";
+		mes "[智者公牛霍恩]";
+		mes "我一直擔任這個";
+		mes "選擇值得";
+		mes "神槍手";
+		mes "憑證接受者的職位";
+		mes "幾十年了。";
+		mes "但在那之前，我是一個";
+		mes "和你一樣的年輕冒險家。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "It feels like it was only";
-		mes "yesterday when I held my own";
-		mes "little voucher as a Gunslinger,";
-		mes "a warrior of the earth. That's";
-		mes "when I met Selena's father...";
-		mes "How can time pass so quickly?";
+		mes "[智者公牛霍恩]";
+		mes "感覺好像才";
+		mes "昨天，我還拿著我自己的";
+		mes "小憑證，身為神槍手，";
+		mes "大地的戰士。那就是";
+		mes "我遇見瑟雷娜的父親的時候... ";
+		mes "時間怎麼過得這麼快？";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "Ah... I really appreciate";
-		mes "Selena and Black Fox for all";
-		mes "of their help in recruiting";
-		mes "young Gunslingers. I'm very";
-		mes "old now, and can't do everything by myself. *Sigh...* Such is life.";
+		mes "[智者公牛霍恩]";
+		mes "啊... 我真的很感謝";
+		mes "瑟雷娜和黑狐狸幫助我";
+		mes "招募年輕";
+		mes "神槍手。我現在很";
+		mes "老了，沒辦法自己做所有的事情。*唉...* 人生就是如此。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "Before you leave, may";
-		mes "I ask you for a small favor?";
-		mes "I'm thirsty, and would like";
-		mes "a cold glass of Milk. Would";
-		mes "you please bring me some?";
+		mes "[智者公牛霍恩]";
+		mes "在你離開之前，可以";
+		mes "請你幫我一個小忙嗎？";
+		mes "我口渴了，想要";
+		mes "一杯冰涼的牛奶。你願意";
+		mes "幫我拿一些來嗎？";
 		set GUNS_Q,4;
 		changequest 6022,6023;
 		close;
 	}
 	else if (GUNS_Q == 4) {
 		if (countitem(519) < 1) {
-			mes "[Wise Bull Horn]";
-			mes "I'm an old man that will";
-			mes "soon be reunited with mother";
-			mes "earth. Would you do this old";
-			mes "Gunslinger a favor a bring me";
-			mes "a cold glass of Milk, please?";
+			mes "[智者公牛霍恩]";
+			mes "我是一個很快就會";
+			mes "與大地母親重聚的老人。";
+			mes "你願意幫這個老";
+			mes "神槍手一個忙，幫我帶一杯";
+			mes "冰涼的牛奶來嗎，拜託？";
 			close;
 		}
 		delitem 519,1; // Milk
 		set GUNS_Q,5;
 		changequest 6023,6024;
-		mes "[Wise Bull Horn]";
-		mes "Oh, thank you for your!";
-		mes "generosity--I see that";
-		mes "you've brought me some";
-		mes "Milk. Ahhhh, delicious~";
+		mes "[智者公牛霍恩]";
+		mes "喔，謝謝你的！";
+		mes "慷慨--我看到";
+		mes "你帶了一些";
+		mes "牛奶給我。啊，真美味～";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "I admire the patience,";
-		mes "gentleness, and kindness";
-		mes "that you've proven by bringing";
-		mes "this to me. Yes, those are traits we all want Gunslingers to have.";
+		mes "[智者公牛霍恩]";
+		mes "我很欣賞你所展現的";
+		mes "耐心、溫柔和善良，";
+		mes "你藉由把這個東西帶來給我所展現的。是的，這些都是我們希望神槍手擁有的特質。";
 		next;
-		mes "[Wise Bull Horn]";
-		mes "Now, please take this voucher";
-		mes "to Miller, the Black Fox, with";
-		mes "my wholehearted approval.";
-		mes "I hope that you will use your";
-		mes "gun to uphold justice as a";
-		mes "noble warrior of the earth.";
+		mes "[智者公牛霍恩]";
+		mes "現在，請把這張憑證";
+		mes "帶給米勒，黑狐狸，並帶上";
+		mes "我全心全意的批准。";
+		mes "我希望你將使用你的";
+		mes "槍來維護正義，成為一位";
+		mes "高尚的大地戰士。";
 		next;
-		mes "[Wise Bull Horn]";
+		mes "[智者公牛霍恩]";
 		mes "Eeh~Yeah~Eeh~Hooom";
 		mes "Eeh~Yeah~Eeh~Hooom";
 		mes "Maaaaarrraaa Neeey~";
@@ -396,15 +393,15 @@ payon,184,65,3	script	Wise Bull Horn	866,{
 		close;
 	}
 	else if (GUNS_Q == 5) {
-		mes "[Wise Bull Horn]";
-		mes "Please take this voucher";
-		mes "to Miller, the Black Fox, with";
-		mes "my wholehearted approval.";
-		mes "I hope that you will use your";
-		mes "gun to uphold justice as a";
-		mes "noble warrior of the earth.";
+		mes "[智者公牛霍恩]";
+		mes "請把這張憑證";
+		mes "帶給米勒，黑狐狸，並帶上";
+		mes "我全心全意的批准。";
+		mes "我希望你將使用你的";
+		mes "槍來維護正義，成為一位";
+		mes "高尚的大地戰士。";
 		next;
-		mes "[Wise Bull Horn]";
+		mes "[智者公牛霍恩]";
 		mes "Eeh~Yeah~Eeh~Hooom";
 		mes "Eeh~Yeah~Eeh~Hooom";
 		mes "Maaaaarrraaa Neeey~";
@@ -412,17 +409,17 @@ payon,184,65,3	script	Wise Bull Horn	866,{
 		close;
 	}
 	else if (GUNS_Q == 6) {
-		mes "[Wise Bull Horn]";
-		mes "AAh, long time no see.";
-		mes "I hope that you become";
-		mes "a smart beast, and use";
-		mes "your powers as a Gunslinger to protect what is good and just.";
+		mes "[智者公牛霍恩]";
+		mes "啊，好久不見。";
+		mes "我希望你成為";
+		mes "一個聰明的野獸，並使用";
+		mes "你作為神槍手的力量來保護美好和正義的事物。";
 		close;
 	}
 	else {
-		mes "[Wise Bull Horn]";
+		mes "[智者公牛霍恩]";
 		mes "Zzzzzz~";
-		mes "^333333*Phew*^000000";
+		mes "^333333*呼*^000000";
 		close;
 	}
 }

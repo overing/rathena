@@ -25,572 +25,572 @@
 //============================================================
 geffen_in,176,105,4	script	Master Velofos	1_M_WIZARD,{
 	if (checkweight(1201,1) == 0) {
-		mes "You're carrying too many items. Please make some room in your bag first.";
+		mes "你攜帶的物品太多了。請先整理你的背包，空出一些空間。";
 		close;
 	}
 	if ((MaxWeight - Weight) < 1000) {
-		mes "You're overweight with items. Please lose some item weight first.";
+		mes "你攜帶的物品超重了。請先減輕一些物品的重量。";
 		close;
 	}
 	if ((Upper == 2) && (Class != Job_Baby_Warlock)) {
-		mes "[Master Velofos]";
-		mes "What are you, a baby?";
-		mes "I'm not here to babysit. Get lost!";
+		mes "[威洛弗斯大師]";
+		mes "你是什麼，小寶寶嗎？";
+		mes "我不是來當保姆的。滾開！";
 		close;
 	}
 	if ((eaclass()&EAJ_THIRDMASK)!=EAJ_WARLOCK) {
-		mes "[Master Velofos]";
-		mes "Ha ha, are you also seeking new knowledge?";
+		mes "[威洛弗斯大師]";
+		mes "哈哈，你也是來尋求新知識的嗎？";
 		next;
-		mes "[Master Velofos]";
-		mes "I'm sorry, but my knowledge doesn't concern you.";
+		mes "[威洛弗斯大師]";
+		mes "很抱歉，我的知識與你無關。";
 		close;
 	}
 	if (getskilllv(2230) < 1) {
-		mes "[Master Velofos]";
-		mes "Well, you've met all the qualifications except one: you need the Release spell.";
+		mes "[威洛弗斯大師]";
+		mes "嗯，你符合所有的資格，除了一件事：你需要釋放術。";
 		next;
-		mes "[Master Velofos]";
-		mes "Learn the spell first. I've got so many things to tell you.";
+		mes "[威洛弗斯大師]";
+		mes "先學會法術。我有很多事情要告訴你。";
 		close;
 	}
-	mes "[Master Velofos]";
-	mes "Welcome, my friend.";
-	mes "Congratulations on entering a brand new world of magic.";
+	mes "[威洛弗斯大師]";
+	mes "歡迎，我的朋友。";
+	mes "恭喜你進入一個全新的魔法世界。";
 	next;
-	mes "[Master Velofos]";
-	mes "We magic practitioners are always thirsty for new knowledge and power.";
+	mes "[威洛弗斯大師]";
+	mes "我們魔法修練者總是渴望新的知識和力量。";
 	next;
-	mes "[Master Velofos]";
-	mes "We endure great hardship and pain to achieve what we want. When we finally do, the sense of accomplishment defies description. That's why both you and I have chosen the way of magic.";
+	mes "[威洛弗斯大師]";
+	mes "我們忍受巨大的艱辛和痛苦來實現我們想要的。當我們終於做到時，那種成就感難以形容。這就是為什麼你我都選擇了魔法之路。";
 	next;
-	mes "[Master Velofos]";
-	mes "By the way, what brings you to me today?";
+	mes "[威洛弗斯大師]";
+	mes "順便問一下，你今天來找我是為了什麼？";
 	next;
-	switch (select("Nothing.:Do you know the Reading Spell Book?:What's the Freezing Spell?:Can I have a Magic Book?:Can I use the Reading Spell Book without the Freezing Spell?:About the Ultimate Magic Book")) {
+	switch (select("沒事。:你知道閱讀魔法書嗎？:什麼是冰凍術？:我可以要一本魔法書嗎？:我可以在沒有冰凍術的情況下使用閱讀魔法書嗎？:關於終極魔法書")) {
 	case 1:
-		mes "[Master Velofos]";
-		mes "Hah! You're silly.";
+		mes "[威洛弗斯大師]";
+		mes "哈！你真傻。";
 		close;
 	case 2:
-		mes "[Master Velofos]";
-		mes "Reading Spell Book literally means 'read a spell book.' Do you know how to use Magic Books?";
+		mes "[威洛弗斯大師]";
+		mes "閱讀魔法書字面上的意思是『讀一本魔法書』。你知道如何使用魔法書嗎？";
 		next;
-		switch (select("Yes, I do.:No, I don't.")) {
+		switch (select("是的，我知道。:不，我不知道。")) {
 		case 1:
-			mes "[Master Velofos]";
-			mes "Well then, you don't need an additional lecture.";
+			mes "[威洛弗斯大師]";
+			mes "那麼，你不需要額外的講座。";
 			close;
 		case 2:
-			mes "[Master Velofos]";
-			mes "Magic Books are an advanced type of magic scroll. While spells on scrolls disappear after one use, the ones in Magic Books can be cast multiple times.";
+			mes "[威洛弗斯大師]";
+			mes "魔法書是一種高級的魔法卷軸。雖然卷軸上的法術在使用一次後就會消失，但魔法書中的法術可以多次施放。";
 			next;
-			mes "[Master Velofos]";
-			mes "Let's compare a spell on a scroll to a wire. When the wire is used to open a door or do something else, it's bent and crushed, losing its original shape. A spell from a Magic Book is more like a shape memory alloy.";
+			mes "[威洛弗斯大師]";
+			mes "我們將卷軸上的法術比作一根電線。當電線用於打開門或做其他事情時，它會彎曲和破碎，失去原來的形狀。而魔法書中的法術更像是形狀記憶合金。";
 			next;
-			mes "[Master Velofos]";
-			mes "Huh, don't you now what shape memory alloy is? Eh, just remember this: a wire made from shape memory alloy restores its shape over time.";
+			mes "[威洛弗斯大師]";
+			mes "嗯，你不知道什麼是形狀記憶合金嗎？呃，只要記住這一點：用形狀記憶合金製成的電線會隨著時間的推移恢復其形狀。";
 			next;
-			mes "[Master Velofos]";
-			mes "Like the alloy, a spell on a Magic Book remains after a use, although reusing the spell has a downtime for its restoration.";
+			mes "[威洛弗斯大師]";
+			mes "就像合金一樣，魔法書上的法術在使用後仍然存在，儘管重複使用該法術會有一個恢復的停機時間。";
 			next;
-			mes "[Master Velofos]";
-			mes "...Oh, I didn't mean to talk for too long. Anyways, you can use Magic Books to cast spells that you've learned. Its concept is different from normal spells.";
+			mes "[威洛弗斯大師]";
+			mes "...哦，我不是故意說太久的。總之，你可以使用魔法書來施放你已經學會的法術。它的概念與普通的法術不同。";
 			next;
-			select("What's the difference?");
-			mes "[Master Velofos]";
-			mes "Why do you have to write your existing spells in Magic Books, you asked?";
+			select("有什麼不同？");
+			mes "[威洛弗斯大師]";
+			mes "你問為什麼要把你現有的法術寫在魔法書裡？";
 			next;
-			mes "[Master Velofos]";
-			mes "That's a good question. It's related to Magic Binding.";
+			mes "[威洛弗斯大師]";
+			mes "這是一個好問題。它與魔法綁定有關。";
 			next;
-			mes "[Master Velofos]";
-			mes "You already learned Release, which allows you to hold the energy of the four different elements before the actual casting. Magic Binding is similar to Release.";
+			mes "[威洛弗斯大師]";
+			mes "你已經學會了釋放術，它可以讓你施法前先掌握四種不同元素的能量。魔法綁定與釋放術相似。";
 			next;
-			mes "[Master Velofos]";
-			mes "Since you've learned Release, you're capable of using Magic Binding as well. Well, let's talk about that later.";
+			mes "[威洛弗斯大師]";
+			mes "既然你已經學會了釋放術，你也有能力使用魔法綁定。嗯，我們稍後再談這個。";
 			next;
-			mes "[Master Velofos]";
-			mes "You know how to hold an existing spell, and then cast it at a desired timing via Release.";
+			mes "[威洛弗斯大師]";
+			mes "你知道如何掌握一個現有的法術，然後在需要的時間透過釋放術來施放它。";
 			next;
-			mes "[Master Velofos]";
-			mes "Carrying the globes of the four elements is also related to Magic Binding.";
+			mes "[威洛弗斯大師]";
+			mes "攜帶四元素的能量球也與魔法綁定有關。";
 			next;
-			mes "[Master Velofos]";
-			mes "As you know, the four elements are Fire, Water, Wind, and Earth. Being able to employ them freely is the essential principle of magic.";
+			mes "[威洛弗斯大師]";
+			mes "如你所知，四種元素是火、水、風和土。能夠自由地運用它們是魔法的 Essentia 原則。";
 			next;
-			mes "[Master Velofos]";
-			mes "We Humans use torches to keep fire, fans to blow wind, and bowls to hold water. We also use clay to make earthenware.";
+			mes "[威洛弗斯大師]";
+			mes "我們人類用火把來保存火，用扇子來吹風，用碗來盛水。我們也用粘土來製作陶器。";
 			next;
-			mes "[Master Velofos]";
-			mes "Those activities may differ from magic, but both are the same in the sense of employing the four elements.";
+			mes "[威洛弗斯大師]";
+			mes "這些活動可能與魔法不同，但從運用四種元素的意義上來說，兩者是相同的。";
 			next;
-			mes "[Master Velofos]";
-			mes "When you use complex magic spells to summon a storm, drop lightning, or burn an area, that consumes a lot of your energy, both physically and mentally.";
+			mes "[威洛弗斯大師]";
+			mes "當你使用複雜的魔法來召喚風暴、落下閃電或燃燒一個區域時，這會消耗你大量的能量，無論是身體上還是精神上。";
 			next;
-			mes "[Master Velofos]";
-			mes "When you fail to bind such powerful magic spells or fail to control them, you can receive irreparable damage to your mind and body.";
+			mes "[威洛弗斯大師]";
+			mes "當你未能綁定如此強大的魔法，或未能控制它們時，你可能會對你的身心造成無法彌補的損害。";
 			next;
-			mes "[Master Velofos]";
-			mes "That's why we use Magic Books to reduce that burden. It helps summon pre-cast spells while you're focusing on binding their magic power.";
+			mes "[威洛弗斯大師]";
+			mes "這就是為什麼我們使用魔法書來減輕這種負擔。它可以幫助召喚預先施放的法術，同時你專注於綁定它們的魔力。";
 			next;
-			mes "[Master Velofos]";
-			mes "There's one downside though: Magic Books cannot be used for spells that you haven't learned.";
+			mes "[威洛弗斯大師]";
+			mes "不過，有一個缺點：魔法書不能用於你沒有學過的法術。";
 			next;
-			mes "[Master Velofos]";
-			mes "As I said earlier, spells in Magic Books tend to go back to what they are.";
+			mes "[威洛弗斯大師]";
+			mes "正如我之前所說，魔法書中的法術往往會回到它們原來的狀態。";
 			next;
-			mes "[Master Velofos]";
-			mes "That said, as a Circler, you cannot change or create spells in Magic Books.";
+			mes "[威洛弗斯大師]";
+			mes "也就是說，作為一個 Circler，你不能更改或創建魔法書中的法術。";
 			next;
-			mes "[Master Velofos]";
-			mes "Even if you create one, its power will be beyond your capacity.";
+			mes "[威洛弗斯大師]";
+			mes "即使你創建了一個，它的力量也會超出你的能力範圍。";
 			next;
-			mes "[Master Velofos]";
-			mes "In order to use the Reading Spell Book, you must learn the Freezing Spell to bind magic.";
+			mes "[威洛弗斯大師]";
+			mes "為了使用閱讀魔法書，你必須學習冰凍術來綁定魔法。";
 			close;
 		}
 	case 3:
-		mes "[Master Velofos]";
-		mes "The Freezing Spell is used for Magic Binding. It helps you to insert a magic spell to a circle.";
+		mes "[威洛弗斯大師]";
+		mes "冰凍術用於魔法綁定。它可以幫助你將一個魔法插入到一個圓圈中。";
 		next;
-		mes "[Master Velofos]";
-		mes "Circles of magic work organically with each other. When you use the Freezing Spell to bind a spell, the spell won't activate until you cast the release spell.";
+		mes "[威洛弗斯大師]";
+		mes "魔法圈之間有機地協同工作。當你使用冰凍術來綁定一個法術時，該法術直到你施放釋放術才會啟動。";
 		next;
-		mes "[Master Velofos]";
-		mes "Of course, binding a spell continuously consumes your mana, but it consumes less mana than conventional magic spells.";
+		mes "[威洛弗斯大師]";
+		mes "當然，持續綁定一個法術會消耗你的法力，但它比傳統的魔法消耗更少的法力。";
 		next;
-		mes "[Master Velofos]";
-		mes "Magic Binding becomes more difficult when you use more powerful magic spells.";
+		mes "[威洛弗斯大師]";
+		mes "當你使用更強大的魔法時，魔法綁定會變得更加困難。";
 		next;
-		mes "[Master Velofos]";
-		mes "For weak spells, you can bind two to three of them with your circle. For more powerful spells, maybe one or two is possible.";
+		mes "[威洛弗斯大師]";
+		mes "對於較弱的法術，你可以用你的圈子綁定兩到三個。對於更強大的法術，可能只能綁定一個或兩個。";
 		next;
-		mes "[Master Velofos]";
-		mes "That all depends on your ability to control your spells. You'll have to try and experience Magic Binding after you first learn it to really understand.";
+		mes "[威洛弗斯大師]";
+		mes "這完全取決於你控制法術的能力。你必須先嘗試和體驗魔法綁定，才能真正理解它。";
 		close;
 	case 4:
-		mes "[Master Velofos]";
-		mes "I'm sorry, but I only have Magic Books for beginners, but they're obviously not suitable for you. Do you still want one?";
+		mes "[威洛弗斯大師]";
+		mes "很抱歉，我只有適合初學者的魔法書，但它們顯然不適合你。你還想要嗎？";
 		next;
-		switch (select("Sure thing.:Where can I find advanced books?")) {
+		switch (select("當然。:哪裡可以找到高級書籍？")) {
 		case 1:
-			mes "[Master Velofos]";
-			mes "Please go talk to [Lea] in the Archive. Tell her that you need one of the Magic Books that I've stored in there.";
+			mes "[維洛福斯大師]";
+			mes "請去檔案室找 [莉亞] 談談。告訴她你需要我存放在那裡的一本魔法書。";
 			next;
-			mes "[Master Velofos]";
-			mes "For your information, she won't give it to you without anything in return. Expect her to ask you for something!";
+			mes "[維洛福斯大師]";
+			mes "提醒你一下，如果沒有任何回報，她不會給你書的。預期她會要求你提供一些東西！";
 			if (wm_book < 1) set wm_book, 1;
 			close;
 		case 2:
-			mes "[Master Velofos]";
-			mes "I'm sorry, but our management has recently decided to limit the availability of Magic Books for Multi Circlers. It's because their numbers are increasing more quickly than we expected.";
+			mes "[維洛福斯大師]";
+			mes "很抱歉，但我們的管理層最近決定限制多重循環者使用魔法書。這是因為他們的人數增加的速度比我們預期的還要快。";
 			next;
-			mes "[Master Velofos]";
-			mes "You could find one if you try hard, but I don't have any with me.";
+			mes "[維洛福斯大師]";
+			mes "如果你努力嘗試，或許可以找到一本，但我手邊沒有。";
 			next;
-			mes "[Master Velofos]";
-			mes "If our management releases the restriction, you'll be the first one to know. Don't worry.";
+			mes "[維洛福斯大師]";
+			mes "如果我們的管理層解除限制，你會是第一個知道的人。別擔心。";
 			close;
 		}
 	case 5:
-		mes "[Master Velofos]";
-		mes "Nothing will happen when you try to bind magic without using Magic Binding because you have nothing to hold magic.";
+		mes "[維洛福斯大師]";
+		mes "如果你沒有使用魔法書，就嘗試進行魔法結合，因為你沒有任何東西可以承載魔法，所以什麼都不會發生。";
 		next;
-		mes "[Master Velofos]";
-		mes "It's like water that needs a bowl to stay in place.";
+		mes "[維洛福斯大師]";
+		mes "就像水需要一個碗才能固定住一樣。";
 		next;
-		mes "[Master Velofos]";
-		mes "The problem is when you try to forcefully cast a spell that you haven't learned. It'll definately backfire on you.";
+		mes "[維洛福斯大師]";
+		mes "問題是，如果你強行施放一個你沒有學過的法術。這絕對會對你產生反效果。";
 		next;
-		mes "[Master Velofos]";
-		mes "Of course, the damage won't be severe: you'll fall asleep or be thrown into confusion. This is all because there's a conflict between your Magic Book and the force of Magic Binding when you're trying to summon and hold a unlearned spell.";
+		mes "[維洛福斯大師]";
+		mes "當然，損害不會很嚴重：你會睡著或陷入混亂。這一切都是因為當你試圖召喚和保持一個未學習的法術時，你的魔法書和魔法結合的力量之間存在衝突。";
 		next;
-		mes "[Master Velofos]";
-		mes "Don't try it out just to see what happens for yourself! Falling asleep while casting a spell? There's nothing more humiliating than that to magic practitioners like us.";
+		mes "[維洛福斯大師]";
+		mes "不要為了看看會發生什麼事就去嘗試！在施法時睡著？對於像我們這樣的魔法從業者來說，沒有比這更令人羞辱的事情了。";
 		close;
 	case 6:
 		if ((BaseLevel > 139) && (getskilllv(2217) > 0 || getskilllv(2213) > 0)) {
 			if (mac_book < 1) {
-				mes "[Master Velofos]";
-				mes "I'm sorry, but could you ask someone else? I'm kind of busy right now.";
+				mes "[維洛福斯大師]";
+				mes "我很抱歉，你可以問問其他人嗎？我現在有點忙。";
 				close;
 			}
 			if (mac_book == 1) {
-				mes "[Master Velofos]";
-				mes "Huh, are you looking for the Ultimate Magic Book? Who sent you?";
+				mes "[維洛福斯大師]";
+				mes "嗯，你在尋找究極魔法書嗎？誰派你來的？";
 				next;
-				select("Ms. Lea.");
-				mes "[Master Velofos]";
-				mes "I'm sorry, but there's not much information left about the Ultimate Magic Book.";
+				select("莉亞小姐。");
+				mes "[維洛福斯大師]";
+				mes "我很抱歉，但關於究極魔法書的信息已經不多了。";
 				next;
-				mes "[Master Velofos]";
-				mes "A few scholars in the Midgard Continent once tried to collect ancient Magic Books and reproduce that book, but...";
+				mes "[維洛福斯大師]";
+				mes "米德加爾特大陸的一些學者曾經試圖收集古代魔法書並重現那本書，但是...";
 				next;
-				select("But what?");
-				mes "[Master Velofos]";
-				mes "Oh yes, perhaps he might know something.";
+				select("但是什麼？");
+				mes "[維洛福斯大師]";
+				mes "喔對，或許他可能知道一些事情。";
 				next;
-				select("Yes, I knew this was coming!");
-				mes "[Master Velofos]";
-				mes "My brother is just like you. He's very interested in recreating the Ultimate Magic Book.";
+				select("是的，我就知道會這樣！");
+				mes "[維洛福斯大師]";
+				mes "我的兄弟和你一樣。他對重現究極魔法書非常感興趣。";
 				next;
-				mes "[Master Velofos]";
-				mes "His name is Galfos.";
-				mes "He's been taking a great interest in the ancient Magic Books.";
+				mes "[維洛福斯大師]";
+				mes "他的名字是蓋爾佛斯。";
+				mes "他對古代魔法書非常感興趣。";
 				next;
-				mes "[Master Velofos]";
-				mes "I didn't support him or give him any advice for his research since I thought he'd give on it pretty quickly, but...";
+				mes "[維洛福斯大師]";
+				mes "我沒有支持他或給他任何研究建議，因為我認為他很快就會放棄，但是...";
 				next;
-				mes "[Master Velofos]";
-				mes "If he's discovered anything useful, maybe it can helpful to you.";
+				mes "[維洛福斯大師]";
+				mes "如果他發現了任何有用的東西，也許可以對你有所幫助。";
 				next;
-				select("Where's Galfos now?");
-				mes "[Master Velofos]";
-				mes "I've heard that he's near the Expedition Camp beyond the Dimensional Rift to seek information about the ancient Magic Books.";
+				select("蓋爾佛斯現在在哪裡？");
+				mes "[維洛福斯大師]";
+				mes "我聽說他在次元裂縫之外的探險營地附近，以尋找關於古代魔法書的信息。";
 				next;
-				mes "[Master Velofos]";
-				mes "If you want to see him, you should prepare for a long journey.";
+				mes "[維洛福斯大師]";
+				mes "如果你想見他，你應該為長途跋涉做好準備。";
 				set mac_book,2;
 				close;
 			}
 			if (mac_book > 1) {
-				mes "[Master Velofos]";
-				mes "Galfos is near the Expedition Camp beyond the Dimensional Rift.";
+				mes "[維洛福斯大師]";
+				mes "蓋爾佛斯在次元裂縫之外的探險營地附近。";
 				next;
-				mes "[Master Velofos]";
-				mes "If you want to see him, you should prepare for a long journey.";
+				mes "[維洛福斯大師]";
+				mes "如果你想見他，你應該為長途跋涉做好準備。";
 				close;
 			}
 		}
-		mes "[Master Velofos]";
-		mes "Ha ha, I'm sorry, but you should focus on strengthening your body rather than creating Magic Books.";
+		mes "[維洛福斯大師]";
+		mes "哈哈，我很抱歉，但你應該專注於增強你的身體，而不是創造魔法書。";
 		close;
 	}
 }
 
 geffen_in,175,112,4	script	Lea	2_F_MAGICMASTER,{
 	if (checkweight(1201,1) == 0) {
-		mes "You're carrying too many items. Please make some room in your bag first.";
+		mes "你攜帶的物品太多了。請先整理一下你的包包。";
 		close;
 	}
 	if ((MaxWeight - Weight) < 1000) {
-		mes "You're overweight with items. Please lose some item weight first.";
+		mes "你攜帶的物品超重了。請先減輕一些物品重量。";
 		close;
 	}
 	if (wm_book > 0 && ((eaclass()&EAJ_THIRDMASK)==EAJ_WARLOCK)) {
-		mes "[Lea]";
-		mes "How may I help you?";
+		mes "[莉亞]";
+		mes "有什麼我可以幫你的嗎？";
 		next;
-		select("Master Velofos asked me to bring his Magic Book.");
-		mes "[Lea]";
-		mes "Are you borrowing a book?";
+		select("維洛福斯大師要我拿他的魔法書。");
+		mes "[莉亞]";
+		mes "你要借書嗎？";
 		next;
-		switch (select("Let me think.:I want the Intermediate Magic Books.:I want the Superior Magic Books.:I want the Ultimate Magic Books.")) {
+		switch (select("讓我想想。:我想要中級魔法書。:我想要高級魔法書。:我想要究極魔法書。")) {
 		case 1:
-			mes "[Lea]";
-			mes "No problem.";
+			mes "[莉亞]";
+			mes "沒問題。";
 			close;
 		case 2:
-			mes "[Lea]";
-			mes "Ah, so you want the Intermediate Magic Books. If you pay a ^4d4dffloan deposit of 100,000z^000000, we will lend you an Intermediate Magic Books.";
+			mes "[莉亞]";
+			mes "啊，所以你想要中級魔法書。如果你支付 ^4d4dff100,000z^000000 的貸款押金，我們將借給你一本中級魔法書。";
 			next;
-			mes "[Lea]";
-			mes "What kind of Magic Book do you want?";
+			mes "[莉亞]";
+			mes "你想要哪種魔法書？";
 			next;
-			set .@i, select("Let me think.:Magic Book (Storm Gust):Magic Book (Lord of Vermillion):Magic Book (Meteor Storm)")-1;
-			mes "[Lea]";
+			set .@i, select("讓我想想。:魔法書 (暴風雪):魔法書 (火之獵殺):魔法書 (隕石術)")-1;
+			mes "[莉亞]";
 			if (!.@i) {
-				mes "No problem.";
+				mes "沒問題。";
 				close;
 			}
 			setarray .@Books[0],100065,100066,100067;
 			if (countitem(.@Books[.@i-1])) {
-				mes "You already have that Magic Book. You can't borrow a new book until you return the current one.";
+				mes "你已經有那本魔法書了。在歸還目前的書之前，你不能借一本新書。";
 				next;
-				mes "[Lea]";
-				mes "Don't you know how many others would want the book you already have? It's a bit selfish to want more than one, you know.";
+				mes "[莉亞]";
+				mes "你知道有多少人想要你已經擁有的那本書嗎？想要超過一本有點自私，你知道嗎。";
 				close;
 			}
 			if (Zeny > 99999) {
-				mes "Thank you for your deposit. The book's return date is written on the lending card on the back cover of the book. Please try not to lose or damage the book and avoid paying compensation.";
+				mes "感謝你的押金。書的歸還日期寫在書封底的借閱卡上。請盡量不要遺失或損壞書籍，並避免支付賠償金。";
 				next;
-				mes "[Lea]";
-				mes "The Intermediate and Superior Magic Books must be returned upon borrowing the Ultimate Magic Book. Remember that you're just borrowing them, so make sure you take good care of those books.";
+				mes "[莉亞]";
+				mes "借閱究極魔法書時，必須歸還中級和高級魔法書。請記住，你只是借用它們，所以請務必好好保管這些書。";
 				Zeny -= 100000;
 				getitem .@Books[.@i-1],1; //WL_MB_SG, WL_MB_LOV, WL_MB_MS
 				close;
 			}
-			mes "The ^4d4dffloan deposit is 100,000z^000000. The deposit has adjusted as the Magic Book has changed.";
+			mes "貸款 ^4d4dff押金為 100,000z^000000。押金已隨著魔法書的變更而調整。";
 			close;
 		case 3:
-			mes "[Lea]";
-			mes "Oh, do you want the Superior Magic Books? The policy has been changed to accept loan deposits unconditionally, instead of the existing demanding loan conditions.";
-			mes "The Superior Magic Book ^4d4dffloan deposit is 500,000z^000000.";
+			mes "[莉亞]";
+			mes "喔，你想要高級魔法書嗎？政策已更改為無條件接受貸款押金，而不是現有的苛刻貸款條件。";
+			mes "高級魔法書 ^4d4dff貸款押金為 500,000z^000000。";
 			next;
-			mes "[Lea]";
-			mes "What kind of Magic Book do you want?";
+			mes "[莉亞]";
+			mes "你想要哪種魔法書？";
 			next;
-			set .@i, select("Let me think.:Magic Book (Drain Life):Magic Book (Jack Frost):Magic Book (Earth Strain):Magic Book (Crimson Rock):Magic Book (Chain Lightning)")-1;
-			mes "[Lea]";
+			set .@i, select("讓我想想。:魔法書 (吸血術):魔法書 (冰刃之牆):魔法書 (地震術):魔法書 (烈火岩漿):魔法書 (連鎖閃電)")-1;
+			mes "[莉亞]";
 			if (!.@i) {
-				mes "No problem.";
+				mes "沒問題。";
 				close;
 			}
 			setarray .@Books[0],100068,100069,100070,100071,100072;
 			if (countitem(.@Books[.@i-1])) {
-				mes "You already have that Magic Book. You can't borrow a new book until you return the current one.";
+				mes "你已經有那本魔法書了。在歸還目前的書之前，你不能借一本新書。";
 				next;
-				mes "[Lea]";
-				mes "Don't you know how many others would want the book you already have? It's a bit selfish to want more than one, you know.";
+				mes "[莉亞]";
+				mes "你知道有多少人想要你已經擁有的那本書嗎？想要超過一本有點自私，你知道嗎。";
 				close;
 			}
 			if (Zeny > 499999) {
-				mes "Thank you for your deposit. The book's return date is written on the lending card on the back cover of the book. Please try not to lose or damage the book and avoid paying compensation.";
+				mes "感謝你的押金。書的歸還日期寫在書封底的借閱卡上。請盡量不要遺失或損壞書籍，並避免支付賠償金。";
 				next;
-				mes "[Lea]";
-				mes "The Intermediate and Superior Magic Books must be returned upon borrowing the Ultimate Magic Book. Remember that you're just borrowing them, so make sure you take good care of those books.";
+				mes "[莉亞]";
+				mes "在借閱終極魔法書時，必須歸還中級和高級魔法書。 請記住，你只是借閱它們，所以請務必好好保管這些書。";
 				Zeny -= 500000;
 				getitem .@Books[.@i-1],1; //WL_MB_DL, WL_MB_JF, WL_MB_ES, WL_MB_CR, WL_MB_CL
 				close;
 			}
-			mes "The ^4d4dffloan deposit is 500,000z^000000. The deposit has adjusted as the Magic Book has changed.";
+			mes "貸款押金為 ^4d4dff500,000z^000000。 押金已隨著魔法書的更換而調整。";
 			close;
 		case 4:
 			if ((BaseLevel > 139) && (mac_book < 1) && ((getskilllv(2217) > 0) || (getskilllv(2213) > 0))) {
-				mes "[Lea]";
-				mes "Did... Did you just say the Ultimate Magic Book?";
+				mes "[莉亞]";
+				mes "你...你剛才說的是終極魔法書嗎？";
 				next;
-				mes "[Lea]";
-				mes "Oh, my....";
-				mes "I can't believe someone actually wants that book.";
+				mes "[莉亞]";
+				mes "喔，我的天....";
+				mes "真不敢相信竟然有人想要那本書。";
 				next;
-				select("Please don't say that you don't have it.");
-				mes "[Lea]";
-				mes "Frankly, I've never even seen the Ultimate Magic Book.";
+				select("請不要說你沒有。");
+				mes "[莉亞]";
+				mes "坦白說，我甚至從未見過終極魔法書。";
 				next;
-				mes "[Lea]";
-				mes "You should ask Master Velofos if you want to know more about that book.";
+				mes "[莉亞]";
+				mes "如果你想知道更多關於那本書的事情，你應該去問法師威洛夫。";
 				next;
-				mes "[Lea]";
-				mes "I'm sorry that I can't help you more than that.";
+				mes "[莉亞]";
+				mes "我很抱歉，我無法提供更多幫助。";
 				set mac_book,1;
 				close;
 			}
 			if ((BaseLevel > 139) && (mac_book > 0) && ((getskilllv(2217) > 0) || (getskilllv(2213) > 0))) {
-				mes "[Lea]";
-				mes "You should ask Master Velofos for some information about that book.";
+				mes "[莉亞]";
+				mes "你應該去問法師威洛夫一些關於那本書的資訊。";
 				close;
 			}
-			mes "[Lea]";
-			mes "Well... why don't you practice a little longer before that?";
+			mes "[莉亞]";
+			mes "嗯...為什麼不先多練習一下呢？";
 			next;
-			mes "[Lea]";
-			mes "In order to obtain the Ultimate Magic Book, you must reach Level 140 and learn Tetera Bolt and Comet.";
+			mes "[莉亞]";
+			mes "為了獲得終極魔法書，你必須達到 140 級並學習隕石術和彗星。";
 			next;
-			mes "[Lea]";
-			mes "That book can't be used by just anyone, you know?";
+			mes "[莉亞]";
+			mes "你知道嗎，那本書不是隨便什麼人都能用的？";
 			close;
 		}
 	}
-	mes "[Lea]";
-	mes "Welcome to the Magic Archive. You can read and borrow books from here under certain conditions.";
+	mes "[莉亞]";
+	mes "歡迎來到魔法檔案館。 在某些條件下，你可以從這裡閱讀和借閱書籍。";
 	close;
 }
 
 mid_camp,255,244,4	script	Galfos	4_M_JOB_WIZARD,{
 	if (checkweight(1201,1) == 0) {
-		mes "You're carrying too many items. Please make some room in your bag first.";
+		mes "你攜帶的物品太多了。 請先整理一下你的包包。";
 		close;
 	}
 	if ((MaxWeight - Weight) < 1000) {
-		mes "You're overweight with items. Please lose some item weight first.";
+		mes "你的物品超重了。 請先減輕一些物品重量。";
 		close;
 	}
 	if ((Upper == 2) && (Class != Job_Baby_Warlock)) {
-		mes "[Galfos]";
-		mes "What are you, a baby?";
-		mes "I'm not here to babysit. Get lost!";
+		mes "[蓋爾夫]";
+		mes "你是什麼，小孩子嗎？";
+		mes "我不是來當保姆的。 滾開！";
 		close;
 	}
 	if ((eaclass()&EAJ_THIRDMASK)!=EAJ_WARLOCK) {
-		mes "[Galfos]";
-		mes "My right arm feels hot while my left arm feels cold. I can never get used to this weird weather!";
+		mes "[蓋爾夫]";
+		mes "我的右臂感覺很熱，而我的左臂感覺很冷。 我永遠無法習慣這種奇怪的天氣！";
 		close;
 	}
 	if (getskilllv(2230) < 1) {
-		mes "[Galfos]";
-		mes "Ah, I'll get myself in trouble if I stay here any longer. Maybe I'm already in...";
+		mes "[蓋爾夫]";
+		mes "啊，如果我在這裡待久一點，我會惹上麻煩的。 也許我已經惹上了......";
 		close;
 	}
 	if (BaseLevel < 140 || (getskilllv(2217) < 1 && getskilllv(2213) < 1)) {
-		mes "[Galfos]";
-		mes "I'm sorry, but I don't talk to people that aren't even ready for this.";
+		mes "[蓋爾夫]";
+		mes "我很抱歉，我不跟還沒準備好的人說話。";
 		close;
 	}
 	if (mac_book < 2) {
-		mes "[Galfos]";
-		mes "You look strong, but you don't seem to have any business with me.";
+		mes "[蓋爾夫]";
+		mes "你看起來很強壯，但你似乎沒有什麼事要找我。";
 		close;
 	}
 	if (mac_book == 2) {
-		mes "[Galfos]";
-		mes "What brings you to me?";
+		mes "[蓋爾夫]";
+		mes "是什麼風把你吹來的？";
 		next;
-		select("I heard that you've studied the Ultimate Magic Book.");
-		mes "[Galfos]";
-		mes "Why, are you interested too?";
-		mes "I didn't know someone would actually take an interest in that book. Yes, I'm studying that magic book. How did you find that out?";
+		select("我聽說你研究過終極魔法書。");
+		mes "[蓋爾夫]";
+		mes "怎麼，你也感興趣嗎？";
+		mes "我不知道竟然有人會對那本書感興趣。 沒錯，我正在研究那本魔法書。 你是怎麼發現的？";
 		next;
-		select("You're Velof's brother, right?");
-		mes "[Galfos]";
-		mes "Yes, I'm Galfos, and Velofos is my brother.";
+		select("你是威洛夫的兄弟，對吧？");
+		mes "[蓋爾夫]";
+		mes "是的，我是蓋爾夫，威洛夫是我的兄弟。";
 		next;
-		mes "[Galfos]";
-		mes "Wait a minute,";
-		mes "did the old man recommend me to you?";
+		mes "[蓋爾夫]";
+		mes "等一下，";
+		mes "是那個老頭推薦你來找我的嗎？";
 		next;
-		select("That's right.");
-		mes "[Galfos]";
-		mes "Wow!";
-		mes "This is surprising. He never took my research very seriously. I'm glad that he finally changed his mind.";
+		select("沒錯。");
+		mes "[蓋爾夫]";
+		mes "哇！";
+		mes "這太令人驚訝了。 他從來沒有認真看待過我的研究。 我很高興他終於改變主意了。";
 		next;
-		mes "[Galfos]";
-		mes "Heh! Your timing couldn't be better: I was looking for a test object.";
+		mes "[蓋爾夫]";
+		mes "嘿！ 你的時機真是太好了：我一直在尋找一個測試對象。";
 		next;
-		select("A test object?");
-		mes "[Galfos]";
-		mes "Frankly, I'm only interested in creating the Ultimate Magic Book.";
+		select("測試對象？");
+		mes "[蓋爾夫]";
+		mes "坦白說，我只對創造終極魔法書感興趣。";
 		next;
-		mes "[Galfos]";
-		mes "I'm not good at using magic, not to mention that I prefer fists in fighting. Nevertheless, I find Magic Books to be incredibly intriguing.";
+		mes "[蓋爾夫]";
+		mes "我不擅長使用魔法，更不用說我更喜歡用拳頭戰鬥。 儘管如此，我還是覺得魔法書非常吸引人。";
 		next;
-		mes "[Galfos]";
-		mes "The problem is that I can't use the Ultimate Magic Book, even if I made one. That's why I can't really test it on my own.";
+		mes "[蓋爾夫]";
+		mes "問題是我不能使用終極魔法書，即使我創造了一本。 這就是為什麼我無法真正地自己測試它。";
 		next;
-		mes "[Galfos]";
-		mes "That's why I've been waiting for a true magic practitioner like you that can help me test my Ultimate Magic Book.";
+		mes "[蓋爾夫]";
+		mes "這就是為什麼我一直在等待像你這樣真正的魔法從業者，可以幫助我測試我的終極魔法書。";
 		next;
-		select("(What is he talking about?)");
-		mes "[Galfos]";
-		mes "My research is almost done,";
-		mes "and I need to solve one last problem to create the Magic Book.";
+		select("(他在說什麼？)");
+		mes "[蓋爾夫]";
+		mes "我的研究即將完成，";
+		mes "我需要解決最後一個問題才能創造出魔法書。";
 		next;
-		mes "[Galfos]";
-		mes "To make the ancient Ultimate Magic Book, I need an artifact and some spells to fuse into it.";
+		mes "[蓋爾夫]";
+		mes "為了製造古代的終極魔法書，我需要一件神器和一些咒語來融合到其中。";
 		next;
-		mes "[Galfos]";
-		mes "I've perfectly restored the spells based on the ancient documents, but I still have no information about the necessary artifact.";
+		mes "[蓋爾夫]";
+		mes "我已經根據古代文獻完美地復原了咒語，但我仍然沒有關於必要神器的資訊。";
 		next;
-		mes "[Galfos]";
-		mes "Ah, but there's a silver lining!";
+		mes "[蓋爾夫]";
+		mes "啊，但有一線希望！";
 		next;
-		select("(Now we're getting somewhere!)");
-		mes "[Galfos]";
-		mes "Ha ha...";
-		mes "There's a great archive in El Dicastes, the Capital City of the Evil Giants, where all knowledge in this world is stored.";
+		select("(我們快要接近真相了！)");
+		mes "[蓋爾夫]";
+		mes "哈哈哈...";
+		mes "在邪惡巨人的首都艾爾迪卡斯特斯，有一個巨大的檔案館，儲存著世界上所有的知識。";
 		next;
-		mes "[Galfos]";
-		mes "Maybe that's the place to find some information about the artifact for this Ultimate Magic Book.";
+		mes "[蓋爾夫]";
+		mes "也許那是找到關於終極魔法書所需神器資訊的地方。";
 		next;
-		mes "[Galfos]";
-		mes "You know what to do, don't you? Find information about the artifact in the El Dicastes archive, using everything in your power.";
+		mes "[蓋爾夫]";
+		mes "你知道該怎麼做了，不是嗎？ 使用你所有的力量，在艾爾迪卡斯特斯檔案館中找到關於神器的資訊。";
 		next;
-		mes "[Galfos]";
-		mes "Afterwards, create and bring me the artifact. We'll talk about creating the Magic Book afterwards.";
+		mes "[蓋爾夫]";
+		mes "之後，創造並把神器帶給我。 之後我們再談論創造魔法書的事情。";
 		set mac_book,3;
 		close;
 	}
 	if (mac_book == 3) {
-		mes "[Galfos]";
-		mes "You know what to do, don't you? Find information about the artifact in the El Dicastes archive, using everything in your power.";
+		mes "[蓋爾夫]";
+		mes "你知道該怎麼做了，不是嗎？ 使用你所有的力量，在艾爾迪卡斯特斯檔案館中找到關於神器的資訊。";
 		next;
-		mes "[Galfos]";
-		mes "Afterwards, create and bring me the artifact. We'll talk about creating the Magic Book afterwards.";
+		mes "[蓋爾夫]";
+		mes "之後，創造並把神器帶給我。 之後我們再談論創造魔法書的事情。";
 		close;
 	}
 	if (mac_book == 4) {
-		mes "[Galfos]";
-		mes "Oh, did you find";
-		mes "anything useful?";
+		mes "[蓋爾夫]";
+		mes "哦，你找到";
+		mes "任何有用的東西了嗎？";
 		next;
-		set .@i, select("I've discovered everything about Comet.:I've mastered the zenith of Tetra Vortex.");
-		mes "[Galfos]";
+		set .@i, select("我已經發現了關於彗星的一切。:我已經掌握了四重奏漩渦的頂峰。");
+		mes "[蓋爾夫]";
 		if ((.@i == 1 && countitem(100073)) || (.@i == 2 && countitem(100074))) {
-			mes "Are you kidding me? You already have the book!";
+			mes "你在開玩笑嗎？ 你已經有這本書了！";
 			close;
 		}
 		if ((.@i == 1 && checkquest(12218) == 2) || (.@i == 2 && checkquest(12219) == 2 && checkquest(12220) == 2 && checkquest(12221) == 2 && checkquest(12222) == 2)) {
-			mes "Oh my, I sense incredible energy coming from you. This is great! Now we're ready to make the Ultimate Magic Book.";
+			mes "哦，我的天，我感覺到你身上散發出難以置信的能量。 太棒了！ 現在我們準備好製作終極魔法書了。";
 			next;
-			mes "[Galfos]";
-			mes "There's one problem, though: I'm so broke that I don't even have enough money to buy the tools to make the book.";
+			mes "[蓋爾夫]";
+			mes "但是，有一個問題：我太窮了，甚至沒有足夠的錢來購買製作這本書的工具。";
 			next;
-			mes "[Galfos]";
-			mes "I need at least ^0000aa500,000 zeny^000000 to buy all the necessary tools. Do you have the money?";
+			mes "[蓋爾夫]";
+			mes "我至少需要 ^0000aa500,000 zeny^000000 才能購買所有必要的工具。 你有錢嗎？";
 			next;
-			if(select("Wh-what? No!:Sure.") == 1) {
-				mes "[Galfos]";
-				mes "Aw, you don't? It's disappointing, but there's nothing I can do. Come back when you have enough money, okay?";
+			if(select("什-什麼？ 沒有！:當然。") == 1) {
+				mes "[蓋爾夫]";
+				mes "喔，你沒有？ 這令人失望，但我無能為力。 等你有足夠的錢再回來吧，好嗎？";
 				close;
 			}
-			mes "[Galfos]";
+			mes "[賈爾弗斯]";
 			if (Zeny >= 500000) {
-				mes "Alright then, let's get started!";
+				mes "好吧，那我們開始吧！";
 				next;
 				specialeffect2 EF_DISPELL;
 				progressbar "ffff00",4;
 				specialeffect2 EF_LORD;
 				set Zeny, Zeny - 500000;
 				getitem 100072+.@i,1; //WL_MB_CM, WL_MB_TV
-				mes "[Galfos]";
-				mes "Man, I almost lost my control to the incredible magic energy! Here's your Magic Book.";
+				mes "[賈爾弗斯]";
+				mes "老天，我差點要壓抑不住這股驚人的魔法能量了！這是你的魔法書。";
 				next;
-				mes "[Galfos]";
-				mes "Thank you for making my dream come true. Feel free to come back if you need another one of these books.";
+				mes "[賈爾弗斯]";
+				mes "感謝你讓我的夢想實現。如果你需要更多這些書，隨時回來找我。";
 				close;
 			}
-			mes "Hey, what did I tell you? I can't buy the tools to make the book without money!";
+			mes "嘿，我跟你說了什麼？沒有錢我沒辦法買工具來製作書本！";
 			close;
 		}
-		mes "Are you sure that you've found something? It doesn't seem like you've learned what we need...";
+		mes "你確定你找到東西了嗎？看起來你還沒學到我們需要的東西...";
 		close;
 	}
-	mes "[Galfos]";
-	mes "Is there anything else you need?";
+	mes "[賈爾弗斯]";
+	mes "你還需要什麼嗎？";
 	close;
 }
 
 dic_in01,25,190,0	script	Mysterious Documents	CLEAR_NPC,{
 	if (isequipped(2782) < 1) {
-		mes "I better not forget to equip my ring.";
+		mes "我最好別忘記裝備我的戒指。";
 		close;
 	}
 	if (ep13_3_invite < 5) {
-		mes "When you approach the documents, an Evil Giant that looks like the archive manager tries to call Guard Galton. You should get out of here quickly.";
+		mes "當你靠近那些文件時，一個看起來像檔案管理員的邪惡巨人會試圖呼叫警衛賈爾頓。你應該趕快離開這裡。";
 		close;
 	}
 	if (checkquest(12165,PLAYTIME) == 1) {
-		mes "The documents are making you feel nauseous. You should come back later after your stomach settles.";
+		mes "那些文件讓你感到噁心。你應該等你的胃舒服一點後再來。";
 		close;
 	}
 	if (checkquest(12165,PLAYTIME) == 2) {
-		mes "You don't feel as nauseous anymore. It should be safe to proceed now.";
+		mes "你不再感到那麼噁心了。現在應該可以安全前進了。";
 		erasequest 12165;
 		close;
 	}
 	if ((BaseLevel < 140) || (getskilllv(2217) < 1) && (getskilllv(2213) < 1)) {
-		mes "The documents in this container aren't legible. It's no use trying to read them.";
+		mes "這個容器裡的文件難以辨認。試圖閱讀它們是沒有用的。";
 		close;
 	}
 	specialeffect2 EF_DISPELL;
 	progressbar "ffff00",4;
 	if (mac_book < 3) {
-		mes "You have discovered records about magic, acceleration, and particle waves.";
+		mes "你發現了關於魔法、加速和粒子波的記錄。";
 		close;
 	}
 	if (mac_book == 3) {
-		mes "You have discovered records about magic, acceleration, and particle waves. These documents must be the ones that Galfos is looking for.";
+		mes "你發現了關於魔法、加速和粒子波的記錄。這些文件一定是賈爾弗斯正在尋找的。";
 		set mac_book, 4;
 		close;
 	}
@@ -599,107 +599,107 @@ dic_in01,25,190,0	script	Mysterious Documents	CLEAR_NPC,{
 		if (.@r == 1) {
 			if (getskilllv(2213) > 0) {
 				if (checkquest(12218) == 1) {
-					mes "You already own this document.";
+					mes "你已經擁有這份文件了。";
 					close;
 				}
-				mes "^660066In order to create the essence of lava, you must refine 40 Burning Hearts at the hottest place on the 2nd floor of the Thor's Volcano Dungeon.^000000";
-				mes "^660066You must do this by using the greatest power in that place. The Humans have used this method to study the acceleration of magic particles since ancient times.^000000";
+				mes "^660066為了創造熔岩的精髓，你必須在索爾火山地監第2層最熱的地方提煉40個燃燒的心臟。^000000";
+				mes "^660066你必須使用那個地方最強大的力量來做到這一點。自古以來，人類就使用這種方法來研究魔法粒子的加速。^000000";
 				next;
-				mes "You have discovered the ^990099Lava Essence Creation Method^000000. Please check your Quest window for more details.";
+				mes "你發現了 ^990099熔岩精髓創造法^000000。請查看你的任務視窗以獲取更多詳細資訊。";
 				specialeffect2 EF_STEAL;
 				close2;
 				setquest 12218;
 				end;
 			}
-			mes "Nothing in this document looks useful.";
+			mes "這份文件中沒有任何看起來有用的東西。";
 			close;
 		}
 		if (.@r == 2) {
 			if (getskilllv(2217) > 0) {
 				if (checkquest(12219) == 1) {
-					mes "You already own this document.";
+					mes "你已經擁有這份文件了。";
 					close;
 				}
-				mes "^660066The essence of flame can be refined on stable ground on the 1st floor of the Thor's Volcano Dungeon. 10 Love Coals are necessary to refine the essence.^000000";
-				mes "^660066According to Humans' information, this essence constitutes one of the four natural elements.^000000";
+				mes "^660066火焰的精髓可以在索爾火山地監第1層的穩固地面上提煉。需要10個愛心煤炭才能提煉精髓。^000000";
+				mes "^660066根據人類的資訊，這種精髓構成了四種自然元素之一。^000000";
 				next;
-				mes "You have discovered the ^990099Flame Essence Creation Method^000000. Please check your Quest window for more details.";
+				mes "你發現了 ^990099火焰精髓創造法^000000。請查看你的任務視窗以獲取更多詳細資訊。";
 				specialeffect2 EF_STEAL;
 				close2;
 				setquest 12219;
 				end;
 			}
-			mes "Nothing in this document looks useful.";
+			mes "這份文件中沒有任何看起來有用的東西。";
 			close;
 		}
 		if (.@r == 3) {
 			if (getskilllv(2217) > 0) {
 				if (checkquest(12220) == 1) {
-					mes "You already own this document.";
+					mes "你已經擁有這份文件了。";
 					close;
 				}
-				mes "^660066I succeeded in refining the essence of glacier deep inside the 3rd floor of the Ice Cave. If you'd like to try, prepare 10 Ice Hearts and go to the following location.^000000";
+				mes "^660066我成功地在冰洞第3層深處提煉了冰河的精髓。如果你想嘗試，準備10個冰心並前往以下地點。^000000";
 				next;
-				mes "You have discovered the ^990099Glacier Essence Creation Method^000000. Please check your Quest window for more details.";
+				mes "你發現了 ^990099冰河精髓創造法^000000。請查看你的任務視窗以獲取更多詳細資訊。";
 				specialeffect2 EF_STEAL;
 				close2;
 				setquest 12220;
 				end;
 			}
-			mes "Nothing in this document looks useful.";
+			mes "這份文件中沒有任何看起來有用的東西。";
 			close;
 		}
 		if (.@r == 4) {
 			if (getskilllv(2217) > 0) {
 				if (checkquest(12221) == 1) {
-					mes "You already own this document.";
+					mes "你已經擁有這份文件了。";
 					close;
 				}
-				mes "^660066I was able to refine the essence of fossil from old rocks on the 2nd floor of the Mine Dungeon. So far, that place is the most stable among all the testing grounds.";
-				mes "If you'd like to try, prepare 10 Jubilees and go to the dungeon. Good luck.^000000";
+				mes "^660066我能夠從礦坑地監第2層的舊岩石中提煉出化石的精髓。到目前為止，那個地方是所有試驗場中最穩定的。";
+				mes "如果你想嘗試，準備10個古木樹枝並前往地監。祝你好運。^000000";
 				next;
-				mes "You have discovered the ^990099Fossil Essence Creation Method^000000. Please check your Quest window for more details.";
+				mes "你發現了 ^990099化石精髓創造法^000000。請查看你的任務視窗以獲取更多詳細資訊。";
 				specialeffect2 EF_STEAL;
 				close2;
 				setquest 12221;
 				end;
 			}
-			mes "Nothing in this document looks useful.";
+			mes "這份文件中沒有任何看起來有用的東西。";
 			close;
 		}
 		if (.@r == 5) {
 			if (getskilllv(2217) > 0) {
 				if (checkquest(12222) == 1) {
-					mes "You already own this document.";
+					mes "你已經擁有這份文件了。";
 					close;
 				}
-				mes "^660066In order to refine the essence of storm, I visited the Hermit's Checkerboard in Kunlun where the spirit of the wind resides.";
-				mes "The refining process was easy, but I had a hard time finding the catalyst, Dragon Teeth.^000000";
+				mes "^660066為了提煉風暴的精髓，我拜訪了崑崙的隱士棋盤，那裡居住著風的靈魂。";
+				mes "提煉過程很容易，但我很難找到催化劑，龍牙。^000000";
 				next;
-				mes "You have discovered the ^990099Storm Essence Creation Method^000000. Please check your Quest window for more details.";
+				mes "你發現了 ^990099風暴精髓創造法^000000。請查看你的任務視窗以獲取更多詳細資訊。";
 				specialeffect2 EF_STEAL;
 				close2;
 				setquest 12222;
 				end;
 			}
-			mes "Nothing in this document looks useful.";
+			mes "這份文件中沒有任何看起來有用的東西。";
 			close;
 		}
 		if (.@r == 10) {
-			mes "You suddenly feel sick, and this nausea won't go away easily. You should try finding the documents you need later.";
+			mes "你突然感到不舒服，而且這種噁心感不會輕易消失。你應該稍後再嘗試尋找你需要的文件。";
 			setquest 12165;
 			close;
 		}
-		mes "Nothing here looks special.";
+		mes "這裡沒有任何看起來特別的東西。";
 		close;
 	}
-	mes "You no longer need to search this place.";
+	mes "你不再需要搜索這個地方了。";
 	close;
 }
 
 function	script	Magic_Book_Essence	{
 	if (MaxWeight - Weight < 1000) {
-		mes "Please lighten your bag.";
+		mes "請減輕你的背包。";
 		close;
 	}
 	.@item_req = getarg(1);
@@ -710,21 +710,21 @@ function	script	Magic_Book_Essence	{
 		progressbar "ffff00",4;
 		delitem .@item_req,.@req_amount;
 		if (rand(2)) {
-			mes "You have used "+ callfunc("F_InsertPlural",.@req_amount,getitemname(.@item_req)) +" to create ^999900"+ getarg(3) +" Essence^000000.";
+			mes "你已經使用 "+ callfunc("F_InsertPlural",.@req_amount,getitemname(.@item_req)) +" 創造了 ^999900"+ getarg(3) +" 精髓^000000。";
 			next;
-			mes "^008800The "+getarg(3)+" Essence will last permanently, unless there's a problem.^000000";
+			mes "^008800"+getarg(3)+" 精髓將永久存在，除非出現問題。^000000";
 			completequest getarg(0);
 			specialeffect2 EF_LORD;
 			close;
 		}
-		mes "^008888You have failed to refine the essence using "+ callfunc("F_InsertPlural",.@req_amount,getitemname(.@item_req)) +".^000000";
+		mes "^008888你使用 "+ callfunc("F_InsertPlural",.@req_amount,getitemname(.@item_req)) +" 提煉精髓失敗了。^000000";
 		close;
 	}
 	if (checkquest(getarg(0)) == 2) {
-		mes "You've already created "+getarg(3)+" Essence in this area.";
+		mes "你已經在這個區域創造了 "+getarg(3)+" 精髓。";
 		close;
 	}
-	mes "Someone already used this area.";
+	mes "已經有人使用這個區域了。";
 	close;
 }
 thor_v02,163,104,0	script	Powerful Lava Energy#33	CLEAR_NPC,{ callfunc "Magic_Book_Essence",12218,7097,40,"Lava"; end; }

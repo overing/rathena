@@ -279,121 +279,121 @@ OnSat2200:
 }
 
 // Eden Market Group Hustler
-moc_para01,106,38,4	script	Market Group Hustler#ent	4_M_YOYOROGUE,{
-	mes "[Hustler]";
-	mes "Hey, adventurer.";
-	mes "I can take you to somewhere nice. Are you interested?";
+moc_para01,106,38,4	script	市集引導員#ent	4_M_YOYOROGUE,{
+	mes "[引導員]";
+	mes "嘿，冒險者。";
+	mes "我可以帶你去個好地方。你有興趣嗎？";
 	next;
-	switch (select("Move to Eden Market Group!:About Eden Market Group.:Cancel.")) {
+	switch (select("移動到伊甸園市集!:關於伊甸園市集.:取消。")) {
 	case 1:
-		mes "[Hustler]";
-		mes "Moving~!";
+		mes "[引導員]";
+		mes "移動囉～！";
 		close2;
 		warp "paramk",97,17;
 		end;
 	case 2:
-		mes "[Hustler]";
-		mes "Hahaha... The Eden Market Group is a place where merchants gather around to sell various items.";
-		mes "And I don't mean common stuff like Jellopy, which you can acquire anywhere. Here, we only deal in real goods.";
+		mes "[引導員]";
+		mes "哈哈哈... 伊甸園市集是一群商人聚集販售各式物品的地方。";
+		mes "我指的不是隨處可得的果凍之類的常見物品。在這裡，我們只交易真正的商品。";
 		next;
-		mes "[Hustler]";
-		mes "Simple ingredients, precious stones, rare items from dungeons and excavation sites, and exotic artifacts that hail from another dimension...";
-		mes "Everything you could ever want!";
+		mes "[引導員]";
+		mes "簡單的食材、寶石、來自地牢和挖掘地點的稀有物品，以及來自另一個維度的異國文物...";
+		mes "所有你想要的東西！";
 		next;
-		select("You mean, this is a black market?!");
-		mes "[Hustler]";
-		mes "Ah... I wouldn't say that.";
-		mes "This marketplace is, say, technically legal...";
-		mes "Keep in mind that most special products are of ^4d4dfflimited quantity^000000. If you are late, they might be sold out.";
+		select("你是說，這是個黑市？！");
+		mes "[引導員]";
+		mes "啊... 我不會這樣說。";
+		mes "這個市場，可以說，技術上是合法的...";
+		mes "請記住，大多數特殊產品的 ^4d4dff數量有限^000000。如果你太晚來，它們可能已經賣光了。";
 		next;
-		mes "[Hustler]";
-		mes "Don't expect discounts for most limited quantity items.";
-		mes "You have to pay the full price.";
+		mes "[引導員]";
+		mes "不要期望大多數限量商品會有折扣。";
+		mes "你必須支付全額價格。";
 		next;
-		mes "[Hustler]";
-		mes "Adventurers sometimes come by to sell what they have found on their expeditions.";
-		mes "But you have to see for yourself!";
+		mes "[引導員]";
+		mes "冒險者有時會來這裡出售他們在探險中發現的東西。";
+		mes "但你必須親自看看！";
 		next;
-		mes "[Hustler]";
-		mes "Keep in mind that most stores are closed one day out of the week; ^4d4dffmost stores are not open on Wednesdays^000000.";
-		mes "Though, not all of them close on Wednesdays; majority of them are still open.";
+		mes "[引導員]";
+		mes "請記住，大多數商店每週會有一天關門； ^4d4dff大多數商店在星期三不營業^000000。";
+		mes "不過，並非所有商店都在星期三關門； 大多數商店仍然營業。";
 		next;
-		mes "[Hustler]";
-		mes "More special items are sold on weekends.";
-		mes "I have even seen an " + mesitemlink( 709, false ) + " being sold~";
-		mes "It was amazing.";
-		mes "Of course it was super expensive and only a handful were up for sale.";
+		mes "[引導員]";
+		mes "週末會販售更多特殊物品。";
+		mes "我甚至看過有人賣 " + mesitemlink( 709, false ) + " 呢～";
+		mes "真是太棒了。";
+		mes "當然，它超級貴，而且只有少數幾個出售。";
 		next;
-		mes "[Hustler]";
-		mes "How about it? Interested?";
-		mes "Isn't it worth paying a visit?";
-		mes "Hahahahaha!";
+		mes "[引導員]";
+		mes "怎麼樣？有興趣嗎？";
+		mes "是否值得拜訪一下？";
+		mes "哈哈哈！";
 		close;
 	case 3:
-		mes "[Hustler]";
-		mes "Come by anytime, if you want to go to the Eden Market Group!";
+		mes "[引導員]";
+		mes "如果你想去伊甸園市集，隨時都可以來！";
 		close;
 	}
 }
 
 // Eden Market Group Guide
-paramk,101,22,3	script	Market Group Guide#info	4_F_ZONDAGIRL,{
-	mes "[Guide]";
-	mes "Hello. Welcome to Eden Market Group, the official marketplace run by the continental merchant coalition, supported by the Eden Group.";
+paramk,101,22,3	script	市集嚮導#info	4_F_ZONDAGIRL,{
+	mes "[嚮導]";
+	mes "您好。歡迎來到伊甸園市集，這是由大陸商業聯盟經營，並由伊甸園支持的官方市集。";
 	next;
-	switch (select("About when we're open.:About Special Products.:About Eden Market Group.:Cancel.")) {
+	switch (select("關於我們的營業時間。:關於特殊商品。:關於伊甸園市集。:取消。")) {
 	case 1:
-		mes "[Guide]";
-		mes "Eden Market Group is a marketplace that contains many different shops.";
+		mes "[嚮導]";
+		mes "伊甸園市集是一個包含許多不同商店的市集。";
 		next;
-		mes "[Guide]";
-		mes "Wednesday is an official holiday designated by the marketplace; most shops are closed on this day.";
+		mes "[嚮導]";
+		mes "星期三是市集指定的官方假日； 大多數商店在當天關閉。";
 		next;
-		mes "[Guide]";
-		mes "However, depending on the owner's wishes, and the type of items being offered, some shops remain partially open even on the holiday.";
+		mes "[嚮導]";
+		mes "但是，根據店主的意願以及所提供的商品類型，即使在假日，某些商店仍會部分營業。";
 		next;
-		mes "[Guide]";
-		mes "And, some shops offer special items on certain days of the week. Keep that in mind.";
+		mes "[嚮導]";
+		mes "而且，有些商店在一週的某些日子提供特殊商品。請記住這一點。";
 		close;
 	case 2:
-		mes "[Guide]";
-		mes "Some shops will sell different items on weekends, certain days of the week, or even during certain hours; these items are different than their usual daily items.";
+		mes "[嚮導]";
+		mes "有些商店會在週末、一週的某些日子，甚至在某些時段出售不同的商品； 這些商品與他們通常的日常商品不同。";
 		next;
-		mes "[Guide]";
-		mes "'Wonderful Friends' and 'Strong Friends' will sell one rare item each weekend.";
-		mes "'Miner's Coalition' will sell the anvil for blacksmithing only on weekends.";
+		mes "[嚮導]";
+		mes "'Wonderful Friends' 和 'Strong Friends' 每週末都會出售一件稀有物品。";
+		mes "'礦工聯盟' 僅在週末出售用於鍛造的鐵砧。";
 		next;
-		mes "[Guide]";
-		mes "I cannot tell you what items individual shops sell, because they are all different.";
-		mes "Why don't you find out for yourself by visiting often?";
+		mes "[嚮導]";
+		mes "我無法告訴你個別商店販售哪些商品，因為它們都不一樣。";
+		mes "何不經常拜訪，親自了解一下呢？";
 		close;
 	case 3:
-		mes "[Guide]";
-		mes "There are many people with the soul of a merchant that would like to sell their items to people in need of such.";
-		mes "Eden Market Group has designated a place for such people to buy and sell.";
+		mes "[嚮導]";
+		mes "有許多具有商人靈魂的人希望將他們的商品出售給需要這些商品的人。";
+		mes "伊甸園市集為這些人指定了一個買賣的地方。";
 		next;
-		mes "[Guide]";
-		mes "We provide the means for goods that would otherwise have been contraband to be bought and sold in a fair and transparent manner, working in conjunction with the merchant coalitions and adventurers.";
+		mes "[嚮導]";
+		mes "我們提供了一種手段，使原本可能成為違禁品的商品能夠以公平和透明的方式買賣，並與商業聯盟和冒險者合作。";
 		next;
-		mes "[Guide]";
-		mes "Some people mutter that Eden Market Group is a black market... Haha, what a silly idea...";
-		mes "We are merely a merchant coalition.";
+		mes "[嚮導]";
+		mes "有些人咕噥說伊甸園市集是個黑市... 哈哈，真是個愚蠢的想法...";
+		mes "我們只是一個商業聯盟。";
 		next;
-		mes "[Guide]";
-		mes "A portion of our profits go towards running the Eden Group, an adventurer's guild.";
-		mes "You can sell the loot from your adventures here, and the profits we make go towards providing services that benefit you. We are killing two birds with one stone, really.";
+		mes "[嚮導]";
+		mes "我們的一部分利潤用於經營冒險者公會伊甸園。";
+		mes "你可以在這裡出售你冒險獲得的戰利品，而我們賺取的利潤將用於提供對你有益的服務。我們真是一石二鳥。";
 		next;
-		mes "[Guide]";
-		mes "Keep in mind that limited quantity items will never go on sale!";
+		mes "[嚮導]";
+		mes "請記住，限量商品永遠不會打折！";
 		close;
 	case 4:
-		mes "[Guide]";
-		mes "Have a good time!";
+		mes "[嚮導]";
+		mes "祝你玩得開心！";
 		close;
 	}
 
 OnTimer60000:
-	npctalk "Welcome. This is the Eden Market Group.";
+	npctalk "歡迎。這裡是伊甸園市集。";
 
 OnInit:
 	initnpctimer;
@@ -405,19 +405,19 @@ paramk,103,17,3	script	Market Guard#1	4_M_YOUNGKNIGHT,{
 	callfunc("F_CoolDown", 5);
 	switch (atoi(strnpcinfo(2))) {
 	default:
-		npctalk "Welcome.";
+		npctalk "歡迎。";
 		break;
 	case 3:
-		npctalk "Welcome to the Eden Market Group.";
+		npctalk "歡迎來到伊甸園市集。";
 		break;
 	case 4:
-		npctalk "How are you? This is the Eden Market Group.";
+		npctalk "你好嗎？這裡是伊甸園市集。";
 		break;
 	case 5:
-		npctalk "Thank you for shopping at the Eden Market Group.";
+		npctalk "感謝您在伊甸園市集購物。";
 		break;
 	case 6:
-		npctalk "Welcome. The Eden Market Group welcomes you.";
+		npctalk "歡迎。伊甸園市集歡迎您。";
 		break;
 	}
 	end;
@@ -436,7 +436,7 @@ paramk,53,67,3	duplicate(Market Guard#1)	Market Guard#6	4_M_YOUNGKNIGHT
 paramk,78,44,3	script	A wise customer#gst01	4_TOWER_14,6,6,{
 OnTouch:
 	callfunc("F_CoolDown", 4);
-	npctalk "I am waiting for the weapon that will be sold on the weekends. I heard that if I come by on the right day, both the red version and the blue version would be offered.";
+	npctalk "我正在等待週末出售的武器。我聽說如果我在正確的日子來，紅色版本和藍色版本都會提供。";
 	end;
 }
 
@@ -444,7 +444,7 @@ OnTouch:
 paramk,119,80,3	script	A dining customer#gst02	4_M_CHN8GUEK,6,6,{
 OnTouch:
 	callfunc("F_CoolDown", 4);
-	npctalk "So spicy! I don't care if this is the 'taste of our homeland' or whatever, it's far too spicy! Aaaaaaahh!";
+	npctalk "太辣了！我不在乎這是不是「我們家鄉的味道」之類的，它太辣了！啊啊啊啊！";
 	end;
 }
 
@@ -452,7 +452,7 @@ OnTouch:
 paramk,106,61,3	script	Customer#gst03	4_TOWER_04,6,6,{
 OnTouch:
 	callfunc("F_CoolDown", 4);
-	npctalk "I come here when I need a break. I love this place. Comfortable, and lots of interesting items around.";
+	npctalk "當我需要休息時，我就會來這裡。我喜歡這個地方。舒適，而且周圍有很多有趣的物品。";
 	end;
 }
 
@@ -460,17 +460,17 @@ OnTouch:
 paramk,77,60,3	script	Window-shopper#gst04	4_TOWER_02,6,6,{
 OnTouch:
 	callfunc("F_CoolDown", 4);
-	npctalk "I wonder if it's really okay for me to window-shop all day without buying anything...";
+	npctalk "我想知道我整天只逛不買東西是不是真的沒關係...";
 	end;
 }
 
 // Cassie
 paramk,113,56,3	script	Cassie#gst05	1_F_PUBGIRL,6,6,{
-	npctalk "Welcome to the Eden Market Group~ You want a fancy drink?";
+	npctalk "歡迎來到伊甸園市集～ 你想要一杯精緻的飲料嗎？";
 	mes "[Cassie]";
-	mes "Do you wish to buy a drink?";
+	mes "您想買一杯飲料嗎？";
 	next;
-	switch (select("Tropical Sograt.:Vermilion on the Beach.:No.")) {
+	switch (select("熱帶蘇克拉特。:海灘上的朱紅。:不要。")) {
 	case 1:
 		.@item = 12112;
 		break;
@@ -479,23 +479,23 @@ paramk,113,56,3	script	Cassie#gst05	1_F_PUBGIRL,6,6,{
 		break;
 	case 3:
 		mes "[Cassie]";
-		mes "Have a good time.";
+		mes "玩得開心。";
 		close;
 	}
 	if (Zeny < 800) {
 		mes "[Cassie]";
-		mes "A drink costs 800z.";
+		mes "一杯飲料要價 800z。";
 		close;
 	}
 	mes "[Cassie]";
-	mes "Enjoy it";
+	mes "請享用";
 	Zeny -= 800;
 	getitem(.@item, 1);
 	close;
 
 OnTouch:
 	callfunc("F_CoolDown", 4);
-	npctalk "Welcome to the Eden Market Group. Do you want a fancy drink?";
+	npctalk "歡迎來到伊甸園市集。你想要一杯精緻的飲料嗎？";
 	end;
 }
 
@@ -503,28 +503,28 @@ OnTouch:
 paramk,74,15,0	script	Leria#coin	4_M_BIBI,{
 	if ($event_paramk > 0) {
 		mes "[Leria]";
-		mes "I sell coins that I have collected from alternate dimensions.";
-		mes "Purchase whatever catches your eye.";
-		mes "Be warned: they are rather pricey. I had to go through immense trouble in order to procure them.";
+		mes "我販售從其他次元收集來的硬幣。";
+		mes "購買任何吸引你目光的東西。";
+		mes "警告：它們相當昂貴。我為了獲得它們，歷經了無數的麻煩。";
 		next;
-		if (select("See what is up for sale.:Cancel.") == 1) {
-			mes "[Leria]";
-			mes "I may not have any stock left since I sell only a handful of items.";
+		if (select("看看有什麼東西在賣。:取消。") == 1) {
+			mes "[蕾莉亞]";
+			mes "我可能沒有任何庫存了，因為我只賣少數幾樣商品。";
 			close2;
 			callshop "para_coin10";
 			end;
 		}
-		mes "[Leria]";
-		mes "Since I scour the world to find the items that I sell, the price is high...";
-		mes "But there are those who buy them anyway.";
+		mes "[蕾莉亞]";
+		mes "由於我走遍世界各地尋找要賣的東西，所以價格很高...";
+		mes "但還是有人會買。";
 		next;
-		mes "[Leria]";
-		mes "Well, those who need them must pay the price. Isn't that so?";
+		mes "[蕾莉亞]";
+		mes "嗯，需要它們的人必須付出代價。不是嗎？";
 		close;
 	} else { // holiday
-		mes "[Leria]";
-		mes "Ah... Today is the marketplace holiday.";
-		mes "Come back tomorrow if you need coins.";
+		mes "[蕾莉亞]";
+		mes "啊... 今天是市場假日。";
+		mes "如果您需要硬幣，請明天再來。";
 		close;
 	}
 }
@@ -532,26 +532,26 @@ paramk,74,15,0	script	Leria#coin	4_M_BIBI,{
 // Heimhunter
 paramk,71,15,3	script	Heimhunter#hei	4_GEFFEN_11,{
 	if ($event_paramk > 0) {
-		mes "[Heimhunter]";
-		mes "Ah, are you the customer that wants 'that' from the ancient castle?";
-		mes "I can only get one per day, but I will sell it.";
+		mes "[海姆獵人]";
+		mes "啊，您是要從古代城堡裡獲得「那個」的客戶嗎？";
+		mes "我每天只能拿到一個，但我會賣掉它。";
 		next;
-		if (select("See the item.:Cancel.") == 1) {
-			mes "[Heimhunter]";
-			mes "There's only one..";
-			mes "It might have been bought by someone else already.";
-			mes "Please understand.";
+		if (select("看看物品。:取消。") == 1) {
+			mes "[海姆獵人]";
+			mes "只有一個...";
+			mes "可能已經被其他人買走了。";
+			mes "請理解。";
 			close2;
 			callshop "para_hei10";
 			end;
 		}
-		mes "[Heimhunter]";
-		mes "As you wish.";
+		mes "[海姆獵人]";
+		mes "如您所願。";
 		close;
 	} else { // holiday
-		mes "[Heimhunter]";
-		mes "Today is the official market holiday.";
-		mes "I will take a break, too.";
+		mes "[海姆獵人]";
+		mes "今天是正式的市場假日。";
+		mes "我也要休息一下。";
 		close;
 	}
 }
@@ -559,28 +559,28 @@ paramk,71,15,3	script	Heimhunter#hei	4_GEFFEN_11,{
 // Zephet
 paramk,68,15,0	script	Zephet#key	4_M_HUMERCHANT,{
 	if ($event_paramk > 3) {
-		mes "[Zephet]";
-		mes "Do you need keys?";
-		mes "I may have some extra keys for the clock tower?..";
+		mes "[澤佩特]";
+		mes "您需要鑰匙嗎？";
+		mes "我可能有一些額外的鐘塔鑰匙？";
 		next;
-		if (select("Buy keys.:Cancel.") == 1) {
-			mes "[Zephet]";
-			mes "I gather and sell the keys for the clock tower all by myself...";
-			mes "Even though I scavenge for them all week, there's not a lot available.";
-			mes "They may be sold out already.";
+		if (select("購買鑰匙。:取消。") == 1) {
+			mes "[澤佩特]";
+			mes "我獨自收集並出售鐘塔的鑰匙...";
+			mes "即使我整個星期都在尋找它們，也沒有太多可用的。";
+			mes "它們可能已經賣光了。";
 			close2;
 			callshop "para_key10";
 			end;
 		}
-		mes "[Zephet]";
-		mes "You have no need of keys?";
-		mes "Remember that I sell keys here only on weekends.";
-		mes "Just for your information.";
+		mes "[澤佩特]";
+		mes "您不需要鑰匙嗎？";
+		mes "請記住，我只在週末賣鑰匙。";
+		mes "僅供您參考。";
 		close;
 	} else { // holiday
-		mes "[Zephet]";
-		mes "I don't have enough keys yet.";
-		mes "Come back after Saturday afternoon.";
+		mes "[澤佩特]";
+		mes "我還沒有足夠的鑰匙。";
+		mes "請在星期六下午之後再來。";
 		close;
 	}
 }
@@ -589,62 +589,62 @@ paramk,68,15,0	script	Zephet#key	4_M_HUMERCHANT,{
 // Strong Friends - Weapon shop
 // Sign
 paramk,72,33,0	script	[Strong Friends]#wp00	HIDDEN_NPC,{
-	mes " == Strong Friends == ";
-	mes "From common weapons to priceless jewel-encrusted swords!";
-	mes "Every weapon that you could ever want is here for your perusal.";
+	mes " == 強力夥伴 == ";
+	mes "從普通武器到無價的鑲滿珠寶的劍！";
+	mes "您可能想要的每種武器都在這裡供您細細品味。";
 	close;
 }
 
 // Miffy
 paramk,65,30,3	script	Miffy#wp01	4_F_LGTGIRL,{
 	if ($event_paramk > 1) {
-		mes "[Miffy]";
-		mes "A limited collection, only available on fiery Friday, Saturday and Sunday!";
-		mes "We offer an assortment of ancient weapons that adventurers have retrieved from dungeons!";
+		mes "[米菲]";
+		mes "限量系列，僅在火熱的星期五、星期六和星期日提供！";
+		mes "我們提供一系列冒險家從地牢中取回的古代武器！";
 		next;
-		if (select("Look at the items.:Cancel.") == 1) {
-			mes "[Miffy]";
-			mes "Let us show you the 'Strong Friends' special collection.";
-			mes "If you open the chest and there's nothing there, ";
-			mes "That means the weapon has already been sold.";
-			mes "The spoils go toward people with quick reflexes.";
+		if (select("看看這些物品。:取消。") == 1) {
+			mes "[米菲]";
+			mes "讓我們向您展示「強力夥伴」的特別收藏。";
+			mes "如果您打開箱子，裡面什麼也沒有，";
+			mes "這意味著該武器已經被賣掉了。";
+			mes "戰利品歸反應敏捷的人所有。";
 			close2;
 			callshop "para_wp00";
 			end;
 		}
-		mes "[Miffy]";
-		mes "Special weapons sold on weekends!";
-		mes "Come see us anytime!";
+		mes "[米菲]";
+		mes "週末出售特殊武器！";
+		mes "隨時來看我們！";
 		close;
 	} else { // Wednesday Holiday
-		mes "[Miffy]";
-		mes "Hello. This is the weapon shop 'Strong Friends'.";
-		mes "We sell weapons that adventurers retrieve from dungeons and in battle, ";
-		mes "roving over the continent.";
+		mes "[米菲]";
+		mes "您好。這裡是武器店「強力夥伴」。";
+		mes "我們出售冒險家從地牢和戰鬥中取回的武器，";
+		mes "在整個大陸上漫遊。";
 		next;
-		mes "[Miffy]";
-		mes "^000000Friday-Saturday-Sunday, a limited weapon collection offered for 3 consecutive days!^000000";
-		mes "Come see us anytime!";
+		mes "[米菲]";
+		mes "^000000星期五-星期六-星期日，連續 3 天提供限量武器系列！^000000";
+		mes "隨時來看我們！";
 		close;
 	}
 }
 
 // Nelsha
 paramk,70,31,3	script	Nelsha#wp02	4_M_SITDOWN,{
-	mes "[Nelsha]";
-	mes "Hello.";
-	mes "This is 'Strong Friends', where a range of basic weapons are available for your perusal.";
+	mes "[內爾莎]";
+	mes "您好。";
+	mes "這裡是「強力夥伴」，在這裡您可以找到各種基本武器。";
 	next;
 	setarray .@shopname$[0], "para_wp01", "para_wp02", "para_wp03", "para_wp04", "para_wp05";
 	setarray .@shopdesc$[0], "Maces, Rods and Knuckles", "One-Handed Swords and Two-Handed Sword", "Bows, Innstruments and Whips", "Daggers and Katars", "Axes and Spears";
-	.@s = select("Maces, Rods, Knuckles:One-Handed Swords, Two-Handed Sword:Bows, Innstruments, Whips:Daggers, Katars:Axes, Spears:Cancel") - 1;
+	.@s = select("錘、杖、拳套:單手劍、雙手劍:弓、樂器、鞭子:匕首、卡塔爾:斧、矛:取消") - 1;
 	if (.@s == 5) {
-		mes "[Nelsha]";
-		mes "Thank you for shopping.";
+		mes "[內爾莎]";
+		mes "感謝您的惠顧。";
 		close;
 	}
-	mes "[Nelsha]";
-	mes "I will show you " + .@shopdesc$[.@s];
+	mes "[內爾莎]";
+	mes "我會向您展示 " + .@shopdesc$[.@s];
 	close2;
 	callshop(.@shopname$[.@s], 1);
 	end;
@@ -654,34 +654,34 @@ paramk,70,31,3	script	Nelsha#wp02	4_M_SITDOWN,{
 // Reliable Friends
 // Sign
 paramk,72,33,3	script	[Reliable Friends]#arm00	HIDDEN_NPC,{
-	mes " == Reliable Friends == ";
-	mes "Do you need shields, armor, and sturdy helmets?";
-	mes "You can rely on Reliable Friends!";
+	mes " == 可靠夥伴 == ";
+	mes "您需要盾牌、盔甲和堅固的頭盔嗎？";
+	mes "您可以信賴可靠夥伴！";
 	close;
 }
 
 // Coco
 paramk,78,31,3	script	Coco#arm01	4_F_SITDOWN,{
-	mes "[Coco]";
-	mes "Do you need sturdy armors to protect your frail body?";
-	mes "Or shields, to block the blows of your enemies?";
+	mes "[可可]";
+	mes "您需要堅固的盔甲來保護您脆弱的身體嗎？";
+	mes "還是需要盾牌來阻擋敵人的攻擊？";
 	next;
-	switch (select("Look at armors.:Look at shields.:Cancel.")) {
+	switch (select("看看盔甲。:看看盾牌。:取消。")) {
 	case 1:
-		mes "[Coco]";
-		mes "Cheap and sturdy armor.";
+		mes "[可可]";
+		mes "便宜又堅固的盔甲。";
 		close2;
 		callshop "para_arm01",1;
 		end;
 	case 2:
-		mes "[Coco]";
-		mes "May, or may not, block blows made with reasonable force...";
+		mes "[可可]";
+		mes "可能會或可能不會阻擋以合理力量進行的攻擊...";
 		close2;
 		callshop "para_arm02",1;
 		end;
 	case 3:
-		mes "[Coco]";
-		mes "Come again.";
+		mes "[可可]";
+		mes "歡迎再來。";
 		close;
 	}
 }
@@ -690,69 +690,69 @@ paramk,78,31,3	script	Coco#arm01	4_F_SITDOWN,{
 // Handsome Friends
 // Sign
 paramk,84,33,3	script	[Handsome Friends]#cst00	HIDDEN_NPC,{
-	mes " == Handsome Friends == ";
-	mes "A clothier for someone who loves to dress up!";
+	mes " == 俊俏夥伴 == ";
+	mes "一家為喜歡打扮的人開設的服裝店！";
 	close;
 }
 
 // Minho Doh
 paramk,90,31,3	script	Minho Doh#cst01	4W_M_01,{
 	if ($event_paramk > 2) {
-		mes "[Minho Doh]";
-		mes "Limited item collection, only available on weekends!";
-		mes "Only one item. If you want it, purchase quickly! You know the drill.";
+		mes "[閔浩多]";
+		mes "限量商品系列，僅在週末提供！";
+		mes "只有一件商品。如果您想要，請盡快購買！您知道的。";
 		next;
-		if (select("See the collection.:Cancel.") == 1) {
-			mes "[Minho Doh]";
-			mes "Here is our special collection!";
-			mes "If all the chests are empty, that means you are too late!";
+		if (select("看看這個系列。:取消。") == 1) {
+			mes "[閔浩多]";
+			mes "這是我們的特別收藏！";
+			mes "如果所有箱子都是空的，那就意味著您來晚了！";
 			close2;
 			callshop "para_arm10";
 			end;
 		}
-		mes "[Minho Doh]";
-		mes "See you again!";
-		mes "Hahahahaha!";
+		mes "[閔浩多]";
+		mes "再見！";
+		mes "哈哈哈！";
 		close;
 	} else { // holiday
-		mes "[Minho Doh]";
-		mes "Do you want to peruse our special collection of items?";
-		mes "But the collection wouldn't be special if you can see them every day, right?";
+		mes "[閔浩多]";
+		mes "您想仔細閱讀我們的特殊商品系列嗎？";
+		mes "但是如果您每天都能看到它們，那麼這個系列就不會特別了，對嗎？";
 		next;
-		mes "[Minho Doh]";
-		mes "Come on weekends if you want to see our special collection.";
-		mes "We sell ONE item per day, on ^000000 Saturdays and Sundays^000000.";
+		mes "[閔浩多]";
+		mes "如果您想看我們的特殊收藏，請在週末來。";
+		mes "我們在 ^000000星期六和星期日^000000 每天銷售一件商品。";
 		next;
-		mes "[Minho Doh]";
-		mes "Hahahaha.. Aren't you looking forward to the special items soon to be revealed? Muhahahahaha!";
+		mes "[閔浩多]";
+		mes "哈哈哈...您是不是很期待即將揭曉的特殊商品？ 哇哈哈哈！";
 		close;
 	}
 }
 
 // Lapelt
 paramk,94,32,3	script	Lapelt#hat01	4_M_LGTMAN,{
-	mes "[Lapelt]";
-	mes "Welcome! This is 'Handsome Friends', a clothier that will make you fashionable!";
-	mes "We sell common clothing and hats even on holidays.";
+	mes "[拉佩爾特]";
+	mes "歡迎！這裡是「俊俏夥伴」，一家讓您時尚的服裝店！";
+	mes "我們甚至在假日也出售普通服裝和帽子。";
 	next;
-	switch (select("Clothes and shoes.:Hats and glasses.:Cancel.")) {
+	switch (select("衣服和鞋子。:帽子和眼鏡。:取消。")) {
 	case 1:
-		mes "[Lapelt]";
-		mes "Don't look down on the items just because they are cheap.";
-		mes "They are well-made items from all over the world.";
+		mes "[拉佩爾特]";
+		mes "不要因為這些商品便宜就看不起它們。";
+		mes "它們是來自世界各地的優質商品。";
 		close2;
 		callshop "para_hat01",1;
 		end;
 	case 2:
-		mes "[Lapelt]";
-		mes "Fashion comes from matching accessories!";
-		mes "With matching items and a good hat, you can stand on the apex of fashion!";
+		mes "[拉佩爾特]";
+		mes "時尚來自於搭配飾品！";
+		mes "透過搭配商品和一頂好帽子，您可以站在時尚的頂端！";
 		close2;
 		callshop "para_hat02",1;
 		end;
 	case 3:
-		mes "[Lapelt]";
-		mes "Goodbye.";
+		mes "[拉佩爾特]";
+		mes "再見。";
 		close;
 	}
 }
@@ -761,81 +761,81 @@ paramk,94,32,3	script	Lapelt#hat01	4_M_LGTMAN,{
 // Meds for Pharmacists
 // Sign
 paramk,96,33,3	script	[Meds for Pharma]#ptn00	HIDDEN_NPC,{
-	mes " == Meds for Pharmacists == ";
-	mes "We sell assorted potions.";
+	mes " == 藥劑師的藥品 == ";
+	mes "我們出售各式各樣的藥水。";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Special potions - Mon, Tue, Thu, Fri, Sat";
-	mes "Common potions - every day";
+	mes "[營業日]";
+	mes "特殊藥水 - 週一、週二、週四、週五、週六";
+	mes "普通藥水 - 每天";
 	close;
 }
 
 // Head Pharmacist
 paramk,100,30,3	script	Head Pharmacist#ptn01	4_F_SCIENCE,{
 	if ($event_paramk > 0) {
-		mes "[Head Pharmacist]";
-		mes "Potent poisons that will knock you out with one sip, meds that will protect your body and spirit, meds that will temporarily grant supernatural speed.";
-		mes "We have them all.";
-		mes "'Meds for Pharmacists', here to supply you with the medication you need.";
+		mes "[藥劑師長]";
+		mes "一口就能讓您昏倒的 potent poisons，保護您的身體和精神的藥品，暫時賦予超自然速度的藥品。";
+		mes "我們應有盡有。";
+		mes "「藥劑師的藥品」，為您提供您需要的藥物。";
 		next;
-		if (select("Meds, please!:Cancel.") == 1) {
-			mes "[Head Pharmacist]";
-			mes "This is what we currently have left.";
-			mes "If there's nothing, it means that we are sold out.";
-			mes "We do not brew potions in large batches. Please understand.";
+		if (select("請給我藥品！:取消。") == 1) {
+			mes "[藥劑師長]";
+			mes "這是我們目前剩下的東西。";
+			mes "如果什麼都沒有，那就意味著我們賣光了。";
+			mes "我們不會大量釀造藥水。 請理解。";
 			close2;
 			callshop "para_ptn00";
 			end;
 		}
-		mes "[Head Pharmacist]";
-		mes "Come back if you have questions about the meds.";
+		mes "[藥劑師長]";
+		mes "如果您對藥品有疑問，請回來。";
 		close;
 	} else { // holiday
-		mes "[Head Pharmacist]";
-		mes "Oh, you need potions?";
-		mes "We do not sell common meds. We stick to special potions.";
-		mes "And today is a holiday. We are currently brewing new potions.";
+		mes "[藥劑師長]";
+		mes "喔，你需要藥水嗎？";
+		mes "我們不賣常見的藥品。我們專注於特殊的藥水。";
+		mes "而且今天放假。我們目前正在釀造新的藥水。";
 		next;
-		mes "[Head Pharmacist]";
-		mes "I will show you a collection of our superior potions if you come back tomorrow, okay?";
-		mes "Hehe~";
+		mes "[藥劑師長]";
+		mes "如果你明天再來，我會向你展示我們精良藥水的收藏，好嗎？";
+		mes "呵呵～";
 		close;
 	}
 }
 
 // Johanna
 paramk,106,32,3	script	Johanna#ptn02	4_M_BRZ_JACI,{
-	mes "[Johanna]";
-	mes "Welcome to 'Meds for Pharmacists'.";
-	mes "What do you need?";
+	mes "[喬安娜]";
+	mes "歡迎來到 '藥劑師的藥品'。";
+	mes "你需要什麼？";
 	next;
-	switch (select("Look at items.:Sell items.:Days of Operation.:Cancel.")) {
+	switch (select("查看物品。:販賣物品。:營業時間。:取消。")) {
 	case 1:
-		mes "[Johanna]";
-		mes "Healing potions here.";
-		mes "Good potions sold at an affordable price.";
+		mes "[喬安娜]";
+		mes "這裡有治療藥水。";
+		mes "以實惠的價格出售優質藥水。";
 		close2;
 		callshop "para_ptn01",1;
 		end;
 	case 2:
-		mes "[Johanna]";
-		mes "I will take them off your hands and pay you a hefty price.";
-		mes "Don't tell other people I paid so much.";
+		mes "[喬安娜]";
+		mes "我會從你手中收購，並支付你一大筆錢。";
+		mes "別告訴其他人我付了這麼多錢。";
 		close2;
 		callshop "para_ptn01",2;
 		end;
 	case 3:
-		mes "[Johanna]";
-		mes "Most shops in the Eden Market Group do not operate on holidays.";
-		mes "Some shops remain open on holidays, however.";
+		mes "[喬安娜]";
+		mes "伊甸園市場集團的大多數商店在假期不營業。";
+		mes "然而，有些商店在假期仍然營業。";
 		next;
-		mes "[Johanna]";
-		mes "Our pharmacy offers common healing potions even on holidays, though not the special potions.";
-		mes "Take advantage of our services!";
+		mes "[喬安娜]";
+		mes "即使在假期，我們的藥房也提供常見的治療藥水，但沒有特殊的藥水。";
+		mes "請利用我們的服務！";
 		close;
 	case 4:
-		mes "[Johanna]";
-		mes "Goodbye.";
+		mes "[喬安娜]";
+		mes "再見。";
 		close;
 	}
 }
@@ -843,32 +843,32 @@ paramk,106,32,3	script	Johanna#ptn02	4_M_BRZ_JACI,{
 // Wyn, independent contractor || Name is too long
 paramk,106,27,3	script	Brewer Wyn#ptn03	4_M_ALCHE_A,{
 	if ($event_paramk > 0) {
-		mes "[Wyn]";
-		mes "..Hello...";
-		mes "This is 'For Meds Pharmacists'....";
-		mes "Do you need Blue Potions...?";
-		mes "I make 100 of them each day... yes... just me.";
+		mes "[溫]";
+		mes "..哈囉...";
+		mes "這裡是 '藥劑師的藥品'....";
+		mes "你需要藍色藥水嗎...?";
+		mes "我每天製作 100 瓶... 是的... 只有我。";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Wyn]";
-			mes "Uhhh.. Not sure we have any left.";
-			mes "A moment please. If not, we are sold out..";
-			mes "Aaaaa... Do I have to make more.";
-			mes "Aaa... The stench of herbs";
-			mes "Feel like throwing up... Aaa..";
+		if (select("查看物品。:取消。") == 1) {
+			mes "[溫]";
+			mes "呃... 不確定我們是否還有剩餘。";
+			mes "請稍等。如果沒有，我們就賣完了..";
+			mes "啊啊啊... 我必須再做更多嗎。";
+			mes "啊啊... 草藥的惡臭";
+			mes "感覺想吐... 啊啊..";
 			close2;
 			callshop "para_ptn10";
 			end;
 		}
-		mes "[Wyn]";
-		mes "Thank you.. Come again.";
+		mes "[溫]";
+		mes "謝謝.. 歡迎再來。";
 		close;
 	} else { // holiday
-		mes "[Wyn]";
-		mes "Uhhh... Headache..";
-		mes "I started working to pay off my college tuition...";
-		mes "I feel like throwing up. Surrounded by the smell of herbs all week.";
-		mes "Blerch-!";
+		mes "[溫]";
+		mes "呃... 頭痛..";
+		mes "我開始工作是為了支付大學學費...";
+		mes "我覺得想吐。整週都被草藥的味道包圍。";
+		mes "噁心-！";
 		close;
 	}
 }
@@ -877,40 +877,40 @@ paramk,106,27,3	script	Brewer Wyn#ptn03	4_M_ALCHE_A,{
 // We-Have-Everything
 // sign
 paramk,108,33,3	script	[WeHaveEverything]#itm00	HIDDEN_NPC,{
-	mes " == We-Have-Everything == ";
-	mes "Elemental quivers, Traps, A DIY kit for poisons.";
-	mes "Available always.";
+	mes " == 萬事皆有 == ";
+	mes "元素箭矢、陷阱、毒藥的 DIY 工具組。";
+	mes "隨時可用。";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Wed - holiday!";
-	mes "Fri, Sat, Sun - Event Sales!";
+	mes "[營業時間]";
+	mes "週三 - 假日！";
+	mes "週五、週六、週日 - 活動促銷！";
 	close;
 }
 
 // Is-this-your-lucky-day Napeed#itm01
 paramk,114,30,3	script	Lucky Day Napeed#itm01	4_F_03,{
 	if ($event_paramk > 0) {
-		mes "[Napeed]";
-		mes "Thank you for visiting during the weekend sale.";
-		mes "100 random item packages, sold on weekends only! Only one hundred available!";
-		mes "Do you have anything you want?";
+		mes "[納皮德]";
+		mes "感謝您在週末促銷期間光臨。";
+		mes "100 個隨機物品包，僅在週末出售！只有一百個可用！";
+		mes "您想要什麼嗎？";
 		next;
-		if (select("Look at items.:Cancel.")) {
-			mes "[Napeed]";
-			mes "The popular choices are, 'Box of accessories', 'Gift-wrapped Mask', 'Worn Album', 'Presents to take to your Hometown'...";
-			mes "If you do not see anything, it means we are sold out. Come back on next weekend~";
+		if (select("查看物品。:取消。")) {
+			mes "[納皮德]";
+			mes "熱門的選擇是，'飾品盒'、'禮品包裝的面具'、'老舊的專輯'、'帶回家鄉的禮物'...";
+			mes "如果您沒有看到任何東西，那就意味著我們已售完。下週末再來～";
 			close2;
 			callshop "para_itm00";
 			end;
 		}
-		mes "[Napeed]";
-		mes "Thank you for frequenting 'We-Have-Everything'!";
+		mes "[納皮德]";
+		mes "感謝您經常光顧 '萬事皆有'！";
 		close;
 	} else { // holiday
-		mes "[Napeed]";
-		mes "Welcome, welcome~! This store is 'We-Have-Everything'. Everything we do have, we have, and everything we don't have, we don't!";
-		mes "We are currently not open.";
-		mes "Today is a holiday, so we are brewing potions.";
+		mes "[納皮德]";
+		mes "歡迎，歡迎～！這家商店是 '萬事皆有'。我們擁有的，我們都有，我們沒有的，我們就沒有！";
+		mes "我們目前沒有營業。";
+		mes "今天是假日，所以我們正在釀造藥水。";
 		close;
 	}
 }
@@ -918,37 +918,37 @@ paramk,114,30,3	script	Lucky Day Napeed#itm01	4_F_03,{
 // Parayo
 paramk,118,31,3	script	Manager Parayo#itm02	4_F_KHELLISIA,{
 	if ($event_paramk > 0) {
-		mes "[Parayo]";
-		mes "Thank you for coming to 'We-Have-Everything'.";
-		mes "We sell assorted elemental quivers and traps.";
-		mes "Is there anything you want?";
+		mes "[帕拉約]";
+		mes "感謝您來到 '萬事皆有'。";
+		mes "我們出售各種元素箭矢和陷阱。";
+		mes "您想要什麼嗎？";
 		next;
-		switch (select("Look at elemental quivers.:Look at traps.:Cancel.")) {
+		switch (select("查看元素箭矢。:查看陷阱。:取消。")) {
 		case 1:
-			mes "[Parayo]";
-			mes "We try to be stocked up in order to serve as many customers as possible";
-			mes "But sometimes we are sold out, unfortunately.";
+			mes "[帕拉約]";
+			mes "我們盡量儲備充足，以便為盡可能多的顧客服務";
+			mes "但不幸的是，有時我們也會售罄。";
 			close2;
 			callshop "para_itm10";
 			end;
 		case 2:
-			mes "[Parayo]";
-			mes "Here are the traps.";
-			mes "'We-Have-Everything' is always here for you.";
+			mes "[帕拉約]";
+			mes "這是陷阱。";
+			mes "'萬事皆有' 永遠為您服務。";
 			close2;
 			callshop "para_itm01",1;
 			end;
 		case 3:
-			mes "[Parayo]";
-			mes "Thank you for being a loyal customer of 'We-Have-Everything'.";
-			mes "Come again.";
+			mes "[帕拉約]";
+			mes "感謝您成為 '萬事皆有' 的忠實顧客。";
+			mes "歡迎再來。";
 			close;
 		}
 	} else { // holiday
-		mes "[Parayo]";
-		mes "Hello, this is 'We-Have-Everything'.";
-		mes "Wednesdays are Eden Market Group official holidays, so we are not open during this time.";
-		mes "Goodbye.";
+		mes "[帕拉約]";
+		mes "您好，這裡是 '萬事皆有'。";
+		mes "週三是伊甸園市場集團的官方假日，所以我們在這段時間不營業。";
+		mes "再見。";
 		close;
 	}
 }
@@ -957,47 +957,47 @@ paramk,118,31,3	script	Manager Parayo#itm02	4_F_KHELLISIA,{
 // Malangdonya
 // sign
 paramk,122,33,3	script	[Malangdonya]#seed00	HIDDEN_NPC,{
-	mes " == Malangdonya == ";
-	mes "Special items from Malangdo.";
-	mes "The Yggdrasil series and the Doram series is here!";
+	mes " == 馬拉松多尼亞 == ";
+	mes "來自馬拉松多的特殊物品。";
+	mes "世界樹系列和杜蘭系列都在這裡！";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Special series - Mon, Tue, Thu, Fri, Sat, Sun";
-	mes "Always Selling - Mastela Fruit.";
+	mes "[營業時間]";
+	mes "特殊系列 - 週一、週二、週四、週五、週六、週日";
+	mes "持續販售 - 瑪斯特拉果實。";
 	close;
 }
 
 // Whiteberry
 paramk,126,34,3	script	Whiteberry#seed01	4_CAT_SAILOR1,{
 	if ($event_paramk > 0) {
-		mes "[Whiteberry]";
-		mes "Purr~ Welcome.";
-		mes "The Catpaw merchant group is pleased to welcome you. We sell special products from Malangdo, purr~";
+		mes "[懷特貝利]";
+		mes "喵～ 歡迎。";
+		mes "貓掌商團很高興歡迎您。我們出售來自馬拉松多的特殊產品，喵～";
 	} else { // holiday
-		mes "[Whiteberry]";
-		mes "We sell Mastela Fruit~";
-		mes "We sell certain items even on holidays~";
+		mes "[懷特貝利]";
+		mes "我們出售瑪斯特拉果實～";
+		mes "即使在假日，我們也出售某些物品～";
 	}
 	next;
-	switch (select("Look at items.:Sell items.:Cancel.")) {
+	switch (select("查看物品。:販賣物品。:取消。")) {
 	case 1:
-		mes "[Whiteberry]";
-		mes "Fresh Mastela Fruit here, purr~";
-		mes "Please purchase a lot.";
-		mes "Though we grow them ourselves, honestly they're too sour.. ah... never mind.";
+		mes "[懷特貝利]";
+		mes "這裡有新鮮的瑪斯特拉果實，喵～";
+		mes "請多多購買。";
+		mes "雖然是我們自己種的，但老實說它們太酸了.. 啊... 沒什麼。";
 		close2;
 		callshop "para_seed01",1;
 		end;
 	case 2:
-		mes "[Whiteberry]";
-		mes "Purr~ Will buy at a reasonable price.";
-		mes "Please sell items that are useful.";
+		mes "[懷特貝利]";
+		mes "喵～ 會以合理的價格購買。";
+		mes "請販賣有用的物品。";
 		close2;
 		callshop "para_seed01",2;
 		end;
 	case 3:
-		mes "[Whiteberry]";
-		mes "Purr~ Goodbye~";
+		mes "[懷特貝利]";
+		mes "喵～ 再見～";
 		close;
 	}
 }
@@ -1005,27 +1005,27 @@ paramk,126,34,3	script	Whiteberry#seed01	4_CAT_SAILOR1,{
 // Blackphone
 paramk,129,33,3	script	Blackphone#seed02	4_M_MERCAT2,{
 	if ($event_paramk > 0) {
-		mes "[Blackphone]";
-		mes "Meow~ Welcome";
-		mes "Meow~ The Malangdonya Catpaw merchant group welcomes you.";
-		mes "Meow~ We sell various crops from Malangdo, as well as the Doram series.";
+		mes "[布萊克豐]";
+		mes "喵～ 歡迎";
+		mes "喵～ 馬拉松多尼亞貓掌商團歡迎您。";
+		mes "喵～ 我們出售來自馬拉松多的各種農作物，以及杜蘭系列。";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Blackphone]";
-			mes "Meow~ Here are Doram cans and bottles, yggdrasil, and thorn berries.";
-			mes "Meow~ If you see nothing, that means we are sold out. Come back tomorrow.";
+		if (select("查看物品。:取消。") == 1) {
+			mes "[布萊克豐]";
+			mes "喵～ 這裡有杜蘭罐頭和瓶子、世界樹，還有荊棘果實。";
+			mes "喵～ 如果您什麼都沒看到，那就意味著我們已售完。明天再來。";
 			close2;
 			callshop "para_seed10";
 			end;
 		}
-		mes "[Blackphone]";
-		mes "Meow~ Come back soon. We offer interesting items.";
+		mes "[布萊克豐]";
+		mes "喵～ 歡迎很快再來。我們提供有趣的物品。";
 		close;
 	} else { // holiday
-		mes "[Blackphone]";
-		mes "Meow~ We do not open on holidays.";
-		mes "Meow~ Today is the day we have our products shipped from Malangdo.";
-		mes "Meow~ If you need bottles or cans of of Doram, or Yggdrasil fruits, come back tomorrow.";
+		mes "[布萊克豐]";
+		mes "喵～ 我們在假日不營業。";
+		mes "喵～ 今天是我們從馬拉松多運送產品的日子。";
+		mes "喵～ 如果您需要杜蘭的瓶子或罐頭，或世界樹果實，明天再來。";
 		close;
 	}
 }
@@ -1035,15 +1035,15 @@ paramk,129,33,3	script	Blackphone#seed02	4_M_MERCAT2,{
 // Restraurant
 // Jeffrey
 paramk,144,13,3	script	Jeffrey#food00	1_M_MERCHANT,{
-	mes "[Jeffrey]";
-	mes "Everyone assumes that I am the cook here. I'm not! I'm just here to collect on the debt that the restaurant owner owes me!";
+	mes "[傑佛瑞]";
+	mes "每個人都認為我是這裡的廚師。我不是！我只是來收餐廳老闆欠我的債！";
 	next;
-	mes "[Jeffrey]";
-	mes "I made a few dishes just to shut up the complaining customers, but this is getting out of hand!";
+	mes "[傑佛瑞]";
+	mes "我做了幾道菜只是為了讓抱怨的顧客閉嘴，但這越來越離譜了！";
 	close;
 
 OnTimer30000:
-	npctalk "Let me make this clear! I am not the cook! Don't wait around to be served! I am NOT making any more dishes!";
+	npctalk "讓我說清楚！我不是廚師！別等著被服務了！我不會再做任何菜了！";
 	initnpctimer;
 	end;
 
@@ -1054,12 +1054,12 @@ OnInit:
 
 // Vincent
 paramk,140,18,3	script	Vincent#food01	4_TOWER_15,{
-	mes "[Vincent]";
-	mes "... The new cook makes amazing food, but apparently he's pretty lazy.";
+	mes "[文森]";
+	mes "... 新來的廚師做的食物很棒，但顯然他很懶。";
 	close;
 
 OnTimer33000:
-	npctalk "Take orders, don't just stand there in the kitchen! Please!";
+	npctalk "接訂單，別只是站在廚房裡！拜託！";
 	initnpctimer;
 	end;
 
@@ -1070,12 +1070,12 @@ OnInit:
 
 // Panel
 paramk,138,19,3	script	Panel#food02	4_TOWER_14,{
-	mes "[Panel]";
-	mes "This restaurant opened only recently, but it became really popular after they hired a new cook.";
+	mes "[帕奈爾]";
+	mes "這家餐廳開業不久，但在他們聘請了一位新廚師後，它變得非常受歡迎。";
 	close;
 
 OnTimer35000:
-	npctalk "Who cares if I am served late. All that matters is how delicious the food is.";
+	npctalk "誰在乎我是否被延遲服務。重要的是食物有多美味。";
 	initnpctimer;
 	end;
 
@@ -1086,12 +1086,12 @@ OnInit:
 
 // Matina
 paramk,136,20,3	script	Matina#food03	4_TOWER_05,{
-	mes "[Matina]";
-	mes "What is it? Are you going to order? Forget it. Look at the line-up.";
+	mes "[瑪蒂娜]";
+	mes "怎麼了？你要點餐嗎？算了吧。看看排隊的人吧。";
 	close;
 
 OnTimer37000:
-	npctalk "Why aren't you taking orders? This place is not really consumer-friendly...";
+	npctalk "你為什麼不接訂單？這個地方對消費者不太友善...";
 	initnpctimer;
 	end;
 
@@ -1102,12 +1102,12 @@ OnInit:
 
 // Lucy
 paramk,134,21,3	script	Lucy#food04	4_TOWER_10,{
-	mes "[Lucy]";
-	mes "Ah. I am going to wait a little more, but if I am still not served, I will leave.";
+	mes "[露西]";
+	mes "啊。我還要再等一下，但如果我還是沒被服務到，我就要走了。";
 	close;
 
 OnTimer40000:
-	npctalk "This is the limit! I can't wait any more. Five minutes, and I'm going home.";
+	npctalk "這是極限了！我不能再等了。五分鐘，我就要回家了。";
 	initnpctimer;
 	end;
 
@@ -1118,12 +1118,12 @@ OnInit:
 
 // Mara
 paramk,136,16,3	script	Mara#food05	4_TOWER_02,{
-	mes "[Mara]";
-	mes "I heard that the owner of this restaurant went on a trip to a faraway land, and the new cook is running this place. I heard that his cooking skill is amazing.";
+	mes "[瑪拉]";
+	mes "我聽說這間餐廳的老闆去遠方旅行了，現在是由新的廚師在經營。我聽說他的廚藝非常驚人。";
 	close;
 
 OnTimer28000:
-	npctalk "The new cook seems to have a foul temper. I find that attractive, really.";
+	npctalk "那個新廚師脾氣好像很差。我發現這點真的很吸引人。";
 	initnpctimer;
 	end;
 
@@ -1134,12 +1134,12 @@ OnInit:
 
 // Lana
 paramk,133,16,3	script	Lana#food06	4_TOWER_04,{
-	mes "[Lana]";
-	mes "I came two days ago, yesterday, and today too. The pasta they serve here is amazing. The only problem is that it's so hard to order here.";
+	mes "[拉娜]";
+	mes "我前兩天、昨天，還有今天都來了。他們這裡的義大利麵非常棒。唯一的問題是這裡很難點餐。";
 	close;
 
 OnTimer25000:
-	npctalk "Did my order go through? I am starving here!";
+	npctalk "我的訂單有送進去嗎？我快餓死了！";
 	initnpctimer;
 	end;
 
@@ -1150,12 +1150,12 @@ OnInit:
 
 // Rahoul
 paramk,127,16,3	script	Rahoul#food07	4_TOWER_12,{
-	mes "[Rahoul]";
-	mes "I have been waiting for hours already and the cook is still not taking orders. Ah, I am so hungry that I might drop dead.";
+	mes "[拉胡爾]";
+	mes "我已經等了好幾個小時了，但廚師還是沒有來點餐。啊，我餓到可能要倒地了。";
 	close;
 
 OnTimer23000:
-	npctalk "Huh. I wonder how long they would make me wait...";
+	npctalk "嗯。不知道他們會讓我等多久...。";
 	initnpctimer;
 	end;
 
@@ -1166,12 +1166,12 @@ OnInit:
 
 // Nameless Drunk
 paramk,124,20,3	script	Drunk#food08	4_TOWER_06,{
-	mes "[Drunk]";
-	mes "Hey, bring more wine...";
+	mes "[醉漢]";
+	mes "嘿，再來點酒...";
 	close;
 
 OnTimer50000:
-	npctalk "Ehhhh.... Wine.......";
+	npctalk "呃.... 酒.......";
 	initnpctimer;
 	end;
 
@@ -1182,13 +1182,13 @@ OnInit:
 
 // Annoyed Customer
 paramk,127,10,3	script	Annoyed Customer#food09	4_TOWER_07,{
-	mes "[Annoyed Customer]";
-	mes "I am going to talk to the owner once he comes back from his trip. Tell him to fire his employees there at the back.";
-	mes "So many customers milling about, and they aren't even serving anyone";
+	mes "[惱怒的顧客]";
+	mes "我打算等老闆旅行回來後，跟他談談。叫他把後面那些員工都開除。";
+	mes "這麼多客人在走來走去，他們甚至沒有服務任何人";
 	close;
 
 OnTimer20000:
-	npctalk "I wish I could do something about the employees.";
+	npctalk "我真希望我可以對那些員工做些什麼。";
 	initnpctimer;
 	end;
 
@@ -1199,19 +1199,19 @@ OnInit:
 
 // Kalin
 paramk,124,11,3	script	Kalin#food10	4_F_01,{
-	mes "[Kalin]";
-	mes "I am Thrann's colleague and I like being a cleaner at this store. I can be as lazy as I want and still get paid.";
+	mes "[卡林]";
+	mes "我是索朗的同事，我喜歡在這間店當清潔工。我可以盡情地偷懶，而且還是可以領到薪水。";
 	close;
 }
 
 // Thrann
 paramk,121,11,3	script	Thrann#food11	4_F_02,{
-	mes "[Thrann]";
-	mes "I spend hours here drinking coffee in peace, though I am technically at work, pretending to clean. They don't even kick me out.";
+	mes "[索朗]";
+	mes "我花了好幾個小時在這裡安靜地喝咖啡，雖然嚴格來說我是在工作，假裝在打掃。他們甚至沒有趕我走。";
 	close;
 
 OnTimer47000:
-	npctalk "Such ruckus! If they are not taking orders because there's something wrong in the kitchen, it's only understandable.";
+	npctalk "真吵鬧！如果他們是因為廚房裡出了什麼問題才不點餐，那還可以理解。";
 	initnpctimer;
 	end;
 
@@ -1222,11 +1222,11 @@ OnInit:
 
 // Sobok the Cook
 paramk,127,88,3	script	Sobok the Cook#fd01	4_M_CHNCOOK,{
-	mes "[Sobok]";
-	mes "I am called Sobok, of the Sobokru, Eden Market Group's leading restaurant.";
-	mes "Do you wish to order? The dishes cost 3000 Zeny each - The weekend special is 5000 Zeny.";
+	mes "[索伯克]";
+	mes "我是索伯克，來自伊甸園市場集團的頂級餐廳索伯克魯。";
+	mes "您想要點餐嗎？每道菜的價格是 3000 Zeny - 週末特餐是 5000 Zeny。";
 	next;
-	switch( select("Goose Soup.:Maccaroni Noodles.:Weekend Special.:Cancel.") ) {
+	switch( select("鵝肉湯.:通心麵.:週末特餐.:取消。") ) {
 	case 1:
 		.@hp = 100;
 		.@sp = 0;
@@ -1246,22 +1246,22 @@ paramk,127,88,3	script	Sobok the Cook#fd01	4_M_CHNCOOK,{
 		.@talk$ = "Ultimate combination for body and mind.";
 		break;
 	case 4:
-		mes "[Sobok]";
-		mes "Come by when you may.";
+		mes "[索伯克]";
+		mes "有空再來。";
 		close;
 	}
-	mes "[Sobok]";
+	mes "[索伯克]";
 	mes .@talk$;
 	next;
-	if (select("Yes:No") == 2)
+	if (select("是:否") == 2)
 		close;
 	if (Zeny < .@zeny) {
-		mes "[Sobok]";
-		mes "Do you think you can eat for free??";
+		mes "[索伯克]";
+		mes "你以為你可以免費吃嗎??";
 		close;
 	}
-	mes "[Sobok]";
-	mes "Delicious, isn't it?";
+	mes "[索伯克]";
+	mes "很好吃吧？";
 	Zeny -= .@zeny;
 	percentheal(.@hp, .@sp);
 	close;
@@ -1271,32 +1271,32 @@ paramk,127,88,3	script	Sobok the Cook#fd01	4_M_CHNCOOK,{
 // Cafe Mora
 // Pomegranate
 paramk,75,86,3	script	Pomegranate#mora01	4_F_RAFLE_PK,{
-	mes "[Pomegranate]";
-	mes "Come forth, hasten!";
-	mes "Ask you where this is? Cafe Mora, open always.";
-	mes "Pomegranate, this thing and that thing sell.";
+	mes "[石榴]";
+	mes "過來，快點！";
+	mes "問你這裡是什麼地方？莫拉咖啡廳，總是開放。";
+	mes "石榴，賣這個和那個。";
 	next;
-	switch (select("Check Shop.:Why do you speak like that?:Anything else?")) {
+	switch (select("查看商店.:你為什麼這樣說話？:還有什麼？")) {
 	case 1:
-		mes "[Pomegranate]";
-		mes "Have! Sap of Mora Village!";
-		mes "Sell! Beef toast.";
-		mes "Delicious. Beef toast. Much. Good~";
-		mes "Pomegranate!";
+		mes "[石榴]";
+		mes "有！莫拉村莊的汁液！";
+		mes "賣！牛肉吐司。";
+		mes "美味。牛肉吐司。很多。好～";
+		mes "石榴！";
 		close2;
 		callshop "para_mora01",1;
 		end;
 	case 2:
-		mes "[Pomegranate]";
-		mes "Know you not, Mora Tongue.";
-		mes "Pomegranate. Know. Human speech.";
-		mes "Pomegranate, awesome.";
-		mes "Study, did. Super hard!";
+		mes "[石榴]";
+		mes "不知道你，莫拉語。";
+		mes "石榴。知道。人類的語言。";
+		mes "石榴，真棒。";
+		mes "學習，做了。超級努力！";
 		close;
 	case 3:
-		mes "[Pomegranate]";
-		mes "Sell. Master. Fri-Sat-Sun.";
-		mes "Delicious. Squeezed fruit. Mora best!";
+		mes "[石榴]";
+		mes "賣。主人。週五-週六-週日。";
+		mes "美味。榨汁水果。莫拉最棒！";
 		close;
 	}
 }
@@ -1304,26 +1304,26 @@ paramk,75,86,3	script	Pomegranate#mora01	4_F_RAFLE_PK,{
 // Cocktail Master
 paramk,65,86,3	script	Cocktail Master#mora01	4_M_RAFLE_VI,{
 	if ($event_paramk > 1) {
-		mes "[Cocktail Master]";
-		mes "Welcome to Mora Cafe.";
-		mes "We offer fruits and drinksfrom Mora.";
-		mes "They are ^4d4dffRafflechino, Mora Hip Tea, Mora Mandarin, and Mora Berry^000000. We may run out of stock.";
+		mes "[調酒大師]";
+		mes "歡迎來到莫拉咖啡廳。";
+		mes "我們提供來自莫拉的水果和飲料。";
+		mes "它們是 ^4d4dff拉弗奇諾、莫拉臀茶、莫拉柑橘和莫拉莓果^000000。我們可能會缺貨。";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Cocktail Master]";
-			mes "If there is nothing, that means we are sold out. Come back tomorrow.";
+		if (select("查看商品.:取消。") == 1) {
+			mes "[調酒大師]";
+			mes "如果什麼都沒有，那就表示我們賣完了。明天再來。";
 			close2;
 			callshop "para_mora10";
 			end;
 		}
-		mes "[Cocktail Master]";
-		mes "We are thankful that you came to visit us.";
+		mes "[調酒大師]";
+		mes "我們很感謝您的光臨。";
 		close;
 	} else { // holiday
-		mes "[Cocktail Master]";
-		mes "Do you wish to purchase special Mora Drinks?";
-		mes "We are saddened to inform you that we only make drinks on weekends. Come back on ^4d4dffFri, Sat, Sun^000000.";
-		mes "Pomegranate, sell this and that.";
+		mes "[調酒大師]";
+		mes "您想要購買莫拉特調飲品嗎？";
+		mes "我們很遺憾地通知您，我們只在週末製作飲品。請在 ^4d4dff週五、週六、週日^000000 再來。";
+		mes "石榴，賣這個和那個。";
 		close;
 	}
 }
@@ -1333,27 +1333,27 @@ paramk,65,86,3	script	Cocktail Master#mora01	4_M_RAFLE_VI,{
 // Hans of the miner coalition
 paramk,49,103,3	script	Hans #ref01	1_M_SIGNMCNT,{
 	if ($event_paramk > 3) {
-		mes "[Hans]";
-		mes "We sell metal ores mined by our coalition.";
-		mes "If you need iron, steel, coal, or iron ores, look around.";
+		mes "[漢斯]";
+		mes "我們販售由我們的聯盟開採的金屬礦石。";
+		mes "如果您需要鐵、鋼、煤或鐵礦石，請隨意看看。";
 		next;
-		if (select("Look at ores.:Cancel.") == 1) {
-			mes "[Hans]";
-			mes "We are sold out, if there is nothing here.";
-			mes "We mine iron, steel, coal, and iron ores every day, so come back tomorrow.";
+		if (select("查看礦石.:取消。") == 1) {
+			mes "[漢斯]";
+			mes "如果這裡什麼都沒有，那就表示我們賣完了。";
+			mes "我們每天都會開採鐵、鋼、煤和鐵礦石，所以明天再來。";
 			close2;
 			callshop "para_ref10";
 			end;
 		}
-		mes "[Hans]";
-		mes "Our stock of basic metal like iron, steel, coal, etc, are replenished every day.";
-		mes "Keep that in mind.";
+		mes "[漢斯]";
+		mes "我們每天都會補充鐵、鋼、煤等基本金屬的庫存。";
+		mes "請記住這點。";
 		close;
 	} else { // holiday
-		mes "[Hans]";
-		mes "We're closed today.";
-		mes "I am just about to visit the mines.";
-		mes "Come back tomorrow if you need anything.";
+		mes "[漢斯]";
+		mes "我們今天休息。";
+		mes "我正要參觀礦場。";
+		mes "如果您需要任何東西，請明天再來。";
 		close;
 	}
 }
@@ -1361,35 +1361,35 @@ paramk,49,103,3	script	Hans #ref01	1_M_SIGNMCNT,{
 // Dus the Smith
 paramk,53,104,3	script	Dus the Smith#ref02	2_M_OLDBLSMITH,{
 	if ($event_paramk > 3) {
-		mes "[Dus the Smith]";
-		mes "Oridecon, Elunium, and Anvils here.";
-		mes "Not a lot, but handcrafted, you'll see.";
+		mes "[鐵匠達斯]";
+		mes "這裡有奧里金、鋁和鐵砧。";
+		mes "數量不多，但都是手工製作的，您會看到的。";
 		next;
-		if (select("Look at items.:Cancel.")) {
-			mes "[Dus the Smith]";
-			mes "Not sure if we have any left.";
-			mes "Please buy if we do.";
+		if (select("查看商品.:取消。")) {
+			mes "[鐵匠達斯]";
+			mes "不確定我們是否還有剩下。";
+			mes "如果有的話請購買。";
 			close2;
 			callshop "para_ref20";
 			end;
 		}
-		mes "[Dus the Smith]";
-		mes "Rare ores are hard to come by, and hard to refine.";
-		mes "That's why our stock is limited.";
+		mes "[鐵匠達斯]";
+		mes "稀有礦石很難取得，也很難提煉。";
+		mes "這就是為什麼我們的庫存有限。";
 		close;
 	} else { // holiday
-		mes "[Dus the Smith]";
-		mes "Ah, a customer?";
-		mes "Sorry, we are not selling ores today.";
+		mes "[鐵匠達斯]";
+		mes "啊，客人？";
+		mes "抱歉，我們今天沒有賣礦石。";
 		next;
-		mes "[Dus the Smith]";
-		mes "They're hard to make, you see.";
-		mes "What do we sell you ask?";
-		mes "Ahhh, we sell Oridecon, Elunium, and Anvils here.";
+		mes "[鐵匠達斯]";
+		mes "它們很難製作，您知道的。";
+		mes "您問我們賣什麼？";
+		mes "啊，我們這裡賣奧里金、鋁和鐵砧。";
 		next;
-		mes "[Dus the Smith]";
-		mes "If you need rare ores or anvils, come on weekends.";
-		mes "Late Saturday afternoon would be perfect.";
+		mes "[鐵匠達斯]";
+		mes "如果您需要稀有礦石或鐵砧，請在週末來。";
+		mes "週六下午晚些時候會是個完美的時機。";
 		close;
 	}
 }
@@ -1398,55 +1398,55 @@ paramk,53,104,3	script	Dus the Smith#ref02	2_M_OLDBLSMITH,{
 // Rain-of-Gems
 // sign
 paramk,63,98,3	script	[Rain-of-Gems]#jw	HIDDEN_NPC,{
-	mes "? Rain of Gems ?";
-	mes "We deal in gold and gemstones!";
+	mes "? 寶石雨 ?";
+	mes "我們經營黃金和寶石！";
 	mes "";
-	mes "[Days of Operation]";
-	mes "We're closed on holidays.";
+	mes "[營業時間]";
+	mes "我們在假日休息。";
 	close;
 }
 
 // Aurora
 paramk,69,102,3	script	Aurora#jew01	4_F_02,{
 	if ($event_paramk > 0) {
-		mes "[Aurora]";
-		mes "Welcome~";
-		mes "This is 'Rain of Gems'. Our items range from pure gold to uncut gemstones like rosestone!";
-		mes "We sell gold, opals, phlogopite, muscovite, et cetera.";
-		mes "They are rare and hard to come by, therefore pricey!";
+		mes "[奧羅拉]";
+		mes "歡迎～";
+		mes "這裡是「寶石雨」。我們的商品範圍從純金到未切割的寶石，例如薔薇石！";
+		mes "我們出售黃金、蛋白石、金雲母、白雲母等等。";
+		mes "它們稀有且難以取得，因此價格昂貴！";
 		next;
-		switch (select("Look at items.:Sell items.:Cancel.")) {
+		switch (select("查看商品.:出售商品.:取消。")) {
 		case 1:
-			mes "[Aurora]";
-			mes "If you don't see anything, that means everything is sold out!";
-			mes "Thank you for visiting~!";
+			mes "[奧羅拉]";
+			mes "如果你什麼都沒看到，表示全部都賣光了！";
+			mes "感謝您的光臨～！";
 			close2;
 			callshop "para_jew10";
 			end;
 		case 2:
-			mes "[Aurora]";
-			mes "We will buy at a reasonable price.";
+			mes "[奧羅拉]";
+			mes "我們會用合理的價格收購。";
 			close2;
 			callshop "para_fod01",2;
 			end;
 		case 3:
-			mes "[Aurora]";
-			mes "We deal in products like gold, phlogopite, agate and turquoise.";
-			mes "But uncut gemstones are rare.";
+			mes "[奧羅拉]";
+			mes "我們交易的商品有黃金、金雲母、瑪瑙和綠松石。";
+			mes "但未切割的寶石很稀有。";
 			next;
-			mes "[Aurora]";
-			mes "We procure them from mines, but the supply is limited~";
-			mes "Our stock is replenished every week, so if you time it just right.. maybe? Haha.";
+			mes "[奧羅拉]";
+			mes "我們從礦場採購，但供應有限～";
+			mes "我們的庫存每週補充一次，所以如果你時間抓得剛好.. 也許？哈哈。";
 			close;
 		}
 	} else { // holiday
-		mes "[Aurora]";
-		mes "Aw, sorry that you came by today.";
-		mes "Our Market Group is not open on Wednesdays.";
-		mes "We need time to restock and check our inventory levels, and of course, time to rest up.";
+		mes "[奧羅拉]";
+		mes "啊，抱歉你今天過來了。";
+		mes "我們的市場集團在週三不營業。";
+		mes "我們需要時間補貨和檢查我們的庫存量，當然，也需要時間休息。";
 		next;
-		mes "[Aurora]";
-		mes "If you come by tomorrow, we would be happy to offer you our range of products that will make your weapons more powerful!";
+		mes "[奧羅拉]";
+		mes "如果你明天來，我們很樂意為您提供一系列能讓你的武器更強大的產品！";
 		close;
 	}
 }
@@ -1455,40 +1455,40 @@ paramk,69,102,3	script	Aurora#jew01	4_F_02,{
 // The Alchemical Cat
 // sign
 paramk,73,98,3	script	[Alchemical Cat]#alc00	HIDDEN_NPC,{
-	mes " == The Alchemical Cat == ";
-	mes "Reagents for alchemy and";
-	mes "ingredients to make medication";
-	mes "All sold here~";
+	mes " == 煉金貓 == ";
+	mes "煉金術的試劑和";
+	mes "製作藥物的成分";
+	mes "都在這裡販售～";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Every day except for holidays";
+	mes "[營業日]";
+	mes "除了假日之外每天營業";
 	close;
 }
 
 // Dye the Alchemist
 paramk,75,102,3	script	Dye the Alchemist#alc01	4_M_ALCHE_C,{
 	if ($event_paramk > 0) {
-		mes "[Dye the Alchemist]";
-		mes "Reagents for alchemy!";
-		mes "We sell Alcohol, Karvodailnirol, and Detrimindexta!";
-		mes "We sell 20 each, per day!";
+		mes "[染料煉金術士]";
+		mes "煉金術的試劑！";
+		mes "我們販售酒精、卡爾沃達尼羅、和迪特萊德泰斯塔！";
+		mes "我們每天各販售 20 個！";
 		next;
-		if (select("Look at the reagents.:Cancel.")) {
-			mes "[Dye the Alchemist]";
-			mes "Not sure if we have any left!";
-			mes "If not, everything is sold out!";
-			mes "They may be a bit expensive, but easy consumption... well, you know what I am talking about. Yeah?";
+		if (select("看看試劑。:取消。")) {
+			mes "[染料煉金術士]";
+			mes "不確定我們是否還有剩下！";
+			mes "如果沒有，表示全部都賣光了！";
+			mes "它們可能有點貴，但容易消耗... 好吧，你知道我在說什麼。是吧？";
 			close2;
 			callshop "para_alc10";
 			end;
 		}
-		mes "[Dye the Alchemist]";
-		mes "Come by tomorrow, we brew reagents every day!";
+		mes "[染料煉金術士]";
+		mes "明天再來，我們每天都會釀造試劑！";
 		close;
 	} else { // holiday
-		mes "[Dye the Alchemist]";
-		mes "We are closed on Wednesdays~";
-		mes "Come back tomorrow!";
+		mes "[染料煉金術士]";
+		mes "我們週三休息～";
+		mes "明天再來！";
 		close;
 	}
 }
@@ -1496,42 +1496,42 @@ paramk,75,102,3	script	Dye the Alchemist#alc01	4_M_ALCHE_C,{
 // Earl the Alchemist
 paramk,80,104,3	script	Earl the Alchemist#alc02	4_TOWER_16,{
 	if ($event_paramk > 0) {
-		mes "[Earl the Alchemist]";
-		mes "Ingredients to make reagents, potions, ";
-		mes "and elemental stones for magical experiements, all sold here!";
+		mes "[厄爾煉金術士]";
+		mes "製作試劑、藥水和";
+		mes "用於魔法實驗的元素石的成分，都在這裡販售！";
 		next;
-		mes "[Earl the Alchemist]";
-		mes "Not sure how much remains of our stock, since our supply is limited, but...";
-		mes "Looking for something?";
+		mes "[厄爾煉金術士]";
+		mes "不確定我們的庫存還剩下多少，因為我們的供應有限，但是...";
+		mes "你在找什麼？";
 		next;
-		switch (select("Look at ingredients.:Look at elemental stones.:Cancel.")) {
+		switch (select("看看成分。:看看元素石。:取消。")) {
 		case 1:
-			mes "[Earl the Alchemist]";
-			mes "Immortal Hearts, Stems, and many other ingredients from various dungeons";
-			mes "offered here at a reasonable price";
+			mes "[厄爾煉金術士]";
+			mes "不朽的心臟、莖，以及來自各個地牢的許多其他成分";
+			mes "在這裡以合理的價格提供";
 			next;
-			mes "[Earl the Alchemist]";
-			mes "If you don't see anything, that means everything is sold out.";
+			mes "[厄爾煉金術士]";
+			mes "如果你什麼都沒看到，表示全部都賣光了。";
 			close2;
 			callshop "para_alc20";
 			end;
 		case 2:
-			mes "[Earl the Alchemist]";
-			mes "Stardust, and Star Crumb here.";
-			mes "Not sure if we have any left.";
+			mes "[厄爾煉金術士]";
+			mes "星塵和星之碎屑在這裡。";
+			mes "不確定我們是否還有剩下。";
 			close2;
 			callshop "para_alc30";
 			end;
 		case 3:
-			mes "[Earl the Alchemist]";
-			mes "Come again!";
-			mes "Keep in mind that we don't open on Wednesdays, because that's when we have items shipped in!";
+			mes "[厄爾煉金術士]";
+			mes "再來！";
+			mes "請記住，我們在週三不營業，因為那時候我們會運送物品！";
 			close;
 		}
 	} else { // holiday
-		mes "[Earl the Alchemist]";
-		mes "Wednesday is a holiday.";
-		mes "Come back tomorrow if there's anything you want to buy.";
+		mes "[厄爾煉金術士]";
+		mes "週三是假日。";
+		mes "如果你想買任何東西，明天再來。";
 		close;
 	}
 }
@@ -1540,57 +1540,57 @@ paramk,80,104,3	script	Earl the Alchemist#alc02	4_TOWER_16,{
 // Manbok Groceries
 // sign
 paramk,83,98,3	script	[Manbok Groceries]#fod00	HIDDEN_NPC,{
-	mes " == Manbok Groceries == ";
-	mes "We offer amazing cooking ingredients!";
-	mes "Wolf blood and Petite's Tails!";
+	mes " == 曼博雜貨店 == ";
+	mes "我們提供驚人的烹飪食材！";
+	mes "狼血和小精靈的尾巴！";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Every day except for holidays";
+	mes "[營業日]";
+	mes "除了假日之外每天營業";
 	close;
 }
 
 // Manbok
 paramk,87,101,3	script	Manbok#fod01	1_M_03,{
 	if ($event_paramk > 0) {
-		mes "[Manbok]";
-		mes "Welcome.";
-		mes "If you need cooking ingredients, you have come to the right place.";
+		mes "[曼博]";
+		mes "歡迎。";
+		mes "如果您需要烹飪食材，您來對地方了。";
 		next;
-		switch (select("Advanced cooking ingredients.:Sauces and spies.:Sell items.:Cancel.")) {
+		switch (select("高級烹飪食材。:醬料和香料。:出售物品。:取消。")) {
 		case 1:
-			mes "[Manbok]";
-			mes "Not sure how many we have left.";
-			mes "Well,^4d4dffif you see nothing, that means everything is sold out^000000.";
-			mes "Peruse at your pleasure.";
+			mes "[曼博]";
+			mes "不確定我們還剩下多少。";
+			mes "嗯，^4d4dff如果你什麼都沒看到，表示全部都賣光了^000000。";
+			mes "請隨意瀏覽。";
 			close2;
 			callshop "para_fod10";
 			end;
 		case 2:
-			mes "[Manbok]";
-			mes "Sauces and spices from all over the world..";
-			mes "I am the person to go to if you want cooking ingredients.";
+			mes "[曼博]";
+			mes "來自世界各地的醬料和香料..";
+			mes "如果你想要烹飪食材，我就是你要找的人。";
 			close2;
 			callshop "para_fod01",1;
 			end;
 		case 3:
-			mes "[Manbok]";
-			mes "If it's a product I deal in, I will purchase them from you at a reasonable price.";
+			mes "[曼博]";
+			mes "如果是與我交易的產品，我會以合理的價格從您那裡購買。";
 			close2;
 			callshop "para_fod01",2;
 			end;
 		case 4:
-			mes "[Manbok]";
-			mes "You might know this already, but I will say it anyways.";
-			mes "We have limited supplies. Our ingredients are often sold out if you hesitate for too long.";
+			mes "[曼博]";
+			mes "你可能已經知道了，但我還是要說一下。";
+			mes "我們的供應有限。如果你猶豫太久，我們的食材經常會賣光。";
 			next;
-			mes "[Manbok]";
-			mes "Just saying.";
+			mes "[曼博]";
+			mes "只是說說而已。";
 			close;
 		}
 	} else { // holiday
-		mes "[Manbok]";
-		mes "Not open on Wednesdays.";
-		mes "We restock today. Come back tomorrow.";
+		mes "[曼博]";
+		mes "週三不營業。";
+		mes "我們今天補貨。明天再來。";
 		close;
 	}
 }
@@ -1599,60 +1599,60 @@ paramk,87,101,3	script	Manbok#fod01	1_M_03,{
 // Magical Store, Ma-Ma-Ma-Ma
 // sign
 paramk,93,98,3	script	Ma-Ma-Ma-Ma#mag	HIDDEN_NPC,{
-	mes " == Ma-Ma-Ma-Ma == ";
-	mes " == Magical Store == ";
-	mes "Ingredients and gems for magic, ";
-	mes "Specializing in magic scrolls";
+	mes " == 瑪-瑪-瑪-瑪 == ";
+	mes " == 魔法商店 == ";
+	mes "魔法的成分和寶石，";
+	mes "專門販售魔法卷軸";
 	mes "";
-	mes "[Days of Operation]";
-	mes "Some items not sold on holidays";
-	mes "But open every day.";
+	mes "[營業日]";
+	mes "某些物品在假日不販售";
+	mes "但每天營業。";
 	close;
 }
 
 // Madoha
 paramk,95,102,3	script	Madoha#mag01	4_M_SAGE_A,{
 	if ($event_paramk > 0) {
-		mes "[Madoha]";
-		mes "Welcome.";
-		mes "This is Ma-Ma-Ma-Ma the Magical Store, run by the Ma brothers, helping non-Mages use magic.";
+		mes "[瑪多哈]";
+		mes "歡迎。";
+		mes "這裡是瑪氏兄弟經營的瑪-瑪-瑪-瑪魔法商店，幫助非魔法師使用魔法。";
 		next;
-		mes "[Madoha]";
-		mes "We sell magic scrolls and gems.";
-		mes "Anything particular that you are looking for?";
+		mes "[瑪多哈]";
+		mes "我們販售魔法卷軸和寶石。";
+		mes "有什麼特別想找的嗎？";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Madoha]";
-			mes "Blue, red, yellow gems. Magic scrolls like Meteor Storm, Stormgust, Lord of Vermillion...";
-			mes "^4d4dffIf there is nothing, it means everything is sold out^000000, please be aware.";
+		if (select("看看物品。:取消。") == 1) {
+			mes "[瑪多哈]";
+			mes "藍色、紅色、黃色寶石。像是隕石術、暴風雪、雷鳴術的魔法卷軸...";
+			mes "^4d4dff如果什麼都沒有，表示全部都賣光了^000000，請注意。";
 			close2;
 			callshop "para_mag10";
 			end;
 		}
-		mes "[Madoha]";
-		mes "Making magic scrolls is interesting work.";
-		mes "Magic scrolls also help a lot of non-mage adventurers by allowing them to use magic they don't know.";
+		mes "[瑪多哈]";
+		mes "製作魔法卷軸是很有趣的工作。";
+		mes "魔法卷軸也通過允許他們使用他們不知道的魔法，幫助了很多非魔法師冒險家。";
 		next;
-		mes "[Madoha]";
-		mes "But there's a limit to how many scrolls I can scribe per week, so they sometimes run out.";
+		mes "[瑪多哈]";
+		mes "但是我每週可以抄寫的卷軸數量有限，所以有時候會賣光。";
 		close;
 	} else { // holiday
-		mes "[Madoha]";
-		mes "Oh, a customer?";
-		mes "Today is a holiday. We only sell basic magical ingredients today. No scrolls. Is that okay?";
-		mes "We have blue gems, points, and runestones..";
+		mes "[瑪多哈]";
+		mes "哦，一位顧客？";
+		mes "今天放假。我們今天只賣基本的魔法成分。沒有卷軸。可以嗎？";
+		mes "我們有藍色寶石、點數和符文石..";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Madoha]";
-			mes "We try to be stocked up as much as possible but we may have run out.";
-			mes "If you see nothing, that means everything is sold out.";
+		if (select("看看物品。:取消。") == 1) {
+			mes "[瑪多哈]";
+			mes "我們盡量多儲備一些，但我們可能已經賣完了。";
+			mes "如果你什麼都沒看到，表示全部都賣光了。";
 			close2;
 			callshop "para_mag11";
 			end;
 		}
-		mes "[Madoha]";
-		mes "Yellow and red gems, and magic scrolls, are sold on other days, ";
-		mes "So come back tomorrow.";
+		mes "[瑪多哈]";
+		mes "黃色和紅色寶石，以及魔法卷軸，在其他日子販售，";
+		mes "所以明天再來。";
 		close;
 	}
 }
@@ -1660,26 +1660,26 @@ paramk,95,102,3	script	Madoha#mag01	4_M_SAGE_A,{
 // Magiha
 paramk,100,102,3	script	Magiha#mag02	4_M_SAGE_C,{
 	if ($event_paramk > 0) {
-		mes "[Magiha]";
-		mes "Welcome tooooooo.";
-		mes "Ma-Ma-Ma-Ma, the Magical Store.";
-		mes "We sell resistance potions to raise your elemental resistance..";
+		mes "[馬吉哈]";
+		mes "也歡迎光臨喔喔喔喔。";
+		mes "瑪-瑪-瑪-瑪，魔法商店。";
+		mes "我們出售提升你的元素抗性的抗性藥水..";
 		next;
-		if (select("Look at items.:Cancel.") == 1) {
-			mes "[Magiha]";
-			mes "We brew and sell four types of resistance potions that ward against water, wind, earth, or fire.";
-			mes "If you see nothing, that means all the potions are sold out.";
+		if (select("看看物品。:取消。") == 1) {
+			mes "[馬吉哈]";
+			mes "我們釀造和出售四種類型的抗性藥水，以抵抗水、風、土或火。";
+			mes "如果你什麼都沒看到，表示所有的藥水都賣光了。";
 			close2;
 			callshop "para_mag20";
 			end;
 		}
-		mes "[Magiha]";
-		mes "Come again!";
+		mes "[馬吉哈]";
+		mes "再來！";
 		close;
 	} else { // holiday
-		mes "[Magiha]";
-		mes "Today is a holiday! I did not brew any potions today...";
-		mes "Come back tomorrow.";
+		mes "[馬吉哈]";
+		mes "今天放假！我今天沒有釀造任何藥水...";
+		mes "明天再來。";
 		close;
 	}
 }
@@ -1687,8 +1687,8 @@ paramk,100,102,3	script	Magiha#mag02	4_M_SAGE_C,{
 // Blessings of Yggdrasil
 // sign
 paramk,103,98,3	script	[Yggdrasil Blessing]#00	HIDDEN_NPC,{
-	mes " == Blessings of Yggdrasil == ";
-	mes "Moving in soon";
+	mes " == 伊格德拉西爾的祝福 == ";
+	mes "即將搬入";
 	close;
 }
 
@@ -1696,70 +1696,70 @@ paramk,103,98,3	script	[Yggdrasil Blessing]#00	HIDDEN_NPC,{
 // Exotic Plants
 // sign
 paramk,113,98,3	script	[Exotic Plants]#plt	HIDDEN_NPC,{
-	mes " == Exotic Plants == ";
-	mes "Poisonous plants sold.";
-	mes "Days of Operation: always";
+	mes " == 異國植物 == ";
+	mes "販售有毒植物。";
+	mes "營業日：總是";
 	close;
 }
 
 // Hwaran
 paramk,116,100,3	script	Hwaran#plt01	4_F_RUSGREEN,{
-	mes "[Hwaran]";
-	mes "Welcome to Exotic Plants.";
-	mes "I deal with plants that are shockingly bitter when you chew on them.";
-	mes "Will you look around?";
+	mes "[花蘭]";
+	mes "歡迎來到異國植物。";
+	mes "我交易的植物，當你咀嚼它們時，會令人震驚地苦澀。";
+	mes "你要四處看看嗎？";
 	next;
-	if (select("Look at items.:Cancel.") == 1) {
-		mes "[Hwaran]";
-		mes "Please shower them with affection, though they are poisonous plants.";
-		mes "I selected these babies from the farm myself. Very potent when made into meds.";
+	if (select("看看物品。:取消。") == 1) {
+		mes "[花蘭]";
+		mes "請用愛來灌溉它們，即使它們是有毒植物。";
+		mes "這些寶貝是我自己從農場挑選的。製成藥品時非常有效。";
 		close2;
 		callshop "para_plt01";
 		end;
 	}
-	mes "[Hwaran]";
-	mes "So many frequent customers to my store are from the assassin's guild, surprisingly enough. I don't know why.";
-	mes "Obviously they must be peace-loving people at heart, since they are so fond of plants.";
+	mes "[花蘭]";
+	mes "令人驚訝的是，我店裡有很多常客來自刺客公會。我不知道為什麼。";
+	mes "很明顯，他們內心一定是熱愛和平的人，因為他們如此喜歡植物。";
 	close;
 }
 
 // You and Me
 // sign
 paramk,133,98,3	script	[You and Me]#unm00	HIDDEN_NPC,{
-	mes " == You and Me == ";
-	mes "Specializing in items for Cute Pets";
-	mes "We introduce you to beasts you can mount, and companions you can hunt with";
-	mes "[Days of Operation]";
-	mes "Always!";
+	mes " == 你和我 == ";
+	mes "專營可愛寵物用品";
+	mes "我們向您介紹可以騎乘的野獸，以及可以一起狩獵的夥伴";
+	mes "[營業時間]";
+	mes "全年無休！";
 	close;
 }
 
 // Gecko the Trainer
 paramk,124,97,3	script	Gecko the Trainer#unm01	4_M_DESERT,{
-	mes "[Gecko the Trainer]";
+	mes "[馴獸師 傑克]";
 	switch( Class ) {
 	case Job_Rune_Knight:
 	case Job_Rune_Knight_T:
 	case Job_Baby_Rune_Knight:
-		mes "Welcome. Would you like to rent a Dragon?";
+		mes "歡迎。您要租借一隻龍嗎？";
 		next;
-		if (select("Yes:No") == 2) {
-			mes "[Gecko the Trainer]";
-			mes "I see. Then have a great day.";
+		if (select("是:否") == 2) {
+			mes "[馴獸師 傑克]";
+			mes "我知道了。祝您有美好的一天。";
 			close;
 		}
 		// if (!getskilllv("RK_DRAGONTRAINING")) {
 		if (!getskilllv("KN_RIDING")) {
-			mes "[Gecko the Trainer]";
-			mes "Please learn how to ride a Dragon first.";
+			mes "[馴獸師 傑克]";
+			mes "請先學習如何騎龍。";
 			close;
 		} else if (checkriding() || checkdragon()) {
-			mes "[Gecko the Trainer]";
-			mes "You already have a Dragon.";
+			mes "[馴獸師 傑克]";
+			mes "您已經有一隻龍了。";
 			close;
 		} else if (ismounting()) {
-			mes "[Gecko the Trainer]";
-			mes "Please remove your cash mount.";
+			mes "[馴獸師 傑克]";
+			mes "請先移除您的商城坐騎。";
 			close;
 		}
 		setdragon;
@@ -1768,54 +1768,54 @@ paramk,124,97,3	script	Gecko the Trainer#unm01	4_M_DESERT,{
 	case Job_Royal_Guard:
 	case Job_Royal_Guard_T:
 	case Job_Baby_Royal_Guard:
-		mes "Welcome. Would you like to rent a Gryphon?";
+		mes "歡迎。您要租借一隻獅鷲嗎？";
 		next;
-		if (select("Yes:No") == 2) {
-			mes "[Gecko the Trainer]";
-			mes "I see. Then have a great day.";
+		if (select("是:否") == 2) {
+			mes "[馴獸師 傑克]";
+			mes "我知道了。祝您有美好的一天。";
 			close;
 		}
 		if (!getskilllv("KN_RIDING")) {
-			mes "[Gecko the Trainer]";
-			mes "Please learn how to ride a Gryphon first.";
+			mes "[馴獸師 傑克]";
+			mes "請先學習如何騎獅鷲。";
 			close;
 		}
 		if (checkriding()) {
-			mes "[Gecko the Trainer]";
-			mes "You already have a Gryphon.";
+			mes "[馴獸師 傑克]";
+			mes "您已經有一隻獅鷲了。";
 			close;
 		}
 		if (ismounting()) {
-			mes "[Gecko the Trainer]";
-			mes "Please remove your cash mount.";
+			mes "[馴獸師 傑克]";
+			mes "請先移除您的商城坐騎。";
 			close;
 		}
 		setriding;
 		close;
 
 	default:
-		mes "I'm here to provide Rune Knights and Royal Guards with riding creatures.";
+		mes "我來這裡是為了為盧恩騎士和皇家衛士提供騎乘生物。";
 		close;
 	}
 }
 
 // Tete
 paramk,126,100,3	script	Tamer Tete#unm02	4_M_DST_CHILD,{
-	mes "[Tete]";
-	mes "'You and Me', we love animals!";
-	mes "We are open 24/7 to provide you with all the items your Cute Pets and companion animals need!";
-	mes "Do you need items for your Pet?";
+	mes "[蒂蒂]";
+	mes "'你和我'，我們熱愛動物！";
+	mes "我們 24/7 全天候營業，為您提供可愛寵物和夥伴動物所需的所有物品！";
+	mes "您需要寵物用品嗎？";
 	next;
-	if (select("Look at items.:Cancel.") == 1) {
-		mes "[Tete]";
-		mes "We have a diverse selection of food for Pets.";
-		mes "We have incubators, too!";
+	if (select("看看物品。:取消。") == 1) {
+		mes "[蒂蒂]";
+		mes "我們為寵物提供多樣化的食物選擇。";
+		mes "我們也有孵化器！";
 		close2;
 		callshop "para_unm01",1;
 		end;
 	}
-	mes "[Tete]";
-	mes "Thank you for coming by~!";
+	mes "[蒂蒂]";
+	mes "感謝您的光臨～！";
 	close;
 }
 
@@ -1824,131 +1824,130 @@ paramk,130,98,3	script	Mist the Hunter#unm03	4_M_JOB_HUNTER,{
 	if (Upper == 0) .@price = 2500; // Normal Falcon - default price
 	if (Upper == 1) .@price = 2500; // Scarf Falcon
 	if (Upper == 2) .@price = 2500; // Baby Falcon
-	mes "[Mist, the Hunter]";
+	mes "[獵人 米斯特]";
 	if (BaseJob == Job_Hunter) {
 		if (checkoption(Option_Wug) || checkoption(Option_Wugrider)) {
-			mes "Um...";
-			mes "You can't rent a Falcon";
-			mes "until you dismiss your warg first!";
+			mes "嗯...";
+			mes "您不能租借獵鷹";
+			mes "直到您先解僱您的座狼！";
 			close;
 		}
-		mes "Do you need a Falcon?";
-		mes "You can rent your own";
-		mes "trusty bird of prey for a";
-		mes "fee of just " + .@price + " zeny~";
+		mes "您需要一隻獵鷹嗎？";
+		mes "您可以租借您自己的";
+		mes "可靠的猛禽，";
+		mes "費用僅需 " + .@price + " zeny~";
 		next;
-		switch (select("Rent Falcon.:Buy a Falcon Flute.:Cancel.")) {
+		switch (select("租借獵鷹。:購買獵鷹笛。:取消。")) {
 		case 1:
 			if (checkwug()) {
-				mes "[Mist, the Hunter]";
-				mes "Um...";
-				mes "You can't rent a Falcon";
-				mes "until you dismiss your warg first!";
+				mes "[獵人 米斯特]";
+				mes "嗯...";
+				mes "您不能租借獵鷹";
+				mes "直到您先解僱您的座狼！";
 				close;
 			}
 			if (Zeny < .@price) {
-				mes "[Mist, the Hunter]";
-				mes "What is this?";
-				mes "You don't have";
-				mes "enough zeny?!";
-				mes "You better start";
-				mes "hunting money";
-				mes "instead of monsters~";
+				mes "[獵人 米斯特]";
+				mes "這是什麼？";
+				mes "您沒有";
+				mes "足夠的 Zeny？！";
+				mes "您最好開始";
+				mes "狩獵金錢";
+				mes "而不是怪物～";
 				close;
 			}
 			if (getskilllv("HT_FALCON") == 0) {
-				mes "[Mist, the Hunter]";
-				mes "Gosh~";
-				mes "Go learn how to";
-				mes "manage a Falcon";
-				mes "first! I can't rent one";
-				mes "to you if you can't";
-				mes "handle it, you know.";
+				mes "[獵人 米斯特]";
+				mes "天啊～";
+				mes "先去學習如何";
+				mes "管理獵鷹";
+				mes "先！如果我不能租給您，";
+				mes "我不能租給您，你知道。";
 				close;
 			}
 			if (checkfalcon()) {
-				mes "[Mist, the Hunter]";
-				mes "Um...";
-				mes "You already have";
-				mes "a Falcon. It's right";
-				mes "there, can't you see it?";
+				mes "[獵人 米斯特]";
+				mes "嗯...";
+				mes "您已經有";
+				mes "一隻獵鷹了。它就在";
+				mes "那裡，您看不到嗎？";
 				close;
 			}
 			Zeny -= .@price;
 			setfalcon;
 			close;
 		case 2:
-			mes "[Mist, the Hunter]";
-			mes "With a magical Flute, you can call your Falcon from anywhere!";
+			mes "[獵人 米斯特]";
+			mes "有了神奇的笛子，您可以從任何地方召喚您的獵鷹！";
 			next;
-			mes "[Mist, the Hunter]";
-			mes "It's marvelous, isn't it? Ha ha ha!";
+			mes "[獵人 米斯特]";
+			mes "這太棒了，不是嗎？哈哈哈！";
 			next;
-			mes "[Mist, the Hunter]";
-			mes "Why I'm selling these Falcon Flutes?";
-			mes "It's because I have no clue how they work.";
-			mes "Ha ha ha!";
+			mes "[獵人 米斯特]";
+			mes "我為什麼要賣這些獵鷹笛？";
+			mes "因為我不知道它們是如何工作的。";
+			mes "哈哈哈！";
 			next;
-			mes "[Mist, the Hunter]";
-			mes "Of course, you'll need the Skill ^ff0000Falcon Mastery^000000.";
-			mes "I don't have the Skill, so I don't know how to handle Falcons.";
-			mes "As it's for now, I may never have a Falcon.";
+			mes "[獵人 米斯特]";
+			mes "當然，您需要技能 ^ff0000獵鷹支配^000000。";
+			mes "我沒有這個技能，所以我不知道如何處理獵鷹。";
+			mes "就目前而言，我可能永遠不會擁有一隻獵鷹。";
 			next;
-			mes "[Mist, the Hunter]";
-			mes "But I can't give you one for free!";
-			mes "I have to make money since I also need to eat!";
+			mes "[獵人 米斯特]";
+			mes "但我不能免費給您一隻！";
+			mes "我必須賺錢，因為我也需要吃飯！";
 			next;
-			mes "[Mist, the Hunter]";
-			mes "If you need a Falcon Flute I will sell them for 12,500 zeny. Or is that too expensive?";
+			mes "[獵人 米斯特]";
+			mes "如果您需要獵鷹笛，我將以 12,500 Zeny 的價格出售。或者太貴了嗎？";
 			next;
 			if (eaclass()&EAJL_THIRD) {
-				mes "[Mist, the Hunter]";
-				mes "For Rangers, however, I have a special price of 10,000 zeny!";
+				mes "[獵人 米斯特]";
+				mes "但是，對於遊俠，我有一個 10,000 Zeny 的特別價格！";
 				.@price = 10000;
 				next;
 			} else
 				.@price = 12500;
-			if (select("Don't buy one.:Buy a Falcon Flute.") == 1) {
-				mes "[Mist, the Hunter]";
-				mes "That's too bad. If you need one, come back!";
+			if (select("不買。:購買獵鷹笛。") == 1) {
+				mes "[獵人 米斯特]";
+				mes "太糟糕了。如果您需要，請回來！";
 				close;
 			}
 			if (Zeny >= .@price) {
 				if (countitem(12848) >= 1) { // Falcon_Flute
-					mes "[Mist, the Hunter]";
-					mes "As I can see you already have a Falcon Flute!";
-					mes "Don't worry, my young friend, once you've purchased the Falcon Flute you won't need to do so again";
-					mes "since the Falcon Flute won't disappear upon usage, isn't that great?";
+					mes "[獵人 米斯特]";
+					mes "據我所知，您已經擁有一支獵鷹笛！";
+					mes "別擔心，我的年輕朋友，一旦您購買了獵鷹笛，您就不需要再次購買了";
+					mes "因為獵鷹笛在使用後不會消失，這不是很棒嗎？";
 					close;
 				}
-				mes "[Mist, the Hunter]";
-				mes "Here, take this flute.";
-				mes "With it you can whistle for your Falcon from anywhere.";
+				mes "[獵人 米斯特]";
+				mes "給你，拿走這個笛子。";
+				mes "有了它，您可以從任何地方召喚您的獵鷹。";
 				Zeny -= .@price;
 				getitem(12848, 1); // Falcon_Flute
 				next;
-				mes "[Mist, the Hunter]";
-				mes "Just a reminder.";
-				mes "You need the Skill ^ff0000Falcon Mastery^000000 in order to use it!";
+				mes "[獵人 米斯特]";
+				mes "只是一個提醒。";
+				mes "您需要技能 ^ff0000獵鷹支配^000000 才能使用它！";
 				close;
 			}
-			mes "[Mist, the Hunter]";
-			mes "I'm sorry but you don't have enough money to buy a Falcon Flute, please come back when you have more money!";
+			mes "[獵人 米斯特]";
+			mes "我很抱歉，但您沒有足夠的錢購買獵鷹笛，請在有更多錢的時候回來！";
 			close;
 
 		case 3:
-			mes "[Mist the Hunter]";
-			mes "Look at other items in our store.";
-			mes "We may be offering a new Pet Items soon~";
-			mes "Hahahaha!";
+			mes "[獵人 米斯特]";
+			mes "看看我們商店裡的其他商品。";
+			mes "我們可能很快會提供新的寵物用品～";
+			mes "哈哈哈！";
 			close;
 		}
 	} else {
-		mes "Young fool!";
-		mes "Falcons can only";
-		mes "be used by Hunters";
-		mes "and Snipers, capish?";
-		mes "...Heh heh, jealous?";
+		mes "年輕的傻瓜！";
+		mes "獵鷹只能";
+		mes "由獵人和";
+		mes "神射手使用，明白了嗎？";
+		mes "...嘿嘿，嫉妒嗎？";
 		close;
 	}
 }

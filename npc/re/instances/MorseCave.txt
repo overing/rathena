@@ -10,22 +10,21 @@
 
 moro_cav,61,69,3	script	Senior Tracker#a1	4_M_JOB_ASSASSIN,{
 	if (ep14_3_isle == 0) {
-		mes "[Senior Tracker]";
-		mes "This is our advance base";
-		mes "to stop Morocc.";
-		mes "I'm a tracker";
-		mes "charged with leading my army";
-		mes "to Morocc's lair.";
+		mes "[資深追蹤者]";
+		mes "這是我們阻止魔洛克的先遣基地";
+		mes "我是個追蹤者";
+		mes "負責帶領我的軍隊";
+		mes "前往魔洛克的巢穴。";
 		close;
 	}
 	if (checkweight(2104,2) == 0) {
-		mes "Your backpack is too full";
-		mes "I can't talk to you!";
+		mes "你的背包太滿了";
+		mes "我沒辦法跟你說話！";
 		close;
 	}
 	if (BaseLevel < 160) {
-		mes "You need to reach level 160 first";
-		mes "to enter the Red Flower!";
+		mes "你必須先達到 160 級";
+		mes "才能進入赤色花園！";
 		close;
 	}
 	switch( checkquest(9319,PLAYTIME) ) {
@@ -33,162 +32,160 @@ moro_cav,61,69,3	script	Senior Tracker#a1	4_M_JOB_ASSASSIN,{
 		break;
 	case 0:
 	case 1:
-		mes "[Senior Tracker]";
-		mes "We're nowhere near close";
-		mes "to stopping Morocc's resurrection.";
-		mes "I can't sleep at night,";
-		mes "knowing Morocc is doing everything he can";
-		mes "to recover his strength.";
-		mes "Could you come back tomorrow?";
+		mes "[資深追蹤者]";
+		mes "我們離阻止魔洛克復活還差得遠。";
+		mes "我晚上睡不著";
+		mes "因為知道魔洛克正竭盡所能";
+		mes "恢復他的力量。";
+		mes "你可以明天再來嗎？";
 		close;
 	case 2:
-		mes "[Senior Tracker]";
-		mes "I knew you'd return.";
-		mes "You look well-rested.";
+		mes "[資深追蹤者]";
+		mes "我就知道你會回來。";
+		mes "你看起來休息得很充分。";
 		next;
-		mes "[Senior Tracker]";
-		mes "According to my intel,";
-		mes "Morocc is hiding out in this place,";
-		mes "recovering his strength.";
+		mes "[資深追蹤者]";
+		mes "根據我的情報";
+		mes "魔洛克正藏身在這個地方";
+		mes "恢復他的力量。";
 		next;
-		mes "[Senior Tracker]";
-		mes "Fighting Morocc";
-		mes "takes more than a few warriors, no matter how strong they are.";
-		mes "I recommend you join forces with";
-		mes "as many comrades as you can find.";
-		mes "Are you ready to enter the Red Flower";
-		mes "where Morocc is believed to be hiding?";
+		mes "[資深追蹤者]";
+		mes "對抗魔洛克";
+		mes "需要的遠不止幾個戰士，無論他們多麼強大。";
+		mes "我建議你和";
+		mes "盡可能多的同伴組成隊伍。";
+		mes "你準備好進入赤色花園了嗎";
+		mes "據說魔洛克就藏在那裡？";
 		if (getcharid(1) < 1 || is_party_leader() == false)
 			close;
 		next;
-		if (select( "No.", "Yes." ) == 1) {
-			mes "[Senior Tracker]";
-			mes "Come back";
-			mes "if you change your mind.";
+		if (select( "不要。", "是的。" ) == 1) {
+			mes "[資深追蹤者]";
+			mes "如果你改變主意";
+			mes "就回來吧。";
 			close;
 		}
 		if (instance_create("Morse's Cave") < 1) {
-			mes "[Senior Tracker]";
-			mes "The entrance to the Red Flower";
-			mes "is not open yet.";
-			mes "Please come back later";
-			mes "and try again.";
+			mes "[資深追蹤者]";
+			mes "赤色花園的入口";
+			mes "尚未開啟。";
+			mes "請稍後再來";
+			mes "再試一次。";
 			close;
 		}
-		mes "[Senior Tracker]";
-		mes "The entrance to the Red Flower";
-		mes "has opened.";
-		mes "It will only stay open for a while.";
-		mes "You'd better use it";
-		mes "while you can.";
+		mes "[資深追蹤者]";
+		mes "赤色花園的入口";
+		mes "已經開啟了。";
+		mes "它只會開啟一小段時間。";
+		mes "你最好趁現在";
+		mes "好好利用。";
 		close;
 	}
 	.@hunting_9318 = checkquest(9318,HUNTING);
 	if (.@hunting_9318 == -1) {
-		mes "[Senior Tracker]";
-		mes "This is our advance base";
-		mes "to stop Morocc.";
-		mes "I'm a tracker";
-		mes "charged with leading my army";
-		mes "to Morocc's lair.";
+		mes "[資深追蹤者]";
+		mes "這是我們阻止魔洛克的先遣基地";
+		mes "我是個追蹤者";
+		mes "負責帶領我的軍隊";
+		mes "前往魔洛克的巢穴。";
 		next;
-		mes "[Senior Tracker]";
-		mes "After a painstaking search,";
-		mes "I've located";
-		mes "the place with the highest chance of";
-		mes "hiding Morocc inside.";
+		mes "[資深追蹤者]";
+		mes "經過一番艱苦的搜索";
+		mes "我已經找到";
+		mes "最有可能";
+		mes "藏有魔洛克的地方。";
 		next;
-		mes "[Senior Tracker]";
-		mes "According to my intel,";
-		mes "Morocc is hiding out in this place,";
-		mes "trying to recover";
-		mes "his full strength.";
+		mes "[資深追蹤者]";
+		mes "根據我的情報";
+		mes "魔洛克正藏身在這個地方";
+		mes "試圖恢復";
+		mes "他全部的力量。";
 		next;
-		mes "[Senior Tracker]";
-		mes "Even though I've located this place myself,";
-		mes "I have to admit";
-		mes "that I'm not equipped to";
-		mes "explore it by myself.";
-		mes "I'm a tracker after all, not a fighter.";
+		mes "[資深追蹤者]";
+		mes "即使我自己找到了這個地方";
+		mes "我也不得不承認";
+		mes "我沒有能力";
+		mes "獨自探索它。";
+		mes "畢竟我是一名追蹤者，而不是戰士。";
 		next;
-		mes "[Senior Tracker]";
-		mes "You look like";
-		mes "a warrior spoiling for";
-		mes "a good fight with Morocc,";
-		mes "and I think";
-		mes "you have a chance at winning it.";
+		mes "[資深追蹤者]";
+		mes "你看起來像個";
+		mes "渴望與";
+		mes "魔洛克大戰一場的戰士";
+		mes "而且我認為";
+		mes "你有獲勝的機會。";
 		next;
-		mes "[Senior Tracker]";
-		mes "How'd you like to";
-		mes "enter Morocc's lair,";
-		mes "defeat him,";
-		mes "and become the hero";
-		mes "who saved the world from evil?";
+		mes "[資深追蹤者]";
+		mes "你覺得如何";
+		mes "進入魔洛克的巢穴";
+		mes "擊敗他";
+		mes "並成為";
+		mes "從邪惡中拯救世界的英雄？";
 		next;
 		if (getcharid(1) < 1 || is_party_leader() == false) {
-			mes "[Senior Tracker]";
-			mes "If you're interested in my proposition,";
-			mes "let me talk to your party leader.";
-			mes "We'll discuss more details together.";
+			mes "[資深追蹤者]";
+			mes "如果你對我的提議感興趣";
+			mes "讓我跟你的隊長談談。";
+			mes "我們會一起討論更多細節。";
 			close;
 		}
-		mes "[Senior Tracker]";
-		mes "Morocc may not have recovered his full strength, but fighting him still";
-		mes "takes more than a few warriors, no matter how strong they are.";
-		mes "I recommend you join forces with";
-		mes "as many comrades as you can find.";
-		mes "Are you ready to enter the Red Flower";
-		mes "where Morocc is believed to be hiding?";
+		mes "[資深追蹤者]";
+		mes "魔洛克可能尚未恢復他全部的力量，但對抗他仍然";
+		mes "需要的遠不止幾個戰士，無論他們多麼強大。";
+		mes "我建議你和";
+		mes "盡可能多的同伴組成隊伍。";
+		mes "你準備好進入赤色花園了嗎";
+		mes "據說魔洛克就藏在那裡？";
 		next;
-		if (select( "No.", "Yes." ) == 1) {
-			mes "[Senior Tracker]";
-			mes "Come back";
-			mes "if you change your mind.";
+		if (select( "不要。", "是的。" ) == 1) {
+			mes "[資深追蹤者]";
+			mes "如果你改變主意";
+			mes "就回來吧。";
 			close;
 		}
 		if (instance_create("Morse's Cave") < 1) {
-			mes "[Senior Tracker]";
-			mes "The entrance to the Red Flower";
-			mes "is not open yet.";
-			mes "Please come back later";
-			mes "and try again.";
+			mes "[資深追蹤者]";
+			mes "赤色花園的入口";
+			mes "尚未開啟。";
+			mes "請稍後再來";
+			mes "再試一次。";
 			close;
 		}
-		mes "[Senior Tracker]";
-		mes "The entrance to the Red Flower";
-		mes "has opened.";
-		mes "It will only stay open for a while.";
-		mes "You'd better use it";
-		mes "while you can.";
+		mes "[資深追蹤者]";
+		mes "赤色花園的入口";
+		mes "已經開啟了。";
+		mes "它只會開啟一小段時間。";
+		mes "你最好趁現在";
+		mes "好好利用。";
 		close;
 	}
 	else {
-		mes "[Senior Tracker]";
-		mes "Finally you're back!";
-		mes "What happened in there?";
+		mes "[資深追蹤者]";
+		mes "你終於回來了！";
+		mes "裡面發生了什麼事？";
 		next;
-		mes "- You relay";
-		mes "your experience in the Red Flower. -";
+		mes "- 你轉述了";
+		mes "你在赤色花園的經歷。 -";
 		next;
-		mes "[Senior Tracker]";
-		mes "So Morocc got away.";
-		mes "That's a shame.";
+		mes "[資深追蹤者]";
+		mes "所以魔洛克逃脫了。";
+		mes "真是可惜。";
 		next;
 		if (checkquest(9318,HUNTING) == 2) {
-			mes "[Senior Tracker]";
-			mes "At least";
-			mes "you wiped out";
-			mes "his army.";
-			mes "That's an accomplishment in itself.";
+			mes "[資深追蹤者]";
+			mes "至少";
+			mes "你消滅了";
+			mes "他的軍隊。";
+			mes "這本身就是一項成就。";
 			next;
 		}
-		mes "[Senior Tracker]";
-		mes "At least we know";
-		mes "where he is.";
-		mes "Could you come back tomorrow";
-		mes "and help me track";
-		mes "him down again?";
-		mes "I'll be waiting here.";
+		mes "[資深追蹤者]";
+		mes "至少我們知道";
+		mes "他在哪裡。";
+		mes "你可以明天再來";
+		mes "幫我再次";
+		mes "追蹤他嗎？";
+		mes "我會在這裡等。";
 		if (checkquest(9318,HUNTING) == 2)
 			getitem 6684,1;	// TokenOfHero
 		erasequest 9318;// Pursuing Hiding Morocc
@@ -200,22 +197,21 @@ moro_cav,61,69,3	script	Senior Tracker#a1	4_M_JOB_ASSASSIN,{
 
 moro_cav,57,69,3	script	Red Flower#a1	CLEAR_NPC,{
 	if (ep14_3_isle == 0) {
-		mes "[Senior Tracker]";
-		mes "This is our advance base";
-		mes "to stop Morocc.";
-		mes "I'm a tracker";
-		mes "charged with leading my army";
-		mes "to Morocc's lair.";
+		mes "[資深追蹤者]";
+		mes "這是我們阻止魔洛克的先遣基地";
+		mes "我是個追蹤者";
+		mes "負責帶領我的軍隊";
+		mes "前往魔洛克的巢穴。";
 		close;
 	}
 	if (BaseLevel < 160) {
-		mes "You need to reach level 160 first";
-		mes "to enter the Red Flower!";
+		mes "你必須先達到 160 級";
+		mes "才能進入赤色花園！";
 		close;
 	}
 	if (isbegin_quest(9318) > 0) {
-		mes "- The Red Flower is closed.";
-		mes "You cannot enter it yet. -";
+		mes "- 赤色花園已關閉。";
+		mes "你還不能進入。 -";
 		close;
 	}
 	switch( checkquest(9319,PLAYTIME) ) {
@@ -223,26 +219,26 @@ moro_cav,57,69,3	script	Red Flower#a1	CLEAR_NPC,{
 		break;
 	case 0:
 	case 1:
-		mes "- The Red Flower is closed.";
-		mes "You cannot enter it yet. -";
+		mes "- 赤色花園已關閉。";
+		mes "你還不能進入。 -";
 		close;
 	case 2:
 		break;
 	}
-	if (select( "Do not enter the Red Flower.", "Enter the Red Flower." ) == 1) {
-		mes "- You can sense some sinister energy. -";
+	if (select( "不要進入赤色花園。", "進入赤色花園。" ) == 1) {
+		mes "- 你可以感受到一些邪惡的能量。 -";
 		close;
 	}
 	switch( instance_enter("Morse's Cave") ) {
 	case IE_OTHER:
-		mes "An unknown error occurred.";
+		mes "發生未知的錯誤。";
 		close;
 	case IE_NOINSTANCE:
-		mes "The Memorial dungeon Morse's Cave does not exist.";
-		mes "Your party leader has not yet created the Memorial dungeon.";
+		mes "紀念地下城莫爾斯洞穴不存在。";
+		mes "你的隊長尚未建立紀念地下城。";
 		close;
 	case IE_NOMEMBER:
-		mes "Only party members can enter this Memorial dungeon.";
+		mes "只有隊伍成員才能進入此紀念地下城。";
 		close;
 	case IE_OK:
 		mapannounce "moro_cav", getpartyname( getcharid(1) ) + " party's " + strcharinfo(0) + " is entering Morse's Cave.", bc_map,0xFF99;
@@ -402,10 +398,10 @@ OnTouch:
 	mapannounce 'map_rev$, "Morocc: Who dares to disrupt my sleep?!", bc_map,00EBFF;
 	.@account_id = getcharid(3);
 	.@name$ = strcharinfo(0);
-	unittalk .@account_id, "" + .@name$ + " : We came to the right place!";
+	unittalk .@account_id, "" + .@name$ + " : 我們來對地方了！";
 	setpcblock PCBLOCK_NPC, true;
 	sleep2 3000;
-	unittalk .@account_id, "" + .@name$ + " : Wait! There's something ahead of us!";
+	unittalk .@account_id, "" + .@name$ + " : 等等！前方有東西！";
 	sleep2 3000;
 	setpcblock PCBLOCK_NPC, false;
 
@@ -431,7 +427,7 @@ OnTouch:
 	monster 'map_rev$,70,180,"Morocc's Ghoul",3001,1, .@label$;
 	monster 'map_rev$,70,181,"Morocc's Ghoul",3001,1, .@label$;
 	monster 'map_rev$,70,182,"Morocc's Ghoul",3001,1, .@label$;
-	unittalk .@account_id, "" + .@name$ + " : Are these hideous monsters Morocc's lackeys?";
+	unittalk .@account_id, "" + .@name$ + " : 這些醜陋的怪物是魔洛克的嘍囉嗎？";
 	initnpctimer;
 	end;
 OnTimer2000:
@@ -452,15 +448,15 @@ OnMobDead:
 OnStart:
 	enablenpc instance_npcname("Grim Reaper Ankou#RZ Event_2");
 	enablenpc instance_npcname("#RZ Event_3");
-	npctalk "Grim Reaper Ankou: *Chuckle* We meet again!";
+	npctalk "死神安古：*呵呵* 我們又見面了！";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: You shouldn't have come. You're interrupting Lord Morocc from recovering his strength.";
+	npctalk "死神安寇：你們不該來的。你們正在打斷魔王夢羅克的恢復。";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: This world resides in his mind.";
+	npctalk "死神安寇：這個世界存在於他的意念之中。";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: You can't do anything against his will. *Chuckle*";
+	npctalk "死神安寇：你們無法違抗他的意志。*竊笑*";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: Lord Morocc is expecting you. Let me take you to him. *Chuckle*";
+	npctalk "死神安寇：魔王夢羅克正在等著你們。讓我帶你們去見他。*竊笑*";
 	sleep 3000;
 	disablenpc instance_npcname("Grim Reaper Ankou#RZ Event_2");
 	sleep 3000;
@@ -478,17 +474,17 @@ OnEnd:
 	.@ankou_4$ = instance_npcname("Grim Reaper Ankou#RZ Event_4");
 	enablenpc .@ankou_3$;
 	enablenpc .@ankou_4$;
-	npctalk "Grim Reaper Ankou: You're pathetic.", .@ankou_3$;
-	npctalk "Grim Reaper Ankou: You're pathetic.", .@ankou_4$;
+	npctalk "死神安寇：你們真可悲。", .@ankou_3$;
+	npctalk "死神安寇：你們真可悲。", .@ankou_4$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: Weaklings like you aren't enough food for Lord Morocc", .@ankou_3$;
-	npctalk "Grim Reaper Ankou: Weaklings like you aren't enough food for Lord Morocc", .@ankou_4$;
+	npctalk "死神安寇：像你們這樣的弱者，魔王夢羅克連當食物都不夠", .@ankou_3$;
+	npctalk "死神安寇：像你們這樣的弱者，魔王夢羅克連當食物都不夠", .@ankou_4$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: to get the energy he needs for a full recovery.", .@ankou_3$;
-	npctalk "Grim Reaper Ankou: to get the energy he needs for a full recovery.", .@ankou_4;
+	npctalk "死神安寇：來獲得他完全恢復所需的能量。", .@ankou_3$;
+	npctalk "死神安寇：來獲得他完全恢復所需的能量。", .@ankou_4$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: I'll give you one chance to leave. NOW!", .@ankou_3$;
-	npctalk "Grim Reaper Ankou: I'll give you one chance to leave. NOW!", .@ankou_4$;
+	npctalk "死神安寇：我會給你們一次離開的機會。現在！", .@ankou_3$;
+	npctalk "死神安寇：我會給你們一次離開的機會。現在！", .@ankou_4$;
 	sleep 3000;
 	disablenpc .@ankou_3$;
 	disablenpc .@ankou_4$;
@@ -509,13 +505,13 @@ OnEnd:
 	end;
 OnEnd:
 	enablenpc instance_npcname("Grim Reaper Ankou#RZ Event_5");
-	npctalk "Grim Reaper Ankou: You're pathetic.";
+	npctalk "死神安寇：你們真可悲。";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: Weaklings like you aren't enough food for Lord Morocc";
+	npctalk "死神安寇：像你們這樣的弱者，魔王夢羅克連當食物都不夠";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: to get the energy he needs for a full recovery.";
+	npctalk "死神安寇：來獲得他完全恢復所需的能量。";
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: I'll give you one chance to leave. NOW!!";
+	npctalk "死神安寇：我會給你們一次離開的機會。現在！！";
 	sleep 3000;
 	disablenpc instance_npcname("Grim Reaper Ankou#RZ Event_5");
 	sleep 5000;
@@ -533,12 +529,12 @@ OnEnd:
 OnTouch:
 	disablenpc instance_npcname("#RZ Event_3");
 	enablenpc instance_npcname("Weakened Morocc#RZ1");
-	unittalk getcharid(3), "" + strcharinfo(0) + " : Finally, here we are, Morocc.";
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 終於，我們到了，夢羅克。";
 	setpcblock PCBLOCK_NPC, true;
 	sleep2 3000;
-	unittalk getcharid(3), "" + strcharinfo(0) + " : It's been almost too easy to find you,";
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 找到你實在太容易了，";
 	sleep2 3000;
-	unittalk getcharid(3), "" + strcharinfo(0) + " : but it doesn't matter; you'll die today!";
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 不過這不重要；你今天死定了！";
 	sleep2 3000;
 	setpcblock PCBLOCK_NPC, false;
 	specialeffect2 EF_LOCKON;
@@ -549,18 +545,18 @@ OnTouch:
 1@rev,111,178,4	script	Weakened Morocc#RZ1	1916,{
 	end;
 OnTalk1:
-	npctalk "Weakened Morocc: I should punish you for disturbing my slumber.";
+	npctalk "虛弱的夢羅克：我應該懲罰你們打擾我的沉睡。";
 	sleep 3000;
-	npctalk "Weakened Morocc: Do you really think you can stop me?";
+	npctalk "虛弱的夢羅克：你們真的認為可以阻止我嗎？";
 	sleep 3000;
-	npctalk "Weakened Morocc: I'll make you regret ever coming here.";
+	npctalk "虛弱的夢羅克：我會讓你們後悔來到這裡。";
 	sleep 3000;
-	npctalk "Weakened Morocc: I may have not recovered my full strength,";
+	npctalk "虛弱的夢羅克：我可能還沒有恢復全部的力量，";
 	specialeffect EF_ENERGYCOAT;
 	sleep 3000;
-	npctalk "Weakened Morocc: but I still can take down a bunch of you easily.";
+	npctalk "虛弱的夢羅克：但我仍然可以輕易地擊倒你們這群人。";
 	sleep 3000;
-	npctalk "Weakened Morocc: Death is your only escape!";
+	npctalk "虛弱的夢羅克：死亡是你們唯一的逃脫之路！";
 	specialeffect EF_VOLCANO;
 	sleep 3000;
 	disablenpc instance_npcname("Weakened Morocc#RZ1");
@@ -568,15 +564,15 @@ OnTalk1:
 	monster 'map_rev$,111,178,"Weakened Morocc",2998,1, instance_npcname("Weakened Morocc#RZ1") + "::OnMobDead";	// EP14_MORS_EVENT
 	end;
 OnTalk2:
-	npctalk "Weakened Morocc: I'm sorry, but I haven't recovered my full strength.";
+	npctalk "虛弱的夢羅克：我很抱歉，但我還沒有恢復全部的力量。";
 	sleep 3000;
-	npctalk "Weakened Morocc: I'll have to leave you to my soldiers for now.";
+	npctalk "虛弱的夢羅克：我現在必須把你們交給我的士兵們。";
 	sleep 3000;
-	npctalk "Weakened Morocc: Do your worst to get out of my world!";
+	npctalk "虛弱的夢羅克：盡你們最大的努力逃離我的世界吧！";
 	sleep 3000;
-	npctalk "Weakened Morocc: In the end, you'll learn the meaning of helplessness in the most painful way!";
+	npctalk "虛弱的夢羅克：最終，你們會以最痛苦的方式了解什麼是無助！";
 	sleep 3000;
-	npctalk "Weakened Morocc: And your souls will be mine! Mwah hah hah!";
+	npctalk "虛弱的夢羅克：而你們的靈魂將是我的！哇哈哈哈！";
 	sleep 3000;
 	disablenpc instance_npcname("Weakened Morocc#RZ1");
 	sleep 3000;
@@ -611,17 +607,17 @@ OnTouch:
 	disablenpc instance_npcname("#RZ Move_31");
 	disablenpc instance_npcname("#RZ Move_32");
 	specialeffect EF_STORMGUST, AREA, instance_npcname("#RZ Memorial Effect 1");
-	mapannounce 'map_rev$, "Morocc: How do you like to be separated from each other and have your bodies and minds bound?", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們覺得被分開，並且身心受到束縛的感覺如何？", bc_map,0x00EBFF;
 	setpcblock PCBLOCK_MOVE, true;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: You're trespassing! Riff-raff like you have no business in here!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們擅自闖入！你們這些烏合之眾沒有資格來到這裡！", bc_map,0x00EBFF;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: Your bodies are mine to control!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們的身體由我來控制！", bc_map,0x00EBFF;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: Your souls are food for my resurrection!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們的靈魂是讓我復活的食糧！", bc_map,0x00EBFF;
 	sleep2 3000;
 	setpcblock (PCBLOCK_NPC ^ PCBLOCK_MOVE), false;
-	mapannounce 'map_rev$, "Morocc: My soldiers, tear their bodies asunder and bring their souls to me!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我的士兵們，撕裂他們的身體，把他們的靈魂帶給我！", bc_map,0x00EBFF;
 	initnpctimer;
 	end;
 
@@ -631,25 +627,25 @@ OnTimer25000:
 	callsub( S_Spawn );
 OnTimer45000:
 	if ('event_right == false)
-		mapannounce 'map_rev$, "Morocc: My soldiers, make them suffer! Feast on their bodies and souls!", bc_map,0x00EBFF;
+		mapannounce 'map_rev$, "夢羅克：我的士兵們，讓他們受苦！吞噬他們的身體和靈魂！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer65000:
 	callsub( S_Spawn );
 OnTimer85000:
 	if ('event_right == false)
-		mapannounce 'map_rev$, "Morocc: Not enough. Make them feel terror!", bc_map,0x00EBFF;
+		mapannounce 'map_rev$, "夢羅克：還不夠。讓他們感到恐懼！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer105000:
 	callsub( S_Spawn );
 OnTimer125000:
 	if ('event_right == false)
-		mapannounce 'map_rev$, "Morocc: Resist me! Fight to the death!", bc_map,0x00EBFF;
+		mapannounce 'map_rev$, "夢羅克：抵抗我！戰鬥到死！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer145000:
 	callsub( S_Spawn );
 OnTimer160000:
 	if ('event_right == false)
-		mapannounce 'map_rev$, "Morocc: Mwa hah hah, I can feel my power returning!", bc_map,0x00EBFF;
+		mapannounce 'map_rev$, "夢羅克：哇哈哈哈，我能感覺到我的力量正在恢復！", bc_map,0x00EBFF;
 	monster 'map_rev$,33,111,"Morocc's Archer Skeleton",3003,1, instance_npcname("#Battle_1RZ1") + "::OnMobDead";// EP14_MORS_MOB3
 	callsub( S_Spawn );
 OnTimer170000:
@@ -667,9 +663,9 @@ OnTimer186000:
 	end;
 OnTimer187000:
 	enablenpc instance_npcname("#Battle_2RZ1");
-	mapannounce 'map_rev$, "Morocc: You're more resilient than I thought.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們比我想像的更有韌性。", bc_map,0x00EBFF;
 	sleep 2000;
-	mapannounce 'map_rev$, "Morocc: But enough is enough.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：但是夠了。", bc_map,0x00EBFF;
 	end;
 OnTimer193000:
 	enablenpc instance_npcname("#RZ Move_5");
@@ -712,22 +708,22 @@ OnTouch:
 OnTimer4000:
 	callsub( S_Spawn );
 OnTimer25000:
-	mapannounce 'map_rev$, "Morocc: My soldiers, make them suffer! Feast on their bodies and souls!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我的士兵們，讓他們受苦！吞噬他們的身體和靈魂！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer45000:
 	callsub( S_Spawn );
 OnTimer65000:
-	mapannounce 'map_rev$, "Morocc: Not enough. Make them feel terror!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：還不夠。讓他們感到恐懼！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer85000:
 	callsub( S_Spawn );
 OnTimer105000:
-	mapannounce 'map_rev$, "Morocc: Resist me! Fight to the death!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：抵抗我！戰鬥到死！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer125000:
 	callsub( S_Spawn );
 OnTimer145000:
-	mapannounce 'map_rev$, "Morocc: Mwa hah hah, I can feel my power returning!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：哇哈哈哈哈，我能感覺到我的力量正在恢復！", bc_map,0x00EBFF;
 	callsub( S_Spawn );
 OnTimer160000:
 	monster 'map_rev$,103,118, "Morocc's Archer Skeleton", 3003,1, instance_npcname("#Battle_1RZ2") + "::OnMobDead";	// EP14_MORS_MOB3
@@ -776,28 +772,28 @@ S_Spawn:
 OnTouch:
 	disablenpc instance_npcname("#Battle_2RZ1");
 	specialeffect EF_STORMGUST, AREA, instance_npcname("#RZ Memorial Effect 3");
-	mapannounce 'map_rev$, "Morocc: This world of mine is evolving.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我的世界正在進化。", bc_map,0x00EBFF;
 	setpcblock PCBLOCK_NPC, true;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: My power is returning!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我的力量正在恢復！", bc_map,0x00EBFF;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: Your bodies and souls are under my command!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們的身體和靈魂都在我的掌控之下！", bc_map,0x00EBFF;
 	sleep2 3000;
 	setpcblock (PCBLOCK_NPC ^ PCBLOCK_MOVE), false;
-	mapannounce 'map_rev$, "Morocc: My soldiers, tear their bodies asunder and bring their souls to me!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我的士兵們，撕裂他們的身體，把他們的靈魂帶給我！", bc_map,0x00EBFF;
 	initnpctimer;
 	end;
 OnTimer4000:
 	.@label$ = callsub(S_Spawn);
 	monster 'map_rev$,27,53, "Morocc's Archer Skeleton", 3003,1, .@label$;	// EP14_MORS_MOB3
 	monster 'map_rev$,27,41, "Morocc's Archer Skeleton", 3003,1, .@label$;
-	mapannounce 'map_rev$, "Morocc: This power! It feels great! Mwah hah hah!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：這股力量！感覺真棒！哇哈哈哈哈！", bc_map,0x00EBFF;
 	end;
 OnTimer30000:
 	.@label$ = callsub(S_Spawn);
 	monster 'map_rev$,40,41, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,40,54, "Morocc's Archer Skeleton", 3003,1, .@label$;
-	mapannounce 'map_rev$, "Morocc: How do you like losing control of your own body? *Chuckle*", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：失去對自己身體的控制感覺如何？ *竊笑*", bc_map,0x00EBFF;
 	end;
 OnTimer55000:
 	.@label$ = callsub(S_Spawn);
@@ -810,14 +806,14 @@ OnTimer80000:
 	monster 'map_rev$,40,41, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,40,54, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,27,53, "Morocc's Verit", 3005,1, .@label$;
-	mapannounce 'map_rev$, "Morocc: More! I need more energy!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：更多！我需要更多的能量！", bc_map,0x00EBFF;
 	end;
 OnTimer105000:
 	.@label$ = callsub(S_Spawn);
 	monster 'map_rev$,40,41, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,40,54, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,27,53, "Morocc's Verit", 3005,1, .@label$;
-	mapannounce 'map_rev$, "Morocc: Mwah hah hah! Fear my army! Struggle harder!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：哇哈哈哈哈！畏懼我的軍隊吧！更加努力地掙扎吧！", bc_map,0x00EBFF;
 	end;
 OnTimer130000:
 	.@label$ = callsub(S_Spawn);
@@ -831,7 +827,7 @@ OnTimer155000:
 	monster 'map_rev$,27,41, "Morocc's Archer Skeleton", 3003,1, .@label$;
 	monster 'map_rev$,40,41, "Morocc's Verit", 3005,1, .@label$;
 	monster 'map_rev$,40,54, "Morocc's Verit", 3005,1, .@label$;
-	mapannounce 'map_rev$, "Morocc: You're pathetic, struggling to survive!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：你們真可悲，還在掙扎求生！", bc_map,0x00EBFF;
 	end;
 OnTimer170000:
 	.@label$ = callsub(S_Spawn);
@@ -854,10 +850,10 @@ OnTimer185000:
 	disablenpc instance_npcname("#RZ Debuff_12");
 	end;
 OnTimer186000:
-	mapannounce 'map_rev$, "Morocc: I'm surprised you've lasted this long. Thank you for helping me recover most of my strength.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我很驚訝你們能撐這麼久。感謝你們幫助我恢復了大部分的力量。", bc_map,0x00EBFF;
 	end;
 OnTimer190000:
-	mapannounce 'map_rev$, "Morocc: Good, I feel rejuvenated.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：很好，我感覺煥然一新。", bc_map,0x00EBFF;
 	end;
 OnTimer192500:
 	enablenpc instance_npcname("#RZ Debuff Recovery_1");
@@ -891,13 +887,13 @@ OnFinal:
 	'event_ended = true;
 	sleep 3000;
 	enablenpc .@ankou$;
-	npctalk "Grim Reaper Ankou: Sigh, Necromancer, why did you have to die so quickly?", .@ankou$;
+	npctalk "死神安庫：唉，死靈法師，你為什麼要死得這麼快？", .@ankou$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: Don't be so happy!", .@ankou$;
+	npctalk "死神安庫：別高興得太早！", .@ankou$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: Now that Lord Morocc has fully recovered his strength, you're as good as dead!", .@ankou$;
+	npctalk "死神安庫：現在夢羅克大人已經完全恢復了力量，你們死期將至！", .@ankou$;
 	sleep 3000;
-	npctalk "Grim Reaper Ankou: We'll meet again. *Chuckle*", .@ankou$;
+	npctalk "死神安庫：我們會再見面的。 *竊笑*", .@ankou$;
 	sleep 3000;
 	disablenpc .@ankou$;
 	enablenpc instance_npcname("#RZ Move_17a");
@@ -916,26 +912,26 @@ OnFinal:
 	end;
 OnTouch:
 	disablenpc instance_npcname("#Battle_3RZ1");
-	mapannounce 'map_rev$, "Morocc: I can't let you go unscathed!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我不會讓你們毫髮無傷地離開！", bc_map,0x00EBFF;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: Hah hah, my Necromancer. I'll leave them to you.", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：哈哈，我的死靈法師。我把他們交給你了。", bc_map,0x00EBFF;
 	sleep2 3000;
-	mapannounce 'map_rev$, "Morocc: My loyal soldier, I'll trust you with their deaths!", bc_map,0x00EBFF;
+	mapannounce 'map_rev$, "夢羅克：我忠誠的士兵，我將他們的死亡託付給你！", bc_map,0x00EBFF;
 	sleep2 3000;
 	killmonster 'map_rev$, instance_npcname("#RZ Memorial Start") + "::OnSoulDead";
 	.@necromancer$ = instance_npcname("Morocc Necromancer#RZ1");
 	enablenpc .@necromancer$;
 	sleep2 3000;
 	specialeffect EF_TWOHANDQUICKEN, AREA, .@necromancer$;
-	npctalk "Morocc Necromancer: As you wish, My Lord!", .@necromancer$;
+	npctalk "夢羅克死靈法師：遵命，我的主人！", .@necromancer$;
 	sleep2 3000;
-	npctalk "Morocc Necromancer: *Chuckle* You still have no idea, do you?", .@necromancer$;
+	npctalk "夢羅克死靈法師：*竊笑* 你們還是不知道，是嗎？", .@necromancer$;
 	sleep2 3000;
-	npctalk "Morocc Necromancer: The energy you generated to protect me while I was hiding within your soul", .@necromancer$;
+	npctalk "夢羅克死靈法師：當我在你們的靈魂中躲藏時，你們產生的保護我的能量", .@necromancer$;
 	sleep2 3000;
-	npctalk "Morocc Necromancer: has been converted to healing energy for Lord Morocc the moment you entered this world of his!", .@necromancer$;
+	npctalk "夢羅克死靈法師：當你們進入他的世界的那一刻起，就被轉換成了夢羅克大人的治療能量！", .@necromancer$;
 	sleep2 3000;
-	npctalk "Morocc Necromancer: *Chuckle* Your stupidity was a blessing for us. We don't need you anymore. DIE!", .@necromancer$;
+	npctalk "夢羅克死靈法師：*竊笑* 你們的愚蠢對我們來說是一種祝福。我們不再需要你們了。去死吧！", .@necromancer$;
 	specialeffect EF_BEGINSPELL2, AREA, .@necromancer$;
 	sleep2 3000;
 	disablenpc .@necromancer$;
@@ -962,13 +958,13 @@ OnStart:
 	.@necromancer$ = instance_npcname("Morocc Necromancer#RZ1");
 	enablenpc .@necromancer$;
 	sleep 3000;
-	npctalk "Morocc Necromancer: You're stronger than you look.", .@necromancer$;
+	npctalk "夢羅克死靈法師：你比看起來更強。", .@necromancer$;
 	sleep 3000;
-	npctalk "Morocc Necromancer: *Giggle* I'll show you what I'm truly capable of.", .@necromancer$;
+	npctalk "夢羅克死靈法師：*咯咯笑* 我會讓你們看看我真正的實力。", .@necromancer$;
 	sleep 3000;
-	npctalk "Morocc Necromancer: Beg me for your lives!", .@necromancer$;
+	npctalk "夢羅克死靈法師：向我乞求你們的生命吧！", .@necromancer$;
 	sleep 3000;
-	npctalk "Morocc Necromancer: *Giggle*", .@necromancer$;
+	npctalk "夢羅克死靈法師：*咯咯笑*", .@necromancer$;
 	sleep 3000;
 	disablenpc .@necromancer$;
 	monster 'map_rev$,112,48, "Morocc Necromancer", 3000,1, instance_npcname("#Battle_3RZ2") + "::OnMobDead";	// EP14_MORS_BOSSB
@@ -997,7 +993,7 @@ OnTimer1000:
 			specialeffect EF_HEAL2, AREA, .@necromancer$;
 			specialeffect EF_HEAL4, AREA, .@necromancer$;
 			specialeffect EF_HEAL3, AREA, .@necromancer$;
-			unittalk 'boss_id, "Morocc Necromancer: You can't kill me!";
+			unittalk 'boss_id, "夢羅克死靈法師：你們殺不死我！";
 		}
 		'timer = 0;
 	}
@@ -1027,7 +1023,7 @@ OnTimer7000:
 	.@count = mobcount( 'map_rev$, instance_npcname("#Battle_3RZ3") + "::OnMobDead" );
 	if (.@count > 39) {
 		if (unitexists('boss_id) == true)
-			unittalk 'boss_id, "Morocc Necromancer: You are surrounded by a lot! It's already in the middle of it! Can't escape! Hey!";
+			unittalk 'boss_id, "夢羅克死靈法師：你們被包圍了！已經在其中了！無法逃脫！嘿！";
 		end;
 	}
 	donpcevent instance_npcname("#Battle_3RZ4") + "::OnStop";
@@ -1387,11 +1383,11 @@ OnTouch:
 1@rev,39,53,0	duplicate(#RZ Move_5a)	#RZ Move_16a	WARPNPC,10,10
 
 1@rev,112,56,3	script	#RZ Move_17a	PORTAL,{
-	mes "Do you want to exit through the portal?";
+	mes "要通過傳送門離開嗎？";
 	next;
-	if (select( "No.", "Yes." ) == 1)
+	if (select( "不要。", "要。" ) == 1)
 		close;
-	mes "- Teleporting... -";
+	mes "- 傳送中... -";
 	close2;
 	warp "moro_cav",59,63;
 	end;
@@ -1433,26 +1429,26 @@ OnTouch:
 sec_in02,20,20,6	script	Death Cave#a2	4_M_KHKYEL,{
 	if (callfunc("F_GM_NPC",1854,0,1,9999) < 1)
 		end;
-	switch( select( "Death Cave Reset", "Set Vars", "Cancel" ) ) {
+	switch( select( "死亡洞穴重置", "設定變數", "取消" ) ) {
 	case 1:
-		mes "[Death Cave]";
-		mes "Yes. Reset.";
+		mes "[死亡洞穴]";
+		mes "是的。重置。";
 		next;
 		if (isbegin_quest(9318) > 0)
 			erasequest 9318;
 		if (isbegin_quest(9319) > 0)
 			erasequest 9319;
-		mes "[Death Cave]";
-		mes "Done!";
+		mes "[死亡洞穴]";
+		mes "完成！";
 		close;
 	case 2:
 		ep14_3_bios01 = 1;
-		mes "[Death Cave]";
-		mes "Thank You!";
+		mes "[死亡洞穴]";
+		mes "謝謝！";
 		close;
 	case 3:
-		mes "[Death Cave]";
-		mes "Thank You!";
+		mes "[死亡洞穴]";
+		mes "謝謝！";
 		close;
 	}
 }

@@ -19,19 +19,19 @@
 //= 1.3 Fixed checks. [Euphy]
 //============================================================ 
 
-payon,173,238,5	script	Jade#pay	754,{
+payon,173,238,5	script	城紈#pay	754,{
 	if (checkweight(1201,1) == 0) {
-		mes "^3355FFWait a second! Right now, you're carrying too many items with you. Please come back after putting some of your things into Kafra Storage.^000000";
+		mes "^3355FF单瞷ō拟盿び珇叫рㄇ狥﹁炊┰畐ㄓ^000000";
 		close;
 	}
-	mes "[Jade]";
-	mes "Bring me two";
-	mes "Gemstones of the";
-	mes "same color, and I will";
-	mes "change them to Gemstones";
-	mes "of a different color.";
+	mes "[城紈]";
+	mes "倒иㄢ";
+	mes "肅︹";
+	mes "腳ホи碞穦";
+	mes "盢ウ传Θ";
+	mes "ぃ肅︹腳ホ";
 	next;
-	switch(select("Blue Gemstones into Red ones!:Red Gemstones into Yellow ones!:Yellow Gemstones into Blue ones!")) {
+	switch(select("屡︹腳ホ传Θ︹腳ホ:︹腳ホ传Θ独︹腳ホ:独︹腳ホ传Θ屡︹腳ホ")) {
 	case 1: callsub S_TradeGems,717,716;
 	case 2: callsub S_TradeGems,716,715;
 	case 3: callsub S_TradeGems,715,717;
@@ -42,59 +42,59 @@ S_TradeGems:
 	.@item_id = getarg(1);
 
 	if (countitem(.@item_req) < 2) {
-		mes "[Jade]";
-		mes "Hah...!";
-		mes "You're kidding me, right?";
-		mes "I can't provide you with this";
-		mes "service if you don't";
-		mes "give me at least";
-		mes "2 "+ getitemname(.@item_req) +"s!";
+		mes "[城紈]";
+		mes "...";
+		mes "秨";
+		mes "狦⊿Τ";
+		mes "倒иぶ";
+		mes "2  "+ getitemname(.@item_req) +"";
+		mes "и碞礚猭矗ㄑ";
+		mes "硂兜狝叭";
 		close;
 	}
 	else {
 		.@gems = countitem(.@item_req) /2;
-		mes "[Jade]";
-		mes "I believe I can create";
-		mes "a total of "+ .@gems +" "+ getitemname(.@item_id) +"s";
-		mes "using the "+ getitemname(.@item_req) +"s";
-		mes "that you currently have.";
-		mes "What do you want to do?";
+		mes "[城紈]";
+		mes "и獺иㄏノ";
+		mes "瞷局Τ "+ getitemname(.@item_req) +"";
+		mes "羆承硑 "+ .@gems +"  "+ getitemname(.@item_id) +"";
+		mes "稱或暗";
 		next;
-		switch(select("Give me as many as you can.:I want to set the amount.:I quit.")) {
+		switch(select("荷倒и程计秖:и稱砞﹚计秖:и斌")) {
 		case 1:
 			delitem .@item_req,.@gems * 2;
 			getitem .@item_id,.@gems;
 			break;
 		case 2:
-			mes "[Jade]";
-			mes "So how many";
-			mes "do you want?";
-			mes "The maximum number";
-			mes "that you can enter is 100.";
+			mes "[城紈]";
+			mes "ê或稱璶";
+			mes "ぶ㎡";
+			mes "块";
+			mes "程计秖琌 100";
 			next;
 			while(1) {
 				input .@input,0,101;
 				if (.@input == 0) {
-					mes "[Jade]";
-					mes "None at all?";
-					mes "I guess you";
-					mes "changed your mind...";
+					mes "[城紈]";
+					mes "常⊿Τ";
+					mes "и稱琌";
+					mes "э跑種...";
 					close;
 				}
 				else if (.@input > 100) {
-					mes "[Jade]";
-					mes "Errm...";
-					mes "I asked you to enter";
-					mes "an amount no greater";
-					mes "than 100, remember...?";
+					mes "[城紈]";
+					mes "...";
+					mes "и叫块";
+					mes "ぃ";
+					mes "100 计癘眔盾...";
 					next;
 				}
 				else if (.@gems < .@input) {
 					// Custom dialogue
-					mes "[Jade]";
-					mes "Errm...";
-					mes "You don't have that";
-					mes "many gems to trade...";
+					mes "[城紈]";
+					mes "...";
+					mes "⊿Τê或";
+					mes "腳ホユ...";
 					next;
 				}
 				else break;
@@ -103,17 +103,17 @@ S_TradeGems:
 			getitem .@item_id,.@input;
 			break;
 		case 3:
-			mes "[Jade]";
-			mes "Sure, no problem.";
-			mes "Come back any time.";
+			mes "[城紈]";
+			mes "⊿拜肈";
+			mes "繦舧ㄓ";
 			close;
 		}
-		mes "[Jade]";
-		mes "There you go.";
-		mes "Feel free to come";
-		mes "back any time.";
-		mes "Hm, what's that look for?";
-		mes "Is there something on my face?";
+		mes "[城紈]";
+		mes "倒";
+		mes "繦舧";
+		mes "ㄓ";
+		mes "垛ê琌ぐ或薄";
+		mes "и羪Τぐ或狥﹁盾";
 		close;
 	}
 }

@@ -17,102 +17,101 @@
 //============================================================
 yuno,179,174,4	script	Gomer	851,{
 	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 1000) {
-		mes "[Gomer]";
-		mes "You are carrying so much. Drop off some of your luggage and come back to me.";
+		mes "[高莫]";
+		mes "你攜帶太多東西了。放下一些行李再回來找我。";
 		close;
 	}
 	if (countitem(1549)) {
-		mes "[Gomer]";
-		mes "So how's that Pilebuncker working out for you?";
+		mes "[高莫]";
+		mes "妳的重力加農炮用起來如何？";
 		close;
 	}
 	if (Class != Job_Mechanic && Class != Job_Mechanic_T && Class != Job_Baby_Mechanic) {
-		mes "[Gomer]";
-		mes "I'm a retired Mechanic and I don't think I have any business with you.";
+		mes "[高莫]";
+		mes "我已經退休了，而且是個機匠，我想我和你沒有任何關係。";
 		close;
 	}
-	mes "[Gomer]";
-	mes "So? What does it feel like to be on a Madogear?";
-	mes "It's something that's not allowed for those who failed to seek out their own path.";
+	mes "[高莫]";
+	mes "所以呢？搭乘瘋狂兔是什麼感覺？";
+	mes "這是不允許那些未能尋找自己道路的人擁有的。";
 	next;
-	mes "[Gomer]";
-	mes "Me? I retired a long time ago. Because I got into an accident... got badly hurt and won't be able to ride again. I am upset about it.";
+	mes "[高莫]";
+	mes "我？我很久以前就退休了。因為我出了意外...受了重傷，無法再次騎乘。我對此感到沮喪。";
 	next;
-	mes "[Gomer]";
-	mes "So I've decided to stay here forging gears for Madogear.";
-	mes "Huh? I'm not saying I have any complaints about this work.";
+	mes "[高莫]";
+	mes "所以我決定留在這裡，為瘋狂兔鍛造齒輪。";
+	mes "嗯？我不是說我對這份工作有任何抱怨。";
 	next;
-	mes "[Gomer]";
-	mes "Forced to do something you don't like, there is nothing more miserable than that.";
+	mes "[高莫]";
+	mes "被迫做你不喜歡的事情，沒有比這更悲慘的了。";
 	next;
-	mes "[Gomer]";
-	mes "There are people who are happy just being props, you know, like being the wall for someone to lean on.";
+	mes "[高莫]";
+	mes "有些人只是當作道具也很開心，你知道，就像成為別人可以依靠的牆。";
 	next;
-	mes "[Gomer]";
-	mes "That makes me feel good and I am about to make a new gear. I want you to help me. What do you say?";
+	mes "[高莫]";
+	mes "這讓我感覺很好，我正要製作一個新的齒輪。我希望你幫助我。你覺得怎麼樣？";
 	next;
-	switch(select("I am not that interested.:What are you going to make?:Where do you get the materials?:I brought the materials.")) {
+	switch(select("我沒那麼感興趣。:你要做什麼？:你從哪裡獲得材料？:我帶了材料。")) {
 	case 1:
-		mes "[Gomer]";
-		mes "Nothing I can do";
-		mes "about it then.";
-		mes "See you next time!";
+		mes "[高莫]";
+		mes "那我無能為力。";
+		mes "下次見！";
 		close;
 	case 2:
-		mes "[Gomer]";
-		mes "Um, a huge metal stick that could smash an opponent in one hit!";
+		mes "[高莫]";
+		mes "嗯，一根巨大的金屬棒，可以一擊粉碎對手！";
 		next;
-		mes "[Gomer]";
-		mes "It doesn't look fancy, but I've designed a spring-loaded device to attack with great strength.";
+		mes "[高莫]";
+		mes "它看起來並不花哨，但我設計了一個彈簧裝置，可以用巨大的力量進行攻擊。";
 		next;
-		mes "[Gomer]";
-		mes "It's concealed, so when you find a chance, one shot could put an opponent in critical condition!";
-		mes "I can't wait to see it in action!";
+		mes "[高莫]";
+		mes "它是隱藏的，所以當你找到機會時，一擊就能讓對手陷入危急狀態！";
+		mes "我迫不及待想看到它在行動了！";
 		next;
-		mes "[Gomer]";
-		mes "If you were to imagine how good this kind of weapon could be, I will make it come true.";
+		mes "[高莫]";
+		mes "如果你能想像這種武器有多好，我就會把它變成現實。";
 		next;
-		mes "[Gomer]";
-		mes "Bring me 200 Steel, 30 Flexible Tubes, and 1 Brocca. I could make what I just described with those materials.";
+		mes "[高莫]";
+		mes "給我 200 個鋼鐵、30 個柔軟的管子和 1 個 布羅卡。 我可以用這些材料製造我剛才描述的東西。";
 		close;
 	case 3:
-		mes "[Gomer]";
-		mes "You should be able get steel from many monsters like Kobolds.";
+		mes "[高莫]";
+		mes "您應該可以從許多怪物（如寇伯特）那裡獲得鋼鐵。";
 		next;
-		mes "[Gomer]";
-		mes "Flexible Tubes are more rare, dropped by Metalings around Einbroch and Lighthalzen.";
+		mes "[高莫]";
+		mes "柔軟的管子比較稀有，由艾音布羅克和里希塔樂鎮附近的 金屬波利 掉落。";
 		next;
-		mes "[Gomer]";
-		mes "Lastly, finding a Brocca is very hard, but you should be able to do something about it. Haha, go get it!";
+		mes "[高莫]";
+		mes "最後，找到 布羅卡 非常困難，但您應該能夠做些什麼。哈哈，去拿吧！";
 		close;
 	case 4:
 		if (countitem(999) < 200 || countitem(7325) < 30 || countitem(1415) < 1) {
-			mes "[Gomer]";
-			mes "You haven't brought all of the materials that I asked for.";
+			mes "[高莫]";
+			mes "你還沒有帶來我要求的所有材料。";
 			next;
-			mes "[Gomer]";
-			mes "I have a habit of giving up what I've been making and trying to make new things when the inspiration comes up.";
-			mes "You'd better hurry!";
+			mes "[高莫]";
+			mes "我有一個習慣，就是放棄我一直在做的東西，當靈感來的時候，試圖製作新的東西。";
+			mes "你最好快點！";
 			close;
 		} else {
-			mes "[Gomer]";
-			mes "Oh, I've been waiting. You didn't come on time, so I was wondering if you forgot about it. Please wait there a little bit.";
+			mes "[高莫]";
+			mes "哦，我一直在等待。你沒有準時來，所以我想知道你是不是忘了。請在那裡稍等一下。";
 			specialeffect EF_REPAIRWEAPON;
 			next;
-			mes "[Gomer]";
-			mes "It's done. What do you think? Not bad, eh? Although I made it myself, I have to say it's pretty decently done.";
+			mes "[高莫]";
+			mes "完成了。你覺得怎麼樣？還不錯吧？雖然是我自己做的，但我不得不說它做得相當不錯。";
 			next;
-			mes "[Gomer]";
-			mes "Combination of weight, volume and look at its color and gloss. It catches my heart!";
+			mes "[高莫]";
+			mes "重量、體積和看看它的顏色和光澤的組合。它觸動了我的心！";
 			next;
-			mes "[Gomer]";
+			mes "[高莫]";
 			mes "...........";
 			next;
-			mes "[Gomer]";
-			mes "Uh, with little improvement, it could be mass produced and delivered. I'm sure I can make more of these so I will give this one to you.";
+			mes "[高莫]";
+			mes "呃，稍作改進，就可以大量生產和交付。我相信我可以製造更多這樣的東西，所以我會把這個給你。";
 			next;
-			mes "[Gomer]";
-			mes "Oh, and it turns out that I didn't need all that Steel after all. So here, take most of it back.";
+			mes "[高莫]";
+			mes "哦，結果我根本不需要那麼多鋼鐵。所以，給你，把大部分拿回去。";
 			delitem 999,50; //Steel
 			delitem 7325,30; //Tube
 			delitem 1415,1; //Skewer

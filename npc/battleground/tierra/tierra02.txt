@@ -187,7 +187,7 @@ OnMyMobDead:
 		set $@TierraBG2_Victory, 2;
 		enablenpc "Guillaume Vintenar#a02_a";
 		enablenpc "Croix Vintenar#a02_b";
-		mapannounce "bat_a02", "Croix Vintenar Swandery: We destroyed Guillaume's Food Storage. We won that! Wow!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Croix Vintenar Swandery: 我們摧毀了紀堯姆的食物儲藏庫。我們贏了！哇！",bc_map,"0xFFCE00";// TransBlock#2
 		bg_warp $@TierraBG2_id1,"bat_a02",50,374;
 		bg_warp $@TierraBG2_id2,"bat_a02",42,16;
 		if (getbattleflag("feature.bgqueue"))
@@ -212,7 +212,7 @@ OnMyMobDead:
 		set $@TierraBG2_Victory, 1;
 		enablenpc "Guillaume Vintenar#a02_a";
 		enablenpc "Croix Vintenar#a02_b";
-		mapannounce "bat_a02", "Guillaume Vintenar Axl Rose : We destroyed Croix's Food Storage. We won that! Wow!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Guillaume Vintenar Axl Rose : 我們摧毀了 Croix 的食物儲藏室。我們贏了！哇！",bc_map,"0xFFCE00";
 		bg_warp $@TierraBG2_id1,"bat_a02",50,374;
 		bg_warp $@TierraBG2_id2,"bat_a02",42,16;
 		if (getbattleflag("feature.bgqueue"))
@@ -239,7 +239,7 @@ OnMyMobDead:
 		killmonster "bat_a02","barricade#bat_a02_a::OnMyMobDead";
 		delwall "bat_a02_c1";
 		enablenpc "Guillaume Blacksmith#a02";
-		mapannounce "bat_a02", "Guillaume Vintenar Axl Rose : The Barricade in the valley has been destroyed! Where's the Blacksmith? We need to rebuild the Barricade!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Guillaume Vintenar Axl Rose : 山谷裡的防禦工事被摧毀了！鐵匠在哪裡？我們需要重建防禦工事！",bc_map,"0xFFCE00";
 	}
 	end;
 }
@@ -262,7 +262,7 @@ OnMyMobDead:
 		killmonster "bat_a02","barricade#bat_a02_b::OnMyMobDead";
 		delwall "bat_a02_g1";
 		enablenpc "Croix Blacksmith#bat_a02";
-		mapannounce "bat_a02", "Croix Vintenar Swandery : The Barricade in the valley has been destroyed! Where's the Blacksmith? We need to rebuild the Barricade!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Croix Vintenar Swandery : 山谷裡的防禦工事被摧毀了！鐵匠在哪裡？我們需要重建防禦工事！",bc_map,"0xFFCE00";
 	}
 	end;
 }
@@ -281,11 +281,11 @@ OnMyMobDead:
 		bg_team_setxy getcharid(4),56,212;
 		if (getcharid(4) == $@TierraBG2_id1) {
 			donpcevent "NOBJ_mob#bat_a02_a::OnEnable";
-			mapannounce "bat_a02", "Guillaume captured a Neutrality Flag, so they have an advantage.",bc_map,"0xFFCE00";
+			mapannounce "bat_a02", "Guillaume 佔領了一面中立旗幟，所以他們佔有優勢。",bc_map,"0xFFCE00";
 		}
 		else {
 			donpcevent "NOBJ_mob#bat_a02_b::OnEnable";
-			mapannounce "bat_a02", "Croix captured a Neutrality Flag, so they have an advantage.",bc_map,"0xFFCE00";
+			mapannounce "bat_a02", "Croix 佔領了一面中立旗幟，所以他們佔有優勢。",bc_map,"0xFFCE00";
 		}
 	}
 	end;
@@ -326,15 +326,17 @@ OnMyMobDead:
 bat_a02,185,270,1	script	Guillaume Blacksmith#a02	851,{
 	if (getcharid(4) == $@TierraBG2_id1) {
 		mes "[Guillaume Blacksmith]";
-		mes "We are in urgency! The Barricade has been destroyed!";
-		mes "We can repair the Barricade with ^3131FF50 Stones, 3 Sinew of Bear, 500 Metal Fragments, 30 Rough Elunium and 100 Gold.^000000";
-		mes "We have it all except for the 50 Stones!";
+		mes "我們很緊急！防禦工事被摧毀了！";
+		mes "我們可以用 ^3131FF50 個石頭、3 個熊的筋、500 個金屬碎片、30 個粗糙的艾魯尼姆和 100 個黃金^000000 來修復防禦工事。";
+		mes "我們擁有一切，除了 50 個石頭！";
 		next;
-		switch(select("Repair.:Leave it.")) {
+		switch(select("修理.:離開。")) {// TransBlock#9
+				mes "[吉永姆鐵匠]";
+				mes "你帶來了足夠的石頭！我們去修理吧。";
 		case 1:
 			if (countitem(7049) > 49) {
 				mes "[Guillaume Blacksmith]";
-				mes "You brought enough stones! Let's go and repair.";
+				mes "你帶來了足夠的石頭！我們去修理吧。";
 				next;
 				mes "..";
 				next;
@@ -350,20 +352,20 @@ bat_a02,185,270,1	script	Guillaume Blacksmith#a02	851,{
 				next;
 				mes "..............";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage.";
+				mes "[吉永姆鐵匠]";
+				mes "以適當的比例混合石頭和金幣。";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade.";
+				mes "[吉永姆鐵匠]";
+				mes "以適當的比例混合石頭和金幣，並塑造防禦工事的形狀。";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger.";
+				mes "[吉永姆鐵匠]";
+				mes "以適當的比例混合石頭和金幣，並塑造防禦工事的形狀，然後添加粗糙的艾爾尼姆使其更堅固。";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger. Now decorate with Metal Fragments.";
+				mes "[吉永姆鐵匠]";
+				mes "以適當的比例混合石頭和金幣，並塑造防禦工事的形狀，然後添加粗糙的艾爾尼姆使其更堅固。現在用金屬碎片裝飾。";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger. Decorate with Metal Fragments, and plait stones with Sinew of Bear!";
+				mes "[吉永姆鐵匠]";
+				mes "以適當的比例混合石頭和金幣，並塑造防禦工事的形狀，然後添加粗糙的艾爾尼姆使其更堅固。用金屬碎片裝飾，並用熊的肌腱編織石頭！";
 				next;
 				mes "..............";
 				mes "..............";
@@ -372,9 +374,9 @@ bat_a02,185,270,1	script	Guillaume Blacksmith#a02	851,{
 				mes "..............";
 				next;
 				specialeffect EF_REPAIRWEAPON;
-				mes "[Guillaume Blacksmith]";
-				mes "Wow! It's done.";
-				mes "We are relieved.";
+				mes "[吉永姆鐵匠]";
+				mes "哇！完成了。";
+				mes "我們感到很欣慰。";
 				if (mobcount("bat_a02","barricade#bat_a02_a::OnMyMobDead") < 17) {
 					delitem 7049,50; //Stone
 					donpcevent "barricade#bat_a02_a::OnEnable";
@@ -384,23 +386,23 @@ bat_a02,185,270,1	script	Guillaume Blacksmith#a02	851,{
 				end;
 			}
 			else {
-				mes "[Guillaume Blacksmith]";
-				mes "You don't have enough Stones!";
+				mes "[吉永姆鐵匠]";
+				mes "你沒有足夠的石頭！";
 				next;
-				mes "[Guillaume Blacksmith]";
-				mes "^3131FFWe need 50 Stones.^000000";
-				mes "We are busy, so please hurry.";
+				mes "[吉永姆鐵匠]";
+				mes "^3131FF我們需要 50 個石頭。^000000";
+				mes "我們很忙，所以請快點。";
 				close;
 			}
 		case 2:
-			mes "[Guillaume Blacksmith]";
-			mes "There are enemies coming! Let's evacuate from here!";
+			mes "[吉永姆鐵匠]";
+			mes "有敵人來了！我們從這裡撤離！";
 			close;
 		}
 	}
 	else {
-		mes "[Guillaume Blacksmith]";
-		mes "There the enemy is coming!";
+		mes "[吉永姆鐵匠]";
+		mes "敵人來了！";
 		close;
 	}
 
@@ -411,16 +413,16 @@ OnInit:
 
 bat_a02,170,121,5	script	Croix Blacksmith#bat_a02	851,{
 	if (getcharid(4) == $@TierraBG2_id2) {
-		mes "[Croix Blacksmith]";
-		mes "We are in urgency! The Barricade has been destroyed!";
-		mes "We can repair the Barricade with ^3131FF50 Stones, 3 Sinew of Bear, 500 Metal Fragments, 30 Rough Elunium and 100 Gold.^000000";
-		mes "We have it all except for the 50 Stones!";
+		mes "[克羅斯鐵匠]";
+		mes "我們很緊急！防禦工事被摧毀了！";
+		mes "我們可以用 ^3131FF50 個石頭、3 個熊的肌腱、500 個金屬碎片、30 個粗糙的艾爾尼姆和 100 個金幣^000000 來修復防禦工事";
+		mes "除了 50 個石頭之外，我們都有了！";
 		next;
-		switch(select("Repair.:Leave it.")) {
+		switch(select("修理.:離開。")) {// TransBlock#30
 		case 1:
 			if (countitem(7049) > 49) {
 				mes "[Croix Blacksmith]";
-				mes "You brought enough stones! Let's go and repair.";
+				mes "你帶來了足夠的石頭！我們去修理吧。";
 				next;
 				mes "..";
 				next;
@@ -436,20 +438,20 @@ bat_a02,170,121,5	script	Croix Blacksmith#bat_a02	851,{
 				next;
 				mes "..............";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage.";
+				mes "[克羅斯鐵匠]";
+				mes "以適當的比例混合石頭和黃金。";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade.";
+				mes "[克羅斯鐵匠]";
+				mes "以適當的比例混合石頭和黃金，並塑造路障。";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger.";
+				mes "[克羅斯鐵匠]";
+				mes "以適當的比例混合石頭和黃金，並塑造路障，然後加入粗糙的鋁，使其更堅固。";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger. Now decorate with Metal Fragments.";
+				mes "[克羅斯鐵匠]";
+				mes "以適當的比例混合石頭和黃金，並塑造路障，然後加入粗糙的鋁，使其更堅固。現在用金屬碎片裝飾。";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "Combine Stones and Gold in the proper percentage and shape the Barricade, then add Rough Elunium to make it stronger. Decorate with Metal Fragments, and plait stones with Sinew of Bear!";
+				mes "[克羅斯鐵匠]";
+				mes "以適當的比例混合石頭和黃金，並塑造路障，然後加入粗糙的鋁，使其更堅固。用金屬碎片裝飾，並用熊的肌腱編織石頭！";
 				next;
 				mes "..............";
 				mes "..............";
@@ -458,9 +460,9 @@ bat_a02,170,121,5	script	Croix Blacksmith#bat_a02	851,{
 				mes "..............";
 				next;
 				specialeffect EF_REPAIRWEAPON;
-				mes "[Croix Blacksmith]";
-				mes "Wow! It's done.";
-				mes "We are relieved.";
+				mes "[克羅斯鐵匠]";
+				mes "哇！完成了。";
+				mes "我們鬆了一口氣。";
 				if (mobcount("bat_a02","barricade#bat_a02_b::OnMyMobDead") < 17) {
 					delitem 7049,50; //Stone
 					donpcevent "barricade#bat_a02_b::OnEnable";
@@ -470,23 +472,23 @@ bat_a02,170,121,5	script	Croix Blacksmith#bat_a02	851,{
 				end;
 			}
 			else {
-				mes "[Croix Blacksmith]";
-				mes "You don't have enough Stones!";
+				mes "[克羅斯鐵匠]";
+				mes "你的石頭不夠！";
 				next;
-				mes "[Croix Blacksmith]";
-				mes "^3131FFWe need 50 Stone.^000000";
-				mes "We are busy, so please hurry.";
+				mes "[克羅斯鐵匠]";
+				mes "^3131FF我們需要 50 個石頭。^000000";
+				mes "我們很忙，所以請快一點。";
 				close;
 			}
 		case 2:
-			mes "[Croix Blacksmith]";
-			mes "There are enemies coming! Let's evacuate from here!";
+			mes "[克羅斯鐵匠]";
+			mes "有敵人來了！讓我們從這裡撤離！";
 			close;
 		}
 	}
 	else {
-		mes "[Croix Blacksmith]";
-		mes "There, the enemy is coming!";
+		mes "[克羅斯鐵匠]";
+		mes "看，敵人來了！";
 		close;
 	}
 
@@ -497,10 +499,10 @@ OnInit:
 
 bat_a02,53,377,3	script	Battle Therapist#a02_a	95,{
 	specialeffect2 EF_HEAL;
-	mes "[Battle Therapist]";
-	mes "Just close your eyes,";
-	mes "and take a deep breath.";
-	mes "You can be free from pain.";
+	mes "[戰鬥治療師]";
+	mes "只要閉上你的眼睛，";
+	mes "並深呼吸。";
+	mes "你可以擺脫痛苦。";
 	close;
 	end;
 
@@ -551,10 +553,10 @@ OnTouch:
 
 bat_a02,45,19,3	script	Battle Therapist#a02_b	95,{
 	specialeffect2 EF_HEAL;
-	mes "[Battle Therapist]";
-	mes "Just close your eyes,";
-	mes "and take a deep breath.";
-	mes "You can be free from pain.";
+	mes "[戰鬥治療師]";
+	mes "只要閉上你的眼睛，";
+	mes "並深呼吸。";
+	mes "你可以擺脫痛苦。";
 	close;
 	end;
 
@@ -605,7 +607,7 @@ OnTouch:
 
 bat_a02,60,216,3	script	Valley Ghost#bat_a02_n	950,{
 	specialeffect2 EF_HEAL;
-	mes "[Valley Ghost]";
+	mes "[山谷幽靈]";
 	mes "Boo...Boo...";
 	close;
 
@@ -805,12 +807,12 @@ OnTimer1830000:
 
 /*
 bat_a02,351,75,3	script	Croix Camp Soldier#bat_a02_guide	934,{
-	mes "Loading...";
+	mes "讀取中...";
 	close;
 }
 
 bat_a02,356,326,3	script	Guillaume Camp Soldier#bat_a02_guide	934,{
-	mes "Loading...";
+	mes "讀取中...";
 	close;
 }
 */
@@ -818,21 +820,21 @@ bat_a02,356,326,3	script	Guillaume Camp Soldier#bat_a02_guide	934,{
 bat_a02,1,1,3	script	Release all#a02	81,{
 	set .@i, callfunc("F_GM_NPC",1854,0);
 	if (.@i == -1) {
-		mes "Cancelled.";
+		mes "已取消。";
 		close;
 	} else if (.@i == 0) {
 		end;
 	} else {
-		mes "May I help you?";
+		mes "我可以幫你嗎？";
 		next;
-		switch(select("Release all.:Cancel.")) {
+		switch(select("全部釋放.:取消.")) {
 		case 1:
-			mes "Bye.";
+			mes "再見。";
 			close2;
 			mapwarp "bat_a02","bat_room",154,150;
 			end;
 		case 2:
-			mes "Cancelled.";
+			mes "已取消。";
 			close;
 		}
 	}

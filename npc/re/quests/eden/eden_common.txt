@@ -25,256 +25,256 @@
 
 // Common NPCs :: lv_tre
 //============================================================
-moc_para01,27,35,5	script	Secretary Lime Evenor	4_F_EDEN_OFFICER,{
+moc_para01,27,35,5	script	秘書 萊姆·伊文諾	4_F_EDEN_OFFICER,{
 	if (checkweight(1201,1) == 0 || (MaxWeight - Weight) < 2000) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶的 -";
+		mes "- 物品太多了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 在你減輕一些重量之後。 -";
 		close;
 	}
 	if (countitem(6219) > 0) {
-		mes "[Lime Evenor]";
-		mes "Thanks to many adventurers visiting our Eden Group, we've recently prepared a new version of Eden Group Mark for our visitors.";
-		mes "And it is also possible to exchange old version of Eden Group Mark into a new one.";
+		mes "[萊姆·伊文諾]";
+		mes "感謝許多冒險家拜訪我們的伊甸園，我們最近為我們的訪客準備了新版本的伊甸園徽章。";
+		mes "並且也可以將舊版本的伊甸園徽章兌換成新的。";
 		next;
-		mes "[Lime Evenor]";
-		mes "Though it has a slight time delay, this new version of Eden Group Mark will send you back to current saved location.";
-		mes "Would you like to exchange yours?";
+		mes "[萊姆·伊文諾]";
+		mes "雖然它有稍微的時間延遲，這個新版本的伊甸園徽章會把你送回當前儲存的地點。";
+		mes "你想要兌換你的嗎？";
 		next;
-		if (select("Sure:I'm good.") == 2){
-			mes "[Lime Evenor]";
-			mes "What possible reason would you have... to not exchange?";
+		if (select("當然:我很好。") == 2){
+			mes "[萊姆·伊文諾]";
+			mes "你會有什麼可能的理由...不兌換呢？";
 			close;
 		}
 		delitem 6219,1;
 		getitem 22508,1;
-		mes "[Lime Evenor]";
-		mes "There you go. Come back again~";
+		mes "[萊姆·伊文諾]";
+		mes "給你。歡迎再來～";
 		close;
 	}
-	mes "[Lime Evenor]";
-	mes "People who follow their dreams and romances listen to me. We are representatives of the paradise called 'The garden of Eden' called the Eden group . There is no place like this anywhere.";
-	mes "Hello. Can I help you?";
+	mes "[萊姆·伊文諾]";
+	mes "追隨夢想與浪漫的人們會聽我的。我們是名為「伊甸園」的天堂的代表，也就是伊甸園。這裡獨一無二。";
+	mes "哈囉。我可以幫你嗎？";
 	next;
 	while (1) {
-		switch (select("What is Eden group?:Join the Eden Group.:Register new mission.:Search for missions.:Cancel.")) {
+		switch (select("什麼是伊甸園？:加入伊甸園。:登記新任務。:搜尋任務。:取消。")) {
 		case 1:
-			mes "[Lime Evenor]";
-			mes "Eden Group is a group that helps people who are suffering from distresses in Midgard.";
+			mes "[萊姆·伊文諾]";
+			mes "伊甸園是一個幫助那些在米德加爾特受苦的人們的組織。";
 			next;
-			mes "[Lime Evenor]";
-			mes "If people need help, we put up the case on the bulletin board and introduce it to our members who are eager to help those in need.";
+			mes "[萊姆·伊文諾]";
+			mes "如果人們需要幫助，我們會將案件張貼在佈告欄上，並將其介紹給我們渴望幫助那些需要幫助的成員。";
 			next;
-			mes "[Lime Evenor]";
-			mes "Eden members will review the missions and help those who post them up.";
-			mes "Members do these missions for rewards.";
+			mes "[萊姆·伊文諾]";
+			mes "伊甸園成員將會審查這些任務，並幫助那些張貼它們的人。";
+			mes "成員們為了獎勵而執行這些任務。";
 			next;
-			mes "[Lime Evenor]";
-			mes "If you are not too familiar with Midgard, this is a great way to explore the world.";
-			mes "Or, if you are mature enough, you can travel the world and make new friends while doing missions. Your honorable name will be spread out among lands.";
+			mes "[萊姆·伊文諾]";
+			mes "如果你不太熟悉米德加爾特，這是一個探索世界的好方法。";
+			mes "或者，如果你夠成熟，你可以環遊世界，在執行任務的同時結交新朋友。你光榮的名字將在各個地方傳開。";
 			next;
 			break;
 		case 2:
 			if (!callfunc("F_HasEdenGroupMark")) {
-				mes "[Lime Evenor]";
-				mes "You can be a Eden's member by simply registering with me.";
-				mes "Would you like to join Eden Group?";
+				mes "[萊姆·伊文諾]";
+				mes "你只要向我登記就可以成為伊甸園的成員。";
+				mes "你想要加入伊甸園嗎？";
 				next;
-				switch (select("Yes, I want to join.:No, I don't want to join.")) {
+				switch (select("是的，我想加入。:不，我不想加入。")) {
 				case 1:
-					mes "[Lime Evenor]";
-					mes "Aright. Excellent! Please write down your name here.";
+					mes "[萊姆·伊文諾]";
+					mes "好的。太棒了！請在這裡寫下你的名字。";
 					input .@input$;
 					next;
-					mes "[Lime Evenor]";
-					mes "Are you done?";
-					mes "Let me see.";
+					mes "[萊姆·伊文諾]";
+					mes "你寫完了嗎？";
+					mes "讓我看看。";
 					next;
-					mes "[Lime Evenor]";
-					mes "Your name is ^3131FFBo"+.@input$+"Ba^000000...? Is that right?";
-					mes "Huh? Isn't it??";
+					mes "[萊姆·伊文諾]";
+					mes "你的名字是 ^3131FFBo"+.@input$+"Ba^000000...？是這樣嗎？";
+					mes "咦？不是嗎？？";
 					next;
 					emotion ET_SWEAT;
-					mes "[Lime Evenor]";
-					mes "Hmm, that isn't what you wrote?";
-					mes "Ok, hmm, it seems a bit hard to read.";
+					mes "[萊姆·伊文諾]";
+					mes "嗯，那不是你寫的嗎？";
+					mes "好吧，嗯，它看起來有點難以辨認。";
 					next;
-					mes "[Lime Evenor]";
-					mes "Would you please write your name again? Please write it ^3131FFClearly^000000.";
+					mes "[萊姆·伊文諾]";
+					mes "你可以再寫一次你的名字嗎？請^3131FF清楚地^000000寫。";
 					input .@input$;
 					next;
-					mes "[Lime Evenor]";
-					mes "Ah~ ha. You are ^3131FF"+strcharinfo(0)+"^000000.";
-					mes "I got it right this time.";
+					mes "[萊姆·伊文諾]";
+					mes "啊～哈。你是^3131FF"+strcharinfo(0)+"^000000。";
+					mes "這次我寫對了。";
 					next;
 					emotion ET_BEST;
-					mes "[Lime Evenor]";
-					mes "We already put your name on the list.";
-					mes "Welcome to Eden's group new member!";
+					mes "[萊姆·伊文諾]";
+					mes "我們已經將你的名字放在名單上了。";
+					mes "歡迎加入伊甸園，新成員！";
 					next;
-					mes "[Lime Evenor]";
-					mes "Hopefully you can do great work as an Eden's member.";
+					mes "[萊姆·伊文諾]";
+					mes "希望你可以成為伊甸園的成員並做出偉大的貢獻。";
 					getitem 22508,1; //Para_Team_Mark_
 					next;
 					break;
 				case 2:
-					mes "[Lime Evenor]";
-					mes "Do you still have questions about Eden Group?";
+					mes "[萊姆·伊文諾]";
+					mes "你還有關於伊甸園的問題嗎？";
 					next;
 					break;
 				}
 			} else {
-				mes "[Lime Evenor]";
-				mes "You are already a member of Eden Group.";
+				mes "[萊姆·伊文諾]";
+				mes "你已經是伊甸園的成員了。";
 				next;
 			}
 			break;
 		case 3:
-			mes "[Lime Evenor]";
-			mes "Do you want to register some missions that you want us to do?";
+			mes "[萊姆·伊文諾]";
+			mes "你想要登記一些你希望我們執行的任務嗎？";
 			next;
-			if(select("Yes, I want to register.:No, I don't.") == 1) {
-				mes "[Lime Evenor]";
-				mes "Alrigh. Please write down your name on it.";
+			if(select("是的，我想登記。:不，我不想。") == 1) {
+				mes "[萊姆·伊文諾]";
+				mes "好的。請在上面寫下你的名字。";
 				input .@input$;
 				next;
-				mes "[Lime Evenor]";
-				mes "^3131FF"+strcharinfo(0)+"^000000.. Is that your name?";
-				mes "Hmm, your handwriting is not clear. I can't read. it";
+				mes "[萊姆·伊文諾]";
+				mes "^3131FF"+strcharinfo(0)+"^000000.. 這是你的名字嗎？";
+				mes "嗯，你的筆跡不清楚。我看不懂。";
 				next;
-				mes "[Lime Evenor]";
-				mes "^3131FF"+strcharinfo(0)+"^000000, tell me what you want to register for.";
-				mes "Which map should we go to?";
+				mes "[萊姆·伊文諾]";
+				mes "^3131FF"+strcharinfo(0)+"^000000，告訴我你想要登記什麼任務。";
+				mes "我們應該去哪張地圖？";
 				input .@input$;
 				next;
-				mes "[Lime Evenor]";
-				mes "^3131FFMission Map: "+.@inputstr$+"^000000";
-				mes "hum, I will note that.";
+				mes "[萊姆·伊文諾]";
+				mes "^3131FF任務地圖: "+.@inputstr$+"^000000";
+				mes "嗯，我會記下來。";
 				next;
-				mes "[Lime Evenor]";
-				mes "Please let me know what kind of missions your are lookng for.";
-				mes "It should be briefly like 'Hunt 10 Porings.'";
+				mes "[萊姆·伊文諾]";
+				mes "請告訴我你在尋找哪種任務。";
+				mes "它應該簡潔明瞭，像是「獵殺10隻波利」。";
 				input .@input$;
 				next;
-				mes "[Lime Evenor]";
-				mes "Are you done?";
-				mes "Let me check.";
+				mes "[萊姆·伊文諾]";
+				mes "你寫完了嗎？";
+				mes "讓我檢查一下。";
 				next;
-				mes "[Lime Evenor]";
-				mes "Huh...........";
+				mes "[萊姆·伊文諾]";
+				mes "嗯...........";
 				next;
-				mes "[Lime Evenor]";
-				mes "Hum.. huh??..................";
+				mes "[萊姆·伊文諾]";
+				mes "嗯.. 咦??..................";
 				next;
 				emotion ET_THINK;
-				mes "[Lime Evenor]";
-				mes "I think you should complete one of our missions first before you take up a new mission.";
+				mes "[萊姆·伊文諾]";
+				mes "我認為在你接受新任務之前，你應該先完成我們的一個任務。";
 				next;
 				emotion ET_HNG;
-				mes "[Lime Evenor]";
-				mes "^3131FFClient: Lime Evenor^000000";
-				mes "^3131FFMission: Practice your handwriting for one month.^000000";
-				mes "You've got really bad penmanship!";
+				mes "[萊姆·伊文諾]";
+				mes "^3131FF委託人: 萊姆·伊文諾^000000";
+				mes "^3131FF任務：練習你的筆跡一個月。^000000";
+				mes "你的字跡真的太糟糕了！";
 				next;
-				mes "[Lime Evenor]";
-				mes "^3131FFMission:"+.@input$+"^000000";
-				mes "Anyway, you are done registering for a new mission.";
+				mes "[萊姆·伊文諾]";
+				mes "^3131FF任務："+.@input$+"^000000";
+				mes "無論如何，你已經完成登記新任務了。";
 				next;
-				mes "[Lime Evenor]";
-				mes "Missions are fully booked. You have to wait for an spot to clear up.";
-				mes "Please kindly wait until your turn.";
+				mes "[萊姆·伊文諾]";
+				mes "任務已滿。你必須等待一個空位。";
+				mes "請耐心等待輪到你。";
 				next;
 			}
 			break;
 		case 4:
 			if (callfunc("F_HasEdenGroupMark")) {
-				mes "[Lime Evenor]";
-				mes "Would like to try some missions as an Eden member?";
+				mes "[萊姆·伊文諾]";
+				mes "想以伊甸園成員的身分嘗試一些任務嗎？";
 				next;
-				mes "[Lime Evenor]";
-				mes "Check the right side of the bulletin board, there are various kinds of missions waiting for you.";
-				mes "Please carefully read the mission list and the qualifications and choose one of them.";
+				mes "[萊姆·伊文諾]";
+				mes "查看佈告欄的右側，有各種各樣的任務等著你。";
+				mes "請仔細閱讀任務列表和資格，然後選擇其中一項。";
 				next;
 			}
 			else {
-				mes "[Lime Evenor]";
-				mes "You need to join Eden Group first if you want to do some missions.";
+				mes "[萊姆·伊文諾]";
+				mes "如果你想執行一些任務，你需要先加入伊甸園。";
 				close;
 			}
 			break;
 		case 5:
-			mes "[Lime Evenor]";
-			mes "If you have any questions please come back again.";
+			mes "[萊姆·伊文諾]";
+			mes "如果你有任何問題，請再回來。";
 			close;
 		}
 	}
 	close;
 }
 
--	script	Eden Teleport Officer#0::eto	-1,{
-	mes "[Eden Teleport Officer]";
-	mes "Those who are wandering around this strange world with aimless eyes listen up and come to me!";
-	mes "Eden group is here to help you and will show you the great future.";
+-	script	伊甸園傳送人員#0::eto	-1,{
+	mes "[伊甸園傳送人員]";
+	mes "那些漫無目的的在這奇異世界遊蕩的人們，聽好了，來找我！";
+	mes "伊甸園來幫助你們，並將向你們展示偉大的未來。";
 	next;
-	mes "[Eden Teleport Officer]";
-	mes "You have nothing to do but waste your time?";
-	mes "You are eager to do something good but no one offers you work?";
-	mes "Would you like to be a problem solver?";
-	mes "Eden group is here to solve your problem.";
+	mes "[伊甸園傳送人員]";
+	mes "你無所事事，只是浪費時間？";
+	mes "你渴望做一些好事，但沒有人提供你工作？";
+	mes "你想成為問題解決者嗎？";
+	mes "伊甸園來解決你的問題。";
 	next;
-	switch (select("Move to Eden Group.:Don't want to talk anymore.")) {
+	switch (select("傳送到伊甸園。:不想再說了。")) {
 	case 1:
-		mes "[Eden Teleport Officer]";
-		mes "Let's go to our secret base!";
+		mes "[伊甸園傳送人員]";
+		mes "讓我們去我們的秘密基地！";
 		set nak_warp,strnpcinfo(2);
 		close2;
 		warp "moc_para01",31,14;
 		end;
 	case 2:
-		mes "[Eden Teleport Officer]";
-		mes "If you don't know what to do for your future, don't hesitate to tell me. Just drop by and talk to me! Ok?";
+		mes "[伊甸園傳送人員]";
+		mes "如果你不知道你的未來該做什麼，請不要猶豫告訴我。隨時來和我談談！好嗎？";
 		close;
 	}
 }
-prontera,124,76,3	duplicate(eto)	Eden Teleport Officer#1	729
-moc_ruins,68,164,3	duplicate(eto)	Eden Teleport Officer#2	729
-geffen,132,66,3	duplicate(eto)	Eden Teleport Officer#3	729
-alberta,124,67,3	duplicate(eto)	Eden Teleport Officer#4	729
-aldebaran,133,119,5	duplicate(eto)	Eden Teleport Officer#5	729
-izlude_in,68,162,1	duplicate(eto)	Eden Teleport Officer#6	729
-prt_church,103,78,3	duplicate(eto)	Eden Teleport Officer#7	729
-geffen_in,160,104,5	duplicate(eto)	Eden Teleport Officer#8	729
-moc_prydb1,53,126,3	duplicate(eto)	Eden Teleport Officer#9	729
-alberta_in,75,39,3	duplicate(eto)	Eden Teleport Officer#10	729
-payon_in02,58,58,1	duplicate(eto)	Eden Teleport Officer#11	729
-payon,177,111,3	duplicate(eto)	Eden Teleport Officer#12	729
-que_ng,33,73,3	duplicate(eto)	Eden Teleport Officer#13	729
-que_ng,144,161,5	duplicate(eto)	Eden Teleport Officer#14	729
-yuno,144,189,5	duplicate(eto)	Eden Teleport Officer#15	729
-rachel,125,144,3	duplicate(eto)	Eden Teleport Officer#16	729
-comodo,202,151,4	duplicate(eto)	Eden Teleport Officer#17	729
-hugel,93,153,4	duplicate(eto)	Eden Teleport Officer#18	729
-veins,220,109,4	duplicate(eto)	Eden Teleport Officer#19	729
-einbroch,250,211,4	duplicate(eto)	Eden Teleport Officer#20	729
-lighthalzen,164,86,4	duplicate(eto)	Eden Teleport Officer#21	729
-amatsu,100,145,5	duplicate(eto)	Eden Teleport Officer#22	729
-ayothaya,221,191,3	duplicate(eto)	Eden Teleport Officer#23	729
-louyang,224,107,3	duplicate(eto)	Eden Teleport Officer#24	729
-gonryun,162,122,5	duplicate(eto)	Eden Teleport Officer#25	729
-moscovia,209,197,5	duplicate(eto)	Eden Teleport Officer#26	729
-brasilis,191,224,3	duplicate(eto)	Eden Teleport Officer#27	729
-dewata,192,193,5	duplicate(eto)	Eden Teleport Officer#28	729
-morocc,161,97,5	duplicate(eto)	Eden Teleport Officer#29	729
-izlude,131,148,4	duplicate(eto)	Eden Teleport Officer#30	729
-izlude_a,131,148,4	duplicate(eto)	Eden Teleport Officer#30::eto_iz_a	729
-izlude_b,131,148,4	duplicate(eto)	Eden Teleport Officer#30::eto_iz_b	729
-izlude_c,131,148,4	duplicate(eto)	Eden Teleport Officer#30::eto_iz_c	729
-izlude_d,131,148,4	duplicate(eto)	Eden Teleport Officer#30::eto_iz_d	729
-umbala,105,158,3	duplicate(eto)	Eden Teleport Officer#31	729
-malaya,225,218,1	duplicate(eto)	Eden Teleport Officer#32	729
-verus04,116,243,0	duplicate(eto)	Eden Teleport Officer#33	729
+prontera,124,76,3	duplicate(eto)	伊甸園傳送人員#1	729
+moc_ruins,68,164,3	duplicate(eto)	伊甸園傳送人員#2	729
+geffen,132,66,3	duplicate(eto)	伊甸園傳送人員#3	729
+alberta,124,67,3	duplicate(eto)	伊甸園傳送人員#4	729
+aldebaran,133,119,5	duplicate(eto)	伊甸園傳送人員#5	729
+izlude_in,68,162,1	duplicate(eto)	伊甸園傳送人員#6	729
+prt_church,103,78,3	duplicate(eto)	伊甸園傳送人員#7	729
+geffen_in,160,104,5	duplicate(eto)	伊甸園傳送人員#8	729
+moc_prydb1,53,126,3	duplicate(eto)	伊甸園傳送人員#9	729
+alberta_in,75,39,3	duplicate(eto)	伊甸園傳送人員#10	729
+payon_in02,58,58,1	duplicate(eto)	伊甸園傳送人員#11	729
+payon,177,111,3	duplicate(eto)	伊甸園傳送人員#12	729
+que_ng,33,73,3	duplicate(eto)	伊甸園傳送人員#13	729
+que_ng,144,161,5	duplicate(eto)	伊甸園傳送人員#14	729
+yuno,144,189,5	duplicate(eto)	伊甸園傳送人員#15	729
+rachel,125,144,3	duplicate(eto)	伊甸園傳送人員#16	729
+comodo,202,151,4	duplicate(eto)	伊甸園傳送人員#17	729
+hugel,93,153,4	duplicate(eto)	伊甸園傳送人員#18	729
+veins,220,109,4	duplicate(eto)	伊甸園傳送人員#19	729
+einbroch,250,211,4	duplicate(eto)	伊甸園傳送人員#20	729
+lighthalzen,164,86,4	duplicate(eto)	伊甸園傳送人員#21	729
+amatsu,100,145,5	duplicate(eto)	伊甸園傳送人員#22	729
+ayothaya,221,191,3	duplicate(eto)	伊甸園傳送人員#23	729
+louyang,224,107,3	duplicate(eto)	伊甸園傳送人員#24	729
+gonryun,162,122,5	duplicate(eto)	伊甸園傳送人員#25	729
+moscovia,209,197,5	duplicate(eto)	伊甸園傳送人員#26	729
+brasilis,191,224,3	duplicate(eto)	伊甸園傳送人員#27	729
+dewata,192,193,5	duplicate(eto)	伊甸園傳送人員#28	729
+morocc,161,97,5	duplicate(eto)	伊甸園傳送人員#29	729
+izlude,131,148,4	duplicate(eto)	伊甸園傳送人員#30	729
+izlude_a,131,148,4	duplicate(eto)	伊甸園傳送人員#30::eto_iz_a	729
+izlude_b,131,148,4	duplicate(eto)	伊甸園傳送人員#30::eto_iz_b	729
+izlude_c,131,148,4	duplicate(eto)	伊甸園傳送人員#30::eto_iz_c	729
+izlude_d,131,148,4	duplicate(eto)	伊甸園傳送人員#30::eto_iz_d	729
+umbala,105,158,3	duplicate(eto)	伊甸園傳送人員#31	729
+malaya,225,218,1	duplicate(eto)	伊甸園傳送人員#32	729
+verus04,116,243,0	duplicate(eto)	伊甸園傳送人員#33	729
 
 moc_para01,30,10,0	script	#eden_out	45,1,1,{
 OnTouch:
@@ -319,117 +319,117 @@ OnTouch:
 
 moc_para01,47,39,3	script	#warp_2_pass	111,{
 	if (callfunc("F_HasEdenGroupMark")) {
-		mes "[Lime Evenor]";
-		mes "Oh, it is an exclusive place only for Eden's members.";
-		mes "If you are a member, you can come whenever you want!";
+		mes "[萊姆·伊文諾]";
+		mes "喔，這是僅限伊甸園成員的專屬場所。";
+		mes "如果你是會員，你可以隨時來！";
 		next;
-		switch (select("Enter.:Don't Enter.")) {
+		switch (select("進入。:不進入。")) {
 		case 1:
-			mes "This door is beautifully decorated but seems a little bit too heavy.";
+			mes "這扇門裝飾得很漂亮，但看起來有點太重了。";
 			close2;
 			warp "moc_para01",106,14;
 			end;
 		case 2:
-			mes "[Lime Evenor]";
-			mes "Well, if you are not interested.";
+			mes "[萊姆·伊文諾]";
+			mes "好吧，如果你沒興趣的話。";
 			close;
 		}
 	}
-	mes "[Lime Evenor]";
-	mes "Oh, this is an exclusive place for Eden's members only.";
-	mes "If you want to go inside, you have to join the Eden Group.";
+	mes "[萊姆·伊文諾]";
+	mes "喔，這是僅限伊甸園成員的專屬場所。";
+	mes "如果你想進去，你必須加入伊甸園。";
 	close;
 }
 
-moc_para01,16,22,7	script	Old Adventurer#eden	900,{
-	mes "[Old Adventurer]";
-	mes "Harsh, I am strong enough even if I look old! What is her name? Lime Evenor? She just ignores me like I am a some kind of old senile bastard.";
+moc_para01,16,22,7	script	老冒險家#eden	900,{
+	mes "[老冒險家]";
+	mes "真過分，就算我看起來老了，我也很強！她叫什麼名字？萊姆·伊文諾？她根本無視我，好像我是個老番癲。";
 	next;
-	mes "[Old Adventurer]";
-	mes "I came here to join the Eden group! I don't deserve this!";
-	mes "Do you also think I look like I'm senile?";
+	mes "[老冒險家]";
+	mes "我來這裡是為了加入伊甸園！我不應該受到這樣的待遇！";
+	mes "你也認為我看起來像老番癲嗎？";
 	close;
 }
 
-moc_para01,182,48,3	script	Eden's Chief#eden	886,{
+moc_para01,182,48,3	script	伊甸園廚師#eden	886,{
 	set .@eggf,rand(1,118);
 	set .@eggf_1,.@eggf + 1;
 	set .@eggf_2,.@eggf + 2;
 	set .@eggf_6,.@eggf + 6;
-	mes "[Eden's Chief]";
+	mes "[伊甸園廚師]";
 	mes ""+.@eggf+".. "+.@eggf_1+"... "+.@eggf_2+".... "+.@eggf_6+"..?";
 	next;
 	emotion ET_CRY;
-	mes "[Eden's Chief]";
-	mes "Oh, Shoot! How many eggs have I done?";
-	mes "Aww!!! I totally forgot! I have to count again!";
+	mes "[伊甸園廚師]";
+	mes "喔，糟糕！我煎了多少個雞蛋了？";
+	mes "阿~~~！我完全忘記了！我得重新數一次！";
 	next;
 	emotion ET_CRY;
-	mes "[Eden's Chief]";
-	mes "Why have you asked me to do this? What kind of mission is that?";
+	mes "[伊甸園廚師]";
+	mes "你為什麼要我做這個？這是什麼任務？";
 	next;
 	emotion ET_CRY;
-	mes "[Eden's Chief]";
-	mes "What are you going to with all of those fried eggs? I am sure you can't eat all of them. You just want to bother me, right?";
+	mes "[伊甸園廚師]";
+	mes "你要用這麼多煎蛋做什麼？我確定你吃不完。你只是想打擾我，對吧？";
 	close;
 }
 
-moc_para01,172,28,5	script	Eden's Intern#eden	883,{
-	mes "[Eden's Intern]";
-	mes "Actually, I realized that.";
+moc_para01,172,28,5	script	伊甸園實習生#eden	883,{
+	mes "[伊甸園實習生]";
+	mes "實際上，我意識到了。";
 	next;
-	mes "[Eden's Intern]";
-	mes "We have to work really hard unless you want to fail.";
+	mes "[伊甸園實習生]";
+	mes "我們必須非常努力工作，除非你想失敗。";
 	next;
-	mes "[Eden's Intern]";
-	mes "But, I have never learned about pharmaceuticals yet.";
+	mes "[伊甸園實習生]";
+	mes "但是，我還沒有學過藥學。";
 	next;
-	mes "[Eden's Intern]";
-	mes "I'm going to fail. I can't do this.";
+	mes "[伊甸園實習生]";
+	mes "我要失敗了。我做不到。";
 	close;
 }
 
-moc_para01,20,35,5	script	Office Assistant Neede	814,{
-	mes "[Neede]";
-	mes "I became a Eden's member several years ago, but it feels like it was yesterday.";
-	mes "I have been doing lots of work, so I didn't even notice how many years I spent here.";
+moc_para01,20,35,5	script	辦公助理尼德	814,{
+	mes "[尼德]";
+	mes "我幾年前成為伊甸園的成員，但感覺就像昨天一樣。";
+	mes "我一直在做很多工作，所以我甚至沒有注意到我在這裡花了多少年。";
 	next;
-	mes "[Neede]";
-	mes "It reminds me that it was like a war everyday.";
+	mes "[尼德]";
+	mes "這讓我想起每天都像一場戰爭。";
 	next;
-	mes "[Neede]";
-	mes "The chief of ^3131FFthe restaurant on the right side^000000";
-	mes "uses too much seasoning every time he cooks, the smell is all over the lobby. We have to open the window regularly because we can't stand the smell!";
+	mes "[尼德]";
+	mes "右邊^3131FF餐廳^000000的負責人";
+	mes "每次煮飯都放太多調味料，大廳裡都是味道。我們必須定期打開窗戶，因為我們受不了這種味道！";
 	next;
-	mes "[Neede]";
-	mes "And, do you see the ^3131FFgymnasium^000000 on the cross of ^3131FFthe north side of the lobby^000000? They always shout when they exercise, I can even hear them from here!";
+	mes "[尼德]";
+	mes "還有，你看到^3131FF大廳北側十字路口^000000的^3131FF體育館^000000了嗎？他們運動時總是會大喊大叫，我甚至從這裡都聽得到！";
 	next;
 	emotion ET_ANGER;
-	mes "[Neede]";
-	mes "Besides, the weird girl from ^3131FFthe second floor^000000 is crying all the time. Her cries drive me crazy.";
+	mes "[尼德]";
+	mes "此外，^3131FF二樓^000000那個奇怪的女孩一直在哭。她的哭聲快把我逼瘋了。";
 	next;
-	mes "[Neede]";
-	mes "Ah, that weird girl is actually our boss...";
+	mes "[尼德]";
+	mes "啊，那個奇怪的女孩實際上是我們的老闆...";
 	next;
-	mes "[Neede]";
-	mes "I don't know what she has been up to. But she cries and shouts all the time. Oh, sometimes I hear 'Bang!', loud booming sounds... I don't know where it came from.";
+	mes "[尼德]";
+	mes "我不知道她在做什麼。但她一直在哭和尖叫。喔，有時候我會聽到'砰！'，巨大的轟隆聲......我不知道從哪裡來的。";
 	next;
 	emotion ET_HUK;
-	mes "[Neede]";
-	mes "Wait!";
-	mes "Shh! It is a secret, you can't tell anybody!";
+	mes "[尼德]";
+	mes "等等！";
+	mes "噓！這是秘密，你不能告訴任何人！";
 	next;
-	mes "[Neede]";
+	mes "[尼德]";
 	emotion ET_OHNO;
-	mes "I don't trust Evenor. She never shows her feelings... she's going to snitch on me to my boss.";
+	mes "我不信任伊文諾。她從不表露她的感情......她會向我的老闆告發我。";
 	next;
-	emotion ET_HNG, getnpcid(0, "Secretary Lime Evenor");
-	mes "[Lime Evenor]";
-	mes "I am not that kind of girl.";
+	emotion ET_HNG, getnpcid(0, "秘書 萊姆·伊文諾");
+	mes "[萊姆·伊文諾]";
+	mes "我不是那種女孩。";
 	next;
 	emotion ET_KEK;
-	mes "[Neede]";
-	mes "Huh? Did you hear that? Gosh~!";
+	mes "[尼德]";
+	mes "嗯？你聽到了嗎？天啊~！";
 	close;
 }
 

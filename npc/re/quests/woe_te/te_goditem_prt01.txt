@@ -9,9 +9,10 @@
 
 te_prtcas01,204,204,3	script	Blacksmith Kai#tegod01	4_M_RACHMAN2,{
 	if (checkweight(1201,1) == 0) {
-		mes "You have too many items to proceed with the quest.";
-		mes "Please lighten your load and try again.";
-		close;	}
+		mes "你身上攜帶太多物品，無法進行任務。";
+		mes "請減輕你的負擔，然後再試一次。";
+		close;
+	}
 
 	.@guild_id = getcastledata("te_prtcas01",1);
 	.@economy  = getcastledata("te_prtcas01",2);
@@ -19,215 +20,215 @@ te_prtcas01,204,204,3	script	Blacksmith Kai#tegod01	4_M_RACHMAN2,{
 
 	mes "["+ .@npc_name$ +"]";
 	if (.@guild_id != getcharid(2)) {
-		mes "You... don't look familiar to me... ?";
-		mes "Are you going to threaten me?";
-		mes "No, right?";
+		mes "你... 看起來對我來說很陌生... ?";
+		mes "你要威脅我嗎？";
+		mes "不，對吧？";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "I have my reasons.";
-		mes "Please, pretend not to see me.";
+		mes "我自有我的理由。";
+		mes "拜託，假裝沒看到我。";
 		close;
 	}
 	if (WoeTETimeStart(14400) == 1 || agitcheck3() == 1) {// cannot start the quest 4 hours before and during WOE TE
-		mes "From now on, I'll stay here quietly and not interrupt anyone until the siege ends.";
-		mes "Don't worry about me.";
+		mes "從現在開始，我會安靜地待在這裡，直到攻城結束，不會打擾任何人。";
+		mes "別擔心我。";
 		close;
 	}
 	if (is_guild_leader() == false) {
-		mes "I feel so grateful all the time about you letting me stay here.";
-		mes "It's nothing special... but if you want, I'll make you tools that could be of use.";
+		mes "我一直都很感激你們讓我待在這裡。";
+		mes "這沒什麼特別的... 但如果你們想要，我可以製作一些可能有用的工具。";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "I mean if the guild master wants it.";
-		mes "I'm also a master who pursues the ultimate way.";
-		mes "I hope I can find that way here.";
+		mes "我的意思是如果公會會長想要的話。";
+		mes "我也是追求極致之道的工匠。";
+		mes "我希望我可以在這裡找到那個道。";
 		close;
 	}
 	if ($2012_tegod_gloria == 0) {// event status
-		mes "Ah... Master.";
-		mes "I feel so thankful all the time.";
-		mes "Since I owe you big time, I'll help you with anything anytime.";
+		mes "啊... 大師。";
+		mes "我一直都感到非常感激。";
+		mes "因為我欠你很大的人情，我隨時都可以幫你做任何事。";
 		next;
-		switch( select( "Make Hervor.","Fuse materials.","Relax." ) ) {
+		switch( select( "製作海爾弗。","融合材料。","放鬆。" ) ) {
 		case 1:
 			if (.@economy > 29) {
 				if (countitem(6595) > 1 && countitem(6596) > 0 && countitem(6594) > 3 && countitem(6597) > 2 && countitem(6602) > 0 && countitem(6605) > 0 && countitem(6604) > 0 && countitem(2115) > 0) {
-					mes "^ff0000Valkyrja's Shield is needed in the process of making Hervor.";
-					mes "You should not possess any other items except for Valkyrja's Shields in order to proceed with the quest.^ff0000";
+					mes "^ff0000製作海爾弗的過程中需要女武神之盾。";
+					mes "為了進行任務，你不應該擁有除了女武神之盾以外的任何其他物品。^ff0000";
 					next;
-					mes "^ff0000Even if the refinement level and cards have been applied, the process requires any one of the Valkyrja's Shields you may have.";
-					mes "Please try again after organizing your possessions.^000000";
+					mes "^ff0000即使已經應用了精煉等級和卡片，該過程也需要你可能擁有的任何一個女武神之盾。";
+					mes "請整理你的財物後再試一次。^000000";
 					next;
-					if (select( "Organize possessions.","Continue as it is." ) == 1) {
-						mes "You've decided to keep Valkyrja's Shields only.";
+					if (select( "整理財物。","保持現狀繼續。" ) == 1) {
+						mes "你已決定只保留女武神之盾。";
 						close;
 					}
 					mes "["+ .@npc_name$ +"]";
-					mes "I see that you've developed the fortress as you promised.";
-					mes "Moreover, you've found Velund's items...";
+					mes "我看得出來你們已經按照承諾發展了堡壘。";
+					mes "而且，你們還找到了維倫德的物品...";
 					next;
 					mes "["+ .@npc_name$ +"]";
-					mes "... so..let's get the work done.";
-					mes "Before the girls find us...";
+					mes "... 那麼... 我們開始工作吧。";
+					mes "趁那些女孩找到我們之前...";
 					next;
 					mes "[" + strcharinfo(0) + "]";
-					mes "The girls... ?";
+					mes "那些女孩... ?";
 					next;
 					mes "["+ .@npc_name$ +"]";
-					mes "... yeah, there were some girls..";
-					mes "I had to run away because of them...";
+					mes "... 是的，有一些女孩..";
+					mes "我不得不因為她們而逃跑...";
 					donpcevent "#tequest_master_prt01::OnCommandOn";
-					mapannounce "te_prtcas01","A girl's voice: Hey, were you talking about us? It's "+ .@npc_name$ +", right? I can't believe you ran away to a place like this.",bc_map,"0x00FF00",FW_BOLD,20,0,40;
+					mapannounce "te_prtcas01","A girl's voice: 嘿，你們在說我們嗎？是 "+ .@npc_name$ +"，對吧？真不敢相信你逃到這種地方。",bc_map,"0x00FF00",FW_BOLD,20,0,40;
 					next;
 					mes "["+ .@npc_name$ +"]";
-					mes "Oh, no... !";
-					mes "They're here..!!";
+					mes "噢，不... !";
+					mes "她們來了..!!";
 					next;
 					mes "[" + strcharinfo(0) + "]";
-					mes "Leave it to me.";
+					mes "交給我吧。";
 					next;
-					mes "^4d4dff!- Instruction -!";
-					mes "Soon, 7 girls that are after "+ .@npc_name$ +" will try to invade the fortress.";
-					mes "You have to protect "+ .@npc_name$ +" for 1 hour.^000000";
+					mes "^4d4dff!- 指示 -!";
+					mes "很快，7個追捕 "+ .@npc_name$ +" 的女孩將嘗試入侵堡壘。";
+					mes "你必須保護 "+ .@npc_name$ +" 1 小時。^000000";
 					next;
-					mes "^4d4dff!- Instruction -!";
-					mes "When the actual attack starts, the doorway of Emperium region will be blocked up for protection.^000000";
+					mes "^4d4dff!- 指示 -!";
+					mes "當實際攻擊開始時，為了保護，帝國石區域的門口將會被封鎖。^000000";
 					close;
 				}
 				mes "["+ .@npc_name$ +"]";
-				mes "Hervor is a shield named after Hervor the Valkyrie.";
-				mes "I didn't know this fortress would have the items that used to belong to Velund, a husband of Hervor...";
+				mes "海爾弗是一個以女武神海爾弗命名的盾牌。";
+				mes "我不知道這個堡壘會有曾經屬於海爾弗的丈夫維倫德的物品...";
 				next;
 				mes "["+ .@npc_name$ +"]";
-				mes "If we use them, we could make Hervor.";
-				mes "It's like a dream come true for me... my hands are shaking.";
+				mes "如果我們使用它們，我們可以製作海爾弗。";
+				mes "這對我來說就像夢想成真一樣... 我的手在顫抖。";
 				next;
 				mes "["+ .@npc_name$ +"]";
-				mes "However, it seems like we need more materials.";
-				mes "Could you check again? I'll give you the list of what we need.";
+				mes "但是，似乎我們需要更多材料。";
+				mes "你能再檢查一下嗎？我會給你我們需要的物品清單。";
 				callsub S_Material, .@npc_name$,1,"since it is a crystal of Velund's love.";
 			}
 			mes "["+ .@npc_name$ +"]";
-			mes "However, would it be okay if I said something?";
-			mes "Hervor is one of the most powerful battlegears I make and you deserve to receive something like that from me...";
+			mes "但是，如果我說些什麼可以嗎？";
+			mes "海爾弗是我製作過的最強大的戰鬥裝備之一，你值得從我這裡得到類似的東西...";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "but I would like you to have the minimum qualification at least.";
-			mes "Manage this fortress well and raise ^4d4dffits commerce level by 30 or more^000000.";
+			mes "但我希望你至少具備最低的資格。";
+			mes "好好管理這個堡壘，並將 ^4d4dff其商業等級提高 30 或更多^000000。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "With great power comes great responsibility and duty.";
-			mes "I would like you to master the basics first.";
+			mes "能力越大，責任和義務越大。";
+			mes "我希望你先掌握基礎知識。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "I'll make you Hervor afterward.";
-			mes "Let me give you the list of materials if you want.";
+			mes "之後我會為你製作海爾弗。";
+			mes "如果你想，我可以給你材料清單。";
 			callsub S_Material, .@npc_name$,0,"since it is a crystal of Velund's love.";
 		case 2:
 			callsub S_Fuse, .@npc_name$, "Hervor";
 		case 3:
 			mes "["+ .@npc_name$ +"]";
-			mes "That is so nice of you to say that.";
-			mes "By the way, I wonder how my younger brother Cano is doing?";
+			mes "你這麼說真是太好了。";
+			mes "順便問一下，我不知道我的弟弟卡諾過得怎麼樣？";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "I'm sure he's doing fine just like I am.";
-			mes "... I hope things stay as peaceful as they are now.";
+			mes "我相信他會像我一樣一切安好。";
+			mes "... 我希望事情像現在這樣保持和平。";
 			close;
 		}
 	}
 	if ($2012_tegod_gloria == 1) {// event started
-		mes "Did you hear the news?";
-		mes "The girls are coming.";
-		mes "The merciless girls!!!";
+		mes "你聽到消息了嗎？";
+		mes "那些女孩要來了。";
+		mes "無情的女孩們！！！";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "They'll get here any minute since they've declared war already.";
-		mes "I'm sure they're coming to get Hervor.";
+		mes "她們已經宣戰了，她們隨時都會到這裡。";
+		mes "我相信她們是來拿海爾弗的。";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "Stop them. Please!";
+		mes "阻止她們。拜託!";
 		next;
-		switch( select( "Leave it to me.","What do you mean 'the girls?'" ) ) {
+		switch( select( "交給我吧。","你說的「那些女孩」是什麼意思？" ) ) {
 		case 1:
 			mes "["+ .@npc_name$ +"]";
-			mes "Thank you...";
-			mes "I'm sorry that I'm causing you troubles, but my hands are tied.";
+			mes "謝謝你...";
+			mes "我很抱歉給你帶來麻煩，但我無能為力。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "Please, stop them for me!";
+			mes "拜託，幫我阻止她們！";
 			close;
 		case 2:
 			mes "["+ .@npc_name$ +"]";
-			mes "... They are the girls who want to be Valkyries...";
-			mes "and they always go around in groups of seven.";
+			mes "... 她們是想成為女武神的女孩...";
+			mes "而且她們總是七人一組行動。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "What they want is a powerful battlegear...";
-			mes "They always threatened my younger brother Cano and me.";
+			mes "她們想要的是一件強大的戰鬥裝備...";
+			mes "她們總是威脅我和我的弟弟卡諾。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "They were satisfied with basic weapons at first, but";
-			mes "soon they started threatening us saying that they need something more powerful in order to become Valkyries.";
+			mes "起初她們對基本武器感到滿意，但是";
+			mes "很快她們就開始威脅我們，說她們需要更強大的東西才能成為女武神。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "I couldn't stand it, so I ran away... but they're here...";
-			mes "You have to be careful since they found out that materials for Hervor are here.";
+			mes "我受不了了，所以我逃跑了... 但她們來了...";
+			mes "你必須小心，因為她們發現海爾弗的材料在這裡。";
 			close;
 		}
 	}
 	if ($2012_tegod_gloria == 2) {// after 10 minutes delay
-		mes "Ah stop following me around!";
-		mes "If you could just get rid of them... Hervor, that's right! I'll make you Hervor!";
+		mes "啊，別再跟著我了！";
+		mes "如果你能擺脫她們... 海爾弗，沒錯！我會為你製作海爾弗！";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "When will they ever stop following me...";
-		mes "Now I'm scared of girls in general... and I'm too scared to do anything...";
+		mes "他們到底什麼時候才會停止跟蹤我...";
+		mes "現在我害怕所有的女孩...而且我太害怕而不敢做任何事...";
 		next;
-		mes "He's babbling now.";
-		mes "Just wait and he'll calm down.";
-		mes "You have to get rid of those girls first.";
+		mes "他現在語無倫次了。";
+		mes "等一下，他會冷靜下來的。";
+		mes "你必須先擺脫那些女孩。";
 		close;
 	}
 	if ($2012_tegod_gloria == 3) {// event failed
-		mes "... Although I managed to escape from them again...";
-		mes "it's hard.";
-		mes "life is... just so hard.";
+		mes "... 雖然我設法再次逃脫了她們的魔爪...";
+		mes "但這很難。";
+		mes "人生...太難了。";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "I'm so exhausted that I can't do anything.";
-		mes "... I don't think I can do anything for a while, whether it's producing or smithing or whatever it is.";
-		mes "I'm sorry. I'll take a break.";
+		mes "我太累了，什麼也做不了。";
+		mes "... 我想我暫時什麼都做不了，不管是生產還是鍛造，還是其他什麼。";
+		mes "對不起。我需要休息一下。";
 		close;
 	}
 	if ($2012_tegod_gloria == 4) {
-		mes "I can finally breathe now.";
-		mes "I'll start making Hervor as promised.";
+		mes "我終於可以呼吸了。";
+		mes "我會開始製作承諾過的赫沃爾。";
 		next;
-		switch( select( "Make Hervor.","Fuse materials.","Not now." ) ) {
+		switch( select( "製作赫沃爾。","融合材料。","現在不要。" ) ) {
 		case 1:
 			if (countitem(6595) > 1 && countitem(6596) > 0 && countitem(6594) > 3 && countitem(6597) > 2 && countitem(6602) > 0 && countitem(6605) > 0 && countitem(6604) > 0 && countitem(2115) > 0) {
-				mes "^ff0000Valkyrja's Shield is needed in the process of making Hervor.";
-				mes "You should not possess any other items except for Valkyrja's Shields in order to proceed with the quest.^ff0000";
+				mes "^ff0000製作赫沃爾的過程中需要女武神的盾牌。";
+				mes "為了進行任務，你不應該擁有除了女武神盾牌之外的任何物品。^ff0000";
 				next;
-				mes "^ff0000Even if the refinement level and cards have been applied, the process requires any one of the Valkyrja's Shields you may have.";
-				mes "Please try again after organizing your possessions.^000000";
+				mes "^ff0000即使應用了精煉等級和卡片，該過程也需要你可能擁有的任何一個女武神盾牌。";
+				mes "請整理你的財物後再試一次。^000000";
 				next;
-				if (select( "Organize possessions.","Continue as it is." ) == 1) {
-					mes "You've decided to keep Valkyrja's Shields only.";
+				if (select( "整理財物。","維持現狀。" ) == 1) {
+					mes "你已決定只保留女武神盾牌。";
 					close;
 				}
 				mes "["+ .@npc_name$ +"]";
-				mes "Oh... thank you.";
-				mes "I can't believe I'm finally touching these materials myself...";
+				mes "哦...謝謝你。";
+				mes "我真不敢相信我終於親手觸摸這些材料了...";
 				next;
 				mes "["+ .@npc_name$ +"]";
-				mes "Here it is.";
-				mes "Wasn't it fast although we had to go through many steps?";
-				mes "I was so overwhelmed that it felt as short as a moment.";
+				mes "做好了。";
+				mes "雖然我們經歷了許多步驟，但不是很快嗎？";
+				mes "我太激動了，感覺像一瞬間。";
 				next;
-				mes "Hervor, a shield that Blacksmith Velund made for his wife Hervor, is finally made";
-				mes "at the hands of "+ .@npc_name$ +".";
+				mes "鐵匠維倫德為他的妻子赫沃爾製作的盾牌赫沃爾，終於在";
+				mes .@npc_name$ +"的手中完成了。";
 				delitem 6595,2;// Hammer_Of_Velund
 				delitem 6596,1;// Anvil_Of_Velund
 				delitem 6594,4;// Magic_Bronze_Bullion
@@ -245,126 +246,126 @@ te_prtcas01,204,204,3	script	Blacksmith Kai#tegod01	4_M_RACHMAN2,{
 					setcastledata "te_prtcas01",2,1;// min is 1 for WOE TE
 				next;
 				mes "["+ .@npc_name$ +"]";
-				mes "Whew.. I don't think I can work for a while.";
-				mes "I'm all exhausted. Hahaha...";
+				mes "呼.. 我想我暫時無法工作了。";
+				mes "我已經筋疲力盡了。哈哈哈...";
 				close;
 			}
 			mes "["+ .@npc_name$ +"]";
-			mes "However, it seems like we need more materials.";
-			mes "Could you check again? I'll give you the list of what we need.";
+			mes "然而，看來我們需要更多的材料。";
+			mes "你可以再檢查一次嗎？我會給你我們需要的清單。";
 			callsub S_Material, .@npc_name$,1;
 		case 2:
 			callsub S_Fuse, .@npc_name$, "Hervor";
 		case 3:
 			mes "["+ .@npc_name$ +"]";
-			mes "Now is actually the right time to make it.";
-			mes "By the time next Emperium appears, there won't be any chances left.";
+			mes "現在其實是製作的最佳時機。";
+			mes "到下一次出現 Emperium 的時候，就不會有任何機會了。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "Also, keep in mind the fact that I can only do this once a week.";
+			mes "另外，請記住我只能每週做一次。";
 			close;
 		}
 	}
 	if ($2012_tegod_gloria == 5) {
-		mes "I'm tired a little bit.";
-		mes "I think I should rest for a few days.";
-		mes "I may look just fine, but I was mentally very tired.";
+		mes "我有點累了。";
+		mes "我想我應該休息幾天。";
+		mes "我可能看起來很好，但我在精神上非常疲憊。";
 		close;
 	}
-	mes "It's strange.";
-	mes "I can't tell how I feel.";
-	mes "Am I having some kind of a health problem?";
-	mes "Is it something uncurable?";
+	mes "真奇怪。";
+	mes "我說不清我的感受。";
+	mes "我是否遇到某種健康問題？";
+	mes "這是無法治癒的嗎？";
 	close;
 
 S_Material:
 	.@npc_name$ = getarg(0);
 	next;
 	mes "["+ .@npc_name$ +"]";
-	mes "^4d4dff2 of Velund's Hammer";
-	mes "1 Velund's Anvil";
-	mes "4 Bronze bars with magical power";
-	mes "3 of Velund's Bracelet";
-	mes "1 Rune characters' Secret";
-	mes "1 Valkyrja's Shield";
-	mes "1 Muspellium and Essence of Rune, respectively^000000";
+	mes "^4d4dff2 把維倫德的錘子";
+	mes "1 維倫德的鐵砧";
+	mes "4 具有魔法力量的青銅棒";
+	mes "3 維倫德的手鐲";
+	mes "1 符文文字的秘密";
+	mes "1 女武神的盾牌";
+	mes "分別為 1 個穆斯貝爾海姆礦石和符文精髓^000000";
 	next;
 	mes "["+ .@npc_name$ +"]";
-	mes "We need as many materials as these.";
+	mes "我們需要這麼多材料。";
 	mes getarg(2,"");
-	mes "By the way, Muspellium and Essence of Rune need to be made separately with additional materials.";
+	mes "順便說一句，穆斯貝爾海姆礦石和符文精髓需要使用額外的材料單獨製作。";
 	next;
 	mes "["+ .@npc_name$ +"]";
-	mes "In order to make Muspellium, you need to ^4d4dffcombine 50 Eluniums and 50 Oridecons^000000.";
-	mes "For Essence of Rune, you need to ^4d4dffcombine 200 Ancient Rough Runestones and 100 Mystic Rough Runestones^000000.";
+	mes "為了製作穆斯貝爾海姆礦石，你需要^4d4dff組合 50 個鋁和 50 個奧里迪奧康^000000。";
+	mes "對於符文精髓，你需要^4d4dff組合 200 個古代粗糙符文石和 100 個神秘粗糙符文石^000000。";
 	next;
 	mes "["+ .@npc_name$ +"]";
-	mes "I'll make Muspellium and Essence of Rune anytime upon your request,";
-	mes "and of course, I'll make Jormungand as soon as we gather all the materials needed.";
+	mes "只要你提出要求，我隨時都會製作穆斯貝爾海姆礦石和符文精髓，";
+	mes "當然，一旦我們收集到所有需要的材料，我就會製作約爾穆加德。";
 	next;
 	mes "["+ .@npc_name$ +"]";
 	if (getarg(1))
-		mes "What I'm doing is never enough compared to what you've done for me.";
+		mes "與你為我所做的一切相比，我所做的一切永遠都不夠。";
 	else {
-		mes "However, you won't be able to find Velund's items.";
-		mes "... but people say they definitely appear to those who truly want it. I wish you all the luck.";
+		mes "但是，你將無法找到維倫德的物品。";
+		mes "... 但人們說它們肯定會出現在那些真正想要它們的人面前。我祝你好運。";
 	}
 	close;
 
 S_Fuse:
 	.@npc_name$ = getarg(0);
 	mes "["+ .@npc_name$ +"]";
-	mes "Which material do you want to make?";
+	mes "你想要製作哪種材料？";
 	next;
-	switch( select( "Muspellium","Essence of Rune","Forget it." ) ) {
+	switch( select( "穆斯貝爾海姆礦石","符文精髓","算了吧。" ) ) {
 	case 1:
 		mes "["+ .@npc_name$ +"]";
 		if (countitem(985) > 49 && countitem(984) > 49) {
-			mes "I'll make Muspellium with the materials you've prepared.";
+			mes "我將使用你準備的材料製作穆斯貝爾海姆礦石。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "It shouldn't take long.";
-			mes "Here it is.";
-			mes "It is an essential material for making Hervor and Jormungand.";
+			mes "應該不會花很長時間。";
+			mes "給你。";
+			mes "它是製作赫沃爾和約爾穆加德的重要材料。";
 			delitem 985,50;// Elunium
 			delitem 984,50;// Oridecon
 			getitem 6605,1;// Muspellium
 			close;
 		}
-		mes "In order to make Muspellium,";
-		mes "^4d4dffyou need 50 Eluniums and 50 Oridecons.^000000";
+		mes "為了製作穆斯貝爾海姆礦石，";
+		mes "^4d4dff你需要 50 個鋁和 50 個奧里迪奧康。^000000";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "We should have all the materials ready, right?";
+		mes "我們應該準備好所有材料了吧？";
 		close;
 	case 2:
 		mes "["+ .@npc_name$ +"]";
 		if (countitem(12735) > 199 && countitem(12736) > 99) {
-			mes "I'll make Essence of Rune with the materials you've prepared.";
+			mes "我將使用你準備的材料製作符文精髓。";
 			next;
 			mes "["+ .@npc_name$ +"]";
-			mes "It shouldn't take long.";
-			mes "Here it is.";
-			mes "It is an essential material for making Hervor and Jormungand.";
+			mes "應該不會花很長時間。";
+			mes "給你。";
+			mes "它是製作赫沃爾和約爾穆加德的重要材料。";
 			delitem 12735,200;// Runstone_Ancient
 			delitem 12736,100;// Runstone_Mystic
 			getitem 6604,1;// Essence_Of_Rune
 			close;
 		}
-		mes "For Essence of Rune,";
-		mes "^4d4dffyou need 200 Ancient Rough Runestones and 100 Mystic Rough Runestones.^000000";
+		mes "對於符文精髓，";
+		mes "^4d4dff你需要 200 個古代粗糙符文石和 100 個神秘粗糙符文石。^000000";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "Surely, it takes a lot...";
+		mes "當然，這需要很多...";
 		close;
 	case 3:
 		mes "["+ .@npc_name$ +"]";
-		mes "Tell me whenever you need it.";
-		mes "I'm glad I can at least do this for you.";
+		mes "無論何時需要都告訴我。";
+		mes "我很高興至少能為你做這些。";
 		next;
 		mes "["+ .@npc_name$ +"]";
-		mes "Also, a place where you can find materials for "+ getarg(1) +"...";
-		mes "this is like a dream place for me, too.";
+		mes "另外，一個你可以找到 "+ getarg(1) +" 材料的地方...";
+		mes "這也像是我的一個夢想之地。";
 		close;
 	}
 
@@ -377,49 +378,49 @@ OnInit:
 }
 
 te_prtcas01,190,2,0	script	#tequest_master_prt01	CLEAR_NPC,{
-	mes "password?";
+	mes "密碼？";
 	next;
 	if ( callfunc( "F_GM_NPC", 1854,0, 0,9999 ) < 1 ) {
-		mes "Go away";
+		mes "走開";
 		close;
 	}
 	.@map$ = "te_prtcas01";
-	mes "Current Status: " + $2012_tegod_gloria;
-	mes "0: Able to proceed with the quest";
-	mes "1: Proceed with the quest. 10-minute wait";
-	mes "2: Quest in progress";
-	mes "3: Quest failed";
-	mes "4: Able to produce items , 5: Items produced successfully.";
+	mes "目前狀態: " + $2012_tegod_gloria;
+	mes "0: 可以繼續任務";
+	mes "1: 繼續任務。等待 10 分鐘";
+	mes "2: 任務進行中";
+	mes "3: 任務失敗";
+	mes "4: 可以生產物品, 5: 物品生產成功。";
 	next;
-	mes "Princess Status: " + $@2012_tegirls_prt01;
-	mes "Current Commerce Level of the Fortress:" + getcastledata(.@map$,2);
+	mes "公主狀態: " + $@2012_tegirls_prt01;
+	mes "要塞目前商業等級:" + getcastledata(.@map$,2);
 	next;
-	switch( select( "Do not proceed","Initialization","Raise Commerce Level","Lower Commerce Level" ) ) {
+	switch( select( "不要繼續","初始化","提升商業等級","降低商業等級" ) ) {
 	case 1:
 		end;
 	case 2:
-		mes "Initialize";
+		mes "初始化";
 		donpcevent "#tequest_master_prt01::OnReset";
 		close;
 	case 3:
 		.@economy = getcastledata(.@map$,2) +30;
 		.@economy = .@economy > 100 ? 100 : .@economy;
 		setcastledata .@map$,2,.@economy;
-		mes "Raise Commerce Level by 30";
-		mes "Modified Commerce Level:" + .@economy;
+		mes "提升商業等級 30";
+		mes "修改後的商業等級:" + .@economy;
 		close;
 	case 4:
 		.@economy1 = getcastledata(.@map$,2);
 		.@economy2 = .@economy1 > 30 ? (.@economy1 -30) : 1;
 		if (.@economy1 > 30) {
-			mes "Lower Commerce Level by 30";
+			mes "降低商業等級 30";
 			setcastledata .@map$,2,.@economy2;
 		}
 		else {
-			mes "Commerce Level gets decreased to 0 since current level is lower than 30.";
+			mes "商業等級將降至 0，因為目前等級低於 30。";
 			setcastledata .@map$,2,1;// min is 1 for WOE TE
 		}
-		mes "Modified Commerce Level:" + .@economy2;
+		mes "修改後的商業等級:" + .@economy2;
 		close;
 	}
 
@@ -441,16 +442,16 @@ OnCommandOn:
 	end;
 
 OnTimer10000:
-	announce "Girls' voices: Kai~ We already know where you are. It's over!",bc_all,"0xFF0000",FW_NORMAL,10;
+	announce "女孩們的聲音: Kai~ 我們已經知道你在哪裡了。結束了！",bc_all,"0xFF0000",FW_NORMAL,10;
 	end;
 OnTimer15000:
-	announce "Girls' Voices: We'll wait just 10 minutes. If you don't show up in the meantime, we'll storm the fortress!",bc_all,"0xFF0000",FW_NORMAL,10;
+	announce "女孩們的聲音: 我們只等 10 分鐘。如果你沒在時間內出現，我們就要強攻要塞了！",bc_all,"0xFF0000",FW_NORMAL,10;
 	end;
 OnTimer595000:
-	mapannounce "te_prtcas01", "A girl's voice: Kai! How dare you ignore our warning! So, you have company there, huh? But how long do you think they'll stay with you?!",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "女孩的聲音: Kai！你竟敢無視我們的警告！所以，你在那裡有同伴，是吧？但你認為他們會陪你多久呢？！",bc_map,"0x00ff00",FW_NORMAL,12;
 	end;
 OnTimer598000:
-	mapannounce "te_prtcas01", "You are forced out of the fortress by unknown power.",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "你被一股未知的力量強行從要塞中驅逐出去。",bc_map,"0x00ff00",FW_NORMAL,12;
 	end;
 
 OnTimer600000:
@@ -468,7 +469,7 @@ OnTimer600000:
 	end;
 
 OnTimer602000:
-	announce "Gaebolg in Gloria region is being attacked by a group of unidentified beings.",bc_all,"0xFF0000",FW_NORMAL,10;
+	announce "葛羅莉雅地區的蓋博格正受到一群不明生物的攻擊。",bc_all,"0xFF0000",FW_NORMAL,10;
 	monster "te_prtcas01",0,0,"Raydric",1163,15, .npc_name$ +"::OnMyMobDead";
 	monster "te_prtcas01",0,0,"Khalitzburg",1132,10, .npc_name$ +"::OnMyMobDead";
 	monster "te_prtcas01",0,0,"Abysmal Knight",1219,5, .npc_name$ +"::OnMyMobDead";
@@ -505,16 +506,16 @@ S_MobRedondant:
 	end;
 
 OnTimer4200000:
-	mapannounce "te_prtcas01", "Girls: ... how long do we have to wait?",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "女孩們: ... 我們還要等多久？",bc_map,"0x00ff00",FW_NORMAL,12;
 	end;
 OnTimer4205000:
-	mapannounce "te_prtcas01", "Girls: Hervor should be made for us!",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "女孩們: Hervor 應該是為我們準備的！",bc_map,"0x00ff00",FW_NORMAL,12;
 	end;
 OnTimer4210000:
-	mapannounce "te_prtcas01", "Girls: Come on, cut if off! You guys are so persistent!!",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "女孩們: 快點，切斷它！你們這些人真是太固執了！！",bc_map,"0x00ff00",FW_NORMAL,12;
 	end;
 OnTimer4220000:
-	mapannounce "te_prtcas01", "Aira: Ah! I can't take it anymore! Girls, come here!",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "艾拉: 啊！我受不了了！女孩們，過來！",bc_map,"0x00ff00",FW_NORMAL,12;
 
 	$2012_tegod_gloria = 3;// quest off until someone break the emp
 	callsub S_EventReset;
@@ -533,27 +534,27 @@ OnTimer4225000:
 	end;
 
 OnTimer4227000:
-	npctalk "Kai: Oh... no! What are you going to do to me?!", "Blacksmith Kai#tegod01";
+	npctalk "凱: 噢... 不！你們要對我做什麼？！", "Blacksmith Kai#tegod01";
 	end;
 OnTimer4230000:
-	npctalk "Aira: Mm? Hey Kai. You're going home.", "#end_aira_prt01";
+	npctalk "艾拉: 嗯？嘿 凱。你該回家了。", "#end_aira_prt01";
 	end;
 OnTimer4233000:
-	npctalk "Kuluna: Yup~ You have to fix my broken wand and make powerful weapons for me once you get back!", "#end_kuluna_prt01";
+	npctalk "庫露娜: 沒錯~ 你回到家後必須修理我壞掉的魔杖，並為我製作強大的武器！", "#end_kuluna_prt01";
 	end;
 OnTimer4236000:
-	npctalk "Ezella: Try to run away again. You'll be sorry, understand?", "#end_ezella_prt01";
+	npctalk "艾澤拉: 再試圖逃跑看看。你會後悔的，懂嗎？", "#end_ezella_prt01";
 	end;
 OnTimer4237000:
-	npctalk "Nasarin: ... Just take him. Why are you guys talking to him so much?", "#end_nasarin_prt01";
+	npctalk "娜莎琳: ... 帶他走吧。你們為什麼要跟他說這麼多話？", "#end_nasarin_prt01";
 	end;
 OnTimer4240000:
-	npctalk "Aira: You're right! Alright then!", "#end_aira_prt01";
-	npctalk "Kai: Oh... No... Noooo!!!!!", "Blacksmith Kai#tegod01";
+	npctalk "艾拉: 你說的對！好吧！", "#end_aira_prt01";
+	npctalk "凱: 噢... 不... 不~~~~!!!!!", "Blacksmith Kai#tegod01";
 	end;
 
 OnTimer4243000:
-	mapannounce "te_prtcas01", "You've failed to recapture the fortress. Kai is now gone.",bc_map,"0x00ff00",FW_NORMAL,12;
+	mapannounce "te_prtcas01", "你未能奪回要塞。凱現在已經走了。",bc_map,"0x00ff00",FW_NORMAL,12;
 	disablenpc "Blacksmith Kai#tegod01";
 	callsub S_EventOff;// clear setnpcdisplay
 	.npc_name$ = "";
@@ -619,7 +620,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Aira#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#aira_real_prt01::OnCommandOn";
-	npctalk "Aira: My summon water balls! I'll get you! With my own hands!!";
+	npctalk "艾拉: 我的召喚水球！我會抓住你的！用我自己的雙手！！";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Aira#fake01_prt01::OnMyMobDead";
@@ -655,7 +656,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Kuluna#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#kuluna_real_prt01::OnCommandOn";
-	npctalk "Kuluna: Hmm? So you're going to be that way? You'd better be ready!";
+	npctalk "庫露娜: 嗯？所以你要這樣做？你最好做好準備！";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Kuluna#fake01_prt01::OnMyMobDead";
@@ -691,7 +692,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Mallina#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#mallina_real_prt01::OnCommandOn";
-	npctalk "Mallina: Stop it!! Stop bothering me!!";
+	npctalk "瑪莉娜: 停止！停止打擾我！！";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Mallina#fake01_prt01::OnMyMobDead";
@@ -725,7 +726,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Ezella#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#ezella_real_prt01::OnCommandOn";
-	npctalk "Ezella: Ahh... This only makes both of us more tired...";
+	npctalk "艾澤拉: 啊... 這只會讓我們倆都更累...";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Ezella#fake01_prt01::OnMyMobDead";
@@ -762,7 +763,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Lune#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#lune_real_prt01::OnCommandOn";
-	npctalk "Lune: ..you want to be drowned in the deep sea? Huh?";
+	npctalk "露涅: ..你想被淹死在深海裡嗎？嗯？";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Lune#fake01_prt01::OnMyMobDead";
@@ -817,7 +818,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Morin#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#morin_real_prt01::OnCommandOn";
-	npctalk "Morin: ... . ...";
+	npctalk "莫琳: ... . ...";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Morin#fake01_prt01::OnMyMobDead";
@@ -854,7 +855,7 @@ OnCommandOn:
 OnMyMobDead:
 	if (mobcount( "te_prtcas01","Nasarin#fake01_prt01::OnMyMobDead" )) end;
 	donpcevent "#nasarin_real_prt01::OnCommandOn";
-	npctalk "Nasarin: ..Ahh.. It's so hard to become a Valkyrie!";
+	npctalk "娜莎琳: ..啊.. 成為女武神真是太難了！";
 OnReset:
 	stopnpctimer;
 	killmonster "te_prtcas01", "Nasarin#fake01_prt01::OnMyMobDead";
@@ -910,25 +911,25 @@ OnTimer1000:
 	if (mobcount( "te_prtcas01",strnpcinfo(0) +"::OnMyMobDead" ) == 0) {
 		$@2012_tegirls_prt01++;
 		if ($@2012_tegirls_prt01 == 7) {
-			mapannounce "te_prtcas01","Kai: aaahh!! The girls broke the shields and made their way into where Emperium is!!!!",bc_map,"0x00ff00",FW_NORMAL,12;
+			mapannounce "te_prtcas01","凱: 啊啊啊！！女孩們打破了盾牌，進入了艾姆佩流姆所在的地方！！！！",bc_map,"0x00ff00",FW_NORMAL,12;
 			donpcevent "#eproom_girls_prt01::OnCommandOn";
 		}
 		else {
 			.@npc_name$ = strnpcinfo(0);
 			if (.@npc_name$ == "#aira_real_prt01")
-				mapannounce "te_prtcas01","Aira: You think I lost? You're wrong! We force our way to where Kai is!!",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","艾拉: 你以為我輸了嗎？你錯了！我們強行進入凱所在的地方！！",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#kuluna_real_prt01")
-				mapannounce "te_prtcas01","Kuluna: ... This is called a strategic retreat.",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","庫露娜: ... 這叫做戰略撤退。",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#mallina_real_prt01")
-				mapannounce "te_prtcas01","Mallina: ... Why are you disturbing us so much? But victory will be ours in the end!!",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","瑪莉娜: ... 你們為什麼要這麼打擾我們？但勝利最終將屬於我們！！",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#ezella_real_prt01")
-				mapannounce "te_prtcas01","Ezella: Oh you, a weakling that would just disappear like the wind... !!!",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","艾澤拉: 噢，你這個弱者，會像風一樣消失... !!!",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#lune_real_prt01")
-				mapannounce "te_prtcas01","Lune: ..Alright. Let the battle begin!",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","露涅: ..好吧。讓戰鬥開始吧！",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#morin_real_prt01")
-				mapannounce "te_prtcas01","Morin: It's not... interesting anymore.",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","莫琳: 已經... 沒意思了。",bc_map,"0x00ff00",FW_NORMAL,12;
 			else if (.@npc_name$ == "#nasarin_real_prt01")
-				mapannounce "te_prtcas01","Nasarin: .. I wasted my time. Kai is in the center of this fortress?",bc_map,"0x00ff00",FW_NORMAL,12;
+				mapannounce "te_prtcas01","娜莎琳: .. 我浪費了時間。凱在這個要塞的中心？",bc_map,"0x00ff00",FW_NORMAL,12;
 		}
 	}
 	stopnpctimer;
@@ -970,7 +971,7 @@ OnTimer3000:
 	if (mobcount( "te_prtcas01","#eproom_girls_prt01::OnMyMobDead" ) == 0) {
 		donpcevent "#tequest_master_prt01::OnStop";
 		$2012_tegod_gloria = 4;
-		mapannounce "te_prtcas01","You have defeated the girls and recaptured the fortress successfully.",bc_map,"0x00ff00",FW_NORMAL,12;
+		mapannounce "te_prtcas01","你擊敗了女孩們並成功奪回了要塞。",bc_map,"0x00ff00",FW_NORMAL,12;
 	}
 	stopnpctimer;
 	end;

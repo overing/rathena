@@ -22,12 +22,12 @@
 
 //Warps you into race way
 morocc,166,105,6	script	Race Girl#01	116,{
-	mes "[Race Girl]";
-	mes "Would you like to visit ^0000FFMorocc Raceway^000000?";
+	mes "[賽車女郎]";
+	mes "你想參觀 ^0000FF夢羅克賽道^000000 嗎？";
 	next;
 	menu "Yes",L_Warp,"No",-;
-	mes "[Race Girl]";
-	mes "Alright, talk to me again when you want to go.";
+	mes "[賽車女郎]";
+	mes "好的，當你想去的時候再和我說。";
 	close;
 L_Warp:
 	warp "pvp_y_1-5",165,256;
@@ -36,24 +36,24 @@ L_Warp:
 
 //Warps you out of raceway
 pvp_y_1-5,169,265,5	script	Race Girl#02	116,{
-	mes "[Race Girl]";
-	mes "Welcome to Morocc Raceway!";
+	mes "[賽車女郎]";
+	mes "歡迎來到夢羅克賽道！";
 	next;
 	menu "Information",-,"Leave",L_Warp,"Cancel",L_Cancel;
-	mes "[Race Girl]";
-	mes "Someone must click on the Starter NPC to start the race.";
+	mes "[賽車女郎]";
+	mes "必須有人點擊起跑 NPC 才能開始比賽。";
 	next;
-	mes "[Race Girl]";
-	mes "Once the race is started, run around Morocc anti-clockwise.";
+	mes "[賽車女郎]";
+	mes "比賽一旦開始，就以逆時針方向繞夢羅克跑。";
 	next;
-	mes "[Race Girl]";
-	mes "You must reach all the checkpoints - No cheating!";
+	mes "[賽車女郎]";
+	mes "你必須到達所有的檢查點 - 不准作弊！";
 	close;
 L_Warp:
 	warp "morocc",165,101;
 L_Cancel:
-	mes "[Race Girl]";
-	mes "Come again soon!";
+	mes "[賽車女郎]";
+	mes "歡迎下次再來！";
 	close;
 }
 
@@ -63,19 +63,19 @@ pvp_y_1-5,145,269,5	script	Starter	733,{
 	if ($@counting != 0) goto L_Started;
 	if ($@racecount == 1) goto L_Started;
 L_Menu:
-	mes "[Race Starter]";
-	mes "Please stay on the Eastern side of me.";
+	mes "[賽事起跑員]";
+	mes "請待在我東側。";
 	menu "Start Race",L_Count,"Cancel",-;
 	close;
 L_Count:
 	set $@counting,1;
-	mes "Counting down...";
+	mes "倒數計時中...";
 	addtimer 1000, "Starter::OnCount1000";
 	addtimer 2000, "Starter::OnCount2000";
 	addtimer 3000, "Starter::OnCount3000";
 	addtimer 4000, "Starter::OnCount4000";
 	announce strcharinfo(0) + "Started a countdown",1;
-	announce "Get ready to race!",1;
+	announce "準備好比賽！",1;
 	close;
 
 OnCount1000:
@@ -100,8 +100,8 @@ OnCount4000:
 L_Started:
 	if ((getmapusers("pvp_y_1-5") < 3) && ($@position > 0)) goto L_Menu;
 	if ($@position > 2) goto L_Menu;
-	mes "[Starter]";
-	mes "Race in progress";
+	mes "[起跑員]";
+	mes "比賽進行中";
 	close;
 
 OnInit:
@@ -118,14 +118,14 @@ OnTouch:
 	if (@raceid != $@raceid) goto L_Started;
 	if (@race == 6) goto L_Finished;
 	if ($@race == 1) goto L_Started;
-	mes "The race has not started, please move back.";
+	mes "比賽尚未開始，請退後。";
 	close;
 L_Started:
 	set @race,1;
 	set @raceid,$@raceid;
 	end;
 L_Finished:
-	mes "You have already completed the race.";
+	mes "你已經完成比賽了。";
 	close;
 }
 
@@ -138,7 +138,7 @@ OnTouch:
 	announce "[" + strcharinfo(0) +"] has reached Checkpoint [1]",1;
 	end;
 L_Miss:
-	mes "You have missed a Checkpoint. Please go back.";
+	mes "你錯過了一個檢查點。請回去。";
 	close;
 }
 
@@ -151,7 +151,7 @@ OnTouch:
 	announce "[" + strcharinfo(0) +"] has reached Checkpoint [2]",1;
 	end;
 L_Miss:
-	mes "You have missed a Checkpoint. Please go back.";
+	mes "你錯過了一個檢查點。請回去。";
 	close;
 }
 
@@ -164,7 +164,7 @@ OnTouch:
 	announce "[" + strcharinfo(0) +"] has reached Checkpoint [3]",1;
 	end;
 L_Miss:
-	mes "You have missed a Checkpoint. Please go back.";
+	mes "你錯過了一個檢查點。請回去。";
 	close;
 }
 
@@ -177,7 +177,7 @@ OnTouch:
 	announce "[" + strcharinfo(0) +"] has reached Checkpoint [4]",1;
 	end;
 L_Miss:
-	mes "You have missed a Checkpoint. Please go back.";
+	mes "你錯過了一個檢查點。請回去。";
 	close;
 }
 
@@ -192,10 +192,10 @@ OnTouch:
 	announce "[" + strcharinfo(0) +"] has reached The Finish line! [Position: " + $@position + "]",1;
 	end;
 L_Miss:
-	mes "You have missed a Checkpoint. Please go back.";
+	mes "你錯過了一個檢查點。請回去。";
 	close;
 L_WrongRace:
-	mes "You are not in this race.";
+	mes "你不在這次比賽中。";
 	close;
 }
 

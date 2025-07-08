@@ -9,20 +9,20 @@
 
 prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 	cutin "prt_soldier",2;
-	mes "[Prontera Guide]";
-	mes "Welcome to ^8B4513Prontera^000000,";
-	mes "the beautiful capital of the";
-	mes "Rune-Midgarts Kingdom.";
-	mes "Do you need help navigating the city?";
+	mes "[普隆德拉導遊]";
+	mes "歡迎來到 ^8B4513普隆德拉^000000，";
+	mes "盧恩-米德加茲王國";
+	mes "美麗的首都。";
+	mes "需要幫忙導覽這座城市嗎？";
 	F_Navi("[Prontera Guide]");
 	next;
 	set .@str$,"Would you like to check any other locations?";
 	while (1) {
-		switch(select("[ Main Facilities ]:[ Merchants & Helpers ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 主要設施 ]:[ 商人和幫手 ]:從小型地圖移除標記:取消")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Tool Shop ]:[ Weapon & Armor Shop ]:[ Forge ]:[ Sanctuary ]:[ Chivalry Office ]:[ Inn ]:[ Tavern ]:[ Library ]:[ Prontera Castle ]:[ Job Agency ]:[ City Hall ]:Previous Menu")) {
+				switch(select("[ 工具店 ]:[ 武器與防具店 ]:[ 鍛造 ]:[ 聖域 ]:[ 騎士團 ]:[ 旅館 ]:[ 酒館 ]:[ 圖書館 ]:[ 普隆德拉城堡 ]:[ 職業介紹所 ]:[ 市政廳 ]:上一個選單")) {
 				case 1:
 					callsub L_Mark, F_Navi("Tool Shop","prontera,134,221","^B9062F");
 					mes .@str$;
@@ -36,26 +36,26 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 3:
-					callsub L_Mark, F_Navi("Forge","prontera,179,184","^FF5400");
+					callsub L_Mark, F_Navi("鍛造場","prontera,179,184","^FF5400");
 					mes .@str$;
 					viewpoint 1,179,184,2,0xFFB400;
 					next;
 					break;
 				case 4:
-					mes "[Prontera Guide]";
-					mes "The "+F_Navi("Prontera Sanctuary","prontera,236,316","^006400")+" is";
-					mes "where you can change your job to Acolyte,";
-					mes "its located in the far northeast of Prontera.";
-					mes "Let me mark the location on your mini-map.";
+					mes "[普隆德拉導遊]";
+					mes "在 "+F_Navi("普隆德拉聖域","prontera,236,316","^006400")+" 你可以";
+					mes "轉職成服事，";
+					mes "它位於普隆德拉的最東北方。";
+					mes "讓我把位置標記在你的小型地圖上。";
 					mes .@str$;
 					viewpoint 1,236,316,3,0xAAFF00;
 					next;
 					break;
 				case 5:
-					mes "[Prontera Guide]";
-					mes "The "+F_Navi("Chivalry Office","prontera,46,345")+" is";
-					mes "where you can change your job to ^7F3300Knight^000000";
-					mes "or apply for the ^7F3300Culvert^000000 Subjugation Party.";
+					mes "[普隆德拉導遊]";
+					mes "在 "+F_Navi("騎士團","prontera,46,345")+" 你可以";
+					mes "轉職成 ^7F3300騎士^000000";
+					mes "或申請 ^7F3300庫勒沃特^000000 掃蕩隊。";
 					mes .@str$;
 					viewpoint 1,46,345,4,0xD2691E;
 					next;
@@ -68,30 +68,30 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					break;
 				case 7:
 					callsub L_Mark, "^B9062FTaverns^000000";
-					mes "Only the "+F_Navi("northern","prontera,208,154","^B9062F")+" tavern";
-					mes "is open for now.";
+					mes "目前只有 "+F_Navi("北部","prontera,208,154","^B9062F")+" 酒館";
+					mes "營業中。";
 					mes .@str$;
 					viewpoint 1,208,154,6,0xFF0000;
 					viewpoint 1,46,67,7,0xFF0000;
 					next;
 					break;
 				case 8:
-					mes "[Prontera Guide]";
-					mes "The ^0000FFLibrary^000000 is";
-					mes "where you can find useful information, like the Monster Encyclopedia.";
-					mes "There are currently two libaries available,";
-					mes "One to the "+F_Navi("northeast","prontera,120,264")+" and the other to the "+F_Navi("northwest","prontera,192,264")+".";
+					mes "[普隆德拉導遊]";
+					mes "在 ^0000FF圖書館^000000";
+					mes "你可以找到有用的資訊，像是魔物百科。";
+					mes "目前有兩座圖書館，";
+					mes "一座在 "+F_Navi("東北方","prontera,120,264")+"，另一座在 "+F_Navi("西北方","prontera,192,264")+ "。";
 					mes .@str$;
 					viewpoint 1,120,264,8,0x0A82FF;
 					viewpoint 1,192,264,9,0x0A82FF;
 					next;
 					break;
 				case 9:
-					mes "[Prontera Guide]";
-					mes "The "+F_Navi("Prontera Castle","prontera,156,360","^FF5400")+" is north from here,";
-					mes "and its rear gate is connected to";
-					mes "the northern Prontera Fields.";
-					mes "Let me mark the castle on your mini-map.";
+					mes "[普隆德拉導遊]";
+					mes "從這裡往北走就是 "+F_Navi("普隆德拉城堡","prontera,156,360","^FF5400")+"，";
+					mes "它的後門連接到";
+					mes "普隆德拉北方的原野。";
+					mes "讓我把城堡的位置標記在你的小型地圖上。";
 					mes .@str$;
 					viewpoint 1,156,360,10,0xFFB400;
 					next;
@@ -103,11 +103,11 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 11:
-					mes "[Prontera Guide]";
-					mes "Let me mark the location of "+F_Navi("City Hall","prontera,75,91","^7F3300");
-					mes "on your mini-map.";
-					mes "There's a hairstylist";
-					mes "there that can change your hair color.";
+					mes "[普隆德拉導遊]";
+					mes "讓我把 "+F_Navi("市政廳","prontera,75,91","^7F3300")+" 的位置標記";
+					mes "在你的小型地圖上。";
+					mes "那裡有一位髮型設計師";
+					mes "可以改變你的髮色。";
 					mes .@str$;
 					viewpoint 1,75,91,12,0xD2691E;
 					next;
@@ -121,58 +121,58 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 		case 2:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Eden Teleport Officer ]:[ Peco Peco Breeder ]:[ Riding Creature Master ]:[ Magic Gear Master ]:[ Peco Peco Remover ]:[ Trading Merchants ]:[ Mercenary Guildsman ]:[ Hypnotist ]:[ Kafra Employee ]:[ Leablem ]:[ Apprentice Craftsman ]:[ Pet Groomer ]:Previous Menu")) {
+				switch(select("[ 伊甸園傳送人員 ]:[ 溜溜猴飼養員 ]:[ 騎乘寵物大師 ]:[ 魔法機甲大師 ]:[ 溜溜猴移除師 ]:[ 交易商人 ]:[ 傭兵公會人員 ]:[ 催眠師 ]:[ 卡普拉職員 ]:[ 黎布勒姆 ]:[ 見習工匠 ]:[ 寵物美容師 ]:上一個選單")) {
 				case 1:
-					callsub L_Mark, F_Navi("Eden Teleport Officer","prontera,124,76","^800080"),1;
+					callsub L_Mark, F_Navi("伊甸園傳送人員","prontera,124,76","^800080"),1;
 					mes .@str$;
 					viewpoint 1,124,76,13,0xDA70D6;
 					next;
 					break;
 				case 2:
-					mes "[Prontera Guide]";
-					mes "Two ^0000FFPeco Peco Breeders^000000 are available,";
-					mes "one for ^0000FFKnights^000000 to the "+F_Navi("northwest","prontera,55,350","^0000FF");
-					mes "and the other for ^0000FFCrusaders^000000 to the "+F_Navi("northeast","prontera,232,310","^0000FF")+".";
+					mes "[普隆德拉導遊]";
+					mes "有兩位 ^0000FF溜溜猴飼養員^000000，";
+					mes "一位給 ^0000FF騎士^000000 在 "+F_Navi("西北方","prontera,55,350","^0000FF");
+					mes "另一位給 ^0000FF十字軍^000000 在 "+F_Navi("東北方","prontera,232,310","^0000FF")+ "。";
 					viewpoint 1,55,350,14,0x0A82FF;
 					viewpoint 1,232,310,15,0x0A82FF;
 					next;
 					break;
 				case 3:
-					mes "[Prontera Guide]";
-					mes "The "+F_Navi("Riding Creature Master","prontera,131,213","^FF5400")+" provides services for";
-					mes "^FF5400Rune Knights^000000 and ^FF5400Royal Guards^000000.";
-					mes "Let me mark his location";
-					mes "on your mini-map.";
+					mes "[普隆德拉導遊]";
+					mes ""+F_Navi("騎乘寵物大師","prontera,131,213","^FF5400")+" 為";
+					mes "^FF5400符文騎士^000000 和 ^FF5400皇家衛士^000000 提供服務。";
+					mes "讓我把他的位置";
+					mes "標記在你的小型地圖上。";
 					mes .@str$;
 					viewpoint 1,131,213,16,0xFFB400;
 					next;
 					break;
 				case 4:
-					mes "[Prontera Guide]";
-					mes "The "+F_Navi("Magic Gear Master","prontera,163,178","^006400");
-					mes "provides services for";
-					mes "^006400Mechanics^000000.";
-					mes "Let me mark his location";
-					mes "on your mini-map.";
+					mes "[普隆德拉導遊]";
+					mes ""+F_Navi("魔法機甲大師","prontera,163,178","^006400");
+					mes "為";
+					mes "^006400機械工匠^000000 提供服務。";
+					mes "讓我把他的位置";
+					mes "標記在你的小型地圖上。";
 					mes .@str$;
 					viewpoint 1,163,178,17,0xAAFF00;
 					next;
 					break;
 				case 5:
-					mes "[Prontera Guide]";
-					mes "If your beloved Peco Peco refuses";
-					mes "to leave you,";
-					mes "please talk to the "+F_Navi("Peco Peco Remover","prontera,125,208","^7F3300");
-					mes "near the central fountain.";
+					mes "[普隆德拉導遊]";
+					mes "如果你的愛人溜溜猴拒絕";
+					mes "離開你，";
+					mes "請和 "+F_Navi("溜溜猴移除師","prontera,125,208","^7F3300")+" 談談";
+					mes "在中央噴泉附近。";
 					mes .@str$;
 					viewpoint 1,125,208,18,0xD2691E;
 					next;
 					break;
 				case 6:
-					mes "[Prontera Guide]";
-					mes "The Rune Merchant, Amatsu Trader, and other";
-					mes F_Navi("Trading Merchants","prontera,178,244","^800080")+" have been marked";
-					mes "on your mini-map.";
+					mes "[普隆德拉導遊]";
+					mes "盧恩商人、天津商人和其他";
+					mes F_Navi("交易商人","prontera,178,244","^800080")+" 已經被標記";
+					mes "在你的小型地圖上。";
 					mes .@str$;
 					viewpoint 1,178,244,19,0xDA70D6;
 					next;
@@ -184,18 +184,18 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 8:
-					mes "[Prontera Guide]";
-					mes "The ^FF5400Hypnotist^000000";
-					mes "helps beginner adventurers";
-					mes "to reset their skills.";
-					mes "He has moved to Izlude, Prontera's satellite town to the southeast.";
-					mes "Would you like to check any other locations?";
+					mes "[普隆德拉導遊]";
+					mes "^FF5400催眠師^000000";
+					mes "幫助新手冒險者";
+					mes "重置他們的技能。";
+					mes "他已經搬到伊茲魯德，普隆德拉東南方的衛星城鎮。";
+					mes "您想查看其他位置嗎？";
 					mes .@str$;
 					//viewpoint 1,146,232,21,0xFFB400;
 					next;
 					break;
 				case 9:
-					callsub L_Mark, "^006400Kafra Employees^000000",1;
+					callsub L_Mark, "^006400卡普拉職員s^000000",1;
 					mes .@str$;
 					viewpoint 1,152,326,22,0xAAFF00;
 					viewpoint 1,30,207,23,0xAAFF00;
@@ -205,12 +205,12 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 10:
-					mes "[Prontera Guide]";
-					mes F_Navi("Leablem","prontera,244,169","^0000FF");
-					mes "is a technician";
-					mes "who can create ^0000FFslots^000000 on weapons and armors,";
-					mes "As amazing as it sounds,";
-					mes "not all equipment can be slotted.";
+					mes "[普隆德拉導遊]";
+					mes F_Navi("黎布勒姆","prontera,244,169","^0000FF");
+					mes "是一位技術人員";
+					mes "他可以在武器和防具上創造 ^0000FF插槽^000000，";
+					mes "雖然聽起來很神奇，";
+					mes "但並非所有裝備都可以開槽。";
 					mes .@str$;
 					viewpoint 1,244,169,27,0x0A82FF;
 					next;
@@ -222,7 +222,7 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 12:
-					callsub L_Mark, F_Navi("Pet Groomer","prontera,218,211"),1;
+					callsub L_Mark, F_Navi("寵物美容師","prontera,218,211"),1;
 					mes .@str$;
 					viewpoint 1,218,211,29,0xFF0000;
 					next;
@@ -234,9 +234,9 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 			}
 			break;
 		case 3:
-			mes "[Prontera Guide]";
-			mes "Sure, I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[普隆德拉導遊]";
+			mes "當然，我會從你的小型地圖上移除所有標記。";
+			mes "還有什麼我可以為您效勞的嗎？";
 			viewpoint 2,1,1,0,0xFFFF00;
 			viewpoint 2,1,1,1,0x000000;
 			viewpoint 2,1,1,2,0xFF0000;
@@ -270,8 +270,8 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 			next;
 			break;
 		case 4:
-			mes "[Prontera Guide]";
-			mes "Enjoy your stay.";
+			mes "[普隆德拉導遊]";
+			mes "祝您玩得愉快。";
 			close2;
 			cutin "prt_soldier",255;
 			end;
@@ -279,13 +279,13 @@ prontera,154,187,4	script	Guide#01prontera::GuideProntera	105,{
 	}
 	end;
 L_Mark:
-	mes "[Prontera Guide]";
+	mes "[普隆德拉導遊]";
 	if (getarg(1,0)) {
-		mes "Let me mark the location of the";
+		mes "讓我把";
 		mes getarg(0);
 	} else
-		mes "Let me mark the location of the "+getarg(0);
-	mes "on your mini-map.";
+		mes "讓我把 "+getarg(0);
+	mes "的位置標記在你的小型地圖上。";
 	return;
 }
 prontera,282,208,2	duplicate(GuideProntera)	Guide#02prontera	105

@@ -25,303 +25,297 @@
 
 morocc_in,174,30,6	script	Kid#link1	716,{
 	if (Class == Job_Soul_Linker) {
-		mes "[Maia]";
-		mes "Best of luck in your";
-		mes "journeys. As you master";
-		mes "more Soul Linker skills,";
-		mes "you will be able to draw";
-		mes "more of the spirits' power";
-		mes "to endow upon your allies...";
+		mes "[瑪伊亞]";
+		mes "祝你在你的旅程中一切順利。";
+		mes "當你掌握了更多的聖靈召喚師技能時，";
+		mes "你就能夠汲取更多精靈的力量";
+		mes "來賦予你的盟友...";
 		close;
 	}
 	if (Class == Job_Star_Gladiator) {
-		mes "[Kid]";
+		mes "[小孩]";
 		if (Sex == SEX_MALE) {
-			mes "Aren't you a warrior";
-			mes "of the sun? I'm familiar";
+			mes "你不是太陽的戰士嗎？我很熟悉";
 		}
 		else {
-			mes "Aren't you a warrior of";
-			mes "the moon? I'm familiar";
+			mes "你不是月亮的戰士嗎？我很熟悉";
 		}
-		mes "with your ways. After all,";
-		mes "the basis of both of our";
-		mes "skills is grounded in the";
-		mes "Taekwon Do job, right?";
+		mes "你的方式。畢竟，";
+		mes "我們兩個的技能的基礎";
+		mes "都奠基於";
+		mes "跆拳道這個職業，對吧？";
 		close;
 	}
 	if (Class != Job_Taekwon) {
-		mes "[Kid]";
-		mes "Mm? I've got nothing to";
-		mes "offer you. But if you know";
-		mes "any well experienced";
-		mes "practitioners of Taekwon";
-		mes "Do, they might benefit";
-		mes "from what I know.";
+		mes "[小孩]";
+		mes "嗯？我沒有什麼可以";
+		mes "提供給你的。但如果你認識";
+		mes "任何經驗豐富的";
+		mes "跆拳道修行者，他們可能會";
+		mes "從我所知道的事情中受益。";
 		close;
 	}
 	if (JobLevel < 40) {
-		mes "[Kid]";
-		mes "So you're studying";
-		mes "Taekwon Do. That's good,";
-		mes "that's very good. Just keep";
-		mes "refining those skills and";
-		mes "stick to your training.";
+		mes "[小孩]";
+		mes "所以你在學習";
+		mes "跆拳道。那很好，";
+		mes "非常好。只要不斷";
+		mes "精進你的技能並";
+		mes "堅持你的訓練。";
 		close;
 	}
 	else if (JobLevel > 39) {
 		if (SOUL_Q == 0) {
-			mes "[Kid]";
+			mes "[小孩]";
 			mes "...";
-			mes "Hey you.";
+			mes "嘿，你。";
 			next;
 			mes "["+ strcharinfo(0) +"]";
-			mes "Did you call me?";
+			mes "你在叫我嗎？";
 			next;
-			mes "[Kid]";
-			mes "Yeah, I called you.";
-			mes "Now don't make me";
-			mes "raise my voice, and";
-			mes "just get over here.";
+			mes "[小孩]";
+			mes "是啊，我在叫你。";
+			mes "現在別讓我";
+			mes "提高嗓門，";
+			mes "就給我過來。";
 			next;
-			if (select("You're awfully rude for a kid!:Ignore him.") == 1) {
-				mes "[Kid]";
-				mes "You're lucky I'm";
-				mes "taking an interest";
-				mes "in you! I might look";
-				mes "like a kid, but I'm over";
-				mes "three hundred years old!";
+			if (select("你這小孩真沒禮貌！:別理他。") == 1) {
+				mes "[小孩]";
+				mes "你很幸運我對你";
+				mes "產生了興趣！我看起來";
+				mes "像個小孩，但我已經超過";
+				mes "三百歲了！";
 				emotion ET_HNG;
 				next;
-				mes "[Kid]";
-				mes "Now listen...";
-				mes "I know that you're a";
-				mes "disciple of Taekwon Do.";
-				mes "It's a respectable art, but";
-				mes "I've got a proposition for";
-				mes "you if you want to hear it.";
+				mes "[小孩]";
+				mes "現在聽著...";
+				mes "我知道你是";
+				mes "跆拳道的門徒。";
+				mes "這是一門值得尊敬的藝術，但是";
+				mes "如果你想聽聽，我可以給你一個";
+				mes "提議。";
 				emotion ET_SMILE;
 				next;
-				mes "[Kid]";
-				mes "I'm looking at you, and I can";
-				mes "already tell that you're very";
-				mes "spiritually inclined. You've";
-				mes "got a lot of potential I don't";
-				mes "wanna see wasted. Why don't";
-				mes "you become a ''Soul-Linker?''";
+				mes "[小孩]";
+				mes "我在看著你，而且我可以";
+				mes "看得出來你非常有";
+				mes "靈性傾向。你";
+				mes "有很多潛力，我不";
+				mes "想看到你浪費掉。你何不";
+				mes "成為一個''聖靈召喚師''？";
 				next;
-				if (select("Ha! Silly little boy~:Soul Linker?") == 1) {
-					mes "[Kid]";
-					mes "You... You d-don't";
-					mes "believe me? I'm being";
-					mes "dead serious. Can you";
-					mes "forget the fact that I look";
-					mes "like a little kid for just one";
-					mes "minute? *Psh* ...Youngsters.";
+				if (select("哈！傻氣的小傢伙～:聖靈召喚師？") == 1) {
+					mes "[小孩]";
+					mes "你... 你不";
+					mes "相信我？我是";
+					mes "非常認真的。你能不能";
+					mes "忘記我看起來";
+					mes "像個小孩子的這個事實，哪怕只有一";
+					mes "分鐘？ *嘖* ...年輕人。";
 					close;
 				}
-				mes "[Kid]";
-				mes "Soul Linkers communicate";
-				mes "with spirits of fallen warriors";
-				mes "that still wish to fight in the";
-				mes "world of the living. Now, these";
-				mes "warrior spirits can't fight as";
-				mes "themselves in our world.";
+				mes "[小孩]";
+				mes "聖靈召喚師會與";
+				mes "逝去戰士的靈魂溝通，";
+				mes "他們仍然希望在";
+				mes "活人的世界中戰鬥。現在，這些";
+				mes "戰士的靈魂無法在我們的世界中";
+				mes "以他們自己的身份戰鬥。";
 				next;
-				mes "[Kid]";
-				mes "However, since you're";
-				mes "spiritually inclined, these";
-				mes "spirits are attracted to you.";
-				mes "With enough training, you can";
-				mes "temporarily imbue the power of these spirits to your allies.";
+				mes "[小孩]";
+				mes "然而，由於你";
+				mes "有靈性傾向，這些";
+				mes "靈魂會被你吸引。";
+				mes "經過足夠的訓練，你可以";
+				mes "暫時將這些靈魂的力量賦予你的盟友。";
 				next;
-				mes "[Kid]";
-				mes "Now, you can't imbue yourself";
-				mes "with the spirits' power. Also,";
-				mes "depending on your skills as";
-				mes "a Soul Linker, you can only";
-				mes "endow other characters of certain job classes with enchanced power.";
+				mes "[小孩]";
+				mes "現在，你不能將靈魂的力量";
+				mes "賦予自己。此外，";
+				mes "根據你作為";
+				mes "聖靈召喚師的技能，你只能";
+				mes "將增強的力量賦予特定職業的角色。";
 				next;
-				mes "[Kid]";
-				mes "You'll have to enter";
-				mes "a wholly different world";
-				mes "to become a Soul Linker,";
-				mes "but I know it'll be possible";
-				mes "for you. So what do you say?";
+				mes "[小孩]";
+				mes "你必須進入";
+				mes "一個完全不同的世界";
+				mes "才能成為聖靈召喚師，";
+				mes "但我知道這對你來說是可能的。";
+				mes "那麼你覺得怎麼樣？";
 				next;
-				if (select("No. At least, not now...:Alright. What do I have to do?") == 1) {
-					mes "[Kid]";
-					mes "Ah, alright. Well,";
-					mes "if you ever decide to";
-					mes "become a Soul Linker,";
-					mes "then please come back";
-					mes "and talk to me at any time.";
+				if (select("不了。至少，現在還不行...:好吧。我需要做什麼？") == 1) {
+					mes "[小孩]";
+					mes "啊，好吧。嗯，";
+					mes "如果你有天決定";
+					mes "成為一名聖靈召喚師，";
+					mes "那麼請隨時回來";
+					mes "和我談談。";
 					close;
 				}
 				set SOUL_Q,1;
 				setquest 6005;
-				mes "[Kid]";
-				mes "So you want to become";
-				mes "a Soul Linker? Great!";
-				mes "Alright, first I need you";
-				mes "to bring back a few items.";
-				mes "Don't worry, I'll explain";
-				mes "why you need them later.";
+				mes "[小孩]";
+				mes "所以你想成為";
+				mes "一名聖靈召喚師？太棒了！";
+				mes "好吧，首先我需要你";
+				mes "帶回一些物品。";
+				mes "別擔心，我稍後會解釋";
+				mes "為什麼你需要它們。";
 				next;
-				mes "[Kid]";
-				mes "Now bring me";
-				mes "^0000FF1 3 Carat Diamond^000000,";
-				mes "^0000FF1 Immortal Heart^000000 and";
-				mes "^0000FF1 Witherless Rose^000000.";
-				mes "And try not to make me";
-				mes "wait too long, alright?";
+				mes "[小孩]";
+				mes "現在帶給我";
+				mes "^0000FF1 3 克拉鑽石^000000，";
+				mes "^0000FF1 不死之心^000000和";
+				mes "^0000FF1 永恆玫瑰^000000。";
+				mes "盡量別讓我";
+				mes "等太久，好嗎？";
 				close;
 			}
-			mes "[Kid]";
-			mes "Huh...?";
-			mes "Wait, where are";
-			mes "you going? I'm...";
-			mes "I'm talking to you!";
+			mes "[小孩]";
+			mes "嗯...?";
+			mes "等等，你要";
+			mes "去哪裡？我...";
+			mes "我在和你說話！";
 			close;
 		}
 		else if (SOUL_Q == 1) {
 			if (Class == Job_Taekwon) {
-				mes "[Kid]";
-				mes "You're back, eh?";
-				mes "So did you bring";
-				mes "^0000FF1 3 Carat Diamond^000000,";
-				mes "^0000FF1 Immortal Heart^000000 and";
-				mes "^0000FF1 Witherless Rose^000000.";
-				mes "like I asked you to?";
+				mes "[小孩]";
+				mes "你回來了，是嗎？";
+				mes "那麼你帶了";
+				mes "^0000FF1 3 克拉鑽石^000000，";
+				mes "^0000FF1 不死之心^000000和";
+				mes "^0000FF1 永恆玫瑰^000000。";
+				mes "就像我要求你做的那樣嗎？";
 				next;
-				if (select("There you are.:No, not yet...") == 1) {
+				if (select("我帶來了。:還沒，還沒...") == 1) {
 					if (countitem(732) > 0 && countitem(929) > 0 && countitem(748) > 0) {
 						delitem 732,1; //Crystal_Jewel__
 						delitem 929,1; //Immortal_Heart
 						delitem 748,1; //Witherless_Rose
 						set SOUL_Q,2;
 						changequest 6005,6006;
-						mes "[Kid]";
-						mes "Great, I see that you've";
-						mes "brought everything. But";
-						mes "before we begin, let me";
-						mes "introduce myself. My name";
-						mes "is Maia, and I've been alive for more than three hundred years.";
+						mes "[小孩]";
+						mes "太棒了，我看到你已經";
+						mes "把東西都帶來了。但是";
+						mes "在我們開始之前，讓";
+						mes "我自我介紹一下。我的名字";
+						mes "是瑪伊亞，我已經活了三百多年了。";
 						next;
-						mes "[Maia]";
-						mes "Without giving away too many";
-						mes "of the details, I've been divinely charged with the duty of finding";
-						mes "and recruiting more Soul Linkers. That's part of the reason why";
-						mes "I haven't, you know, passed on.";
+						mes "[瑪伊亞]";
+						mes "在不透露太多";
+						mes "細節的情況下，我被神聖地賦予了尋找";
+						mes "和招募更多聖靈召喚師的職責。這也是部分原因";
+						mes "我還沒有，你知道的，逝去。";
 						next;
-						mes "[Maia]";
-						mes "Anyway, I still need to finish";
-						mes "preparations with the materials";
-						mes "that you just brought, so would";
-						mes "you come back in a little bit?";
-						mes "Then, we'll talk once again.";
+						mes "[瑪伊亞]";
+						mes "總之，我還需要完成";
+						mes "用你剛帶來的材料做的";
+						mes "準備工作，所以你能不能";
+						mes "過一會兒再回來？";
+						mes "然後，我們再談一次。";
 						close;
 					}
-					mes "[Kid]";
-					mes "Mm...?";
-					mes "Hey. You forgot";
-					mes "a few things. Now";
-					mes "go back and bring";
-					mes "everything that I ask";
-					mes "for this time, okay?";
+					mes "[小孩]";
+					mes "嗯...?";
+					mes "嘿。你忘記了";
+					mes "一些東西。現在";
+					mes "回去把";
+					mes "這次我要求的";
+					mes "所有東西都帶來，好嗎？";
 					emotion ET_HNG;
 					next;
-					mes "[Kid]";
-					mes "I know I just told you";
-					mes "what we need, but I'm";
-					mes "going to remind you again:";
-					mes "^0000FF1 3 Carat Diamond^000000,";
-					mes "^0000FF1 Immortal Heart^000000 and";
-					mes "^0000FF1 Witherless Rose^000000.";
+					mes "[小孩]";
+					mes "我知道我剛告訴你";
+					mes "我們需要什麼，但我";
+					mes "要再次提醒你：";
+					mes "^0000FF1 3 克拉鑽石^000000，";
+					mes "^0000FF1 不死之心^000000和";
+					mes "^0000FF1 永恆玫瑰^000000。";
 					close;
 				}
-				mes "[Kid]";
-				mes "Mm. That's fine.";
-				mes "Although I have all";
-				mes "the time to spare in";
-				mes "the world, I don't like";
-				mes "to wait for very long.";
+				mes "[小孩]";
+				mes "嗯。那很好。";
+				mes "雖然我有的是";
+				mes "時間，但我不喜歡";
+				mes "等太久。";
 				close;
 			}
 			set SOUL_Q,0;
-			mes "[Kid]";
-			mes "You've become a warrior";
-			mes "of the Sun, the Moon and";
-			mes "the Stars instead? I had no";
-			mes "idea you had that potential.";
-			mes "I suppose I can't blame you...";
+			mes "[小孩]";
+			mes "你反而成為了太陽、月亮和";
+			mes "星星的戰士？我不知道";
+			mes "你有那種潛力。";
+			mes "我想我不能怪你...";
 			close;
 		}
 		else if (SOUL_Q == 2) {
 			if (SkillPoint) {
-				mes "[Maia]";
-				mes "You still have some";
-				mes "unallocated Skill Points.";
-				mes "Use them all to learn some";
-				mes "Taekwon Do skills, and then";
-				mes "return when you're ready.";
+				mes "[瑪伊亞]";
+				mes "你還有一些";
+				mes "未分配的技能點數。";
+				mes "用它們來學習一些";
+				mes "跆拳道技能，然後";
+				mes "準備好後再回來。";
 				close;
 			}
 			if (.SoulLinkerTest == 1) {
-				mes "[Maia]";
-				mes "Right now, someone else";
-				mes "is completing the ceremony";
-				mes "to become a Soul Linker.";
-				mes "Would you please wait until";
-				mes "it's finished? Then, when I'm";
-				mes "available, I'll attend to you.";
+				mes "[瑪伊亞]";
+				mes "現在，有人";
+				mes "正在完成成為";
+				mes "聖靈召喚師的儀式。";
+				mes "請等到";
+				mes "儀式結束好嗎？";
+				mes "然後，當我";
+				mes "有空時，我會來處理你的事情。";
 				close;
 			}
 			donpcevent "Timer#link3::OnEnable";
 			set .SoulLinkerTest,1;
-			mes "[Maia]";
-			mes "Great, I've finished";
-			mes "the preparations. Now";
-			mes "we'll proceed with the";
-			mes "ceremony to change";
-			mes "you into a Soul Linker.";
-			mes "Now close your eyes...";
+			mes "[瑪伊亞]";
+			mes "太好了，我已經完成";
+			mes "了準備工作。現在";
+			mes "我們將繼續進行";
+			mes "將你轉變";
+			mes "為聖靈召喚師的儀式。";
+			mes "現在閉上你的眼睛...";
 			close2;
 			warp "job_soul",30,30;
 			end;
 		}
 		else if (SOUL_Q > 2) {
-			mes "[Maia]";
-			mes "Are you ready to";
-			mes "enter the depths";
-			mes "of your mind again?";
+			mes "[瑪伊亞]";
+			mes "你準備好";
+			mes "再次進入";
+			mes "你的內心深處了嗎？";
 			next;
-			if (select("No:Yes") == 1) {
-				mes "[Maia]";
-				mes "Well then, come";
-				mes "back to me when you";
-				mes "think you are ready.";
-				mes "Until then, I'll be";
-				mes "waiting right here.";
+			if (select("否:是") == 1) {
+				mes "[瑪伊亞]";
+				mes "那麼，等你";
+				mes "覺得你準備好了，";
+				mes "就回來找我吧。";
+				mes "在那之前，我會";
+				mes "在這裡等你。";
 				close;
 			}
 			if (.SoulLinkerTest == 1) {
-				mes "[Maia]";
-				mes "Right now, someone else";
-				mes "is completing the ceremony";
-				mes "to become a Soul Linker.";
-				mes "Would you please wait until";
-				mes "it's finished? Then, when I'm";
-				mes "available, I'll attend to you.";
+				mes "[瑪伊亞]";
+				mes "現在，有人";
+				mes "正在完成成為";
+				mes "聖靈召喚師的儀式。";
+				mes "請等到";
+				mes "儀式結束好嗎？";
+				mes "然後，當我";
+				mes "有空時，我會來處理你的事情。";
 				close;
 			}
 			donpcevent "Timer#link3::OnEnable";
 			set .SoulLinkerTest,1;
-			mes "[Maia]";
-			mes "Alright then, close";
-			mes "your eyes and relax.";
-			mes "We'll go back into the";
-			mes "depths of your mind.";
+			mes "[瑪伊亞]";
+			mes "好吧，閉上";
+			mes "你的眼睛，放輕鬆。";
+			mes "我們將回到你的";
+			mes "內心深處。";
 			close2;
 			warp "job_soul",30,30;
 			end;
@@ -338,122 +332,121 @@ OnTouch_:
 	if (Class == Job_Taekwon) {
 		if (JobLevel < 40) {
 			set getvariableofnpc(.SoulLinkerTest,"Kid#link1"),0;
-			mes "[Maia]";
-			mes "Hm? How did you come";
-			mes "here? You're not qualified";
-			mes "for this ceremony yet. Come,I will bring you back to Morocc...";
+			mes "[瑪伊亞]";
+			mes "嗯？你是怎麼";
+			mes "來到這裡的？你還沒有資格";
+			mes "參加這個儀式。來吧，我會帶你回到夢羅克...";
 			close2;
 			warp "morocc",157,47;
 			end;
 		}
 		if (SOUL_Q == 2) {
-			mes "[Maia]";
-			mes "Do you recognize this";
-			mes "place? Right now, we're";
-			mes "inside your mind. The spirits";
-			mes "of warriors that have died";
-			mes "hover here, waiting for you";
-			mes "to call upon their power.";
+			mes "[瑪伊亞]";
+			mes "你認得這個";
+			mes "地方嗎？現在，我們";
+			mes "在你的內心深處。戰士的靈魂";
+			mes "死後會";
+			mes "在這裡徘徊，等待你";
+			mes "呼喚他們的力量。";
 			next;
-			mes "[Maia]";
-			mes "Right now, there are only";
-			mes "a few of them here, but if";
-			mes "you continue to train, you";
-			mes "will be able to call upon";
-			mes "more spirits as a Soul Linker.";
+			mes "[瑪伊亞]";
+			mes "現在，這裡只有";
+			mes "少數的靈魂，但如果你";
+			mes "繼續訓練，你";
+			mes "將能夠召喚";
+			mes "更多的靈魂，成為一名靈魂連結者。";
 			next;
 			set SOUL_Q,3;
 			changequest 6006,6007;
-			mes "[Maia]";
-			mes "We can only remain in";
-			mes "your mind for 3 minutes.";
-			mes "I suggest that you speak";
-			mes "to the spirits while you";
-			mes "have the opportunity.";
+			mes "[瑪伊亞]";
+			mes "我們只能停留在";
+			mes "你的腦海中 3 分鐘。";
+			mes "我建議你和";
+			mes "靈魂們交談，趁你";
+			mes "還有這個機會。";
 			close;
 		}
 		else if (SOUL_Q == 3) {
-			mes "[Maia]";
-			mes "Listen to what";
-			mes "spirits are tending to say.";
-			mes "There is a reason why";
-			mes "they cannot move on";
-			mes "to the next world.";
+			mes "[瑪伊亞]";
+			mes "仔細聆聽";
+			mes "靈魂們想說的話。";
+			mes "他們無法";
+			mes "前往下一個世界";
+			mes "是有原因的。";
 			close;
 		}
 		else if (SOUL_Q == 4) {
-			mes "[Maia]";
-			mes "I believe that you are";
-			mes "now ready to become";
-			mes "a Soul Linker. However,";
-			mes "you may continue to";
-			mes "speak with the spirits";
-			mes "if that is what you wish.";
+			mes "[瑪伊亞]";
+			mes "我相信你現在";
+			mes "已經準備好成為";
+			mes "一名靈魂連結者。然而，";
+			mes "你可以繼續";
+			mes "與靈魂們交談";
+			mes "如果你希望如此。";
 			next;
-			if (select("Converse more with the spirits:Become a Soul Linker") == 1) {
-				mes "[Maia]";
-				mes "Alright. Try to hurry";
-				mes "since we can remain in";
-				mes "your mind for a limited";
-				mes "time. Although, we can";
-				mes "go back inside your mind";
-				mes "if you talk to me later...";
+			if (select("與靈魂們多交談:成為靈魂連結者") == 1) {
+				mes "[瑪伊亞]";
+				mes "好的。盡快";
+				mes "因為我們只能停留在";
+				mes "你的腦海中一段";
+				mes "時間。雖然，我們可以";
+				mes "回到你的腦海裡";
+				mes "如果你之後再來找我...";
 				close;
 			}
 			if (ismounting()) {
-				mes "[Maia]";
-				mes "You are on a riding pet,";
-				mes "so you cannot change your job.";
-				mes "Please unequip your riding pet and try again!";
+				mes "[瑪伊亞]";
+				mes "你正騎著騎乘寵物，";
+				mes "所以你無法變更職業。";
+				mes "請卸下你的騎乘寵物再試一次！";
 				close;
 			}
-			mes "[Maia]";
-			mes "Then let us begin the";
-			mes "ceremony. These items will";
-			mes "be used to endow you with";
-			mes "the ability to borrow the power";
-			mes "of the fallen warriors and lend";
-			mes "it to your friends in battle.";
+			mes "[瑪伊亞]";
+			mes "那麼讓我們開始";
+			mes "儀式。這些物品將";
+			mes "被用來賦予你";
+			mes "借用逝去戰士力量";
+			mes "的能力，並將其借給";
+			mes "你在戰鬥中的朋友們。";
 			next;
-			mes "[Maia]";
-			mes "This Witherless Rose will";
-			mes "wither away instead of you...";
+			mes "[瑪伊亞]";
+			mes "這朵永不凋零的玫瑰將";
+			mes "會代替你凋零...";
 			specialeffect EF_MAPPILLAR2,AREA,"Maia#link2";
 			next;
-			mes "[Maia]";
-			mes "This Witherless Rose will";
-			mes "wither away instead of you...";
-			mes "This Immortal Heart will cease";
-			mes "to pump blood, instead of yours. ";
+			mes "[瑪伊亞]";
+			mes "這朵永不凋零的玫瑰將";
+			mes "會代替你凋零...";
+			mes "這顆不朽之心將停止";
+			mes "跳動，代替你的。";
 			next;
-			mes "[Maia]";
-			mes "This Witherless Rose will";
-			mes "wither away instead of you...";
-			mes "This Immortal Heart will cease";
-			mes "to pump blood, instead of yours. This Diamond will turn to dust,";
-			mes "in place of your mortal body.";
+			mes "[瑪伊亞]";
+			mes "這朵永不凋零的玫瑰將";
+			mes "會代替你凋零...";
+			mes "這顆不朽之心將停止";
+			mes "跳動，代替你的。這顆鑽石將化為塵土，";
+			mes "代替你凡人的身體。";
 			next;
-			mes "[Maia]";
-			mes "The dead who wish";
-			mes "to continue fighting...";
-			mes "Will fight for you! Use your";
-			mes "powers as a Soul Linker";
-			mes "wisely and for just purposes.";
+			mes "[瑪伊亞]";
+			mes "想繼續戰鬥的";
+			mes "死者...";
+			mes "會為你而戰！明智地使用你的";
+			mes "靈魂連結者的力量";
+			mes "並為了正義的目的。";
 			next;
 			if (SkillPoint) {
-				mes "^0000ffYou still have unused skill points. Please use all remaining skill points and try again!^000000";
+				mes "^0000ff你還有未使用的技能點數。請使用所有剩餘的技能點數再試一次！^000000";
 				close;
 			}
 			completequest 6008;
 			callfunc "Job_Change",Job_Soul_Linker;
 			callfunc "F_ClearJobVar";	// clears all job variables for the current player
 			set SOUL_Q,0;
-			mes "[Maia]";
-			mes "I wish the best of luck";
-			mes "in your new life. Surround";
-			mes "yourself with allies, and the";
-			mes "spirits will be able to protect";
-			mes "you and help you fight in your battles. Farewell for now, friend.";
+			mes "[瑪伊亞]";
+			mes "我祝你在";
+			mes "你的新生活中一切順利。與盟友";
+			mes "為伍，靈魂們將能夠保護";
+			mes "你，並幫助你在戰鬥中奮戰。暫時告別了，朋友。";
 			close2;
 			set getvariableofnpc(.SoulLinkerTest,"Kid#link1"),0;
 			donpcevent "Timer#link3::OnDisable";
@@ -461,30 +454,32 @@ OnTouch_:
 			end;
 		}
 		set getvariableofnpc(.SoulLinkerTest,"Kid#link1"),0;
-		mes "[Maia]";
-		mes "Hmm...?";
-		mes "The time for you";
-		mes "to be here has not";
-		mes "arrived. Let's go";
-		mes "back to Morocc...";
+		mes "[瑪伊亞]";
+		mes "嗯...?";
+		mes "你該";
+		mes "出現在這裡的";
+		mes "時間還沒";
+		mes "到。我們回到";
+		mes "夢羅克吧...";
 		close2;
 		warp "morocc",157,47;
 		end;
 	}
 	set getvariableofnpc(.SoulLinkerTest,"Kid#link1"),0;
 	if (Class == Job_Soul_Linker) {
-		mes "[Maia]";
-		mes "The time has come for";
-		mes "you to venture out into the";
-		mes "wide world! More Soul Linkers";
-		mes "will definitely be needed in the ongoing battle against evil...";
+		mes "[瑪伊亞]";
+		mes "是時候讓你";
+		mes "冒險進入";
+		mes "廣闊的世界了！在";
+		mes "與邪惡的持續戰鬥中，肯定";
+		mes "會需要更多的靈魂連結者...";
 	}
 	else {
-		mes "[Maia]";
-		mes "That's strange...";
-		mes "You're not supposed to";
-		mes "be here. Let me guide";
-		mes "you back to Morocc...";
+		mes "[瑪伊亞]";
+		mes "真奇怪...";
+		mes "你不應該";
+		mes "在這裡。讓我引導";
+		mes "你回到夢羅克...";
 	}
 	close2;
 	warp "morocc",157,47;
@@ -495,140 +490,142 @@ job_soul,35,30,6	duplicate(SLTester)	Maia#link6	716
 
 job_soul,30,35,6	script	Monk Spirit#link4	827,{
 	if (SOUL_Q == 2) {
-		mes "[Monk Spirit]";
-		mes "Who am I...?";
-		mes "I think... I think";
-		mes "it would be best if";
-		mes "you spoke to Maya first...";
-		mes "Who and what I am requires";
-		mes "a complicated explanation...";
+		mes "[武僧靈魂]";
+		mes "我是誰...?";
+		mes "我想...我想";
+		mes "如果你先和瑪伊亞";
+		mes "交談會是最好的...";
+		mes "我是誰以及我是什麼需要";
+		mes "一個複雜的解釋...";
 		close;
 	}
 	else if (SOUL_Q > 2) {
-		mes "[Monk Spirit]";
-		mes "In life, my peers did";
-		mes "their best to assure me";
-		mes "that I accomplish all that";
-		mes "I could as a Monk. Still...";
-		mes "Still I would never be fully";
-		mes "satisfied with my skills.";
+		mes "[武僧靈魂]";
+		mes "在世時，我的同伴盡了";
+		mes "最大的努力來確保我";
+		mes "能夠完成我身為";
+		mes "武僧的所有事情。然而...";
+		mes "但我永遠無法完全";
+		mes "對我的技能感到滿意。";
 		next;
-		mes "[Monk Spirit]";
-		mes "In death, I had many regrets,";
-		mes "never having the chance to pass";
-		mes "my skills down to future Monks.";
-		mes "Lending my power to others ";
-		mes "is the only chance that I can";
-		mes "possibly have to do this.";
+		mes "[武僧靈魂]";
+		mes "在死亡時，我有很多遺憾，";
+		mes "從未有機會將我的";
+		mes "技能傳授給未來的武僧。";
+		mes "將我的力量借給他人";
+		mes "是我唯一可能";
+		mes "做到這一點的機會。";
 		next;
 		set SOUL_Q,4;
 		if(checkquest(6008) == -1) {
 			changequest 6007,6008;
 		}
-		mes "[Monk Spirit]";
-		mes "I beg of you...";
-		mes "I need you to help";
-		mes "me fully realize the";
-		mes "true potential of the";
-		mes "Monks of today.";
+		mes "[武僧靈魂]";
+		mes "我懇求你...";
+		mes "我需要你幫助";
+		mes "我完全實現";
+		mes "當今武僧的";
+		mes "真正潛力。";
 		close;
 	}
-	mes "[Monk Spirit]";
+	mes "[武僧靈魂]";
 	mes "...";
 	close;
 }
 
 job_soul,30,25,7	script	Sage Spirit#link5	754,{
 	if (SOUL_Q == 2) {
-		mes "[Sage Spirit]";
-		mes "Speak to Maia.";
-		mes "I'm afraid I may";
-		mes "confuse you if Maia";
-		mes "doesn't first explain";
-		mes "your present situation...";
+		mes "[賢者靈魂]";
+		mes "和瑪伊亞談談。";
+		mes "恐怕如果瑪伊亞";
+		mes "沒有先解釋";
+		mes "你現在的情況，";
+		mes "我可能會讓你感到困惑...";
 		close;
 	}
 	else if (SOUL_Q > 2) {
-		mes "[Sage Spirit]";
-		mes "My pursuit of knowledge";
-		mes "granted me incredible power:";
-		mes "in life, I could have destroyed";
-		mes "anything I wanted. Few Sages";
-		mes "could even reach my level...";
+		mes "[賢者靈魂]";
+		mes "我對知識的追求";
+		mes "賦予了我不可思議的力量：";
+		mes "在世時，我可以摧毀";
+		mes "任何我想摧毀的東西。很少有賢者";
+		mes "能達到我的水平...";
 		next;
-		mes "[Sage Spirit]";
-		mes "I died, but I was never able";
-		mes "to pass on to the next world.";
-		mes "I still want to use my abilities.I want to use my knowledge";
-		mes "to build what pleases me,";
-		mes "and to destroy as I please.";
+		mes "[賢者靈魂]";
+		mes "我死了，但我從未能夠";
+		mes "前往下一個世界。";
+		mes "我仍然想使用我的能力。我想用我的知識";
+		mes "來建造我喜歡的東西，";
+		mes "並隨心所欲地摧毀。";
 		next;
-		mes "[Sage Spirit]";
-		mes "It is enough if I can";
-		mes "lend my power to a Sage";
-		mes "that is worthy of receiving";
-		mes "it. But to do that, I shall";
-		mes "require your help. I beg you,";
-		mes "let me become your spirit ally.";
+		mes "[賢者靈魂]";
+		mes "如果我能把我的力量";
+		mes "借給一位";
+		mes "值得接受它的";
+		mes "賢者，那就足夠了。";
+		mes "但要做到這一點，我需要";
+		mes "你的幫助。我懇求你，";
+		mes "讓我成為你的靈魂盟友。";
 		set SOUL_Q,4;
 		if(checkquest(6008) == -1) {
 			changequest 6007,6008;
 		}
 		next;
-		mes "[Sage Spirit]";
-		mes "I believe that you";
-		mes "are the only one who";
-		mes "has a chance of bringing";
-		mes "rest to my troubled soul...";
+		mes "[賢者靈魂]";
+		mes "我相信你";
+		mes "是唯一有";
+		mes "機會為我不安的靈魂";
+		mes "帶來安寧的人...";
 		close;
 	}
-	mes "[Sage Spirit]";
+	mes "[賢者靈魂]";
 	mes "...";
 	close;
 }
 
 job_soul,25,30,5	script	Alchemist Spirit#link7	744,{
 	if (SOUL_Q == 2) {
-		mes "[Alchemist Spirit]";
-		mes "Oh! I really want to";
-		mes "speak to you, but what";
-		mes "I have to say won't make";
-		mes "much sense unless you";
-		mes "talk to Maia first. But yes,";
-		mes "I really need your help.";
+		mes "[鍊金術士靈魂]";
+		mes "哦！我真的很想";
+		mes "和你說話，但";
+		mes "除非你";
+		mes "先和瑪伊亞談談，否則";
+		mes "我說的話不會有";
+		mes "太多意義。但是，是的，";
+		mes "我真的很需要你的幫助。";
 		close;
 	}
 	else if (SOUL_Q > 2) {
-		mes "[Alchemist Spirit]";
-		mes "Without exagerrating, I was";
-		mes "the fastest Alchemist in my";
-		mes "time. In fact, I may even be";
-		mes "the fastest Alchemist ever.";
-		mes "But then I grew arrogant, and";
-		mes "killed myself in an accident.";
+		mes "[鍊金術士靈魂]";
+		mes "毫不誇張地說，我是";
+		mes "我那個時代最快的";
+		mes "鍊金術士。事實上，我甚至可能是";
+		mes "有史以來最快的鍊金術士。";
+		mes "但後來我變得傲慢，並且";
+		mes "在一次意外中喪生。";
 		next;
-		mes "[Alchemist Spirit]";
-		mes "But death would not stifle";
-		mes "my skill. In fact, I've even";
-		mes "improved my skill since I've";
-		mes "passed away. I cannot go";
-		mes "on to the next world until I've";
-		mes "passed on my techniques...";
+		mes "[鍊金術士靈魂]";
+		mes "但是死亡並不會扼殺";
+		mes "我的技能。事實上，自從";
+		mes "我死後，我的技能甚至";
+		mes "有所提高。我無法";
+		mes "前往下一個世界，直到我";
+		mes "傳授了我的技巧為止...";
 		set SOUL_Q,4;
 		if(checkquest(6008) == -1) {
 			changequest 6007,6008;
 		}
 		next;
-		mes "[Alchemist Spirit]";
-		mes "I'm powerless as a spirit,";
-		mes "but with your help, I can";
-		mes "influence the Alchemists of";
-		mes "today and help them refine";
-		mes "their skills. I beseech you,";
-		mes "please give me this chance...";
+		mes "[鍊金術士靈魂]";
+		mes "我作為一個靈魂是無力的，";
+		mes "但在你的幫助下，我可以";
+		mes "影響今天的";
+		mes "鍊金術士，並幫助他們";
+		mes "精煉他們的技能。我懇求你，";
+		mes "請給我這個機會...";
 		close;
 	}
-	mes "[Alchemist Spirit]";
+	mes "[鍊金術士靈魂]";
 	mes "...";
 	close;
 }
@@ -667,36 +664,35 @@ OnTimer183000:
 
 sec_in02,35,153,0	script	Soul Linker Var	871,{
 	callfunc "F_GM_NPC";
-	mes "[Soul Linker Var]";
-	mes "I can reset the Soul Linker";
-	mes "NPCs if a Soul Linker candidate";
-	mes "encounters a problem during the";
-	mes "end of the job quest. Please do";
-	mes "not use this function if players are still in the Quest Map.";
+	mes "[靈魂連結者 變數]";
+	mes "如果靈魂連結者候選人在";
+	mes "職業任務結束時遇到問題，我可以重置靈魂連結者";
+	mes "NPC。如果玩家仍在任務地圖中，請勿";
+	mes "使用此功能。";
 	next;
 	if (callfunc("F_GM_NPC",1854,0) < 1) {
-		mes "[Soul Linker Var]";
-		mes "Password";
-		mes "is incorrect.";
+		mes "[靈魂連結者 變數]";
+		mes "密碼";
+		mes "不正確。";
 		close;
 	} else {
-		mes "[Soul Linker Var]";
-		mes "Would you like to";
-		mes "reset the Soul Linker";
-		mes "Global Variable?";
+		mes "[靈魂連結者 變數]";
+		mes "您想要";
+		mes "重置靈魂連結者";
+		mes "全域變數嗎？";
 		next;
-		switch(select("Reset:Cancel")) {
+		switch(select("重置:取消")) {
 		case 1:
-			mes "[Soul Linker Var]";
-			mes "The Soul Linker";
-			mes "Job Quest NPCs";
-			mes "have been reset.";
+			mes "[靈魂連結者 變數]";
+			mes "靈魂連結者";
+			mes "職業任務 NPC";
+			mes "已被重置。";
 			set getvariableofnpc(.SoulLinkerTest,"Kid#link1"),0;
 			close;
 		case 2:
-			mes "[Soul Linker Var]";
-			mes "You have canceled";
-			mes "this command.";
+			mes "[靈魂連結者 變數]";
+			mes "您已取消";
+			mes "此指令。";
 			close;
 		}
 	}

@@ -16,110 +16,110 @@
 //============================================================
 
 // Prontera
-prontera,111,99,5	script	Egg Salesman#prt::EggVendor	98,{
-	mes "[Egg Salesman]";
-	mes "^FF0000Chicken Eggs^000000! Come and";
-	mes "buy as many Chicken Eggs";
-	mes "as you want, whenever you";
-	mes "want! Hey buddy, you wanna";
-	mes "take a look at the Chicken";
-	mes "Eggs that I'm selling?";
+prontera,111,99,5	script	雞蛋商人#prt::EggVendor	98,{
+	mes "[雞蛋商人]";
+	mes "^FF0000雞蛋^000000！快來";
+	mes "想買多少雞蛋";
+	mes "就買多少，隨時";
+	mes "都行！嘿，朋友，你想";
+	mes "看看我賣的";
+	mes "雞蛋嗎？";
 	next;
 	while(1) {
-		switch(select("What are you doing?:Why Chicken Eggs?:Sure, I'll buy some.:Never mind.")) {
+		switch(select("你在做什麼？:為什麼是雞蛋？:好的，我要買一些。:算了。")) {
 		case 1:
-			mes "[Egg Salesman]";
-			mes "What am I--? I'm";
-			mes "selling Chicken Eggs!";
-			mes "For this special event";
-			mes "period, I'm selling as many";
-			mes "Chicken Eggs as you could";
-			mes "want for only 500 zeny each!";
+			mes "[雞蛋商人]";
+			mes "我在做什麼？我";
+			mes "在賣雞蛋啊！";
+			mes "為了這個特別的活動";
+			mes "期間，我可以賣給你";
+			mes "你想買的那麼多";
+			mes "雞蛋，一個只要 500 zeny！";
 			next;
-			mes "[Egg Salesman]";
-			mes "Boys, girls, friends,";
-			mes "family, old people, young";
-			mes "people, um, maybe not most";
-			mes "vegetarians or raw foodists,";
-			mes "but almost everyone likes eggs!";
+			mes "[雞蛋商人]";
+			mes "男孩、女孩、朋友、";
+			mes "家人、老人、年輕";
+			mes "人，嗯，或許大多數";
+			mes "素食主義者或生食主義者不會，";
+			mes "但幾乎所有人都喜歡雞蛋！";
 			next;
-			mes "[Egg Salesman]";
-			mes "Can you imagine a world";
-			mes "without eggs? There'd be";
-			mes "no bread, pastries, cake";
-			mes "or frosting... Ice cream";
-			mes "would be a lot runnier...";
-			mes "Pranks wouldn't be as fun...";
+			mes "[雞蛋商人]";
+			mes "你能想像一個";
+			mes "沒有雞蛋的世界嗎？會";
+			mes "沒有麵包、糕點、蛋糕";
+			mes "或糖霜... 冰淇淋";
+			mes "會稀很多... ";
+			mes "惡作劇就不會那麼有趣... ";
 			next;
 			break;
 		case 2:
-			mes "[Egg Salesman]";
-			mes "I'm not really sure why, but";
-			mes "Chicken Eggs are popular";
-			mes "around this time of year.";
-			mes "They're hot items right";
-			mes "now, and I aim to cash in!";
+			mes "[雞蛋商人]";
+			mes "我真的不太清楚為什麼，但";
+			mes "雞蛋在這個時候";
+			mes "很受歡迎。";
+			mes "它們現在是熱門商品";
+			mes "而我的目標是賺一筆！";
 			next;
 			break;
 		case 3:
-			mes "[Egg Salesman]";
-			mes "Great! How many do you";
-			mes "want? Remember that each";
-			mes "Chicken Egg is 500 zeny.";
-			mes "Remember that you won't";
-			mes "always be able to buy";
-			mes "Chicken Eggs so easily!";
+			mes "[雞蛋商人]";
+			mes "太棒了！你想要";
+			mes "多少？請記住，每個";
+			mes "雞蛋是 500 zeny。";
+			mes "記住，你不會";
+			mes "總是能這麼容易地買到";
+			mes "雞蛋！";
 			next;
 			while(1) {
 				input .@input;
 				if (.@input == 0) {
-					mes "[Egg Salesman]";
-					mes "Hey, if you're not";
-					mes "going to buy anything,";
-					mes "then would you mind getting";
-					mes "out of the way so I can";
-					mes "help out my customers?";
+					mes "[雞蛋商人]";
+					mes "嘿，如果你不";
+					mes "打算買任何東西，";
+					mes "那麼你可以離開";
+					mes "這樣我才能";
+					mes "幫助我的其他顧客嗎？";
 					close;
 				}
 				else if (.@input < 0 || .@input > 1000) {
-					mes "[Egg Salesman]";
-					mes "Hey, you mind giving";
-					mes "me a real number? I also";
-					mes "can't sell you more than";
-					mes "1,000 Chicken Eggs at a time,";
-					mes "you know. C'mon, tell me how";
-					mes "many you want for real now.";
+					mes "[雞蛋商人]";
+					mes "嘿，你可以給我";
+					mes "一個真實的數字嗎？我也";
+					mes "不能一次賣給你超過";
+					mes "1,000 個雞蛋，";
+					mes "你知道。拜託，現在告訴我你要";
+					mes "多少個真的。";
 					next;
 				}
 				else {
 					set .@egg_zeny,.@input*500;
 					if (Zeny < .@egg_zeny) {
-						mes "[Egg Salesman]";
-						mes "You don't have enough Zeny.";
+						mes "[雞蛋商人]";
+						mes "你沒有足夠的 Zeny。";
 						next;
-						mes "[Egg Salesman]";
-						mes "No discount, go and get enough Zeny.";
+						mes "[雞蛋商人]";
+						mes "不打折，去賺夠 Zeny 再來。";
 						close;
 					}
 					else {
 						if (checkweight(7605,.@input) == 0) {
-							mes "[Egg Salesman]";
-							mes "Hey, I know you really";
-							mes "want to buy some Chicken";
-							mes "Eggs, but you won't be able";
-							mes "to carry that much now. Why";
-							mes "don't you free up some";
-							mes "Inventory space first?.";
+							mes "[雞蛋商人]";
+							mes "嘿，我知道你真的很";
+							mes "想買一些雞蛋";
+							mes "但你現在無法";
+							mes "攜帶那麼多。為什麼";
+							mes "不先空出一些";
+							mes "物品欄空間呢？";
 							close;
 						}
 						else {
-							mes "[Egg Salesman]";
-							mes "Here's your Chicken Eggs!";
-							mes "I guess there's some festival";
-							mes "happening where you'll need";
-							mes "them, but I don't know anything";
-							mes "about that. Well, have a good";
-							mes "time, and I'll see you again!";
+							mes "[雞蛋商人]";
+							mes "這是你的雞蛋！";
+							mes "我想是有一些慶典";
+							mes "活動會需要";
+							mes "它們，但我對此一無所知";
+							mes "。好吧，玩得開心";
+							mes "，我會再見到你的！";
 							set Zeny, Zeny-.@egg_zeny;
 							getitem 7605,.@input; //Chicken_Egg
 							close;
@@ -128,51 +128,51 @@ prontera,111,99,5	script	Egg Salesman#prt::EggVendor	98,{
 				}
 			}
 		case 4:
-			mes "[Egg Salesman]";
-			mes "Not interested in buying";
-			mes "Chicken Eggs, huh? Well,";
-			mes "word's going around that";
-			mes "there's some kind of festival";
-			mes "where they'll come in handy...";
-			mes "Can you really pass this up?";
+			mes "[雞蛋商人]";
+			mes "對買";
+			mes "雞蛋沒興趣，嗯？好吧，";
+			mes "有傳言說";
+			mes "會有一些慶典";
+			mes "它們會派上用場...";
+			mes "你真的能錯過這個嗎？";
 			close;
 		}
 	}
 }
 
-prontera,113,98,0	script	Dowdy Matron#prt::EggMatron	701,{
-	mes "[Dowdy Matron]";
-	mes "This festival is going";
-	mes "to be so much fun! Ooh!";
-	mes "I should buy some Chicken";
-	mes "Eggs to make some decorations.";
+prontera,113,98,0	script	寒酸的婦人#prt::EggMatron	701,{
+	mes "[寒酸的婦人]";
+	mes "這個慶典會";
+	mes "非常有趣！噢！";
+	mes "我應該買一些雞蛋";
+	mes "來做一些裝飾。";
 	next;
-	mes "[Dowdy Matron]";
-	mes "Speaking of which,";
-	mes "I've heard the nun that";
-	mes "can make Holy Eggs is back";
-	mes "in Prontera. Though, I think";
-	mes "she's using Chicken Eggs rather";
-	mes "than regular Eggs to make them.";
+	mes "[寒酸的婦人]";
+	mes "說到這，";
+	mes "我聽說那位會";
+	mes "製作聖蛋的修女又回到";
+	mes "普隆德拉了。不過，我想";
+	mes "她是用雞蛋而不是";
+	mes "普通的蛋來製作聖蛋。";
 	close;
 }
 
-prontera,108,96,5	script	Cantankerous Geezer#prt::EggGeezer	709,{
-	mes "[Cantankerous Geezer]";
-	mes ".Hey, do you know how";
-	mes "Chicken Eggs got to be so";
-	mes "expensive? I mean, 500 zeny";
-	mes "is a lot! I think it's because";
-	mes "some guy in Morocc is trying";
-	mes "to amass a ton of Holy Eggs!";
+prontera,108,96,5	script	愛抱怨的老頭#prt::EggGeezer	709,{
+	mes "[愛抱怨的老頭]";
+	mes "嘿，你知道";
+	mes "雞蛋怎麼會變得這麼";
+	mes "貴嗎？我的意思是，500 zeny";
+	mes "很多耶！我認為是因為";
+	mes "摩洛哥的某個人正試圖";
+	mes "積累大量的聖蛋！";
 	next;
-	mes "[Cantankerous Geezer]";
-	mes "I don't know what he's";
-	mes "offering for those Holy";
-	mes "Eggs, but adventurers are";
-	mes "coming to him with Holy Eggs";
-	mes "in droves. I wonder what he's";
-	mes "giving to them in return?";
+	mes "[愛抱怨的老頭]";
+	mes "我不知道他";
+	mes "用什麼來交換那些聖";
+	mes "蛋，但冒險家們";
+	mes "帶著成群的聖蛋來到";
+	mes "他那裡。我想知道他";
+	mes "給了他們什麼回報？";
 	close2;
 	if (easter2008 < 1) {
 		set easter2008,1;
@@ -181,100 +181,99 @@ prontera,108,96,5	script	Cantankerous Geezer#prt::EggGeezer	709,{
 }
 
 // Payon
-payon,172,173,5	duplicate(EggVendor)	Egg Salesman#pay	98
-payon,175,171,1	duplicate(EggMatron)	Dowdy Matron#pay	701
-payon,170,171,5	duplicate(EggGeezer)	Cantankerous Geezer#pay	709
+payon,172,173,5	duplicate(EggVendor)	雞蛋商人#pay	98
+payon,175,171,1	duplicate(EggMatron)	寒酸的婦人#pay	701
+payon,170,171,5	duplicate(EggGeezer)	愛抱怨的老頭#pay	709
 
 // Geffen
-geffen,136,64,5	duplicate(EggVendor)	Egg Salesman#gef	98
-geffen,138,63,1	duplicate(EggMatron)	Dowdy Matron#gef	701
-geffen,133,63,5	duplicate(EggGeezer)	Cantankerous Geezer#gef	709
+geffen,136,64,5	duplicate(EggVendor)	雞蛋商人#gef	98
+geffen,138,63,1	duplicate(EggMatron)	寒酸的婦人#gef	701
+geffen,133,63,5	duplicate(EggGeezer)	愛抱怨的老頭#gef	709
 
 // Al De Baran
-aldebaran,133,119,5	duplicate(EggVendor)	Egg Salesman#alde	98
-aldebaran,135,117,1	duplicate(EggMatron)	Dowdy Matron#ald	701
-aldebaran,132,116,5	duplicate(EggGeezer)	Cantankerous Geezer#ald	709
+aldebaran,133,119,5	duplicate(EggVendor)	雞蛋商人#alde	98
+aldebaran,135,117,1	duplicate(EggMatron)	寒酸的婦人#ald	701
+aldebaran,132,116,5	duplicate(EggGeezer)	愛抱怨的老頭#ald	709
 
 // Alberta
-alberta,90,55,5	duplicate(EggVendor)	Egg Salesman#alb	98
-alberta,92,53,1	duplicate(EggMatron)	Dowdy Matron#alb	701
-alberta,88,52,5	duplicate(EggGeezer)	Cantankerous Geezer#alb	709
+alberta,90,55,5	duplicate(EggVendor)	雞蛋商人#alb	98
+alberta,92,53,1	duplicate(EggMatron)	寒酸的婦人#alb	701
+alberta,88,52,5	duplicate(EggGeezer)	愛抱怨的老頭#alb	709
 
 // Create Holy Eggs
-prontera,230,312,3	script	Nerlen#es07	79,{
-	mes "[Nerlen]";
-	mes "Hello! If you'd like,";
-	mes "I can take your Chicken";
-	mes "Eggs and transform them";
-	mes "into Holy Eggs. It's something";
-	mes "I do for others in celebration";
-	mes "of this holy season.";
+prontera,230,312,3	script	奈倫#es07	79,{
+	mes "[奈倫]";
+	mes "哈囉！如果你願意，";
+	mes "我可以把你的雞蛋";
+	mes "變成聖蛋。這是";
+	mes "我在這個神聖的季節";
+	mes "為他人做的事情，以示慶祝。";
 	next;
-	mes "[Nerlen]";
-	mes "Holy Eggs represent";
-	mes "rebirth and, fittingly,";
-	mes "can be used to restore";
-	mes "life to your friends.";
-	mes "Would you like me to";
-	mes "make some for you?";
+	mes "[奈倫]";
+	mes "聖蛋代表";
+	mes "重生，而且恰如其分地，";
+	mes "可以用來恢復";
+	mes "你朋友的生命。";
+	mes "你想要我為你";
+	mes "製作一些嗎？";
 	next;
-	switch(select("What do I need to make Holy Eggs?:I want to make Holy Eggs.:Maybe next time.")) {
+	switch(select("製作聖蛋需要什麼？:我想製作聖蛋。:下次再說吧。")) {
 	case 1:
-		mes "[Nerlen]";
-		mes "For each Holy Egg";
-		mes "that you want me to";
-		mes "make, you will need";
-		mes "to bring me...";
+		mes "[奈倫]";
+		mes "對於每個你想要";
+		mes "我製作的聖蛋";
+		mes "，你需要";
+		mes "帶給我...";
 		next;
-		mes "[Nerlen]";
-		mes "^4D4DFF1 White Herb^000000,";
-		mes "^4D4DFF1 Green Herb^000000,";
-		mes "^4D4DFF1 Yellow Herb^000000,";
-		mes "^4D4DFF1 Holy Water^000000, and";
-		mes "^4D4DFF1 Chicken Egg^000000.";
+		mes "[奈倫]";
+		mes "^4D4DFF1 白色藥草^000000，";
+		mes "^4D4DFF1 綠色藥草^000000，";
+		mes "^4D4DFF1 黃色藥草^000000，";
+		mes "^4D4DFF1 聖水^000000，以及";
+		mes "^4D4DFF1 雞蛋^000000。";
 		close;
 	case 2:
-		mes "[Nerlen]";
-		mes "Alright, how many";
-		mes "Holy Eggs would you";
-		mes "like me to make you?";
-		mes "I can only make up to";
-		mes "10 Holy Eggs at a time.";
-		mes "Enter ''0'' to cancel.";
+		mes "[奈倫]";
+		mes "好的，你想要";
+		mes "我為你製作";
+		mes "多少個聖蛋？";
+		mes "我一次最多只能製作";
+		mes "10 個聖蛋。";
+		mes "輸入 ''0'' 以取消。";
 		next;
 		while(1) {
 			input .@input;
 			if (.@input == 0) {
-				mes "[Nerlen]";
-				mes "Oh, you changed your";
-				mes "mind? Feel free to visit me";
-				mes "whenever you want me to";
-				mes "make you some Holy Eggs~";
+				mes "[奈倫]";
+				mes "喔，你改變";
+				mes "主意了嗎？隨時都可以來找我";
+				mes "只要你想要我為你";
+				mes "製作一些聖蛋～";
 				close;
 			}
 			else if (.@input < 0 || .@input > 10) {
-				mes "[Nerlen]";
-				mes "I'm sorry, but I can only";
-				mes "make up to 10 Holy Eggs";
-				mes "at a time. If you wanted to";
-				mes "cancel, then just enter ''0.''";
+				mes "[奈倫]";
+				mes "我很抱歉，但我一次";
+				mes "最多只能製作 10 個聖蛋";
+				mes "。如果你想";
+				mes "取消，那就輸入 ''0''。";
 				next;
 			}
 			else {
 				if ((countitem(509) < .@input) || (countitem(511) < .@input) || (countitem(508) < .@input) || (countitem(523) < .@input) || (countitem(7605) < .@input)) {
-					mes "[Nerlen]";
-					mes "I'm sorry, but you don't";
-					mes "have enough items to make";
-					mes "Holy Eggs. You need the";
-					mes "following for me to create";
-					mes "each Holy Egg for you.";
+					mes "[奈倫]";
+					mes "我很抱歉，但你沒有";
+					mes "足夠的物品來製作";
+					mes "聖蛋。你需要以下";
+					mes "的物品我才能為你";
+					mes "製作每個聖蛋。";
 					next;
-					mes "[Nerlen]";
-					mes "^4D4DFF1 White Herb^000000,";
-					mes "^4D4DFF1 Green Herb^000000,";
-					mes "^4D4DFF1 Yellow Herb^000000,";
-					mes "^4D4DFF1 Holy Water^000000, and";
-					mes "^4D4DFF1 Chicken Egg^000000.";
+					mes "[奈倫]";
+					mes "^4D4DFF1 白色藥草^000000，";
+					mes "^4D4DFF1 綠色藥草^000000，";
+					mes "^4D4DFF1 黃色藥草^000000，";
+					mes "^4D4DFF1 聖水^000000，以及";
+					mes "^4D4DFF1 雞蛋^000000。";
 					close;
 				}
 				else {
@@ -283,12 +282,12 @@ prontera,230,312,3	script	Nerlen#es07	79,{
 			}
 		}
 		if (checkweight(12019,.@input) == 0) {
-			mes "[Nerlen]";
-			mes "I'm sorry, but you";
-			mes "won't be able to carry";
-			mes "that many Holy Eggs now...";
-			mes "You'd better free up more";
-			mes "space in your Inventory first.";
+			mes "[奈倫]";
+			mes "我很抱歉，但你";
+			mes "現在無法攜帶";
+			mes "那麼多的聖蛋...";
+			mes "你最好先空出更多";
+			mes "物品欄空間。";
 			close;
 		}
 		else {
@@ -298,17 +297,17 @@ prontera,230,312,3	script	Nerlen#es07	79,{
 			delitem 523,.@input; //Holy_Water
 			delitem 7605,.@input; //Egg
 			getitem 12019,.@input; //Holy_Egg
-			mes "[Nerlen]";
-			mes "Thank you!";
-			mes "I hope you enjoy";
-			mes "these Holy Eggs~";
-			mes "Hope you to be with God's love.";
+			mes "[奈倫]";
+			mes "謝謝！";
+			mes "希望你喜歡";
+			mes "這些聖蛋～";
+			mes "希望你與上帝的愛同在。";
 			close;
 		}
 	case 3:
-		mes "[Nerlen]";
-		mes "Alright, I understand.";
-		mes "May God bless you.";
+		mes "[奈倫]";
+		mes "好的，我明白了。";
+		mes "願上帝保佑你。";
 		close;
 	}
 }
@@ -316,285 +315,282 @@ prontera,230,312,3	script	Nerlen#es07	79,{
 // Easter Quest
 morocc,131,26,5	script	Secret Corps#egg	880,{
 	if (easter2008 == 1) {
-		mes "[Corps Member]";
-		mes "How are you doing?";
-		mes "Death... It's inescapable.";
-		mes "Even you'll die someday. But...";
+		mes "[隊員]";
+		mes "你好嗎？";
+		mes "死亡... 無法逃避。";
+		mes "即使是你總有一天也會死。但是...";
 		next;
 		if (countitem(12019) > 0) {
-			mes "[Corps Member]";
-			mes "Oh, yes. That's it.";
-			mes "You have it. The egg you";
-			mes "hold has a secret power.";
-			mes "I think that... Yes. Someone";
-			mes "like you would understand";
-			mes "us, fit well into our group.";
+			mes "[隊員]";
+			mes "喔，對了。就是那個。";
+			mes "你拿著的蛋有一種神秘的力量。";
+			mes "我想... 是的。像你這樣的人";
+			mes "會理解我們，很適合加入我們的團隊。";
 			next;
-			mes "[Corps Member]";
-			mes "Why don't";
-			mes "you... Join us?";
+			mes "[隊員]";
+			mes "你為什麼不";
+			mes "加入我們呢？";
 			next;
-			switch(select("What for?:Um... But you're suspicious!")) {
+			switch(select("為了什麼？:嗯... 但你們很可疑！")) {
 			case 1:
-				mes "[Corps Member]";
-				mes "I see I've caught your";
-				mes "interest! Well, if you'd";
-				mes "like to join us and learn";
-				mes "more, then why don't you";
-				mes "bring me 10 Holy Eggs?";
-				mes "That is my condition.";
+				mes "[隊員]";
+				mes "看來我引起了你的";
+				mes "興趣！好吧，如果你想";
+				mes "加入我們並瞭解";
+				mes "更多，那麼你為什麼不";
+				mes "帶給我 10 個聖蛋呢？";
+				mes "這就是我的條件。";
 				set easter2008,2;
 				close;
 			case 2:
-				mes "[Corps Member]";
-				mes "Really? Well, I suppose";
-				mes "I can't help it. Let me";
-				mes "assure you that our";
-				mes "organization works";
-				mes "for the greater good.";
+				mes "[隊員]";
+				mes "真的嗎？好吧，我想";
+				mes "我也沒辦法。讓我";
+				mes "向你保證，我們的";
+				mes "組織是為了";
+				mes "更大的利益而努力。";
 				close;
 			}
 		}
 		else {
-			mes "[Corps Member]";
-			mes "We should all enjoy";
-			mes "life while we still can.";
-			mes "Who knows? Perhaps";
-			mes "there will be other lives";
-			mes "to live after this one.";
-			mes "Perhaps, perhaps....";
+			mes "[隊員]";
+			mes "我們都應該享受";
+			mes "還能享受的生活。";
+			mes "誰知道呢？或許";
+			mes "來世還會有其他";
+			mes "生命可以體驗。";
+			mes "或許，或許....";
 			close;
 		}
 	}
 	else if (easter2008 == 2) {
-		mes "[Corps Member]";
-		mes "Ah, you have returned.";
-		mes "Did you still wish to";
-		mes "join our ranks? If so,";
-		mes "I hope you brought the";
-		mes "10 Holy Eggs I require.";
+		mes "[隊員]";
+		mes "啊，你回來了。";
+		mes "你仍然希望";
+		mes "加入我們的行列嗎？如果是這樣，";
+		mes "我希望你帶來了";
+		mes "我需要的 10 個聖蛋。";
 		next;
-		switch(select("Give Holy Eggs:Don't Give Holy Eggs")) {
+		switch(select("給予聖蛋:不給予聖蛋")) {
 		case 1:
-			mes "[Corps Member]";
-			mes "So you do wish to";
-			mes "join our organization.";
-			mes "First, let me check if you";
-			mes "brought the Holy Eggs...";
+			mes "[隊員]";
+			mes "所以你確實希望";
+			mes "加入我們的組織。";
+			mes "首先，讓我檢查你是否";
+			mes "帶來了聖蛋...";
 			next;
 			if (countitem(12019) > 9) {
-				mes "[Corps Member]";
-				mes "Very well. In return";
-				mes "for these Holy Eggs, let";
-				mes "me give you a small present";
-				mes "for joining us. Now, I can";
-				mes "tell you about what we do.";
+				mes "[隊員]";
+				mes "很好。作為交換";
+				mes "這些聖蛋，讓我";
+				mes "給你一份小禮物";
+				mes "，恭喜你加入我們。現在，我可以";
+				mes "告訴你我們做什麼。";
 				delitem 12019,10; //Holy_Egg
 				set easter2008,3;
 				getitem 644,2; //Gift_Box
 				next;
-				mes "[Corps Member]";
-				mes "^333333*Cough Cough*^000000";
-				mes "Excuse me, I've got--";
-				mes "^333333*Cough!*^000000 A... A bit of a";
-				mes "sore throat. Give me a sec...";
+				mes "[隊員]";
+				mes "^333333*咳咳*^000000";
+				mes "不好意思，我--";
+				mes "^333333*咳！*^000000 有... 有點";
+				mes "喉嚨痛。給我一秒...";
 				close;
 			}
 			else {
-				mes "[Corps Member]";
-				mes "Hm. You don't have enough";
-				mes "Holy Eggs to meet the condition";
-				mes "I set for you. Did you leave";
-				mes "them in your Storage?";
+				mes "[隊員]";
+				mes "嗯。你沒有足夠的";
+				mes "聖蛋來達到";
+				mes "我為你設定的條件。你是不是把";
+				mes "它們留在你的倉庫裡了？";
 				close;
 			}
 		case 2:
-			mes "[Corps Member]";
-			mes "Hm? I suppose I can't";
-			mes "blame you for being a bit";
-			mes "suspicious of us. Let me";
-			mes "assure you that ours is";
-			mes "a mission of holiness.";
+			mes "[隊員]";
+			mes "嗯？我想我不能";
+			mes "怪你對我們有點";
+			mes "懷疑。讓我";
+			mes "向你保證，我們的";
+			mes "是一項神聖的使命。";
 			close;
 		}
 	}
 	else if (easter2008 == 3) {
-		mes "[Corps Member]";
-		mes "We are an organization";
-		mes "that is dedicated to...";
-		mes "Resurrecting dead heroes!";
+		mes "[隊員]";
+		mes "我們是一個";
+		mes "致力於...";
+		mes "復活已故英雄的組織！";
 		next;
-		mes "[Corps Member]";
-		mes "Those Holy Eggs that you've";
-		mes "brought have the power to";
-		mes "restore life to the dead.";
-		mes "In large quantities...";
-		mes "They can even revive";
-		mes "ancient fallen heroes!";
+		mes "[隊員]";
+		mes "你帶來的那些聖蛋";
+		mes "有能力";
+		mes "恢復死者的生命。";
+		mes "在大量的情況下...";
+		mes "它們甚至可以復活";
+		mes "古代墮落的英雄！";
 		next;
-		mes "[Corps Member]";
-		mes "When you bring me";
-		mes "33 Holy Eggs, I will";
-		mes "enchant them so that you";
-		mes "can use them on areas where";
-		mes "ancient heroes had died.";
+		mes "[隊員]";
+		mes "當你帶給我";
+		mes "33個聖蛋時，我會";
+		mes "為它們施法，以便你";
+		mes "可以在古代英雄們";
+		mes "犧牲的地方使用它們。";
 		next;
-		mes "[Corps Member]";
-		mes "Go and bring me";
-		mes "33 Holy Eggs! I shall be";
-		mes "waiting here for your return...";
+		mes "[隊員]";
+		mes "去帶給我";
+		mes "33個聖蛋！我會在這裡";
+		mes "等待你的歸來...";
 		set easter2008,4;
 		close;
 	}
 	else if (easter2008 == 4) {
-		mes "[Corps Member]";
-		mes "Ah, you've returned";
-		mes "Now, did you bring me";
-		mes "33 Holy Eggs for your task?";
+		mes "[隊員]";
+		mes "啊，你回來了";
+		mes "那麼，你帶給我了";
+		mes "33個聖蛋來執行任務嗎？";
 		next;
-		switch(select("Give Holy Eggs:Don't Give Holy Eggs")) {
+		switch(select("給予聖蛋:不給予聖蛋")) {
 		case 1:
 			if (countitem(12019) > 32) {
-				mes "[Corps Member]";
-				mes "Ah, these will do!";
-				mes "Now, make a note of the";
-				mes "destination I describe as";
-				mes "I infuse these Holy Eggs";
-				mes "with additional magic.";
+				mes "[隊員]";
+				mes "啊，這些就夠了！";
+				mes "現在，記下我所描述的";
+				mes "目的地，因為";
+				mes "我將為這些聖蛋";
+				mes "注入額外的魔法。";
 				next;
 				if (BaseLevel < 41) {
-					mes "[Corps Member]";
-					mes "You must go to the";
-					mes "entrance of Payon Dungeon,";
-					mes "where a nimble hero has fallen.";
-					mes "Sacrifice the Holy Eggs there,";
-					mes "and then return to me. Now...";
-					mes "Go, and bring him back to life!";
+					mes "[隊員]";
+					mes "你必須前往";
+					mes "斐楊地監的入口，";
+					mes "那裡有一位身手矯健的英雄倒下了。";
+					mes "在那裡犧牲聖蛋，";
+					mes "然後回到我這裡。現在...";
+					mes "去吧，讓他復活！";
 					set easter2008,5;
 					close;
 				}
 				else if ((BaseLevel > 40) && (BaseLevel < 61)) {
-					mes "[Corps Member]";
-					mes "Go to the 3rd level of";
-					mes "Izlude dungeon... A hero.";
-					mes "that sought wisdom perished";
-					mes "at the entrance to the 4th";
-					mes "level. Sacrifice the Holy Eggs";
-					mes "there, and return him to life!";
+					mes "[隊員]";
+					mes "前往伊茲魯德地監的第三層... 一位英雄";
+					mes "為了尋求智慧而犧牲了";
+					mes "在第四層的入口。";
+					mes "在那裡犧牲聖蛋，";
+					mes "讓他復活！";
 					set easter2008,6;
 					close;
 				}
 				else if ((BaseLevel > 60) && (BaseLevel < 81)) {
-					mes "[Corps Member]";
-					mes "Go to the abandoned mine";
-					mes "dungeon where a brave hero";
-					mes "died to protect his comrades.";
-					mes "Sacrifice the Holy Eggs as soon";
-					mes "as you get to the 3rd floor.";
-					mes "Go, and bring him back to life!";
+					mes "[隊員]";
+					mes "前往廢棄的礦坑";
+					mes "地監，那裡有一位勇敢的英雄";
+					mes "為了保護他的同伴而犧牲了。";
+					mes "一到達第三層就";
+					mes "犧牲聖蛋。";
+					mes "去吧，讓他復活！";
 					set easter2008,7;
 					close;
 				}
 				else {
-					mes "[Corps Member]";
-					mes "Go to Glastheim, and";
-					mes "sacrifice the Holy Eggs";
-					mes "as soon as you enter the";
-					mes "2nd floor. A hero perished";
-					mes "there, but you shall bring";
-					mes "him back to the living!";
+					mes "[隊員]";
+					mes "前往吉芬，並";
+					mes "一進入";
+					mes "第二層就犧牲聖蛋。";
+					mes "一位英雄在那裡犧牲了";
+					mes "但是你將會";
+					mes "讓他起死回生！";
 					set easter2008,8;
 					close;
 				}
 			}
 			else {
-				mes "[Corps Member]";
-				mes "Hm? This isn't";
-				mes "33 Holy Eggs. Did you";
-				mes "leave some in your Storage?";
+				mes "[隊員]";
+				mes "嗯？這不是";
+				mes "33個聖蛋。你是不是";
+				mes "把一些放在你的倉庫裡了？";
 				close;
 			}
 		case 2:
-			mes "[Corps Member]";
-			mes "Don't you understand";
-			mes "the righteousness of";
-			mes "our cause? Returning fallen";
-			mes "heroes will bring peace to";
-			mes "our lands much more quickly!";
+			mes "[隊員]";
+			mes "你不明白";
+			mes "我們事業的正義性嗎？";
+			mes "讓犧牲的";
+			mes "英雄們復活，會更快地";
+			mes "為我們的土地帶來和平！";
 			close;
 		}
 	}
 	else if (easter2008 >= 5 && easter2008 <= 8) {
-		mes "[Corps Member]";
-		mes "Did you forget";
-		mes "where you must go?";
-		mes "Let me remind you";
-		mes "so that you do not";
-		mes "lose your way...";
+		mes "[隊員]";
+		mes "你忘記了嗎";
+		mes "你必須去哪裡？";
+		mes "讓我提醒你";
+		mes "這樣你才不會";
+		mes "迷路...";
 		next;
-		mes "[Corps Member]";
+		mes "[隊員]";
 		switch(easter2008) {
 		case 5:
-			mes "[Corps Member]";
-			mes "You must go to the";
-			mes "entrance of Payon Dungeon,";
-			mes "where a nimble hero has fallen.";
-			mes "Sacrifice the Holy Eggs there,";
-			mes "and then return to me. Now...";
-			mes "Go, and bring him back to life!";
+			mes "[隊員]";
+			mes "你必須前往";
+			mes "斐楊地監的入口，";
+			mes "那裡有一位身手矯健的英雄倒下了。";
+			mes "在那裡犧牲聖蛋，";
+			mes "然後回到我這裡。現在...";
+			mes "去吧，讓他復活！";
 			close;
 		case 6:
-			mes "[Corps Member]";
-			mes "Go to the 3rd level of";
-			mes "Izlude dungeon... A hero.";
-			mes "that sought wisdom perished";
-			mes "at the entrance to the 4th";
-			mes "level. Sacrifice the Holy Eggs";
-			mes "there, and return him to life!";
+			mes "[隊員]";
+			mes "前往伊茲魯德地監的第三層... 一位英雄";
+			mes "為了尋求智慧而犧牲了";
+			mes "在第四層的入口。";
+			mes "在那裡犧牲聖蛋，";
+			mes "讓他復活！";
 			close;
 		case 7:
-			mes "[Corps Member]";
-			mes "Go to the abandoned mine";
-			mes "dungeon where a brave hero";
-			mes "died to protect his comrades.";
-			mes "Sacrifice the Holy Eggs as soon";
-			mes "as you get to the 3rd floor.";
-			mes "Go, and bring him back to life!";
+			mes "[隊員]";
+			mes "前往廢棄的礦坑";
+			mes "地監，那裡有一位勇敢的英雄";
+			mes "為了保護他的同伴而犧牲了。";
+			mes "一到達第三層就";
+			mes "犧牲聖蛋。";
+			mes "去吧，讓他復活！";
 			close;
 		case 8:
-			mes "Go to Glastheim, and";
-			mes "sacrifice the Holy Eggs";
-			mes "as soon as you enter the";
-			mes "2nd floor. A hero perished";
-			mes "there, but you shall bring";
-			mes "him back to the living!";
+			mes "[隊員]";
+			mes "前往吉芬，並";
+			mes "一進入";
+			mes "第二層就犧牲聖蛋。";
+			mes "一位英雄在那裡犧牲了";
+			mes "但是你將會";
+			mes "讓他起死回生！";
 			close;
 		}
 	}
 	else if (easter2008 == 9) {
-		mes "[Corps Member]";
-		mes "Ah, I hope you've come";
-		mes "back with good news.";
-		mes "So did it work?";
+		mes "[隊員]";
+		mes "啊，我希望你帶著";
+		mes "好消息回來。";
+		mes "所以成功了嗎？";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "Actually...";
-		mes "Nothing happened....";
+		mes "事實上...";
+		mes "什麼都沒發生....";
 		next;
-		mes "[Corps Member]";
-		mes "What? It can't be.";
-		mes "The magic... It should";
-		mes "have been powerful enough...";
-		mes "Well, it's too bad that we";
-		mes "failed. Even so, I am grateful";
-		mes "for all your help thus far...";
+		mes "[隊員]";
+		mes "什麼？不可能吧。";
+		mes "那個魔法... 它應該";
+		mes "已經足夠強大了...";
+		mes "好吧，我們";
+		mes "失敗了，真是太可惜了。儘管如此，我很感謝";
+		mes "你到目前為止的所有幫助...";
 		next;
-		mes "[Corps Member]";
-		mes "We'll investigate what";
-		mes "could have gone wrong,";
-		mes "and then try again next year.";
-		mes "Farewell, my friend, and I hope";
-		mes "that you'll assist us again.";
+		mes "[隊員]";
+		mes "我們會調查";
+		mes "可能出錯的地方，";
+		mes "然後明年再試一次。";
+		mes "再見了，我的朋友，我希望";
+		mes "你能再次協助我們。";
 		set easter2008,10;
 		if (BaseLevel < 41) {
 			getexp 5000,0;
@@ -621,9 +617,9 @@ morocc,131,26,5	script	Secret Corps#egg	880,{
 		close;
 	}
 	else {
-		mes "[Corps Member]";
-		mes "Shh! Tell no one";
-		mes "that I am here.";
+		mes "[隊員]";
+		mes "噓！不要告訴任何人";
+		mes "我在這裡。";
 		close;
 	}
 }
@@ -631,20 +627,20 @@ morocc,131,26,5	script	Secret Corps#egg	880,{
 pay_dun00,22,127,0	script	Trace#egg1	844,{
 	if (easter2008 == 5) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "Well...";
-		mes "This is the place";
-		mes "the Corps Member";
-		mes "wanted me to find...";
-		mes "Time to use all of";
-		mes "these Holy Eggs.";
+		mes "嗯...";
+		mes "這裡就是";
+		mes "隊員";
+		mes "想要我找到的地方...";
+		mes "是時候用掉所有的";
+		mes "這些聖蛋了。";
 		next;
 		if (countitem(12019) > 32) {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Here we go...";
-			mes "Will this really bring";
-			mes "this ancient hero";
-			mes "back to life? I'm...";
-			mes "I'm kind of scared!";
+			mes "開始吧...";
+			mes "這真的能讓";
+			mes "這位古代英雄";
+			mes "起死回生嗎？我...";
+			mes "我有點害怕！";
 			next;
 			mes "[" + strcharinfo(0) + "]";
 			mes "...............................";
@@ -654,10 +650,10 @@ pay_dun00,22,127,0	script	Trace#egg1	844,{
 			mes "...............................";
 			next;
 			mes "[" + strcharinfo(0) + "]";
-			mes "^333333*Whew!*^000000 Nothing happened!";
-			mes "I guess I better go back to";
-			mes "that Corps Member and let";
-			mes "him know that it didn't work.";
+			mes "^333333*呼！*^000000 什麼都沒發生！";
+			mes "我想我最好回去找";
+			mes "那位隊員，告訴";
+			mes "他沒用的。";
 			close2;
 			delitem 12019,33; //Holy_Egg
 			set easter2008,9;
@@ -665,17 +661,18 @@ pay_dun00,22,127,0	script	Trace#egg1	844,{
 		}
 		else {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Huh? Where did I put";
-			mes "those 33 Holy Eggs";
-			mes "that I needed for this?";
+			mes "咦？我把";
+			mes "我需要用來做這件事的";
+			mes "那33個聖蛋";
+			mes "放在哪裡了？";
 			close;
 		}
 	}
 	else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "There was something";
-		mes "here, but I can't tell";
-		mes "for sure what it was...";
+		mes "這裡有什麼東西";
+		mes "但我不能確定";
+		mes "它到底是什麼...";
 		close;
 	}
 }
@@ -683,20 +680,20 @@ pay_dun00,22,127,0	script	Trace#egg1	844,{
 iz_dun02,340,346,0	script	Trace#egg	844,{
 	if (easter2008 == 6) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "Well...";
-		mes "This is the place";
-		mes "the Corps Member";
-		mes "wanted me to find...";
-		mes "Time to use all of";
-		mes "these Holy Eggs.";
+		mes "嗯...";
+		mes "這裡就是";
+		mes "隊員";
+		mes "想要我找到的地方...";
+		mes "是時候用掉所有的";
+		mes "這些聖蛋了。";
 		next;
 		if (countitem(12019) > 32) {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Here we go...";
-			mes "Will this really bring";
-			mes "this ancient hero";
-			mes "back to life? I'm...";
-			mes "I'm kind of scared!";
+			mes "開始吧...";
+			mes "這真的能讓";
+			mes "這位古代英雄";
+			mes "起死回生嗎？我...";
+			mes "我有點害怕！";
 			next;
 			mes "[" + strcharinfo(0) + "]";
 			mes "...............................";
@@ -706,10 +703,10 @@ iz_dun02,340,346,0	script	Trace#egg	844,{
 			mes "...............................";
 			next;
 			mes "[" + strcharinfo(0) + "]";
-			mes "^333333*Whew!*^000000 Nothing happened!";
-			mes "I guess I better go back to";
-			mes "that Corps Member and let";
-			mes "him know that it didn't work.";
+			mes "^333333*呼！*^000000 什麼都沒發生！";
+			mes "我想我最好回去找";
+			mes "那位隊員，告訴";
+			mes "他沒用的。";
 			close2;
 			delitem 12019,33; //Holy_Egg
 			set easter2008,9;
@@ -717,17 +714,18 @@ iz_dun02,340,346,0	script	Trace#egg	844,{
 		}
 		else {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Huh? Where did I put";
-			mes "those 33 Holy Eggs";
-			mes "that I needed for this?";
+			mes "咦？我把";
+			mes "我需要用來做這件事的";
+			mes "那33個聖蛋";
+			mes "放在哪裡了？";
 			close;
 		}
 	}
 	else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "There was something";
-		mes "here, but I can't tell";
-		mes "for sure what it was...";
+		mes "這裡有什麼東西";
+		mes "但我不能確定";
+		mes "它到底是什麼...";
 		close;
 	}
 }
@@ -735,20 +733,20 @@ iz_dun02,340,346,0	script	Trace#egg	844,{
 mjo_dun03,308,256,0	script	Trace#egg2	844,{
 	if (easter2008 == 7) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "Well...";
-		mes "This is the place";
-		mes "the Corps Member";
-		mes "wanted me to find...";
-		mes "Time to use all of";
-		mes "these Holy Eggs.";
+		mes "嗯...";
+		mes "這裡就是";
+		mes "隊員";
+		mes "想要我找到的地方...";
+		mes "是時候用掉所有的";
+		mes "這些聖蛋了。";
 		next;
 		if (countitem(12019) > 32) {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Here we go...";
-			mes "Will this really bring";
-			mes "this ancient hero";
-			mes "back to life? I'm...";
-			mes "I'm kind of scared!";
+			mes "開始吧...";
+			mes "這真的能讓";
+			mes "這位古代英雄";
+			mes "起死回生嗎？我...";
+			mes "我有點害怕！";
 			next;
 			mes "[" + strcharinfo(0) + "]";
 			mes "...............................";
@@ -758,10 +756,10 @@ mjo_dun03,308,256,0	script	Trace#egg2	844,{
 			mes "...............................";
 			next;
 			mes "[" + strcharinfo(0) + "]";
-			mes "^333333*Whew!*^000000 Nothing happened!";
-			mes "I guess I better go back to";
-			mes "that Corps Member and let";
-			mes "him know that it didn't work.";
+			mes "^333333*呼！*^000000 什麼都沒發生！";
+			mes "我想我最好回去找";
+			mes "那位隊員，告訴";
+			mes "他沒用的。";
 			close2;
 			delitem 12019,33; //Holy_Egg
 			set easter2008,9;
@@ -769,17 +767,18 @@ mjo_dun03,308,256,0	script	Trace#egg2	844,{
 		}
 		else {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Huh? Where did I put";
-			mes "those 33 Holy Eggs";
-			mes "that I needed for this?";
+			mes "咦？我把";
+			mes "我需要用來做這件事的";
+			mes "那33個聖蛋";
+			mes "放在哪裡了？";
 			close;
 		}
 	}
 	else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "There was something";
-		mes "here, but I can't tell";
-		mes "for sure what it was...";
+		mes "這裡有什麼東西";
+		mes "但我不能確定";
+		mes "它到底是什麼...";
 		close;
 	}
 }
@@ -787,20 +786,20 @@ mjo_dun03,308,256,0	script	Trace#egg2	844,{
 gl_prison,157,176,0	script	Trace#egg3	844,{
 	if (easter2008 == 8) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "Well...";
-		mes "This is the place";
-		mes "the Corps Member";
-		mes "wanted me to find...";
-		mes "Time to use all of";
-		mes "these Holy Eggs.";
+		mes "嗯...";
+		mes "這裡就是";
+		mes "隊員";
+		mes "想要我找到的地方...";
+		mes "是時候用掉所有的";
+		mes "這些聖蛋了。";
 		next;
 		if (countitem(12019) > 32) {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Here we go...";
-			mes "Will this really bring";
-			mes "this ancient hero";
-			mes "back to life? I'm...";
-			mes "I'm kind of scared!";
+			mes "開始吧...";
+			mes "這真的能讓";
+			mes "這位古代英雄";
+			mes "起死回生嗎？我...";
+			mes "我有點害怕！";
 			next;
 			mes "[" + strcharinfo(0) + "]";
 			mes "...............................";
@@ -810,10 +809,10 @@ gl_prison,157,176,0	script	Trace#egg3	844,{
 			mes "...............................";
 			next;
 			mes "[" + strcharinfo(0) + "]";
-			mes "^333333*Whew!*^000000 Nothing happened!";
-			mes "I guess I better go back to";
-			mes "that Corps Member and let";
-			mes "him know that it didn't work.";
+			mes "^333333*呼！*^000000 什麼都沒發生！";
+			mes "我想我最好回去找";
+			mes "那位隊員，告訴";
+			mes "他沒用的。";
 			close2;
 			delitem 12019,33; //Holy_Egg
 			set easter2008,9;
@@ -821,17 +820,18 @@ gl_prison,157,176,0	script	Trace#egg3	844,{
 		}
 		else {
 			mes "[" + strcharinfo(0) + "]";
-			mes "Huh? Where did I put";
-			mes "those 33 Holy Eggs";
-			mes "that I needed for this?";
+			mes "咦？我把";
+			mes "我需要用來做這件事的";
+			mes "那33個聖蛋";
+			mes "放在哪裡了？";
 			close;
 		}
 	}
 	else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "There was something";
-		mes "here, but I can't tell";
-		mes "for sure what it was...";
+		mes "這裡有什麼東西";
+		mes "但我不能確定";
+		mes "它到底是什麼...";
 		close;
 	}
 }

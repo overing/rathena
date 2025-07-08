@@ -12,9 +12,9 @@ ra_fild10,179,176,5	script	Merchant#ep18_gorge	4_EP18_MERCHANT,{
 	.@md_name$ = "Oz Labyrinth";
 
 	if (ep18_main == 29) {
-		mes "[Disguised Miriam]";
-		mes "We are now entering the <FONT SIZE = 14><B>^e5555eMaze of Oz^000000</FONT></B>.";
-		mes "^e5555ePlease finish your preparations^000000 and come back to me.";
+		mes "[偽裝的米利暗]";
+		mes "我們現在要進入 <FONT SIZE = 14><B>^e5555e奧茲迷宮^000000</FONT></B> 了。";
+		mes "^e5555e請完成您的準備^000000 然後回來找我。";
 		cutin "ep18_merchant.png",2;
 		erasequest 11717;
 		setquest 11719;
@@ -22,38 +22,38 @@ ra_fild10,179,176,5	script	Merchant#ep18_gorge	4_EP18_MERCHANT,{
 		close3;
 	}
 	if (ep18_main == 30) {
-		mes "[Disguised Miriam]";
-		mes "Then let's head to ^e5555e" + .@md_name$ + "^000000";
+		mes "[偽裝的米利暗]";
+		mes "那麼，我們前往 ^e5555e" + .@md_name$ + "^000000 吧";
 		next;
 		if (getcharid(1) == 0 || is_party_leader() == false) {
-			mes "[Disguised Miriam]";
-			mes "I think it would be a good idea to form a ^ff0000party before enter^000000..";
+			mes "[偽裝的米利暗]";
+			mes "我認為在^ff0000進入之前組隊^000000是個好主意..";
 			close;
 		}
-		switch( select( "Open the door.", "Enter.", "Quit." ) ) {
+		switch( select( "打開門。", "進入。", "離開。" ) ) {
 		case 1:
 			if (instance_create(.@md_name$) < 0) {
-				mes "Party: " + getpartyname(getcharid(1)) + "";
-				mes "Leader: " + strcharinfo(0) + "";
-				mes "^0000ff" + .@md_name$ + " ^000000- Unknown error";
+				mes "隊伍: " + getpartyname(getcharid(1)) + "";
+				mes "隊長: " + strcharinfo(0) + "";
+				mes "^0000ff" + .@md_name$ + " ^000000- 未知錯誤";
 				close;
 			}
-			mes "[Disguised Miriam]";
-			mes "It's better to wait a bit before entering.";
+			mes "[偽裝的米利暗]";
+			mes "最好稍等一下再進入。";
 			close;
 		case 2:
 			switch( instance_enter(.@md_name$) ) {
 			case IE_OTHER:
-				mes "[Disguised Miriam]";
-				mes "^ff0000An unknown error occurred.^000000";
+				mes "[偽裝的米利暗]";
+				mes "^ff0000發生了未知錯誤。^000000";
 				close;
 			case IE_NOINSTANCE:
-				mes "[Disguised Miriam]";
-				mes "Let's wait a bit and try again.";
+				mes "[偽裝的米利暗]";
+				mes "讓我們稍等一下再試一次。";
 				close;
 			case IE_NOMEMBER:
-				mes "[Disguised Miriam]";
-				mes "^ff0000Only a member of the party can enter the Memorial Dungeon.^000000";
+				mes "[偽裝的米利暗]";
+				mes "^ff0000只有隊伍的成員才能進入紀念迷宮。^000000";
 				close;
 			case IE_OK:
 				mapannounce "ra_fild10", "" + strcharinfo(0) + " of the party, " + getpartyname( getcharid(1) ) + ", is entering " + .@md_name$ + ".",bc_map,"0x00ff99",FW_NORMAL ,12;
@@ -63,9 +63,9 @@ ra_fild10,179,176,5	script	Merchant#ep18_gorge	4_EP18_MERCHANT,{
 			end;
 		}
 	}
-	mes "[Merchant]";
-	mes "It seems like someone was nearby but disappeared quickly.";
-	mes "Where did they go?";
+	mes "[商人]";
+	mes "好像有人在附近，但很快就消失了。";
+	mes "他們去哪裡了？";
 	cutin "ep18_merchant.png",2;
 	close3;
 
@@ -77,9 +77,9 @@ OnInit:
 
 // Step 1
 1@oz,284,164,3	script	Rope#outoz	4_ROPEPILE,{
-	mes "I think we can use the rope to climb up.";
+	mes "我想我們可以使用繩子爬上去。";
 	next;
-	if (select( "Use the rope to climb up.", "Do not use." ) == 2)
+	if (select( "使用繩子爬上去。", "不使用。" ) == 2)
 		end;
 	warp "ra_fild10",173,176;
 	end;
@@ -96,30 +96,30 @@ OnInit:
 	.@miriam2$ = instance_npcname("Miriam#ozmd2");
 
 	setpcblock PCBLOCK_NPC, true;
-	npctalk "Miriam: This is the entrance to the Labyrinth of Oz.", .@miriam1$;
+	npctalk "米利暗: 這是奧茲迷宮的入口。", .@miriam1$;
 	cutin "ep18_miriam_03.png",2;
 	sleep2 2000;
-	npctalk "Miriam: Everyone, please move carefully.", .@miriam1$;
+	npctalk "米利暗: 各位，請小心移動。", .@miriam1$;
 	sleep2 2000;
-	npctalk "Magi: Something hot and dusty...", .@maggi1$;
+	npctalk "瑪吉: 有些熱和塵土飛揚...", .@maggi1$;
 	cutin "4job_maggi_02.PNG",2;
 	cloakoffnpcself( .@maggi1$ );
 	cloakoffnpcself( .@mark1$ );
 	cloakoffnpcself( .@tamarin1$ );
 	sleep2 2000;
-	npctalk "Mark: Are you okay?", .@mark1$;
+	npctalk "馬克: 你還好嗎？", .@mark1$;
 	cutin "ep18_mark_01.png",2;
 	sleep2 2000;
-	npctalk "Miriam: Lava is flowing right below, so ash is always flying.", .@miriam1$;
+	npctalk "米利暗: 熔岩就在下方流動，所以灰燼總是在飛舞。", .@miriam1$;
 	cutin "ep18_miriam_03.png",2;
 	sleep2 2000;
-	npctalk "Miriam: There may be embers left in the lava ash, so please be careful.", .@miriam1$;
+	npctalk "米利暗: 熔岩灰燼中可能還有餘燼，所以請小心。", .@miriam1$;
 	sleep2 2000;
-	npctalk "Miriam: If you inhale it incorrectly, it will burn your lungs.", .@miriam1$;
+	npctalk "米利暗: 如果不小心吸入，會灼傷你的肺。", .@miriam1$;
 	sleep2 2000;
-	npctalk "Miriam: There don't seem to be any monsters around here, so it would be better to move slowly and check the situation again.", .@miriam1$;
+	npctalk "米利暗: 這裡似乎沒有任何怪物，所以最好慢慢移動，再次檢查情況。", .@miriam1$;
 	sleep2 2000;
-	npctalk "Miriam: First, please follow the road to the north.", .@miriam1$;
+	npctalk "米利暗: 首先，請沿著路往北走。", .@miriam1$;
 	sleep2 2000;
 	cutin "",255;
 	setpcblock PCBLOCK_NPC, false;
@@ -145,9 +145,9 @@ OnInit:
 	.@miriam2$ = instance_npcname("Miriam#ozmd2");
 	'miriam3$ = instance_npcname("Miriam#ozmd3");
 	setpcblock PCBLOCK_NPC, true;
-	npctalk "Miriam: If you cross the bridge in front of you, it's the real Maze of Oz.", .@miriam2$;
+	npctalk "米利暗: 如果你穿過你面前的橋，那就是真正的奧茲迷宮了。", .@miriam2$;
 	sleep2 2000;
-	npctalk "Miriam: You have to be very careful when crossing the bridge, so let's talk again at the bridge.", .@miriam2$;
+	npctalk "米利暗: 過橋時必須非常小心，所以讓我們在橋上再談一次。", .@miriam2$;
 	sleep2 2000;
 	setpcblock PCBLOCK_NPC, false;
 	disablenpc .@miriam2$;
@@ -172,18 +172,18 @@ OnInstanceInit:
 	.@tamarin3$ = instance_npcname("Tamarin#ozmd3");
 
 	setpcblock PCBLOCK_NPC, true;
-	npctalk "Miriam: This bridge is dangerous, so it would be better to share the luggage and cross it one at a time.", 'miriam3$;
+	npctalk "米利暗: 這座橋很危險，所以最好分擔行李，一次過一個人。", 'miriam3$;
 	sleep2 2000;
-	npctalk "Miriam: Then, I will cross first, so please follow me slowly. It will be helpful not to look under your feet.", 'miriam3$;
+	npctalk "米利暗: 那麼，我先過，請慢慢跟著我。 最好不要看你的腳下。", 'miriam3$;
 	sleep2 2000;
-	npctalk "Tamarin: Wow... I can't see the bottom.", .@tamarin3$;
+	npctalk "塔瑪琳: 哇...我看不到底部。", .@tamarin3$;
 	cloakoffnpcself( .@maggi3$ );
 	cloakoffnpcself( .@mark3$ );
 	cloakoffnpcself( .@tamarin3$ );
 	sleep2 2000;
-	npctalk "Magi: My legs look really worn out...", .@maggi3$;
+	npctalk "瑪吉: 我的腿看起來真的很累...", .@maggi3$;
 	sleep2 2000;
-	npctalk "Mark: Everyone be careful.", .@mark3$;
+	npctalk "馬克: 大家都小心。", .@mark3$;
 	sleep2 2000;
 	setpcblock PCBLOCK_NPC, false;
 	cloakonnpcself( .@maggi3$ );
@@ -231,20 +231,20 @@ OnEvent5:
 	.@ashtoad3$ = instance_npcname("Ash Toad#ozmd3");
 
 	setpcblock PCBLOCK_NPC, true;
-	mapannounce 'map_name$, "Miriam: Ah!! A monster!!!", bc_map, 0xB7EE,FW_NORMAL,16;
+	mapannounce 'map_name$, "米利暗: 啊!! 怪物!!!", bc_map, 0xB7EE,FW_NORMAL,16;
 	sleep2 1500;
-	mapannounce 'map_name$, "Miriam: I will take care of this rude guy.", bc_map, 0xB7EE,FW_NORMAL,16;
+	mapannounce 'map_name$, "米利暗: 我會處理這個無禮的傢伙。", bc_map, 0xB7EE,FW_NORMAL,16;
 	sleep2 1500;
-	mapannounce 'map_name$, "Tamarin: It also appeared in the back!!!", bc_map, 0xB7EE,FW_NORMAL,16;
+	mapannounce 'map_name$, "塔瑪琳: 它也出現在後面了!!!", bc_map, 0xB7EE,FW_NORMAL,16;
 	sleep2 2000;
 	enablenpc .@tamarin4$;
 	sleep2 500;
 	enablenpc .@ashtoad2$;
-	mapannounce 'map_name$, "Magi: Aaaah!!!", bc_map, 0xB7EE,FW_NORMAL,16;
+	mapannounce 'map_name$, "瑪吉: 哇啊!!!", bc_map, 0xB7EE,FW_NORMAL,16;
 	sleep2 500;
 	enablenpc .@maggi4$;
 	enablenpc .@mark4$;
-	mapannounce 'map_name$, "Mark: Please support the front!!!", bc_map, 0xB7EE,FW_NORMAL,16;
+	mapannounce 'map_name$, "馬克: 請支援前方!!!", bc_map, 0xB7EE,FW_NORMAL,16;
 	sleep2 1000;
 	'mob_count_oz = 0;
 	monster 'map_name$,145,274,"Ash Toad",21295,1, .@miriam4$ + "::OnMobDead"; // EP18_ASH_TOAD
@@ -274,59 +274,59 @@ OnMobDead:
 	.@miriam4$ = instance_npcname("Miriam#ozmd4");
 
 	setpcblock PCBLOCK_NPC, true;
-	npctalk "Tamarin: I did it!!!", .@tamarin4$;
+	npctalk "塔瑪琳: 我做到了!!!", .@tamarin4$;
 	disablenpc .@ashtoad2$;
 	sleep2 2000;
-	npctalk "Magi: This way too!!", .@maggi4$;
+	npctalk "瑪吉: 這裡也是!!", .@maggi4$;
 	disablenpc .@ashtoad3$;
 	sleep2 2000;
-	npctalk "Miriam: Huh... It wasn't a great monster, but it would have been dangerous for ordinary merchants.", .@miriam4$;
+	npctalk "米利暗: 呼... 它不是一個很強大的怪物，但對於普通的商人來說會很危險。", .@miriam4$;
 	disablenpc .@ashtoad1$;
 	sleep2 2000;
 	cloakoffnpcself( .@maram4$ );
-	npctalk "Maram : " + strcharinfo(0) + ", are you okay?", .@maram4$;
+	npctalk "馬蘭: " + strcharinfo(0) + ", 你還好嗎？", .@maram4$;
 	sleep2 2000;
-	npctalk "Miriam: You're late! Maram!!!", .@miriam4$;
+	npctalk "米利暗: 你遲到了！ 馬蘭!!!", .@miriam4$;
 	sleep2 2000;
-	npctalk "Maram: I was a little late because I met a monster on the way.", .@maram4$;
+	npctalk "馬蘭: 我遲到了一點，因為我在路上遇到了一個怪物。", .@maram4$;
 	sleep2 2000;
-	npctalk "Miriam: There were no monsters on the road we passed earlier.", .@miriam4$;
+	npctalk "米利暗: 我們之前經過的路上沒有怪物。", .@miriam4$;
 	sleep2 2000;
-	npctalk "Maram: Really? Where on earth do monsters like this come from?", .@maram4$;
+	npctalk "馬蘭: 真的嗎？ 這些怪物到底從哪裡來的？", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: It's a big problem because it's getting harder to move supplies because of these monsters.", .@maram4$;
+	npctalk "馬蘭: 這是一個大問題，因為由於這些怪物，運輸物資變得越來越困難。", .@maram4$;
 	sleep2 2000;
-	npctalk "Tamarin: What if you travel by land?", .@tamarin4$;
+	npctalk "塔瑪琳: 如果你走陸路旅行呢？", .@tamarin4$;
 	sleep2 2000;
-	npctalk "Tamarin: I heard there used to be a bridge across the canyon?", .@tamarin4$;
+	npctalk "塔瑪琳: 我聽說以前有一座橋橫跨峽谷？", .@tamarin4$;
 	sleep2 2000;
-	npctalk "Tamarin: There are still remains left...", .@tamarin4$;
+	npctalk "塔瑪琳: 仍然有殘骸留下...", .@tamarin4$;
 	sleep2 2000;
-	npctalk "Maram: It is said that the bridge above was destroyed after seeing natives crossing it while fleeing an attack by hardliners.", .@maram4$;
+	npctalk "瑪拉姆: 據說上面的橋在看到原住民逃離強硬派的襲擊時被摧毀。", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: The area across the bridge has become uninhabitable due to volcanic ash, so they must have been trying to kill him.", .@maram4$;
+	npctalk "瑪拉姆: 橋對面的區域因為火山灰而變得不適合居住，所以他們一定是想殺了他。", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: It's not difficult to build a bridge again...", .@maram4$;
+	npctalk "瑪拉姆: 再次建造一座橋並不困難...", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: Since we are in a hiding position, we can't build a bridge or something and advertise that we are hiding here.", .@maram4$;
+	npctalk "瑪拉姆: 由於我們處於隱藏位置，我們不能建造一座橋或什麼的，並宣傳我們躲在這裡。", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: Although it is dangerous and inconvenient now, we have no choice but to use the Maze of Oz.", .@maram4$;
+	npctalk "瑪拉姆: 雖然現在很危險和不方便，但我們別無選擇，只能使用奧茲迷宮。", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: Because it's in this condition, it may be that it hasn't been discovered until now.", .@maram4$;
+	npctalk "瑪拉姆: 因為它處於這種狀態，也許直到現在才被發現。", .@maram4$;
 	sleep2 2000;
-	npctalk "Miriam: If the Maze of Oz didn't exist...", .@miriam4$;
+	npctalk "米莉安: 如果沒有奧茲迷宮...", .@miriam4$;
 	sleep2 2000;
-	npctalk "Miriam: It must have been much harder than it is now.", .@miriam4$;
+	npctalk "米莉安: 肯定比現在更困難。", .@miriam4$;
 	sleep2 2000;
-	npctalk "Maram: That's right.", .@maram4$;
+	npctalk "瑪拉姆: 沒錯。", .@maram4$;
 	sleep2 2000;
-	npctalk "Maram: Now then, shall we walk down the lovely maze of Oz again?", .@maram4$;
+	npctalk "瑪拉姆: 那麼，我們再走一次可愛的奧茲迷宮吧？", .@maram4$;
 	sleep2 2000;
-	npctalk "Miriam: What do you mean...", .@miriam4$;
+	npctalk "米莉安: 你是什麼意思...", .@miriam4$;
 	sleep2 2000;
-	npctalk "Miriam : " + strcharinfo(0) + " , from now on, just keep going down until you reach a fork in the road.", .@miriam4$;
+	npctalk "米莉安 : " + strcharinfo(0) + " ，從現在開始，一直往下走，直到你到達岔路口。", .@miriam4$;
 	sleep2 2000;
-	npctalk "Miriam: It would be nice if monsters didn't appear, but...", .@miriam4$;
+	npctalk "米莉安: 如果沒有怪物出現就好了，但是...", .@miriam4$;
 	sleep2 1000;
 	cloakonnpcself( .@maram4$ );
 	setpcblock PCBLOCK_NPC, false;
@@ -356,25 +356,25 @@ OnMobDead:
 	.@miriam$ = instance_npcname("Miriam#ozmd5");
 	.@maram$ = instance_npcname("Maram#ozmd5");
 
-	npctalk "Maram: It wasn't like this before, but as the ground below begins to melt, perhaps due to the effects of Mount Tor, more monsters are appearing.", .@maram$;
+	npctalk "瑪拉姆: 以前不是這樣的，但隨著下面的地面開始融化，也許是由於托爾山 (Mount Tor) 的影響，出現了更多的怪物。", .@maram$;
 	cloakoffnpcself( "Maggi#ozmd5" );
 	cloakoffnpcself( "Mark#ozmd5" );
 	cloakoffnpcself( "Tamarin#ozmd5" );
 	enablenpc .@miriam$;
 	setpcblock PCBLOCK_NPC, true;
 	sleep2 2000;
-	npctalk "Maram: Especially in areas where the ground has melted a lot, there are many people who try to avoid monsters and end up seriously injured or unable to return due to the lava...", .@maram$;
+	npctalk "瑪拉姆: 尤其是在地面融化很多的地區，有很多人試圖避開怪物，最終因熔岩而身受重傷或無法返回...", .@maram$;
 	sleep2 2000;
-	npctalk "Maram: How long will the maze of Oz endure...", .@maram$;
+	npctalk "瑪拉姆: 奧茲迷宮還能忍受多久...", .@maram$;
 	sleep2 3000;
 	mapannounce 'map_name$, "??? : Ugh!!!!!", bc_map, 0x00B7EE,FW_NORMAL,16;
 	sleep2 2000;
-	npctalk "Maram: What is this voice?!?!?!?!?", .@maram$;
+	npctalk "瑪拉姆: 這是什麼聲音?!?!?!?", .@maram$;
 	sleep2 2000;
-	npctalk "Miriam: Imril!!!!", .@miriam$;
+	npctalk "米莉安: 伊姆里爾!!!!", .@miriam$;
 	sleep2 2000;
 	setpcblock PCBLOCK_NPC, false;
-	npctalk "Maram: I think my friend is in trouble! I'll go first, so be careful and follow me!", .@maram$;
+	npctalk "瑪拉姆: 我認為我的朋友有麻煩了！我先走了，所以小心點，跟著我！", .@maram$;
 	cloakonnpcself( "Maggi#ozmd5" );
 	cloakonnpcself( "Mark#ozmd5" );
 	cloakonnpcself( "Tamarin#ozmd5" );
@@ -406,7 +406,7 @@ OnMove:
 	if ('event_oz != 6)
 		end;
 	'event_oz = 7;
-	npctalk "Maram: Imril are you okay?";
+	npctalk "瑪拉姆: 伊姆里爾你還好嗎？";
 	donpcevent instance_npcname("Imril#ozmd6") + "::OnStart";
 	disablenpc();
 	end;
@@ -442,32 +442,32 @@ OnMobDead:
 	setpcblock PCBLOCK_NPC, true;
 
 	cloakoffnpcself( .@maram8$ );
-	npctalk "Imril: Thank you! I almost died!", .@imril6$;
+	npctalk "伊姆里爾: 謝謝！我差點就死了！", .@imril6$;
 	sleep2 2000;
-	npctalk "Imril: The atmosphere is unusual, so don't go downstairs.", .@imril6$;
+	npctalk "伊姆里爾: 氣氛不尋常，所以不要下樓。", .@imril6$;
 	sleep2 2000;
-	npctalk "Miriam: It seems like I see monsters more often than last time.", .@miriam5$;
+	npctalk "米莉安: 好像我看到怪物的次數比上次更多了。", .@miriam5$;
 	sleep2 2000;
-	npctalk "Imril: And what about those people?", .@imril6$;
+	npctalk "伊姆里爾: 那那些人呢？", .@imril6$;
 	cloakoffnpcself( .@maggi6$ );
 	cloakoffnpcself( .@mark6$ );
 	cloakoffnpcself( .@tamarin6$ );
 	sleep2 2000;
-	npctalk "Maram: They are adventurers who sometimes help my mother with her work.", .@maram8$;
+	npctalk "瑪拉姆: 他們是有時會幫助我母親工作的一些冒險家。", .@maram8$;
 	sleep2 2000;
-	npctalk "Maram: These are trustworthy people, so don't be so wary.", .@maram8$;
+	npctalk "瑪拉姆: 這些都是值得信賴的人，所以不要這麼提防。", .@maram8$;
 	sleep2 2000;
-	npctalk "Imril: I heard you trust people too easily.", .@imril6$;
+	npctalk "伊姆里爾: 我聽說你太容易相信別人了。", .@imril6$;
 	sleep2 2000;
-	npctalk "Miriam: Yes.", .@miriam5$;
+	npctalk "米莉安: 是的。", .@miriam5$;
 	sleep2 2000;
-	npctalk "Maram: Anyway, let's escape quickly before more monsters appear.", .@maram8$;
+	npctalk "瑪拉姆: 總之，讓我們在更多怪物出現之前趕快逃脫吧。", .@maram8$;
 	sleep2 2000;
-	npctalk "Maram: Not much left.", .@maram8$;
+	npctalk "瑪拉姆: 剩下不多了。", .@maram8$;
 	sleep2 2000;
-	npctalk "Maram: It's hard to see, but you can follow the road up here and keep moving!", .@maram8$;
+	npctalk "瑪拉姆: 很難看到，但你可以沿著這裡的路上去，然後繼續前進！", .@maram8$;
 	sleep2 2000;
-	npctalk "Tamarin: I think this is the way!", .@tamarin6$;
+	npctalk "塔瑪琳: 我想這就是路！", .@tamarin6$;
 	cloakonnpcself( .@maggi6$ );
 	cloakonnpcself( .@mark6$ );
 	cloakonnpcself( .@tamarin6$ );
@@ -500,7 +500,7 @@ OnTouch:
 	if ('event_oz != 9)
 		end;
 	'event_oz = 10;
-	npctalk "Maram: Go down this road.";
+	npctalk "瑪拉姆: 走這條路。";
 	initnpctimer;
 	end;
 OnTimer2000:
@@ -522,13 +522,13 @@ OnTimer2000:
 	.@imril7$ = instance_npcname("Imril#ozmd7");
 
 	setpcblock PCBLOCK_NPC, true;
-	npctalk "Maram: If you climb up the rope in front of here, you can go outside.", .@maram9$;
+	npctalk "瑪拉姆: 如果你爬上這裡前面的繩子，你就可以出去了。", .@maram9$;
 	cloakoffnpcself( .@miriam7$ );
 	cloakoffnpcself( .@imril7$ );
 	sleep2 2000;
-	npctalk "Imril: I'll take some hidden items here, so go up first.", .@imril7$;
+	npctalk "伊姆里爾: 我要在這裡拿一些隱藏的物品，所以你們先上去。", .@imril7$;
 	sleep2 2000;
-	npctalk "Miriam: Everyone is very tired. Let's go up quickly.", .@miriam7$;
+	npctalk "米莉安: 大家都非常疲倦。我們趕快上去吧。", .@miriam7$;
 	if (ep18_main == 30) {
 		erasequest 11719;
 		setquest 11720;
@@ -551,12 +551,12 @@ OnInstanceInit:
 // Step 12
 1@oz,28,190,3	script(DISABLED)	Rope#outoz2	4_ROPEPILE,{
 	if ('event_oz != 11) {
-		mes "It can't be used yet. Let's talk to Maram first.";
+		mes "目前還不能使用。先跟瑪拉姆談談。";
 		close;
 	}
-	mes "I think I can climb up using the rope.";
+	mes "我想我可以利用繩子爬上去。";
 	next;
-	if (select( "Use the rope to climb up.", "Do not use." ) == 2)
+	if (select( "使用繩子爬上去。", "不要使用。" ) == 2)
 		end;
 	warp "gw_fild01",275,337;
 	end;

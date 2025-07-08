@@ -61,39 +61,38 @@ prontera,184,177,6	script	Refine Master	851,{
 	}
 
 	if (.@check == 0) {
-		mes "[Refine Master]";
-		mes "Hello!";
-		mes "What's up?";
-		mes "I'm a specialist";
-		mes "for refining items,";
-		mes "but I don't work anymore.";
+		mes "[精鍊大師]";
+		mes "哈囉！";
+		mes "有什麼事嗎？";
+		mes "我是個精鍊專家，";
+		mes "但我已經不做事了。";
 		next;
-		switch(select("I'll go on my way.:Hmm... this makes me curious.")) {
+		switch(select("我就先走了。:嗯... 這讓我很好奇。")) {
 		case 1:
-			mes "[Refine Master]";
-			mes "Take care, adventurer.";
+			mes "[精鍊大師]";
+			mes "冒險者，請多保重。";
 			close;
 		case 2:
-			mes "[Refine Master]";
-			mes "Actually, I sometimes provide refine services for adventurers with a ^006400Refine Ticket^000000...";
-			mes "Bye bye~!";
+			mes "[精鍊大師]";
+			mes "其實，我偶爾會為持有 ^006400精鍊券^000000 的冒險者提供精鍊服務...";
+			mes "掰掰～！";
 			close;
 		}
 	}
 	emotion ET_SURPRISE;
-	mes "[Refine Master]";
-	mes "Greetings!";
-	mes "I can refine an item up to the ^006400same level as your ticket^000000.";
-	mes "You don't have to worry! There's no chance of breaking your item.";
+	mes "[精鍊大師]";
+	mes "您好！";
+	mes "我可以將物品精鍊到 ^006400與您的券相同等級^000000。";
+	mes "您不用擔心！您的物品不會有損壞的機會。";
 	next;
-	if(select("I'll come back later.:Refine item with ticket.") == 1) {
-		mes "[Refine Master]";
-		mes "Okay.";
-		mes "You can come again later.";
+	if(select("我晚點再來。:使用券精鍊物品。") == 1) {
+		mes "[精鍊大師]";
+		mes "好的。";
+		mes "您可以晚點再來。";
 		close;
 	}
-	mes "[Refine Master]";
-	mes "Which equipment would you like to refine?";
+	mes "[精鍊大師]";
+	mes "您想要精鍊哪一件裝備？";
 	next;
 	setarray .@position$[1],"Head upper","Armor","Left hand","Right hand","Robe","Shoes","Accessory 1","Accessory 2","Head middle","Head lower";
 	setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
@@ -102,15 +101,15 @@ prontera,184,177,6	script	Refine Master	851,{
 
 	.@part = .@indices[ select(.@menu$) ];
 	if (!getequipisequiped(.@part)) {
-		mes "[Refine Master]";
-		mes "You have to equip the item you want to refine.";
+		mes "[精鍊大師]";
+		mes "您必須裝備您想要精鍊的物品。";
 		close;
 	}
 	if (!getequipisenableref(.@part)) {
 		emotion ET_OTL;
-		mes "[Refine Master]";
-		mes "Oh, I'm sorry.";
-		mes "This item is impossible to refine.";
+		mes "[精鍊大師]";
+		mes "喔，我很抱歉。";
+		mes "這個物品無法精鍊。";
 		close;
 	}
 	.@refineitemid = getequipid(.@part); // save id of the item
@@ -153,13 +152,13 @@ prontera,184,177,6	script	Refine Master	851,{
 	}
 	if (.@check == 0) {
 		emotion ET_THINK;
-		mes "[Refine Master]";
-		mes "If you want to refine this ^006400"+.@type$+"^000000, please come along with ^006400"+.@type$+" Refine Ticket^000000.";
-		mes "See you later!";
+		mes "[精鍊大師]";
+		mes "如果您想要精鍊這個 ^006400"+.@type$+"^000000，請攜帶 ^006400"+.@type$+" 精鍊券^000000。";
+		mes "再見！";
 		close;
 	}
-	mes "[Refine Master]";
-	mes "Please choose which ^006400"+.@type$+" Refine Ticket^000000 you want to use.";
+	mes "[精鍊大師]";
+	mes "請選擇您想要使用的 ^006400"+.@type$+" 精鍊券^000000。";
 	next;
 	.@menu$ = "";
 	for ( .@i = 0; .@i < .@size_cert; ++.@i )
@@ -170,41 +169,41 @@ prontera,184,177,6	script	Refine Master	851,{
 
 	if (countitem(.@ticket_id) == 0) {
 		emotion ET_QUESTION;
-		mes "[Refine Master]";
-		mes getitemname(.@ticket_id)+" is not in your inventory. Did you put it in your storage?";
-		mes "Please check again.";
-		mes "See you later!";
+		mes "[精鍊大師]";
+		mes getitemname(.@ticket_id)+" 不在您的物品欄中。您把它放到倉庫了嗎？";
+		mes "請再檢查一次。";
+		mes "再見！";
 		close;
 	}
 	if (getequiprefinerycnt(.@part) >= .@ticket_lv) {
 		emotion ET_PROFUSELY_SWEAT;
-		mes "[Refine Master]";
-		mes "^8B4513This item is already refined as much as your deed.^000000";
-		mes "Please come along with an item refined less than your ticket.";
+		mes "[精鍊大師]";
+		mes "^8B4513這個物品已經精鍊到您的券可以提供的最高等級了。^000000";
+		mes "請攜帶比您的券精鍊等級還低的物品來。";
 		close;
 	}
-	mes "[Refine Master]";
-	mes "I'm going to refine ^006400"+getequipname(.@part)+"^8B4513 up to the +"+.@ticket_lv+" level^000000 with ^006400"+getitemname(.@ticket_id)+"^000000.";
-	mes "May I proceed?";
+	mes "[精鍊大師]";
+	mes "我將使用 ^006400"+getitemname(.@ticket_id)+"^000000 將 ^006400"+getequipname(.@part)+"^8B4513 精鍊到 +"+.@ticket_lv+" 等級^000000。";
+	mes "我可以開始了嗎？";
 	next;
-	if(select("No.:Yes.") == 1) {
+	if(select("不用了。:好的。") == 1) {
 		emotion ET_THINK;
-		mes "[Refine Master]";
-		mes "Oh, you changed your mind.";
-		mes "Ok.";
-		mes "You can come back later.";
+		mes "[精鍊大師]";
+		mes "喔，您改變主意了。";
+		mes "好的。";
+		mes "您可以晚點再來。";
 		close;
 	}
-	mes "[Refine Master]";
-	mes "Great.";
-	mes "As you wish!";
-	mes "I have my own special way to refine...";
-	mes ".......ka boom!";
+	mes "[精鍊大師]";
+	mes "太棒了。";
+	mes "如您所願！";
+	mes "我有我自己的特殊精鍊方式...";
+	mes ".......碰！";
 	specialeffect EF_SUI_EXPLOSION;
 	if (countitem(.@ticket_id) < 1) {
 		next;
-		mes "Error!";
-		mes "Please report this.";
+		mes "錯誤！";
+		mes "請回報此問題。";
 		close;
 	}
 	delitem .@ticket_id,1;
@@ -212,21 +211,21 @@ prontera,184,177,6	script	Refine Master	851,{
 	// anti-hack
 	if (callfunc("F_IsEquipIDHack", .@part, .@refineitemid) ||
 		callfunc("F_IsEquipRefineHack", .@part, .@refinerycnt) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3])) {
-		mes "[Refine Master]";
+		mes "[精鍊大師]";
 		emotion ET_FRET;
-		mes "Wait a second...";
-		mes "Do you think I'm stupid?!";
-		mes "You switched the item while I wasn't looking! Get out of here!";
+		mes "等一下...";
+		mes "你以為我是笨蛋嗎？！";
+		mes "趁我不注意偷換了物品！滾出去！";
 		close;
 	}
 	successrefitem .@part, .@ticket_lv - getequiprefinerycnt(.@part);
 	next;
 	emotion ET_DELIGHT;
-	mes "[Refine Master]";
-	mes "Alright, here it is~";
-	mes "Well, ^0000FF"+strcharinfo(0)+"^000000!";
-	mes "Congratulations on your shining "+.@type$+".";
-	mes "You look GREAT!";
-	mes "Farewell~!";
+	mes "[精鍊大師]";
+	mes "好的，完成了～";
+	mes "嗯，^0000FF"+strcharinfo(0)+"^000000！";
+	mes "恭喜您獲得閃亮的 "+.@type$+"。";
+	mes "您看起來真棒！";
+	mes "再會～！";
 	close;
 }

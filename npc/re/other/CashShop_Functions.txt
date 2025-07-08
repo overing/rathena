@@ -11,28 +11,28 @@
 //============================================================
 function	script	VIP_Third_Class	{
 	if (!vip_status(VIP_STATUS_ACTIVE)) {
-		mes "[Voice from nowhere]";
-		mes "Access to Premium content is only available to those who possess a certain amount of Reset Stones.";
+		mes "[來自虛空的聲音]";
+		mes "只有擁有一定數量的重置石才能訪問高級內容。";
 		next;
 		if (countitem(6320) < 1) {
-			mes "[Voice from nowhere]";
-			mes "In order to change to third class, you must bring 1 ^0000CCReset Stone^000000 or have a Premium account.";
-			//mes "Please visit our iShop to purchase the ^0000CCReset Stone^000000.";
+			mes "[來自虛空的聲音]";
+			mes "為了轉職成三轉職業，你必須攜帶 1 個 ^0000CC重置石^000000 或是擁有高級帳號。";
+			//mes "請訪問我們的 iShop 以購買 ^0000CC重置石^000000。";
 			close;
 		} else {
-			mes "[Voice from nowhere]";
-			mes "Would you like to participate in this quest for 1 ^0000CCReset Stone^000000?";
+			mes "[來自虛空的聲音]";
+			mes "你想要花費 1 個 ^0000CC重置石^000000 參與這個任務嗎？";
 			next;
-			switch(select("Yes:No")) {
+			switch(select("是:否")) {
 			case 1:
-				mes "[Voice from nowhere]";
-				mes "Good luck, adventurer.";
+				mes "[來自虛空的聲音]";
+				mes "祝你好運，冒險者。";
 				delitem 6320,1; //Premium_Reset_Stone
 				next;
 				break;
 			case 2:
-				mes "[Voice from nowhere]";
-				mes "Very well.";
+				mes "[來自虛空的聲音]";
+				mes "好吧。";
 				close;
 			}
 		}

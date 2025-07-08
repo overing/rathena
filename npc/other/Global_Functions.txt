@@ -165,7 +165,7 @@ function	script	F_Rand	{
 // Returns 1st argument if female, 2nd argument if male.
 // -- callfunc "F_SexMes",argFemale,argMale
 // Example:
-//     mes callfunc("F_SexMes","What a beautiful lady!","What a handsome man!");
+//     mes callfunc("F_SexMes","真是位美麗的女士啊！","真是位英俊的男士啊！");
 //////////////////////////////////////////////////////////////////////////////////
 function	script	F_SexMes	{
 	return getarg(Sex);
@@ -191,7 +191,7 @@ function	script	F_Bye	{
 //    Elements: 0=none, 1=Ice, 2=Earth, 3=Fire, 4=Wind
 // Example:
 //    // Displays "Show me your ^000090+5 VVS Fire Knife^000000..."
-//    mes "Show me your "+callfunc("F_ItemName",1201,1,2,5)+"...";
+//    mes "給我看看你的"+callfunc("F_ItemName",1201,1,2,5)+"...";
 //////////////////////////////////////////////////////////////////////////////////
 function	script	F_ItemName	{
 	if (getarg(3,0))
@@ -345,7 +345,7 @@ function	script	F_GetArmorType	{
 // Example:
 //    // Displays "Time left: 1 day, 1 hour, 8 minutes, 20 seconds"
 //    set .@Timer, gettimetick(2) + 90500;
-//    mes "Time left: " + callfunc("Time2Str",.@Timer);
+//    mes "剩餘時間： " + callfunc("Time2Str",.@Timer);
 //////////////////////////////////////////////////////////////////////////////////
 function	script	Time2Str	{
 	set .@Time_Left, getarg(0) - gettimetick(2);

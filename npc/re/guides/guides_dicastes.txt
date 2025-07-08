@@ -15,73 +15,73 @@
 //= 1.2 Navigation system update. [Euphy]
 //============================================================ 
 
-dicastes01,189,191,5	script	Traveler Ichack#info	481,2,2,{
-	mes "[Traveler Ichack]";
-	mes "Oh!! You are a stranger!";
-	mes "I'm Ichack, the first adventurer that arrived here in El Dicastes!";
+dicastes01,189,191,5	script	旅行者 伊查克#info	481,2,2,{
+	mes "[旅行者 伊查克]";
+	mes "喔!! 你是個陌生人!";
+	mes "我是伊查克，第一個抵達艾爾迪卡斯特的冒險家!";
 	next;
-	mes "[Traveler Ichack]";
-	mes "There was someone in the expedition team claiming that he was the first, but it WAS me. That's right.";
+	mes "[旅行者 伊查克]";
+	mes "探險隊中有人聲稱他是第一個，但那個人是我。沒錯。";
 	next;
-	mes "[Traveler Ichack]";
-	mes "That's why I will provide a service to guide adventurers from Midgard.";
-	mes "What would you like to know?";
-	F_Navi("[Traveler Ichack]");
+	mes "[旅行者 伊查克]";
+	mes "所以我會提供一項服務，來引導來自米德加爾特的冒險家。";
+	mes "你想知道什麼?";
+	F_Navi("[旅行者 伊查克]");
 	next;
-	switch(select("Dicastes Diel:Residential Area:Training Room:Factory:Pub:Cat Paw Caravan")) {
+	switch(select("迪卡斯特 迪爾:住宅區:訓練室:工廠:酒吧:貓爪商隊")) {
 	case 1:
-		mes "[Traveler Ichack]";
-		mes "Ah~ That's a beautiful building.";
-		mes "It's said they discuss important things...";
+		mes "[旅行者 伊查克]";
+		mes "啊~ 那是一棟漂亮的建築。";
+		mes "據說他們在那裡討論重要的事情...";
 		next;
-		mes "[Traveler Ichack]";
-		mes "Please make sure you signed in at the "+F_Navi("Diel","dicastes01,198,351")+", otherwise you'll get in trouble.";
-		mes "Go directly north from here and you can't miss it.";
+		mes "[旅行者 伊查克]";
+		mes "請確保你在 "+F_Navi("Diel","dicastes01,198,351")+" 簽到，否則你會惹上麻煩。";
+		mes "從這裡直接往北走，你不會錯過它。";
 		viewpoint 1,198,351,0,0x00FF00;
 		close;
 	case 2:
-		mes "[Traveler Ichack]";
-		mes "The Sapha tribe is so weird. How can they sleep in there?";
+		mes "[旅行者 伊查克]";
+		mes "薩帕族真是太奇怪了。他們怎麼能在那裡睡覺?";
 		next;
-		mes "[Traveler Ichack]";
-		mes "You don't understand?";
-		mes "You won't believe me until you see it! Go see it for yourself!";
+		mes "[旅行者 伊查克]";
+		mes "你不明白?";
+		mes "直到你親眼看到，你才會相信我! 自己去看一看!";
 		next;
-		mes "[Traveler Ichack]";
-		mes "The residential area is divided into 2 areas.";
-		mes "The "+F_Navi("lower residential area","dicastes01,136,106")+" is around 7 o'clock, and the ";
-		mes F_Navi("upper area","dicastes01,280,283")+" is around 1 o'clock.";
+		mes "[旅行者 伊查克]";
+		mes "住宅區分為兩個區域。";
+		mes " "+F_Navi("下層住宅區","dicastes01,136,106")+" 大約在 7 點鐘方向，而 ";
+		mes F_Navi("上層區域","dicastes01,280,283")+" 大約在 1 點鐘方向。";
 		viewpoint 1,280,283,1,0x01FF01;
 		viewpoint 1,136,106,2,0x0066FF;
 		close;
 	case 3:
-		mes "[Traveler Ichack]";
-		mes "Because of the dangers here, we need better security...";
-		mes "Have you ever been to the ";
-		mes F_Navi("training room","dicastes01,255,172")+"? The training guards seem to never sleep!";
+		mes "[旅行者 伊查克]";
+		mes "由於這裡的危險，我們需要更好的安全措施...";
+		mes "你曾經去過 ";
+		mes F_Navi("訓練室","dicastes01,255,172")+" 嗎? 訓練警衛似乎從不睡覺!";
 		viewpoint 1,255,172,3,0xFFCCCC;
 		close;
 	case 4:
-		mes "[Traveler Ichack]";
-		mes "This is one of the most important reasons why they live here.";
-		mes "If you go to the "+F_Navi("factory","dicastes01,97,256")+", you can see the recently refined Bradium.";
+		mes "[旅行者 伊查克]";
+		mes "這是他們住在這裡最重要的原因之一。";
+		mes "如果你去 "+F_Navi("工廠","dicastes01,97,256")+", 你可以看到最近提煉的布拉迪姆。";
 		viewpoint 1,97,256,4,0x0066FF;
 		close;
 	case 5:
-		mes "[Traveler Ichack]";
-		mes "Although I arrived here as the first adventurer, the owner of the pub was the first person here.";
-		mes F_Navi("Bumen Florine's pub","dicastes01,136,106")+" is located underground in the lower residential area.";
-		mes "He might have some valuable information for you.";
+		mes "[旅行者 伊查克]";
+		mes "雖然我是第一個抵達這裡的冒險家，但酒吧的老闆是第一個在這裡的人。";
+		mes F_Navi("Bumen Florine的酒吧","dicastes01,136,106")+" 位於下層住宅區的地下。";
+		mes "他可能有一些對你來說有價值的資訊。";
 		viewpoint 1,136,106,5,0xFF3300;
 		close;
 	case 6:
-		mes "[Traveler Ichack]";
-		mes "The "+F_Navi("cats","dicastes01,199,39")+" don't seem to have a good relationship with the Sapha like we do.";
-		mes "Perhaps it's because trading is involved.";
-		mes "Poor cats. They must be shivering from the cold out there.";
+		mes "[旅行者 伊查克]";
+		mes " "+F_Navi("貓","dicastes01,199,39")+" 們似乎不像我們一樣與薩帕族有良好的關係。";
+		mes "也許是因為涉及到貿易。";
+		mes "可憐的貓。他們一定在外面冷得發抖。";
 		next;
-		mes "[Traveler Ichack]";
-		mes "You can find their caravan just outside the gates.";
+		mes "[旅行者 伊查克]";
+		mes "你可以在大門外找到他們的商隊。";
 		viewpoint 1,199,39,6,0x9933FF;
 		close;
 	}

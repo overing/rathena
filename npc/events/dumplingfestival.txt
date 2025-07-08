@@ -13,28 +13,28 @@
 //= 1.01 fixed bugs [Lupus]
 //============================================================
   
-payon,93,81,4	script	Exorcist Master Fahae	834,{
+payon,93,81,4	script	驅魔師法海	834,{
 
-	mes "[Exorcist Master Fahae]";
-	mes "Greetings young warrior, I'm the Exorcist Master Fahae.";
-	mes "I have been tracking the elusive Bacsojin for some time.";
+	mes "[驅魔師法海]";
+	mes "年輕的戰士，你好，我是驅魔師法海。";
+	mes "我追蹤難以捉摸的巴風特已經有一段時間了。";
 	next;
-	mes "[Exorcist Master Fahae]";
-	mes "I feel it is time I let another warrior try to complete";
-	mes "my quest. I have some items to assist you in my quest.";
+	mes "[驅魔師法海]";
+	mes "我覺得是時候讓另一位戰士嘗試完成";
+	mes "我的任務了。我有一些物品可以協助你完成我的任務。";
 	next;
 	menu "I wish to buy",-, "No thanks",M_FIN;
   
-	mes "[Exorcist Master Fahae]";
-	mes "I have 2 items which might become useful to you.";
+	mes "[驅魔師法海]";
+	mes "我有 2 件物品可能對你有用。";
 	next;
 	menu "Realgar Wine",-, "Exorcize Herb",M_HERB;
   
-	mes "[Exorcist Master Fahae]";
-	mes "How many do you require?";
-	mes "You may only buy 5 at one time.";
-	mes "Each costs 20000z.";
-	mes "(Type in 0 to cancel)";
+	mes "[驅魔師法海]";
+	mes "你需要多少個？";
+	mes "你一次只能購買 5 個。";
+	mes "每個價值 20000z。";
+	mes "（輸入 0 取消）";
 	next;
 	input @input;
 	if(@input==0) close;
@@ -42,26 +42,26 @@ payon,93,81,4	script	Exorcist Master Fahae	834,{
 	if(Zeny< @input*20000) goto L_NOZENY;
 	set Zeny,Zeny-20000*@input;
 	getitem 682,@input;
-	mes "[Exorcist Master Fahae]";
-	mes "Here you go, I hope you may succeed in my quest.";
+	mes "[驅魔師法海]";
+	mes "給你，我希望你能成功完成我的任務。";
 	close;
   
 L_SORRY:
-	mes "[Exorcist Master Fahae]";
-	mes "You must not be stingy, it is the path of God to be honest.";
+	mes "[驅魔師法海]";
+	mes "你一定不能吝嗇，誠實是神的道路。";
 	close;
   
 M_FIN:
-	mes "[Exorcist Master Fahae]";
-	mes "The path of fully vanquishing evil is far, help me in the way of God.";
+	mes "[驅魔師法海]";
+	mes "完全消滅邪惡的道路還很長，請在神的道路上幫助我。";
 	close;
   
 M_HERB:
-	mes "[Exorcist Master Fahae]";
-	mes "How many do you require?";
-	mes "You may only buy 5 at one time.";
-	mes "Each costs 10000z.";
-	mes "(Type in 0 to cancel)";
+	mes "[驅魔師法海]";
+	mes "你需要多少個？";
+	mes "你一次只能購買 5 個。";
+	mes "每個價值 10000z。";
+	mes "（輸入 0 取消）";
 	next;
 	input @input;
 	if(@input==0) close;
@@ -69,13 +69,13 @@ M_HERB:
 	if(Zeny< @input*10000) goto L_NOZENY;
 	set Zeny,Zeny-10000*@input;
 	getitem 683,@input;
-	mes "[Exorcist Master Fahae]";
-	mes "Here you go, I hope you may succeed in my quest.";
+	mes "[驅魔師法海]";
+	mes "給你，我希望你能成功完成我的任務。";
 	close;
 
 L_NOZENY:
-	mes "[Exorcist Master Fahae]";
-	mes "Money doesn't bring joy to everyone, but we need it to support the temple and myself. Please, try to kill some monsters and take their drops.";
+	mes "[驅魔師法海]";
+	mes "金錢不會給每個人帶來快樂，但我們需要它來支持寺廟和我自己。請嘗試殺死一些怪物並拿走它們的掉落物。";
 	close;
 }
   

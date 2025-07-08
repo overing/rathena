@@ -19,65 +19,65 @@ valkyrie,53,56,3	script	Gypsy#Valkyrie	101,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Gypsy]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[吉普賽]";
+			mes "恭喜。";
+			mes "向戰士們致敬！";
 			close;
 		}
-		mes "[Gypsy]";
-		mes "Move left,";
-		mes "move right~!";
-		mes "And step...!";
-		mes "Dancing can be";
-		mes "more than a hobby.";
-		mes "For me, it's a way of life~";
+		mes "[吉普賽]";
+		mes "向左移動，";
+		mes "向右移動～！";
+		mes "然後踏步...！";
+		mes "跳舞不僅僅是";
+		mes "一種嗜好。";
+		mes "對我來說，它是一種生活方式～";
 		close;
 	}
 	else if (ADVJOB == Job_Gypsy && Class == Job_Archer_High && JobLevel > 39) {
-		mes "[Gypsy]";
-		mes "The land of Midgard";
-		mes "is in need of talented women";
-		mes "to subtly change the balances";
-		mes "in the battle between good";
-		mes "and evil.";
+		mes "[吉普賽]";
+		mes "米德加爾特大陸";
+		mes "需要有才華的女性";
+		mes "來巧妙地改變";
+		mes "在善與惡之間的";
+		mes "平衡。";
 		next;
-		mes "[Gypsy]";
-		mes "Are you ready";
-		mes "to take up this role,";
-		mes "and become a Gypsy?";
+		mes "[吉普賽]";
+		mes "你準備好";
+		mes "承擔這個角色，";
+		mes "成為一名吉普賽了嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Gypsy]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不要。:要。") == 1) {
+			mes "[吉普賽]";
+			mes "當你準備好的時候，";
+			mes "隨時回來。";
+			mes "向戰士們致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Gypsy]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[吉普賽]";
+			mes "你仍然有可能學習更多技能。請在使用";
+			mes "所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Gypsy;
 		set ADVJOB,0;
-		mes "[Gypsy]";
-		mes "Congratulations!";
-		mes "As a Gypsy, I know";
-		mes "that your performances";
-		mes "sway the hearts of all";
-		mes "those who will be watching...";
+		mes "[吉普賽]";
+		mes "恭喜！";
+		mes "身為一名吉普賽，我知道";
+		mes "你的表演";
+		mes "會左右所有";
+		mes "觀看者的心...";
 		close;
 	}
-	mes "[Gypsy]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[吉普賽]";
+	mes "歡迎來到";
+	mes "瓦爾哈拉，";
+	mes "榮耀大廳。";
 	next;
-	mes "[Gypsy]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[吉普賽]";
+	mes "請";
+	mes "隨意";
+	mes "在這裡放鬆。";
+	mes "向戰士們致敬！";
 	close;
 }

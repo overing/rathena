@@ -18,74 +18,73 @@
 // Entrance NPCs
 //============================================================
 prontera,132,125,4	script	Bossnia Staff#1	908,{
-	mes "[Riss]";
-	mes "Hello?";
-	mes "I found some beautiful places";
-	mes "while I travelled all over the world.";
-	mes "I am an adventurer.";
-	mes "Haha~";
+	mes "[莉絲]";
+	mes "哈囉？";
+	mes "我在世界各地旅行時，發現了一些美麗的地方。";
+	mes "我是一位冒險家。";
+	mes "哈～哈～";
 	next;
-	mes "[Riss]";
-	mes "What? My name is...";
-	mes "'Bossnia Staff'?? No no...";
-	mes "Well, my name is not so important.";
-	mes "Sometimes you should be generous.";
-	mes "No time for considering that kind of small stuff";
-	mes "when you have to concentrate on more important things.";
+	mes "[莉絲]";
+	mes "什麼？我的名字是...";
+	mes "'Bossnia Staff'?? 不不...";
+	mes "嗯，我的名字不是那麼重要。";
+	mes "有時候你應該要慷慨一點。";
+	mes "當你必須專注於更重要的事情時，沒有時間考慮這種小事";
+	mes "當你必須專注於更重要的事情時。";
 	next;
-	mes "[Riss]";
-	mes "Hum... anyway I want to say... something..";
-	mes "While I was travelling through some places,";
-	mes "I found a really fearful place.";
+	mes "[莉絲]";
+	mes "嗯...總之我想說...一些事..";
+	mes "當我旅行經過某些地方時，";
+	mes "我發現了一個非常可怕的地方。";
 	next;
-	mes "[Riss]";
-	mes "Most of the time when you come to a place,";
-	mes "there is one strong and fearful monster.";
-	mes "Isn't it?";
+	mes "[莉絲]";
+	mes "大多數時候，當你來到一個地方，";
+	mes "都會有一隻強大而可怕的怪物。";
+	mes "不是嗎？";
 	next;
-	mes "[Riss]";
-	mes "But... but... in there...";
-	mes "There are lots of fearful and strong monsters in there...";
-	mes "That was really frightful.";
+	mes "[莉絲]";
+	mes "但是...但是...在那裡...";
+	mes "那裡有很多可怕而強大的怪物...";
+	mes "那真是太可怕了。";
 	next;
-	mes "[Riss]";
-	mes "If I had reacted a bit later... a few seconds...";
-	mes "I might have been killed.";
+	mes "[莉絲]";
+	mes "如果我反應慢一點...幾秒鐘...";
+	mes "我可能已經死了。";
 	next;
-	mes "[Riss]";
-	mes "What?";
-	mes "You want to go in there?";
-	mes "Oh~ Boy~ you didn't get me.";
-	mes "In there.......";
+	mes "[莉絲]";
+	mes "什麼？";
+	mes "你想進去那裡？";
+	mes "喔～孩子～你沒聽懂我的話。";
+	mes "在那裡.......";
 	next;
-	mes "[Riss]";
-	mes "Uh... you already know?";
-	mes "Although you know the place, you want to go in...";
-	mes "Good, I will send you there.";
-	mes "But after you went there, don't hold";
+	mes "[莉絲]";
+	mes "呃...你已經知道了？";
+	mes "即使你知道那個地方，你還是想進去...";
+	mes "好吧，我會送你過去。";
+	mes "但是你去了之後，不要懷恨在心";
 
 	// If the VIP system is enabled, players pay a Reset Stone for 5 entrances (with a choice of warps).
 	// If it's disabled, players pay 5,000z per entrance.
 	if (VIP_SCRIPT) {
-		mes "a grudge against me. It'll cost you 1 Reset Stone for 5 access.";
+		mes "對我懷恨在心。每次進入需要消耗 1 個重置石，可以使用 5 次。";
 		next;
-		mes "[Riss]";
+		mes "[莉絲]";
 		if (bossnia_event > 0) {
 			set .@type,1;
-			mes "Remaining access: "+bossnia_event;
+			mes "剩餘次數："+bossnia_event;
 		} else if (countitem(6320)) {
 			set .@type,2;
-			mes "Do you want to go?";
+			mes "你想要進去嗎？";
 		} else {
-			mes "You don't have a ticket now.....";
-			mes "So come to me again with a Reset Stone later.";
+			mes "你現在沒有票.....";
+			mes "所以晚點帶著重置石再來找我。";
 			close;
 		}
 		next;
-		if(select("Enter:Leave") == 2)
+		if(select("進入:離開") == 2)
 			close;
-		set .@i, select("First:Second:Third:Fourth");
-		switch(select("Warp 1:Warp 2:Warp 3:Warp 4")) {
+		set .@i, select("第一關:第二關:第三關:第四關");
+		switch(select("傳送點 1:傳送點 2:傳送點 3:傳送點 4")) {
 			case 1: set .@x,31; set .@y,208; break;
 			case 2: set .@x,31; set .@y,31; break;
 			case 3: set .@x,208; set .@y,31; break;
@@ -101,25 +100,25 @@ prontera,132,125,4	script	Bossnia Staff#1	908,{
 		warp "bossnia_0"+.@i,.@x,.@y;
 		close;
 	} else {
-		mes "a grudge against me. Also it costs 5,000 zeny.";
+		mes "對我懷恨在心。而且還需要 5,000 zeny。";
 		next;
 		if (Zeny > 4999) {
-			mes "[Riss]";
-			mes "Would you really like to take the challenge?";
-			mes "Ok, just choose the course.";
+			mes "[莉絲]";
+			mes "你真的想要接受挑戰嗎？";
+			mes "好吧，選擇一個路線。";
 			next;
-			set .@i, select("First:Second:Third:Fourth");
-			mes "[Riss]";
-			mes "Take care, boy~";
-			mes "Don't hold a grudge against me.";
+			set .@i, select("第一關:第二關:第三關:第四關");
+			mes "[莉絲]";
+			mes "小心點，孩子～";
+			mes "不要對我懷恨在心。";
 			close2;
 			set Zeny, Zeny - 5000;
 			warp "bossnia_0"+.@i,rand(202,204),rand(202,204);
 			end;
 		} else {
-			mes "[Riss]";
-			mes "You don't have enough money...";
-			mes "Come back when you have at least 5,000 zeny.";
+			mes "[莉絲]";
+			mes "你的錢不夠...";
+			mes "當你至少有 5,000 zeny 時再來。";
 			close;
 		}
 	}

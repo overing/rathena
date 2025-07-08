@@ -20,60 +20,60 @@
 
 // Lighthalzen
 lhz_in02,100,134,3	script	Hair Dyer#lich	850,{
-	mes "[Rossa]";
+	mes "[蘿莎]";
 	if (Sex == SEX_MALE) {
-		mes "Welcome, come in~";
-		mes "Oh, I see that you take";
-		mes "much better care of your";
-		mes "hair than those other boys.";
-		mes "Now would you like to dye";
-		mes "your hair another color?";
+		mes "歡迎光臨～進來吧～";
+		mes "喔，我看你比";
+		mes "其他那些男孩們更";
+		mes "懂得照顧你的頭髮。";
+		mes "現在你想把你的";
+		mes "頭髮染成別的顏色嗎？";
 	}
 	else {
-		mes "Oh, wow~ Where did";
-		mes "you get your hair styled?";
-		mes "I love it! But... It would";
-		mes "be even more beautiful if";
-		mes "you dyed your hair. What";
-		mes "do you think about that?";
+		mes "喔，哇～你在哪裡";
+		mes "做的髮型啊？";
+		mes "我喜歡！但是...如果";
+		mes "你染髮的話會更";
+		mes "漂亮。你覺得";
+		mes "怎麼樣呢？";
 	}
 	while (.@choose_success != 2) {
 		next;
-		switch(select("Dye Hair:Coloring Information:Cancel")) {
+		switch(select("染髮:髮色資訊:取消")) {
 		case 1:
-			mes "[Rossa]";
-			mes "Ho ho ho ho~";
-			mes "So which color would";
-			mes "you like to try? Something";
-			mes "vivid or dark? Sexy or cute?";
+			mes "[蘿莎]";
+			mes "呵呵呵呵～";
+			mes "那麼你想嘗試";
+			mes "哪種顏色呢？鮮豔";
+			mes "或深沉？性感或可愛？";
 			next;
 			while (.@choose_success != 2) {
 				if (.@choose_success == 1) {
-					mes "[Rossa]";
-					mes "Ooh, I like this color!";
-					mes "But would you like to";
-					mes "try a different one?";
+					mes "[蘿莎]";
+					mes "喔，我喜歡這個顏色！";
+					mes "但你想";
+					mes "試試別的顏色嗎？";
 					next;
-					switch(select("Yes:No")) {
+					switch(select("是:否")) {
 					case 1:
-						mes "[Rossa]";
-						mes "Please select";
-						mes "another color~";
+						mes "[蘿莎]";
+						mes "請選擇";
+						mes "另一個顏色～";
 						next;
 						break;
 					case 2:
-						mes "[Rossa]";
-						mes "An excellent choice~";
-						mes "Alright then, thank you";
-						mes "for using my service and";
-						mes "I hope you come by again!";
+						mes "[蘿莎]";
+						mes "真是個絕佳的選擇～";
+						mes "那麼，感謝";
+						mes "你使用我的服務，";
+						mes "我希望你能再次光臨！";
 						close2;
 						set .@choose_success,2;
 						break;
 					}
 				}
 				while (.@choose_success != 2) {
-					switch(select("Red, please.:Yellow, please.:Purple, please.:Orange, please.:Green, please.:Blue, please.:White, please.:Dark Brown, please.:I like my hair color.")) {
+					switch(select("請染紅色:請染黃色:請染紫色:請染橘色:請染綠色:請染藍色:請染白色:請染深棕色:我喜歡我的髮色。")) {
 					case 1:
 						set .@headpalette,8;
 						break;
@@ -100,126 +100,128 @@ lhz_in02,100,134,3	script	Hair Dyer#lich	850,{
 						break;
 					case 9:
 						if (.@choose_success != 0) {
-							mes "[Rossa]";
-							mes "Are you sure?";
-							mes "Alright then, you";
-							mes "know what's best for";
-							mes "your beauty and to tell";
-							mes "the truth, I agree with you~";
+							mes "[蘿莎]";
+							mes "你確定嗎？";
+							mes "好吧，";
+							mes "你最了解";
+							mes "什麼對你的美麗";
+							mes "最好，而且說";
+							mes "實話，我同意你的看法～";
 							close2;
 							set .@choose_success,2;
 						}
 						else {
-							mes "[Rossa]";
-							mes "Oh, I see. Still, I can't";
-							mes "help but feel so disappointed.";
-							mes "You'd look so good if you dyed";
-							mes "your hair a different color~";
+							mes "[蘿莎]";
+							mes "喔，我知道了。但我還是";
+							mes "忍不住感到非常失望。";
+							mes "如果你把頭髮染成";
+							mes "不同的顏色，你會";
+							mes "看起來很好看的～";
 							close2;
 							set .@choose_success,2;
 						}
 						break;
 					}
 					if (getlook(VAR_HEADPALETTE) == .@headpalette) {
-						mes "[Rossa]";
-						mes "Hmm, your hair color";
-						mes "is still fine, so there's";
-						mes "no need to dye it the same";
-						mes "color again, if that's what";
-						mes "you're worried about.";
+						mes "[蘿莎]";
+						mes "嗯，你的髮色";
+						mes "仍然很好，所以";
+						mes "沒有必要再次染";
+						mes "同樣的顏色，如果你";
+						mes "擔心的是這個。";
 						next;
 					}
 					else {
 						if ((.@headpalette == 8) && (countitem(975) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Scarlet Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來猩紅色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 1) && (countitem(976) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Lemon Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來檸檬色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 2) && (countitem(981) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Violet Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來紫羅蘭色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 3) && (countitem(980) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Orange Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來橘色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 4) && (countitem(979) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Darkgreen Dyestuffs";
-							mes "with you. Would you come";
-							mes "back after you get some?";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來墨綠色染料";
+							mes "我就不能幫你染髮了。";
+							mes "取得一些之後，你願意";
+							mes "再回來嗎？";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 5) && (countitem(978) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Cobaltblue Dyestuffs";
-							mes "with you. Would you come";
-							mes "back after you get some?";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來鈷藍色染料";
+							mes "我就不能幫你染髮了。";
+							mes "取得一些之後，你願意";
+							mes "再回來嗎？";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 6) && (countitem(982) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "White Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來白色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						else if ((.@headpalette == 7) && (countitem(983) == 0)) {
-							mes "[Rossa]";
-							mes "Oh, I'm sorry dear,";
-							mes "but I can't dye your";
-							mes "hair if you didn't bring";
-							mes "Black Dyestuffs with you...";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但如果你沒有帶";
+							mes "來黑色染料，我就";
+							mes "不能幫你染髮...";
 							close2;
 							set .@choose_success,2;
 							break;
 						}
 						if (Zeny < 1000) {
-							mes "[Rossa]";
-							mes "Oh, I'm so sorry dear,";
-							mes "but my service fee is";
-							mes "1,000 zeny. Did you forget";
-							mes "to bring your money with you?";
+							mes "[蘿莎]";
+							mes "喔，我很抱歉親愛的，";
+							mes "但我的服務費是";
+							mes "1,000 zeny。你忘記";
+							mes "帶錢了嗎？";
 							close2;
 							set .@choose_success,2;
 							break;
@@ -241,30 +243,29 @@ lhz_in02,100,134,3	script	Hair Dyer#lich	850,{
 			}
 			break;
 		case 2:
-			mes "[Rossa]";
-			mes "When you're feeling";
-			mes "down, when you just want";
-			mes "to look nice for the one you";
-			mes "love, or when you just want";
-			mes "a different look, why don't";
-			mes "you dye your hair?";
+			mes "[蘿莎]";
+			mes "當你感到";
+			mes "沮喪時，當你只想";
+			mes "為你愛的人打扮";
+			mes "漂亮時，或者當你只是想";
+			mes "要一個不同的外觀時，";
+			mes "為什麼不染頭髮呢？";
 			next;
-			mes "[Rossa]";
-			mes "All you need is one";
-			mes "Dyestuffs item of the";
-			mes "color that you want to";
-			mes "dye your hair, as well as";
-			mes "a 1,000 zeny service fee.";
-			mes "I'm here for your beauty needs~";
+			mes "[蘿莎]";
+			mes "你所需要的只是";
+			mes "一個你想要染";
+			mes "的顏色的染料，以及";
+			mes "1,000 zeny 的服務費。";
+			mes "我隨時為你的美麗需求服務～";
 			break;
 		case 3:
-			mes "[Rossa]";
-			mes "You know, when you";
-			mes "put some effort into";
-			mes "your appearance, you'll";
-			mes "not only look better, but";
-			mes "you'll feel better about";
-			mes "yourself. Makes sense, right?";
+			mes "[蘿莎]";
+			mes "你知道，當你";
+			mes "在你的外表上花費";
+			mes "一些心思時，你";
+			mes "不僅會看起來更好，而且";
+			mes "你會對自己感覺更好。";
+			mes "有道理，對吧？";
 			close;
 		}
 	}

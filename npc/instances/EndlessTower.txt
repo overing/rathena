@@ -40,120 +40,120 @@
 
 alberta,214,77,6	script	Captain Janssen	709,{
 	if (checkweight(1201,1) == 0) {
-		mes "^008800Wait here!!";
-		mes "You're carrying too much stuff. Why don't you put some of it away, and then come back.^000000";
+		mes "^008800在這裡等一下!!";
+		mes "你攜帶太多東西了。為什麼不先把一些東西存放起來，然後再回來？^000000";
 		close;
 	}
 	if (BaseLevel < 50) {
-		mes "[Captain Janssen]";
-		mes "Sigh... I don't know if I can ever go back to sailing the sea...";
+		mes "[詹森船長]";
+		mes "唉... 我不知道我是否還能回到海上航行...";
 		close;
 	}
 	set .@name$,strcharinfo(0);
 	if (in_102tower == 1) {
-		mes "^0000ffLooking incredibly excited, the old man ran into the marine shop hurriedly ordering goods. You don't have anything better to do, so you decide to ask him why he is in such a rush.^000000";
+		mes "^0000ff這位老人看起來非常興奮，匆匆忙忙地跑進海運商店訂購商品。 你也沒什麼更好的事情可以做，所以你決定問他為什麼這麼匆忙。^000000";
 		next;
-		mes "^0000ffThe old man, after finishing his orders, walks towards you.^000000";
+		mes "^0000ff這位老人完成訂購後，向你走來。^000000";
 		next;
-		mes "[Captain Janssen]";
-		mes "I was touched when you accepted a request from me, a stranger, so easily. You must truly be one of those good, heroic adventurers. Are you interested in setting out on an ocean voyage?";
+		mes "[詹森船長]";
+		mes "當你這麼輕易地接受了我這個陌生人的請求時，我深受感動。你一定是那些善良、英勇的冒險家之一。你有興趣開始一趟海上航行嗎？";
 		next;
 		mes "["+.@name$+"]";
-		mes "I've sailed a few times... But now that I think about it, I've never gone across the continent.";
+		mes "我航行過幾次... 但現在想想，我從未跨越過大陸。";
 		next;
-		mes "[Captain Janssen]";
-		mes "No, that's good enough. I may just have one small fishing vessel, but I used to be a captain that commanded a fleet.";
+		mes "[詹森船長]";
+		mes "不，那已經足夠了。我可能只有一艘小漁船，但我曾經是指揮艦隊的船長。";
 		next;
-		mes "[Captain Janssen]";
-		mes "As you may know after a few sea voyages, not many people have gone across the ocean beyond the continent. I too have failed to conquer the ocean.";
+		mes "[詹森船長]";
+		mes "正如你在幾次海上航行後可能知道的那樣，沒有多少人跨越大陸以外的海洋。我也未能征服海洋。";
 		next;
-		mes "^0000ffMr. Janssen talked about his perilous ocean journeys for quite a while. You have enough time on your hands, so you sit down, quietly listening to his story.^000000";
+		mes "^0000ff詹森先生講述了他危險的海洋旅程相當長的一段時間。 你有足夠的時間，所以你坐下來，靜靜地聽他的故事。^000000";
 		next;
-		mes "^0000ffAt least half of his story sounded grossly exaggerated, but something caught your ear: he insists that a humongous tower exists on the ocean, and that it's so tall, it scrapes across the sky.^000000";
+		mes "^0000ff至少他故事的一半聽起來都過於誇張，但有些事情引起了你的注意：他堅稱海洋上存在一座巨大的塔，它非常高，甚至可以刮到天空。^000000";
 		set in_102tower,2;
 		close;
 	} else if (in_102tower == 2) {
-		mes "[Captain Janssen]";
-		mes "So all I could do was cast anchor at that humongous tower after my fleet was wrecked. At first, we were only going to stay there until the rainstorm was over, but it didn't end as soon as we had hoped.";
+		mes "[詹森船長]";
+		mes "所以在我艦隊遇難後，我所能做的就是在那個巨大的塔上拋錨。起初，我們只是打算待在那裡直到暴風雨結束，但它並沒有像我們希望的那樣很快結束。";
 		next;
-		mes "[Captain Janssen]";
-		mes "My crew was starving, and a few of them walked into the tower in order to find food... They never came back.";
-		next;
-		mes "["+.@name$+"]";
-		mes "Why didn't you go in there with them?";
-		next;
-		mes "[Captain Janssen]";
-		mes "My instincts told me that tower was dangerous. I was curious, but I wasn't going to risk my life. We waited for them to come back for 7 days until the rainstorm was finally over, but no one returned.";
-		next;
-		mes "[Captain Janssen]";
-		mes "In our desperation to survive, we abandoned all our goods, and left the tower only with a little bit of the water and edible plants we'd found around the tower. When we finally reached land, I was the only one alive...";
-		next;
-		mes "^0000ffYou could imagine the heartwretching scene of the dying fleet on their last voyage, even if he didn't explain it any further. A look of somber regret swept over his face as he remained silent a while, and then he said:^000000";
-		next;
-		mes "[Captain Janssen]";
-		mes "I have something I must do before I die. I must retrieve the remains of my crew that died in the tower, and give them a proper burial.";
-		next;
-		mes "[Captain Janssen]";
-		mes "I feel so lucky to meet a warm-hearted adventurer like you. With the money you've given me, I can finally go sailing to the tower again.";
+		mes "[詹森船長]";
+		mes "我的船員們都快餓死了，他們中的一些人走進塔裡尋找食物... 他們再也沒有回來。";
 		next;
 		mes "["+.@name$+"]";
-		mes "How about hiring me as your first mate?";
+		mes "你為什麼不和他們一起進去？";
 		next;
-		mes "[Captain Janssen]";
-		mes "Thank you, but it is an extremely dangerous place. I have my duty to fulfill, but you don't have any obligation to me or them. I don't wish to sacrifice someone as young as you to such a dangerous place.";
+		mes "[詹森船長]";
+		mes "我的直覺告訴我那座塔很危險。 我很好奇，但我不會冒生命危險。 我們等了他們7天，直到暴風雨終於結束，但沒有人回來。";
+		next;
+		mes "[詹森船長]";
+		mes "在我們求生的絕望中，我們放棄了所有的貨物，只帶著在塔周圍找到的一點水和可食用的植物離開了塔。 當我們終於到達陸地時，只有我一個人活著...";
+		next;
+		mes "^0000ff你可以想像到垂死艦隊在最後一次航行中心碎的場景，即使他沒有進一步解釋。 一種陰鬱的遺憾表情掠過他的臉龐，他沉默了一會兒，然後說道：^000000";
+		next;
+		mes "[詹森船長]";
+		mes "在我死之前，我必須做一件事。 我必須找回我那些死在塔裡的船員的遺骸，並給他們一個像樣的葬禮。";
+		next;
+		mes "[詹森船長]";
+		mes "我很幸運能遇到像你這樣熱心的冒險家。 有了你給我的錢，我終於可以再次航行到那座塔了。";
 		next;
 		mes "["+.@name$+"]";
-		mes "No...";
+		mes "雇用我當你的大副怎麼樣？";
+		next;
+		mes "[詹森船長]";
+		mes "謝謝你，但那是一個極其危險的地方。 我有我必須履行的義務，但你對我和他們沒有任何義務。 我不希望為了這樣一個危險的地方而犧牲像你這樣年輕的人。";
+		next;
+		mes "["+.@name$+"]";
+		mes "不...";
 		mes ".";
 		mes ".";
-		mes "As an adventurer, there's my obligation to those in need. I'm also very curious about that place...";
+		mes "作為一個冒險家，我有義務幫助那些需要幫助的人。 我也很好奇那個地方...";
 		next;
-		mes "[Captain Janssen]";
-		mes "I was going to leave right away, but since you've joined me, I should give you time to prepare. I'll be waiting here until you're ready to go.";
+		mes "[詹森船長]";
+		mes "我本來打算馬上離開，但既然你加入了，我應該給你時間準備。 我會在這裡等你準備好。";
 		next;
-		mes "[Captain Janssen]";
-		mes "...Okay then...";
-		mes "Welcome aboard, first mate.";
+		mes "[詹森船長]";
+		mes "...好吧...";
+		mes "歡迎上船，大副。";
 		set in_102tower,3;
 		close;
 	} else if (in_102tower == 3) {
-		mes "[Captain Janssen]";
-		mes "Shall we leave now?";
+		mes "[詹森船長]";
+		mes "我們現在要出發了嗎？";
 		next;
-		switch(select("Yes, let's go!:No, I'm not quite ready...")) {
+		switch(select("是的，我們走吧！:不，我還沒準備好...")) {
 		case 1:
-			mes "[Captain Janssen]";
-			mes "Then pull up the anchor, first mate!";
+			mes "[詹森船長]";
+			mes "那就起錨吧，大副！";
 			close2;
 			set in_102tower,4;
 			warp "e_tower",70,114;
 			end;
 		case 2:
-			mes "[Captain Janssen]";
-			mes "Sure, no problem. Come back when you're ready.";
+			mes "[詹森船長]";
+			mes "好的，沒問題。 準備好了再回來。";
 			close;
 		}
 	} else if (in_102tower > 3) {
-		mes "[Captain Janssen]";
-		mes "Well, to travel the ocean again, we need to restock on goods. If you give me 10,000 Zeny, I'll take care of the rest.";
+		mes "[詹森船長]";
+		mes "嗯，要再次航行海洋，我們需要重新補給物資。 如果你給我 10,000 Zeny，我會處理剩下的事情。";
 		next;
-		switch(select("I'll come back later.:Let's go, now!")) {
+		switch(select("我晚點再來。:我們現在就走！")) {
 		case 1:
 			mes "["+.@name$+"]";
-			mes "I'm sorry, but I don't have that much money. I'll come back when I save enough.";
+			mes "我很抱歉，但我沒有那麼多錢。 等我存夠了錢再來。";
 			next;
-			mes "[Captain Janssen]";
-			mes "Sure, no problem. I'll be waiting for your return.";
+			mes "[詹森船長]";
+			mes "好的，沒問題。 我會等你回來。";
 			close;
 		case 2:
 			if (Zeny < 10000) {
-				mes "[Captain Janssen]";
-				mes "I'm sorry, but you don't have enough money. I need at least 10,000 Zeny to restock our supplies...";
+				mes "[詹森船長]";
+				mes "我很抱歉，但你沒有足夠的錢。 我至少需要 10,000 Zeny 來補充我們的物資...";
 				close;
 			}
 			else {
-				mes "[Captain Janssen]";
-				mes "Excellent! Now we're good to go. Let's pull up the anchor again!";
+				mes "[詹森船長]";
+				mes "太棒了！ 現在我們準備好了。 讓我們再次起錨！";
 				set Zeny, Zeny-10000;
 				close2;
 				warp "e_tower",70,114;
@@ -161,39 +161,39 @@ alberta,214,77,6	script	Captain Janssen	709,{
 			}
 		}
 	} else {
-		mes "[Captain Janssen]";
-		mes "Excuse me, are you an adventurer?";
+		mes "[詹森船長]";
+		mes "請問，您是一位冒險家嗎？";
 		next;
-		mes "[Captain Janssen]";
-		mes "I'm sorry to ask you this, especially when this is the first time we've ever met, but can you do me a favor? I'll make it short.";
+		mes "[詹森船長]";
+		mes "我很抱歉問你這個，特別是當我們是第一次見面時，但你能幫我一個忙嗎？ 我會長話短說。";
 		next;
-		mes "[Captain Janssen]";
-		mes "Can you donate ^0000ff10,000 Zeny^000000 to me? It's for a cause that's important to me...";
+		mes "[詹森船長]";
+		mes "你能捐贈 ^0000ff10,000 Zeny^000000 給我嗎？ 這是為了對我來說很重要的一件事...";
 		next;
-		switch(select("No!:Sure thing.")) {
+		switch(select("不要！:當然。")) {
 		case 1:
 			mes "["+.@name$+"]";
-			mes "I'm sorry, but you've got the wrong person to ask that.";
+			mes "我很抱歉，但你找錯人了。";
 			next;
-			mes "[Captain Janssen]";
-			mes "I see... Sorry to bother you. I understand it was too rude to ask something like that to begin with.";
+			mes "[詹森船長]";
+			mes "我知道了... 很抱歉打擾你。 我明白一開始就問這種事太過無禮了。";
 			close;
 		case 2:
-			mes "[Captain Janssen]";
-			mes "Huh? Are you sure that you don't mind giving me that much money? Wow, thank you so much!";
+			mes "[詹森船長]";
+			mes "嗄？你確定不介意給我這麼多錢嗎？哇，真是太感謝你了！";
 			next;
 			if (Zeny < 10000) {
-				mes "[Captain Janssen]";
-				mes "...I'm sorry, but I don't think you have 10,000 Zeny. Thank you for your kindness, but I need more than that.";
+				mes "[詹森船長]";
+				mes "…我很抱歉，但我不認為你有 10,000 Zeny。謝謝你的好意，但我需要更多。";
 				close;
 			} else {
 				mes "["+.@name$+"]";
-				mes "I don't know why you'd need so much money, but here. You can take it.";
+				mes "我不知道你需要這麼多錢做什麼，但給你。你可以拿去用。";
 				next;
-				mes "^0000ffYou have donated 10,000 Zeny to Captain Janssen^000000.";
+				mes "^0000ff你已經捐贈了 10,000 Zeny 給詹森船長^000000。";
 				next;
-				mes "[Captain Janssen]";
-				mes "Thank you so much! Now I can stock up on food and materials for my ship. You're kind, very kind!";
+				mes "[詹森船長]";
+				mes "真是太感謝了！現在我可以為我的船儲備食物和材料了。你真是太好了！";
 				set Zeny, Zeny-10000;
 				set in_102tower,1;
 				close;
@@ -211,29 +211,29 @@ e_tower,81,105,0	script	Tower Protection Stone	406,{
 	set .@etower_timer2,checkquest(60201,PLAYTIME); // 4 hours
 
 	if (!instance_check_party(.@party_id,2)) {
-		mes "Make or join a party with more than 1 member and try again.";
+		mes "組成或加入一個成員超過 1 人的隊伍再試一次。";
 		close;
 	}
 	switch(.@etower_timer) {
 	case -1:
 		if (is_party_leader() == true) {
-			mes "Confirmed the party has been made. Would you like to reserve entrance to the Endless Tower?";
+			mes "已確認隊伍已組成。你想要預約進入無限塔嗎？";
 			next;
-			switch(select("Generate dungeon "+.@md_name$+":Enter the dungeon:Return to Alberta:Cancel")) {
+			switch(select("產生副本 "+.@md_name$+":進入副本:返回艾爾貝塔:取消")) {
 			case 1:
 				if (instance_create(.@md_name$) < 0) {
-					mes "Party Name: "+ getpartyname(.@party_id);
-					mes "Party Leader: "+strcharinfo(0);
-					mes "^0000ff"+.@md_name$+" ^000000- Reservation Failed!";
+					mes "隊伍名稱："+ getpartyname(.@party_id);
+					mes "隊長："+strcharinfo(0);
+					mes "^0000ff"+.@md_name$+" ^000000- 預約失敗！";
 					close;
 				}
-				mes "^0000ff"+.@md_name$+"^000000 - Try to reserve";
-				mes "After making a reservation, you have to talk to NPC behind and select the menu 'Enter the Dungeon' to enter the dungeon.";
+				mes "^0000ff"+.@md_name$+"^000000 - 嘗試預約";
+				mes "預約後，您必須與後面的 NPC 對話，並選擇「進入副本」選單才能進入副本。";
 				close;
 			case 2:
 				callsub L_Enter,0,1;
 			case 3:
-				mes "I will move you to Alberta.";
+				mes "我會將你移動到艾爾貝塔。";
 				close2;
 				warp "alberta",223,36;
 				end;
@@ -241,11 +241,11 @@ e_tower,81,105,0	script	Tower Protection Stone	406,{
 				close;
 			}
 		}
-		switch(select("Enter the "+.@md_name$+":Return to Alberta:Cancel")) {
+		switch(select("進入 "+.@md_name$+":返回艾爾貝塔:取消")) {
 		case 1:
 			callsub L_Enter,1,1;
 		case 2:
-			mes "I will move you to Alberta.";
+			mes "我會將你移動到艾爾貝塔。";
 			close2;
 			warp "alberta",223,36;
 			end;
@@ -255,13 +255,13 @@ e_tower,81,105,0	script	Tower Protection Stone	406,{
 	case 0:
 	case 1:
 		if (.@etower_timer2 < 2 && getcharid(1) == etower_partyid) {
-			mes "If you have the dungeon generated already, you can enter it. ";
+			mes "如果你已經產生了副本，你可以進入。";
 			next;
-			switch(select("Enter the "+.@md_name$+":Return to Alberta:Cancel")) {
+			switch(select("進入 "+.@md_name$+":返回艾爾貝塔:取消")) {
 			case 1:
 				callsub L_Enter,0,0;
 			case 2:
-				mes "I will move you to Alberta.";
+				mes "我會將你移動到艾爾貝塔。";
 				close2;
 				warp "alberta",223,36;
 				end;
@@ -277,9 +277,9 @@ e_tower,81,105,0	script	Tower Protection Stone	406,{
 			set .@dun_m,(.@dun_ent_t - (.@dun_h * 3600)) / 60;
 			set .@dun_s,.@dun_ent_t - ((.@dun_h * 3600) + (.@dun_m * 60));
 
-			mes "Due to the tower's aftereffects, you cannot enter the dungeon right now, " + .@dun_h + "hours " + .@dun_m + "minutes " + .@dun_s + "seconds left to enter the next dungeon.";
+			mes "由於塔的後遺症，你現在無法進入副本，距離下次進入副本還有 " + .@dun_h + " 小時 " + .@dun_m + " 分鐘 " + .@dun_s + " 秒。";
 			next;
-			mes "It is dangerous here. Let me move you to Alberta.";
+			mes "這裡很危險。讓我將你移動到艾爾貝塔。";
 			close2;
 			warp "alberta",223,36;
 			end;
@@ -288,21 +288,21 @@ e_tower,81,105,0	script	Tower Protection Stone	406,{
 		set etower_timer,0;
 		erasequest 60200;
 		erasequest 60201;
-		mes "^0000ffThe records and after effects related to the Endless Tower have been removed. You can generate and enter the Endless Tower again.^000000";
+		mes "^0000ff與無限塔相關的記錄和後遺症已被移除。您可以再次產生並進入無限塔。^000000";
 		close;
 	}
 
 L_Enter:
 	switch(instance_enter("Endless Tower")) {
 	case IE_OTHER:
-		mes "An unknown error has occurred.";
+		mes "發生不明錯誤。";
 		close;
 	case IE_NOINSTANCE:
-		mes "The memorial dungeon Endless Tower does not exist.";
-		mes "The party leader did not generate the dungeon yet.";
+		mes "紀念副本無限塔不存在。";
+		mes "隊長尚未產生副本。";
 		close;
 	case IE_NOMEMBER:
-		mes "You can enter the dungeon after making the party.";
+		mes "組成隊伍後才能進入副本。";
 		close;
 	case IE_OK:
 		mapannounce "e_tower", strcharinfo(0) +" of the party, "+ getpartyname( getcharid(1) ) +", is entering the dungeon, Endless Tower.",bc_map,"0x00ff99",FW_NORMAL,12;
@@ -321,7 +321,7 @@ L_Enter:
 e_tower,30,30,2	script	Huge Vortex	844,2,2,{
 	end;
 OnTouch:
-	mapannounce "e_tower","[ " + strcharinfo(0) + " ], seems to be engulfed by a huge vortex",bc_map,"0x00ff99",FW_NORMAL,12;
+	mapannounce "e_tower","[ " + strcharinfo(0) + " ] 似乎被巨大的漩渦吞噬",bc_map,"0x00ff99",FW_NORMAL,12;
 	warp "alberta",223,36;
 	end;
 }
@@ -329,33 +329,33 @@ OnTouch:
 // Original name: "#102Administrator Mode104"
 e_tower,1,1,2	script	#102Administrator Mode	844,{
 	callfunc "F_GM_NPC";
-	mes "Please enter the password";
+	mes "請輸入密碼";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
-		switch(select("Generate Purification Stone:Remove Purification Stone:Cancel")) {
+		switch(select("產生淨化之石:移除淨化之石:取消")) {
 		case 1:
-			mes "Create the Purification Stone that stays for 30 minutes.";
+			mes "創造持續 30 分鐘的淨化之石。";
 			donpcevent "Purification Stone#et1::OnEnable";
 			break;
 		case 2:
-			mes "Destroy the Purification Stone immediately";
+			mes "立即摧毀淨化之石";
 			donpcevent "Purification Stone#et1::OnDisable";
 			break;
 		case 3:
-			mes "You have canceled it.";
+			mes "你已經取消了。";
 			break;
 		}
 		close;
 	} else {
-		mes "Enter the password exactly.";
+		mes "請正確輸入密碼。";
 		close;
 	}
 }
 
 e_tower,69,117,4	script	Purification Stone#et1	406,{
 	set etower_timer,0;
-	mes "^0000ffThe records and aftereffects related to the Endless Tower have been removed. You can generate and enter the Endless Tower again.^000000";
+	mes "^0000ff與無限塔相關的記錄和後遺症已被移除。您可以再次產生並進入無限塔。^000000";
 	close;
 
 OnInit:
@@ -387,7 +387,7 @@ OnTimer1800000:
 e_tower,151,185,4	script	Purification Stone#et2	844,{
 	callfunc "F_GM_NPC";
 	set etower_timer,0;
-	mes "^0000ffThe records and aftereffects related to the Endless Tower have been removed. You can generate and enter the Endless Tower again.^000000";
+	mes "^0000ff與無限塔相關的記錄和後遺症已被移除。您可以再次產生並進入無限塔。^000000";
 	close2;
 	warp "e_tower",75,108;
 	end;
@@ -564,7 +564,7 @@ function	script	F_Tower_Monster	{
 		areamonster .@map$,93,351,103,387,"Goblin",1122,10,.@label$;
 		areamonster .@map$,93,351,103,387,"Goblin",1123,5,.@label$;
 		areamonster .@map$,93,351,103,387,"Goblin",1124,5,.@label$;
-		areamonster .@map$,93,351,103,387,"Goblin",1125,5,.@label$;
+		areamonster .@map$,93,351,103,387,"Gobin",1125,5,.@label$;
 		areamonster .@map$,93,351,103,387,"Goblin",1126,5,.@label$;
 		break;
 	case 28:
@@ -603,7 +603,7 @@ function	script	F_Tower_Monster	{
 	case 33:
 		areamonster .@map$,181,267,191,303,"Kobold Leader",1296,1,.@label$;
 		areamonster .@map$,181,267,191,303,"Kobold",1133,15,.@label$;
-		areamonster .@map$,181,267,191,303,"Kobold Archer",1282,15,.@label$;
+		areamonster .@map$,181,267,191,303,"Kobold_Archer",1282,15,.@label$;
 		areamonster .@map$,181,267,191,303,"Kobold",1134,10,.@label$;
 		areamonster .@map$,181,267,191,303,"Kobold",1135,5,.@label$;
 		break;
@@ -725,7 +725,7 @@ function	script	F_Tower_Monster	{
 		break;
 	case 54:
 		areamonster .@map$,267,351,277,387,"Chepet",1250,10,.@label$;
-		areamonster .@map$,267,351,277,387,"Marionette",1143,10,.@label$;
+		areamonster .@map$,267,351,277,387,"Mariontte",1143,10,.@label$;
 		areamonster .@map$,267,351,277,387,"Miyabi Doll",1404,10,.@label$;
 		break;
 	case 55:
@@ -801,7 +801,7 @@ function	script	F_Tower_Monster	{
 		areamonster .@map$,267,180,277,216,"Giant Hornet",1303,2,.@label$;
 		break;
 	case 65:
-		areamonster .@map$,352,180,362,216,"Atroce",1785,1,.@label$;
+		areamonster .@map$,352,180,362,216,"Atros",1785,1,.@label$;
 		areamonster .@map$,352,180,362,216,"Galion",1783,20,.@label$;
 		break;
 	case 66:
@@ -964,7 +964,7 @@ function	script	F_Tower_Monster	{
 	case 91:
 		areamonster .@map$,9,96,19,132,"Cecil Damon",1638,10,.@label$;
 		areamonster .@map$,9,96,19,132,"Bow Master",1830,10,.@label$;
-		areamonster .@map$,9,96,19,132,"Kavach Icarus",1656,30,.@label$;
+		areamonster .@map$,9,96,19,132,"Kavac",1656,30,.@label$;
 		break;
 	case 92:
 		areamonster .@map$,93,96,103,132,"Kathryne Keyron",1639,15,.@label$;
@@ -1189,21 +1189,21 @@ function	script	F_Tower_Warp	{
 // Levels 1-25
 //============================================================
 1@tower,50,360,0	script	Immortal Brazier#	844,{
-	mes "- A Message is Engraved on the Brazier -";
-	mes "The one who scatters the ashes of the darkness in this place shall become one step closer to Naght Sieger, the Hegemon King of the Darkness...";
+	mes "- 燭臺上刻著訊息 -";
+	mes "將黑暗的灰燼散落在這個地方的人，將更接近黑暗的霸主國王，納赫特·齊格...";
 	next;
 
 	setarray .@level$[1],"26th","51st","76th";
 	setarray .@map$[1],"2@tower","3@tower","4@tower";
-	set .@i, select("26th Level:51st Level:76th Level");
+	set .@i, select("26樓:51樓:76樓");
 
 	if (countitem(6000) < .@i) {
-		mes "-Warning-";
-		mes "To warp to the "+.@level$[.@i]+" Level, you need "+.@i+" Ashes of the Darkness.";
+		mes "-警告-";
+		mes "傳送到 "+.@level$[.@i]+" 樓，你需要 "+.@i+" 個黑暗灰燼。";
 		close;
 	}
 	delitem 6000,.@i; //Dark_Ashes
-	mapannounce instance_mapname("1@tower"), strcharinfo(0)+". You will be warped to the "+.@level$[.@i]+" Level.",bc_map,"0x00ff99";
+	mapannounce instance_mapname("1@tower"), strcharinfo(0)+". 你將被傳送到 "+.@level$[.@i]+" 樓。",bc_map,"0x00ff99";
 	warp instance_mapname(.@map$[.@i]),52,354;
 	close;
 
@@ -1238,7 +1238,7 @@ OnMyMobDead:
 	end;
 
 OnTimer5000:
-	mapannounce instance_mapname("1@tower"), "All Monsters on the 1st Level have been defeated.",bc_map,"0xffff00";
+	mapannounce instance_mapname("1@tower"), "第一層的所有怪物都已被擊敗。",bc_map,"0xffff00";
 	donpcevent instance_npcname("1FGate102tower")+"::OnEnable";
 	stopnpctimer;
 	end;
@@ -1273,12 +1273,12 @@ OnMyMobDead:
 		initnpctimer;
 		//SetItemPartyInMap in_102floor .@level
 	} else
-		mapannounce .@map$, "Remaining Monsters on the "+callfunc("F_GetNumSuffix",.@level)+" Level - "+.@mob_dead_num,bc_map,"0x00ff99";
+		mapannounce .@map$, "第"+callfunc("F_GetNumSuffix",.@level)+"層剩餘怪物 - "+.@mob_dead_num,bc_map,"0x00ff99";
 	end;
 
 OnTimer5000:
 	set .@level, atoi(replacestr(strnpcinfo(0),"FGate102tower","")) + 1;
-	mapannounce strnpcinfo(4), "All Monsters on the "+callfunc("F_GetNumSuffix",.@level)+" Level have been defeated.",bc_map,"0xffff00";
+	mapannounce strnpcinfo(4), "第"+callfunc("F_GetNumSuffix",.@level)+"層的所有怪物都已被擊敗。",bc_map,"0xffff00";
 	donpcevent instance_npcname(.@level+"FGate102tower")+"::OnEnable";
 	stopnpctimer;
 	end;
@@ -1356,30 +1356,30 @@ OnInstanceInit:
 
 OnTimer15000:
 OnTimer60000:
-	mapannounce instance_mapname("1@tower"), "Notice : In any abnormal situation where you defeat a monster, you can't advance to the next level!",bc_map,"0xff0000";
+	mapannounce instance_mapname("1@tower"), "注意：在擊敗怪物的任何異常情況下，您都無法進入下一層！",bc_map,"0xff0000";
 	end;
 OnTimer120000:
-	mapannounce instance_mapname("1@tower"), "Notice : In any abnormal situation where you defeat a monster, you can't advance to the next level!",bc_map,"0xff0000";
+	mapannounce instance_mapname("1@tower"), "注意：在擊敗怪物的任何異常情況下，您都無法進入下一層！",bc_map,"0xff0000";
 	stopnpctimer;
 	end;
 }
 
 1@tower,71,1,0	script	#Manager Mode1	844,{
 	callfunc "F_GM_NPC";
-	mes "Please enter the password.";
+	mes "請輸入密碼。";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
-		mes "This NPC manages the tower from the 1st to the 25th Level.";
-		mes "Please enter the Level number to open.";
-		mes "(i.g.: 1F->1, 25F->25)";
+		mes "這個 NPC 管理著 1 到 25 層的塔樓。";
+		mes "請輸入要開啟的樓層號碼。";
+		mes "(例如：1F->1, 25F->25)";
 		input .@input,1,25;
 		next;
 		if (.@input < 1 || .@input > 25)
-			mes "You can only enter a number from 1 to 25.";
+			mes "您只能輸入 1 到 25 之間的數字。";
 		else {
 			donpcevent instance_npcname(.@input+"FGate102tower")+"::OnEnable";
-			mes "*** Level "+ .@input + " is now being opened. ***";
+			mes "*** 第 "+ .@input + " 層現在正在開啟。 ***";
 		}
 	}
 	close;
@@ -1405,11 +1405,11 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 26
 	}
 	else
-		mapannounce .@map$, "Remaining Monsters on the 26th Level - " + .@mob_dead_num,bc_map,"0x00ff99";
+		mapannounce .@map$, "第 26 層剩餘怪物 - " + .@mob_dead_num,bc_map,"0x00ff99";
 	end;
 
 OnTimer5000:
-	mapannounce instance_mapname("2@tower"), "All Monsters on the 26th Level have been defeated.",bc_map,"0xffff00";
+	mapannounce instance_mapname("2@tower"), "第 26 層的所有怪物都已被擊敗。",bc_map,"0xffff00";
 	donpcevent instance_npcname("26FGate102tower")+"::OnEnable";
 	stopnpctimer;
 	end;
@@ -1482,20 +1482,20 @@ OnTouch_:
 
 2@tower,71,1,0	script	#Manager Mode2	844,{
 	callfunc "F_GM_NPC";
-	mes "Please enter the password.";
+	mes "請輸入密碼。";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
-		mes "This NPC manages the tower from the 26st to the 50th Level.";
-		mes "Please enter the Level number to open.";
-		mes "(i.g.: 26F->26, 50F->50)";
+		mes "這個 NPC 管理著 26 到 50 層的塔樓。";
+		mes "請輸入要開啟的樓層號碼。";
+		mes "(例如：26F->26, 50F->50)";
 		input .@input,26,50;
 		next;
 		if (.@onput < 26 || .@input > 50)
-			mes "You can only enter a number from 26 to 50.";
+			mes "您只能輸入 26 到 50 之間的數字。";
 		else {
 			donpcevent instance_npcname(.@input+"FGate102tower")+"::OnEnable";
-			mes "*** Level "+ .@input + " is now being opened. ***";
+			mes "*** 第 "+ .@input + " 層現在正在開啟。 ***";
 		}
 	}
 	close;
@@ -1521,11 +1521,11 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 51
 	}
 	else
-		mapannounce .@map$, "Remaining Monsters on the 51st Level - " + .@mob_dead_num,bc_map,"0x00ff99";
+		mapannounce .@map$, "第 51 層剩餘怪物 - " + .@mob_dead_num,bc_map,"0x00ff99";
 	end;
 
 OnTimer5000:
-	mapannounce instance_mapname("3@tower"), "All Monsters on the 51st Level have been defeated.",bc_map,"0xffff00";
+	mapannounce instance_mapname("3@tower"), "第 51 層的所有怪物都已被擊敗。",bc_map,"0xffff00";
 	donpcevent instance_npcname("51FGate102tower")+"::OnEnable";
 	stopnpctimer;
 	end;
@@ -1598,20 +1598,20 @@ OnTouch_:
 
 3@tower,71,1,0	script	#Manager Mode3	844,{
 	callfunc "F_GM_NPC";
-	mes "Please enter the password.";
+	mes "請輸入密碼。";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
-		mes "This NPC manages the tower from the 51st to the 75th Level.";
-		mes "Please enter the Level number to open.";
-		mes "(i.g.: 51F->51, 75F->75)";
+		mes "這個 NPC 管理著 51 到 75 層的塔樓。";
+		mes "請輸入要開啟的樓層號碼。";
+		mes "(例如：51F->51, 75F->75)";
 		input .@input,51,75;
 		next;
 		if (.@input < 51 || .@input > 75)
-			mes "You can only enter a number from 51 to 75.";
+			mes "您只能輸入 51 到 75 之間的數字。";
 		else {
 			donpcevent instance_npcname(.@input+"FGate102tower")+"::OnEnable";
-			mes "*** Level "+ .@input + " is now being opened. ***";
+			mes "*** 第 "+ .@input + " 層現在正在開啟。 ***";
 		}
 	}
 	close;
@@ -1637,11 +1637,11 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 76
 	}
 	else
-		mapannounce .@map$,"Remaining Monsters on the 76th Level - " + .@mob_dead_num,bc_map,"0x00ff99";
+		mapannounce .@map$,"第 76 層剩餘怪物 - " + .@mob_dead_num,bc_map,"0x00ff99";
 	end;
 
 OnTimer5000:
-	mapannounce instance_mapname("4@tower"),"All Monsters on the 76th Level have been defeated.",bc_map,"0xffff00";
+	mapannounce instance_mapname("4@tower"),"第 76 層的所有怪物都已被擊敗。",bc_map,"0xffff00";
 	donpcevent instance_npcname("76FGate102tower")+"::OnEnable";
 	stopnpctimer;
 	end;
@@ -1713,20 +1713,20 @@ OnTouch_:
 
 4@tower,71,1,0	script	#Manager Mode4	844,{
 	callfunc "F_GM_NPC";
-	mes "Please enter the password.";
+	mes "請輸入密碼。";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
-		mes "This NPC manages the tower from the 76th to the 99th Level.";
-		mes "Please enter the Level number to open.";
-		mes "(i.g.: 76F->76, 99F->99)";
+		mes "這個 NPC 管理著 76 到 99 層的塔樓。";
+		mes "請輸入要開啟的樓層號碼。";
+		mes "(例如：76F->76, 99F->99)";
 		input .@input,76,99;
 		next;
 		if (.@input < 76 || .@input > 99)
-			mes "You can only enter a number from 76 to 99.";
+			mes "您只能輸入 76 到 99 之間的數字。";
 		else {
 			donpcevent instance_npcname(.@input+"FGate102tower")+"::OnEnable";
-			mes "*** Level "+ .@input + " is now being opened. ***";
+			mes "*** 第 "+ .@input + " 層現在正在開啟。 ***";
 		}
 	}
 	close;
@@ -1736,40 +1736,40 @@ OnTouch_:
 //============================================================
 5@tower,106,109,2	script	Lucid Crystal#102	844,{
 	if (in_102tower < 10) {
-		mes "^0000ffA mysterious voice echoes through the room as you touch the lucid crystal radiating a strong light.^000000";
+		mes "^0000ff當你觸摸散發著強光的清澈水晶時，一個神秘的聲音在房間裡迴盪。^000000";
 		next;
-		mes "[Mysterious Voice]";
-		mes "Welcome to my place, intruders. I've had fun watching you endure all the difficulties I've set before you.";
+		mes "[神秘的聲音]";
+		mes "歡迎來到我的地盤，入侵者。我很高興看到你們忍受我之前設置的所有困難。";
 		next;
-		mes "[Mysterious Voice]";
-		mes "Unfortunately, the time has come to end the show.";
+		mes "[神秘的聲音]";
+		mes "不幸的是，結束表演的時刻已經到來。";
 		next;
-		mes "[Mysterious Voice]";
-		mes "It's still too early to celebrate your victory against my right-hand man Knothen because he isn't completely destroyed!";
+		mes "[神秘的聲音]";
+		mes "現在慶祝你們戰勝我的得力助手諾頓還為時過早，因為他還沒有完全被摧毀！";
 		next;
-		mes "[Mysterious Voice]";
-		mes "I shall resurrect him for your next show. Defeat him again, and then I'll gladly accept your challenge.";
+		mes "[神秘的聲音]";
+		mes "我將復活他，為你們的下一場表演。再次擊敗他，然後我會欣然接受你們的挑戰。";
 		next;
-		mes "[Mysterious Voice]";
-		mes "Good-bye for now.";
-		mes "Once again, I had such a great time, humans. I look forward to seeing you again.";
+		mes "[神秘的聲音]";
+		mes "暫時再見了。";
+		mes "再一次，我和你們度過了一段美好的時光，人類。我期待再次見到你們。";
 		next;
-		mes "^0000ffAs soon as the voice stopped talking, an irresistible force lifted and moved you somewhere else.";
+		mes "^0000ff聲音停止後，一股無法抗拒的力量抬起並將你移到其他地方。";
 		close2;
 		set in_102tower,10;
 		warp "alberta",223,36;
 	}
 	else {
-		mes "^0000ffThe radiating crystal piece seems to beckon you, just like last time.^000000";
+		mes "^0000ff發光的水晶碎片似乎在召喚你，就像上次一樣。^000000";
 		next;
-		mes "[Mysterious Voice]";
-		mes "I must have underestimated you... I didn't expect to see you again.";
+		mes "[神秘的聲音]";
+		mes "我一定是低估了你們...我沒想到會再次見到你們。";
 		next;
-		mes "[Mysterious Voice]";
-		mes "I can smell your sweat, hear the gasps of your exhaustion in combat. Ah~ The human desire for victory always excites me.";
+		mes "[神秘的聲音]";
+		mes "我可以聞到你們的汗水，聽到你們在戰鬥中精疲力竭的喘息聲。啊～人類對勝利的渴望總是讓我興奮。";
 		next;
-		mes "[Mysterious Voice]";
-		mes "I now allow you to come receive an audience from me. Come to me, to Naght Sieger the Hegemon-King of the Darkness!";
+		mes "[神秘的聲音]";
+		mes "我現在允許你們來接受我的召見。來找我，找黑夜霸主-納赫特·席格！";
 		close2;
 		warp instance_mapname("6@tower"),32,12;
 	}
@@ -1844,7 +1844,7 @@ OnMyMobDead:
 	set .@map$, instance_mapname("5@tower");
 	set .@mob_dead_num,mobcount(.@map$,instance_npcname("#102FShadowDust1")+"::OnMyMobDead");
 	if (.@mob_dead_num < 1) {
-		mapannounce .@map$, "Mysterious Voice: Who are you to dare intrude upon my sanctuary?!",bc_map,"0xffff00";
+		mapannounce .@map$, "Mysterious Voice: 誰敢闖入我的聖殿？！",bc_map,"0xffff00";
 		donpcevent instance_npcname("#102FShadowDust")+"::OnDisable";
 		donpcevent instance_npcname("Lucid Crystal#102")+"::OnEnable";
 		//SetItemPartyInMap in_102floor 100
@@ -1905,21 +1905,21 @@ OnEnable:
 
 5@tower,71,1,0	script	#Manager Mode5	844,{
 	callfunc "F_GM_NPC";
-	mes "This NPC manages the crystal on the 100th Level. Please enter the password.";
+	mes "這個 NPC 管理著第 100 層的晶體。請輸入密碼。";
 	set .@i, callfunc("F_GM_NPC","dmc2008",1);
 	next;
 	if (.@i == 1) {
 		donpcevent instance_npcname("Lucid Crystal#102")+"::OnEnable";
-		mes "The 100th Level's crystal has been activated.";
+		mes "第 100 層的晶體已經啟動。";
 	} else
-		mes "Please enter the correct password.";
+		mes "請輸入正確的密碼。";
 	close;
 }
 
 // Level 101
 //============================================================
 6@tower,45,89,2	script	Life Spring#1	844,{
-	mes "^0066ffYou took a sip of the spring's clear water, and you feel invigorated.^000000";
+	mes "^0066ff你喝了一口清澈的泉水，感覺充滿活力。^000000";
 	heal (MaxHp-Hp),(MaxSp-Sp);
 	close;
 
@@ -1982,24 +1982,24 @@ OnEnable:
 	end;
 
 OnTimer500:
-	mapannounce instance_mapname("6@tower"),"Guests, huh? I hope you've come here knowing that you'll be buried in this place. If you didn't know, well... it's too late!",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"客人，是嗎？我希望你們來到這裡，已經知道你們會被埋葬在這個地方。如果你們不知道，好吧...太遲了！",bc_map,"0x00ffcc";
 	end;
 
 OnTimer5500:
-	mapannounce instance_mapname("6@tower"),"This is why you adventurers always end up dead.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"這就是為什麼你們這些冒險者總是死在這裡的原因。",bc_map,"0x00ffcc";
 	end;
 
 OnTimer10500:
-	mapannounce instance_mapname("6@tower"),"I may applaud you for your courage... Of course, I intend to play with you a little bit first.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"我可能會為你們的勇氣鼓掌... 當然，我打算先和你們玩一玩。",bc_map,"0x00ffcc";
 	end;
 
 OnTimer15500:
-	mapannounce instance_mapname("6@tower"),"You know, I like watching humans running around in fear.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"你知道嗎，我喜歡看著人類在恐懼中奔跑。",bc_map,"0x00ffcc";
 	end;
 
 OnTimer20500:
 	set .@map$, instance_mapname("6@tower");
-	mapannounce .@map$,"Let's see who runs fastest. Are you ready?",bc_map,"0x00ffcc";
+	mapannounce .@map$,"讓我們看看誰跑得最快。你們準備好了嗎？",bc_map,"0x00ffcc";
 	stopnpctimer;
 	areamonster .@map$,151,66,153,106,"Bone Guardian",1152,50,instance_npcname("#1st Beeper")+"::OnMyMobDead";
 	areamonster .@map$,158,66,160,106,"Bone Guardian",1152,50,instance_npcname("#1st Beeper")+"::OnMyMobDead";
@@ -2013,7 +2013,7 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 101
 	}
 	else
-		mapannounce .@map$,"Remaining Targets " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
+		mapannounce .@map$,"剩餘目標 " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
 	end;
 }
 
@@ -2025,16 +2025,16 @@ OnEnable:
 	end;
 
 OnTimer500:
-	mapannounce instance_mapname("6@tower"),"Well, I guess they aren't too challenging for you.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"嗯，我猜他們對你來說沒有太大的挑戰性。",bc_map,"0x00ffcc";
 	end;
 
 OnTimer5500:
-	mapannounce instance_mapname("6@tower"),"Let's speed up a little bit, shall we?",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"讓我們稍微加快一點速度，好嗎？",bc_map,"0x00ffcc";
 	end;
 
 OnTimer10500:
 	set .@map$, instance_mapname("6@tower");
-	mapannounce .@map$,"I demand an encore!",bc_map,"0x00ffcc";
+	mapannounce .@map$,"我要求再來一次！",bc_map,"0x00ffcc";
 	stopnpctimer;
 	areamonster .@map$,151,66,153,106,"Wind Guardian",1263,30,instance_npcname("#2nd Beeper")+"::OnMyMobDead";
 	areamonster .@map$,158,66,160,106,"Wind Guardian",1263,30,instance_npcname("#2nd Beeper")+"::OnMyMobDead";
@@ -2048,7 +2048,7 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 102
 	}
 	else
-		mapannounce .@map$,"Remaining Targets " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
+		mapannounce .@map$,"剩餘目標 " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
 	end;
 }
 
@@ -2060,16 +2060,16 @@ OnEnable:
 	end;
 
 OnTimer500:
-	mapannounce instance_mapname("6@tower"),"Yes, this is getting exciting!",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"沒錯，這越來越令人興奮了！",bc_map,"0x00ffcc";
 	end;
 
 OnTimer5500:
-	mapannounce instance_mapname("6@tower"),"I'll remember you as one of a few that have managed to entertain me.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"我會記得你們是少數幾個成功娛樂我的人。",bc_map,"0x00ffcc";
 	end;
 
 OnTimer10500:
 	set .@map$, instance_mapname("6@tower");
-	mapannounce .@map$,"How would you like to play one more round?",bc_map,"0x00ffcc";
+	mapannounce .@map$,"你們想再玩一輪嗎？",bc_map,"0x00ffcc";
 	stopnpctimer;
 	areamonster .@map$,151,66,153,106,"Sword Edge Guardian",1132,20,instance_npcname("#3rd Beeper")+"::OnMyMobDead";
 	areamonster .@map$,158,66,160,106,"Sword Edge Guardian",1132,20,instance_npcname("#3rd Beeper")+"::OnMyMobDead";
@@ -2083,7 +2083,7 @@ OnMyMobDead:
 		//SetItemPartyInMap in_102floor 103
 	}
 	else
-		mapannounce .@map$,"Remaining Targets " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
+		mapannounce .@map$,"剩餘目標 " + .@mob_dead_num + "ea",bc_map,"0x00ff99";
 	end;
 }
 
@@ -2095,18 +2095,18 @@ OnEnable:
 	end;
 
 OnTimer500:
-	mapannounce instance_mapname("6@tower"),"Okay, the time has come to make my appearance!",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"好吧，現在是我該出場的時候了！",bc_map,"0x00ffcc";
 	end;
 
 OnTimer5500:
-	mapannounce instance_mapname("6@tower"),"Do you want to know who I am?",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"你們想知道我是誰嗎？",bc_map,"0x00ffcc";
 	end;
 
 OnTimer10500:
 	set .@map$, instance_mapname("6@tower");
-	mapannounce .@map$,"You'll soon know. Mine is the face of death!",bc_map,"0x00ffcc";
+	mapannounce .@map$,"你們很快就會知道了。我的面孔是死亡！",bc_map,"0x00ffcc";
 	stopnpctimer;
-	monster .@map$,156,147,"Naght Sieger",1956,1,instance_npcname("#4th Beeper")+"::OnMyMobDead";
+	monster .@map$,156,147,"Nacht Sieger",1956,1,instance_npcname("#4th Beeper")+"::OnMyMobDead";
 	end;
 
 OnMyMobDead:
@@ -2116,55 +2116,55 @@ OnMyMobDead:
 
 6@tower,169,127,2	script	Lost Soul#102	796,{
 	if (checkweight(1201,1) == 0) {
-		mes "You're carrying too much stuff. Why don't you put some of it away, and then come back?";
+		mes "你攜帶的物品太多了。為什麼不先存放一些，然後再回來？";
 		close;
 	}
-	mes "[Lost Souls]";
-	mes "It's you that have liberated us from the evil Naght Sieger.";
+	mes "[迷失的靈魂]";
+	mes "是你將我們從邪惡的 Nacht Sieger 中解放出來。";
 	next;
-	mes "[Lost Souls]";
-	mes "Thank you so much. Now we can escape from this cold and dark place... to heaven.";
+	mes "[迷失的靈魂]";
+	mes "非常感謝你。現在我們可以從這個寒冷和黑暗的地方逃脫... 到天堂。";
 	next;
 	if ((countitem(13412) > 0) && (countitem(13413) > 0)) {
-		mes "[Lost Souls]";
-		mes "Hey, you have the remnants of Naght Sieger with you.";
+		mes "[迷失的靈魂]";
+		mes "嘿，你身上帶著 Nacht Sieger 的殘餘物。";
 		next;
-		mes "[Lost Souls]";
-		mes "They may appear to be one-handed swords, but I can put them together to make a two-handed one if you want. That's the only way I can repay you for freeing me.";
+		mes "[迷失的靈魂]";
+		mes "它們看起來可能像是單手劍，但如果你願意，我可以把它們組合成一把雙手劍。這是我唯一能回報你解放我的方式。";
 		next;
-		switch(select("Make a Two-Handed Sword.:No, thanks.")) {
+		switch(select("製作一把雙手劍。:不，謝謝。")) {
 		case 1:
-			mes "[Lost Souls]";
-			mes "If it is already upgraded or has a card inside, those effects will be disappear. Is this ok with you?";
+			mes "[迷失的靈魂]";
+			mes "如果它已經升級或裡面有卡片，那些效果將會消失。你確定要這樣做嗎？";
 			next;
-			switch(select("It's fine with me. Please make one.:No way!")) {
+			switch(select("我沒問題。請製作一把。:免了！")) {
 			case 1:
-				mes "[Lost Souls]";
-				mes "Good, then I'll combine these to create a two-handed sword.";
+				mes "[迷失的靈魂]";
+				mes "很好，那麼我將組合這些來創造一把雙手劍。";
 				next;
 				delitem 13412,1; //Twin_Edge_B
 				delitem 13413,1; //Twin_Edge_R
 				getitem 1185,1; //Violet_Fear
 				break;
 			case 2:
-				mes "[Lost Souls]";
-				mes "I see. I guess you aren't as greedy or ambitious as those other adventurers.";
+				mes "[迷失的靈魂]";
+				mes "我知道了。我想你沒有像其他冒險者那麼貪婪或有野心。";
 				next;
 				break;
 			}
 			break;
 		case 2:
-			mes "[Lost Souls]";
-			mes "I see. I guess you aren't as greedy or ambitious as those other adventurers.";
+			mes "[迷失的靈魂]";
+			mes "我知道了。我想你沒有像其他冒險者那麼貪婪或有野心。";
 			next;
 			break;
 		}
 	}
-	mes "[Lost Souls]";
-	mes "I'd like to talk to you more, but I've... I've got to go now.";
+	mes "[迷失的靈魂]";
+	mes "我很想和你多聊聊，但是我... 我現在必須走了。";
 	next;
-	mes "[Lost Souls]";
-	mes "Farewell, young adventurer. I wish you good luck.";
+	mes "[迷失的靈魂]";
+	mes "再見了，年輕的冒險者。祝你好運。";
 	close2;
 	warp "alberta",223,36;
 	end;
@@ -2181,15 +2181,15 @@ OnEnable:
 	end;
 
 OnTimer500:
-	mapannounce instance_mapname("6@tower"),"This... This can't be happening! I can't be defeated!",bc_map,"0xffff00";
+	mapannounce instance_mapname("6@tower"),"這... 這不可能發生！我不能被打敗！",bc_map,"0xffff00";
 	end;
 
 OnTimer5500:
-	mapannounce instance_mapname("6@tower"),"Nooo! My soul... My shell...! Nooo~!",bc_map,"0xffff00";
+	mapannounce instance_mapname("6@tower"),"不！我的靈魂... 我的軀殼...！不要啊～！",bc_map,"0xffff00";
 	end;
 
 OnTimer10500:
-	mapannounce instance_mapname("6@tower"),"Naght Sieger's body has turned into dark ashes that scattered in the wind.",bc_map,"0x00ffcc";
+	mapannounce instance_mapname("6@tower"),"納赫特·齊格的身體已經變成在風中消散的黑暗灰燼。",bc_map,"0x00ffcc";
 	stopnpctimer;
 	end;
 }

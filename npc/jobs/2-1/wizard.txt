@@ -31,211 +31,211 @@
 
 gef_tower,111,37,4	script	Wizard Guildsman	70,{
 	if (Upper == 1) {
-		mes "[Catherine]";
-		mes "? Excuse me, I am wondering if we have met before...?";
-		mes "Hey~ you have changed a lot! So, what happened?";
+		mes "[凱瑟琳]";
+		mes "？不好意思，我在想我們之前是不是見過面……？";
+		mes "嘿～你改變了很多！所以，發生了什麼事？";
 		next;
-		mes "[Catherine]";
-		mes "I feel you have become so much powerful, eh?";
-		mes "Congratulations and good luck with your life!";
+		mes "[凱瑟琳]";
+		mes "我覺得你變得更強大了，嗯？";
+		mes "恭喜你，祝你生活順利！";
 		close;
 	}
 	if (BaseJob != Job_Mage) {
 		if (BaseJob == Job_Wizard) {
-			mes "[Catherine]";
-			mes "Since you're already a Wizard, you don't have any more business with me...?";
-			mes "Now, excuse me.";
+			mes "[凱瑟琳]";
+			mes "既然你已經是巫師了，那你應該沒有什麼事情要找我了吧……？";
+			mes "那麼，恕我失陪了。";
 			next;
-			mes "[Catherine]";
+			mes "[凱瑟琳]";
 			if (Sex == SEX_MALE)
-				mes "Well, If you intended to ask me on a date... I appreciate it...hohoho.";
+				mes "嗯，如果你打算約我出去……我會很感激的……呵呵呵呵。";
 			else
-				mes "Well, if you fix me up with a cute guy... I'd appreciate it...hohoho!.";
+				mes "嗯，如果你幫我介紹一個可愛的男人……我會很感激的……呵呵呵呵！";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "[Wizard Guildsman]";
-			mes "Oh my goodness, it's a novice~ ain't you the cutest little thing.";
-			mes "By the way honey, this place is for Wizards.";
+			mes "[巫師公會職員]";
+			mes "我的天啊，是個新手耶～你不是最可愛的小東西嗎。";
+			mes "順帶一提，這裡可是巫師們待的地方喔。";
 			next;
-			mes "[Wizard Guildsman]";
-			mes "If you are interested in magic,";
-			mes "Go visit the ^0000FFMage^000000 guild.";
+			mes "[巫師公會職員]";
+			mes "如果你對魔法有興趣，";
+			mes "去拜訪 ^0000FF法師^000000 公會。";
 		}
 		else {
-			mes "[Wizard Guildsman]";
-			mes "Huh? what brings you to such a high place...?";
-			mes "If you don't have any specific business, please leave immediately.";
-			mes "This place is for Wizards, you know?";
+			mes "[巫師公會職員]";
+			mes "蛤？是什麼風把你吹到這麼高的地方……？";
+			mes "如果你沒有什麼特別的事情，請立刻離開。";
+			mes "你知道這裡可是巫師們待的地方吧？";
 		}
 		next;
-		mes "[Wizard Guildsman]";
-		mes "Ok, then. Farewell.";
+		mes "[巫師公會職員]";
+		mes "好吧，再見了。";
 		close;
 	}
 	if (WIZ_Q == 0) {
-		mes "[Wizard Guildsman]";
-		mes "Huh? What are you doing way up here...?";
-		mes "So what brings you here?";
+		mes "[巫師公會職員]";
+		mes "蛤？你在這麼高的地方做什麼……？";
+		mes "所以是什麼風把你吹來的？";
 		next;
-		if (select("I want to become a Wizard.:...nothing.") == 1) {
-			mes "[Wizard Guildsman]";
-			mes "I see... Well, of course you want to become a Wizard, otherwise you wouldn't have walked up all those stairs right?";
-			mes "Anyways, I would like to welcome you. I will assist you in becoming a Wizard.";
+		if (select("我想成為巫師。...沒什麼。") == 1) {
+			mes "[巫師公會職員]";
+			mes "我明白了……嗯，你當然想成為巫師，不然你不會爬這麼多樓梯上來對吧？";
+			mes "總之，我想歡迎你。我會協助你成為巫師。";
 			next;
-			mes "[Wizard Guildsman]";
-			mes "My name is Catherine Medici. Just between me and you, I just became a Wizard too!";
-			mes "You can call me Cathy if you want. Hehehehehe~";
+			mes "[巫師公會職員]";
+			mes "我的名字是凱瑟琳·梅迪奇。偷偷告訴你，我才剛成為巫師呢！";
+			mes "如果你想叫我凱西也沒關係。呵呵呵呵～";
 			next;
-			mes "[Catherine]";
-			mes "Many people want to become Wizards, but only the patient and strong ones will eventually accomplish their goals.";
-			mes "In order to become a Wizard, one must undergo difficult quests.";
+			mes "[凱瑟琳]";
+			mes "很多人都想成為巫師，但只有有耐心和堅強的人最終才能達成他們的目標。";
+			mes "為了成為巫師，必須經歷艱難的任務。";
 			next;
-			mes "[Catherine]";
-			mes "Also only mages who have reached a job level of 40 or higher are qualified for these quests.";
-			mes "Lower level mages aren't experienced enough with magic to become Wizards...";
+			mes "[凱瑟琳]";
+			mes "而且只有職業等級達到40級或以上的法師才有資格參加這些任務。";
+			mes "等級較低的法師在魔法方面沒有足夠的經驗來成為巫師……";
 			next;
-			mes "[Catherine]";
-			mes "Well, I will give you more information when you apply for the job.";
-			mes "So! Do you want to apply now?";
+			mes "[凱瑟琳]";
+			mes "嗯，當你申請這個職業的時候，我會給你更多的訊息。";
+			mes "所以！你現在想申請嗎？";
 			next;
-			if (select("Yes, I do.:On second thought, Let me think about it.") == 1) {
+			if (select("是的，我想。:再想想，讓我想一下。") == 1) {
 				if (JobLevel < 40) {
-					mes "[Catherine]";
-					mes "Hey hey, weren't you listening to me?";
-					mes "I told you that you need to be at least job level 40 to sign up for the quest...";
+					mes "[凱瑟琳]";
+					mes "嘿嘿，你剛剛有在聽我說話嗎？";
+					mes "我告訴過你，你至少要職業等級40級才能報名參加任務……";
 					next;
-					mes "[Catherine]";
-					mes "No need to hurry, go experience and ponder more about the world of magic.";
-					mes "When I deem you're qualified, I will accept your application.";
+					mes "[凱瑟琳]";
+					mes "不用急，去體驗和思考更多關於魔法世界的事情吧。";
+					mes "當我認為你夠資格時，我會接受你的申請。";
 					close;
 				}
 				if (SkillPoint) {
-					mes "[Catherine]";
-					mes "Umm... You're well qualified, but you have some unused skill points left.";
-					mes "You'd better learn more skills before applying again.";
+					mes "[凱瑟琳]";
+					mes "嗯……你很有資格，但你還剩下一些未使用的技能點數。";
+					mes "你最好先學習更多技能再重新申請。";
 					close;
 				}
-				mes "[Catherine]";
-				mes "Very well then, I accept your application.";
-				mes "Your name is..." + strcharinfo(0) + ", isn't it? I am not sure if I pronounced it correctly?";
+				mes "[凱瑟琳]";
+				mes "很好，我接受你的申請。";
+				mes "你的名字是..." + strcharinfo(0) + "，對吧？我不確定我發音是否正確？";
 				next;
-				mes "[Catherine]";
-				mes "The Wizard job change quest is divided into 3 parts.";
-				mes "1st part, gathering magic items.";
-				mes "2nd part, a written test.";
-				mes "The last part is a practical magic test.";
+				mes "[凱瑟琳]";
+				mes "巫師轉職任務分為3個部分。";
+				mes "第一部分，收集魔法物品。";
+				mes "第二部分，筆試。";
+				mes "最後一部分是實用魔法測試。";
 				next;
-				mes "[Catherine]";
-				mes "Among one of these tests, we exempt those who are at job level 50.";
-				mes "It is enough to prove to us the effort it will take to become a Wizard if a mage has learned that much already.";
+				mes "[凱瑟琳]";
+				mes "在這些測試中，我們會豁免那些職業等級達到50級的人。";
+				mes "如果一個法師已經學到這麼多了，就足以向我們證明成為巫師所需要付出的努力了。";
 				next;
 				if (JobLevel == 50) {
-					mes "[Catherine]";
-					mes "Hmm, come to think of it, you're at job level 50!?";
-					mes "You must have worked very hard. Your going to become a very powerful Wizard, I can feel it in you.";
+					mes "[凱瑟琳]";
+					mes "嗯，仔細想想，你已經50級了！？";
+					mes "你一定很努力。你將會成為一個非常強大的巫師，我可以感覺到。";
 					next;
-					mes "[Catherine]";
-					mes "Ok. You already passed the 1st test then.";
-					mes "Don't get too laid back though, there are still 2 more tests left.";
+					mes "[凱瑟琳]";
+					mes "好吧。那你已經通過了第一個測試。";
+					mes "不過不要太放鬆，還有兩個測試要進行。";
 					next;
-					mes "[Catherine]";
-					mes "Go talk to the man in the corner and he will give you the remaining exams.";
-					mes "Be careful. We have lost many Mages due to the difficulty of the exams.";
+					mes "[凱瑟琳]";
+					mes "去找角落的那個人，他會給你剩下的考試。";
+					mes "小心一點。由於考試的難度，我們失去了許多法師。";
 					set WIZ_Q,3;
 					setquest 9015;
 					close;
 				}
-				mes "[Catherine]";
-				mes "Then, since I have your application and everything else I need, I'll give you some info about the first test.";
-				mes "You can memorize this or write it down, doesn't matter. But remember it for sure.";
+				mes "[凱瑟琳]";
+				mes "那麼，既然我已經有了你的申請書和所有我需要的東西，我會給你一些關於第一個測試的訊息。";
+				mes "你可以記住它或寫下來，沒關係。但一定要記住它。";
 				next;
-				mes "[Catherine]";
-				mes "The first test is collecting magic items.";
-				mes "The important part is that you must gather these items on your own.";
+				mes "[凱瑟琳]";
+				mes "第一個測試是收集魔法物品。";
+				mes "最重要的是你必須自己收集這些物品。";
 				next;
 				set wizard_m1,rand(1,2);
-				mes "[Catherine]";
-				mes "The items you must collect are...";
+				mes "[凱瑟琳]";
+				mes "你必須收集的物品是……";
 				if (rand(2)) {
 					set WIZ_Q,1;
 					setquest 9013;
-					mes "^3355FFRed Gemstone^000000 10 each,";
-					mes "^3355FFBlue Gemstone^000000 10 each,";
-					mes "^3355FFYellow Gemstone^000000 10 each,";
+					mes "^3355FF紅色寶石^000000 各10個，";
+					mes "^3355FF藍色寶石^000000 各10個，";
+					mes "^3355FF黃色寶石^000000 各10個，";
 				}
 				else {
 					set WIZ_Q,2;
 					setquest 9014;
-					mes "^3355FFCrystal Blue^000000 5 each,";
-					mes "^3355FFGreen Live^000000 5 each,";
-					mes "^3355FFRed Blood^000000 5 each,";
-					mes "^3355FFWind of Verdure^000000 5 each,";
+					mes "^3355FF水晶藍^000000 各5個，";
+					mes "^3355FF綠色生命^000000 各5個，";
+					mes "^3355FF紅色血跡^000000 各5個，";
+					mes "^3355FF翠綠之風^000000 各5個，";
 				}
-				mes "...is it too hard? No, any would be Wizard should be able to at least get these items.";
+				mes "……太難了嗎？不，任何想成為巫師的人至少應該能夠獲得這些物品。";
 				next;
-				mes "[Catherine]";
-				mes "Well, good luck.";
-				mes "I'll be happily waiting. ~Hehe.";
+				mes "[凱瑟琳]";
+				mes "嗯，祝你好運。";
+				mes "我會很高興地等待。～呵呵。";
 				close;
 			}
-			mes "[Catherine]";
-			mes "Oh, ok then, take your time.";
-			mes "Since I'll always be here, accepting applications...*sigh*...anyways! ~Hehehehe.";
+			mes "[凱瑟琳]";
+			mes "喔，好吧，慢慢來。";
+			mes "因為我會一直在這裡，接受申請...*嘆氣*...總之！～呵呵呵呵。";
 			close;
 		}
-		mes "[Wizard Guildsman]";
-		mes "Geez, what a lame person.";
-		mes "You have no business here, hope you don't mind, now off you go!";
+		mes "[巫師公會職員]";
+		mes "哎呀，真是個沒用的人。";
+		mes "你這裡沒事，希望你別介意，現在給我走！";
 		close;
 	}
 	else if (WIZ_Q == 1) {
-		mes "[Catherine]";
-		mes "Let me see, did you get all the items?";
-		mes "Then let's check...";
+		mes "[凱瑟琳]";
+		mes "我看看，你拿到所有的東西了嗎？";
+		mes "那麼讓我們檢查一下……";
 		next;
 		if (countitem(716) > 9 && countitem(717) > 9 && countitem(715) > 9) {
-			mes "[Catherine]";
-			mes "Perfect! You got all the items. I like!~";
-			mes "These items will be put to great use in our guild. ~Hehehee.";
+			mes "[凱瑟琳]";
+			mes "完美！你拿到了所有的東西。我喜歡！～";
+			mes "這些物品將在我們的公會中得到很好的利用。～呵呵呵呵。";
 			next;
 			delitem 716,10; //Red_Gemstone
 			delitem 717,10; //Blue_Gemstone
 			delitem 715,10; //Yellow_Gemstone
 			set WIZ_Q,3;
 			changequest 9013,9015;
-			mes "[Catherine]";
-			mes "Good for you! You passed the first test.";
-			mes "But there are still two more left, so don't get too relaxed.";
+			mes "[凱瑟琳]";
+			mes "對你來說很好！你通過了第一個測試。";
+			mes "但還有兩個測試要進行，所以不要太放鬆。";
 			next;
-			mes "[Catherine]";
-			mes "Go talk to the guy in the corner for the rest of the tests.";
-			mes "It might be a bit hard, so be careful, I wouldn't want you ending up like most of the Mages that come for these exams...poor souls indeed, may they rest in peace. ~Hehehe.";
+			mes "[凱瑟琳]";
+			mes "去找角落的那個人進行剩下的測試。";
+			mes "可能會有點困難，所以要小心，我不希望你像大多數來參加這些考試的法師一樣結束...可憐的靈魂啊，願他們安息。～呵呵呵呵。";
 			close;
 		}
-		mes "[Catherine]";
-		mes "Hey, what's this? Umm...I don't think you have everything yet!";
+		mes "[凱瑟琳]";
+		mes "嘿，這是什麼？嗯……我想你還沒有拿到所有的東西！";
 		next;
-		mes "[Catherine]";
-		mes "It might've been tough coming all the way up here, what with this altitude and all, but go back and collect the items.";
-		mes "Life's short enough as it is, so stop wasting your time and gather the items I told you before.";
+		mes "[凱瑟琳]";
+		mes "一路來到這裡可能很辛苦，這裡海拔很高，但回去收集物品吧。";
+		mes "人生已經夠短了，別再浪費時間了，去收集我之前告訴你的物品。";
 		next;
-		mes "[Catherine]";
-		mes "^3355FFRed Gemstone^000000 10 each,";
-		mes "^3355FFBlue Gemstone^000000 10 each,";
-		mes "^3355FFYellow Gemstone^000000 10 each,";
-		mes "Don't forget this time, and bring all the items, ok?...";
+		mes "[凱瑟琳]";
+		mes "^3355FF紅色寶石^000000 各10個，";
+		mes "^3355FF藍色寶石^000000 各10個，";
+		mes "^3355FF黃色寶石^000000 各10個，";
+		mes "這次別忘了，把所有的東西都帶來，好嗎？...";
 		close;
 	}
 	else if (WIZ_Q == 2) {
-		mes "[Catherine]";
-		mes "Did you get all the items?";
-		mes "Let's see... Do you have the right ones?...";
+		mes "[凱瑟琳]";
+		mes "你拿到所有的東西了嗎？";
+		mes "讓我們看看...你有拿到正確的嗎？...";
 		next;
 		if (countitem(991) > 4 && countitem(993) > 4 && countitem(990) > 4 && countitem(992) > 4) {
-			mes "[Catherine]";
-			mes "Perfect! Good job...I'm satisfied! ~Hehe";
-			mes "Our guild greatly appreciates these items and will use them wisely.";
+			mes "[凱瑟琳]";
+			mes "完美！做得好……我很滿意！～呵呵";
+			mes "我們的公會非常感謝這些物品，並會明智地使用它們。";
 			next;
 			delitem 991,5; //Crystal_Blue
 			delitem 993,5; //Yellow_Live
@@ -243,207 +243,207 @@ gef_tower,111,37,4	script	Wizard Guildsman	70,{
 			delitem 992,5; //Wind_Of_Verdure
 			set WIZ_Q,3;
 			changequest 9014,9015;
-			mes "[Catherine]";
-			mes "Good. You've passed the first test now.";
-			mes "But you still have two more tests to go, so don't get too laid back, because it only gets harder from here. ~Hehehe";
+			mes "[凱瑟琳]";
+			mes "很好。你已經通過了第一個測試。";
+			mes "但你還有兩個測試要進行，所以不要太放鬆，因為從這裡開始只會越來越難。～呵呵呵呵";
 			next;
-			mes "[Catherine]";
-			mes "Go talk to that guy in the corner to take the rest of the tests.";
-			mes "It might be a bit hard, so be careful, I wouldn't want you ending up like most of the Mages that come for these exams...poor souls indeed, may they rest in peace. ~Hehehe.";
+			mes "[凱瑟琳]";
+			mes "去找角落的那個人進行剩下的測試。";
+			mes "可能會有點困難，所以要小心，我不希望你像大多數來參加這些考試的法師一樣結束...可憐的靈魂啊，願他們安息。～呵呵呵呵。";
 			close;
 		}
-		mes "[Catherine]";
-		mes "Eh, what's this? I don't think you have everything?";
+		mes "[凱瑟琳]";
+		mes "欸，這是什麼？我想你沒有拿到所有的東西？";
 		next;
-		mes "[Catherine]";
-		mes "I regret that you had to go through the trouble of coming all the way up here, but go get the right items again.";
-		mes "Stop wasting your time and get the items I initially requested. For goodness sakes...This is the easiest part of the exam.";
+		mes "[凱瑟琳]";
+		mes "我很遺憾你不得不經歷一路來到這裡的麻煩，但再去拿正確的物品。";
+		mes "別再浪費你的時間了，去拿我最初要求的物品。看在老天的份上……這已經是考試中最簡單的部分了。";
 		next;
-		mes "[Catherine]";
-		mes "^3355FFCrystsal Blue^000000 5 each,";
-		mes "^3355FFGreen Live^000000 5 each,";
-		mes "^3355FFRed Blood^000000 5 each,";
-		mes "^3355FFWind of Verdure^000000 5 each,";
-		mes "Don't forget them this time and gather the correct ones, ok? See you soon...";
+		mes "[凱瑟琳]";
+		mes "^3355FF水晶藍^000000 各 5 個,";
+		mes "^3355FF綠色生命^000000 各 5 個,";
+		mes "^3355FF紅色血液^000000 各 5 個,";
+		mes "^3355FF翠綠之風^000000 各 5 個,";
+		mes "這次別忘了，收集正確的物品，好嗎？再見...";
 		close;
 	}
 	else if (WIZ_Q == 3) {
-		mes "[Catherine]";
-		mes "What is it? You didn't go talk to the guy in the corner?";
-		mes "You can't become a Wizard by just brining the items I requested, no no, that just wont do...";
+		mes "[凱瑟琳]";
+		mes "怎麼了？你沒有去跟角落的那個人說話嗎？";
+		mes "你不能只是帶著我要求的物品就想成為巫師，不行不行，這樣做是不行的...";
 		next;
-		mes "[Catherine]";
-		mes "You can only prove yourself Wizard material after you take the two remaining tests.";
-		mes "I'll be waiting, so go now.";
+		mes "[凱瑟琳]";
+		mes "只有在你通過剩下的兩個測試之後，才能證明你有成為巫師的資質。";
+		mes "我會等著，所以現在就去吧。";
 		close;
 	}
 	else if (WIZ_Q == 4) {
-		mes "[Catherine]";
-		mes "*sigh*...Poor thing, what a pity.";
-		mes "How can you think of trying to become a Wizard when you can't even answer those simple questions?";
+		mes "[凱瑟琳]";
+		mes "*嘆氣*...可憐的孩子，真是可惜。";
+		mes "當你連那些簡單的問題都無法回答時，怎麼會想到要成為巫師？";
 		next;
-		mes "[Catherine]";
-		mes "Let's see... Should I give you some hints as your senior?";
-		mes "But I'm a bit thirsty, so give me 1 Apple Juice, and we got a deal. ~Hehehe";
+		mes "[凱瑟琳]";
+		mes "讓我想想... 我應該給你一些提示，作為你的前輩嗎？";
+		mes "但我有點渴，所以給我 1 個蘋果汁，我們就成交。~呵呵呵";
 		next;
-		switch(select("Give me some hints, please.:I want to try again on my own!")) {
+		switch(select("請給我一些提示。:我想自己再試一次！")) {
 		case 1:
 			if (countitem(531) > 0) {
 				delitem 531,1; //Apple_Juice
-				mes "[Catherine]";
-				mes "Yummers, Apple Juice is the best...";
-				mes "Gulp gulp gulp... Haaaaaah... ~Hehe";
+				mes "[凱瑟琳]";
+				mes "真好吃，蘋果汁是最棒的...";
+				mes "咕嚕咕嚕咕嚕...哈啊啊... ~呵呵";
 				next;
-				mes "[Catherine]";
-				mes "Well then, I'll give you a hint for the second test.";
+				mes "[凱瑟琳]";
+				mes "那麼，我會給你第二個測試的提示。";
 				next;
-				mes "[Catherine]";
-				mes "He asks three types of questions.";
-				mes "Questions about Magic, Monsters...";
-				mes "and Magicians...also known as Mages.";
+				mes "[凱瑟琳]";
+				mes "他會問三種類型的問題。";
+				mes "關於魔法、怪物...";
+				mes "還有魔術師...也就是法師的問題。";
 				next;
-				mes "[Catherine]";
-				mes "It's up to him to decide which questions to ask.";
-				mes "*sigh*...He'd look much better if he cut his hair and shaved...";
-				mes "He always looks so grungy because he doesn't take care of himself...*sigh*...pity, he could be a regular lady killer. ~tehehehe";
+				mes "[凱瑟琳]";
+				mes "由他來決定要問哪些問題。";
+				mes "*嘆氣*...如果他剪頭髮和刮鬍子，他會看起來更好...";
+				mes "他總是看起來很邋遢，因為他不照顧自己...*嘆氣*...可惜了，他本來可以成為一個萬人迷的。~嘻嘻嘻";
 				next;
-				mes "[Catherine]";
-				mes "Anyways, as for the questions about magic...";
-				mes "They're usually about the spells you've learned.";
+				mes "[凱瑟琳]";
+				mes "總之，關於魔法的問題...";
+				mes "通常都是關於你學過的法術。";
 				next;
-				mes "[Catherine]";
-				mes "If it's something you haven't learned or haven't experienced, or anything like that...";
-				mes "I heard there's a nice place you can refer to that's very well organized.";
+				mes "[凱瑟琳]";
+				mes "如果有些東西你還沒學過或沒經歷過，或是諸如此類的事情...";
+				mes "我聽說有個不錯的地方可以參考，而且組織得很好。";
 				next;
-				mes "[Catherine]";
-				mes "You just have to cast the spell, you know...the one that looks like a big bold *e* symbol.";
-				mes "The magic words are... iro.ragnarokonline.com ~Or so they say!";
-				mes "Strange spell, don't you think? I don't know how to make it work myself.";
+				mes "[凱瑟琳]";
+				mes "你只需要施放法術，你知道...那個看起來像一個粗體 *e* 符號的法術。";
+				mes "咒語是... iro.ragnarokonline.com ~他們是這麼說的！";
+				mes "奇怪的法術，你不覺得嗎？我自己也不知道怎麼讓它生效。";
 				next;
-				mes "[Catherine]";
-				mes "And about the monster questions.";
-				mes "Fighting them yourself and learning is the best way to go about that.";
+				mes "[凱瑟琳]";
+				mes "還有關於怪物的問題。";
+				mes "自己與牠們戰鬥並學習是最好的方法。";
 				next;
-				mes "[Catherine]";
-				mes "But you know in Prontera, there is a big library.";
-				mes "You can get information about most of the monsters in that library.";
-				mes "Going there and studying a bit more would work too.";
+				mes "[凱瑟琳]";
+				mes "但你知道在普隆德拉，有一個大圖書館。";
+				mes "你可以在那個圖書館裡獲得關於大多數怪物的信息。";
+				mes "去那裡多學習一下也會有幫助。";
 				next;
-				mes "[Catherine]";
-				mes "Last, but not least, questions about Mages.";
-				mes "This is something that most others cannot teach you...";
-				mes "Because you are a Mage.";
+				mes "[凱瑟琳]";
+				mes "最後，但同樣重要的是，關於法師的問題。";
+				mes "這是大多數其他人無法教你的...";
+				mes "因為你就是一個法師。";
 				next;
-				mes "[Catherine]";
-				mes "It's hard to know about others when you don't even know about yourself, right?";
-				mes "So if you get one of these questions, think about it carefully then answer.";
+				mes "[凱瑟琳]";
+				mes "當你甚至不了解自己時，很難了解別人，對吧？";
+				mes "所以如果你遇到這些問題，仔細思考後再回答。";
 			}
 			else {
-				mes "[Catherine]";
-				mes "Like I said, I'll think about it if you give me 1 Apple Juice.";
-				mes "If not... Well, you can think about it on your own. Hey I don't make the rules here i just follow em! Can't argue with this one though. ~tehehehe";
+				mes "[凱瑟琳]";
+				mes "就像我說的，如果你給我 1 個蘋果汁，我就會考慮。";
+				mes "如果沒有... 好吧，你可以自己想想。嘿，我沒有制定規則，我只是遵守規則！這點是無可爭辯的。~嘻嘻嘻";
 			}
 			break;
 		case 2:
-			mes "[Catherine]";
-			mes "Yeah, you get the most satisfaction when you solve things on your own.";
-			mes "Go finish the rest of the tests with that spirit!";
+			mes "[凱瑟琳]";
+			mes "是的，當你靠自己解決問題時，你會得到最大的滿足感。";
+			mes "用這種精神完成剩下的測試吧！";
 		}
 		next;
-		mes "[Catherine]";
-		mes "Well then, see you soon! *crosses fingers* dont end up like the others before you! May God rest thier souls...huh? Oh nothing! ~Hehehehe";
-		mes "Hurry, he's waiting for you!";
+		mes "[凱瑟琳]";
+		mes "那麼，再見！ *祈禱* 不要像你之前的其他人一樣！願上帝安息他們的靈魂... 咦？沒事！~呵呵呵呵";
+		mes "快點，他在等你！";
 		close;
 	}
 	else if (WIZ_Q == 5) {
-		mes "[Catherine]";
-		mes "Tehehehe~ I was listening all along.";
-		mes "Well done in answering all those questions. I want to give something, like a present...";
+		mes "[凱瑟琳]";
+		mes "嘻嘻嘻~ 我一直在聽著。";
+		mes "回答所有這些問題做得很好。我想給你一些東西，像是禮物...";
 		next;
-		mes "[Catherine]";
-		mes "You still have one more test to go, right?";
-		mes "Just a bit more and you will be qualified to be a Wizard, so I'll give you the present then. ~Hehe";
+		mes "[凱瑟琳]";
+		mes "你還有一個測試要進行，對吧？";
+		mes "再多一點，你就有資格成為巫師了，所以我會在那個時候給你禮物。~呵呵";
 		next;
-		mes "[Catherine]";
-		mes "See ya, well...hopefully!";
-		mes "He's waiting for you!";
+		mes "[凱瑟琳]";
+		mes "再見，嗯...希望如此！";
+		mes "他在等你！";
 		close;
 	}
 	else if (WIZ_Q == 6) {
-		mes "[Catherine]";
-		mes "Eh, did you leave in the middle of the test?";
-		mes "You...*sigh*...I didn't think you would do such a dishonorable thing.";
+		mes "[凱瑟琳]";
+		mes "咦，你在測試中途離開了嗎？";
+		mes "你...*嘆氣*...我沒想到你會做出這麼不光彩的事情。";
 		next;
-		mes "[Catherine]";
+		mes "[凱瑟琳]";
 		if (Sex == SEX_MALE) {
-			mes "Granted you're a mage, but how could a guy be so weak?!";
-			mes "Well, at least your alive still. Go back and try harder this time. ~tehehehe";
+			mes "就算你是一個法師，但怎麼會有人這麼弱？！";
+			mes "好吧，至少你還活著。回去再更努力地嘗試一次。~嘻嘻嘻";
 		}
 		else {
-			mes "Don't pretend to be weak just because you're a girl. Look at me! I did it, and so can you. You can't ask for sympathy.";
-			mes "You came all this way to become a Wizard! Now come on, you can do it!!";
+			mes "不要因為你是個女孩就假裝虛弱。看看我！我做到了，你也可以做到。你不能要求同情。";
+			mes "你大老遠來到這裡要成為巫師！拜託，你可以的！！";
 			next;
-			mes "[Catherine]";
-			mes "I agree that it is difficult, but not to the point of giving up.";
-			mes "You of all people should find the strength and patience to complete this test!";
+			mes "[凱瑟琳]";
+			mes "我同意這很困難，但還沒到放棄的地步。";
+			mes "你更應該找到力量和耐心來完成這個測試！";
 		}
 		next;
-		mes "[Catherine]";
-		mes "So, try harder this time...";
-		mes "He's waiting!";
+		mes "[凱瑟琳]";
+		mes "所以，這次更努力地嘗試...";
+		mes "他在等著！";
 		close;
 	}
 	else if (WIZ_Q == 7) {
 		if (JobLevel < 40) {
 			set WIZ_Q,0;
-			mes "[Catherine]";
-			mes "Hey, what don't you get it?";
-			mes "I said you must be at least job level 40 to change your job, got it?";
+			mes "[凱瑟琳]";
+			mes "嘿，你聽不懂嗎？";
+			mes "我說你必須至少達到職業等級 40 才能轉職，懂了嗎？";
 			next;
-			mes "[Catherine]";
-			mes "There is nothing to be in hurry, so why don't you take your time for studying?";
-			mes "When the time comes, I will welcome you with open arms.";
+			mes "[凱瑟琳]";
+			mes "沒有什麼好趕的，所以你為什麼不花時間學習？";
+			mes "時機到來時，我會張開雙臂歡迎你。";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Catherine]";
-			mes "Are you done with all the tests? Oh drats, it seems like you still have some skill points left.";
-			mes "Learn some other skills with your remaining points, and then come talk to me again.";
+			mes "[凱瑟琳]";
+			mes "你完成所有的測試了嗎？哎呀，看來你還剩下一些技能點。";
+			mes "用你剩下的點數學習一些其他的技能，然後再來跟我說話。";
 			close;
 		}
-		mes "[Catherine]";
-		mes "Wooooooooooooow...you finished all the tests?!";
-		mes "Congratulations, congrats, congrats! Wooopiiieeeee! ~Hehehehehehe";
+		mes "[凱瑟琳]";
+		mes "哇喔喔喔喔喔... 你完成所有的測試了？！";
+		mes "恭喜，恭喜，恭喜！嗚呼！！~呵呵呵呵呵呵";
 		next;
-		mes "[Catherine]";
-		mes "Well, no need to wait, I congratulate you. I hearby deem you Wizard.";
+		mes "[凱瑟琳]";
+		mes "嗯，不用等了，我恭喜你。我在此宣布你為巫師。";
 		next;
 		completequest 9018;
 		callfunc "Job_Change",Job_Wizard;
 		callfunc "F_ClearJobVar";		// clears all job variables for the current player
-		mes "[Catherine]";
-		mes "Since you're a Wizard now, act like a Wizard, got it?";
-		mes "Us wizards have to be careful since we possess the ultimate power of magic.";
+		mes "[凱瑟琳]";
+		mes "既然你現在是巫師了，就要表現得像個巫師，懂了嗎？";
+		mes "我們巫師必須小心，因為我們擁有魔法的終極力量。";
 		next;
-		mes "[Catherine]";
-		mes "Don't go about casting spells in town for no reason, or bother others with spells that are in their own battle.";
-		mes "A Wizard's magic is meant for their own battles with monsters.";
+		mes "[凱瑟琳]";
+		mes "不要無緣無故地在城鎮裡施放法術，或者用在你自己戰鬥中的法術來打擾別人。";
+		mes "巫師的魔法是用於他們自己與怪物的戰鬥。";
 		next;
-		mes "[Catherine]";
-		mes "Go join parties with others and keep training.";
-		mes "And...oh, wait, I prepared a present for you, one sec.";
+		mes "[凱瑟琳]";
+		mes "去加入其他人的隊伍，並繼續訓練。";
+		mes "而且...哦，等等，我為你準備了一份禮物，等一下。";
 		next;
-		mes "[Catherine]";
-		mes "rummage rummage...";
-		mes "shuffle shuffle...";
+		mes "[凱瑟琳]";
+		mes "翻找翻找...";
+		mes "洗牌洗牌...";
 		next;
 		getitem 505,6; //Blue_Potion
-		mes "[Catherine]";
-		mes "Here you go. I hope you'll make good use of it when you need it. ~tehehe";
-		mes "I gave them to you as a present, so don't go out and sell it. Use it for yourself, ok?";
+		mes "[凱瑟琳]";
+		mes "給你。我希望你在需要的時候好好利用它。~嘻嘻";
+		mes "我把它們作為禮物送給你，所以不要把它們拿出去賣掉。自己用，好嗎？";
 		next;
-		mes "[Catherine]";
-		mes "Well, then...*sight*...live a wonderful life as a Wizard, become the strongest out there!";
+		mes "[凱瑟琳]";
+		mes "那麼...*嘆氣*...以巫師的身份過上精彩的生活，成為最強的！";
 		close;
 	}
 }
@@ -451,622 +451,622 @@ gef_tower,111,37,4	script	Wizard Guildsman	70,{
 gef_tower,102,24,2	script	Gloomy Wizard	735,{
 	if (BaseJob != Job_Mage) {
 		if (BaseJob == Job_Wizard) {
-			mes "[Raulel]";
-			mes "*Cough* *cough* what do you want?";
-			mes "If you are a person that uses magic, then you need to make sure you are well informed about it.";
+			mes "[勞爾]";
+			mes "*咳嗽* *咳嗽* 你想要什麼？";
+			mes "如果你是使用魔法的人，那麼你需要確保你充分了解它。";
 			next;
-			mes "[Raulel]";
-			mes "Don't live dishonestly, or impolitely, or else one day you'll be caught in a spell you can't control, and BOOM, your dead!";
+			mes "[勞爾]";
+			mes "不要不誠實或不禮貌地生活，否則有一天你會被困在一個你無法控制的咒語中，然後砰的一聲，你就死了！";
 			if (Sex == SEX_MALE) {
-				mes "If you don't want that to happen, then learn how to use spells properly!";
+				mes "如果你不想那樣，那就學會如何正確地使用咒語！";
 				next;
-				mes "[Raulel]";
-				mes "You may live life crippled if you get obsessed with the love of Greater Magic. ~haha";
+				mes "[勞爾]";
+				mes "如果你沉迷於對更強大魔法的熱愛，你可能會過著殘疾的生活。~哈哈";
 			}
 			else {
-				mes "So learn how to use magic properly, or you would just be better off giving up on using magic.";
+				mes "所以學會如何正確地使用魔法，否則你最好放棄使用魔法。";
 				next;
-				mes "[Raulel]";
-				mes "If you don't want that, go hit on a guy or something! ~Hahahaha";
-				mes "If you don't pay attention to yourself, you'll be engulfed by magic one day...";
+				mes "[勞爾]";
+				mes "如果你不想這樣，那就去勾搭一個傢伙或什麼的！~哈哈哈";
+				mes "如果你不注意自己，有一天你會被魔法吞噬...";
 			}
 			close;
 		}
 		else if (BaseJob == Job_Priest) {
-			mes "[Raulel]";
-			mes "Go away, one who works for the Church!";
-			mes "Magic repels Holy power, jeez...your messing up my aura.";
+			mes "[勞爾]";
+			mes "走開，為教會工作的人！";
+			mes "魔法排斥聖力，天啊... 你擾亂了我的氣場。";
 			next;
-			mes "[Raulel]";
-			mes "And plus, *cough* *cough* my health isn't all that good right now either...";
-			mes "Don't come any closer, just leave!";
+			mes "[勞爾]";
+			mes "而且，*咳嗽* *咳嗽* 我的健康狀況也不是很好...";
+			mes "不要靠得太近，走開！";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "[Raulel]";
-			mes "Why did a little one like you come here?!";
-			mes "Get lost! ~Hahahahaha";
+			mes "[勞雷爾]";
+			mes "像你這樣的小傢伙為什麼會來這裡？！";
+			mes "滾開！~哈哈哈";
 			close2;
 			warp "geffen",120,110;
 			end;
 		}
-		mes "[Raulel]";
-		mes "*sneeze* *cough* Oooowww...my entire body is in pain. I feel like I'm trapped in a tub of ice water!";
+		mes "[勞雷爾]";
+		mes "*打噴嚏* *咳嗽* 嗚嗚...我全身都在痛。我覺得我被困在冰水桶裡！";
 		next;
-		mes "[Raulel]";
-		mes "What do you want? Jeez...just get lost, won't you?";
+		mes "[勞雷爾]";
+		mes "你想要什麼？真是的...滾開，好嗎？";
 		close;
 	}
 	if (WIZ_Q == 0) {
-		mes "[Raulel]";
-		mes "*cough* *cough* *sneeze* I don't know who you are and what you do, but I don't have any business with you.";
+		mes "[勞雷爾]";
+		mes "*咳嗽* *咳嗽* *打噴嚏* 我不知道你是誰，也不知道你在做什麼，但我跟你沒有任何瓜葛。";
 		next;
-		mes "[Raulel]";
-		mes "Go away! Get lost!";
+		mes "[勞雷爾]";
+		mes "走開！滾開！";
 		close;
 	}
 	else if (WIZ_Q == 1 || WIZ_Q  == 2) {
-		mes "[Raulel]";
-		mes "Hahahaha~ You're the one that wants to become a Wizard?!";
+		mes "[勞雷爾]";
+		mes "哈哈哈～ 你就是那個想要成為巫師的人？！";
 		next;
-		mes "[Raulel]";
-		mes "*sneeze* If you just lived as you were, all you'd have to do was hunt a little and live the easy life...";
+		mes "[勞雷爾]";
+		mes "*打噴嚏* 如果你只是像你現在這樣生活，你所要做的就是打獵一下，過著輕鬆的生活...";
 		next;
-		mes "[Raulel]";
-		mes "*Cough* *cough* Let's see how well you live as a Wizard. ~Hahahahhaha";
+		mes "[勞雷爾]";
+		mes "*咳嗽* *咳嗽* 讓我們看看你作為巫師生活得如何。~哈哈哈";
 		close;
 	}
 	else if ((WIZ_Q == 3) || (WIZ_Q == 4)) {
 		if (WIZ_Q == 3) {
-			mes "[Raulel]";
-			mes "*Cough* *cough*...You must've passed the first test.";
-			mes "Ok, I'm the Wizard in charge of your testing from now on. My name is 'Raulel Asparagus'.";
+			mes "[勞雷爾]";
+			mes "*咳嗽* *咳嗽*...你一定通過了第一個測試。";
+			mes "好的，從現在開始，我就是負責測試你的巫師。我的名字是 '勞雷爾·蘆筍'。";
 			next;
-			mes "[Raulel]";
-			mes "*sneeze* It's not too late yet, wouldn't you rather just go back to town and enjoy the peaceful life?";
+			mes "[勞雷爾]";
+			mes "*打噴嚏* 現在還不算太晚，你寧願回到城鎮享受平靜的生活嗎？";
 			next;
-			mes "[Raulel]";
-			mes "Hahahaha~ You don't know how dangerous it is...to deal with Greater Magic.";
+			mes "[勞雷爾]";
+			mes "哈哈哈～ 你不知道處理更高等級的魔法有多危險。";
 			next;
-			if (select("I want to live as a normal Mage.:I would like to continue with the tests.") == 1) {
-				mes "[Raulel]";
-				mes "Hahaha~ *sneeze* Good choice...*cough* *cough*~";
-				mes "Best not to even dream about life as a Wizard. Graa...Greaa...*sneeze* Greater Magic wasn't meant for humans to use!";
+			if (select("我想過著普通法師的生活。:我想繼續進行測試。") == 1) {
+				mes "[勞雷爾]";
+				mes "哈哈哈～ *打噴嚏* 好選擇...*咳嗽* *咳嗽*～";
+				mes "最好別夢想成為巫師。葛...葛...*打噴嚏* 更高等級的魔法不是人類可以使用的！";
 				next;
-				mes "[Raulel]";
-				mes "Leave the top of this tower quietly and don't ever look back.";
-				mes "Just live peacefully with the powers that you have right now.";
+				mes "[勞雷爾]";
+				mes "安靜地離開這座塔的頂端，永遠不要回頭。";
+				mes "就用你現在擁有的力量平靜地生活吧。";
 				close;
 			}
-			mes "[Raulel]";
-			mes "*sneeze* Hahahaha~ Now there's a foolish one here!";
-			mes "Well then, let's see how good you are. *cough* I want to see this with my own two eyes!";
+			mes "[勞雷爾]";
+			mes "*打噴嚏* 哈哈哈～ 現在這裡有個傻瓜了！";
+			mes "好吧，讓我們看看你有多好。 *咳嗽* 我要親眼看看！";
 			next;
-			mes "[Raulel]";
-			mes "*sneeze* Then let's begin the test!";
-			mes "If you don't answer them all correctly, you fail. Hahahahahahahahaha~";
+			mes "[勞雷爾]";
+			mes "*打噴嚏* 那麼讓我們開始測試吧！";
+			mes "如果你沒有全部回答正確，你就失敗了。哈哈哈";
 			next;
-			mes "[Raulel]";
-			mes "I'll give you 10 questions so give me the right answers.";
-			mes "If you get something wrong, I won't tell you what it is!";
+			mes "[勞雷爾]";
+			mes "我會給你 10 個問題，所以給我正確的答案。";
+			mes "如果你弄錯了，我不會告訴你錯在哪裡！";
 			if(checkquest(9016) == -1) {
 				changequest 9015,9016;
 			}
 			next;
-			mes "[Raulel]";
-			mes "*Cough* *cough* Then here go the questions!";
+			mes "[勞雷爾]";
+			mes "*咳嗽* *咳嗽* 那麼，問題來了！";
 		}
 		else if (WIZ_Q == 4) {
-			mes "[Raulel]";
-			mes "Hahahaha~ Are you that desperate? *sneeze* What a pain in the arse...";
+			mes "[勞雷爾]";
+			mes "哈哈哈～ 你有那麼絕望嗎？ *打噴嚏* 真麻煩...";
 			next;
-			mes "[Raulel]";
-			mes "Since you don't want to settle for a stable and peaceful life, I'll give you another chance...";
+			mes "[勞雷爾]";
+			mes "既然你不想安於穩定和平的生活，我會給你另一個機會...";
 			next;
-			mes "[Raulel]";
-			mes "If you miss one single question, then just give up. You wouldn't have any talent in being a Wizard! ~Hahahahaha";
+			mes "[勞雷爾]";
+			mes "如果你錯過一個問題，那就放棄吧。你不會有成為巫師的天賦！~哈哈哈";
 			next;
-			if (select("Because of you, I want to live as a normal Mage now.:I would like to continue with the tests.") == 1) {
-				mes "[Raulel]";
-				mes "Hahahaha~ Surprising, comming from you, that's a very wise choice...*cough* *cough*";
-				mes "If i were you, i would never, ever dream of becoming a Wizard again. Gre...Greaa...*sneeze* Greater Magic wasn't meant for humans to use.";
+			if (select("因為你，我現在想過著普通法師的生活。:我想繼續進行測試。") == 1) {
+				mes "[勞雷爾]";
+				mes "哈哈哈～ 令人驚訝，從你口中說出，這是非常明智的選擇...*咳嗽* *咳嗽*";
+				mes "如果我是你，我永遠永遠不會夢想再次成為巫師。葛...葛...*打噴嚏* 更高等級的魔法不是人類可以使用的。";
 				next;
-				mes "[Raulel]";
-				mes "Just leave the top of this tower quietly and never look back.";
-				mes "Live peacefully with the powers that you have right now.";
+				mes "[勞雷爾]";
+				mes "就安靜地離開這座塔的頂端，永遠不要回頭。";
+				mes "用你現在擁有的力量平靜地生活吧。";
 				close;
 			}
-			mes "[Raulel]";
-			mes "Hahahahahahaha~ Now there's a foolish one right here!";
-			mes "Well then, let's see just how good you can be! *sneeze* I want to see this with my own two eyes.";
+			mes "[勞雷爾]";
+			mes "哈哈哈～ 現在這裡有個傻瓜了！";
+			mes "好吧，讓我們看看你有多好！ *打噴嚏* 我要親眼看看。";
 			next;
-			mes "[Raulel]";
-			mes "Then let's begin the test!";
+			mes "[勞雷爾]";
+			mes "那麼讓我們開始測試吧！";
 		}
 		next;
 		switch(rand(1,3)) {
 		case 1:
-			mes "[Raulel]";
-			mes "1. Which of the following is not necessary to learn Fire Wall?";
+			mes "[勞雷爾]";
+			mes "1. 以下哪一項不是學習火焰之牆的必要條件？";
 			next;
-			if (select("Fire Bolt Lv 4:Fire Ball Lv 5:Sight Lv 1:Napalm Beat Lv 4") == 4)
+			if (select("火焰箭 Lv 4:火球術 Lv 5:看破 Lv 1:怒雷強擊 Lv 4") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "2. Regaurdless of it's previous attribute, What does the monster's attribute change to when you cast Frost Diver on it?";
+			mes "[勞雷爾]";
+			mes "2. 不管它之前的屬性如何，當你對怪物施放冰凍術時，怪物的屬性會變成什麼？";
 			next;
-			if (select("Water:Earth:Fire:Wind") == 1)
+			if (select("水:地:火:風") == 1)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "3. When you completely master Napalm Beat, what is the ratio of the increased MATK using that spell?";
+			mes "[勞雷爾]";
+			mes "3. 當你完全掌握怒雷強擊時，使用該技能增加的 MATK 比例是多少？";
 			next;
-			if (select("1.6 times:1.7 times:2 times:20 times") == 2)
+			if (select("1.6 倍:1.7 倍:2 倍:20 倍") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "4. What item do you need when casting Stone Curse?";
+			mes "[勞雷爾]";
+			mes "4. 施放石化術時需要什麼道具？";
 			next;
-			if (select("Red Blood:Blue Gemstone:Yellow Gemstone:Red Gemstone") == 4)
+			if (select("紅色血跡:藍色魔力礦石:黃色魔力礦石:紅色魔力礦石") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "5. Which of the following is not required to master Safety Wall?";
+			mes "[勞雷爾]";
+			mes "5. 以下哪一項不是掌握聖靈結界所必需的？";
 			next;
-			if (select("Napalm Beat Lv 4:Soul Strike Lv 5:Increase SP Recovery Lv 6:Safety Wall Lv 7") == 3)
+			if (select("怒雷強擊 Lv 4:靈魂爆擊 Lv 5:增加 SP 回復 Lv 6:聖靈結界 Lv 7") == 3)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "6. Without the INT bonus, what amount of SP is recovered every 10 seconds when you have learned Increase SP Recovery Lv 7?";
+			mes "[勞雷爾]";
+			mes "6. 如果沒有 INT 加成，當你學會增加 SP 回復 Lv 7 時，每 10 秒恢復多少 SP？";
 			next;
 			if (select("14:21:28:35") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "7. Using Energy Coat, when you have 50% of your SP remaining, how much SP is used when hit, and what percentage is damage reduced by?";
+			mes "[勞雷爾]";
+			mes "7. 使用能量外套，當你剩下 50% 的 SP 時，受到攻擊時會消耗多少 SP，以及減少多少百分比的傷害？";
 			next;
-			if (select("Damage 18% SP1.5%:Damage 18% SP2%:Damage 24% SP1.5%:Damage 24% SP2%") == 2)
+			if (select("傷害 18% SP1.5%:傷害 18% SP2%:傷害 24% SP1.5%:傷害 24% SP2%") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "8. How much SP is consumed and how many times can you avoid attacks when using Safety Wall Lv 6?";
+			mes "[勞雷爾]";
+			mes "8. 使用聖靈結界 Lv 6 時，會消耗多少 SP，以及可以避免幾次攻擊？";
 			next;
-			if (select("SP 40, 6 times:SP 35, 6 times:SP 40, 7 times:SP 35, 7 times") == 3)
+			if (select("SP 40, 6 次:SP 35, 6 次:SP 40, 7 次:SP 35, 7 次") == 3)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "9. How much SP is needed when using Lv 10 Thunderstorm?";
+			mes "[勞雷爾]";
+			mes "9. 使用雷鳴術 Lv 10 時需要多少 SP？";
 			next;
 			if (select("84:74:64:54") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "10. Which skill is most useful training in the Byalan Dungeon?";
+			mes "[勞雷爾]";
+			mes "10. 在妙勒尼山脈的地下水道訓練時，哪個技能最有用？";
 			next;
-			if (select("Lightning Bolt:Fire Bolt:Cold Bolt:Sight") == 1)
+			if (select("閃電箭:火焰箭:冰箭:看破") == 1)
 				set .@wizard_t,.@wizard_t+10;
 			break;
 		case 2:
-			mes "[Raulel]";
-			mes "1. Which monster can you obtain a slotted Guard from?";
+			mes "[勞雷爾]";
+			mes "1. 你可以從哪種怪物身上獲得有洞的盾牌？";
 			next;
-			if (select("Thief Bug:PecoPeco:Pupa:Kobold (Hammer)") == 3)
+			if (select("盜蟲:波利:幼蟲:榔頭哥布靈") == 3)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "2. Which of the following is the easiest monster for a low level Mage to hunt?";
+			mes "[勞雷爾]";
+			mes "2. 對於低等級的法師來說，以下哪種怪物最容易狩獵？";
 			next;
-			if (select("Flora:Giearth:Golem:Myst") == 1)
+			if (select("妖精:基爾瑟:石巨人:迷幻之王") == 1)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "3. Which monster will not be affected by Stone Curse?";
+			mes "[拉烏雷爾]";
+			mes "3. 哪個魔物不會受到石化術的影響？";
 			next;
-			if (select("Elder Willow:Evil Druid:Magnolia:Marc") == 2)
+			if (select("古木樹精:邪骸樹精:萬年青:瑪爾克") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "4. When attacking a Lv 3 water attribute monster with a wind attribute weapon, what is the damage percentage?";
+			mes "[拉烏雷爾]";
+			mes "4. 當使用風屬性武器攻擊 Lv 3 水屬性魔物時，傷害百分比是多少？";
 			next;
 			if (select("125%:150%:175%:200%") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "5. If a Baby Desert Wolf and a Familiar fought, which one would win?";
+			mes "[拉烏雷爾]";
+			mes "5. 如果小沙漠之狼和熟悉者戰鬥，誰會贏？";
 			next;
-			if (select("Baby Desert Wolf:Familiar:Neither:I don't know") == 1)
+			if (select("小沙漠之狼:熟悉者:兩者皆非:我不知道") == 1)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "6. Which of the following cannot be a Cute Pet?";
+			mes "[拉烏雷爾]";
+			mes "6. 下列哪一個不能成為可愛的寵物？";
 			next;
-			if (select("Poporing:Roda Frog:Smokie:Poison Spore") == 2)
+			if (select("波利:羅達蛙:小野豬:毒魔菇") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "7. Choose the monster that is weak against a fire attribute attack.";
+			mes "[拉烏雷爾]";
+			mes "7. 選擇一個弱於火屬性攻擊的魔物。";
 			next;
-			if (select("Dagger Goblin:Mace Goblin:Morningstar Goblin:Hammer Goblin") == 4)
+			if (select("匕首哥布靈:釘錘哥布靈:晨星哥布靈:鐵鎚哥布靈") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "8. Which of the following has the highest defense?";
+			mes "[拉烏雷爾]";
+			mes "8. 下列哪個擁有最高的防禦力？";
 			next;
-			if (select("Horn:Chonchon:Andre:Caramel") == 4)
+			if (select("角弓:邱貝勒:安德烈:焦糖") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "9. Choose the monster that's of a different species.";
+			mes "[拉烏雷爾]";
+			mes "9. 選擇一個與其他魔物不同種類的。";
 			next;
-			if (select("Poring:Mastering:Ghostring:Spore") == 3)
+			if (select("波利:溜溜猴:幽靈波利:孢子") == 3)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "10. Which of the following is not an Undead monster?";
+			mes "[拉烏雷爾]";
+			mes "10. 下列哪一個不是不死系的魔物？";
 			next;
-			if (select("Drake:Megalodon:Deviace:Khalitzburg") == 3)
+			if (select("邪骸海盜:巨石怪:墮落天使:卡利斯格") == 3)
 				set .@wizard_t,.@wizard_t+10;
 			break;
 		case 3:
-			mes "[Raulel]";
-			mes "1. Which stat is the most important for a Mage?";
+			mes "[拉烏雷爾]";
+			mes "1. 對於法師來說，哪個屬性最重要？";
 			next;
 			if (select("INT:AGI:DEX:VIT") == 1)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "2. Which attribute does not have a 'Bolt' type attack?";
+			mes "[拉烏雷爾]";
+			mes "2. 哪個屬性沒有 'Bolt' 類型的攻擊？";
 			next;
-			if (select("Water:Earth:Fire:Wind") == 2)
+			if (select("水:地:火:風") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "3. Choose the one that does not relate to a Mage.";
+			mes "[拉烏雷爾]";
+			mes "3. 選擇一個與法師無關的選項。";
 			next;
-			if (select("Weak physical strength.:Attacks at a distance.:Good at selling stuff.:Magic Defense is high.") == 3)
+			if (select("物理強度弱。:遠距離攻擊。:擅長販賣東西。:魔法防禦高。") == 3)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "4. Which town is the home of Mages?";
+			mes "[拉烏雷爾]";
+			mes "4. 哪個城鎮是法師的家？";
 			next;
-			if (select("Prontera:Morocc:Alberta:Geffen") == 4)
+			if (select("普隆德拉:夢羅克:艾爾貝塔:吉芬") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "5. Which of the following cards has nothing to do with INT?";
+			mes "[拉烏雷爾]";
+			mes "5. 下列哪張卡片與 INT 無關？";
 			next;
-			if (select("Andre Egg Card:Soldier Andre Card:Baby Desert Wolf Card:Elder Willow Card") == 2)
+			if (select("安德烈卵卡片:士兵安德烈卡片:小沙漠之狼卡片:古木樹精卡片") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "6. What is the Mage good at compared to other job classes?";
+			mes "[拉烏雷爾]";
+			mes "6. 與其他職業相比，法師擅長什麼？";
 			next;
-			if (select("Exceptional Vocal Ability:Exceptional Acting Ability:Exceptional Dance Skills:Exceptional Magic Skills") == 4)
+			if (select("出色的歌唱能力:出色的演技:出色的舞蹈技巧:出色的魔法技能") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "7. What is the INT bonus at Job Lv 40 for a Mage?";
+			mes "[拉烏雷爾]";
+			mes "7. 法師在 Job Lv 40 時的 INT 加成是多少？";
 			next;
 			if (select("8:7:6:5") == 4)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "8. Which item can a Mage not equip?";
+			mes "[拉烏雷爾]";
+			mes "8. 法師不能裝備哪個物品？";
 			next;
-			if (select("Knife:Boys Cap:Sandle:Eye of Dullahan") == 2)
+			if (select("短劍:童帽:涼鞋:杜拉漢之眼") == 2)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "9. Which of the following is the catalyst when making the Mage test solution 3?";
+			mes "[拉烏雷爾]";
+			mes "9. 製作法師測試溶液 3 時，哪個是催化劑？";
 			next;
-			if (select("Blue Gemstone:Red Gemstone:Yellow Gemstone:Red Blood") == 1)
+			if (select("藍色魔力礦石:紅色魔力礦石:黃色魔力礦石:紅色血跡") == 1)
 				set .@wizard_t,.@wizard_t+10;
-			mes "[Raulel]";
-			mes "10. Which card is irrelevant to magic?";
+			mes "[拉烏雷爾]";
+			mes "10. 哪張卡片與魔法無關？";
 			next;
-			if (select("Marduk Card:Magnolia Card:Willow Card:Maya Card") == 2)
+			if (select("瑪爾杜克卡片:萬年青卡片:柳樹卡片:瑪雅卡片") == 2)
 				set .@wizard_t,.@wizard_t+10;
 		}
-		mes "[Raulel]";
+		mes "[拉烏雷爾]";
 		if (WIZ_Q == 4) {
-			mes "Good job, you finished answered all the questions... Go buy yourself some potions or something if you have the Zeny. Haha...";
+			mes "做得好，你完成了所有問題... 如果你有錢，去買一些藥水或什麼的。哈哈...";
 			next;
-			mes "[Raulel]";
-			mes "Your score is... " + .@wizard_t + "points.....";
+			mes "[拉烏雷爾]";
+			mes "你的分數是... " + .@wizard_t + "分.....";
 			if (.@wizard_t == 100) {
 				set WIZ_Q,5;
 				changequest 9016,9017;
-				mes "Hahahahahahah~ Well done, you passed the second test.";
-				mes "It wasn't done in one try like mine was, but I'll let you slide...";
+				mes "哈哈哈～做得好，你通過了第二個測試。";
+				mes "雖然不像我一樣一次就完成，但我會讓你過關的...";
 				next;
-				mes "[Raulel]";
-				mes "*sneeze* Don't relax just yet, there's still the matter of the third and final test.";
-				mes "I advise you to rest a bit while the final test is prepared. Your gonna need it. Hahahahaha~";
+				mes "[拉烏雷爾]";
+				mes "*打噴嚏* 先別放鬆，還有第三個也是最後一個測試。";
+				mes "我建議你休息一下，等待最後一個測試準備好。你會需要它的。哈哈哈哈哈～";
 				close;
 			}
 			else if (.@wizard_t == 90) {
 				set WIZ_Q,5;
 				changequest 9016,9017;
-				mes "Hahaha~ Since you only missed one problem, you passed the second test.";
-				mes "It wasn't done in one try like mine was, but I'll let you slide...";
+				mes "哈哈～因為你只錯了一個問題，你通過了第二個測試。";
+				mes "雖然不像我一樣一次就完成，但我會讓你過關的...";
 				next;
-				mes "[Raulel]";
-				mes "*sneeze* Don't relax just yet, there's still the matter of the third and final test.";
-				mes "I advise you to rest a bit while the final test is prepared. Your gonna need it. Hahahahaha~";
+				mes "[拉烏雷爾]";
+				mes "*打噴嚏* 先別放鬆，還有第三個也是最後一個測試。";
+				mes "我建議你休息一下，等待最後一個測試準備好。你會需要它的。哈哈哈哈哈～";
 				close;
 			}
 			else if (.@wizard_t == 80) {
 				set WIZ_Q,5;
 				changequest 9016,9017;
-				mes "Sheez... You didn't do very well, but you passed the second test.";
-				mes "It wasn't done in one try like mine was, but I'll let you slide...";
+				mes "嘖... 你做得不是很好，但你通過了第二個測試。";
+				mes "雖然不像我一樣一次就完成，但我會讓你過關的...";
 				next;
-				mes "[Raulel]";
-				mes "*sneeze* Don't relax just yet, there's still the matter of the third and final test.";
-				mes "I advise you to rest a bit while the final test is prepared. Your gonna need it. Hahahahaha~";
+				mes "[拉烏雷爾]";
+				mes "*打噴嚏* 先別放鬆，還有第三個也是最後一個測試。";
+				mes "我建議你休息一下，等待最後一個測試準備好。你會需要它的。哈哈哈哈哈～";
 				close;
 			}
 			else {
-				mes "You failed. Go study some more!";
+				mes "你失敗了。去多讀點書！";
 				next;
-				mes "[Raulel]";
-				mes "*cough* *cough* Did you really think you could become a Wizard with such a mediocre level like yours?";
-				mes "Get lost! If you were a Wizard right now, the monsters that I fight, would eat you up in no time!";
+				mes "[拉烏雷爾]";
+				mes "*咳嗽* *咳嗽* 你真的認為你可以憑藉你這種平庸的等級成為巫師嗎？";
+				mes "滾開！ 如果你現在是巫師，我戰鬥的那些怪物，會在短時間內把你吃掉！";
 				close;
 			}
 		}
-		mes "Hmmm...Good job, you finished answering all the questions, go buy yourself some potions or something, thats IF you have the Zeny. Hahahahahahahah~";
+		mes "嗯...做得好，你完成了所有問題，去買一些藥水或什麼的，如果你有錢的話。哈哈哈哈哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "Your score is... " + .@wizard_t + " points!";
+		mes "[勞雷爾]";
+		mes "你的分數是... " + .@wizard_t + " 分!";
 		if (.@wizard_t == 100) {
 			set WIZ_Q,5;
 			changequest 9016,9017;
-			mes "*cough* *Cough* Well done, you passed the second test.";
+			mes "*咳* *咳* 做得好，你通過了第二項測試。";
 			next;
-			mes "[Raulel]";
-			mes "Hahahaha~ Don't relax just yet, there's still the third test.";
-			mes "*sneeze* I advise you to rest a bit while the final test is prepared...Hahahahah~";
+			mes "[勞雷爾]";
+			mes "哈哈哈～別太放鬆，還有第三項測試呢。";
+			mes "*噴嚏* 我建議你休息一下，等待最後一項測試準備好...哈哈哈～";
 			close;
 		}
 		else if (.@wizard_t == 90) {
 			set WIZ_Q,5;
 			changequest 9016,9017;
-			mes "Hahahaha~ I'll let you slide by since you only missed one problem. You passed the second test.";
+			mes "哈哈哈～既然你只錯了一個問題，我就放你一馬。你通過了第二項測試。";
 			next;
-			mes "[Raulel]";
-			mes "Hahahaha~ Don't relax just yet, there's still the third test.";
-			mes "*sneeze* I advise you to rest a bit while the final test is prepared...Hahahahah~";
+			mes "[勞雷爾]";
+			mes "哈哈哈～別太放鬆，還有第三項測試呢。";
+			mes "*噴嚏* 我建議你休息一下，等待最後一項測試準備好...哈哈哈～";
 			close;
 		}
 		else {
 			set WIZ_Q,4;
-			mes "You failed. I will let you come back again...after you've learned more relating to the type of questions I've asked you.";
+			mes "你失敗了。我會讓你再回來...在你學到更多關於我問你的問題類型之後。";
 			next;
-			mes "[Raulel]";
-			mes "Tisk...not enough, not enough! Did you really think you could become a Wizard with the little bit of knowledge you have?";
-			mes "Get lost! If you were a Wizard right now, the monsters I deal with would eat you up in no time!";
+			mes "[勞雷爾]";
+			mes "嘖...不夠，不夠！你真的認為憑藉你所擁有的那一點點知識就能成為一名巫師嗎？";
+			mes "滾開！如果你現在是一名巫師，我所對付的怪物會立刻把你吃掉！";
 			close;
 		}
 	}
 	else if (WIZ_Q == 5) {
-		mes "[Raulel]";
-		mes "Ok, hope you got plenty of rest. Hahahahahah~";
-		mes "Then let's begin the last test.";
+		mes "[勞雷爾]";
+		mes "好，希望你得到了充分的休息。哈哈哈～";
+		mes "那麼，讓我們開始最後一項測試吧。";
 		next;
-		mes "[Raulel]";
-		mes "Should I explain a little about this final test? It is difficult, I will not hide that from you...";
+		mes "[勞雷爾]";
+		mes "我應該稍微解釋一下最後一項測試嗎？這很困難，我不會對你隱瞞的...";
 		next;
-		if (select("No, it's ok, I'm ready.:I would like to listen.") == 1) {
-			mes "[Raulel]";
-			mes "What a rash person. Your the type that rushes into battle without thinking, what in the world are you doing here instead of with the Prontera Chivalry? Heck, go for it! *cough* Not my fault if you end up dying.";
-			mes "Just consider yourself a glass cannon...because the monsters are going to break you into pieces. Hahahahahahahahaha~";
+		if (select("不，沒關係，我準備好了。:我想聽聽。") == 1) {
+			mes "[勞雷爾]";
+			mes "真是個魯莽的人。你是那種不經思考就衝入戰鬥的人，你到底在這裡做什麼，而不是在普隆德拉騎士團？去吧！*咳* 如果你最終死了，那不是我的錯。";
+			mes "就當你自己是個玻璃大砲吧...因為怪物會把你打成碎片。哈哈哈～";
 			next;
 			set WIZ_Q,6;
 			savepoint "geffen",120,107,1,1;
-			mes "[Raulel]";
-			mes "Then, as you wish. I'll send you there right now.";
-			mes "Oh, if you see a white light at the end of a tunnel, that means your pathetic cause you failed! Hahahahahah~";
+			mes "[勞雷爾]";
+			mes "那麼，如你所願。我現在就送你過去。";
+			mes "哦，如果你在隧道盡頭看到一道白光，那就意味著你很可悲，因為你失敗了！哈哈哈～";
 			close2;
 			warp "job_wiz",57,154;
 			end;
 		}
-		mes "[Raulel]";
-		mes "What a devoted person. Very well, I'll explain.";
-		mes "No matter how hard this last test may seem, if you do as I say, you can finish it quickly and easily.";
+		mes "[勞雷爾]";
+		mes "真是個投入的人。很好，我來解釋。";
+		mes "無論這最後一項測試看起來多麼困難，如果你按照我說的做，你可以快速輕鬆地完成它。";
 		next;
-		mes "[Raulel]";
-		mes "The final test has a total of 3 parts.";
-		mes "The order is Water Room, Earth Room, Fire Room. In each room, there are monsters of that particular attribute.";
+		mes "[勞雷爾]";
+		mes "最後一項測試共有 3 個部分。";
+		mes "順序是水之房、土之房、火之房。在每個房間裡，都有該特定屬性的怪物。";
 		next;
-		mes "[Raulel]";
-		mes "You'll find out what monsters will be there once you go in. If you use attacks with the *sneeze*";
-		mes "right attribute, it shouldn't be too hard. Hahaha~";
+		mes "[勞雷爾]";
+		mes "一旦你進去，你就會發現那裡有什麼怪物。如果你使用具有 *噴嚏* 的攻擊";
+		mes "正確的屬性，它不應該太難。哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "Once you defeat all the monsters within the given time in any one room...";
-		mes "you'll be moved to the next room.";
+		mes "[勞雷爾]";
+		mes "一旦你在任何一個房間內給定的時間內擊敗了所有怪物...";
+		mes "你將被轉移到下一個房間。";
 		next;
-		mes "[Raulel]";
-		mes "After these three rooms are clear, the testing is over.";
-		mes "You will become a Wizard which is controlled by Greater Magic Powers! Know this...There is no returning to an easy life.";
+		mes "[勞雷爾]";
+		mes "在這些三個房間都清除之後，測試就結束了。";
+		mes "你將成為一個由更強大的魔法力量控制的巫師！要知道...再也回不到輕鬆的生活了。";
 		next;
-		mes "[Raulel]";
-		mes "Hahaha~ You look frightened. You know, it's not too late to turn back and live an easy life.";
-		mes "If you want, I can send you back to town right now... What do you want to do?";
+		mes "[勞雷爾]";
+		mes "哈哈哈～你看起來很害怕。你知道，現在回頭過上輕鬆的生活還不算太晚。";
+		mes "如果你願意，我可以現在就送你回城... 你想做什麼？";
 		next;
-		if (select("Continue testing.:I want to go back because I have butterflies in my stomach.") == 1) {
+		if (select("繼續測試。:我想回去，因為我肚子裡有蝴蝶在飛。") == 1) {
 			set WIZ_Q,6;
 			savepoint "geffen",120,107,1,1;
-			mes "[Raulel]";
-			mes "You are indeed, very determined. Ok! Hahahahahaha~";
-			mes "*Cough* *cough* As you wish, we shall begin the final test!";
+			mes "[勞雷爾]";
+			mes "你確實非常堅定。好！哈哈哈～";
+			mes "*咳* *咳* 如你所願，我們開始最後一項測試！";
 			close2;
 			warp "job_wiz",57,154;
 			end;
 		}
 		set WIZ_Q,6;
-		mes "[Raulel]";
-		mes "Good thinking. This is a better choice for you. Hahahahah~";
-		mes "Go back and live a easy life, Greater Magic is a force that should not be wield by types like yourself.";
+		mes "[勞雷爾]";
+		mes "好主意。這對你來說是更好的選擇。哈哈哈～";
+		mes "回去過輕鬆的生活吧，更強大的魔法不應該由像你這樣的人來掌握。";
 		close2;
 		warp "geffen",120,110;
 		end;
 	}
 	else if (WIZ_Q == 6) {
 		if (WIZ_Q2 == 6) {
-			mes "[Raulel]";
-			mes "Hahahahahaha~ I've never seen anyone so...sooo...*sneeze* tenacious as you.";
-			mes "So you want to try again eh? Even though I've ridiculed you for your failures before??";
+			mes "[勞雷爾]";
+			mes "哈哈哈～我從未見過像你這樣...這?...*噴嚏* 頑強的人。";
+			mes "所以你想再試一次，嗯？即使我之前因為你的失敗而嘲笑過你？？";
 			next;
-			mes "[Raulel]";
-			mes "Ok then, here's a proposition. Since you're probably worn out as it is, and I can clearly see the lust for Greater Magic burning in your eyes...";
-			mes "Hahahahaha~ yeah! Go bring me a ^3355FFWorn Out Scroll^000000.";
+			mes "[勞雷爾]";
+			mes "好吧，這裡有個提議。既然你可能已經筋疲力盡了，而且我可以清楚地看到你眼中燃燒著對更強大魔法的渴望...";
+			mes "哈哈哈～是的！去給我帶一個 ^3355FF破舊的卷軸^000000 來。";
 			next;
 			set WIZ_Q2,WIZ_Q2+1;
-			mes "[Raulel]";
-			mes "If not, you can take the test again...";
-			mes "Well, I'll send you to take the test for now. Hahahaha~";
+			mes "[勞雷爾]";
+			mes "如果沒有，你可以再參加一次測試...";
+			mes "好吧，我現在就送你去參加測試。哈哈～";
 			close2;
 			warp "job_wiz",57,154;
 			end;
 		}
 		else if (WIZ_Q2 > 6) {
-			mes "[Raulel]";
-			mes "Oh! So you're back? Hahahahaha~";
-			mes "*Cough* Cough* Do you want to take the test again? Or did you bring the ^3355FFWorn Out Scroll^000000?";
+			mes "[勞雷爾]";
+			mes "哦！你回來了？哈哈哈～";
+			mes "*咳* *咳* 你想再參加一次測試嗎？還是你帶來了 ^3355FF破舊的卷軸^000000？";
 			next;
-			if (select("Continue the test.:Worn Out Scroll...") == 1) {
+			if (select("繼續測試。:破舊的卷軸...") == 1) {
 				savepoint "geffen",120,107,1,1;
-				mes "[Raulel]";
-				mes "Hahaha~ Ok, at least you have some spirit.";
-				mes "I'll send you in again, try dying once more will yah? Hahahahahahahahaha~";
+				mes "[勞雷爾]";
+				mes "哈哈～好吧，至少你有點精神。";
+				mes "我會再送你進去，試著再死一次吧？哈哈哈～";
 				close2;
 				warp "job_wiz",57,154;
 				end;
 			}
 			if (countitem(618) > 0) {
 				delitem 618,1; //Worn_Out_Scroll
-				mes "[Raulel]";
-				mes "Hahahahahahahaha~ *Cough* *cough* So you ended up bringing one of these eh? Good job...";
-				mes "I think I can continue my research with this...";
+				mes "[勞雷爾]";
+				mes "哈哈哈～*咳* *咳* 所以你最終還是帶來了其中一個，嗯？做得好...";
+				mes "我想我可以繼續用這個進行研究...";
 				next;
 				set WIZ_Q2,0;
 				set WIZ_Q,7;
-				mes "[Raulel]";
-				mes "Even though your not Grade A Wizard material, I can tell your serious about wanting the Greater Magic. I'll tell Catherine that you passed. Hahahahahahahahah~";
-				mes "You went through a lot of trouble here, and that is the true purpose for us selecting Wizards. Only those who will devote themselves to the art will ever become Wizards. Good luck to you. Become much Stronger. Hahahahahaha~";
+				mes "[勞雷爾]";
+				mes "即使你不是 A 級的巫師材料，我也可以看出你是認真地想要獲得更強大的魔法。我會告訴凱瑟琳你通過了。哈哈哈～";
+				mes "你在這裡經歷了很多麻煩，而這才是我們選拔巫師的真正目的。只有那些致力於藝術的人才能成為巫師。祝你好運。變得更強大。哈哈哈～";
 				close;
 			}
 		}
-		mes "[Raulel]";
-		mes "*sneeze* What? You want to take the test again?";
-		mes "Geez...you already failed the battle test! Hahahahahahahaha~ So you like magic that much, eh?";
+		mes "[勞雷爾]";
+		mes "*噴嚏* 什麼？你想再參加一次測試？";
+		mes "天啊...你已經在戰鬥測試中失敗了！哈哈哈～你這麼喜歡魔法，嗯？";
 		next;
-		mes "[Raulel]";
-		mes "Since your so weak that you can't finish this final test on your own...you need a separate test to help you out.";
-		mes "*Cough* If you can't pass the battle test, then do a good job with this one. Hahahahahahah~";
+		mes "[勞雷爾]";
+		mes "既然你太弱，無法獨自完成這最後一項測試...你需要一個單獨的測試來幫助你。";
+		mes "*咳* 如果你無法通過戰鬥測試，那就好好完成這個測試。哈哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "Well, you better answer these problems if you plan on becoming a Wizard. Hahahahahahaha~";
+		mes "[勞雷爾]";
+		mes "好吧，如果你計劃成為一名巫師，你最好回答這些問題。哈哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "1. Choose the monster with a different attribute than the others.";
+		mes "[勞雷爾]";
+		mes "1. 選擇一個屬性與其他怪物不同的怪物。";
 		next;
-		if (select("Mantis:Cornutus:Giearth:Caramel") == 2)
+		if (select("螳螂:玉米蛇:地牛:焦糖") == 2)
 			set .@wizard_t,.@wizard_t+20;
-		mes "[Raulel]";
-		mes "2. Choose the monster that is not a looting one.";
+		mes "[勞雷爾]";
+		mes "2. 選擇一個不是搶劫者的怪物。";
 		next;
-		if (select("Yoyo:Magnolia:Metaller:Zerom") == 4)
+		if (select("溜溜猴:萬桃花:金屬波利:朽魔") == 4)
 			set .@wizard_t,.@wizard_t+20;
-		mes "[Raulel]";
-		mes "3. Which of these monsters does not recognize casting?";
+		mes "[勞雷爾]";
+		mes "3. 這些怪物中哪個無法識別詠唱？";
 		next;
-		if (select("Marina:Vitata:Scorpion:Giearth") == 1)
+		if (select("瑪琳:邪骸礦工:蠍子:地牛") == 1)
 			set .@wizard_t,.@wizard_t+20;
-		mes "[Raulel]";
-		mes "4. Choose the spell that would be efficient against a Marine Sphere.";
+		mes "[勞雷爾]";
+		mes "4. 選擇對付海葵最有效的法術。";
 		next;
-		if (select("Cold Bolt:Fire Bolt:Lightning Bolt:Stone Curse") == 3)
+		if (select("冰箭術:火箭術:雷擊術:石化術") == 3)
 			set .@wizard_t,.@wizard_t+20;
-		mes "[Raulel]";
-		mes "5. Choose the monster that can move.";
+		mes "[勞雷爾]";
+		mes "5. 選擇可以移動的怪物。";
 		next;
-		if (select("Hydra:Madragora:Greatest General:Frilldora") == 4)
+		if (select("海葵:曼陀羅魔花:將軍魔碑:妖道") == 4)
 			set .@wizard_t,.@wizard_t+20;
-		mes "[Raulel]";
-		mes "*pfft* Do it right, so I don't have to ask again.";
+		mes "[勞雷爾]";
+		mes "*噗* 做對了，這樣我就不用再問了。";
 		next;
-		mes "[Raulel]";
-		mes "You got " + .@wizard_t + " points.";
+		mes "[勞雷爾]";
+		mes "你得了 " + .@wizard_t + " 分。";
 		if (.@wizard_t == 100) {
-			mes "Hahahahahaha~ *Cough* *cough* If you can answer all these questions correctly, how is it you can't do well in battles??";
+			mes "哈哈哈～*咳* *咳* 如果你能正確回答所有這些問題，那你怎麼會在戰鬥中表現不好呢？？";
 			next;
 		}
 		else if (.@wizard_t == 80) {
-			mes "Eh, soso...";
-			mes "I'll let you retake the test.";
+			mes "嗯，還行...";
+			mes "我會讓你重考。";
 			next;
 		}
 		else {
-			mes "You failed! Go study some more!";
+			mes "你失敗了！去多學一點！";
 			next;
-			mes "[Raulel]";
-			mes "You lack something...*sneez*...like intelligence. That's why you keep on failing. Hahahahahahahaha~";
+			mes "[勞雷爾]";
+			mes "你缺少一些東西...*噴嚏*...比如智力。這就是你不斷失敗的原因。哈哈哈～";
 			close;
 		}
-		if (select("Begin the test please.:Can I get another explanation?") == 1) {
-			mes "[Raulel]";
-			mes "Nobody is going to help you become a Wizard. Hahahahahahahaha~";
-			mes "*Cough* *cough* No point in crying after dying...";
+		if (select("請開始測試。:我可以再聽一次解釋嗎？") == 1) {
+			mes "[勞雷爾]";
+			mes "沒有人會幫助你成為一名巫師。哈哈哈～";
+			mes "*咳* *咳* 死後哭泣沒有意義...";
 			next;
 			percentheal 100,100;
-			mes "[Raulel]";
-			mes "Then, as you wish. I'll send you to fight.";
-			mes "Oh! If you see some tall pearly gates and hear a booming deep voice from behind it, that means that your a failure when it comes to Magic. Hahahahahahahahaha~";
+			mes "[勞雷爾]";
+			mes "那麼，如你所願。我會送你去戰鬥。";
+			mes "喔！如果你看到一些高聳的珍珠之門，並聽到從後面傳來低沉的聲音，那就代表你在魔法方面是個失敗者。哈哈哈啊哈哈哈～";
 			close2;
 			warp "job_wiz",57,154;
 			end;
 		}
-		mes "[Raulel]";
-		mes "*Cough* *cough* Then I shall explain.";
-		mes "The test may be hard, but just do as I tell you and it shouldn't be a problem.";
+		mes "[勞雷爾]";
+		mes "*咳嗽* *咳嗽* 那麼我來解釋一下。";
+		mes "這個測試可能很難，但只要照我說的做，應該不會有問題。";
 		next;
-		mes "[Raulel]";
-		mes "There are 3 parts to this final test.";
-		mes "The order is...*sneez*...the Water Room, Earth Room, and then the Fire Room. Each room has monsters of that attribute in it.";
+		mes "[勞雷爾]";
+		mes "這個最終測試分為三個部分。";
+		mes "順序是...*噴嚏*...水之房、土之房，然後是火之房。每個房間都有該屬性的怪物在裡面。";
 		next;
-		mes "[Raulel]";
-		mes "You'll see what monsters they are when you enter.";
-		mes "If you use the appropriate spells against them, it shouldn't be that difficult. Hahahahahahaha~";
+		mes "[勞雷爾]";
+		mes "當你進入時，你會看到是什麼怪物。";
+		mes "如果你對牠們使用適當的魔法，應該不會太困難。哈哈哈啊哈哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "Within the given time, if you defeat all the monsters...";
-		mes "you will be sent to the next room.";
+		mes "[勞雷爾]";
+		mes "在規定的時間內，如果你擊敗了所有的怪物...";
+		mes "你將會被送到下一個房間。";
 		next;
-		mes "[Raulel]";
-		mes "After that, the test is over.";
-		mes "You will then become a Wizard controlled by Greater Magic powers! There is no coming back to the easy life you have known thus far.";
+		mes "[勞雷爾]";
+		mes "在那之後，測試就結束了。";
+		mes "然後你將成為一個被更強大的魔法力量控制的巫師！你再也無法回到你迄今為止所知的輕鬆生活了。";
 		next;
-		mes "[Raulel]";
-		mes "Hahahahaha~ You look frightened. It's not too late you know.";
-		mes "*Cough* *cough* You can give up and go back to town! Just forget about the Greater Magic and live a normal life. What do yah say?";
+		mes "[勞雷爾]";
+		mes "哈哈哈～你看起來很害怕。你知道，現在放棄還不算太晚。";
+		mes "*咳嗽* *咳嗽* 你可以放棄然後回到城鎮！只要忘記更強大的魔法，過著正常的生活。你覺得怎麼樣？";
 		next;
-		if (select("Continue with the test.:I'm too scared, I would like to quit.") == 1) {
+		if (select("繼續測試。:我太害怕了，我想退出。") == 1) {
 			percentheal 100,100;
-			mes "[Raulel]";
-			mes "This time when you die, don't come back crying. Hahahahahahahahah~ *Cough *cough*";
-			mes "As you wish, let's begin the final test!";
+			mes "[勞雷爾]";
+			mes "這次你死了，不要哭著回來。哈哈哈啊哈哈哈～ *咳嗽* *咳嗽*";
+			mes "如你所願，讓我們開始最終測試吧！";
 			close2;
 			warp "job_wiz",57,154;
 			end;
 		}
-		mes "[Raulel]";
-		mes "Comming from you, thats some darn good thinking. That's more a fit for you anyways. Hahahahahahahahaha~";
-		mes "Go back and live a quiet and peaceful life!";
+		mes "[勞雷爾]";
+		mes "從你口中說出這種話，真是非常棒的想法。反正這更適合你。哈哈哈啊哈哈哈～";
+		mes "回去過著安靜祥和的生活吧！";
 		close2;
 		warp "geffen",120,110;
 		end;
 	}
 	else if (WIZ_Q == 7) {
-		mes "[Raulel]";
-		mes "You shouldn't have any more business with me as far as I'm concerned.";
-		mes "But, since your so darned persistent, I'll let you take the test again. Hahahahaha~";
+		mes "[勞雷爾]";
+		mes "就我而言，你應該沒有任何事情再找我了。";
+		mes "但是，既然你如此固執，我就讓你再次參加測試。哈哈哈～";
 		next;
-		mes "[Raulel]";
-		mes "Go! Go and become the Wizard you really want to be.";
-		mes "And be careful! Greater Magic will always be after you...";
+		mes "[勞雷爾]";
+		mes "去吧！去成為你真正想成為的巫師。";
+		mes "並且要小心！更強大的魔法總是在追逐著你...";
 		close;
 	}
 }
 
 job_wiz,50,165,4	script	Arena Assistant	700,{
-	mes "[Arena Assistant]";
-	mes "Welcome to the Wizard Job Change Arena.";
-	mes "If you would like to take the final test, then please enter the waiting room.";
+	mes "[競技場助理]";
+	mes "歡迎來到巫師轉職競技場。";
+	mes "如果您想參加最終測試，請進入等候室。";
 	next;
-	mes "[Arena Assistant]";
-	mes "If someone is already taking the test, please wait.";
-	mes "All testing status will be broadcasted, and will begin as soon as the previous tester has gone through.";
+	mes "[競技場助理]";
+	mes "如果已經有人在參加測試，請稍候。";
+	mes "所有測試狀態將會廣播，並且在前一位測試者完成後立即開始。";
 	next;
-	mes "[Arena Assistant]";
-	mes "Each person may take approximately 5 to 10 minutes.";
-	mes "If you would like to leave the arena, please log off anytime.";
+	mes "[競技場助理]";
+	mes "每個人大約需要 5 到 10 分鐘。";
+	mes "如果您想離開競技場，請隨時登出。";
 	close;
 
 OnInit:
@@ -1120,50 +1120,50 @@ OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
 		set WIZ_Q2,WIZ_Q2+1;
-		mapannounce "job_wiz",strcharinfo(0)+" has succeeded in eliminating the monsters.",bc_map;
+		mapannounce "job_wiz",strcharinfo(0)+" 成功消滅了怪物。",bc_map;
 		donpcevent "Room of Water#Door::OnEnable";
 		stopnpctimer;
 	}
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","Water Room; The job change test will now proceed.",bc_map;
+	mapannounce "job_wiz","水之房；轉職測試即將開始。",bc_map;
 	end;
 
 OnTimer2000:
-	mapannounce "job_wiz","Time limit is 3 minutes. We will now start the test.",bc_map;
+	mapannounce "job_wiz","時間限制為 3 分鐘。我們現在開始測試。",bc_map;
 	end;
 
 OnTimer3000:
-	mapannounce "job_wiz","Please eliminate all monsters within the time limit.",bc_map;
+	mapannounce "job_wiz","請在時間限制內消滅所有怪物。",bc_map;
 	end;
 
 OnTimer33000:
-	mapannounce "job_wiz","2 minutes and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 2 分 30 秒。",bc_map;
 	end;
 
 OnTimer63000:
-	mapannounce "job_wiz","2 minutes remaining.",bc_map;
+	mapannounce "job_wiz","剩下 2 分鐘。",bc_map;
 	end;
 
 OnTimer93000:
-	mapannounce "job_wiz","1 minute and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 1 分 30 秒。",bc_map;
 	end;
 
 OnTimer123000:
-	mapannounce "job_wiz","1 minute remaining.",bc_map;
+	mapannounce "job_wiz","剩下 1 分鐘。",bc_map;
 	end;
 
 OnTimer153000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 30 秒。",bc_map;
 	end;
 
 OnTimer173000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 10 秒。",bc_map;
 	end;
 
 OnTimer183000:
-	mapannounce "job_wiz","Time is up.",bc_map;
+	mapannounce "job_wiz","時間到。",bc_map;
 	donpcevent "Room of Water::OnDisable";
 	end;
 
@@ -1172,7 +1172,7 @@ OnTimer184000:
 	end;
 
 OnTimer185000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位候選人，請進入。",bc_map;
 	end;
 
 OnTimer186000:
@@ -1207,7 +1207,7 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mapannounce "job_wiz",strcharinfo(0)+" has succeeded in eliminating the monsters.",bc_map;
+		mapannounce "job_wiz",strcharinfo(0)+" 成功消滅了怪物。",bc_map;
 		percentheal 100,100;
 		warp "job_wiz",116,97;
 		donpcevent "Room of Water#Door::OnDisable";
@@ -1217,19 +1217,19 @@ OnMyMobDead:
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","The guard monster has appeared. You have 1 minute.",bc_map;
+	mapannounce "job_wiz","守護怪物已經出現。你有一分鐘。",bc_map;
 	end;
 
 OnTimer30000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 30 秒。",bc_map;
 	end;
 
 OnTimer50000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 10 秒。",bc_map;
 	end;
 
 OnTimer60000:
-	mapannounce "job_wiz","Time is up.",bc_map;
+	mapannounce "job_wiz","時間到。",bc_map;
 	donpcevent "Room of Water#Door::OnDisable";
 	end;
 
@@ -1238,7 +1238,7 @@ OnTimer61000:
 	end;
 
 OnTimer62000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位候選人，請進入。",bc_map;
 	end;
 
 OnTimer63000:
@@ -1254,7 +1254,7 @@ OnInit:
 	end;
 
 OnTouch_:
-	mapannounce "job_wiz",strcharinfo(0)+" has not succeeded.",bc_map;
+	mapannounce "job_wiz",strcharinfo(0)+" 沒有成功。",bc_map;
 	warp "geffen",120,110;
 	end;
 }
@@ -1294,50 +1294,50 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mapannounce "job_wiz",strcharinfo(0) + " has succeeded in eliminating the monsters.",bc_map;
+		mapannounce "job_wiz",strcharinfo(0) + " 成功消滅了怪物。",bc_map;
 		donpcevent "Room of Earth#Door::OnEnable";
 		stopnpctimer;
 	}
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","Earth Room; The job change test will now proceed.",bc_map;
+	mapannounce "job_wiz","土之房；轉職測試即將開始。",bc_map;
 	end;
 
 OnTimer2000:
-	mapannounce "job_wiz","The time limit is 3 minutes.",bc_map;
+	mapannounce "job_wiz","時間限制為 3 分鐘。",bc_map;
 	end;
 
 OnTimer3000:
-	mapannounce "job_wiz","Eliminate all monster within the time limit.",bc_map;
+	mapannounce "job_wiz","在時間限制內消滅所有怪物。",bc_map;
 	end;
 
 OnTimer33000:
-	mapannounce "job_wiz","2 minutes and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 2 分 30 秒。",bc_map;
 	end;
 
 OnTimer63000:
-	mapannounce "job_wiz","2 minutes remaining.",bc_map;
+	mapannounce "job_wiz","剩下 2 分鐘。",bc_map;
 	end;
 
 OnTimer93000:
-	mapannounce "job_wiz","1 minute and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 1 分 30 秒。",bc_map;
 	end;
 
 OnTimer123000:
-	mapannounce "job_wiz","1 minute remaining.",bc_map;
+	mapannounce "job_wiz","剩下 1 分鐘。",bc_map;
 	end;
 
 OnTimer153000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 30 秒。",bc_map;
 	end;
 
 OnTimer173000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩下 10 秒。",bc_map;
 	end;
 
 OnTimer183000:
-	mapannounce "job_wiz","Time is up.",bc_map;
+	mapannounce "job_wiz","時間到。",bc_map;
 	donpcevent "Room of Earth::OnDisable";
 	end;
 
@@ -1346,7 +1346,7 @@ OnTimer184000:
 	end;
 
 OnTimer185000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位候選人，請進入。",bc_map;
 	end;
 
 OnTimer186000:
@@ -1387,7 +1387,7 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mapannounce "job_wiz",strcharinfo(0) + " has succeeded in eliminating the monster.",bc_map;
+		mapannounce "job_wiz",strcharinfo(0) + " 成功消滅了怪物。",bc_map;
 		percentheal 100,100;
 		warp "job_wiz",46,99;
 		donpcevent "Room of Earth#Door::OnDisable";
@@ -1397,19 +1397,19 @@ OnMyMobDead:
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","The guard monster has appeared. You have 1 minute.",bc_map;
+	mapannounce "job_wiz","守護怪物已經出現。你有一分鐘。",bc_map;
 	end;
 
 OnTimer30000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","30 秒後結束。",bc_map;
 	end;
 
 OnTimer50000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","10 秒後結束。",bc_map;
 	end;
 
 OnTimer60000:
-	mapannounce "job_wiz","End time.",bc_map;
+	mapannounce "job_wiz","結束時間。",bc_map;
 	donpcevent "Room of Earth#Door::OnDisable";
 	end;
 
@@ -1418,7 +1418,7 @@ OnTimer61000:
 	end;
 
 OnTimer62000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位應試者，請進入。",bc_map;
 	end;
 
 OnTimer63000:
@@ -1434,7 +1434,7 @@ OnInit:
 	end;
 
 OnTouch_:
-	mapannounce "job_wiz",strcharinfo(0) + " has not succeeded.",bc_map;
+	mapannounce "job_wiz",strcharinfo(0) + " 並未成功。",bc_map;
 	warp "geffen",120,110;
 	end;
 }
@@ -1472,50 +1472,50 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mapannounce "job_wiz",strcharinfo(0) + " has succeeded in eliminating the monsters.",bc_map;
+		mapannounce "job_wiz",strcharinfo(0) + " 已經成功消滅怪物。",bc_map;
 		donpcevent "Room of Fire#Door::OnEnable";
 		stopnpctimer;
 	}
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","Fire Room; The job change test shall now proceed.",bc_map;
+	mapannounce "job_wiz","火炎之間；轉職測試即將開始。",bc_map;
 	end;
 
 OnTimer2000:
-	mapannounce "job_wiz","Time limit is 3 minutes. We will now start the test.",bc_map;
+	mapannounce "job_wiz","時間限制為 3 分鐘。我們將開始測試。",bc_map;
 	end;
 
 OnTimer3000:
-	mapannounce "job_wiz","Please eliminate all monsters within the time limit.",bc_map;
+	mapannounce "job_wiz","請在時間限制內消滅所有怪物。",bc_map;
 	end;
 
 OnTimer33000:
-	mapannounce "job_wiz","2 minutes and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 2 分 30 秒。",bc_map;
 	end;
 
 OnTimer63000:
-	mapannounce "job_wiz","2 minutes remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 2 分鐘。",bc_map;
 	end;
 
 OnTimer93000:
-	mapannounce "job_wiz","1 minute and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 1 分 30 秒。",bc_map;
 	end;
 
 OnTimer123000:
-	mapannounce "job_wiz","1 minute remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 1 分鐘。",bc_map;
 	end;
 
 OnTimer153000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 30 秒。",bc_map;
 	end;
 
 OnTimer173000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 10 秒。",bc_map;
 	end;
 
 OnTimer183000:
-	mapannounce "job_wiz","Time is up.",bc_map;
+	mapannounce "job_wiz","時間到。",bc_map;
 	donpcevent "Room of Fire::OnDisable";
 	end;
 
@@ -1524,7 +1524,7 @@ OnTimer184000:
 	end;
 
 OnTimer185000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位應試者，請進入。",bc_map;
 	end;
 
 OnTimer186000:
@@ -1563,7 +1563,7 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mapannounce "job_wiz","Congratulations, " + strcharinfo(0) + ". You have passed the job change test.",bc_map;
+		mapannounce "job_wiz","恭喜 " + strcharinfo(0) + "。您已通過轉職測試。",bc_map;
 		set WIZ_Q,7;
 		changequest 9017,9018;
 		donpcevent "Room of Fire#Door::OnDisable";
@@ -1573,27 +1573,27 @@ OnMyMobDead:
 	end;
 
 OnTimer1000:
-	mapannounce "job_wiz","The guard monster has appeared. You have 2 minutes.",bc_map;
+	mapannounce "job_wiz","守護怪物已經出現。您有 2 分鐘的時間。",bc_map;
 	end;
 
 OnTimer30000:
-	mapannounce "job_wiz","1 minute and 30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 1 分 30 秒。",bc_map;
 	end;
 
 OnTimer60000:
-	mapannounce "job_wiz","1 minute remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 1 分鐘。",bc_map;
 	end;
 
 OnTimer90000:
-	mapannounce "job_wiz","30 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 30 秒。",bc_map;
 	end;
 
 OnTimer110000:
-	mapannounce "job_wiz","10 seconds remaining.",bc_map;
+	mapannounce "job_wiz","剩餘 10 秒。",bc_map;
 	end;
 
 OnTimer120000:
-	mapannounce "job_wiz","Time is up.",bc_map;
+	mapannounce "job_wiz","時間到。",bc_map;
 	donpcevent "Room of Fire#Door::OnDisable";
 	end;
 
@@ -1602,7 +1602,7 @@ OnTimer121000:
 	end;
 
 OnTimer122000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位應試者，請進入。",bc_map;
 	end;
 
 OnTimer123000:
@@ -1637,11 +1637,11 @@ OnDisable:
 	end;
 
 OnTimer2000:
-	mapannounce "job_wiz","Please return and complete the rest of the job change processes.",bc_map;
+	mapannounce "job_wiz","請返回並完成剩餘的轉職流程。",bc_map;
 	end;
 
 OnTimer4000:
-	mapannounce "job_wiz","This is the end of the test. Next candidate, please stand by.",bc_map;
+	mapannounce "job_wiz","測試結束。下一位應試者，請準備。",bc_map;
 	end;
 
 OnTimer5000:
@@ -1649,7 +1649,7 @@ OnTimer5000:
 	end;
 
 OnTimer7000:
-	mapannounce "job_wiz","Next candidate, please enter.",bc_map;
+	mapannounce "job_wiz","下一位應試者，請進入。",bc_map;
 	end;
 
 OnTimer9000:
@@ -1662,158 +1662,158 @@ OnTimer9000:
 gef_tower,107,36,4	script	White Dog#wiz	81,{
 	if (BaseJob != Job_Mage) {
 		if (BaseJob == Job_Wizard) {
-			mes "[Maria]";
-			mes "Instead of sticking around here, wouldn't it be better to go out and test how strong you've become?";
+			mes "[瑪麗亞]";
+			mes "與其待在這裡，不如出去測試一下你變得有多強吧？";
 			next;
-			mes "[Maria]";
-			mes "Don't forget that Wizards grow and improve in power each and every day.";
+			mes "[瑪麗亞]";
+			mes "別忘了，巫師每天都在成長和提升力量。";
 			close2;
 			cutin "job_wizard_maria01",255;
 			end;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "[Dog]";
-			mes "What? Kiddo!";
-			mes "Is a Dog talking so amusing to you?";
+			mes "[狗]";
+			mes "什麼？小鬼！";
+			mes "一隻狗說話讓你覺得這麼有趣嗎？";
 		}
 		else {
 			cutin "job_wizard_maria02",2;
-			mes "[Dog]";
-			mes "Sheesh...Why would a person that can't even cast a spell a single spell come up here?";
-			mes "*Pfft* If you're that bored, do the world a favor and climb to the top of this building via the outside, then proceed to do some acrobatics if you get there.";
+			mes "[狗]";
+			mes "哎呀...一個連單一法術都無法施放的人，為什麼會來到這裡？";
+			mes "*噗* 如果你這麼無聊，那就幫世界一個忙，從外面爬到這棟建築物的頂端，如果你到達那裡，就接著做一些特技動作。";
 		}
 		next;
-		mes "[Dog]";
-		mes "*Bark* Get lost!";
-		mes "I don't have time for people like you!";
+		mes "[狗]";
+		mes "*汪* 滾開！";
+		mes "我沒有時間理會像你這樣的人！";
 		close2;
 		cutin "job_wizard_maria02",255;
 		end;
 	}
 	if (WIZ_Q == 0) {
 		cutin "job_wizard_maria01",2;
-		mes "[Dog]";
-		mes "Ah...I know what you're about to say. You want to change jobs to a Wizard, right?";
+		mes "[狗]";
+		mes "啊...我知道你要說什麼。你想轉職成巫師，對吧？";
 		next;
-		mes "[Dog]";
-		mes "Go talk to Catherine. She'll help you.";
+		mes "[狗]";
+		mes "去和凱瑟琳談談。她會幫助你。";
 		next;
-		mes "[Dog]";
-		mes "Also, if you would like to know anything about the job change process, I can explain.";
+		mes "[狗]";
+		mes "此外，如果你想了解關於轉職過程的任何事情，我可以解釋。";
 		next;
-		switch(select(".......:A Dog is talking to me...")) {
+		switch(select(".......:一隻狗在跟我說話...")) {
 		case 1:
-			mes "[Dog]";
-			mes "...*bark*...? What is it?? Why are you looking at me like that?!";
-			mes "Is it your first time seeing a Dog talk?";
+			mes "[狗]";
+			mes "...*汪*...? 什麼事?? 為什麼你這樣看著我？！";
+			mes "你是第一次看到狗說話嗎？";
 			next;
-			mes "[Dog]";
-			mes "*Bark* It's not common that you see a Dog talking I suppose. bark~";
-			mes "...Yes i suppose it is a rare site...*grrr*...Stop Gawking for goodness sakes!";
+			mes "[狗]";
+			mes "*汪* 看到一隻狗說話確實不常見，我想。汪~";
+			mes "...是的，我想這是一個罕見的景象...*Grrr*...別再傻看了，拜託！";
 			next;
-			mes "[Dog]";
-			mes "My name is 'Maria Splodofska'. Just call me 'Maria'.";
-			mes "I'm helping candidates that wish to become Wizards.";
+			mes "[狗]";
+			mes "我的名字是'瑪麗亞·斯普洛多夫斯卡'。就叫我'瑪麗亞'。";
+			mes "我正在幫助那些希望成為巫師的應試者。";
 			next;
 			cutin "job_wizard_maria03",2;
-			mes "[Maria]";
-			mes "*Bark* Well, the reason I became a dog is...I was helping my boyfriend in experimenting to prepare for his Final for his Magic Degree. Well, *Grrrr* he accidentally turned me into a dog.";
-			mes "Theoretically, in a couple months the chemicals should wear off and I should be returned to normal. When exactly, I have no idea?";
+			mes "[瑪麗亞]";
+			mes "*汪* 呃，我變成一隻狗的原因是...我正在幫助我的男友做實驗，為他的魔法學位期末考做準備。結果，*Grrrr* 他不小心把我變成了一隻狗。";
+			mes "理論上，幾個月後，這些化學物質就會消失，我應該會恢復正常。但具體什麼時候，我也不知道？";
 			next;
 			cutin "job_wizard_maria01",2;
-			mes "[Maria]";
-			mes "Well...it doesn't concern you anyways.";
-			mes "Now, where were we.";
+			mes "[瑪麗亞]";
+			mes "嗯...反正這與你無關。";
+			mes "現在，我們說到哪裡了。";
 			next;
 			break;
 		case 2:
 			cutin "job_wizard_maria02",2;
-			mes "[Dog]";
-			mes "*Bark* *bark* *bark* Don't state the obvious! Alright, I know I'm a dog!";
+			mes "[狗]";
+			mes "*汪* *汪* *汪* 別說廢話！好吧，我知道我是一隻狗！";
 			next;
 			cutin "job_wizard_maria01",2;
-			mes "[Dog]";
-			mes "My name is 'Maria Splodofska'. People call me 'Maria'.";
-			mes "I'm helping little ones like you that wish to become Wizards.";
+			mes "[狗]";
+			mes "我的名字是'瑪麗亞·斯普洛多夫斯卡'。人們叫我'瑪麗亞'。";
+			mes "我正在幫助像你這樣，希望成為巫師的小朋友們。";
 			next;
 			cutin "job_wizard_maria03",2;
-			mes "[Dog called 'Maria']";
-			mes "The reason I became a dog is...My boyfriend that was experimenting to prepare for the Magic Degree, accidentally turned me into a dog.";
-			mes "Theoretically, in a couple months, the chemicals should wear off and I should be returned to normal. Exactly when, I have no idea?";
+			mes "[被稱作'瑪麗亞'的狗]";
+			mes "我變成一隻狗的原因是...我正在為魔法學位做實驗準備期末考的男友，不小心把我變成了一隻狗。";
+			mes "理論上，幾個月後，這些化學物質就會消失，我應該會恢復正常。但具體什麼時候，我也不知道？";
 			next;
 			cutin "job_wizard_maria02",2;
-			mes "[Dog called 'Maria']";
-			mes "I'm not a 'dog' called 'Maria'!! Oi!! Listen to me!!";
+			mes "[被稱作'瑪麗亞'的狗]";
+			mes "我不是一隻被稱作'瑪麗亞'的'狗'！！ 喂！！ 聽我說話！！";
 			next;
-			mes "[Dog... 'Maria'...]";
+			mes "[狗... '瑪麗亞'...]";
 			mes "..........";
 			next;
-			mes "[Maria]";
-			mes "...*BARK* *BARK* *BARK*... I'm upset, but whatever!! You seem busy so I'll just drop it.";
+			mes "[瑪麗亞]";
+			mes "...*汪* *汪* *汪*... 我很不高興，但隨便啦！！ 你似乎很忙，所以我不說了。";
 			next;
 			break;
 		}
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "Like I said before, to change jobs, talk to Catherine.";
-		mes "She's a new Wizard too.";
+		mes "[瑪莉亞]";
+		mes "就像我之前說的，要轉職的話，去跟凱瑟琳談談。";
+		mes "她也是個新的巫師。";
 		next;
-		mes "[Maria]";
-		mes "I can tell you more about the job change process, but I can't hold back a busy person now can I?";
-		mes "What do you think? Should I explain some about whats in store for Mages that wish to become Wizards?";
+		mes "[瑪莉亞]";
+		mes "我可以告訴你更多關於轉職的過程，但我現在不能耽誤忙碌的人，對吧？";
+		mes "你覺得呢？我應該解釋一下想成為巫師的法師們會遇到的事情嗎？";
 		next;
-		switch(select("Yes, please! I would like that.:No, it's ok.:A talking dog...")) {
+		switch(select("是的，拜託！我很想聽聽看。:不用了，沒關係。:一隻會說話的狗...")) {
 		case 1:
 			cutin "job_wizard_maria01",2;
-			mes "[Maria]";
-			mes "OK, I will explain the process for you.";
+			mes "[瑪莉亞]";
+			mes "好的，我會為你解釋整個過程。";
 			next;
-			mes "[Maria]";
-			mes "There are three tests in the job change process.";
-			mes "The first test is collecting magic items.";
+			mes "[瑪莉亞]";
+			mes "轉職過程中共有三項測試。";
+			mes "第一項測試是收集魔法物品。";
 			next;
-			mes "[Maria]";
-			mes "That one begins when you submit an application to Catherine.";
-			mes "She'll either tell you to collect all types of gemstones, or gather stones with attributes.";
+			mes "[瑪莉亞]";
+			mes "當你向凱瑟琳提交申請時，該測試便開始。";
+			mes "她會告訴你收集所有類型的寶石，或是收集具有屬性的石頭。";
 			next;
-			mes "[Maria]";
-			mes "Second test is a magic quiz,";
-			mes "The gloomy Laurel in the corner is in charge of that part.";
+			mes "[瑪莉亞]";
+			mes "第二項測試是魔法測驗，";
+			mes "角落裡憂鬱的羅雷爾負責那部分。";
 			next;
-			mes "[Maria]";
-			mes "There are questions about magic, monsters, and Mages.";
-			mes "Out of the 10 questions, if you don't get them all correct, he doesn't let you pass. In other words, you fail...";
+			mes "[瑪莉亞]";
+			mes "問題內容關於魔法、怪物和法師。";
+			mes "在 10 個問題中，如果你沒有全部答對，他就不會讓你通過。換句話說，你就會失敗...。";
 			next;
-			mes "[Maria]";
-			mes "Oddly enough, He is in charge of the 3rd test too.";
-			mes "The third test is eliminating monsters.";
+			mes "[瑪莉亞]";
+			mes "奇怪的是，他同時也負責第三項測試。";
+			mes "第三項測試是消滅怪物。";
 			next;
-			mes "[Maria]";
-			mes "In each room, there are monsters of certain attributes.";
-			mes "You must attack them with the appropriate spells.";
+			mes "[瑪莉亞]";
+			mes "在每個房間裡，都有特定屬性的怪物。";
+			mes "你必須使用適當的法術來攻擊它們。";
 			next;
-			mes "[Maria]";
-			mes "Well, that's all that I can say. Go apply now.";
+			mes "[瑪莉亞]";
+			mes "嗯，這就是我能說的全部了。現在去申請吧。";
 			next;
-			mes "[Maria]";
-			mes "It's better to just try it yourself than to listen to my descriptions.";
+			mes "[瑪莉亞]";
+			mes "與其聽我的描述，不如自己嘗試一下。";
 			close2;
 			cutin "job_wizard_maria01",255;
 			warp "gef_dun00",116,102;
 			end;
 		case 2:
-			mes "[Maria]";
-			mes "Really? Ok, then go apply and do your best.";
+			mes "[瑪莉亞]";
+			mes "真的嗎？好吧，那就去申請並盡力而為。";
 			close2;
 			cutin "job_wizard_maria01",255;
 			end;
 		case 3:
 			cutin "job_wizard_maria02",2;
-			mes "[Maria]";
-			mes "I'm not a DOG!! HOOOOWWWWWWLLLLLLL~";
+			mes "[瑪莉亞]";
+			mes "我不是狗！！嗷嗚嗚嗚嗚嗚~";
 			next;
-			mes "[Maria]";
-			mes "Dang it! I hope you FAIL!! Go get lost!!";
+			mes "[瑪莉亞]";
+			mes "可惡！我希望你失敗！！給我滾開！！";
 			close2;
 			cutin "job_wizard_maria01",255;
 			warp "gef_dun00",116,102;
@@ -1822,140 +1822,140 @@ gef_tower,107,36,4	script	White Dog#wiz	81,{
 	}
 	else if (WIZ_Q == 1) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "You seem lost...";
-		mes "You've applied, and now you're looking for the items right?";
+		mes "[瑪莉亞]";
+		mes "你似乎迷路了...";
+		mes "你已經申請了，現在正在尋找物品，對吧？";
 		next;
-		mes "[Maria]";
-		mes "But since this is only the first test, don't depend on others.";
-		mes "Complete it yourself. Thats the best way.";
+		mes "[瑪莉亞]";
+		mes "但由於這只是第一項測試，不要依賴他人。";
+		mes "自己完成它。這是最好的方法。";
 		next;
-		mes "[Maria]";
-		mes "From what I've heard, you have to gather gemstones...";
-		mes "I can't help you directly, but I can give you some advice.";
+		mes "[瑪莉亞]";
+		mes "據我所知，你必須收集寶石...";
+		mes "我無法直接幫助你，但我可以給你一些建議。";
 		next;
-		mes "[Maria]";
-		mes "First, to get Red Gemstones, go to Culverts in Prontera.";
-		mes "You can obtain them from the Thief Bugs and Thief Bug eggs found plentiful there.";
+		mes "[瑪莉亞]";
+		mes "首先，要獲得紅色寶石，去普隆德拉的下水道。";
+		mes "你可以從那裡大量的盜蟲和盜蟲卵身上獲得它們。";
 		next;
-		mes "[Maria]";
-		mes "Yellow Gemstones are easy to find in the desert.";
-		mes "Condors, Picky's, and sometimes monsters like Golem's drop them.";
+		mes "[瑪莉亞]";
+		mes "黃色寶石很容易在沙漠中找到。";
+		mes "禿鷹、小雞，有時像魔菇這種怪物也會掉落。";
 		next;
-		mes "[Maria]";
-		mes "And...*woof* to get Blue Gemstones. Try going to the Byalan Dungeons.";
-		mes "Cornutus, Vadon, and monsters like Mars can drop those Gems.";
+		mes "[瑪莉亞]";
+		mes "還有...*汪* 要獲得藍色寶石。試著去斐揚地下洞窟。";
+		mes "海豹寶寶、海星，還有像魔鬼魚這樣的怪物可以掉落那些寶石。";
 		next;
-		mes "[Maria]";
-		mes "Of course you can get blue Gemstones at the magic shop here in town...";
-		mes "But, finding them yourself would be much more rewarding and helpful later in the test.";
+		mes "[瑪莉亞]";
+		mes "當然你可以在城鎮裡的魔法商店買到藍色寶石...";
+		mes "但是，自己找到它們會更有價值，並且對後面的測試更有幫助。";
 		next;
-		mes "[Maria]";
-		mes "Anyways, try your best.";
-		mes "This is the basics of being a Wizard.";
+		mes "[瑪莉亞]";
+		mes "總之，盡你所能。";
+		mes "這是成為巫師的基本功。";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;
 	}
 	else if (WIZ_Q == 2) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "You seem lost...";
-		mes "You've applied, and now you're looking for the items right?";
+		mes "[瑪莉亞]";
+		mes "你似乎迷路了...";
+		mes "你已經申請了，現在正在尋找物品，對吧？";
 		next;
-		mes "[Maria]";
-		mes "But since this is only the first test, don't depend on others for help.";
-		mes "Complete it yourself, thats the best way.";
+		mes "[瑪莉亞]";
+		mes "但由於這只是第一項測試，不要依賴他人尋求幫助。";
+		mes "自己完成它，這是最好的方法。";
 		next;
-		mes "[Maria]";
-		mes "From what I've heard, you have to gather elemental stones...";
-		mes "I can't help you directly, but I can give you some advice.";
+		mes "[瑪莉亞]";
+		mes "據我所知，你必須收集元素石...";
+		mes "我無法直接幫助你，但我可以給你一些建議。";
 		next;
-		mes "[Maria]";
-		mes "Well, you can find the Crystal Blue in Byalan Dungeon.";
-		mes "Cornutus, Kukre, Marina, Vadon...these monsters drop them frequently.";
+		mes "[瑪莉亞]";
+		mes "嗯，你可以在斐揚地下洞窟找到藍色結晶。";
+		mes "海豹寶寶、克瑞米、海葵、海星...這些怪物經常掉落它們。";
 		next;
-		mes "[Maria]";
-		mes "You can get Green Live from insect type monsters.";
-		mes "Try hunting monsters like Horn, Mantis, or Vitata.";
+		mes "[瑪莉亞]";
+		mes "你可以從昆蟲類型的怪物身上獲得綠色活草。";
+		mes "試著獵殺像是大嘴鳥、螳螂或食人花這樣的怪物。";
 		next;
-		mes "[Maria]";
-		mes "Oh and *woof*, Red Blood. I heard you can get a lot of those from...";
-		mes "Elder Willows, Metallers or Scorpions found in the desert would work well too.";
+		mes "[瑪莉亞]";
+		mes "喔，還有 *汪*，紅色血跡。我聽說你可以從很多...";
+		mes "沙漠中發現的老樹妖、金屬波利或蠍子身上獲得很多。";
 		next;
-		mes "[Maria]";
-		mes "For Wind of Verdue. Hornet, Stainer, Steel Chonchon.";
-		mes "If you try just a bit, you can get them really easily.";
+		mes "[瑪莉亞]";
+		mes "至於青綠色微風。大黃蜂、刺蝟蟲、鋼鐵毛毛蟲。";
+		mes "如果你稍微努力一下，你可以很容易地得到它們。";
 		next;
-		mes "[Maria]";
-		mes "But anyways, always try your best.";
-		mes "It's the basics of being a Wizard.";
+		mes "[瑪莉亞]";
+		mes "但總之，總是盡你所能。";
+		mes "這是成為巫師的基本功。";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;
 	}
 	else if (WIZ_Q == 3) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "Don't be too relieved just after the first test.";
-		mes "Try your best, as you still have two more tests to go.";
+		mes "[瑪莉亞]";
+		mes "不要在第一項測試之後就太過放鬆。";
+		mes "盡你所能，因為你還有兩項測試要進行。";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;
 	}
 	else if (WIZ_Q == 4) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
+		mes "[瑪莉亞]";
 		mes "ZzzzZzzzZzzz...";
 		next;
 		cutin "job_wizard_maria02",2;
-		mes "[Maria]";
-		mes "*wimper*...Blizadris...you suck...Zzz...";
+		mes "[瑪莉亞]";
+		mes "*嗚咽*...冰暴...你真爛...Zzz...";
 		close2;
 		cutin "job_wizard_maria02",255;
 		end;
 	}
 	else if (WIZ_Q == 5) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "Oh, you're doing well aren't you?";
+		mes "[瑪莉亞]";
+		mes "哦，你做得很好，不是嗎？";
 		next;
-		mes "[Maria]";
-		mes "Well, try your best to the very end.";
-		mes "Laurel is waiting.";
+		mes "[瑪莉亞]";
+		mes "嗯，盡你所能直到最後。";
+		mes "羅雷爾正在等待。";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;
 	}
 	else if (WIZ_Q == 6) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "*BARK*...you gave up?";
-		mes "*Sigh*...How can you become a Wizard with such a weak heart?";
+		mes "[瑪莉亞]";
+		mes "*汪*...你放棄了？";
+		mes "*嘆氣*...你怎麼能用這麼脆弱的心成為巫師？";
 		next;
-		mes "[Maria]";
-		mes "You know that each room has monsters of the same attribute...";
-		mes "If you're a person that deals with magic, you need to know about the different spells.";
+		mes "[瑪莉亞]";
+		mes "你知道每個房間都有相同屬性的怪物...";
+		mes "如果你是使用魔法的人，你需要了解不同的法術。";
 		next;
-		mes "[Maria]";
-		mes "You also need to learn how to counter monsters that use skills.";
-		mes "Your best bet is to kill the monsters that are attacking you first.";
+		mes "[瑪莉亞]";
+		mes "你還需要學習如何應對使用技能的怪物。";
+		mes "你最好的選擇是先殺死正在攻擊你的怪物。";
 		next;
-		mes "[Maria]";
-		mes "*Grrr* Anyways, continue the test.";
-		mes "Don't have a weak mind, *woof* and go back! *Bark* *Bark* Right this moment! *BARK*";
+		mes "[瑪莉亞]";
+		mes "*咕嚕* 總之，繼續測試。";
+		mes "不要有軟弱的想法，*汪* 然後回去！ *吠* *吠* 立即！ *汪*";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;
 	}
 	else if (WIZ_Q == 7) {
 		cutin "job_wizard_maria01",2;
-		mes "[Maria]";
-		mes "As I thought, I knew you'd be able to do it, I could smell it in yah! *Woof*";
-		mes "Now I can call you Wizard.";
+		mes "[瑪莉亞]";
+		mes "正如我所想，我知道你能夠做到，我可以在你身上聞到！ *汪*";
+		mes "現在我可以稱你為巫師了。";
 		next;
-		mes "[Maria]";
-		mes "Congratulations. Always give your best at everything, no matter what.";
+		mes "[瑪莉亞]";
+		mes "恭喜你。無論做什麼，都要盡力而為。";
 		close2;
 		cutin "job_wizard_maria01",255;
 		end;

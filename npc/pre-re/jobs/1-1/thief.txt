@@ -26,19 +26,19 @@ moc_prydb1,39,129,2	script	Thief Guide	69,{
 	if (Upper == 1) {
 		if (ADVJOB == Job_Assassin_Cross || ADVJOB == Job_Stalker) {
 			if (Class == Job_Novice_High) {
-				mes "[Thief Guide]";
-				mes "Huh? Do I know you? It's creepy that you seem so familiar. You don't have a twin, do you?";
+				mes "[盜賊嚮導]";
+				mes "嗯？我認識你嗎？你這麼眼熟有點毛骨悚然。你沒有雙胞胎兄弟姐妹吧？";
 				next;
 				if (!callfunc("F_CanChangeJob")) {
-					mes "[Thief Guide]";
-					mes "What, do you want to be a Thief? I'm sorry, but you look like you need more training.";
+					mes "[盜賊嚮導]";
+					mes "怎麼，你想當盜賊？我很抱歉，但你看起來需要更多訓練。";
 					next;
-					mes "[Thief Guide]";
-					mes "Take your time and learn all the Basic Skills, will you? Well then, see you later~!";
+					mes "[盜賊嚮導]";
+					mes "花點時間學習所有的基礎技能，好嗎？那麼，再見啦～！";
 					close;
 				}
-				mes "[Thief Guide]";
-				mes "Well, I got this feeling like you've been through a lifetime of fighting, so I'm promoting you to a Thief right this minute. I better give you tough guys what you want...";
+				mes "[盜賊嚮導]";
+				mes "嗯，我感覺你經歷過無數的戰鬥，所以我現在就讓你轉職成盜賊。我最好給你這些硬漢想要的東西...";
 				next;
 				skill "NV_TRICKDEAD",0,SKILL_PERM;
 				jobchange Job_Thief_High;
@@ -46,303 +46,303 @@ moc_prydb1,39,129,2	script	Thief Guide	69,{
 				skill "TF_BACKSLIDING",1,SKILL_PERM;
 				skill "TF_PICKSTONE",1,SKILL_PERM;
 				skill "TF_THROWSTONE",1,SKILL_PERM;
-				mes "[Thief Guide]";
-				mes "Since you've become a Thief, live as a Thief. Now, go for it! Next~";
+				mes "[盜賊嚮導]";
+				mes "既然你已經成為盜賊，就要像個盜賊一樣活著。現在，去吧！下一個～";
 				close;
 			}
 			else {
-				mes "[Thief Guide]";
+				mes "[盜賊嚮導]";
 				if (Sex == SEX_MALE)
-					mes "Hey, dude.";
+					mes "嘿，老兄。";
 				else
-					mes "Hey, baby~";
+					mes "嘿，寶貝～";
 				close;
 			}
 		}
 		else {
-			mes "[Thief Guide]";
+			mes "[盜賊嚮導]";
 			if (Sex == SEX_MALE)
-				mes "Hey, dude.";
+				mes "嘿，老兄。";
 			else
-				mes "Hey, baby.";
-			mes "...Hey! You look too goody-goody to want to be a Thief!! Now scram, I'm busy. Next!";
+				mes "嘿，寶貝。";
+			mes "...嘿！你看起來太正經了，不像想當盜賊的人！！滾開，我很忙。下一個！";
 			close;
 		}
 	}
 	if (BaseJob == Job_Thief) {
-		mes "[Thief Guide]";
-		mes "If you have a problem, feel free to speak to me anytime, alright?";
+		mes "[盜賊嚮導]";
+		mes "如果你有問題，隨時都可以跟我說，好嗎？";
 		close;
 	}
 	else if (BaseJob != Job_Novice && BaseJob != Job_Thief) {
-		mes "[Thief Guide]";
-		mes "What the heck...?";
+		mes "[盜賊嚮導]";
+		mes "搞什麼鬼...?";
 		switch(Class) {
 		case 1:
-			mes "Huh.";
-			mes "Now, that's";
-			mes "a big sword.";
+			mes "嗯。";
+			mes "這真是";
+			mes "一把大劍。";
 			next;
-			mes "[Thief Guide]";
-			mes "So...";
-			mes "Trying to make";
-			mes "up for something";
-			mes "...Buddy?";
+			mes "[盜賊嚮導]";
+			mes "所以...";
+			mes "想要彌補";
+			mes "什麼事嗎";
+			mes "...老兄？";
 			break;
 		case 2:
-			mes "What's a Mage doin' here? Shouldn't you be doing card tricks elsewhere? Oh well, it's a free country...";
+			mes "法師來這裡做什麼？你不應該在其他地方變魔術嗎？好吧，這是個自由的國家...";
 			next;
-			mes "[Thief Guide]";
-			mes "Oh wait,";
-			mes "it's not...";
-			mes "Get outta here!";
+			mes "[盜賊嚮導]";
+			mes "等等，";
+			mes "不對...";
+			mes "滾出去！";
 			break;
 		case 3:
-			mes "Man, shouldn't you";
-			mes "Archers be playing";
-			mes "in the forest";
-			mes "or something?";
+			mes "老兄，你們弓箭手";
+			mes "不應該在森林裡";
+			mes "玩耍";
+			mes "之類的嗎？";
 			break;
 		case 4:
-			mes "You know we all steal for a living, right? What are you doing in this kinda place, Acolyte?";
+			mes "你知道我們都是靠偷竊為生的，對吧？你這個祭司來這種地方做什麼？";
 			break;
 		case 5:
-			mes "You're a Merchant,";
-			mes "right? Why are you";
-			mes "walking into a den";
-			mes "of Thieves?!";
+			mes "你是商人，";
+			mes "對吧？你為什麼要";
+			mes "走進盜賊的";
+			mes "巢穴？！";
 			next;
-			mes "[Thief Guide]";
-			mes "It's like you're begging";
-			mes "us to steal from you!";
-			mes "Come on, hurry and";
-			mes "get outta here~";
+			mes "[盜賊嚮導]";
+			mes "就像你在懇求";
+			mes "我們偷你的東西！";
+			mes "快點，趕快";
+			mes "滾出去～";
 			break;
 		case 8:
-			mes "Oh my God...";
-			mes "Am I dying?";
+			mes "我的天啊...";
+			mes "我要死了嗎？";
 			next;
-			mes "[Thief Guide]";
-			mes "Why else would a Priest come here? I guess I better start confessing all of my misdeeds.";
+			mes "[盜賊嚮導]";
+			mes "不然牧師來這裡幹嘛？我想我最好開始懺悔我所有的惡行。";
 			close;
 		case 12:
-			mes "Didn't you use to be one of us?! Man, you changed. You seem real dangerous now...";
+			mes "你以前不是我們的人嗎？！老兄，你變了。你現在看起來真的很危險...";
 			close;
 		case 17:
-			mes "Man, you got real cool all of a sudden! You must have some skills I can only dream of!";
+			mes "老兄，你突然變得超酷的！你一定有一些我夢寐以求的技能！";
 			close;
 		}
 		next;
-		mes "[Thief Guide]";
-		mes "*Sigh* Look, there's really no need for you to be in this kind of place. You oughta go where you ought to go.";
+		mes "[盜賊嚮導]";
+		mes "*嘆氣* 聽著，你真的不需要待在這種地方。你應該去你該去的地方。";
 		close;
 	}
 	if (job_thief_q == 3 && countitem(1069) > 0 || countitem(1070) > 0) {
-		mes "[Thief Guide]";
-		mes "Hmmm?";
-		mes "You gathered Mushrooms for";
-		mes "the Thief test, right?";
+		mes "[盜賊嚮導]";
+		mes "嗯？";
+		mes "你收集了蘑菇來";
+		mes "進行盜賊測試，對吧？";
 		next;
-		mes "[Thief Guide]";
-		mes "Here, talk to the other guy right next to me. He's the one in charge of checking your Mushrooms.";
+		mes "[盜賊嚮導]";
+		mes "來，跟在我旁邊的另一個人談談。他負責檢查你的蘑菇。";
 		close;
 	}
 	else if (job_thief_q == 3) {
-		mes "[Thief Guide]";
-		mes "So how was the";
-		mes "Mushroom Farm?";
-		mes "Have any fun?";
+		mes "[盜賊嚮導]";
+		mes "蘑菇農場";
+		mes "怎麼樣？";
+		mes "有什麼樂趣嗎？";
 		next;
-		if (select("Yeah, kinda Cool.:It was horrible.") == 1) {
-			mes "[Thief Guide]";
-			mes "Heh heh! That's a good attitude. In our line of work, you gotta enjoy getting your hands dirty, one way or another.";
+		if (select("是啊，有點酷。:那太可怕了。") == 1) {
+			mes "[盜賊嚮導]";
+			mes "嘿嘿！這是個好態度。在我們這行，你必須享受弄髒雙手的樂趣，無論如何。";
 			close;
 		}
-		mes "[Thief Guide]";
-		mes "Yeah? I've been there too, so I can see why that place isn't everyone's cup of tea. Still, being a Thief isn't all glamour and trendy night life.";
+		mes "[盜賊嚮導]";
+		mes "是嗎？我也去過那裡，所以我能理解為什麼那裡不是每個人的菜。不過，當盜賊並非都是光鮮亮麗和時髦的夜生活。";
 		close;
 	}
 	if (job_thief_q == 2) {
-		mes "[Thief Guide]";
-		mes "Hey, whaddya doin' here? Aren't you supposed to be gathering Mushrooms? Or did you need it explained to you again?";
+		mes "[盜賊嚮導]";
+		mes "嘿，你在這裡做什麼？你不應該去收集蘑菇嗎？還是你需要我再解釋一次？";
 		next;
-		if  (select("Yes.:No, that's okay.") == 1) {
-			mes "[Thief Guide]";
-			mes "*Sigh* Well, there's always one in the bunch. Alright, listen carefully.";
+		if  (select("是的。:不，沒關係。") == 1) {
+			mes "[盜賊嚮導]";
+			mes "*嘆氣* 嗯，總會有一個是這樣的。好吧，仔細聽好。";
 			next;
-			mes "[Thief Guide]";
-			mes "Alright, for your test, you gotta steal Mushrooms from a farm. Don't worry, the guy who owns the farm deserves to be robbed.";
+			mes "[盜賊嚮導]";
+			mes "好吧，為了你的測試，你必須從一個農場偷蘑菇。別擔心，農場的主人該被搶。";
 			next;
-			mes "[Thief Guide]";
-			mes "Anyway, you gotta gather two kinds of Mushrooms: ^0000FFOrange Net Mushrooms^000000 and ^0000FFOrange Gooey Mushrooms^000000.";
+			mes "[盜賊嚮導]";
+			mes "總之，你必須收集兩種蘑菇：^0000FF橘色網狀菇^000000 和 ^0000FF橘色黏稠菇^000000。";
 			next;
-			mes "[Thief Guide]";
-			mes "Be careful, since there are monsters are the farm that are there to protect the Mushrooms. So this will be no walk in the park.";
+			mes "[盜賊嚮導]";
+			mes "小心，因為農場裡有怪物在那裡保護蘑菇。所以這不會是輕鬆的散步。";
 			next;
-			mes "[Thief Guide]";
-			mes "When you come back here after gathering Mushrooms, you'll be graded on the Mushrooms you've collected.";
+			mes "[盜賊嚮導]";
+			mes "當你收集蘑菇回來後，你會根據你收集到的蘑菇來評分。";
 			next;
-			mes "[Thief Guide]";
-			mes "Each Orange Net Mushroom gets you 3 points, and you get 1 point for each Orange Gooey Mushroom. You need a total of 25 points to pass the test.";
+			mes "[盜賊嚮導]";
+			mes "每個橘色網狀菇可以讓你得到 3 分，而每個橘色黏稠菇可以讓你得到 1 分。你需要總共 25 分才能通過測試。";
 			next;
-			mes "[Thief Guide]";
-			mes "Go outside and keep going ahead toward the Eastern Field of the Pyramids. Then you will see one of our comrades between two columns.";
+			mes "[盜賊嚮導]";
+			mes "走出外面，一直往前走到金字塔的東方原野。然後你會看到我們的一個同志在兩根柱子之間。";
 			next;
-			mes "[Thief Guide]";
-			mes "Speak to that guy, and he'll take you to the farm through the backdoor.";
+			mes "[盜賊嚮導]";
+			mes "跟那個人說話，他會帶你從後門到農場。";
 			next;
-			mes "[Thief Guide]";
-			mes "On that field, I think his coordinates are '^FF0000141, 125^000000.' Just type ^3355FF/where^000000 in the right side of your chat box to check your present coordinates.";
+			mes "[盜賊嚮導]";
+			mes "在那個田裡，我想他的座標是 '^FF0000141, 125^000000'。只要在聊天視窗的右側輸入 ^3355FF/where^000000 就可以查看你現在的座標。";
 			close;
 		}
-		mes "[Thief Guide]";
-		mes "Huh. For a second there, I thought you had something really important to tell me.";
+		mes "[盜賊嚮導]";
+		mes "嗯。有那麼一秒，我還以為你有什麼非常重要的事情要告訴我。";
 		close;
 	}
-	mes "[Thief Guide]";
+	mes "[盜賊嚮導]";
 	if (job_thief_q == 0) {
-		mes "What brings you down";
-		mes "here to this rathole?";
+		mes "是什麼風把你吹到";
+		mes "這個老鼠洞來了？";
 	}
 	else {
-		mes "Ah...";
-		mes "You came back.";
-		mes "Are you sure you're";
-		mes "ready to try again?";
+		mes "啊...";
+		mes "你回來了。";
+		mes "你確定你";
+		mes "準備好再試一次了嗎？";
 	}
 	next;
-	if (select("Hey, I came here to be a Thief!:Nah, I'm just looking around.") == 1) {
+	if (select("嘿，我是來轉職成盜賊的！:不，我只是隨便看看。") == 1) {
 		if (job_thief_q == 0) {
-			mes "[Thief Guide]";
-			mes "Heh, I like your confidence. Still, you know being a Thief isn't all what it's cracked up to be.";
+			mes "[盜賊嚮導]";
+			mes "呵呵，我喜歡你的自信。不過，你要知道當盜賊並不像你想的那麼光鮮亮麗。";
 			next;
-			mes "[Thief Guide]";
-			mes "Still...";
-			mes "Do you really";
-			mes "want to be";
-			mes "a Thief?";
+			mes "[盜賊嚮導]";
+			mes "不過...";
+			mes "你真的";
+			mes "想要成為";
+			mes "一個盜賊嗎？";
 			next;
-			switch(select("Yeah.:No, just wasting your time.:Why did you become a Thief?")) {
+			switch(select("是啊。:不，只是浪費你的時間。:你為什麼要當盜賊？")) {
 			case 1:
-				mes "[Thief Guide]";
-				mes "Really...";
+				mes "[盜賊嚮導]";
+				mes "真的嗎...";
 				break;
 			case 2:
-				mes "[Thief Guide]";
-				mes "Yeah...";
-				mes "I can see that.";
+				mes "[盜賊嚮導]";
+				mes "是啊...";
+				mes "我看出來了。";
 				break;
 			case 3:
-				mes "[Thief Guide]";
-				mes "Me...?";
-				mes "I had no choice at the time. It was either steal or starve. But it's not like I need to give you my life story.";
+				mes "[盜賊嚮導]";
+				mes "我...?";
+				mes "我當時別無選擇。不是偷竊就是餓死。但我不覺得我需要跟你說我的身世故事。";
 				break;
 			}
 			next;
-			mes "[Thief Guide]";
-			mes "So do you want to";
-			mes "apply to become";
-			mes "a Thief or not?";
+			mes "[盜賊嚮導]";
+			mes "所以你想";
+			mes "申請成為";
+			mes "盜賊嗎？";
 			next;
-			switch(select("Yes, I will.:I'm too scared to be a Thief!")) {
+			switch(select("是的，我願意。:我太害怕當盜賊了！")) {
 			case 1:
-				mes "[Thief Guide]";
-				mes "Alright, tell";
-				mes "me your name.";
+				mes "[盜賊嚮導]";
+				mes "好吧，告訴";
+				mes "我你的名字。";
 				next;
-				mes "[Thief Guide]";
-				mes "" + strcharinfo(0) + "?";
-				mes "What kind of name is " + strcharinfo(0) + "? Anyway, give me a second.";
+				mes "[盜賊嚮導]";
+				mes "" + strcharinfo(0) + "？";
+				mes "" + strcharinfo(0) + " 是什麼奇怪的名字？總之，給我一秒鐘。";
 				set job_thief_q,1;
 				next;
-				mes "[Thief Guide]";
-				mes "Alright, your registration has been processed. Okay, you can begin your test if you're ready.";
+				mes "[盜賊嚮導]";
+				mes "好了，你的註冊已經處理完畢。好的，如果你準備好了就可以開始你的測試。";
 				next;
-				switch(select("Yeah, I'm ready.:No, I'm not ready yet.")) {
+				switch(select("是啊，我準備好了。:不，我還沒準備好。")) {
 				case 1:
 					break;
 				case 2:
-					mes "[Thief Guide]";
-					mes "Not ready?";
-					mes "How can you";
-					mes "not be ready?!";
+					mes "[盜賊嚮導]";
+					mes "還沒準備好？";
+					mes "你怎麼可能";
+					mes "還沒準備好？！";
 					close;
 				}
 				break;
 			case 2:
-				mes "[Thief Guide]";
-				mes "Too scared?!?";
-				mes "Hahahahahahah!";
-				mes "Oh, please...!";
-				mes "That's hilarious!";
+				mes "[盜賊嚮導]";
+				mes "太害怕了？！";
+				mes "哈哈哈哈哈哈！";
+				mes "拜託...！";
+				mes "這太好笑了！";
 				close;
 			}
 		}
 		else {
-			mes "[Thief Guide]";
-			mes "Okay...";
-			mes "Give me";
-			mes "one second.";
+			mes "[盜賊嚮導]";
+			mes "好吧...";
+			mes "給我";
+			mes "一秒鐘。";
 			next;
 		}
-		mes "[Thief Guide]";
-		mes "Your name is...";
-		mes strcharinfo(0) + "? Um, where is it? Ah, here it is. Let's see...";
+		mes "[盜賊嚮導]";
+		mes "你的名字是...";
+		mes strcharinfo(0) + "？嗯，在哪裡呢？啊，在這裡。讓我想想...";
 		next;
-		mes "[Thief Guide]";
+		mes "[盜賊嚮導]";
 		if (!callfunc("F_CanChangeJob")) {
-			mes "Isn't that cute? I can see you're ambitious, but you gotta learn all of the Basic Skills before you can become a Thief.";
+			mes "那不是很可愛嗎？我看得出來你很有野心，但在你成為盜賊之前，你必須學會所有的基本技能。";
 			close;
 		}
-		mes "Alright. I looked at your Felony Record, and you seem to have a very interesting history. You might have what it takes to be a Thief.";
+		mes "好了。我看了你的犯罪記錄，你似乎有一段非常有趣的歷史。你可能具備成為盜賊的條件。";
 		next;
-		mes "[Thief Guide]";
-		mes "Because I feel like it, I now decree that you have passed this interview. Good work!";
+		mes "[盜賊嚮導]";
+		mes "因為我心情好，所以我現在宣布你通過了這次面試。做得好！";
 		set job_thief_q,2;
 		setquest 1013;
 		next;
-		mes "[Thief Guide]";
-		mes "Now, your actual abilities will need to be tested. Do you know anything about the test?";
+		mes "[盜賊嚮導]";
+		mes "現在，需要測試你的實際能力。你知道關於測試的事情嗎？";
 		next;
-		switch(select("Yes, I do.:Sorry, I don't.")) {
+		switch(select("是的，我知道。:抱歉，我不知道。")) {
 		case 1:
-			mes "[Thief Guide]";
-			mes "Oh yeah? Well, this makes things a lot easier.";
+			mes "[盜賊嚮導]";
+			mes "喔，是嗎？嗯，這讓事情變得容易多了。";
 			break;
 		case 2:
-			mes "[Thief Guide]";
-			mes "Alright, let me inform you then. Listen carefully. This test decides if you are worthy of becoming a Thief.";
+			mes "[盜賊嚮導]";
+			mes "好吧，讓我來告訴你。仔細聽。這個測試決定你是否值得成為盜賊。";
 			next;
-			mes "[Thief Guide]";
-			mes "You will be sneaking to Shibu's Farm. He is the worst Merchant, in terms of character, in Morocc.";
+			mes "[盜賊嚮導]";
+			mes "你將潛入西布的農場。他是夢羅克性格最差的商人。";
 			next;
-			mes "[Thief Guide]";
-			mes "Alright, for your test, you gotta steal Mushrooms from his farm. Don't worry, that guy deserves to be robbed.";
+			mes "[盜賊嚮導]";
+			mes "好吧，為了你的測試，你必須從他的農場偷蘑菇。別擔心，那傢伙活該被搶。";
 			next;
-			mes "[Thief Guide]";
-			mes "Anyway, you gotta gather two kinds of Mushrooms: ^0000FFOrange Net Mushrooms^000000 and ^0000FFOrange Gooey Mushrooms^000000.";
+			mes "[盜賊嚮導]";
+			mes "總之，你必須收集兩種蘑菇：^0000FF橘色網狀蘑菇^000000 和 ^0000FF橘色黏糊糊蘑菇^000000。";
 			next;
-			mes "[Thief Guide]";
-			mes "Be careful, since there are monsters are the farm that are there to protect the Mushrooms. So this will be no walk in the park.";
+			mes "[盜賊嚮導]";
+			mes "小心點，因為農場裡有怪物在那裡保護蘑菇。所以這不會是一場輕鬆的散步。";
 			next;
-			mes "[Thief Guide]";
-			mes "When you come back here after gathering Mushrooms, you'll be graded on the Mushrooms you've collected.";
+			mes "[盜賊嚮導]";
+			mes "當你收集蘑菇後回到這裡，你將根據你收集的蘑菇進行評分。";
 			next;
-			mes "[Thief Guide]";
-			mes "Each Orange Net Mushroom gets you 3 points, and you get 1 point for each Orange Gooey Mushroom. You need a total of 25 points to pass the test.";
+			mes "[盜賊嚮導]";
+			mes "每個橘色網狀蘑菇讓你獲得 3 點，而每個橘色黏糊糊蘑菇讓你獲得 1 點。你需要總共 25 點才能通過測試。";
 			next;
-			mes "[Thief Guide]";
-			mes "Go outside and keep going ahead toward the Eastern Field of the Pyramids. Then you will see one of our comrades between two columns.";
+			mes "[盜賊嚮導]";
+			mes "走到外面，繼續朝著金字塔的東部田野前進。然後你會看到我們的一個同志在兩根柱子之間。";
 			next;
-			mes "[Thief Guide]";
-			mes "Speak to that guy, and he'll take you to the farm through the backdoor.";
+			mes "[盜賊嚮導]";
+			mes "跟那個人說話，他會帶你從後門到農場。";
 			next;
-			mes "[Thief Guide]";
-			mes "On that field, I think his coordinates are '^FF0000141, 125^000000.' Just type ^3355FF/where^000000 in the right side of your chat box to check your present coordinates.";
+			mes "[盜賊嚮導]";
+			mes "在那塊場地上，我想他的座標是 '^FF0000141, 125^000000'。只要在你的聊天視窗右邊輸入 ^3355FF/where^000000 就可以查看你現在的座標。";
 		}
 		next;
-		mes "[Thief Guide]";
-		mes "Don't forget to make plans and prepare yourself before you go inside the Mushroom Farm. Move as quickly as you can and try not to get killed, alright?";
+		mes "[盜賊嚮導]";
+		mes "別忘了在進入蘑菇田之前做好計畫並準備好自己。盡可能快速移動，並盡量別被殺死，好嗎？";
 		close;
 	}
 	close;
@@ -350,40 +350,40 @@ moc_prydb1,39,129,2	script	Thief Guide	69,{
 
 moc_prydb1,42,133,2	script	Comrade	118,{
 	if (BaseJob == Job_Thief) {
-		mes "[Brad]";
-		mes "We don't have any special events yet. Come some other time when there's news, alright?";
+		mes "[布萊德]";
+		mes "我們目前還沒有任何特別活動。等有消息的時候再來吧，好嗎？";
 		close;
 	}
 	else if (BaseJob != Job_Novice && BaseJob != Job_Thief) {
-		mes "[Comrade]";
-		mes "Um...";
-		mes "You don't look";
-		mes "like a Thief.";
+		mes "[同志]";
+		mes "嗯...";
+		mes "你看起來";
+		mes "不像盜賊。";
 		next;
-		mes "[Comrade]";
-		mes "What the heck are";
-		mes "you doing here anyway?";
+		mes "[同志]";
+		mes "你到底";
+		mes "在這裡做什麼？";
 		close;
 	}
 	if (job_thief_q == 0 || job_thief_q == 1) {
-		mes "[Comrade]";
-		mes "What's the matter? If you want to be a Thief, speak to the girl beside me.";
+		mes "[同志]";
+		mes "怎麼了？如果你想成為盜賊，就跟旁邊的女孩說話。";
 		close;
 	}
 	else if (job_thief_q == 2) {
-		mes "[Comrade]";
-		mes "Did you pass the interview?";
-		mes "Then what are you waiting for?";
+		mes "[同志]";
+		mes "你通過面試了嗎？";
+		mes "那你還在等什麼？";
 		close;
 	}
 	else if (job_thief_q == 3) {
-		mes "[Comrade]";
-		mes "Ah, the guide told me about you. So, let me check your mushrooms...";
+		mes "[同志]";
+		mes "啊，嚮導跟我提過你。那麼，讓我檢查一下你的蘑菇...";
 		if (countitem(1069) == 0 && countitem(1070) == 0) {
 			next;
-			mes "[Comrade]";
-			mes "What the hell...";
-			mes "You don't have any Mushrooms at all! Go back and get them. Otherwise, you won't pass the test and become a Thief!";
+			mes "[同志]";
+			mes "搞什麼...";
+			mes "你根本沒有任何蘑菇！回去拿。不然你不會通過測試，成為盜賊的！";
 			close;
 		}
 		next;
@@ -391,60 +391,60 @@ moc_prydb1,42,133,2	script	Comrade	118,{
 		set .@thief_item2,countitem(1070);
 		set .@total_thief,.@thief_item1 + .@thief_item2;
 		set .@money_thief,((.@thief_item1 * 5) + (.@thief_item2 * 2)) + 200;
-		mes "[Comrade]";
+		mes "[同志]";
 		if (countitem(1069) != 0) {
-			mes "First, let me check the Orange Net Mushrooms you got.";
-			mes "Huh, " + countitem(1069) + " of them.";
+			mes "首先，讓我檢查一下你拿到的橘色網狀菇。";
+			mes "嗯，總共有 " + countitem(1069) + " 個。";
 		}
 		if (countitem(1070) != 0)
-			mes "Now I'll just check your Orange Gooey Mushrooms. That's " + countitem(1070) + " you gathered.";
+			mes "現在讓我檢查一下你的橘色黏稠菇。你收集了 " + countitem(1070) + " 個。";
 		next;
-		mes "[Comrade]";
-		mes "So that would";
-		mes "bring your total to...";
+		mes "[同志]";
+		mes "所以這會";
+		mes "讓你的總分達到...";
 		next;
-		mes "[Comrade]";
-		mes "Hmmm. " + .@total_thief + " degrees, multiplied by the speed of light, divided by the integral of pi times height plus the absolute value of politics...";
+		mes "[同志]";
+		mes "嗯... " + .@total_thief + " 度，乘以光速，除以 pi 乘以高度的積分加上政治的絕對值...";
 		next;
-		mes "[Comrade]";
-		mes "Okay!";
-		mes "I got it.";
+		mes "[同志]";
+		mes "好！";
+		mes "我算出來了。";
 		next;
-		mes "[Comrade]";
+		mes "[同志]";
 		if (.@total_thief > 25) {
-			mes "You got more";
-			mes "than 25 points!";
-			mes "Awesome!";
+			mes "你得到了";
+			mes "超過 25 分！";
+			mes "太棒了！";
 		}
 		else if (.@total_thief == 25) {
-			mes "Exactly 25 points!";
-			mes "You did it! Badass!";
+			mes "剛好 25 分！";
+			mes "你做到了！真了不起！";
 		}
 		else {
-			mes "Definitely less than the 25 points you need to pass. Go out there and get me more Mushrooms!";
+			mes "絕對低於通過所需的 25 分。出去幫我拿更多蘑菇！";
 			close;
 		}
 		next;
-		mes "[Comrade]";
+		mes "[同志]";
 		mes strcharinfo(0) + "...";
-		mes "You have passed the official Thief Test. You are now one of us.";
+		mes "你通過了正式的盜賊測試。你現在是我們的一員了。";
 		if (countitem(1069) != 0) delitem 1069,countitem(1069); //Mushroom_Of_Thief_1
 		if (countitem(1070) != 0) delitem 1070,countitem(1070); //Mushroom_Of_Thief_2
 		callfunc "Job_Change",Job_Thief;
 		callfunc "F_ClearJobVar";
 		completequest 1013;
 		next;
-		mes "[Comrade]";
-		mes "Congratulations on becoming a Thief! From now, be an honorable representative of the Thief's Guild.";
+		mes "[同志]";
+		mes "恭喜你成為盜賊！從現在起，成為盜賊公會的光榮代表。";
 		next;
-		mes "[Comrade]";
-		mes "If you bring disgrace to our guild, you will be killed. I expect you to bring our comrades pride.";
+		mes "[同志]";
+		mes "如果你讓我們的公會蒙羞，你將會被殺死。我期望你為我們的同志們帶來榮耀。";
 		next;
-		mes "[Brad]";
-		mes "*Ahem* Welcome to the Guild, comrade! I'm Brad, and I'm in charge of human resources here.";
+		mes "[布萊德]";
+		mes "*咳咳* 歡迎來到公會，同志！我是布萊德，我負責這裡的人力資源。";
 		next;
-		mes "[Brad]";
-		mes "Here is a small subsidy for a Newbie like you. Spend it whereever you want. Alright then, I'll see you around~";
+		mes "[布萊德]";
+		mes "這是一點小小的補助，給像你這樣的新手。隨便你怎麼花。好吧，再見囉～";
 		set Zeny, Zeny+.@money_thief;
 		close;
 	}
@@ -452,42 +452,42 @@ moc_prydb1,42,133,2	script	Comrade	118,{
 
 moc_ruins,141,125,3	script	Mr. Irrelevant	83,{
 	if (BaseJob == Job_Thief) {
-		mes "[Mr. Irrelevant]";
-		mes "Ah, I see that you are now a Thief. I always knew you'd join us.";
+		mes "[無關緊要先生]";
+		mes "啊，我看到你現在是個盜賊了。我就知道你會加入我們。";
 		next;
-		mes "[Mr. Irrelevant]";
-		mes "Stealing from a Mushroom farm is too easy for you now. You should build up your skills and master our craft.";
+		mes "[無關緊要先生]";
+		mes "從蘑菇田偷東西對你來說太容易了。你應該提升你的技能並掌握我們的工藝。";
 		close;
 	}
 	else if (BaseJob != Job_Novice && BaseJob != Job_Thief) {
-		mes "[Mr. Irrelevant]";
+		mes "[無關緊要先生]";
 		switch(rand(4)) {
 		case 1:
-			mes "I could use a good, hard drink.";
+			mes "我想要一杯好喝的烈酒。";
 			close;
 		case 2:
-			mes "Gimme your money.";
+			mes "把你的錢給我。";
 			next;
-			mes "[Mr. Irrelevant]";
-			mes "Kidding, I'm off the clock.";
+			mes "[無關緊要先生]";
+			mes "開玩笑的，我下班了。";
 			close;
 		case 3:
-			mes "WHO YOU CALLING A PSYCHO?!?!";
+			mes "你說誰是精神病患者?!?!";
 			close;
 		case 4:
-			mes "I've got nothing to say to you. Would you mind leaving me alone?";
+			mes "我沒什麼好跟你說的。你可以讓我一個人靜一靜嗎？";
 			close;
 		default:
-			mes "Today looks like a good day to go to the pyramids and hunt with some of my friends.";
+			mes "今天看起來是個去金字塔和我的朋友們一起狩獵的好日子。";
 			close;
 		}
 	}
 	if (job_thief_q == 3) {
-		mes "[Mr. Irrelevant]";
-		mes "Hahahahaha~!";
-		mes "You haven't";
-		mes "passed the test yet?";
-		mes "Alright, I'll let you in...";
+		mes "[無關緊要先生]";
+		mes "哈哈哈～！";
+		mes "你還沒";
+		mes "通過測試嗎？";
+		mes "好吧，我讓你進去...";
 		close2;
 		switch(rand(5)) {
 		case 1: warp "job_thief1",228,106; end;
@@ -498,12 +498,12 @@ moc_ruins,141,125,3	script	Mr. Irrelevant	83,{
 		}
 	}
 	else if (job_thief_q == 2) {
-		mes "[Mr. Irrelevant]";
-		mes "Hmm...";
-		mes "You've come to take the test, right? I can see in your eyes that you know something.";
+		mes "[無關緊要先生]";
+		mes "嗯...";
+		mes "你是來參加測試的，對吧？我能從你的眼神中看出你知道些什麼。";
 		next;
-		mes "[Mr. Irrelevant]";
-		mes "Your name is " + strcharinfo(0) + "? Ah, it's on the list. Alright, I'll let you into the Mushroom Farm , but I can't guarantee your safety...";
+		mes "[無關緊要先生]";
+		mes "你的名字是 " + strcharinfo(0) + " 嗎？啊，在名單上。好吧，我讓你進入 Mushroom Farm，但我不能保證你的安全...";
 		close2;
 		set job_thief_q,3;
 		switch(rand(5)) {
@@ -515,15 +515,15 @@ moc_ruins,141,125,3	script	Mr. Irrelevant	83,{
 		}
 	}
 	else if (job_thief_q == 1) {
-		mes "[Mr. Irrelevant]";
-		mes "There is this strange smell coming from... You. Now why would that be?";
+		mes "[無關緊要先生]";
+		mes "有一種奇怪的味道從... 你身上傳來。這是怎麼回事？";
 		close;
 	}
-	mes "[Mr. Irrelevant]";
-	mes "Hey Novice! Why don't you join the ranks of the Thief Guild? You newbies are always welcome to join us and our selfish cause.";
+	mes "[無關緊要先生]";
+	mes "嘿，新手！為什麼不加入盜賊公會的行列呢？我們隨時歡迎你們這些新手加入我們和我們自私的事業。";
 	next;
-	mes "[Mr. Irrelevant]";
-	mes "You can get more information in the Underground Room in the Pyramid 1 BF.";
+	mes "[無關緊要先生]";
+	mes "你可以在金字塔 1 樓的地下室獲得更多信息。";
 	close;
 }
 
