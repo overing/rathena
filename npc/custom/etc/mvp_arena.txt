@@ -17,25 +17,25 @@
 //============================================================
 
 // Entrance
-prontera,154,197,3	script	MVP Warper	768,{
-	mes "[ ^0065DFMVP Warper^000000 ]";
-	mes "Would you like to enter";
-	mes "the MVP Arena?";
-	if (select("Yes!","No thanks.") == 2) close;
+prontera,154,197,3	script	MVP 傳送師	768,{
+	mes "[ ^0065DFMVP 傳送員^000000 ]";
+	mes "您想要進入";
+	mes "MVP 競技場嗎？";
+	if (select("是的！","不用了。") == 2) close;
 	warp "quiz_00",50,24;
 	close;
 }
 
 // Information
-quiz_00,49,31,4	script	MVP Arena Guide	778,{
-	mes "[ ^0065DFMVP Arena Guide^000000 ]";
-	mes "Welcome and behold this sacred place. Here you will find out if you truly have what it takes to call yourself a warrior.";
+quiz_00,49,31,4	script	MVP 嚮導	778,{
+	mes "[ ^0065DFMVP 競技場嚮導^000000 ]";
+	mes "歡迎來到這個神聖的地方。在這裡，您將會發現自己是否真的有資格被稱為戰士。";
 	next;
-	switch(select("Information","Heal me!","Return to Prontera","Cancel")) {
+	switch(select("資訊","治癒我！","返回普隆德拉","取消")) {
 	case 1:
-		mes "[ ^0065DFMVP Arena Guide^000000 ]";
-		mes "There are four Keepers, and each can spawn four different MVPs.";
-		mes "There are eight rooms per Keeper, and sixteen MVPs in total.";
+		mes "[ ^0065DFMVP 競技場嚮導^000000 ]";
+		mes "這裡有四個守護者，每個守護者可以召喚四個不同的 MVP。";
+		mes "每個守護者有八個房間，總共有十六個 MVP。";
 		close;
 	case 2:
 		specialeffect2 EF_HEAL2;
@@ -53,14 +53,14 @@ quiz_00,49,31,4	script	MVP Arena Guide	778,{
 function	script	Keeper	{
 	set .@arg, getarg(0);
 	mes "[ ^0065DF"+strnpcinfo(1)+"^000000 ]";
-	mes "Which arena would you";
-	mes "like to enter?";
+	mes "您想要進入哪個";
+	mes "競技場呢？";
 	for(set .@i,1; .@i<9; set .@i,.@i+1)
 		set .@menu$, .@menu$+"Arena "+.@i+" ["+getmapusers("pvp_n_"+.@i+"-"+.@arg)+"/20]:";
 	set .@i, select(.@menu$);
 	if (getmapusers("pvp_n_"+.@i+"-"+ .@arg)>19) {
 		mes "[ ^0065DF"+strnpcinfo(1)+"^000000 ]";
-		mes "Sorry, this arena is full!";
+		mes "抱歉，這個競技場已經滿了！";
 		close;
 	}
 	warp "pvp_n_"+.@i+"-"+ .@arg,102,102;
@@ -73,7 +73,7 @@ quiz_00,62,31,4	script	Epsilon MVP	776,{ callfunc "Keeper",5; }
 
 // Protectors
 function	script	Protector	{
-	switch(select(""+((getarg(0)=="")?"":"Harder Monsters")+":Heal:Exit")) {
+	switch(select(""+((getarg(0)=="")?"":"更強的怪物")+":治癒:離開")) {
 	case 1:
 		warp getarg(0),102,102;
 		end;

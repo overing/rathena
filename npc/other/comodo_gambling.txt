@@ -30,24 +30,24 @@
 
 comodo,219,158,6	script	Kachua	4_F_02,{
 	if (checkweight(1201,1) == 0) {
-		mes "^3355FFWait a second! Right now, you're carrying too many items with you. Please come back after putting some of your things into Kafra Storage.^000000";
+		mes "^3355FF等一下！你現在身上帶太多東西了。請先把一些東西放到卡普拉倉庫後再來。^000000";
 		close;
 	}
 	cutin "katsua01.bmp",2;
 
-	mes "[Kachua]";
-	mes "Diamonds...!";
-	mes "I simply can't get my mind off";
-	mes "them! Ever since that man";
-	mes "showed me that diamond,";
-	mes "it's been all I think about!";
+	mes "[卡秋雅]";
+	mes "鑽石...！";
+	mes "我就是無法不去想";
+	mes "它們！自從那個人";
+	mes "給我看了那顆鑽石後，";
+	mes "我就一直想著它！";
 	next;
-	if (select("Would you like to have mine?", "Ah, what a shame...") == 2) {
-		mes "[Kachua]";
-		mes "Yes, I know...";
-		mes "Even among everything";
-		mes "in my collections, nothing";
-		mes "compares to diamonds...";
+	if (select("你願意給我嗎？", "唉，真可惜...") == 2) {
+		mes "[卡秋雅]";
+		mes "是的，我知道...";
+		mes "即使在我收藏的所有東西中，";
+		mes "也沒有任何東西";
+		mes "能和鑽石相比...";
 		close2;
 		cutin "katsua01.bmp",255;
 		end;
@@ -55,30 +55,30 @@ comodo,219,158,6	script	Kachua	4_F_02,{
 	if (countitem(732) == 0) {
 		cutin "katsua01.bmp",255;
 		cutin "katsua03.bmp",2;
-		mes "[Kachua]";
-		mes "*piff*";
-		mes "You don't have any diamonds!";
-		mes "Don't even try to fool me!";
+		mes "[卡秋雅]";
+		mes "*噗*";
+		mes "你根本沒有鑽石！";
+		mes "別想騙我！";
 		close2;
 		cutin "katsua03.bmp",255;
 		end;
 	}
-	mes "[Kachua]";
-	mes "Are you sure you don't mind";
-	mes "giving this to me? Thank you";
-	mes "so much! I don't have much in";
-	mes "the way of money, but i can give";
-	mes "you something from one of my";
-	mes "collections~";
+	mes "[卡秋雅]";
+	mes "你確定你不介意";
+	mes "把它給我嗎？非常";
+	mes "感謝你！我沒有太多";
+	mes "錢，但我可以給你一些";
+	mes "來自我的";
+	mes "收藏品～";
 	next;
 	if (MaxWeight - Weight < 5500) {
 		cutin "katsua01.bmp",255;
 		cutin "katsua03.bmp",2;
-		mes "[Kachua]";
-		mes "Errr...";
-		mes "You brought too many things.";
-		mes "You can't receive this item now.";
-		mes "You better reorganize your inventory and try again.";
+		mes "[卡秋雅]";
+		mes "呃...";
+		mes "你帶太多東西了。";
+		mes "你現在無法收到這個物品。";
+		mes "你最好整理一下你的背包再試一次。";
 		close2;
 		cutin "katsua03.bmp",255;
 		end;
@@ -89,11 +89,11 @@ comodo,219,158,6	script	Kachua	4_F_02,{
 		close;
 	}
 	delitem 732,1;
-	mes "[Kachua]";
-	mes "So what would";
-	mes "you like to have?";
+	mes "[卡秋雅]";
+	mes "那你想要";
+	mes "什麼呢？";
 	next;
-	switch (select("Weapon", "Armor", "Garment", "Helmet", "Shoes", "Shield")) {
+	switch (select("武器", "盔甲", "披肩", "頭盔", "鞋子", "盾牌")) {
 	case 1: // Weapons
 		.@gamble1 = rand(1,1000);
 		if (.@gamble1 > 920 && .@gamble1 < 931) {
@@ -377,189 +377,189 @@ comodo,219,158,6	script	Kachua	4_F_02,{
 	getitem .@item,1;
 	cutin "katsua01.bmp",255;
 	cutin "katsua02.bmp",2;
-	mes "[Kachua]";
-	mes "Ah~ that Diamond is so beautiful.";
-	mes "I wish I could repay you better.";
+	mes "[卡秋雅]";
+	mes "啊～那顆鑽石真美。";
+	mes "真希望我能更好地回報你。";
 	close2;
 	cutin "katsua02.bmp",255;
 	end;
 }
 
 comodo,204,148,7	script	Devellin	4_F_01,{
-	mes "[Devellin]";
-	mes "It seems some traveller showed";
-	mes "a huge diamond to Kachua a while ago. Ever since then, all she's been talking about is diamonds and how much she wants them.";
+	mes "[黛芙琳]";
+	mes "好像有旅行者之前";
+	mes "給卡秋雅看過一顆巨大的鑽石。從那之後，她一直在談論鑽石，以及她有多想要它們。";
 	next;
-	mes "[Devellin]";
-	mes "She's been getting pretty obsessive about it, which scares me. It seems she's more than willing to sacrifice anything she owns for a diamond.";
+	mes "[黛芙琳]";
+	mes "她變得非常癡迷，這讓我感到害怕。似乎她非常願意為了鑽石犧牲她所擁有的一切。";
 	next;
-	mes "[Devellin]";
-	mes "She's the type of person who'll do anything to get what she wants. I'm worried that she might give away something far more valuable than a diamond in exchange...";
+	mes "[黛芙琳]";
+	mes "她是那種會不擇手段得到她想要的東西的人。我擔心她可能會為了交換鑽石而送出比鑽石更有價值的東西...";
 	close;
 }
 
 comodo,210,154,2	script	Suspicious Guy#cmd	2_M_THIEFMASTER,{
 	if (BaseClass == Job_Thief){
-		mes "[Cain]";
-		mes "Heeeey...";
-		mes "It seems we share the same line of work, you and me. Heh heh, lemme give you a hot tip.";
+		mes "[凱恩]";
+		mes "嘿...";
+		mes "看來你和我做的是同一行，對吧。呵呵，讓我給你一個內部消息。";
 		next;
-		mes "[Cain]";
-		mes "I've been charging other people for this information, but since, shall we say, we work in the same professional field, I don't have the heart to take your zeny.";
+		mes "[凱恩]";
+		mes "我一直在向其他人收取這些資訊的費用，但因為，可以這麼說，我們在同一個專業領域工作，我不忍心拿你的錢。";
 		next;
-		mes "[Cain]";
-		mes "You see that lady over there?";
-		mes "She's just totally in love with diamonds. And from what my sources tell me, she's loaded. Tons and tons of valuables.";
+		mes "[凱恩]";
+		mes "你看到那邊那位女士了嗎？";
+		mes "她完全愛上了鑽石。而且根據我的消息來源，她很有錢。有數不清的貴重物品。";
 		next;
-		mes "[Cain]";
-		mes "I'm talkin' rare items.";
-		mes "I took the liberty of sneaking a peek at what she owns, and saw she's got a helmet with goat horns and even a crown! She's so rich it's ridiculous!";
+		mes "[凱恩]";
+		mes "我說的是稀有物品。";
+		mes "我冒昧地偷偷看了一下她擁有的東西，看到她有一個帶有山羊角的頭盔，甚至還有一個皇冠！她簡直富得離譜！";
 		next;
-		mes "[Cain]";
-		mes "The buzz that's been going around is that she's got a cache of rare equipment and weapons too! So whaddya say? Wanna be partners in crime and rob her house?";
+		mes "[凱恩]";
+		mes "有傳言說她還有一批稀有的裝備和武器！所以你說呢？要不要一起合作搶劫她的房子？";
 		next;
-		switch(select("No, thanks.:Sweet, I'm in!")){
+		switch(select("不，謝謝。:好啊，我加入！")){
 		case 1:
-			mes "[Cain]";
-			mes "Wha...?";
-			mes "C'mon! I thought pilfering was something you do! Aw well, I'm gonna do it, but stay hushed on this, got it?";
+			mes "[凱恩]";
+			mes "什麼...?";
+			mes "拜託！我以為偷竊是你會做的事！好吧，我會做的，但對此事保密，知道了嗎？";
 			close;
 		case 2:
-			mes "[Cain]";
-			mes "Ha ha ha!";
-			mes "...^660000Dork^000000!";
-			mes "I'm just jivin'";
-			mes "sp fuggedabout it!";
+			mes "[凱恩]";
+			mes "哈哈哈！";
+			mes "...^660000白癡^000000！";
+			mes "我只是在開玩笑";
+			mes "所以忘了它吧！";
 			next;
-			mes "[Cain]";
-			mes "Ah right. Supposedly, there's a mountain where tons of diamonds are buried. A pal o' mine says there's a mine near the mountain too, so I guess if you went to the mine, you'd find Diamonds.";
+			mes "[凱恩]";
+			mes "啊，對了。據說，有一座山埋藏著大量的鑽石。我的一個朋友說山附近有一個礦坑，所以我想如果你去礦坑，你會找到鑽石。";
 			next;
-			mes "[Cain]";
-			mes "I guess it can't hurt to gather some Diamonds there and try to exchange them for whatever the old lady's got. Take care, pal~";
+			mes "[凱恩]";
+			mes "我想在那裡收集一些鑽石，然後試著用它們交換那位老太太擁有的任何東西，這也沒什麼壞處。保重，夥伴～";
 			close;
 		}
 	}
-	mes "[Cain]";
-	mes "Hey...";
-	mes "I got a hot tip for you.";
-	mes "It'll just cost you 500 zeny";
-	mes "and trust me, it's worth it.";
-	mes "So whaddya say...?";
+	mes "[凱恩]";
+	mes "嘿...";
+	mes "我有一個內部消息要給你。";
+	mes "這只會花你 500 禪";
+	mes "相信我，這是值得的。";
+	mes "你覺得如何...?";
 	next;
-	switch(select("Alright.:No, thanks.")){
+	switch(select("好吧。:不，謝謝。")){
 	case 1:
 		if (Zeny > 499){
-			mes "[Cain]";
-			mes "You see that lady over there? She's just totally in love with diamonds. And from what my sources tell me, she's loaded. Tons and tons of valuables.";
+			mes "[凱恩]";
+			mes "你看到那邊那位女士了嗎？她完全愛上了鑽石。而且根據我的消息來源，她很有錢。有數不清的貴重物品。";
 			next;
-			mes "[Cain]";
-			mes "I'm talkin' rare items.";
-			mes "I took the liberty of sneaking a peek at what she owns, and saw she's got a helmet with goat horns and even a crown! She's so rich it's ridiculous!";
+			mes "[凱恩]";
+			mes "我說的是稀有物品。";
+			mes "我冒昧地偷偷看了一下她擁有的東西，看到她有一個帶有山羊角的頭盔，甚至還有一個皇冠！她簡直富得離譜！";
 			next;
-			mes "[Cain]";
-			mes "There's a chance that rare equipment and weapons might be yours! She'll give anything for a 3 carat diamond. So if you have any of those, you might as well see her.";
+			mes "[凱恩]";
+			mes "稀有裝備和武器有可能會是你的！她會為了3克拉的鑽石付出一切。所以如果你有任何一顆，你最好去見她。";
 			next;
-			mes "[Cain]";
-			mes "Ah right. Supposedly, there's a mountain where tons of diamonds";
-			mes "are buried. A pal o' mine says there's a mine near the mountain too, so I guess if you went to the mine, you'd find Diamonds.";
+			mes "[凱恩]";
+			mes "啊，對了。據說，有一座山埋藏著大量的鑽石";
+			mes "我的一個朋友說山附近有一個礦坑，所以我想如果你去礦坑，你會找到鑽石。";
 			next;
-			mes "[Cain]";
-			mes "I guess it can't hurt to gather some Diamonds there and try to exchange them for whatever the old lady's got. Take care, pal~";
+			mes "[凱恩]";
+			mes "我想在那裡收集一些鑽石，然後試著用它們交換那位老太太擁有的任何東西，這也沒什麼壞處。保重，夥伴～";
 			Zeny = Zeny-500;
 			close;
 		}
-		mes "[Cain]";
-		mes "What the hell?!";
-		mes "Don't you have any money? Didn't I say 500 zeny? Hey man, info like this doesn't come cheap!";
+		mes "[凱恩]";
+		mes "搞什麼鬼？！";
+		mes "你沒有錢嗎？我不是說 500 禪嗎？嘿，伙計，像這樣的資訊可不便宜！";
 		close;
 	case 2:
-		mes "[Cain]";
-		mes "Hey hey!";
-		mes "What are you, a cheapskate? You understand that everything has its price and this information is so worth it. C'mon, you can't pass this up, can you?";
+		mes "[凱恩]";
+		mes "嘿嘿！";
+		mes "你是個守財奴嗎？你要明白一切都有它的代價，而這個資訊非常值得。拜託，你不能錯過這個機會，對吧？";
 		close;
 	}
 }
 
 mjolnir_02,85,362,3	script	Blacksmith Miner	4_F_JOB_BLACKSMITH,{
 	if (checkweight(1201,1) == 0) {
-		mes "^3355FFWait a second! Right now, you're carrying too many items with you. Please come back after putting some of your things into Kafra Storage.^000000";
+		mes "^3355FF等一下！你現在身上帶太多東西了。請先把一些東西放到卡普拉倉庫後再來。^000000";
 		close;
 	}
-	mes "[Dwayne]";
-	mes "Wahahahaha~";
-	mes "I've dug up a fortune!";
+	mes "[杜恩]";
+	mes "哇哈哈哈～";
+	mes "我挖到了一筆財富！";
 	next;
-	mes "[Dwayne]";
-	mes "Diamonds! Hundreds and";
-	mes "thousands of Diamonds,";
-	mes "all of them mine!";
-	mes "I'm rich!";
+	mes "[杜恩]";
+	mes "鑽石！數百個";
+	mes "數千個鑽石，";
+	mes "全部都是我的！";
+	mes "我發財了！";
 	emotion ET_SMILE;
 	next;
-	switch(select("I want to buy some.:Congratulations.")){
+	switch(select("我想買一些。:恭喜你。")){
 	case 1:
-		mes "[Dwayne]";
-		mes "Ah, you have an";
-		mes "eye for valuables!";
-		mes "Sure, sure why not!";
-		mes "I'll give you a discount, too!";
-		mes "55,000 Zeny for a diamond,";
-		mes "how does that sound?";
+		mes "[杜恩]";
+		mes "啊，你很有";
+		mes "眼光！";
+		mes "當然，當然，為什麼不呢！";
+		mes "我會給你打折的！";
+		mes "一顆鑽石 55,000 禪，";
+		mes "你覺得怎麼樣？";
 		next;
-		mes "[Dwayne]";
-		mes "How many";
-		mes "diamonds do you need?";
-		mes "If you change your mind,";
-		mes "please enter '0' to cancel.";
+		mes "[杜恩]";
+		mes "你需要";
+		mes "多少顆鑽石？";
+		mes "如果你改變主意，";
+		mes "請輸入「0」取消。";
 		next;
 		input .@amount;
 		if (.@amount == 0){
-			mes "[Dwayne]";
-			mes "Alright, you've";
-			mes "canceled the trade.";
-			mes "Take care!";
+			mes "[杜恩]";
+			mes "好的，你已經";
+			mes "取消了交易。";
+			mes "保重！";
 			close;
 		}else if (.@amount < 1 || .@amount > 500){
-			mes "[Dwayne]";
-			mes "The maximum";
-			mes "amount is 500.";
-			mes "Please enter 500 or less.";
+			mes "[杜恩]";
+			mes "最大";
+			mes "數量是 500。";
+			mes "請輸入 500 或更少。";
 			close;
 		}
 		.@cost = .@amount * 55000;
 		.@weight = .@amount * 100;
 		if (Zeny < .@cost){
-			mes "[Dwayne]";
-			mes "Errr...";
-			mes "I'm sorry, but you";
-			mes "do not have enough money.";
-			mes "I'll be losing money if";
-			mes "I sell them at that price.";
+			mes "[杜恩]";
+			mes "呃...";
+			mes "我很抱歉，但你";
+			mes "沒有足夠的錢。";
+			mes "如果我以那個價格";
+			mes "賣掉它們，我就會賠錢。";
 			close;
 		}
 		if ((MaxWeight - Weight) < .@weight){
-			mes "[Dwayne]";
-			mes "Errr...";
-			mes "You're carrying too many items.";
-			mes "I don't think give you anything if there's no room in your inventory. Why don't you put some of your stuff into Kafra Storage?";
+			mes "[杜恩]";
+			mes "呃...";
+			mes "你攜帶了太多物品。";
+			mes "我想如果你的背包沒有空間，我就沒辦法給你任何東西。你為什麼不把一些東西放到卡普拉倉庫裡呢？";
 			close;
 		}
 		Zeny = Zeny - .@cost;
 		getitem 732,.@amount;
-		mes "[Dwayne]";
-		mes "Thank you for";
-		mes "buying my diamonds!";
-		mes "You're welcome to";
-		mes "come back anytime.";
+		mes "[杜恩]";
+		mes "謝謝你";
+		mes "購買我的鑽石！";
+		mes "隨時歡迎";
+		mes "再來。";
 		close;
 	case 2:
-		mes "[Dwayne]";
-		mes "Haha, thank you~";
-		mes "If by any chance";
-		mes "you need a diamond,";
-		mes "please drop by.";
-		mes "I'll sell them to";
-		mes "you at a cheap price.";
+		mes "[杜恩]";
+		mes "哈哈，謝謝你～";
+		mes "萬一";
+		mes "你需要鑽石，";
+		mes "請順道過來。";
+		mes "我會以便宜的價格";
+		mes "賣給你。";
 		close;
 	}
 }

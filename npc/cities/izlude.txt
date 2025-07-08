@@ -35,19 +35,19 @@
 // Izlude
 //============================================================
 -	script	::Sailor_izlude	-1,{
-	mes "[Sailor]";
-	mes "Hey everybody!";
-	mes "Attention, attention!";
-	mes "Come and ride the wind";
-	mes "on a fascinating Ship!";
-	mes "Hurry, hurry!";
+	mes "[船員]";
+	mes "各位旅客您好！";
+	mes "注意了，注意了！";
+	mes "快來搭乘令人著迷的";
+	mes "船隻，乘風破浪！";
+	mes "快點，快點！";
 	next;
-	switch(select("Byalan Island -> 150 Zeny.:Alberta Marina  -> 500 Zeny.:Cancel.")) {
+	switch(select("貝陽島 -> 150 Zeny.:艾爾貝塔碼頭 -> 500 Zeny.:取消。")) {
 	case 1:
 		if (Zeny < 150) {
-			mes "[Sailor]";
-			mes "150 Zeny!";
-			mes "Only 150 Zeny to ride!";
+			mes "[船員]";
+			mes "150 Zeny！";
+			mes "只要 150 Zeny就能搭乘！";
 			close;
 		}
 		set Zeny, Zeny - 150;
@@ -55,9 +55,9 @@
 		end;
 	case 2:
 		if (Zeny < 500) {
-			mes "[Sailor]";
-			mes "500 Zeny!";
-			mes "Only 500 Zeny to ride!";
+			mes "[船員]";
+			mes "500 Zeny！";
+			mes "只要 500 Zeny就能搭乘！";
 			close;
 		}
 		set Zeny, Zeny - 500;
@@ -69,153 +69,152 @@
 }
 
 -	script	::Bonne_izlude	-1,{
-	mes "[Bonne]";
-	mes "Greetings!";
-	mes "Izlude welcomes you.";
+	mes "[奔呢]";
+	mes "您好！";
+	mes "歡迎來到艾爾貝塔。";
 	next;
-	mes "[Bonne]";
-	mes "Izlude is the satellite city of Prontera, capital of the Rune-Midgarts kingdom.";
+	mes "[奔呢]";
+	mes "艾爾貝塔是盧恩-米德加茲王國首都普隆德拉的衛星城市。";
 	next;
-	mes "[Bonne]";
-	mes "Izlude is key to our kingdom because of the Swordsman Association located here, as well as the fact that Izlude is in charge of protecting the Rune-Midgarts coastline.";
+	mes "[奔呢]";
+	mes "艾爾貝塔是我們王國的關鍵，因為劍士協會位於此處，而且艾爾貝塔負責保護盧恩-米德加茲海岸線。";
 	next;
-	mes "[Bonne]";
-	mes "I know, this bridge might look weak and fragile, but it is actually state of the art, built with the most sophisticated technology.";
+	mes "[奔呢]";
+	mes "我知道，這座橋看起來可能很脆弱，但它實際上是最先進的，採用最先進的技術建造。";
 	next;
-	mes "[Bonne]";
-	mes "No matter how strong storms may be, or how many people may stand on it, this bridge will NEEEEVER collapse.";
+	mes "[奔呢]";
+	mes "無論暴風雨多麼強烈，或者有多少人站在上面，這座橋永遠不會倒塌。";
 	next;
-	mes "[Bonne]";
-	mes "Please enjoy";
-	mes "your visit";
-	mes "here in Izlude.";
+	mes "[奔呢]";
+	mes "請享受";
+	mes "您在艾爾貝塔的";
+	mes "旅程。";
 	close;
 }
 
 -	script	::Charfri_izlude	-1,{
-	mes "[Charfri]";
+	mes "[夏普立]";
 	switch(rand(2)) {
 	case 1:
-		mes "Some people may think Izlude is just a satellite city of Prontera, and not really that important...";
+		mes "有些人可能認為艾爾貝塔只是普隆德拉的衛星城市，並不是那麼重要...";
 		next;
-		mes "[Charfri]";
-		mes "But Izlude is a beautiful town right next to the ocean, as well as beautiful Byalan Island.";
+		mes "[夏普立]";
+		mes "但艾爾貝塔是一個美麗的城鎮，毗鄰海洋，以及美麗的貝陽島。";
 		next;
-		mes "[Charfri]";
-		mes "You'll have to board on a ship at the port to get to Byalan Island. There are dangerous dungeons on that island, so don't go snooping around just anywhere.";
+		mes "[夏普立]";
+		mes "您必須在港口登上船隻才能到達貝陽島。那個島上有危險的地牢，所以不要隨便亂逛。";
 		close;
 	default:
-		mes "Though it is very beautiful, Byalan Island has a mysterious dungeon that extends deep under the sea.";
+		mes "雖然它非常美麗，但貝陽島有一個神秘的地牢，一直延伸到海底深處。";
 		next;
-		mes "[Charfri]";
-		mes "People who've actually been there have said that if you go deep enough, the dungeon actually descends underwater.";
+		mes "[夏普立]";
+		mes "實際上到過那裡的人說，如果你走得夠深，地牢實際上會下降到水下。";
 		next;
-		mes "[Charfri]";
-		mes "Surprisingly, once you're underwater, you can breathe just like a fish. Maybe some kind of supernatural force is in effect.";
+		mes "[夏普立]";
+		mes "令人驚訝的是，一旦你到了水下，你就可以像魚一樣呼吸。也許是某種超自然力量在起作用。";
 		next;
-		mes "[Charfri]";
-		mes "Ah...";
-		mes "The people who've seen the underwater view say it is so fantastic that they've kept dreaming of it ever since.";
+		mes "[夏普立]";
+		mes "啊...";
+		mes "見過水下景色的人說它太棒了，從那以後他們一直在夢想著它。";
 		next;
-		mes "[Charfri]";
-		mes "But unfortunately, the monsters are too strong for ordinary people to merely go sightseeing there. Still, just once, I'd like to go down there...";
+		mes "[夏普立]";
+		mes "但不幸的是，怪物對於普通人來說太強大了，無法僅僅去那裡觀光。不過，我只想去一次...";
 		close;
 	}
 }
 
 -	script	::Cuskoal_izlude	-1,{
-	mes "[Cuskoal]";
+	mes "[庫斯可爾]";
 	switch(rand(2)) {
 	case 1:
-		mes "The Arena here is THE place for capable young people from all over the Rune-Midgarts Kingdom to challenge themselves and test their skills.";
+		mes "這裡的競技場是來自盧恩-米德加茲王國各地的有能力年輕人挑戰自我和測試技能的地方。";
 		next;
-		mes "[Cuskoal]";
-		mes "You can battle with monsters of differing levels. So, the number of stages you survive will be a testament to your battle prowess.";
+		mes "[庫斯可爾]";
+		mes "您可以與不同等級的怪物戰鬥。因此，您生存的階段數將證明您的戰鬥能力。";
 		next;
-		mes "[Cuskoal]";
-		mes "So, whaddya say?";
+		mes "[庫斯可爾]";
+		mes "所以，你說呢？";
 		close;
 	default:
-		mes "The pubs in Prontera are always full of people from local areas and from out-of-town. It can get pretty busy.";
+		mes "普隆德拉的酒吧總是擠滿了來自當地和外地的人。可能會非常擁擠。";
 		next;
-		mes "[Cuskoal]";
-		mes "It's a pretty good place to stop by for general information and to listen to rumors.";
+		mes "[庫斯可爾]";
+		mes "這是一個停下來獲取一般信息和聽取謠言的好地方。";
 		next;
-		mes "[Cuskoal]";
-		mes "So if you listen carefully, you just might get lucky and learn some very useful information for yourself.";
+		mes "[庫斯可爾]";
+		mes "所以如果你仔細聽，你可能會很幸運地為自己學到一些非常有用的信息。";
 		close;
 	}
 }
 
 -	script	::Dega_izlude	-1,{
-	mes "[Dega]";
+	mes "[竇加]";
 	switch(rand(3)) {
 	case 1:
-		mes "Mt. Mjornir, located north of Prontera, is a tough";
-		mes "and steep climb.";
+		mes "位於普隆德拉北部的妙勒尼爾山，攀登起來既艱難又陡峭。";
 		next;
-		mes "[Dega]";
-		mes "Aside from the dangers of the mountain itself, insanely vicious insects live there too. I mean, they'll just attack you for no reason.";
+		mes "[竇加]";
+		mes "除了山本身的危險之外，那裡還生活著極其兇猛的昆蟲。我的意思是，它們會毫無理由地攻擊你。";
 		next;
-		mes "[Dega]";
-		mes "If you ever want to visit somewhere past Mt. Mjolnir, then you prepare yourself for the challenge.  Or you could walk around it.";
+		mes "[竇加]";
+		mes "如果您想去妙勒尼爾山以外的地方，那麼您就要為挑戰做好準備。或者您可以繞過它。";
 		close;
 	case 2:
-		mes "Some monsters in the world have the unique ability to sense mystical energy, and can detect Magic spells before they are cast.";
+		mes "世界上的某些怪物具有感知神秘能量的獨特能力，並且可以在魔法施放之前檢測到它。";
 		next;
-		mes "[Dega]";
-		mes "Golem of the desert is one of them. Don't underestimate it due to its sluggishness...";
+		mes "[竇加]";
+		mes "沙漠的石巨人就是其中之一。不要因為它的遲緩而低估它...";
 		next;
-		mes "[Dega]";
-		mes "If you try to cast magic near it, it will notice and saunter over to smash you. So you better watch out for Golem.";
+		mes "[竇加]";
+		mes "如果你試圖在它附近施放魔法，它會注意到並漫步過來砸你。所以你最好小心石巨人。";
 		close;
 	default:
-		mes "There's a very delightful place where you can find every";
-		mes "type of Poring.";
+		mes "有一個非常令人愉快的地方，您可以在那裡找到各種";
+		mes "類型的波利。";
 		next;
-		mes "[Dega]";
-		mes "It's somewhere near the bridge connecting the forest and the desert, on the way to the city of Payon which is Southeast from here.";
+		mes "[竇加]";
+		mes "它位於森林和沙漠之間的橋樑附近，在前往東南方斐楊城的路上。";
 		next;
-		mes "[Dega]";
-		mes "There are not only pink Porings but also Drops, which can be found at the desert, and the green Poporing.";
+		mes "[竇加]";
+		mes "不僅有粉紅色的波利，還有可以在沙漠中找到的果凍，以及綠色的波波利。";
 		next;
-		mes "[Dega]";
-		mes "But be careful, before you realize it, you may come face to face with Ghostring, a deadly Poring that floats around in the air like a ghost.";
+		mes "[竇加]";
+		mes "但要小心，在你意識到之前，你可能會與幽靈波利面對面，這是一種像幽靈一樣在空中漂浮的致命波利。";
 		next;
-		mes "[Dega]";
-		mes "Well, of course, they are all very cute, but Ghostring is an EXCEPTION. It is very very dangerous.";
+		mes "[竇加]";
+		mes "嗯，當然，它們都很可愛，但幽靈波利是個例外。它非常非常危險。";
 		next;
-		mes "[Dega]";
-		mes "If you are lucky enough, you might even bump into Angeling, the Poring with Angel wings.";
+		mes "[竇加]";
+		mes "如果你夠幸運，你甚至可能會碰到天使波利，長著天使翅膀的波利。";
 		next;
 		while(1) {
-			switch(select("Ghostring?:Angeling?:End Conversation.")) {
+			switch(select("幽靈波利？:天使波利？:結束對話。")) {
 			case 1:
-				mes "[Dega]";
-				mes "Ghostring is a grayish Poring that floats around in the air like a ghost. Just like other ghosts, physical attacks can't do any damage to it.";
+				mes "[竇加]";
+				mes "幽靈波利是一種灰色的波利，像幽靈一樣在空中漂浮。就像其他幽靈一樣，物理攻擊對它沒有任何傷害。";
 				next;
-				mes "[Dega]";
-				mes "Those whose main attack methods are physical like Swordman and Archer might have to run for their lives when facing Ghostrings.";
+				mes "[竇加]";
+				mes "那些主要攻擊方式是物理性的職業，像是劍士和弓箭手，在面對幽靈劍士的時候可能得逃命了。";
 				next;
-				mes "[Dega]";
-				mes "But don't leave just yet~! There is great news for people with those jobs. Making a weapon of some elemental property is the key.";
+				mes "[竇加]";
+				mes "但別急著離開~! 對於從事這些職業的人來說，有個好消息。製作一把具有某種元素屬性的武器是關鍵。";
 				next;
-				mes "[Dega]";
-				mes "This way, even a Swordman or an Archer can inflict damage, the way Magic does, on Ghostrings.";
+				mes "[竇加]";
+				mes "這樣一來，即使是劍士或弓箭手，也能像魔法一樣對幽靈劍士造成傷害。";
 				next;
 				break;
 			case 2:
-				mes "[Dega]";
-				mes "Angelings are immune to Magic attacks. If people who can only attack with Magic face an Angeling, then it's time for";
-				mes "them to run.";
+				mes "[竇加]";
+				mes "天使波利免疫魔法攻擊。如果只會用魔法攻擊的人遇到天使波利，那就該";
+				mes "逃跑了。";
 				next;
-				mes "[Dega]";
-				mes "If you've got an extra knife or sword, you could give it a shot. But it will be very difficult alone, don't you think?";
+				mes "[竇加]";
+				mes "如果你有多餘的刀或劍，你可以試試看。但一個人會非常困難，你不覺得嗎？";
 				next;
 				break;
 			case 3:
-				mes "[Dega]";
-				mes "Good Luck~";
+				mes "[竇加]";
+				mes "祝你好運~";
 				close;
 			}
 		}
@@ -224,290 +223,289 @@
 
 -	script	::Kylick_izlude	-1,{
 	if (!checkre(0) && rand(2)) {
-		mes "[Kylick]";
-		mes "I was thinking, even though the people of Izlude live so close to the ocean...";
+		mes "[齊黎]";
+		mes "我一直在想，即使依斯魯得的人們住在如此靠近海洋的地方...";
 		next;
-		mes "[Kylick]";
-		mes "There are other cultures that have completely developed by living off of the sea. Of course, I'm talking about Amatsu.";
+		mes "[齊黎]";
+		mes "還有其他的文化，完全是靠海洋發展起來的。當然，我說的是天津。";
 		next;
-		mes "[Kylick]";
-		mes "I hear the cuisine there is really good! Although the idea of eating raw fish is new to me, I would love to go there, and try it just once!";
+		mes "[齊黎]";
+		mes "我聽說那裡的料理真的很好吃！雖然生魚的想法對我來說很新奇，但我很想去那裡，嘗試一次看看！";
 		close;
 	} else {
-		mes "[Kylick]";
-		mes "Don't you think Binoculars";
-		mes "are really COOL?! You can";
-		mes "see all sorts of places...!";
+		mes "[齊黎]";
+		mes "你不覺得望遠鏡";
+		mes "真的很酷嗎？！你可以";
+		mes "看到各種地方...！";
 		next;
-		mes "[Kylick]";
-		mes "Here in Izlude, we are responsible for maintaining peace not only on land but also at sea. That's why this city has a huge telescope.";
+		mes "[齊黎]";
+		mes "在依斯魯得，我們不僅負責維護陸地的和平，還負責維護海洋的和平。這就是為什麼這個城市有一個巨大的望遠鏡。";
 		next;
-		mes "[Kylick]";
-		mes "This telescope constantly watches over the sea, so that we can prevent any serious trouble from happening. You know...";
+		mes "[齊黎]";
+		mes "這個望遠鏡不斷地監視著海洋，這樣我們就可以防止任何嚴重的問題發生。你知道...";
 		next;
-		mes "[Kylick]";
-		mes "An ounce of";
-		mes "prevention is worth";
-		mes "a pound of cure";
-		mes "after all, right?";
+		mes "[齊黎]";
+		mes "預防勝於";
+		mes "治療，";
+		mes "不是嗎？";
 		close;
 	}
 }
 
 -	script	::Red_izlude	-1,{
-	mes "[Red]";
-	mes "The only skill that's needed for a Swordman is ^FF2400Bash^000000! Bash, Bash and ONLY ^FF2400Bash^000000! No need to waste time and effort for smaller skills! Everything else is for cowards and wusses!";
+	mes "[瑞德]";
+	mes "劍士唯一需要的技能就是 ^FF2400Bash (強擊)^000000！強擊、強擊、而且只有 ^FF2400Bash (強擊)^000000！不需要浪費時間和精力在較小的技能上！其他一切都是膽小鬼和懦夫才用的！";
 	next;
-	mes "[Cebalis]";
-	mes "What are you talking about!? The ideal Swordman resolutely stands alone, surrounded by countless enemies and smashing them all with one awesome attack.";
+	mes "[西發利司]";
+	mes "你在說什麼！？理想的劍士應該堅定地獨自站立，被無數的敵人包圍，並用一次超棒的攻擊粉碎他們所有人。";
 	next;
-	mes "[Cebalis]";
-	mes "^EE0000MAGNUM BREAK!^000000";
-	mes "That's right, Magnum Break";
-	mes "is the skill that does";
-	mes "the job right~!!";
+	mes "[西發利司]";
+	mes "^EE0000MAGNUM BREAK (怒爆)^000000！";
+	mes "沒錯，怒爆";
+	mes "才是真正能";
+	mes "完成任務的技能~！！";
 	next;
-	mes "[Cebalis]";
-	mes "Well... Sometimes the explosive damage might accidentally hit some wandering monsters, and those guys end up coming after you, but that's a risk a Swordman should be willing to take!!";
+	mes "[西發利司]";
+	mes "嗯... 有時候爆炸性的傷害可能會意外地擊中一些遊蕩的怪物，而那些傢伙最終會來追你，但這是一個劍士應該願意承擔的風險！！";
 	next;
-	mes "[Red]";
-	mes "That's exactly why you're dumb, you idiot! And what's this about the 'the ideal Swordman?' I still remember the last time you used Magnum Break...";
+	mes "[瑞德]";
+	mes "這正是你愚蠢的原因，你這個白痴！什麼又是『理想的劍士』？我還記得你上次使用怒爆的時候...";
 	next;
-	mes "[Red]";
-	mes "You ended up running away from all those monsters you hit with that stupid skill! Weakling! All those Porings around you got hit and they all tried to kill you. ";
+	mes "[瑞德]";
+	mes "你最終從所有被你用那個愚蠢的技能擊中的怪物那裡逃跑了！弱者！你周圍的所有波利都被擊中了，而且它們都試圖殺死你。";
 	next;
-	mes "[Cebalis]";
-	mes "Hmpf. As I recall, you were running away too, apparently too busy to use your precious Bash. In any case, Magnum Break is THE skill for a Swordman~!!";
+	mes "[西發利司]";
+	mes "哼。我記得，你當時也在逃跑，顯然太忙了，沒空使用你寶貴的強擊。無論如何，怒爆才是劍士的技能~！！";
 	next;
-	mes "[Cebalis]";
-	mes "Something simplistic like Bash";
-	mes "is just one of the little steps towards Magnum Break.";
+	mes "[西發利司]";
+	mes "像強擊";
+	mes "這樣簡單的東西只是邁向怒爆的一小步。";
 	next;
-	mes "[Red]";
-	mes "Oh man~";
-	mes "Hey, I know you just";
-	mes "heard everything.";
-	mes "So what do you think?";
+	mes "[瑞德]";
+	mes "老兄~";
+	mes "嘿，我知道你剛才";
+	mes "聽到了全部。";
+	mes "所以你覺得呢？";
 	next;
-	mes "[Red]";
-	mes "Which one do you think is better? The critical damage skill, ^FF2400Bash^000000, or the Splash damage skill, ^EE0000Magnum Break^000000?";
+	mes "[瑞德]";
+	mes "你覺得哪一個更好？暴擊傷害技能，^FF2400Bash (強擊)^000000，還是濺射傷害技能，^EE0000Magnum Break (怒爆)^000000？";
 	next;
-	if (select("Bash:Magnum Break") == 1)  {
+	if (select("強擊:怒爆") == 1)  {
 		if (BaseClass == Job_Swordman) {
-			mes "[Red]";
-			mes "Hahahaha!!! I knew you'd see things my way!! You ARE a great guy!! Undoubtedly, only ^FF2400Bash^000000 suits a Swordman. Please tell that to this BONEHEAD over here~ Hahaha!";
+			mes "[瑞德]";
+			mes "哈哈哈！！！我就知道你會同意我的看法！！你真是個好人！！毫無疑問，只有 ^FF2400Bash (強擊)^000000 才適合劍士。請告訴這個笨蛋~ 哈哈哈！";
 			next;
-			mes "[Red]";
-			mes "Hmm, let me give you a bit of advice. After you achieve level 5 'Bash', the amount of SP consumed by the skill increases greatly, so watch out for your SP.";
+			mes "[瑞德]";
+			mes "嗯，讓我給你一點建議。在你達到 5 級 '強擊' 之後，該技能消耗的 SP 量會大大增加，所以要注意你的 SP。";
 			close;
 		}
-		mes "[Red]";
-		mes "Hahahaha!! See!? Someone who pursues a different job agrees with me~! You really are a great guy! Hahaha!! Undoubtedly, only ^FF2400Bash^000000 suits a Swordman. Please tell that to this NIMROD over here~ Hahaha!";
+		mes "[瑞德]";
+		mes "哈哈哈！！看到了嗎！？一個從事不同職業的人都同意我的看法~! 你真是個好人！哈哈哈！！毫無疑問，只有 ^FF2400Bash (強擊)^000000 才適合劍士。請告訴這個笨蛋~ 哈哈哈！";
 		close;
 	}
 	if (BaseClass == Job_Swordman) {
-		mes "[Cebalis]";
-		mes "Alright!! ^EE0000Magnum Break^000000 is the BEST!! Now you're talking~!! You know the stuff~ HaHaHa!";
+		mes "[西發利司]";
+		mes "好耶！！ ^EE0000Magnum Break (怒爆)^000000 才是最好的！！你懂的~！！你知道的~ 哈哈哈！";
 		next;
-		mes "[Cebalis]";
-		mes "You wanna know some useful information? Okay, okay lemme tell ya! Magnum Break has Fire Property.";
+		mes "[西發利司]";
+		mes "你想知道一些有用的資訊嗎？好吧，好吧，讓我告訴你！怒爆具有火屬性。";
 		next;
-		mes "[Cebalis]";
-		mes "So it won't be too effective against monsters with the Water property, but this is THE skill to use against Undead and Earth property monsters!";
+		mes "[西發利司]";
+		mes "所以它對水屬性的怪物不會太有效，但這是對付不死族和土屬性怪物的技能！";
 		next;
-		mes "[Cebalis]";
-		mes "And most importantly, look around before you use it. Otherwise you'll be in BIG trouble~ ";
+		mes "[西發利司]";
+		mes "最重要的是，在使用之前先環顧四周。否則你會惹上大麻煩~";
 		close;
 	}
-	mes "[Cebalis]";
-	mes "Right?! ^EE0000Magnum Break^000000 is THE BEST!!! You know what you're talking about, eh? I don't know why this jerkface is being sooooo stubborn.";
+	mes "[西發利司]";
+	mes "對吧？！ ^EE0000Magnum Break (怒爆)^000000 才是最好的！！！你知道你在說什麼，是吧？我不知道這個混蛋為什麼這麼固執。";
 	close;
 }
 
 -	script	::Cebalis_izlude	-1,{
-	mes "[Red]";
-	mes "The only skill that's needed for a Swordman is ^FF2400Bash^000000! Bash, Bash and ONLY ^FF2400Bash^000000! No need to waste time and effort on smaller skills~~ Everything else is for cowards and wusses!";
+	mes "[瑞德]";
+	mes "劍士唯一需要的技能就是 ^FF2400Bash (強擊)^000000！強擊、強擊、而且只有 ^FF2400Bash (強擊)^000000！不需要浪費時間和精力在較小的技能上~~ 其他一切都是膽小鬼和懦夫才用的！";
 	next;
-	mes "[Cebalis]";
-	mes "What are you talking about!? The ideal Swordman resolutely stands alone, surrounded by countless foes, smashing them all with one awesome attack...";
+	mes "[西發利司]";
+	mes "你在說什麼！？理想的劍士應該堅定地獨自站立，被無數的敵人包圍，並用一次超棒的攻擊粉碎他們所有人...";
 	next;
-	mes "[Cebalis]";
-	mes "^EE0000MAGNUM BREAK!^000000";
-	mes "That's right, Magnum Break";
-	mes "is the perfect";
-	mes "Swordman skill.";
+	mes "[西發利司]";
+	mes "^EE0000MAGNUM BREAK (怒爆)^000000！";
+	mes "沒錯，怒爆";
+	mes "是完美的";
+	mes "劍士技能。";
 	next;
-	mes "[Cebalis]";
-	mes "Well...";
-	mes "Sometimes the explosion accidentally hits some monsters that are just wandering around.";
+	mes "[西發利司]";
+	mes "嗯...";
+	mes "有時候爆炸會意外地擊中一些只是在遊蕩的怪物。";
 	next;
-	mes "[Cebalis]";
-	mes "Then they all end up coming after you, but that's a risk a true Swordman should be willing to take.";
+	mes "[西發利司]";
+	mes "然後它們最終都會來追你，但這是一個真正的劍士應該願意承擔的風險。";
 	next;
-	mes "[Red]";
-	mes "That's exactly why you're dumb, you idiot! And what was that about the 'ideal Swordman?' You remember the last time you used Magnum Break?!";
+	mes "[瑞德]";
+	mes "這正是你愚蠢的原因，你這個白痴！什麼又是『理想的劍士』？你還記得你上次使用怒爆的時候嗎？！";
 	next;
-	mes "[Red]";
-	mes "You had to run away from all those Porings hit by that stupid skill! You weakling! All those Porings that you hit tried to kill you! ";
+	mes "[瑞德]";
+	mes "你不得不從所有被那個愚蠢的技能擊中的波利那裡逃跑！你這個弱者！所有被你擊中的波利都試圖殺死你！";
 	next;
-	mes "[Cebalis]";
-	mes "Oh shut up. And those were Poporings. As I recall, you were running away too, apparently too busy to use your precious Bash.";
+	mes "[西發利司]";
+	mes "喔，閉嘴。而且那些是波波利。我記得，你當時也在逃跑，顯然太忙了，沒空使用你寶貴的強擊。";
 	next;
-	mes "[Cebalis]";
-	mes "In any case, Magnum Break is THE skill for a Swordman~!! Something simplistic like Bash is just one of those little steps towards Magnum Break.";
+	mes "[西發利司]";
+	mes "無論如何，怒爆才是劍士的技能~！！像強擊這樣簡單的東西只是邁向怒爆的其中一小步。";
 	next;
-	mes "[Red]";
-	mes "Oh man~";
-	mes "Hey, I know you";
-	mes "heard everything.";
-	mes "So what do you think?";
+	mes "[瑞德]";
+	mes "噢，老兄～";
+	mes "嘿，我認識你";
+	mes "聽到一切了。";
+	mes "你覺得怎麼樣？";
 	next;
-	mes "[Red]";
-	mes "Which one do you think is better? The critical damage skill, ^FF2400Bash^000000, or the Splash damage skill, ^EE0000Magnum Break^000000?";
+	mes "[瑞德]";
+	mes "你覺得哪個比較好？爆擊傷害技能，^FF2400Bash^000000，還是濺射傷害技能，^EE0000Magnum Break^000000？";
 	next;
 	if (select("Bash:Magnum Break") == 1) {
 		if (BaseClass == Job_Swordman) {
-			mes "[Red]";
-			mes "Hahahaha!!! I knew you'd see things my way!! You ARE a great guy!! Without a doubt, only ^FF2400Bash^000000 suits a Swordman. Please tell that to FUNBOY over here!! Hahaha.";
+			mes "[瑞德]";
+			mes "哈哈哈！！！我就知道你會同意我的看法！！你真是個好傢伙！！毫無疑問，只有 ^FF2400Bash^000000 才適合劍士。請告訴這邊那個笨蛋！！哈哈哈。";
 			next;
-			mes "[Red]";
-			mes "Hmm, let me give you a bit of advice. After you achieve level 5 Bash, the amount of SP consumed by the skill increases greatly, so watch out for your SP.";
+			mes "[瑞德]";
+			mes "嗯，讓我給你一點建議。當你達到 Bash 5 級後，該技能消耗的 SP 量會大大增加，所以要注意你的 SP。";
 			close;
 		}
-		mes "[Red]";
-		mes "Hahahaha!!";
-		mes "See!? Someone who pursues a different job agrees with me~! You really are a great guy! Hahaha!!";
+		mes "[瑞德]";
+		mes "哈哈哈！！";
+		mes "看！？一個追求不同職業的人也同意我～！你真是個好傢伙！哈哈哈！！";
 		next;
-		mes "[Red]";
-		mes "Without a doubt, only ^FF2400Bash^000000 suits a Swordman. Please tell that to this MORON over here!! Hahaha~";
+		mes "[瑞德]";
+		mes "毫無疑問，只有 ^FF2400Bash^000000 才適合劍士。請告訴這邊這個白癡！！哈哈哈～";
 		close;
 	}
 	if (BaseClass == Job_Swordman) {
-		mes "[Cebalis]";
-		mes " Alright!! ^EE0000Magnum Break^000000 is the BEST!! Now you're talking~!! You know your stuff, kid. HaHaHa~!";
+		mes "[西發利司]";
+		mes " 好！！ ^EE0000Magnum Break^000000 才是最好的！！這才像樣嘛～！！你很懂喔，孩子。哈哈哈～！";
 		next;
-		mes "[Cebalis]";
-		mes "You wanna know some useful information? Okay, okay lemme tell ya! The explosion from 'Magnum Break' has the Fire Property.";
+		mes "[西發利司]";
+		mes "想知道一些有用的資訊嗎？好，好，讓我告訴你！ 'Magnum Break' 的爆炸具有火焰屬性。";
 		next;
-		mes "[Cebalis]";
-		mes "So it won't be very effective against Water property monsters, but this is THE skill to use against Undead and Earth property monsters.!";
+		mes "[西發利司]";
+		mes "所以它對水屬性怪物不是很有效，但這是對付不死和土屬性怪物的絕佳技能！！";
 		next;
-		mes "[Cebalis]";
-		mes "And most importantly, look around before you use it. Otherwise you'll be in BIG trouble~ ";
+		mes "[西發利司]";
+		mes "最重要的是，在使用前先看看四周。否則你會遇到大麻煩的～ ";
 		close;
 	}
-	mes "[Cebalis]";
-	mes "I'm right, aren't I?! ^EE0000Magnum Break^000000 is THE BEST!!! You know what you're talking about, eh? I don't know why this LARDFACE is sooooo stubborn.";
+	mes "[西發利司]";
+	mes "我說的對吧？！ ^EE0000Magnum Break^000000 才是最好的！！！ 你很懂嘛，對吧？ 我不知道這個大胖子為什麼這麼固執。";
 	close;
 }
 
 -	script	::Soldier_izlude	-1,{
-	mes "[Soldier]";
-	mes "HeHeHeHe..HaHaHaHa ";
-	mes "Huh? Why am I so happy?";
-	mes "You wanna know?";
+	mes "[士兵]";
+	mes "嘿嘿嘿嘿..哈哈哈 ";
+	mes "嗯？我為什麼這麼高興？";
+	mes "你想知道嗎？";
 	next;
-	if (select("Sure, why?:Not really, I don't care.") == 1) {
-		mes "[Soldier]";
-		mes "Ah~~ There's not much for us to do these days. You see, Merchants buy items dropped by monsters. But you knew that, right? ";
+	if (select("當然，為什麼？:不，我不在乎。") == 1) {
+		mes "[士兵]";
+		mes "啊~~ 這些日子我們沒什麼事可做。 你知道，商人會購買怪物掉落的物品。 但你知道的，對吧？ ";
 		next;
-		if (select("Of course:Eh? Really?") == 1) {
-			mes "[Soldier]";
-			mes "HaHa~ In fact, that was actually part of our job. But there were more and more hunters who came to us in order to get paid and it became too much to handle.";
+		if (select("當然:咦？真的嗎？") == 1) {
+			mes "[士兵]";
+			mes "哈哈～ 實際上，這也是我們工作的一部分。 但是越來越多的獵人來找我們以獲得報酬，這變得太難以應付了。";
 			next;
-			mes "[Soldier]";
-			mes "We had to work overtime every day. Ah, it was a nightmare...! Anyway, the government eventually made a wise decision in creating the Registration System.";
+			mes "[士兵]";
+			mes "我們每天都必須加班。 啊，這真是個噩夢……！ 無論如何，政府最終做出了一個明智的決定，建立了註冊系統。";
 			next;
-			mes "[Soldier]";
-			mes "The Office of Prize Compensation only pays those who have the Registration. Of course, you'd have to be a merchant and stay in the same place all day long.";
+			mes "[士兵]";
+			mes "獎金補償辦公室只支付給那些有註冊的人。 當然，你必須是個商人，並且整天待在同一個地方。";
 			next;
-			mes "[Soldier]";
-			mes "The Office gives away the registration to any merchant who fulfills those requirements. So nowadays, the hunters sell their goods to the registered merchants.";
+			mes "[士兵]";
+			mes "辦公室將註冊發給任何符合這些要求的商人。 所以現在，獵人將他們的商品賣給註冊的商人。";
 			next;
-			mes "[Soldier]";
-			mes "So nowadays, the hunters sell their goods to the registered merchants.  Not too many people come to us for that anymore.";
+			mes "[士兵]";
+			mes "所以現在，獵人將他們的商品賣給註冊的商人。  沒有太多人來找我們做那件事了。";
 			next;
-			mes "[Soldier]";
-			mes "I mean we are still busy, but that's nothing compared to how it was before. People who have felt suffering know how to appreciate even the slightest comfort.";
+			mes "[士兵]";
+			mes "我的意思是我們仍然很忙，但與以前相比，這算不了什麼。 經歷過苦難的人知道如何欣賞即使是最輕微的安慰。";
 			close;
 		}
-		mes "[Soldier]";
-		mes "What?! What do you mean you didn't know?! Well, you know you can get items by killing monsters. If you bring and sell those to a merchant, you can make some money. ";
+		mes "[士兵]";
+		mes "什麼？！ 你是什麼意思，你不知道？！ 好吧，你知道你可以通過殺死怪物來獲得物品。 如果你把這些東西帶去賣給商人，你就可以賺一些錢。 ";
 		next;
-		mes "[Soldier]";
-		mes "HaHa, in fact, that used to be part of our job. But there were more and more hunters who come in order to get paid, so it became too much to handle.";
+		mes "[士兵]";
+		mes "哈哈，實際上，這曾經是我們工作的一部分。 但是越來越多的獵人來為了獲得報酬，所以變得太難以應付了。";
 		next;
-		mes "[Soldier]";
-		mes "We had to work overtime every day. Ah, it was a nightmare...! Anyway, the government eventually made a wise decision in creating the Registration System.";
+		mes "[士兵]";
+		mes "我們每天都必須加班。 啊，這真是個噩夢……！ 無論如何，政府最終做出了一個明智的決定，建立了註冊系統。";
 		next;
-		mes "[Soldier]";
-		mes "The Office of Prize Compensation only pays those who have the Registration. Of course, you'd have to be a merchant and stay in the same place all day long.";
+		mes "[士兵]";
+		mes "獎金補償辦公室只支付給那些有註冊的人。 當然，你必須是個商人，並且整天待在同一個地方。";
 		next;
-		mes "[Soldier]";
-		mes "The Office gives away the registration to any merchant who fulfills those requirements. So nowadays, the hunters sell their goods to the registered merchants.";
+		mes "[士兵]";
+		mes "辦公室將註冊發給任何符合這些要求的商人。 所以現在，獵人將他們的商品賣給註冊的商人。";
 		next;
-		mes "[Soldier]";
-		mes "So nowadays, the hunters sell their goods to the registered merchants.  Not too many people come to us for that anymore.";
+		mes "[士兵]";
+		mes "所以現在，獵人將他們的商品賣給註冊的商人。  沒有太多人來找我們做那件事了。";
 		next;
-		mes "[Soldier]";
-		mes "I mean we are still busy, but that's nothing compared to how it was before. People who have felt suffering know how to appreciate even the slightest comfort.";
+		mes "[士兵]";
+		mes "我的意思是我們仍然很忙，但與以前相比，這算不了什麼。 經歷過苦難的人知道如何欣賞即使是最輕微的安慰。";
 		close;
 	}
-	mes "[Soldier]";
-	mes "Okay Good Bye~~";
+	mes "[士兵]";
+	mes "好的，再見~~";
 	close;
 }
 
 // Inside Izlude
 //============================================================
-izlude_in,125,164,2	script	Aaron#izlude	65,{
-	mes "[Aaron]";
-	mes "Don't you think Strong VIT and training in a unique breathing method which enables quick HP recovery are the greatest advantages for a Swordman?";
+izlude_in,125,164,2	script	阿倫#izlude	65,{
+	mes "[阿倫]";
+	mes "你不覺得強壯的 VIT 和獨特的呼吸方法訓練，可以快速恢復 HP，是劍士最大的優勢嗎？";
 	next;
-	mes "[Aaron]";
-	mes "If you train your skills very hard, you can even see your HP recovering. The amount";
-	mes "recovered depends";
-	mes "vitality, or VIT.";
+	mes "[阿倫]";
+	mes "如果你非常努力地訓練你的技能，你甚至可以看到你的 HP 恢復。";
+	mes "恢復的數量";
+	mes "取決於體力，或 VIT。";
 	next;
-	mes "[Aaron]";
-	mes "So if you invest more of your stats in VIT, you'll recover more HP overall when resting.";
+	mes "[阿倫]";
+	mes "所以如果你在 VIT 中投入更多的屬性，你在休息時會恢復更多的 HP。";
 	next;
-	mes "[Aaron]";
-	mes "But of course, it'd be good to have high Attack, wouldn't it? You can either acquire a good weapon or bring up your STR to support you Attack.";
+	mes "[阿倫]";
+	mes "但當然，擁有高攻擊力會很好，不是嗎？ 你可以獲得一把好武器或提高你的 STR 來支持你的攻擊。";
 	next;
-	mes "[Aaron]";
-	mes "You know you'll need some strength anyway to swing good weapons easily, anyway.";
+	mes "[阿倫]";
+	mes "你知道無論如何你都需要一些力量才能輕鬆揮舞好武器。";
 	next;
-	mes "[Aaron]";
-	mes "Another important thing is how accurate you can hit your opponents. DEX is the key here. If you train DEX, then the gap between the MIN and MAX damage will also decrease.";
+	mes "[阿倫]";
+	mes "另一件重要的事情是你擊中對手的準確性如何。 DEX 是這裡的關鍵。 如果你訓練 DEX，那麼 MIN 和 MAX 傷害之間的差距也會減少。";
 	next;
-	mes "[Aaron]";
-	mes "Hm...";
-	mes "Are you bored by all this talk? Or do you want me to go on?";
+	mes "[阿倫]";
+	mes "嗯...";
+	mes "你厭倦了所有這些談話嗎？ 或者你想讓我繼續下去？";
 	next;
-	if (select("Tell me more please.:End conversation.") == 1) {
-		mes "[Aaron]";
-		mes "Hmm...";
-		mes "In that case, I'll explain about the other attributes to you briefly. In order to attack and evade quickly, you've gotta pay attention to AGI. ";
+	if (select("請告訴我更多。:結束對話。") == 1) {
+		mes "[阿倫]";
+		mes "嗯...";
+		mes "在這種情況下，我會簡要地向你解釋其他屬性。 為了快速攻擊和躲避，你必須注意 AGI。 ";
 		next;
-		mes "[Aaron]";
-		mes "In case you want to make more critical hits, it's a good idea to invest in LUK. INT also increases Max SP, which is needed to use various skills... But it's really up to you.";
+		mes "[阿倫]";
+		mes "如果你想產生更多的爆擊，投資 LUK 是一個好主意。 INT 也會增加 Max SP，這是使用各種技能所需要的...... 但這真的取決於你。";
 		close;
 	}
-	mes "[Aaron]";
-	mes "Okay then,";
-	mes "train hard~~";
+	mes "[阿倫]";
+	mes "好吧，";
+	mes "努力訓練~~";
 	close;
 }
 
 // Izlude Dungeon
 //============================================================
-izlu2dun,108,27,0	script	Sailor#2izlude	100,{
-	mes "[Sailor]";
-	mes "Wanna";
-	mes "head back?";
+izlu2dun,108,27,0	script	船員#2izlude	100,{
+	mes "[船員]";
+	mes "想";
+	mes "回到岸上嗎？";
 	next;
-	if (select("Yeah, I'm tired to death.:Nope, I love this place!") == 1) {
+	if (select("是的，我累死了。:不，我喜歡這個地方！") == 1) {
 		if(checkre(0))
 			warp "izlude",197,210;
 		else

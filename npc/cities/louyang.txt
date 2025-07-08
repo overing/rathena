@@ -22,92 +22,92 @@
 // Luoyang Transportation
 //============================================================
 -	script	::Girl_louyang	-1,{
-	mes "[Girl]";
-	mes "La la la la~";
-	mes "I feel so good today~";
-	mes "I'm in the mood to go";
-	mes "on a picnic somewhere~";
-	mes "La la la la~";
+	mes "[姑娘]";
+	mes "啦啦啦啦~";
+	mes "我今天感覺真好~";
+	mes "我現在很想去";
+	mes "某個地方野餐~";
+	mes "啦啦啦啦~";
 	next;
-	switch(select("About Luoyang.:Go to Luoyang.:Cancel.")) {
+	switch(select("關於洛陽。:前往洛陽。:取消。")) {
 	case 1:
-		mes "[Girl]";
-		mes "Oh, are you";
-		mes "interested in Luoyang?";
-		mes "It's a nice place to";
-		mes "visit for travelers.";
+		mes "[姑娘]";
+		mes "喔，你對洛陽";
+		mes "感興趣嗎？";
+		mes "那裡是個適合";
+		mes "旅行者造訪的好地方。";
 		next;
-		mes "[Girl]";
-		mes "Luoyang has a long history";
-		mes "with stories of ancient magic and warriors. It's also rumored that many evil beasts roam the";
-		mes "Luoyang area.";
+		mes "[姑娘]";
+		mes "洛陽擁有悠久的歷史";
+		mes "有著古老的魔法和戰士的故事。 也有傳言說許多邪惡的野獸在";
+		mes "洛陽地區漫遊。";
 		next;
-		mes "[Girl]";
-		mes "You can find cure-all medicines, mysterious occurrences, and";
-		mes "martial artists all in one place!";
+		mes "[姑娘]";
+		mes "你可以在一個地方找到包治百病的藥、神秘事件和";
+		mes "武術家！";
 		next;
-		mes "[Girl]";
-		mes "I used to train in the martial arts every morning back when I was in Luoyang. I might not look like it, but I'm pretty strong!";
+		mes "[姑娘]";
+		mes "以前我在洛陽的時候，每天早上都練武術。 我看起來可能不像，但我很強壯！";
 		next;
-		mes "[Girl]";
-		mes "If you want to visit";
-		mes "Luoyang, feel free to";
-		mes "tell me. Just give me";
-		mes "some Zeny and we'll go~";
+		mes "[姑娘]";
+		mes "如果你想去";
+		mes "洛陽，隨時可以";
+		mes "告訴我。 只要給我";
+		mes "一些 Zeny，我們就走~";
 		close;
 	case 2:
-		mes "[Girl]";
-		mes "I'll guide you to";
-		mes "Luoyang right away.";
-		mes "For my service, I am";
-		mes "accepting 10,000 Zeny.";
+		mes "[姑娘]";
+		mes "我會立刻帶你";
+		mes "去洛陽。";
+		mes "我的服務費是";
+		mes "10,000 Zeny。";
 		next;
-		mes "[Girl]";
-		mes "So, are you ready?";
+		mes "[姑娘]";
+		mes "那麼，你準備好了嗎？";
 		next;
-		if (select("Yes!:No.") == 1) {
+		if (select("是的！:不用了。") == 1) {
 			if (Zeny > 9999) {
-				mes "[Girl]";
-				mes "Okay~";
-				mes "Ready!";
-				mes "Have fun!";
+				mes "[姑娘]";
+				mes "好喔~";
+				mes "準備好了！";
+				mes "玩得開心！";
 				close2;
 				set Zeny, Zeny-10000;
 				warp "lou_fild01",190,101;
 				end;
 			}
-			mes "[Girl]";
-			mes "...";
-			mes "You don't seem";
-			mes "to have 10,000 Zeny...";
-			mes "Go get some money first!";
+			mes "[姑娘]";
+			mes "......";
+			mes "你好像沒有";
+			mes "10,000 Zeny...";
+			mes "先去賺點錢吧！";
 			close;
 		}
-		mes "[Girl]";
-		mes "Oh...";
-		mes "It's so disappointing";
-		mes "to hear you say that.";
-		mes "Well, have a good day!";
+		mes "[姑娘]";
+		mes "喔...";
+		mes "聽到你這麼說";
+		mes "真是令人失望。";
+		mes "好吧，祝你有美好的一天！";
 		close;
 	case 3:
-		mes "[Girl]";
-		mes "Oh...";
-		mes "Have a good day!";
+		mes "[姑娘]";
+		mes "喔...";
+		mes "祝你有美好的一天！";
 		close;
 	}
 }
 
-lou_fild01,190,100,7	script	Girl#1lou	815,{
-	mes "[Girl]";
-	mes "Would you";
-	mes "like to go back";
-	mes "to Alberta?";
+lou_fild01,190,100,7	script	姑娘#1lou	815,{
+	mes "[姑娘]";
+	mes "你想";
+	mes "回到";
+	mes "艾爾貝塔嗎？";
 	next;
-	if (select("Go back to Alberta.:Cancel.") == 1) {
-		mes "[Girl]";
-		mes "I hope to";
-		mes "see you again!";
-		mes "Bye bye!";
+	if (select("回到艾爾貝塔。:取消。") == 1) {
+		mes "[姑娘]";
+		mes "我希望";
+		mes "能再次見到你！";
+		mes "掰掰！";
 		close2;
 		if (checkre(0))
 			warp "alberta",245,87;
@@ -115,207 +115,207 @@ lou_fild01,190,100,7	script	Girl#1lou	815,{
 			warp "alberta",235,45;
 		end;
 	}
-	mes "[Girl]";
-	mes "If you like this";
-	mes "area, why don't you";
-	mes "stay and enjoy the";
-	mes "the food and the sights!";
+	mes "[姑娘]";
+	mes "如果你喜歡這個";
+	mes "地區，何不";
+	mes "留下來享受";
+	mes "這裡的美食和美景！";
 	next;
 	if (Sex == SEX_MALE) {
-		mes "[Girl]";
-		mes "And by sights...";
-		mes "I mean girls!";
-		mes "Tee hee~";
+		mes "[姑娘]";
+		mes "說到美景...";
+		mes "我是指姑娘！";
+		mes "嘻嘻~";
 	}
 	else {
-		mes "[Girl]";
-		mes "And the boys here";
-		mes "aren't bad looking~";
+		mes "[姑娘]";
+		mes "這裡的男孩";
+		mes "看起來也不錯~";
 	}
 	close;
 }
 
 // Generic Luoyang NPCs
 //============================================================
-louyang,297,167,2	script	Muscular Woman#lou	815,{
+louyang,297,167,2	script	看起來很堅強的女人#lou	815,{
 	if (Sex == SEX_FEMALE) {
-		mes "[Zhi Ching Li]";
-		mes "All the members of the Maiden Palace, including myself and our master, are all female.";
+		mes "[智清李]";
+		mes "包含我和我們的師父在內，少女宮的所有成員都是女性。";
 		next;
-		mes "[Zhi Ching Li]";
-		mes "Recently we've had a hard time recruiting new members, so I came here to check if there's any woman who wishes to join us.";
+		mes "[智清李]";
+		mes "最近我們很難招募新成員，所以我來這裡看看有沒有女人願意加入我們。";
 		emotion ET_THINK;
 		close;
 	}
-	mes "[Zhi Ching Li]";
+	mes "[智清李]";
 	mes "...";
 	next;
-	mes "[Zhi Ching Li]";
+	mes "[智清李]";
 	mes "...";
 	mes "......";
 	next;
-	mes "[Zhi Ching Li]";
-	mes "Please leave me";
-	mes "alone, I'm busy.";
+	mes "[智清李]";
+	mes "請別";
+	mes "打擾我，我很忙。";
 	close;
 }
 
-louyang,274,136,4	script	Powerful-looking guy#lou	819,{
-	mes "[Akiira]";
-	mes "I am practicing my 'Claw of Dragon.' I not only need to use the power of my fists, I must also condition myself spiritually.";
+louyang,274,136,4	script	散發著強烈氣息 的男人#lou	819,{
+	mes "[秋良]";
+	mes "我正在練習我的'龍爪手'。 我不僅需要使用我的拳頭的力量，還必須在精神上鍛鍊自己。";
+	next;
+	mes "[秋良]";
+	mes "所有的武術都需要";
+	mes "精神訓練，因為";
+	mes "精神控制身體。";
+	mes "如果你已經在精神上訓練了自己，你可以輕鬆地";
+	mes "使用身體的任何部位！";
 	next;
 	mes "[Akiira]";
-	mes "Every martial art requires";
-	mes "spiritual training since the";
-	mes "mind controls the body.";
-	mes "If you've trained yourself spiritually, you can easily";
-	mes "use any part of the body!";
+	mes "如果你正在考慮";
+	mes "學習武術，你應該先獲得知識，然後再投入";
+	mes "體能訓練。";
 	next;
 	mes "[Akiira]";
-	mes "If you are considering";
-	mes "studying the martial arts, you should first attain knowledge before jumping into the";
-	mes "physical training.";
-	next;
-	mes "[Akiira]";
-	mes "Learn about the martial arts";
-	mes "and meditate on life's truths. First, you must find peace of mind before you can hope to master the mind and body.";
+	mes "學習武術";
+	mes "並冥想人生的真理。首先，你必須找到內心的平靜，才能希望掌握身心。";
 	close;
 }
 
-louyang,276,136,4	script	Fist master#lou	819,{
-	mes "[Zhiang Xiau Ji]";
-	mes "Finally...";
-	mes "I have mastered";
-	mes "the 'Claw of Dragon!'";
+louyang,276,136,4	script	領悟到權利的人#lou	819,{
+	mes "[張曉吉]";
+	mes "終於...";
+	mes "我掌握了";
+	mes "『龍之爪』！";
 	next;
-	mes "[Zhiang Xiau Ji]";
-	mes "Although there are eight basic steps, I had to learn the history of this art, and meditate, focusing on my spiritual improvement,";
-	mes "for three years.";
+	mes "[張曉吉]";
+	mes "雖然只有八個基本步驟，但我必須學習這門武術的歷史，並冥想，專注於我的精神提升，";
+	mes "持續三年。";
 	next;
-	mes "[Zhiang Xiau Ji]";
-	mes "After that, my master finally started to give me the physical training so I could use the eight steps of the Claw of Dragon. I've devoted myself to this art for thirty years.";
+	mes "[張曉吉]";
+	mes "在那之後，我的師父終於開始給我體能訓練，所以我可以使用龍之爪的八個步驟。我已經將自己奉獻給這門武術三十年了。";
 	next;
-	mes "[Zhiang Xiau Ji]";
-	mes "I'm very proud that I've";
-	mes "mastered this art ten years earlier than I expected. Now, I need to study this form and improve it by correcting its weak points and enhancing its strengths.";
+	mes "[張曉吉]";
+	mes "我非常自豪我";
+	mes "比預期早十年掌握了這門武術。現在，我需要研究這種形式，並通過糾正其弱點和增強其優勢來改進它。";
 	next;
-	mes "[Zhiang Xiau Ji]";
-	mes "I guess that would take me about ten years. But I'm not disheartened by that at all.";
+	mes "[張曉吉]";
+	mes "我想那會花我大約十年時間。但我一點也不灰心。";
 	next;
-	mes "[Zhiang Xiau Ji]";
-	mes "When you're learning a martial art, you can't rush yourself and learn everything in a short period of time. It's impossible! Plus, that isn't the essence of art...";
+	mes "[張曉吉]";
+	mes "當你學習武術時，你不能趕時間，在短時間內學完所有東西。這是不可能的！而且，那不是藝術的本質...";
 	close;
 }
 
-louyang,276,133,0	script	Trainee#1lou::LouTrainee	819,{
-	mes "[Trainee]";
+louyang,276,133,0	script	修練生#1lou::LouTrainee	819,{
+	mes "[修練生]";
 	mes "Yeeeyap~!";
 	mes "Taaaaaah~~!!";
-	mes "Hooo~.";
+	mes "Hooo~。";
 	close;
 }
 
-louyang,276,131,0	script	Trainee#2lou	819,{
-	mes "[Trainee]";
+louyang,276,131,0	script	修練生#2lou	819,{
+	mes "[修練生]";
 	mes "Tah Tah Tah!";
 	mes "Taaaaaah~~!!";
 	mes "Schwooooooo~";
 	close;
 }
 
-louyang,276,129,0	script	Trainee#3lou	819,{
-	mes "[Trainee]";
+louyang,276,129,0	script	修練生#3lou	819,{
+	mes "[修練生]";
 	mes "Si!";
 	mes "Ayah!!";
 	close;
 }
 
-louyang,274,133,0	script	Trainee#4lou	819,{
-	mes "[Trainee]";
+louyang,274,133,0	script	修練生#4lou	819,{
+	mes "[修練生]";
 	mes "Dergh!";
 	mes "Dergh!";
 	mes "Schwa--!";
 	close;
 }
 
-louyang,274,131,0	script	Trainee#5lou	819,{
-	mes "[Trainee]";
+louyang,274,131,0	script	修練生#5lou	819,{
+	mes "[修練生]";
 	mes "Yah Yah Yah!";
 	mes "Taaaaaah~~!!";
 	mes "Wataaaaaaaah!";
 	close;
 }
 
-louyang,274,129,0	script	Trainee#6lou	819,{
-	mes "[Trainee]";
+louyang,274,129,0	script	修練生#6lou	819,{
+	mes "[修練生]";
 	mes "Yeeeyap~!";
 	mes "Taaaaaah~~!!";
 	mes "Hooo~";
 	close;
 }
 
-louyang,278,133,0	duplicate(LouTrainee)	Trainee#7lou	819
-louyang,278,131,0	duplicate(LouTrainee)	Trainee#8lou	819
-louyang,278,129,0	duplicate(LouTrainee)	Trainee#9lou	819
-louyang,272,133,0	duplicate(LouTrainee)	Trainee#10lou	819
-louyang,272,131,0	duplicate(LouTrainee)	Trainee#11lou	819
-louyang,272,129,0	duplicate(LouTrainee)	Trainee#12lou	819
+louyang,278,133,0	duplicate(LouTrainee)	修練生#7lou	819
+louyang,278,131,0	duplicate(LouTrainee)	修練生#8lou	819
+louyang,278,129,0	duplicate(LouTrainee)	修練生#9lou	819
+louyang,272,133,0	duplicate(LouTrainee)	修練生#10lou	819
+louyang,272,131,0	duplicate(LouTrainee)	修練生#11lou	819
+louyang,272,129,0	duplicate(LouTrainee)	修練生#12lou	819
 
 // Luoyang Viewing Tower
 //============================================================
-lou_in01,25,23,5	script	Friendly Looking Lady#lo	817,{
-	mes "[Hong Miao]";
-	mes "Welcome.";
+lou_in01,25,23,5	script	看起來很親切的小姐#lo	817,{
+	mes "[洪淼]";
+	mes "歡迎。";
 	next;
-	mes "[Hong Miao]";
-	mes "This is an elevator which leads";
-	mes "to the Observation Tower. We are providing you a safe and fast transfer service for an affordable fee. Would you like to use this service?";
+	mes "[洪淼]";
+	mes "這是一個通往";
+	mes "觀景塔的電梯。我們以實惠的價格為您提供安全快捷的轉乘服務。您想使用這項服務嗎？";
 	next;
-	switch(select("Information.:Yes.:Maybe next time.")) {
+	switch(select("資訊.:是的.:下次再說。")) {
 	case 1:
-		mes "[Hong Miao]";
-		mes "After many suggestions and proposals were sent to the Luoyang tourism office, the Observation Tower was built so tourists can enjoy the sights.";
+		mes "[洪淼]";
+		mes "在許多建議和提案被發送到洛陽旅遊局後，建造了觀景塔，以便遊客可以欣賞美景。";
 		next;
-		mes "[Hong Miao]";
-		mes "Due to the geographical";
-		mes "features of Luoyang, it's difficult to enjoy the breath taking view that our land has to offer.";
+		mes "[洪淼]";
+		mes "由於地理";
+		mes "洛陽的特色，很難享受到我們土地所能提供的令人嘆為觀止的景色。";
 		next;
-		mes "[Hong Miao]";
-		mes "You can come up to the tower by taking the elevator right here. We are providing this quick and safe transfer service for 500 zeny per person.";
+		mes "[洪淼]";
+		mes "您可以乘坐這裡的電梯上塔。我們以每人 500 zeny 的價格提供這種快速安全的轉乘服務。";
 		close;
 	case 2:
 		if (Zeny < 500) {
-			mes "[Hong Miao]";
-			mes "I'm sorry, but you do not have enough zeny. I hope you'll come back later to enjoy the Observation Tower. Have a good day.";
+			mes "[洪淼]";
+			mes "抱歉，您的 zeny 不夠。我希望您以後再來享受觀景塔。祝您有美好的一天。";
 			close;
 		}
-		mes "[Hong Miao]";
-		mes "Thank you for your patronage.";
-		mes "We are trying to provide you with the best of service. Please";
-		mes "come again.";
+		mes "[洪淼]";
+		mes "感謝您的惠顧。";
+		mes "我們正在努力為您提供最好的服務。請";
+		mes "再次光臨。";
 		next;
 		set Zeny, Zeny-500;
 		warp "lou_in01",17,19;
 		end;
 	case 3:
-		mes "[Hong Miao]";
-		mes "Please come";
-		mes "back later.";
-		mes "Have a good day.";
+		mes "[洪淼]";
+		mes "請";
+		mes "稍後再來。";
+		mes "祝您有美好的一天。";
 		close;
 	}
 }
 
-louyang,84,254,0	script	Exit#lou	111,{
-	mes "^3355FFThere is some sort";
-	mes "of descent apparatus.";
-	mes "Would you like to use it?^000000";
+louyang,84,254,0	script	出口#lou	111,{
+	mes "^3355FF這裡有一些";
+	mes "下降裝置。";
+	mes "您想使用它嗎？^000000";
 	next;
-	if (select("Yes.:No.") == 1) {
+	if (select("是的.:否.") == 1) {
 		if (rand(1,100) == 34) {
 			percentheal -99,0;
 			warp "louyang",86,269;
-			mapannounce "louyang",""+strnpcinfo(0)+" : Oh God, I'm faaaaaaaaaaaalling~~!!!!",bc_map;
+			mapannounce "louyang",""+strnpcinfo(0)+" : 喔天哪，我要下去~~~~~~~~了~~！ ！ ！",bc_map;
 		}
 		else {
 			warp "lou_in01",10,18;

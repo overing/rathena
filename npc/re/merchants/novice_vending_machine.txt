@@ -12,19 +12,19 @@
 	.@storage_ticket = 7059;	// Cargo_Free_Ticket
 	.@storage_ticket_name$ = getitemname(.@storage_ticket);
 
-	mes "Vending Machine for Novices.";
-	mes "There are many buttons.";
+	mes "新手用自動販賣機。";
+	mes "這裡有很多按鈕。";
 	next;
-	switch( select( "Manual", "Trade " + .@storage_ticket_name$, "Trade Novice equipments" ) ) {
+	switch( select( "手冊", "兌換 " + .@storage_ticket_name$, "兌換新手裝備" ) ) {
 	case 1:
-		mes "[Exchange " + .@storage_ticket_name$ + "]";
-		mes "4 " + .@storage_ticket_name$ + " can be exchanged into 1 Free Ticket for Warp, Airship or the Cart Service, or 1 Free Ticket for Peco Ride, 15 Novice Fly Wing, 5 Novice Butterfly Wing, 30 Novice Potion.";
+		mes "[兌換 " + .@storage_ticket_name$ + "]";
+		mes "4 張 " + .@storage_ticket_name$ + " 可以兌換成 1 張免費傳送、飛空艇或手推車服務券，或 1 張免費的 Peco 騎乘券，15 個新手飛行翅膀，5 個新手蝴蝶翅膀，30 個新手藥水。";
 		next;
-		mes "[Trade Novice Gears]";
-		mes "Armor, Hood, Sandals, Main Gauche and Guard for Novice from Criatura Academy can be exchanged into 4 " + .@storage_ticket_name$ + ".";
+		mes "[兌換新手裝備]";
+		mes "來自克里圖拉學院的新手盔甲、頭巾、涼鞋、主手短劍和護手可以兌換成 4 張 " + .@storage_ticket_name$ + "。";
 		next;
-		mes "[Trade Novice Gears]";
-		mes "Novice Eggshell can be exchanged into Criatura Hair Coupon for changing your hairstyle.";
+		mes "[兌換新手裝備]";
+		mes "新手蛋殼可以兌換成克里圖拉髮型優惠券，用於改變你的髮型。";
 		close;
 	case 2:
 		setarray .@exchange[0],
@@ -44,24 +44,24 @@
 		}
 		.@s = (select(.@menu$) - 1) * 2;
 		if (countitem(.@storage_ticket) < 4) {
-			mes "The number of " + .@storage_ticket_name$ + " is insufficient to proceed with the exchange.";
+			mes "數量 " + .@storage_ticket_name$ + " 不足以進行兌換。";
 			close;
 		}
 		if (.@exchange[.@s+1] > 1)
 			.@amount$ = .@exchange[.@s+1] + " ";
-		mes "Exchanged 4 " + .@storage_ticket_name$ + " to " + .@amount$ + getitemname(.@exchange[.@s]);
+		mes "將 4 張 " + .@storage_ticket_name$ + " 兌換成 " + .@amount$ + getitemname(.@exchange[.@s]);
 		delitem .@storage_ticket,4;
 		getitem .@exchange[.@s],.@exchange[.@s+1];
 		close;
 	case 3:
-		mes "Exchange all Novice equipments into coupons.";
-		mes "Select continue to proceed.";
+		mes "將所有新手裝備兌換成優惠券。";
+		mes "選擇繼續以繼續進行。";
 		next;
-		if (select( "Continue", "Cancel." ) == 2) {
-			mes "The trade was interrupted.";
+		if (select( "繼續", "取消。" ) == 2) {
+			mes "交易已中斷。";
 			close;
 		}
-		mes "Exchanging all equipment into coupons.";
+		mes "將所有裝備兌換成優惠券。";
 		setarray .@list[0],2352,2510,2414,1243,2112,5055;
 		.@size = getarraysize(.@list);
 		
@@ -87,15 +87,15 @@
 		close;
 	}
 }
-izlude_in,69,177,5	duplicate(novice_vending_machine#main)	Vending Machine for Nov#iz	2_VENDING_MACHINE1
-payon_in02,71,75,5	duplicate(novice_vending_machine#main)	Vending Machine for Nov#pay	2_VENDING_MACHINE1
-prt_church,187,27,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#prt	2_VENDING_MACHINE1
+izlude_in,69,177,5	duplicate(novice_vending_machine#main)	新手用自動販賣機#iz	2_VENDING_MACHINE1
+payon_in02,71,75,5	duplicate(novice_vending_machine#main)	新手用自動販賣機#pay	2_VENDING_MACHINE1
+prt_church,187,27,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#prt	2_VENDING_MACHINE1
 
 // unknown facing
-alberta_in,60,52,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#alb	2_VENDING_MACHINE1
-geffen_in,158,107,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#gef	2_VENDING_MACHINE1
-moc_para01,17,37,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#para	2_VENDING_MACHINE1
-moc_prydb1,38,124,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#pryd	2_VENDING_MACHINE1
-payon_in01,59,20,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#pay2	2_VENDING_MACHINE1
-que_ng,28,73,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#que_ng1	2_VENDING_MACHINE1
-que_ng,168,39,3	duplicate(novice_vending_machine#main)	Vending Machine for Nov#que_ng2	2_VENDING_MACHINE1
+alberta_in,60,52,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#alb	2_VENDING_MACHINE1
+geffen_in,158,107,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#gef	2_VENDING_MACHINE1
+moc_para01,17,37,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#para	2_VENDING_MACHINE1
+moc_prydb1,38,124,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#pryd	2_VENDING_MACHINE1
+payon_in01,59,20,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#pay2	2_VENDING_MACHINE1
+que_ng,28,73,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#que_ng1	2_VENDING_MACHINE1
+que_ng,168,39,3	duplicate(novice_vending_machine#main)	新手用自動販賣機#que_ng2	2_VENDING_MACHINE1

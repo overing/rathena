@@ -8,31 +8,30 @@
 //= 1.2 Navigation system update. [Euphy]
 //============================================================
 
-lighthalzen,207,310,5	script	Lighthalzen Guide#lhz01::GuideLighthalzen	852,{
+lighthalzen,207,310,5	script	萊因哈特岑嚮導#lhz01::GuideLighthalzen	852,{
 	cutin "ein_soldier",2;
-	mes "[Lighthalzen Guide]";
-	mes "Welcome to ^8B4513Lighthalzen^000000,";
-	mes "the Corporation City-State.";
-	mes "If you need any guidance";
-	mes "around the city, feel free";
-	mes "to ask me and I'll do my";
-	mes "very best to help you.";
+	mes "[萊因哈特岑嚮導]";
+	mes "歡迎來到 ^8B4513萊因哈特岑^000000，";
+	mes "企業城市國家。";
+	mes "如果您需要任何關於";
+	mes "這座城市的指引，請隨時";
+	mes "問我，我會盡我所能";
+	mes "來幫助您。";
 	next;
-	mes "[Lighthalzen Guide]";
-	mes "Please be aware that I'm";
-	mes "in charge of providing info";
-	mes "regarding the West District";
-	mes "of ^8B4513Lighthalzen^000000. Now, please";
-	mes "select the location that you'd";
-	mes "like to learn more about.";
-	F_Navi("[Lighthalzen Guide]");
+	mes "[萊因哈特岑嚮導]";
+	mes "請注意我負責提供";
+	mes "關於 ^8B4513萊因哈特岑^000000 西區的";
+	mes "資訊。現在，請";
+	mes "選擇您想要";
+	mes "了解更多的地點。";
+	F_Navi("[萊因哈特岑嚮導]");
 	next;
 	while (1) {
-		switch(select("[ Main Facilities ]:[ Merchants & Helpers ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 主要設施 ]:[ 商人和幫手 ]:從小地圖移除標記:取消")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Hotel ]:[ Bank ]:[ Airport ]:[ Weapon Shop ]:[ Department Store ]:[ Police Station ]:[ Jewelry Store ]:[ Cool Event Corp. ]:[ Somatology Laboratory ]:[ Alchemist Association ]:Previous Menu")) {
+				switch(select("[ 旅館 ]:[ 銀行 ]:[ 機場 ]:[ 武器商店 ]:[ 百貨公司 ]:[ 警察局 ]:[ 珠寶店 ]:[ 准它公司 ]:[ 體學實驗室 ]:[ 鍊金術士協會 ]:上一個選單")) {
 				case 1:
 					callsub L_Mark, F_Navi("Hotel","lighthalzen,159,133","^FF0000");
 					viewpoint 1,160,217,0,0xFF0000;
@@ -92,35 +91,34 @@ lighthalzen,207,310,5	script	Lighthalzen Guide#lhz01::GuideLighthalzen	852,{
 		case 2:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Armsmith ]:[ Seiayablem ]:[ Pet Groomer ]:[ Kafra Employees ]:[ Cool Event Corp. Staff ]:Previous Menu")) {
+				switch(select("[ 武器工匠 ]:[ 塞雅布萊姆 ]:[ 寵物美容師 ]:[ 卡普拉職員 ]:[ 准它公司員工 ]:上一個選單")) {
 				case 1:
-					mes "[Lighthalzen Guide]";
-					mes "You may go to Fulerr,";
-					mes "the ^0A9696Armsmith^000000";
-					mes "on the 1st floor of the Weapon Shop.";
+					mes "[萊因哈特岑嚮導]";
+					mes "您可以去芙蕾兒那裡，";
+					mes "武器商店一樓的 ^0A9696武器工匠^000000。";
 					viewpoint 1,194,35,10,0x0A9696;
 					next;
 					callsub L_Mark, "^0A9696Armsmith^000000";
 					next;
 					break;
 				case 2:
-					mes "[Lighthalzen Guide]";
-					mes "^4B0082Seiyablem^000000 adds";
-					mes "sockets on your items";
-					mes "on the 1st floor";
-					mes "of the Weapon Shop.";
+					mes "[萊因哈特岑嚮導]";
+					mes "^4B0082塞雅布萊姆^000000 會在";
+					mes "武器上增加插槽";
+					mes "武器商店的";
+					mes "一樓。";
 					viewpoint 1,194,35,11,0x4B0082;
 					next;
-					callsub L_Mark, "^4B0082Seiyablem^000000",1;
+					callsub L_Mark, "^4B0082西雅布勒姆^000000",1;
 					next;
 					break;
 				case 3:
-					callsub L_Mark, F_Navi("Pet Groomer","lighthalzen,222,191","^FF4500");
+					callsub L_Mark, F_Navi("寵物美容師","lighthalzen,222,191","^FF4500");
 					viewpoint 1,222,191,12,0xFF4500;
 					next;
 					break;
 				case 4:
-					callsub L_Mark, "^008080Kafra Employees^000000";
+					callsub L_Mark, "^008080卡普拉職員s^000000";
 					viewpoint 1,164,99,13,0x008080;
 					viewpoint 1,164,99,14,0x008080;
 					next;
@@ -137,9 +135,9 @@ lighthalzen,207,310,5	script	Lighthalzen Guide#lhz01::GuideLighthalzen	852,{
 			}
 			break;
 		case 3:
-			mes "[Lighthalzen Guide]";
-			mes "Sure, I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[萊因哈特岑嚮導]";
+			mes "當然，我會從小地圖上移除所有標記。";
+			mes "還有什麼我可以為您效勞的嗎？";
 			viewpoint 2,160,217,0,0xFFFFFF;
 			viewpoint 2,203,257,1,0xFFFFFF;
 			viewpoint 2,262,75,2,0xFFFFFF;
@@ -159,8 +157,8 @@ lighthalzen,207,310,5	script	Lighthalzen Guide#lhz01::GuideLighthalzen	852,{
 			next;
 			break;
 		case 4:
-			mes "[Lighthalzen Guide]";
-			mes "Enjoy your adventures!";
+			mes "[萊因哈特岑嚮導]";
+			mes "祝您冒險愉快！";
 			close2;
 			cutin "ein_soldier",255;
 			end;
@@ -168,14 +166,13 @@ lighthalzen,207,310,5	script	Lighthalzen Guide#lhz01::GuideLighthalzen	852,{
 	}
 	end;
 L_Mark:
-	mes "[Lighthalzen Guide]";
-	mes "I will mark the location";
-	mes "of "+((getarg(1,0))?"":"the ")+getarg(0);
-	mes "on your mini-map.";
-	mes "Would you like to check any other locations?";
+	mes "[萊因哈特岑嚮導]";
+	mes "我將標記 "+((getarg(1,0))?"":"")+" "+getarg(0);
+	mes "在地圖上的位置。";
+	mes "您想查看其他地點嗎？";
 	return;
 }
-lighthalzen,220,310,3	duplicate(GuideLighthalzen)	Lighthalzen Guide#lhz02	852
-lighthalzen,154,100,5	duplicate(GuideLighthalzen)	Lighthalzen Guide#lhz03	852
-lighthalzen,307,224,3	duplicate(GuideLighthalzen)	Lighthalzen Guide#lhz04	852
-lighthalzen,247,82,3	duplicate(GuideLighthalzen)	Lighthalzen Guide#lhz05	852
+lighthalzen,220,310,3	duplicate(GuideLighthalzen)	萊因哈特岑嚮導#lhz02	852
+lighthalzen,154,100,5	duplicate(GuideLighthalzen)	萊因哈特岑嚮導#lhz03	852
+lighthalzen,307,224,3	duplicate(GuideLighthalzen)	萊因哈特岑嚮導#lhz04	852
+lighthalzen,247,82,3	duplicate(GuideLighthalzen)	萊因哈特岑嚮導#lhz05	852

@@ -16,73 +16,71 @@
 //============================================================ 
 
 moscovia,161,76,3	script	Moscovia Guide#01mosc	959,{
-	mes "[Moscovia Guide]";
-	mes "A paradise on the sea,";
-	mes "beautiful waves and warm sunshine.";
-	mes "^8B4513Moscovia^000000 is waiting for you.";
-	mes "I'm supporting to offer information about here.";
-	mes "If you want to ask anything just feel free tell me.";
+	mes "[莫斯科比亞導遊]";
+	mes "海上樂園，";
+	mes "美麗的波浪和溫暖的陽光。";
+	mes "^8B4513莫斯科比亞^000000正在等著您。";
+	mes "我很樂意提供關於這裡的資訊。";
+	mes "如果您想問任何問題，請隨時告訴我。";
 	F_Navi("[Moscovia Guide]");
 	set .@str$,"Is there anything else I can do for you?";
 	while (1) {
 		next;
-		switch(select("[ Kafra Employee ]:[ Palace ]:[ Chapel ]:[ Weapon Shop ]:[ Armor Shop ]:[ Tool Shop ]:[ Inn ]:[ Return to Alberta ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 卡普拉員工 ]:[ 皇宮 ]:[ 教堂 ]:[ 武器商店 ]:[ 防具商店 ]:[ 道具商店 ]:[ 旅館 ]:[ 返回艾爾貝塔 ]:從小地圖移除標記:取消")) {
 		case 1:
-			mes "[Moscovia Guide]";
-			mes "The ^0000FFKafra Employee^000000 has";
-			mes "been marked on your mini-map";
-			mes "Check your mini-map.";
-			mes "Do you need anything else?";
+			mes "[莫斯科比亞導遊]";
+			mes "已在您的小地圖上標記了^0000FF卡普拉員工^000000";
+			mes "請查看您的小地圖。";
+			mes "您還需要什麼嗎？";
 			viewpoint 1,223,191,0,0x0A82FF;
 			break;
 		case 2:
-			mes "[Moscovia Guide]";
-			mes "In the "+F_Navi("Palace","moscovia,255,140","^006400")+" you will find our Lord the Czar and other servants.";
+			mes "[莫斯科比亞導遊]";
+			mes "在"+F_Navi("皇宮","moscovia,255,140","^006400")+"中，您會找到我們的沙皇大人和其他僕人。";
 			mes .@str$;
 			viewpoint 1,255,140,1,0x0A82FF;
 			break;
 		case 3:
-			mes "[Moscovia Guide]";
-			mes "The "+F_Navi("Chapel","moscovia,253,179","^008080")+" is located here.";
+			mes "[莫斯科比亞導遊]";
+			mes "位於此處的是"+F_Navi("教堂","moscovia,253,179","^008080")+"。";
 			mes .@str$;
 			viewpoint 1,253,179,2,0xAAFF00;
 			break;
 		case 4:
-			mes "[Moscovia Guide]";
-			mes "You can buy weapons from the best craftsmen in Moscovia if you go to the "+F_Navi("Weapon Shop","moscovia,186,191","^FF1493")+".";
+			mes "[莫斯科比亞導遊]";
+			mes "如果您前往"+F_Navi("武器商店","moscovia,186,191","^FF1493")+"，您就可以從莫斯科比亞最好的工匠那裡購買武器。";
 			mes .@str$;
 			viewpoint 1,186,191,3,0x008080;
 			break;
 		case 5:
-			mes "[Moscovia Guide]";
-			mes "You will find only the best gear at the Moscovia "+F_Navi("Armor Shop","moscovia,204,169","^8B4513")+".";
+			mes "[莫斯科比亞導遊]";
+			mes "您只會在莫斯科比亞"+F_Navi("防具商店","moscovia,204,169","^8B4513")+"找到最好的裝備。";
 			mes .@str$;
 			viewpoint 1,204,169,4,0xB200FF;
 			break;
 		case 6:
-			mes "[Moscovia Guide]";
-			mes "The "+F_Navi("Tool Shop","moscovia,221,176","^FF1493")+" is located just south from the center of town.";
-			mes "You can find all sorts of things you need for your travels.";
+			mes "[莫斯科比亞導遊]";
+			mes ""+F_Navi("道具商店","moscovia,221,176","^FF1493")+"就位於城鎮中心的南方。";
+			mes "您可以在這裡找到您旅行所需的所有東西。";
 			mes .@str$;
 			viewpoint 1,221,176,5,0xFF1493;
 			break;
 		case 7:
-			mes "[Moscovia Guide]";
-			mes "The Inn "+F_Navi("Sticky Herb Tree","moscovia,227,206")+" is just north from the center of town.";
-			mes "If you need to rest, there is no better place to stay.";
+			mes "[莫斯科比亞導遊]";
+			mes "旅館"+F_Navi("黏糊糊的草藥樹","moscovia,227,206")+"就在城鎮中心的北方。";
+			mes "如果您需要休息，沒有比這裡更好的地方了。";
 			mes .@str$;
 			viewpoint 1,227,206,6,0x8B4513;
 			break;
 		case 8:
-			mes "[Moscovia Guide]";
-			mes "You can find the";
-			mes F_Navi("Moscovia P.R. Officer","moscovia,166,53")+" at the docks if";
-			mes "you want to return to Alberta.";
+			mes "[莫斯科比亞導遊]";
+			mes "如果您想返回艾爾貝塔，您可以在碼頭找到";
+			mes F_Navi("莫斯科比亞公關人員","moscovia,166,53")+"。";
 			viewpoint 1,166,53,7,0x00BFFF;
 			break;
 		case 9:
-			mes "[Moscovia Guide]";
-			mes "I'll remove all marks from your mini-map.";
+			mes "[莫斯科比亞導遊]";
+			mes "我會從小地圖中移除所有標記。";
 			mes .@str$;
 			viewpoint 2,1,1,0,0xFFFFFF;
 			viewpoint 2,1,1,1,0xFFFFFF;
@@ -94,8 +92,8 @@ moscovia,161,76,3	script	Moscovia Guide#01mosc	959,{
 			viewpoint 2,1,1,7,0xFFFFFF;
 			break;
 		case 10:
-			mes "[Moscovia Guide]";
-			mes "Enjoy your trip~!";
+			mes "[莫斯科比亞導遊]";
+			mes "祝您旅途愉快～！";
 			close;
 		}
 	}

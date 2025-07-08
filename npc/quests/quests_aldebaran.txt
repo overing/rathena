@@ -18,45 +18,45 @@
 // 'Doctor Band', 'Feather Bonnet', 'Opera Masque', 'Sakkat Hat' Quest
 //============================================================
 aldeba_in,152,166,4	script	Trader#01	86,{
-	mes "[Trader]";
-	mes "Who is this mysterious man?";
-	mes "I, the enigmatic and debonair 'Trader?'";
+	mes "[交易員]";
+	mes "這個神秘的人是誰？";
+	mes "我，謎樣且風度翩翩的『交易員』？";
 	next;
-	mes "[Trader]";
-	mes "Traveling about the Midgard Continent, with all of his wonderful hats? Nobody knows...";
+	mes "[交易員]";
+	mes "在米德加爾特大陸四處旅行，帶著所有他那精美的帽子？沒人知道...";
 	next;
-	mes "[Trader]";
-	mes "For what purpose do I collect and trade these hats from all around the world? Choose a hat, get closer to unraveling the mystery...";
+	mes "[交易員]";
+	mes "我為了什麼目的，從世界各地收集和交易這些帽子？選擇一頂帽子，更接近解開謎團...";
 	next;
-	mes " (1) ^3355FFDoctor Band^000000:";
-	mes "1 Red Bandana + 50 Irons + 1 Cracked Diamond + 3500 Zeny";
-	mes " (2)^3355FFFeather Bonnet^000000:";
-	mes "1 Romantic Gent + 300 Feather of Birds + 500 Zeny";
-	mes " (3) ^3355FFPhantom of Opera^000000:";
-	mes "20 Iron + 1 Singing Plant + 5000 Zeny ";
-	mes " (4) ^3355FFSakkat^000000:";
-	mes "120 Trunks + 10000 Zeny ";
+	mes " (1) ^3355FF醫生帽^000000:";
+	mes "1 紅色頭巾 + 50 鐵 + 1 破損的鑽石 + 3500 Zeny";
+	mes " (2)^3355FF羽毛帽^000000:";
+	mes "1 浪漫髮圈 + 300 鳥羽毛 + 500 Zeny";
+	mes " (3) ^3355FF歌劇魅影^000000:";
+	mes "20 鐵 + 1 唱歌草 + 5000 Zeny ";
+	mes " (4) ^3355FF薩卡特帽^000000:";
+	mes "120 樹幹 + 10000 Zeny ";
 	next;
-	switch(select(" Doctor Band : Feather Bonnet : Phantom of Opera : Sakkat ")) {
+	switch(select(" 醫生帽 : 羽毛帽 : 歌劇魅影 : 薩卡特帽 ")) {
 	case 1:
 		if ((countitem(2275) > 0) && (countitem(998) > 49) && (countitem(733) > 0) && (Zeny > 3499)) {
 			delitem 2275,1; //Red_Bandana
 			delitem 998,50; //Iron
 			delitem 733,1; //Crystal_Jewel___
 			set Zeny, Zeny-3500;
-			mes "[Trader]";
-			mes "Hm! You don't have a medical license, do you? It's alright, I've heard about a rogue, unlicensed physician who performed medical miracles! But... That might have been a comic book.";
+			mes "[交易員]";
+			mes "嗯！你沒有行醫執照，對吧？沒關係，我聽說過有個流氓、無照的醫生，創造了醫學奇蹟！但是...那可能是一本漫畫。";
 			next;
-			mes "[Trader]";
-			mes "Oh whatever. Just don't get caught.";
+			mes "[交易員]";
+			mes "喔，隨便啦。只要別被抓到。";
 			getitem 2273,1; //Doctor_Cap
 			close;
 		}
 		else {
-			mes "[Trader]";
-			mes "You guy~";
-			mes "Check the requirements again.";
-			mes "You don't look like an idiot though. So c'mon man, get real.";
+			mes "[交易員]";
+			mes "你這傢伙～";
+			mes "再檢查一次需求。";
+			mes "你看起來不像白痴。所以拜託，認真點。";
 			close;
 		}
 	case 2:
@@ -64,15 +64,15 @@ aldeba_in,152,166,4	script	Trader#01	86,{
 			delitem 2247,1; //Oldman's_Romance
 			delitem 916,300; //Feather_Of_Birds
 			set Zeny, Zeny-500;
-			mes "[Trader]";
-			mes "Ooh~! You have good fashion sense. I know you've had a hard time collecting this stuff, but this hat is worth it. Take it. All you need now is a fur coat and a cane!";
+			mes "[交易員]";
+			mes "喔～！你很有時尚感。我知道你花了很多時間收集這些東西，但這頂帽子很值得。拿去吧。你現在只需要一件皮草大衣和一根手杖！";
 			getitem 5018,1; //Feather_Bonnet
 			close;
 		}
 		else {
-			mes "[Trader]";
-			mes "You guy~";
-			mes "Go check my requirements again. You don't look like an idiot though. C'mon man, get real.";
+			mes "[交易員]";
+			mes "你這傢伙～";
+			mes "再去檢查我的需求。你看起來不像白痴。拜託，認真點。";
 			close;
 		}
 	case 3:
@@ -80,31 +80,31 @@ aldeba_in,152,166,4	script	Trader#01	86,{
 			delitem 998,20; //Iron
 			delitem 707,1; //Singing_Plant
 			set Zeny, Zeny-5000;
-			mes "[Trader]";
-			mes "This one? It's a little bit scary, though it has some sort of romantic quality. What do you think? You like it? Alright, take it, it's yours!";
+			mes "[交易員]";
+			mes "這個？它有點可怕，但它有某種浪漫的特質。你覺得呢？你喜歡嗎？好吧，拿去吧，它是你的了！";
 			getitem 2281,1; //Phantom_Of_Opera
 			close;
 		}
 		else {
-			mes "[Trader]";
-			mes "Buffoon. Go check the requirements again. ^3355FFPhantom of Opera^000000 isn't easy to come by. So c'mon man, get real.";
+			mes "[交易員]";
+			mes "笨蛋。再去檢查需求。^3355FF歌劇魅影^000000 不容易得到。所以拜託，認真點。";
 			close;
 		}
 	case 4:
 		if ((countitem(1019) > 119) && (Zeny > 9999)){ //Wooden_Block 
 			delitem 1019,120; //Wooden_Block
 			set Zeny, Zeny-10000;
-			mes "[Trader]";
-			mes "If you have a chance to visit the Uplander Village, Payon, please go and meet the Sakkat Craftsman.";
+			mes "[交易員]";
+			mes "如果你有機會去烏普蘭達村莊，斐揚，請去見見薩卡特帽匠。";
 			next;
-			mes "[Trader]";
-			mes "He's never sold Sakkat to Traders other than me, since only I can recognize its quality. Due to its rarity, Sakkat has become a very unique and exceptional product. Okay! Take it, it's yours!";
+			mes "[交易員]";
+			mes "除了我以外，他從未將薩卡特帽賣給其他交易員，因為只有我才能識別它的品質。由於其稀有性，薩卡特帽已成為一種非常獨特和特殊的產品。好的！拿去吧，它是你的了！";
 			getitem 2280,1; //Sahkkat
 			close;
 		}
 		else {
-			mes "[Trader]";
-			mes "MORON~ Check my requirements again. C'mon man, you don't look like an idiot, so get real~";
+			mes "[交易員]";
+			mes "白痴～ 再檢查我的需求。拜託，你看起來不像白痴，所以認真點～";
 			close;
 		}
 	}

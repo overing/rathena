@@ -19,7 +19,7 @@
 //= 1.2a Changed item names to item IDs. [Samuray22]
 //============================================================ 
 
-prontera,3,3,3	script	Uneasy_Check	-1,{
+prontera,3,3,3	script	不安的檢查	-1,{
 	end;
 
 OnHour00:
@@ -28,10 +28,10 @@ OnHour00:
 	if ($UNEASY_BL>666) set $UNEASY_BL,666; //keep needed bottles not <=666
 	if ($UNEASY_DL < 0) goto L_Start_Undead;
 //The Cemetery is OK yet.
-	disablenpc "Mother Mathana";
+	disablenpc "瑪瑟娜修女";
 	end;
 OnInit:
-	if ($UNEASY_DL >= 0) disablenpc "Mother Mathana";
+	if ($UNEASY_DL >= 0) disablenpc "瑪瑟娜修女";
 	end;
 
 OnHour06:
@@ -39,7 +39,7 @@ OnHour06:
 	end;
 
 OnHour01:
-	if ($@UNEASY_MOB > 0) mapannounce "prontera","[Mother Mathana]: In the name of Odin, please finish these roaming undead leftovers!",0;
+	if ($@UNEASY_MOB > 0) mapannounce "prontera","[瑪瑟娜修女]: 以奧丁之名，請消滅這些漫遊的不死族殘餘勢力！",0;
 	end;
 
 OnZombieDead:
@@ -47,40 +47,40 @@ OnZombieDead:
 	if ($@UNEASY_MOB>0) end;
 	set $UNEASY_DL,0;
 	set $UNEASY_H$,strcharinfo(0);
-	if (Sex==SEX_MALE) mapannounce "prontera","[Mother Mathana]: Brave "+$UNEASY_H$+" has just killed the last undead in Prontera!",0;
-	else mapannounce "prontera","[Mother Mathana]: Lady "+$UNEASY_H$+" has just killed the last undead in Prontera!",0;
+	if (Sex==SEX_MALE) mapannounce "prontera","[瑪瑟娜修女]: 英勇的 "+$UNEASY_H$+" 剛剛殺死了普隆德拉最後的不死族！",0;
+	else mapannounce "prontera","[瑪瑟娜修女]: 美麗的 "+$UNEASY_H$+" 剛剛殺死了普隆德拉最後的不死族！",0;
 	set JobExp,JobExp+100;
 	set BaseExp,BaseExp+50;
 	end;
 
 L_Start_Undead:
 	killmonsterall "prontera";	//kills any left monsters
-	enablenpc "Mother Mathana";
+	enablenpc "瑪瑟娜修女";
 //call some monsters in the city
 	set $@UNEASY_MOB, 65;
-	areamonster "prontera",0,0,0,0,"Zombie",1015,30,"Uneasy_Check::OnZombieDead";
+	areamonster "prontera",0,0,0,0,"Zombie",1015,30,"不安的檢查::OnZombieDead";
 //in the Cemetery
-	monster "prontera",268,349,"Zombie",1015,30,"Uneasy_Check::OnZombieDead";
-	monster "prontera",269,350,"Ghoul",1036,5,"Uneasy_Check::OnZombieDead";
+	monster "prontera",268,349,"Zombie",1015,30,"不安的檢查::OnZombieDead";
+	monster "prontera",269,350,"Ghoul",1036,5,"不安的檢查::OnZombieDead";
 //announce
-	mapannounce "prontera","[Mother Mathana]: The cemetery has become restless!  In the name of Odin, hurry to the Sanctuary! Save the city of Prontera!",0;
+	mapannounce "prontera","[瑪瑟娜修女]: 墓地變得躁動不安！以奧丁之名，趕快前往聖域！拯救普隆德拉城！",0;
 }
 
-prontera,257,313,5	script	Mother Mathana	79,{
-	mes "[Mother Mathana]";
+prontera,257,313,5	script	瑪瑟娜修女	79,{
+	mes "[瑪瑟娜修女]";
 	if ($UNEASY_DL <= 0) goto L_Undead_Walk;
-	mes "I'm afraid there's something wrong with our old cemetery...";
-	if ($UNEASY_H$==strcharinfo(0)) mes "But thanks to you, "+$UNEASY_H$+", we'll be able to sleep " + $UNEASY_DL + " nights!";
-	if ($UNEASY_H$!=strcharinfo(0)) mes "But thanks to "+$UNEASY_H$+"'s support, we've got " + $UNEASY_DL + " easy nights!";
+	mes "恐怕我們的舊墓地有些不對勁...";
+	if ($UNEASY_H$==strcharinfo(0)) mes "但多虧了你，"+$UNEASY_H$+"，我們才能安穩地睡 " + $UNEASY_DL + " 個晚上！";
+	if ($UNEASY_H$!=strcharinfo(0)) mes "但多虧了 "+$UNEASY_H$+" 的幫助，我們才能安穩地度過 " + $UNEASY_DL + " 個輕鬆的晚上！";
 	emotion ET_SURPRISE;
 	close;
 
 L_Undead_Walk:
-	if ($UNEASY_DL == 0) mes "THEY could return tomorrow's night again!";
-	if ($UNEASY_DL == 0 && $UNEASY_H$==strcharinfo(0)) mes "Thank you, "+$UNEASY_H$+"! Now we'll manage to rest till the next midnight!";
-	if ($UNEASY_DL == 0 && $UNEASY_H$!=strcharinfo(0)) mes "But due to "+$UNEASY_H$+"'s help we'll manage to rest till the next midnight!";
-	mes "To calm down the restless cemetery, we should pour all these graves with the Holy Water. But our sisters and brothers have run out of it.";
-	mes "Could you supply us with Holy Water?";
+	if ($UNEASY_DL == 0) mes "他們可能明天晚上再次回來！";
+	if ($UNEASY_DL == 0 && $UNEASY_H$==strcharinfo(0)) mes "謝謝你，"+$UNEASY_H$+"！現在我們可以休息到下一個午夜了！";
+	if ($UNEASY_DL == 0 && $UNEASY_H$!=strcharinfo(0)) mes "但由於 "+$UNEASY_H$+" 的幫助，我們可以休息到下一個午夜了！";
+	mes "為了平息躁動不安的墓地，我們應該用聖水澆灌所有這些墳墓。但我們的姐妹和兄弟們已經用完了。";
+	mes "你能為我們提供聖水嗎？";
 	next;
 	menu "Yes, have all my Holy Water!",-, "Nope, I need it.",M_NO, "I don't have any.",M_DONT_HAVE;
 
@@ -92,42 +92,42 @@ L_Undead_Walk:
 //set quiet days!!! no more undead for this period!
 	set $UNEASY_DL,5+((0-$UNEASY_BL)/30);
 	set $UNEASY_H$,strcharinfo(0);
-	mes "[Mother Mathana]";
-	mes "Thank you, "+$UNEASY_H$+"! Now we've got enough Holy Water!";
+	mes "[瑪瑟娜修女]";
+	mes "謝謝你，"+$UNEASY_H$+"！現在我們有足夠的聖水了！";
 	next;
-	mes "[Mother Mathana]";
-	mes "Upon pouring the cemetery with that water we'll get " + $UNEASY_DL + " safe nights!";
+	mes "[瑪瑟娜修女]";
+	mes "用那些水澆灌墓地後，我們將獲得 " + $UNEASY_DL + " 個安全的夜晚！";
 	next;
 	killmonsterall "prontera";	//kills any left monsters
-	mes "[Mother Mathana]";
-	mes "See, "+ $UNEASY_H$ +"? They all are gone now!";
+	mes "[瑪瑟娜修女]";
+	mes "看到了嗎，"+ $UNEASY_H$ +"？他們現在都消失了！";
 	next;
-	mes "[Mother Mathana]";
-	mes "Our Church is going to thank you personally...";
+	mes "[瑪瑟娜修女]";
+	mes "我們的教會將親自感謝你...";
 	next;
-	if (Sex==SEX_MALE) mapannounce "prontera","[Mother Mathana]: In the name of Odin we declare handsome "+$UNEASY_H$+" as a Prontera savior!",0;
-	else mapannounce "prontera","[Mother Mathana]: In the name of Odin we declare beautiful "+$UNEASY_H$+" as a Prontera savior!",0;
-	mes "[Mother Mathana]";
-	mes "In the name of Odin we bless you and decently present a modest gift just from Mareusis' wine-cellar.";
+	if (Sex==SEX_MALE) mapannounce "prontera","[瑪瑟娜修女]: 以奧丁之名，我們宣布英俊的 "+$UNEASY_H$+" 為普隆德拉的救世主！",0;
+	else mapannounce "prontera","[瑪瑟娜修女]: 以奧丁之名，我們宣布美麗的 "+$UNEASY_H$+" 為普隆德拉的救世主！",0;
+	mes "[瑪瑟娜修女]";
+	mes "以奧丁之名，我們祝福你，並體面地贈送一份來自馬雷烏西斯酒窖的薄禮。";
 	getitem 505,1; //Blue_Potion
 	set JobExp,JobExp+100;
 	set BaseExp,BaseExp+50;
 	close;
 
 L_NEED_MORE:
-	mes "[Mother Mathana]";
-	mes "Thank you, good "+strcharinfo(0)+", but we still need " + $UNEASY_BL + " more Holy Water bottles.";
+	mes "[瑪瑟娜修女]";
+	mes "謝謝你，善良的 "+strcharinfo(0)+"，但我們仍然需要 " + $UNEASY_BL + " 瓶聖水。";
 	close;
 
 M_NO:
-	mes "[Mother Mathana]";
-	mes "I'm afraid the old cemetery is going out of control soon... Please, get us all the Holy Water you can get.";
+	mes "[瑪瑟娜修女]";
+	mes "恐怕舊墓地很快就會失控了... 請盡可能為我們取得所有聖水。";
 	close;
 
 M_DONT_HAVE:
-	mes "[Mother Mathana]";
-	mes "Alas! We still need " + $UNEASY_BL + " more bottles of Holy Water...  Why don't you go and ask other people for some extra Holy Water?";
-	mes "The old cemetery is going out of control soon...";
-	mes "Please, in the name of Odin, help Prontera city.";
+	mes "[瑪瑟娜修女]";
+	mes "唉！我們仍然需要 " + $UNEASY_BL + " 瓶聖水... 你為什麼不去找其他人要一些額外的聖水呢？";
+	mes "舊墓地很快就會失控了...";
+	mes "請以奧丁之名幫助普隆德拉城。";
 	close;
 }

@@ -8,26 +8,26 @@
 //= 1.2 Navigation system update. [Euphy]
 //============================================================
 
-payon,160,67,3	script	Guide#01payon::GuidePayon	708,{
+payon,160,67,3	script	導遊#01payon::GuidePayon	708,{
 	cutin "pay_soldier",2;
-	mes "[Payon Guide]";
-	mes "Welcome to ^8B4513Payon^000000,";
-	mes "the Mountain Village.";
-	mes "Do you need help navigating the village?";
+	mes "[斐楊導遊]";
+	mes "歡迎來到 ^8B4513斐楊^000000，";
+	mes "這座山岳之村。";
+	mes "需要我幫你導覽村莊嗎？";
 	F_Navi("[Payon Guide]");
 	next;
 	while (1) {
-		switch(select("[ Main Facilities ]:[ Merchants & Helpers ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 主要設施 ]:[ 商人與幫手 ]:移除小地圖上的標記:取消")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Archer Village ]:[ Tool Shop ]:[ Weapon & Armor Shop ]:[ Inn & Tavern ]:[ Central Palace ]:[ Palace Court ]:[ Royal Kitchen ]:Previous Menu")) {
+				switch(select("[ 弓箭手村莊 ]:[ 工具店 ]:[ 武器與防具店 ]:[ 旅店與酒館 ]:[ 中央宮殿 ]:[ 宮殿庭院 ]:[ 皇家廚房 ]:上一個選單")) {
 				case 1:
-					mes "[Payon Guide]";
-					mes F_Navi("Archer Village","payon,227,328","^B9062F")+" is where";
-					mes "the Archer Association resides.";
-					mes "Please use the far north gate to enter the village.";
-					mes "Would you like to check any other locations?";
+					mes "[斐楊導遊]";
+					mes F_Navi("Archer Village","payon,227,328","^B9062F")+" 在";
+					mes "弓箭手協會的所在地。";
+					mes "請從最北邊的閘門進入村莊。";
+					mes "您想要查看其他地點嗎？";
 					viewpoint 1,227,328,0,0xFF0000;
 					next;
 					break;
@@ -70,71 +70,71 @@ payon,160,67,3	script	Guide#01payon::GuidePayon	708,{
 		case 2:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Eden Teleport Officer ]:[ Kafra Shop ]:[ Repair / Armsmith ]:[ Kafra Employee ]:[ Trap Specialist ]:[ Seiayblem ]:[ Leablem ]:[ Jade ]:[ Pet Groomer ]:[ Chef Assistant ]:Previous Menu")) {
+				switch(select("[ 伊甸園傳送人員 ]:[ 卡普拉商店 ]:[ 維修 / 武器工匠 ]:[ 卡普拉職員 ]:[ 陷阱專家 ]:[ 賽亞布雷姆 ]:[ 萊亞布雷姆 ]:[ 潔德 ]:[ 寵物美容師 ]:[ 廚師助手 ]:上一個選單")) {
 				case 1:
-					callsub L_Mark, F_Navi("Eden Teleport Officer","payon,177,111","^0000FF");
+					callsub L_Mark, F_Navi("伊甸園傳送人員","payon,177,111","^0000FF");
 					viewpoint 1,177,111,7,0x0A82FF;
 					next;
 					break;
 				case 2:
-					callsub L_Mark, F_Navi("Kafra Shop Girls","payon,164,157","^FF5400");
+					callsub L_Mark, F_Navi("卡普拉商店","payon,164,157","^FF5400");
 					viewpoint 1,164,157,8,0xFFB400;
 					next;
 					break;
 				case 3:
-					callsub L_Mark, F_Navi("Repairman & Armsmith","payon,144,170","^006400");
+					callsub L_Mark, F_Navi("維修 / 武器工匠","payon,144,170","^006400");
 					viewpoint 1,144,170,9,0xAAFF00;
 					next;
 					break;
 				case 4:
-					callsub L_Mark, "^7F3300Kafra Employees^000000";
+					callsub L_Mark, "^7F3300卡普拉職員^000000";
 					viewpoint 1,181,104,10,0xD2691E;
 					viewpoint 1,175,226,11,0xD2691E;
 					next;
 					break;
 				case 5:
-					callsub L_Mark, F_Navi("Trap Specialist","payon,123,109","^800080");
+					callsub L_Mark, F_Navi("陷阱專家","payon,123,109","^800080");
 					viewpoint 1,123,109,12,0xDA70D6;
 					next;
 					break;
 				case 6:
-					mes "[Payon Guide]";
-					mes F_Navi("Seiyablem","payon,140,151","^B9062F");
-					mes "is a technician";
-					mes "who can create ^0000FFslots^000000 on weapons and armors,";
-					mes "but not all equipment";
-					mes "can be slotted. Well, that's what he says.";
-					mes "Would you like to check any other locations?";
+					mes "[斐楊導遊]";
+					mes F_Navi("賽亞布雷姆","payon,140,151","^B9062F");
+					mes "是一位技術人員";
+					mes "他可以在武器和盔甲上創建 ^0000FF插槽^000000，";
+					mes "但並非所有裝備";
+					mes "都可以開槽。嗯，他是這麼說的。";
+					mes "您想要查看其他地點嗎？";
 					viewpoint 1,140,151,13,0xFF0000;
 					next;
 					break;
 				case 7:
-					mes "[Payon Guide]";
-					mes F_Navi("Leablem","payon,236,199","^0000FF");
-					mes "is a technician";
-					mes "who can create ^0000FFslots^000000 on weapons and armors,";
-					mes "but not all equipment";
-					mes "can be slotted. Well, that's what he says.";
-					mes "Would you like to check any other locations?";
+					mes "[斐楊導遊]";
+					mes F_Navi("莉艾布倫","payon,236,199","^0000FF");
+					mes "是一位技術人員";
+					mes "他可以在武器和盔甲上創建 ^0000FF插槽^000000，";
+					mes "但並非所有裝備";
+					mes "都可以開槽。嗯，他是這麼說的。";
+					mes "您想要查看其他地點嗎？";
 					viewpoint 1,236,199,14,0x0A82FF;
 					next;
 					break;
 				case 8:
-					mes "[Payon Guide]";
+					mes "[斐楊導遊]";
 					mes F_Navi("Jade","payon,173,238","^FF5400");
-					mes "can exchange different types of";
-					mes "^FF5400Gemstones^000000.";
-					mes "Would you like to check any other locations?";
+					mes "可以交換不同種類的";
+					mes "^FF5400寶石^000000。";
+					mes "您想要查看其他地點嗎？";
 					viewpoint 1,173,238,15,0xFFB400;
 					next;
 					break;
 				case 9:
-					callsub L_Mark, F_Navi("Pet Groomer","payon,177,131","^006400");
+					callsub L_Mark, F_Navi("寵物美容師","payon,177,131","^006400");
 					viewpoint 1,177,131,16,0xAAFF00;
 					next;
 					break;
 				case 10:
-					callsub L_Mark, F_Navi("Chef Assistant","payon,206,119","^7F3300");
+					callsub L_Mark, F_Navi("廚師助理","payon,206,119","^7F3300");
 					viewpoint 1,206,119,17,0xD2691E;
 					next;
 					break;
@@ -145,9 +145,9 @@ payon,160,67,3	script	Guide#01payon::GuidePayon	708,{
 			}
 			break;
 		case 3:
-			mes "[Payon Guide]";
-			mes "Sure, I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[斐楊導遊]";
+			mes "好的，我會移除您小地圖上的所有標記。";
+			mes "還有什麼我可以為您服務的嗎？";
 			viewpoint 2,1,1,0,0xFFFF00;
 			viewpoint 2,1,1,1,0x000000;
 			viewpoint 2,1,1,2,0xFF0000;
@@ -169,8 +169,8 @@ payon,160,67,3	script	Guide#01payon::GuidePayon	708,{
 			next;
 			break;
 		case 4:
-			mes "[Payon Guide]";
-			mes "Enjoy your stay.";
+			mes "[斐楊導遊]";
+			mes "旅途愉快。";
 			close2;
 			cutin "",255;
 			end;
@@ -178,94 +178,94 @@ payon,160,67,3	script	Guide#01payon::GuidePayon	708,{
 	}
 	end;
 L_Mark:
-	mes "[Payon Guide]";
-	mes "Let me mark the location of the";
+	mes "[斐楊導遊]";
+	mes "讓我標記";
 	mes getarg(0);
-	mes "on your mini-map.";
-	mes "Would you like to check any other locations?";
+	mes "在地圖上的位置。";
+	mes "您想要查看其他地點嗎？";
 	return;
 }
 
-payon,151,182,6	duplicate(GuidePayon)	Guide#02payon	708
-payon,221,85,6	duplicate(GuidePayon)	Guide#03payon	708
-payon,233,324,4	duplicate(GuidePayon)	Guide#04payon	708
+payon,151,182,6	duplicate(GuidePayon)	導遊#02payon	708
+payon,221,85,6	duplicate(GuidePayon)	導遊#03payon	708
+payon,233,324,4	duplicate(GuidePayon)	導遊#04payon	708
 
-pay_arche,86,33,4	script	Guide#05payon	708,{
+pay_arche,86,33,4	script	導遊#05payon	708,{
 	cutin "pay_soldier",2;
-	mes "[Payon Guide]";
-	mes "Welcome to ^8B4513Archer Village^000000,";
-	mes "a subsidiary village of Payon.";
-	mes "Do you need help navigating the village?";
+	mes "[斐楊導遊]";
+	mes "歡迎來到 ^8B4513弓箭手村莊^000000，";
+	mes "斐楊的附屬村莊。";
+	mes "需要我幫你導覽村莊嗎？";
 	F_Navi("[Payon Guide]");
 	next;
 	set .@str$,"Would you like to check any other locations?";
 	while (1) {
-		switch(select("[ Payon Dungeon ]:[ Archer Guild ]:[ Tool Shop ]:[ Kafra Employee ]:[ Mercenary Guildsman ]:[ Alchemist Guildsman ]:[ Eden Teleport Officer ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 斐楊地監 ]:[ 弓箭手公會 ]:[ 工具店 ]:[ 卡普拉職員 ]:[ 傭兵公會人員 ]:[ 鍊金術士公會人員 ]:[ 伊甸園傳送人員 ]:移除小地圖上的標記:取消")) {
 		case 1:
-			mes "[Payon Guide]";
-			mes "Let me mark the entrance of";
-			mes "the "+F_Navi("Payon Dungeon","pay_arche,38,131","^B9062F");
-			mes "on your mini-map.";
+			mes "[斐楊導遊]";
+			mes "讓我標記";
+			mes ""+F_Navi("Payon Dungeon","pay_arche,38,131","^B9062F");
+			mes "的入口在地圖上的位置。";
 			mes .@str$;
 			viewpoint 1,38,131,0,0xFF0000;
 			next;
 			break;
 		case 2:
-			mes "[Payon Guide]";
-			mes "The "+F_Navi("Archer Guild","pay_arche,143,164","^0000FF");
-			mes "is where you can change";
-			mes "your job to Archer.";
+			mes "[斐楊導遊]";
+			mes ""+F_Navi("Archer Guild","pay_arche,143,164","^0000FF");
+			mes "是您可以轉職";
+			mes "成為弓箭手的地方。";
 			mes .@str$;
 			viewpoint 1,143,164,1,0x0A82FF;
 			next;
 			break;
 		case 3:
-			mes "[Payon Guide]";
-			mes "Let me mark the location of the";
+			mes "[斐楊導遊]";
+			mes "讓我標記";
 			mes F_Navi("Tool Shop","pay_arche,72,156","^FF5400");
-			mes "on your mini-map.";
+			mes "在地圖上的位置。";
 			mes .@str$;
 			viewpoint 1,72,156,2,0xFFB400;
 			next;
 			break;
 		case 4:
-			mes "[Payon Guide]";
-			mes "Let me mark the location of the ^006400Kafra Employee^000000";
-			mes "on your mini-map.";
+			mes "[斐楊導遊]";
+			mes "讓我標記 ^006400卡普拉職員^000000 的位置";
+			mes "在地圖上的位置。";
 			mes .@str$;
 			viewpoint 1,55,123,3,0xAAFF00;
 			next;
 			break;
 		case 5:
-			mes "[Payon Guide]";
-			mes "Let me mark the location of the";
+			mes "[斐楊導遊]";
+			mes "讓我標記";
 			mes F_Navi("Mercenary Guildsman","pay_arche,101,166","^7F3300");
-			mes "on your mini-map.";
+			mes "在地圖上的位置。";
 			mes .@str$;
 			viewpoint 1,101,166,4,0xD2691E;
 			next;
 			break;
 		case 6:
-			mes "[Payon Guide]";
-			mes "Let me mark the location of the";
+			mes "[斐楊導遊]";
+			mes "讓我標記";
 			mes F_Navi("Alchemist Guildsman","pay_arche,126,113,","^800080");
-			mes "on your mini-map.";
+			mes "在地圖上的位置。";
 			mes .@str$;
 			viewpoint 1,127,113,5,0xDA70D6;
 			next;
 			break;
 		case 7:
-			mes "[Payon Guide]";
-			mes "The "+F_Navi("Eden Teleport Officer","pay_arche,143,164","^0000FF");
-			mes "is currently staying inside";
-			mes "the Archer Guild building.";
+			mes "[斐楊導遊]";
+			mes "的 "+F_Navi("伊甸園傳送人員","pay_arche,143,164","^0000FF");
+			mes "目前停留在";
+			mes "弓箭手公會大樓內。";
 			mes .@str$;
 			viewpoint 1,143,164,6,0x0A82FF;
 			next;
 			break;
 		case 8:
-			mes "[Payon Guide]";
-			mes "Sure, I'll remove all marks from your mini-map.";
+			mes "[斐楊導遊]";
+			mes "好的，我會移除您小地圖上的所有標記。";
 			mes .@str$;
 			viewpoint 2,1,1,0,0xFFFF00;
 			viewpoint 2,1,1,1,0x000000;
@@ -277,8 +277,8 @@ pay_arche,86,33,4	script	Guide#05payon	708,{
 			next;
 			break;
 		case 9:
-			mes "[Payon Guide]";
-			mes "Enjoy your stay.";
+			mes "[斐楊導遊]";
+			mes "旅途愉快。";
 			close2;
 			cutin "",255;
 			end;

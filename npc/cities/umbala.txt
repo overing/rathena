@@ -24,256 +24,253 @@
 //= 2.1 Updated to Aegis 10.3 standards. [L0ne_W0lf]
 //============================================================
 
-comodo,170,137,7	script	La Ed#um	84,{
+comodo,170,137,7	script	拉艾德#um	84,{
 	end;
 }
 
-comodo,171,137,1	script	Haith#um	92,{
-	mes "[La Ed]";
-	mes "There MUST be a treasure hidden in that place!";
+comodo,171,137,1	script	黑伊司#um	92,{
+	mes "[拉艾德]";
+	mes "那地方一定藏著寶藏！";
 	next;
-	mes "[Haith]";
-	mes "If we find it, people will no longer think we're losers~!!";
+	mes "[黑伊司]";
+	mes "如果我們找到了，大家就不會再認為我們是魯蛇了～！！";
 	next;
-	mes "[La Ed]";
-	mes "Finally!";
+	mes "[拉艾德]";
+	mes "終於！";
 	next;
-	mes "[Haith]";
-	mes "Let's go find that treasure!";
+	mes "[黑伊司]";
+	mes "我們去找寶藏吧！";
 	next;
-	mes "[La Ed]";
-	mes "Let's do it~ !!";
+	mes "[拉艾德]";
+	mes "我們走吧～！！";
 	emotion ET_KIK;
 	next;
-	mes "[Haith]";
+	mes "[黑伊司]";
 	mes "................";
 	next;
-	mes "[La Ed]";
-	mes "By the way...do you think he";
-	mes "would tell us about such a";
-	mes "great treasure so easily?";
+	mes "[拉艾德]";
+	mes "對了...你覺得他會這麼輕易地";
+	mes "告訴我們關於這麼棒的";
+	mes "寶藏嗎？";
 	emotion ET_SCRATCH;
-	emotion ET_SCRATCH, getnpcid(0, "La Ed#um");
+	emotion ET_SCRATCH, getnpcid(0, "拉艾德#um");
 	next;
-	select("Hm? What treasure?");
-	mes "[La Ed]";
-	mes "Wha--?! when did you start listening to us?!";
+	select("嗯？什麼寶藏？");
+	mes "[拉艾德]";
+	mes "啥--？！你什麼時候開始聽我們講話的？！";
 	next;
-	mes "[Haith]";
-	mes "Huh...seems like you wanna know";
-	mes "more about the treasure. Well,";
-	mes "this information doesn't come cheap...";
+	mes "[黑伊司]";
+	mes "嗯...看來你想要知道";
+	mes "更多關於寶藏的事。嗯，";
+	mes "這個資訊可不便宜...";
 	emotion ET_KIK;
 	next;
-	mes "[La Ed]";
-	mes "Plus, we'll need a little";
-	mes "a little something in case";
-	mes "*cough!* ^555555we don't find";
-	mes "anything at all.^000000";
+	mes "[拉艾德]";
+	mes "而且，我們需要一點點";
+	mes "一點點以防";
+	mes "*咳！* ^555555我們什麼都沒找到。^000000";
 	next;
-	mes "[La Ed, Haith]";
-	mes "If you pay us 1,000 zeny, we will tell you!";
+	mes "[拉艾德, 黑伊司]";
+	mes "如果你付我們 1,000 Zeny，我們會告訴你！";
 	emotion ET_KIK;
-	emotion ET_KIK, getnpcid(0, "La Ed#um");
+	emotion ET_KIK, getnpcid(0, "拉艾德#um");
 	next;
-	if (select("Pay 1,000 zeny:Refuse to pay") == 1) {
+	if (select("支付 1,000 Zeny:拒絕支付") == 1) {
 		if (Zeny > 999) {
 			set Zeny, Zeny-1000;
-			mes "[Haith]";
-			mes "Hahahaha! You the man!";
+			mes "[黑伊司]";
+			mes "哈哈哈！你真是個漢子！";
 			next;
-			mes "[La Ed]";
-			mes "Okay, not too long ago, a famous";
-			mes "adventurer named Niels came back from his travels.";
+			mes "[拉艾德]";
+			mes "好吧，不久前，一位名叫尼爾斯的著名";
+			mes "冒險家從旅行中回來了。";
 			next;
-			mes "[Haith]";
-			mes "*Whispers*";
-			mes "^555555He brought a big box with him.^000000";
+			mes "[黑伊司]";
+			mes "*悄悄話*";
+			mes "^555555他帶回了一個大箱子。^000000";
 			next;
-			mes "[La Ed]";
-			mes "Also, he came back in the middle";
-			mes "of the night without telling";
-			mes "anyone. So, of course he's got";
-			mes "some secret, don't you think?";
+			mes "[拉艾德]";
+			mes "而且，他是在半夜回來的，沒有告訴";
+			mes "任何人。所以，他當然有一些";
+			mes "秘密，你不覺得嗎？";
 			next;
-			mes "[Haith]";
-			mes "What could be inside that box~?";
-			mes "It just has to be treasure!!";
+			mes "[黑伊司]";
+			mes "那個箱子裡會是什麼呢～？";
+			mes "一定是寶藏！！";
 			next;
-			mes "[La Ed]";
-			mes "So! We decided to go on a journey to find treasure of our own-!!";
+			mes "[拉艾德]";
+			mes "所以！我們決定去尋找屬於我們自己的寶藏--！！";
 			next;
-			mes "[Haith]";
-			mes "The problem is, we are not sure";
-			mes "whether or not Niels would tell";
-			mes "us the location of where he";
-			mes "found the treasure...";
+			mes "[黑伊司]";
+			mes "問題是，我們不確定";
+			mes "尼爾斯是否會告訴我們";
+			mes "他找到寶藏的";
+			mes "地點...";
 			emotion ET_SCRATCH;
 			next;
-			mes "[La Ed]";
-			mes "Because Niels always treat us like";
-			mes "we're stupid!! Bah~!!";
+			mes "[拉艾德]";
+			mes "因為尼爾斯總是把我們當作";
+			mes "我們很笨！！呸～！！";
 			next;
-			select("Where is this Niels person?");
-			mes "[La Ed]";
-			mes "He's staying at the northern part";
-			mes "of this village.";
+			select("這個尼爾斯在哪裡？");
+			mes "[拉艾德]";
+			mes "他住在這個村莊的北部";
+			mes "。";
 			next;
-			mes "[Haith]";
-			mes "Since we gave you good information,";
-			mes "we expect that you pay us back!";
+			mes "[黑伊司]";
+			mes "既然我們給了你好的資訊，";
+			mes "我們希望你能回報我們！";
 			next;
-			mes "[La Ed, Haith]";
-			mes "Good luck!";
+			mes "[拉艾德, 黑伊司]";
+			mes "祝你好運！";
 			close;
 		}
-		mes "[La Ed]";
-		mes "Oh well~! If you don't have the money, then we can't give you the information~";
+		mes "[拉艾德]";
+		mes "哎呀～！如果你沒有錢，那我們就不能給你資訊了～";
 		close;
 	}
-	mes "[Haith]";
-	mes "Bah! Whatever~";
+	mes "[黑伊司]";
+	mes "呸！隨便啦～";
 	emotion ET_SCRATCH;
-	emotion ET_SCRATCH, getnpcid(0, "La Ed#um");
+	emotion ET_SCRATCH, getnpcid(0, "拉艾德#um");
 	close;
 }
 
-cmd_in01,175,120,3	script	Iriya#um	69,{
-	mes "[Iriya]";
-	mes "Mr. Niels is at the table in the";
-	mes "corner. He has many interesting";
-	mes "stories about the world.";
+cmd_in01,175,120,3	script	伊立亞#um	69,{
+	mes "[伊立亞]";
+	mes "尼爾斯先生在角落的桌子旁";
+	mes "。他有很多關於世界的";
+	mes "有趣故事。";
 	next;
-	mes "[Iriya]";
-	mes "I am not sure where he has been";
-	mes "this time. He just laughs and";
-	mes "says 'I don't think I am fit";
-	mes "for this teaching job.'";
+	mes "[伊立亞]";
+	mes "我不確定他這次";
+	mes "去了哪裡。他只是笑著";
+	mes "說「我不認為我適合";
+	mes "這份教學工作。」";
 	next;
-	mes "[Iriya]";
-	mes "In the meantime, people keep";
-	mes "visiting Mr. Niels... and I";
-	mes "can't help but wonder...";
-	mes "Where has he gone?";
+	mes "[伊立亞]";
+	mes "同時，人們不斷地";
+	mes "拜訪尼爾斯先生...而我";
+	mes "忍不住想知道...";
+	mes "他去了哪裡？";
 	close;
 }
 
-cmd_in01,164,115,1	script	Niels#um	731,{
-	mes "[Niels]";
-	mes "Hmm? What's that look for?";
-	mes "Ah~ You must of heard the rumors";
-	mes "of me finding some kind of";
-	mes "treasure. Yeah, that's understandable...";
+cmd_in01,164,115,1	script	尼爾斯#um	731,{
+	mes "[尼爾斯]";
+	mes "嗯？那是什麼表情？";
+	mes "啊～你一定聽說過我找到";
+	mes "某種";
+	mes "寶藏的謠言。是啊，這是可以理解的...";
 	next;
-	mes "[Niels]";
-	mes "Well, those rumors of me stumbling";
-	mes "on some wonderful treasure is";
-	mes "just the result of overactive";
-	mes "imaginations. All I've found";
-	mes "was a little something to add";
-	mes "to my collection.";
+	mes "[尼爾斯]";
+	mes "嗯，那些關於我偶然發現";
+	mes "一些奇妙寶藏的謠言";
+	mes "只是過度活躍的";
+	mes "想像力的結果。我所找到的";
+	mes "只是一些可以添加到我的";
+	mes "收藏中的小東西。";
 	next;
-	mes "[Niels]";
-	mes "But...since I've proven to myself";
-	mes "that 'it' actually exists by";
-	mes "seeing it with my own eyes,";
-	mes "to me, what I've obtained is a";
-	mes "valuable treasure.";
+	mes "[尼爾斯]";
+	mes "但是...既然我已經向自己證明了";
+	mes "「它」確實存在，";
+	mes "親眼見證了，";
+	mes "對我來說，我所獲得的是一份";
+	mes "珍貴的寶藏。";
 	next;
-	mes "[Niels]";
-	mes "This village of Comodo!";
-	mes "Don't you think the caves are too";
-	mes "small and narrow for some reason?";
+	mes "[尼爾斯]";
+	mes "這個克魔島村莊！";
+	mes "你不覺得洞穴太";
+	mes "小而狹窄了嗎？";
 	next;
-	mes "[Niels]";
-	mes "So I was thinking about it...";
-	mes "And I came to the conclusion that";
-	mes "there should be something hidden";
-	mes "inside the cave...";
+	mes "[尼爾斯]";
+	mes "所以我在想...";
+	mes "然後我得出結論，";
+	mes "洞穴裡應該藏著";
+	mes "什麼東西...";
 	next;
-	mes "[Niels]";
-	mes "And then!";
-	mes "I finally found it.";
-	mes "The patch to 'the place'";
-	mes "that no one has ever found!";
+	mes "[尼爾斯]";
+	mes "然後！";
+	mes "我終於找到了。";
+	mes "通往「那個地方」的";
+	mes "路徑";
+	mes "，那是從未有人發現的地方！";
 	next;
-	mes "[Niels]";
+	mes "[尼爾斯]";
 	mes "................";
 	next;
-	mes "[Niels]";
-	mes ".......Hm?";
+	mes "[尼爾斯]";
+	mes ".......嗯？";
 	next;
-	mes "[Niels]";
-	mes "I was expecting a spectacular and";
-	mes "rather dramatic sound effect";
-	mes "for my declaration!";
-	mes "Eh, oh well...";
+	mes "[尼爾斯]";
+	mes "我期待著一個壯觀而";
+	mes "相當戲劇性的音效";
+	mes "來配合我的宣告！";
+	mes "欸，算了...";
 	emotion ET_SCRATCH;
 	next;
-	mes "[Niels]";
-	mes "Well, in the spirit of discovery,";
-	mes "don't ever think of asking me";
-	mes "about directions to 'the place'";
-	mes "or about what is in 'the place.'";
-	mes "I wouldn't want to spoil the";
-	mes "surprise.";
+	mes "[尼爾斯]";
+	mes "嗯，本著探索的精神，";
+	mes "永遠不要想著問我";
+	mes "關於「那個地方」";
+	mes "的方向，或關於「那個地方」";
+	mes "裡有什麼。";
+	mes "我不想破壞";
+	mes "驚喜。";
 	next;
-	mes "[Niels]";
-	mes "If you're a real adventurer,";
-	mes "I expect you to scream at the";
-	mes "top of your lungs...";
+	mes "[尼爾斯]";
+	mes "如果你是真正的冒險者，";
+	mes "我希望你用盡全身力氣嘶吼...";
 	next;
-	mes "[Niels]";
-	mes "'Ahhhh! I need to know what it";
-	mes "is!!' Kick the door open and run";
-	mes "like hell to find this place on";
-	mes "your own!!";
+	mes "[尼爾斯]";
+	mes "'啊啊啊！我需要知道那是什麼！！'";
+	mes "踢開門，像地獄一樣奔跑";
+	mes "自己找到這個地方！！";
 	next;
-	mes "[Niels]";
-	mes "Now! Hurry and seek this place";
-	mes "out! Will this place be a totally";
-	mes "new world, or will it be a trap";
-	mes "to hell?! Go forth, meet your";
-	mes "destiny, adventurer!";
+	mes "[尼爾斯]";
+	mes "現在！趕緊尋找這個地方";
+	mes "這個地方會是一個全新的";
+	mes "世界，還是通往地獄的陷阱";
+	mes "呢？！前進吧，迎接你的";
+	mes "命運，冒險者！";
 	close;
 }
 
-umbala,70,106,3	script	Utan Kid#um	781,{
+umbala,70,106,3	script	雨檀族 小孩#um	781,{
 	if (event_umbala >= 3) {
 		mes "[???]";
-		mes "Huh?";
-		mes "You're not one of us, are you?";
+		mes "蛤？";
+		mes "你不是我們的人，對吧？";
 		next;
 		mes "[???]";
-		mes "Heh! Hi!";
-		mes "My name is Haatan.";
+		mes "嘿！嗨！";
+		mes "我的名字是哈坦。";
 		emotion ET_SMILE;
 		next;
-		mes "[Haatan]";
-		mes "...*Sigh*";
-		mes "I am sorry, but I cannot play with";
-		mes "you right now. My parent's house";
-		mes "was struck by lightning yesterday";
-		mes "and it burned down our roof...";
+		mes "[哈坦]";
+		mes "...*嘆氣*...";
+		mes "我很抱歉，但我現在不能和你玩。";
+		mes "我父母的房子昨天被雷擊中";
+		mes "屋頂燒毀了...";
 		emotion ET_CRY;
 		next;
-		mes "[Haatan]";
+		mes "[哈坦]";
 		mes " . . . !";
 		next;
-		mes "[Haatan]";
-		mes "Oh yes! Could you help me?";
-		mes "You look pretty well off...";
-		mes "Can donate some money for";
-		mes "re-constructing my parents' house?";
-		mes "You Rune-Midgartsians are all";
-		mes "richer than Utans! I beg you!";
+		mes "[哈坦]";
+		mes "喔，對了！你能幫我嗎？";
+		mes "你看起來很富裕...";
+		mes "可以捐一些錢";
+		mes "重建我父母的房子嗎？";
+		mes "你們盧恩-米德加茲的人都比";
+		mes "烏坦人有錢！我求求你！";
 		emotion ET_SMILE;
 		next;
-		if (select("(Nod head):(Shake head)") == 1) {
-			mes "[Haatan]";
-			mes "Whoaaaa!!";
-			mes "You the man~!";
-			mes "Thank you so much, yay~!";
+		if (select("(點頭):(搖頭)") == 1) {
+			mes "[哈坦]";
+			mes "哇啊啊啊！！";
+			mes "你真棒～！";
+			mes "非常感謝你，耶～！";
 			if (Zeny > 1000) {
 				set Zeny, Zeny-1000;
 				if (checkweight(517,1)) {
@@ -283,58 +280,58 @@ umbala,70,106,3	script	Utan Kid#um	781,{
 			}
 			else {
 				next;
-				mes "[Haatan]";
-				mes "Uh...";
-				mes "It looks like...";
-				mes "You don't have much";
-				mes "yourself...";
+				mes "[哈坦]";
+				mes "呃...";
+				mes "看起來...";
+				mes "你好像也";
+				mes "沒有多少...";
 				emotion ET_HNG;
 				close;
 			}
 			next;
-			mes "[Haatan]";
-			mes "Thank you so much!";
+			mes "[哈坦]";
+			mes "非常感謝你！";
 			emotion ET_SMILE;
 			close;
 		}
-		mes "[Haatan]";
-		mes ".............*Sob*...";
+		mes "[哈坦]";
+		mes ".............*啜泣*...";
 		emotion ET_CRY;
 		close;
 	}
 	else {
 		mes "[???]";
-		mes "Umbah?";
-		mes "Umbala umbabah umbah?";
+		mes "嗯巴？";
+		mes "烏姆巴拉 嗯巴巴 嗯巴？";
 		next;
 		mes "[???]";
-		mes "Umbah! Umbaumbah!";
-		mes "Umbahumbah Haatan babah.";
+		mes "嗯巴！嗯巴嗯巴！";
+		mes "嗯巴嗯巴 哈坦 巴巴。";
 		emotion ET_CRY;
 		next;
-		mes "[Haatan]";
-		mes "........umbah,";
-		mes "Umbah umbah umbaumbumbah umbah umbah";
-		mes "Babaum babahum woombah umbah umbabah";
-		mes "Umbah umbah";
-		mes "..Umbah umbabah umbah...";
+		mes "[哈坦]";
+		mes "........嗯巴，";
+		mes "嗯巴 嗯巴 嗯巴嗯嗯巴 嗯巴 嗯巴";
+		mes "巴巴嗯 巴巴嗯 嗚嗯巴 嗯巴 嗯巴巴";
+		mes "嗯巴 嗯巴";
+		mes "..嗯巴 嗯巴巴 嗯巴...";
 		emotion ET_SMILE;
 		next;
-		mes "[Haatan]";
+		mes "[哈坦]";
 		mes " . . . !";
 		next;
-		mes "[Haatan]";
-		mes "Umbah!";
-		mes "Umbah umbah? Umbah umbahbah";
-		mes "abaum babahum woombah!";
-		mes "Umbahumbah umbabahumbaumhumbah! Umbah!";
+		mes "[哈坦]";
+		mes "嗯巴！";
+		mes "嗯巴 嗯巴？嗯巴 嗯巴巴";
+		mes "阿包 嗯巴嗯 嗚嗯巴！";
+		mes "嗯巴嗯巴 嗯巴巴嗯巴嗯嗯巴！嗯巴！";
 		emotion ET_SMILE;
 		next;
-		if (select("(Nod head):(Shake head)") == 1) {
-			mes "[Haatan]";
-			mes "Umbaumbah!!";
-			mes "Um~bahumbah~ Um~baumbah~";
-			mes "Um~baumbah~ um~baumbah~";
+		if (select("(點頭):(搖頭)") == 1) {
+			mes "[哈坦]";
+			mes "嗯巴嗯巴！！";
+			mes "嗯～巴嗯巴～ 嗯～巴嗯巴～";
+			mes "嗯～巴嗯巴～ 嗯～巴嗯巴～";
 			if (Zeny > 1000) {
 				set Zeny, Zeny-1000;
 				if (checkweight(517,1)) {
@@ -344,40 +341,40 @@ umbala,70,106,3	script	Utan Kid#um	781,{
 			}
 			else {
 				next;
-				mes "[Haatan]";
-				mes "...umbah? Umbahumbah!! Umbaum!";
+				mes "[哈坦]";
+				mes "...嗯巴？嗯巴嗯巴！！嗯包！";
 				emotion ET_HNG;
 				close;
 			}
 			next;
-			mes "[Haatan]";
-			mes "Umba umba umbaum.";
+			mes "[哈坦]";
+			mes "嗯巴 嗯巴 嗯包。";
 			emotion ET_CRY;
 			close;
 		}
-		mes "[Haatan]";
-		mes "........umbah..";
+		mes "[哈坦]";
+		mes "........嗯巴..";
 		emotion ET_SMILE;
 		close;
 	}
 	close;
 }
 
-umbala,59,243,5	script	Utan Kid#1	787,{
+umbala,59,243,5	script	雨檀族 小孩#1	787,{
 	if (event_umbala >= 3) {
-		mes "[Kotan]";
+		mes "[柯坦]";
 		mes "............";
-		mes ".........poop!";
-		mes ".....me like Meat.";
-		mes "....gimme a Meat.";
+		mes ".........便便！";
+		mes ".....我喜歡肉。";
+		mes "....給我肉。";
 		emotion ET_ROCK;
 		next;
-		if (select("Give him Meat.:Refuse.") == 1) {
+		if (select("給他肉。:拒絕。") == 1) {
 			if (countitem(517) > 0) {
-				mes "[Kotan]";
-				mes "Whoa, are you really giving me";
-				mes "Meat? Thanks! I will pay you";
-				mes "back with these.";
+				mes "[柯坦]";
+				mes "哇，你真的要給我";
+				mes "肉嗎？謝謝！我會用";
+				mes "這些來回報你。";
 				delitem 517,1;// Meat
 				if ( checkre(0) ) {
 					//Clover 50%, Fluff 25%, Jellopy 25%
@@ -395,19 +392,19 @@ umbala,59,243,5	script	Utan Kid#1	787,{
 				emotion ET_SCISSOR;
 				close;
 			}
-			mes "[Kotan]";
-			mes "Hah! You don't have Meat,";
-			mes "but pretend that you do?!";
-			mes "I hate people who lie";
-			mes "to me!!";
+			mes "[柯坦]";
+			mes "哈！你沒有肉，";
+			mes "卻假裝你有？！";
+			mes "我討厭對我";
+			mes "說謊的人！！";
 			percentheal -20,0;
 			emotion ET_FRET;
 			close;
 		}
-		mes "[Kotan]";
+		mes "[柯坦]";
 		mes ".........";
-		mes ".....hungwee.";
-		mes ".....I want Meat.";
+		mes ".....肚肚餓。";
+		mes ".....我想要肉。";
 		percentheal -1,0;
 		emotion ET_CRY;
 		close;
@@ -415,16 +412,16 @@ umbala,59,243,5	script	Utan Kid#1	787,{
 	else {
 		mes "[???]";
 		mes "............";
-		mes "........umbah.";
-		mes ".......umbabah.";
-		mes "......humbah.";
+		mes "........嗯巴。";
+		mes ".......嗯巴巴。";
+		mes "......嗯巴。";
 		emotion ET_ROCK;
 		next;
-		if (select("Umbah:Umbaboo") == 1) {
+		if (select("嗯巴:嗯巴巴喔") == 1) {
 			if (countitem(517) > 0) {
 				mes "[???]";
-				mes "Umbaumbaumbabababah.";
-				mes "Umbababahum.";
+				mes "嗯巴嗯巴嗯巴巴巴巴巴。";
+				mes "嗯巴巴巴嗯。";
 				delitem 517,1;// Meat
 				if ( checkre(0) ) {
 					switch (rand(1,4)) {
@@ -443,136 +440,135 @@ umbala,59,243,5	script	Utan Kid#1	787,{
 				close;
 			}
 			mes "[???]";
-			mes "Umbahumumhumbubabababah!!";
-			mes "Umbahumbababah umbahumboo!";
+			mes "嗯巴嗯嗯嗯嗯巴布巴巴巴！！";
+			mes "嗯巴嗯巴巴 嗯巴嗯布！";
 			percentheal -20,0;
 			emotion ET_FRET;
 			close;
 		}
 		mes "[???]";
 		mes "...........";
-		mes "......woong bah.";
-		mes "....umbabababah.";
+		mes "......嗚嗡 巴。";
+		mes "....嗯巴巴巴巴。";
 		emotion ET_CRY;
 		percentheal -1,0;
 		close;
 	}
 }
 
-umbala,177,153,3	script	Pasto#um	97,{
-	mes "[Pasto]";
+umbala,177,153,3	script	帕斯托#um	97,{
+	mes "[帕斯托]";
 	emotion ET_SURPRISE;
-	mes "Oh my god~! Finally,";
-	mes "another Rune-Midgartsian!";
-	mes "I've never seen anyone from";
-	mes "home in this place before!";
-	mes "Nice to meet you, my name is Pasto!";
+	mes "我的天啊~! 終於，";
+	mes "又一個盧恩-米德加茲人！";
+	mes "我從來沒在這個地方";
+	mes "見過家鄉來的人！";
+	mes "很高興認識你，我的名字是帕斯托！";
 	next;
-	mes "[Pasto]";
-	mes "This place is called Umbala.";
-	mes "The local people in this village";
-	mes "have formed a culture that's";
-	mes "totally different from other";
-	mes "places I've been.";
+	mes "[帕斯托]";
+	mes "這個地方叫做烏巴拉。";
+	mes "這個村莊的當地人";
+	mes "形成了一種文化，";
+	mes "與我去過的";
+	mes "其他地方完全不同。";
 	next;
-	mes "[Pasto]";
-	mes "I guess it's because this";
-	mes "place has been isolated from";
-	mes "other regions because of its";
-	mes "geographical features.";
+	mes "[帕斯托]";
+	mes "我想這是因為這個";
+	mes "地方由於其";
+	mes "地理特徵而與";
+	mes "其他地區隔絕。";
 	next;
-	mes "[Pasto]";
-	mes "They look different from us, and";
-	mes "use a language that is still very";
-	mes "confusing to me. I was also";
-	mes "confounded by their different use";
-	mes "of facial expression.";
+	mes "[帕斯托]";
+	mes "他們看起來和我們不一樣，而且";
+	mes "使用的語言對我來說仍然非常";
+	mes "令人困惑。我也被他們不同";
+	mes "的面部表情使用方式所";
+	mes "困惑。";
 	next;
-	mes "[Pasto]";
-	mes "Of course, there are some";
-	mes "similarities. However, you might";
-	mes "want to be careful about certain";
-	mes "issues.";
+	mes "[帕斯托]";
+	mes "當然，有些";
+	mes "相似之處。但是，您可能";
+	mes "需要注意某些";
+	mes "問題。";
 	next;
-	mes "[Pasto]";
-	mes "Sometimes, what you say or do";
-	mes "or do could be misinterpreted as";
-	mes "having the totally opposite meaning.";
+	mes "[帕斯托]";
+	mes "有時，你所說或所做的事情";
+	mes "可能會被誤解為";
+	mes "具有完全相反的含義。";
 	next;
-	mes "[Pasto]";
-	mes "I wish I could speak their";
-	mes "language...*Sigh*";
-	mes "...Or I wish I could meet more";
-	mes "people here that speak my";
-	mes "language...I...I'm...";
-	mes "So very lonely...*Sob*";
+	mes "[帕斯托]";
+	mes "我希望我能說他們的";
+	mes "語言...*嘆氣*";
+	mes "...或者我希望我能遇到更多";
+	mes "在這裡說我的";
+	mes "語言的人...我...我是...";
+	mes "非常寂寞...*啜泣*";
 	emotion ET_CRY;
 	close;
 }
 
-umbala,80,146,4	script	Yuwooki#um	753,{
-	mes "[Yuwooki]";
+umbala,80,146,4	script	優武克#um	753,{
+	mes "[優武克]";
 	mes "Umbah umbah woogawoo...";
-	mes "oops, sorry! I'm so used";
-	mes "to speaking in Utan by now.";
-	mes "It's a pleasure to meet you.";
+	mes "哎呀，對不起！我現在太習慣";
+	mes "用烏坦語說話了。";
+	mes "很高興認識你。";
 	next;
-	mes "[Yuwooki]";
-	mes "I never imagined that I would";
-	mes "meet another person from";
-	mes "the homeland in this village.";
-	mes "Hahahahah~!";
+	mes "[優武克]";
+	mes "我從未想過我會在";
+	mes "這個村莊遇到另一個";
+	mes "來自家鄉的人。";
+	mes "哈哈哈~!";
 	next;
-	mes "[Yuwooki]";
-	mes "I came here to seek strong people";
-	mes "to help me master my fighting";
-	mes "skills. But I was soon frustrated";
-	mes "because it took me a long";
-	mes "time to learn the language...";
+	mes "[優武克]";
+	mes "我來這裡是為了尋找強者";
+	mes "來幫助我掌握我的戰鬥";
+	mes "技巧。但我很快就感到沮喪";
+	mes "因為我花了很多";
+	mes "時間來學習語言...";
 	next;
-	mes "[Yuwooki]";
-	mes "Well, now I am kind of used to my";
-	mes "circumstances. Even though it";
-	mes "took me a while to used to";
-	mes "Utan culture. Hahahaha~!";
+	mes "[優武克]";
+	mes "嗯，現在我有點習慣了我的";
+	mes "情況。即使我";
+	mes "花了一段時間才習慣";
+	mes "烏坦文化。哈哈哈~!";
 	next;
-	mes "[Yuwooki]";
-	mes "But you know what was the weirdest";
-	mes "thing I found out about Utan";
-	mes "culture? At first the Utan men";
-	mes "seemed to have, shall we say, a";
-	mes "strong species preservation instinct.";
+	mes "[優武克]";
+	mes "但你知道我發現關於烏坦";
+	mes "文化最奇怪的事情是什麼嗎？起初烏坦男人";
+	mes "似乎有，我們可以說，一種";
+	mes "強烈的物種保存本能。";
 	next;
-	mes "[Yuwooki]";
-	mes "There are many Utan playboys in";
-	mes "this village. Some may think";
-	mes "the Utans are primitive in";
-	mes "this respect, but...";
+	mes "[優武克]";
+	mes "在這個村莊裡有很多烏坦花花公子。";
+	mes "有些人可能認為";
+	mes "烏坦人在";
+	mes "這方面很原始，但是...";
 	next;
-	mes "[Yuwooki]";
-	mes "As I learned more about them,";
-	mes "I eventually realized that their";
-	mes "courtship rituals are actually";
-	mes "more advanced than anything the";
-	mes "Rune-Midgarts culture has to offer.";
+	mes "[優武克]";
+	mes "隨著我對他們的了解越來越多，";
+	mes "我最終意識到他們的";
+	mes "求愛儀式實際上";
+	mes "比盧恩-米德加爾特文化所能提供的";
+	mes "任何東西都更先進。";
 	next;
-	mes "[Yuwooki]";
-	mes "It's really quite fascinating.";
-	mes "I'm actually still learning";
-	mes "quite much from the Utan";
-	mes "playboys and their awesome methods.";
+	mes "[優武克]";
+	mes "這真的很吸引人。";
+	mes "我實際上還在學習";
+	mes "從烏坦";
+	mes "花花公子和他們令人敬畏的方法中學習。";
 	close;
 }
 
-umbala,140,157,6	script	Utan Man#1	785,{
+umbala,140,157,6	script	雨檀族 青年#1	785,{
 	if (event_umbala >= 3) {
-		mes "[Jertan]";
-		mes "Bungee jumping can be dangerous,";
-		mes "and you can risk your life doing";
-		mes "it. We Utans have consider";
-		mes "bungee jumping an important";
-		mes "part of the ceremony of";
-		mes "becoming an adult.";
+		mes "[傑坦]";
+		mes "高空彈跳可能很危險，";
+		mes "而且你可能會冒著生命危險去做。";
+		mes "我們烏坦人認為";
+		mes "高空彈跳是";
+		mes "成人禮的一個重要";
+		mes "環節。";
 		close;
 	}
 	else {
@@ -584,14 +580,14 @@ umbala,140,157,6	script	Utan Man#1	785,{
 	}
 }
 
-umbala,146,157,4	script	Utan Man#2	786,{
+umbala,146,157,4	script	雨檀族 青年#2	786,{
 	if (event_umbala >= 3) {
-		mes "[Arotan]";
-		mes "Completing the bungee jump";
-		mes "is very difficult to do.";
-		mes "Today, we are here in celebration";
-		mes "of the people that made it and";
-		mes "have shown their courage.";
+		mes "[阿羅坦]";
+		mes "完成高空彈跳";
+		mes "非常困難。";
+		mes "今天，我們在這裡慶祝";
+		mes "那些成功並且";
+		mes "展現了他們勇氣的人們。";
 		close;
 	}
 	else {
@@ -602,21 +598,20 @@ umbala,146,157,4	script	Utan Man#2	786,{
 	}
 }
 
-umbala,149,165,4	script	Utan Kid#3	781,{
+umbala,149,165,4	script	雨檀族 小孩#3	781,{
 	if (event_umbala >= 3) {
-		mes "[Klumatan]";
-		mes "It's really scary, falling from";
-		mes "such a high place...";
-		mes "But I guess you have to do it,";
-		mes "otherwise no one will ever";
-		mes "consider you a grownup.";
+		mes "[克魯馬坦]";
+		mes "從這麼高的地方掉下來真的很可怕...";
+		mes "但我想你必須這麼做，";
+		mes "否則沒有人會";
+		mes "把你當作成年人。";
 		next;
-		mes "[Klumatan]";
-		mes "I guess I don't want to";
-		mes "be a grownup right away.";
-		mes "But some kids my age are";
-		mes "in too big of a hurry";
-		mes "to not be kids anymore.";
+		mes "[克魯馬坦]";
+		mes "我想我不想";
+		mes "馬上成為成年人。";
+		mes "但是一些和我同齡的孩子";
+		mes "太過急於";
+		mes "不再是孩子了。";
 		close;
 	}
 	else {
@@ -628,182 +623,177 @@ umbala,149,165,4	script	Utan Kid#3	781,{
 	}
 }
 
-umbala,92,159,4	script	Bertan#um	785,{
+umbala,92,159,4	script	卑樂坦#um	785,{
 	if (event_umbala >= 3) {
-		mes "[Bertan]";
-		mes "What up, loser!";
+		mes "[卑樂坦]";
+		mes "遜咖，你在幹嘛!";
 		next;
-		mes "[Bertan]";
-		mes "What's the matter,";
-		mes "ya big Rune-Midgartsian?!?!";
-		mes "I just called you a 'loser!'";
-		mes "I guess you're too stupid";
-		mes "to understand!!";
-		mes "Hahahahahahaahahhahaha~!";
+		mes "[卑樂坦]";
+		mes "怎麼了，";
+		mes "你這隻大盧恩-米德加爾特豬?!?!";
+		mes "我剛剛叫你 '遜咖！'";
+		mes "我想你太笨了";
+		mes "聽不懂！！";
+		mes "哈哈哈哈哈哈哈哈哈哈哈~!";
 		next;
-		mes "[Bertan]";
+		mes "[卑樂坦]";
 		mes "...";
-		mes "Uh...oh!";
+		mes "呃...哦!";
 		next;
-		mes "[Bertan]";
-		mes "It looks like you can understand";
-		mes "me--! Good job, good job!";
-		mes "Alright, by way of apology,";
-		mes "do you want to hear a joke?";
+		mes "[卑樂坦]";
+		mes "看起來你能聽懂";
+		mes "我說的話--！做得好，做得好！";
+		mes "好吧，為了表示歉意，";
+		mes "你想聽個笑話嗎？";
 		next;
-		mes "[Bertan]";
-		mes "Alright, alright.";
-		mes "Here we go.";
-		mes "Ummmm...";
-		mes "Alright, I got one.";
+		mes "[卑樂坦]";
+		mes "好吧，好吧。";
+		mes "我們開始了。";
+		mes "嗯...";
+		mes "好吧，我想到一個了。";
 		next;
 		switch(rand(1,6)) {
 		case 1:
-			mes "[Bertan]";
-			mes "What did the Rune-Midgartsian";
-			mes "say to the Savage?";
+			mes "[卑樂坦]";
+			mes "盧恩-米德加爾特人";
+			mes "對野蠻人說了什麼？";
 			mes "...";
 			next;
-			mes "[Bertan]";
-			mes "I don't know...";
-			mes "But they didn't have any";
-			mes "trouble understanding";
-			mes "each other!!! HAHAHAHA~!";
-			mes "Get it? 'Cuz, like,";
-			mes "they're both pigs~!";
+			mes "[卑樂坦]";
+			mes "我不知道...";
+			mes "但他們沒有任何";
+			mes "理解上的困難";
+			mes "互相理解！！！哈哈哈~!";
+			mes "懂了嗎？因為，就像，";
+			mes "他們都是豬~!";
 			next;
-			mes "[Bertan]";
-			mes "Not funny, huh?";
-			mes "Oh well. I guess my";
-			mes "sense of humor is just";
-			mes "too sophisticated.";
+			mes "[卑樂坦]";
+			mes "不好笑，是嗎？";
+			mes "喔，好吧。我想我的";
+			mes "幽默感太";
+			mes "精妙了。";
 			close;
 		case 2:
-			mes "[Bertan]";
-			mes "Okay...what's the best";
-			mes "way to tame an Orc Lady?";
-			mes "Give up..?";
+			mes "[卑樂坦]";
+			mes "好吧...馴服獸人女士的";
+			mes "最佳方法是什麼？";
+			mes "放棄了嗎..?";
 			next;
-			mes "[Bertan]";
-			mes "With a wedding ring!";
-			mes "HAHAHAHAHAHAHHA!";
-			mes "Oh God~ I'm hilarious!!";
+			mes "[卑樂坦]";
+			mes "用結婚戒指！";
+			mes "哈哈哈哈哈哈哈哈！";
+			mes "天啊~我太搞笑了！！";
 			next;
-			mes "[Bertan]";
+			mes "[卑樂坦]";
 			mes "...";
-			mes "...Wait.";
-			mes "Wait a minute...";
+			mes "...等等。";
+			mes "等一下...";
 			next;
-			mes "[Bertan]";
-			mes "That's not even funny...";
-			mes "Just incredibly...";
-			mes "Scary...";
-			mes "Brrr--!";
-			mes "She's hideous!!";
+			mes "[卑樂坦]";
+			mes "這甚至不好笑...";
+			mes "只是令人難以置信地...";
+			mes "可怕...";
+			mes "布魯--!";
+			mes "她太醜陋了！！";
 			close;
 		case 3:
-			mes "[Bertan]";
-			mes "Actually...forget it.";
+			mes "[卑樂坦]";
+			mes "實際上...算了吧。";
 			next;
-			mes "[Bertan]";
-			mes "I was going to say a";
-			mes "knock knock joke about";
-			mes "Isis, but then decided";
-			mes "that kind of humor is";
-			mes "too low brow.";
-			mes "...Zing!";
+			mes "[卑樂坦]";
+			mes "我本來要說一個關於";
+			mes "伊希斯的敲門笑話，但後來決定";
+			mes "那種幽默太";
+			mes "低俗了。";
+			mes "...叮!";
 			close;
 		case 4:
-			mes "[Bertan]";
-			mes "Why are Rune-Midgartsians";
-			mes "SOOoOOoo...";
-			mes "Um, hmmmmm.";
-			mes "Maybe that joke";
-			mes "isn't so good for this";
-			mes "situation, yeah?";
+			mes "[卑樂坦]";
+			mes "為什麼盧恩-米德加爾特人";
+			mes "這麼...SOOoOOoo...";
+			mes "嗯，嗯嗯嗯。";
+			mes "也許這個笑話";
+			mes "不太適合這種";
+			mes "情況，是吧？";
 			close;
 		case 5:
-			mes "[Bertan]";
-			mes "Okay, why is it that";
-			mes "GMs prefer not to be";
-			mes "seen...? Give up?";
+			mes "[卑樂坦]";
+			mes "好吧，為什麼GM";
+			mes "不喜歡被";
+			mes "看到...? 放棄了嗎？";
 			next;
-			mes "[Bertan]";
-			mes "BECAUSE THOSE GUYS WEAR";
-			mes "SKIRTS ~! HAHAHA!";
-			mes "OH MAN, I MADE A FUNNY!";
+			mes "[卑樂坦]";
+			mes "因為那些傢伙穿";
+			mes "裙子~! 哈哈哈!";
+			mes "老天，我說了個好笑的!";
 			next;
-			mes "[Bertan]";
-			mes "*Whew* Yowza~";
-			mes "Oh, man.";
-			mes "Utterly classic.";
+			mes "[卑樂坦]";
+			mes "*呼* 哇嗚~";
+			mes "喔，老天。";
+			mes "完全是經典。";
 			close;
 		case 6:
-			mes "[Bertan]";
-			mes "A Crusader, an Alchemist and a Novice walk into a bar.";
+			mes "[卑樂坦]";
+			mes "一個十字軍、一個鍊金術士和一個初心者走進了一間酒吧。";
 			next;
-			mes "[Bertan]";
-			mes "Inside, they see a sign that";
-			mes "says '^CC0000Monster Help Agency:";
-			mes "LADIES ONLY.^000000'";
+			mes "[卑樂坦]";
+			mes "在裡面，他們看到一個標誌寫著 '^CC0000Monster Help Agency: LADIES ONLY.^000000'";
 			next;
-			mes "[Bertan]";
-			mes "'^000099Oh!^000000' says the Crusader.";
-			mes "'^000099It's a lucky thing we are";
-			mes "all ladies.^000000' She goes up";
-			mes "and says '^000099Gimmie a ride.^000000'";
-			mes "Kinda rude for a Crusader,";
-			mes "but whatever.";
+			mes "[卑樂坦]";
+			mes "'^000099哦！^000000' 十字軍說。";
+			mes "'^000099幸運的是我們";
+			mes "都是女士。^000000' 她走上去";
+			mes "說 '^000099載我一程。^000000'";
+			mes "對十字軍來說有點粗魯，";
+			mes "但隨便啦。";
 			next;
-			mes "[Bertan]";
-			mes "Out of nowhere, this";
-			mes "Grand PecoPeco appears";
-			mes "and is all '^CC0000I'll give you";
-			mes "a ride, baby. Careful, this";
-			mes "road can get buuuuumpy.^000000'";
-			mes "And then they're off.";
+			mes "[卑樂坦]";
+			mes "不知從哪裡冒出來，這個";
+			mes "巨大的大嘴鳥出現了";
+			mes "而且是 '^CC0000我會載你一程，寶貝。小心點，這條";
+			mes "路可能會很顛簸。^000000'";
+			mes "然後他們就出發了。";
 			next;
-			mes "[Bertan]";
-			mes "Next comes the Alchemist";
-			mes "and she's like '^330099I need";
-			mes "help killing Zombies^000000' and";
-			mes "then this Marine Sphere";
-			mes "comes from out of";
-			mes "nowhere and is all...";
+			mes "[卑樂坦]";
+			mes "接下來是煉金術士";
+			mes "她說 '我需要幫忙";
+			mes "殺殭屍'，然後這個";
+			mes "海葵魔就不知道從哪裡";
+			mes "冒出來了，而且還...";
 			next;
-			mes "[Bertan]";
-			mes "'^CC0000I got your fire. Careful";
-			mes "baby, touch me the wrong";
-			mes "way and I might just";
-			mes "exploooode.^000000' So then";
-			mes "they're off on their";
-			mes "merry way too.";
+			mes "[卑樂坦]";
+			mes "'我來幫你點火。小心";
+			mes "點，碰我碰錯了";
+			mes "方式我可能會";
+			mes "爆～炸～喔。'然後";
+			mes "他們也快快樂樂地";
+			mes "出發了。";
 			next;
-			mes "[Bertan]";
-			mes "Finally, the Novice";
-			mes "comes up and says";
-			mes "'^006633I need someone to";
-			mes "party with.^000000'";
+			mes "[卑樂坦]";
+			mes "最後，初心者";
+			mes "走了過來說";
+			mes "'我需要人";
+			mes "一起組隊。'";
 			next;
-			mes "[Bertan]";
-			mes "Out of nowhere, this";
-			mes "Hode pops up and says...";
+			mes "[卑樂坦]";
+			mes "不知道從哪裡，這個";
+			mes "浩呆冒出來說...";
 			next;
-			mes "[Bertan]";
-			mes "'^CC0000I know some people";
-			mes "but let me check my";
-			mes "Rolodex. HODE on!^000000'";
+			mes "[卑樂坦]";
+			mes "'我認識一些人";
+			mes "但讓我查一下我的";
+			mes "名片盒。HODE on!'";
 			mes "....";
 			next;
-			mes "[Bertan]";
+			mes "[卑樂坦]";
 			mes ".....";
 			mes "..........";
-			mes "No go?";
+			mes "沒戲了？";
 			next;
-			mes "[Bertan]";
-			mes "Well, come on!";
-			mes "I can't be funny";
-			mes "all the time, you know?";
+			mes "[卑樂坦]";
+			mes "好啦，拜託!";
+			mes "我不可能一直都這麼";
+			mes "幽默，好嗎？";
 			close;
 		}
 	}
@@ -824,28 +814,27 @@ umbala,92,159,4	script	Bertan#um	785,{
 	close;
 }
 
-umbala,194,104,4	script	Utan Kid#2	787,{
+umbala,194,104,4	script	雨檀族 小孩#2	787,{
 	if (event_umbala >= 3) {
-		mes "[Boorkatan]";
-		mes "Huh? You're from Rune-Midgarts,";
-		mes "aren't you? Have you ever been bungee jumping?";
+		mes "[布卡坦]";
+		mes "蛤？你是從盧恩-米德加茲來的，";
+		mes "對吧？你有沒有玩過高空彈跳？";
 		next;
-		if (select("Yeah:No") == 1) {
-			mes "[Boorkatan]";
-			mes "Whoa, what a surprise! I never";
-			mes "would have thought someone from";
-			mes "outside would know how to do it.";
-			mes "Okay, I'll take your word for";
-			mes "it and welcome you to our village.";
+		if (select("是:否") == 1) {
+			mes "[布卡坦]";
+			mes "哇，真是令人驚訝！我從來";
+			mes "沒想到外面的人";
+			mes "會知道怎麼玩。";
+			mes "好吧，我相信你，並歡迎你來到我們的村莊。";
 			close;
 		}
-		mes "[Boorkatan]";
-		mes "Er, I see...";
-		mes "As part of the ceremony of";
-		mes "adulthood, all Utans have to do";
-		mes "a bungee jump. When I grow up,";
-		mes "I'm gonna do it too, and prove";
-		mes "to everybody that I am a man!";
+		mes "[布卡坦]";
+		mes "呃，我明白了...";
+		mes "作為成人禮的一部分，所有的";
+		mes "烏坦族人都必須玩";
+		mes "高空彈跳。等我長大後，";
+		mes "我也要玩，並向";
+		mes "所有人證明我是個男人！";
 		close;
 	}
 	else {
@@ -853,7 +842,7 @@ umbala,194,104,4	script	Utan Kid#2	787,{
 		mes "Umbaumbababah umhumba.";
 		mes "Umbabaumumba umbaumbah?";
 		next;
-		if (select("Yeah:No") == 1) {
+		if (select("是:否") == 1) {
 			mes "[???]";
 			mes "Umba, Umumbah umbabah.";
 			mes "Umbaumbah umumbabah.";
@@ -867,23 +856,23 @@ umbala,194,104,4	script	Utan Kid#2	787,{
 	}
 }
 
-umbala,193,208,6	script	Utan Man#3	789,{
+umbala,193,208,6	script	雨檀族 青年#3	789,{
 	if (event_umbala >= 3) {
-		mes "[Weitan]";
-		mes "I too did the bungee jump when I";
-		mes "was young. I remember it well...";
-		mes "It was my first time, and the";
-		mes "ground rushed up to meet me...";
-		mes "For a moment, I thought I was";
-		mes "going to get myself killed...";
+		mes "[威坦]";
+		mes "我年輕的時候也玩過高空彈跳。";
+		mes "我還記得...";
+		mes "那是我第一次玩，地面";
+		mes "朝我衝過來...";
+		mes "那一刻，我以為我";
+		mes "死定了...";
 		next;
-		mes "[Weitan]";
-		mes "But after I made it, I was so";
-		mes "proud of myself~";
-		mes "Some Utans may not agree, but";
-		mes "I think bungee jumping is an";
-		mes "important part of the ceremony";
-		mes "of adulthood.";
+		mes "[威坦]";
+		mes "但在我成功之後，我感到非常";
+		mes "自豪~";
+		mes "有些烏坦族人可能不同意，但";
+		mes "我認為高空彈跳是";
+		mes "成人禮的重要";
+		mes "一部分。";
 		close;
 	}
 	else {
@@ -895,41 +884,41 @@ umbala,193,208,6	script	Utan Man#3	789,{
 	}
 }
 
-umbala,139,205,4	script	Utan Man#5	785,{
+umbala,139,205,4	script	雨檀族 青年#5	785,{
 	if (event_umbala >= 3) {
-		mes "[Jooltan]";
-		mes "It's been a long time since I last";
-		mes "saw a Rune-Midgartsian~!";
-		mes "Welcome, stranger.";
+		mes "[裘坦]";
+		mes "我已經很久沒有";
+		mes "見到盧恩-米德加茲人了~!";
+		mes "歡迎你，陌生人。";
 		next;
-		mes "[Jooltan]";
-		mes "We Utans use this place for";
-		mes "bungee jumping. Many Utan";
-		mes "youngsters have shown their";
-		mes "bravery, earned their";
-		mes "self-respect, and became";
-		mes "adults in this very place.";
+		mes "[裘坦]";
+		mes "我們烏坦族人把這個地方";
+		mes "用來玩高空彈跳。許多烏坦族";
+		mes "年輕人展現了他們的";
+		mes "勇氣，贏得了他們的";
+		mes "自尊，並在這個地方";
+		mes "成為了大人。";
 		next;
-		mes "[Jooltan]";
-		mes "Oh...right. A few unlucky people";
-		mes "just fell and died after";
-		mes "messing up their bungee jump. And";
-		mes "a few had heart attacks while";
-		mes "looking at other people jumping down...";
+		mes "[裘坦]";
+		mes "喔...對了。有一些倒楣的人";
+		mes "因為搞砸了高空彈跳而";
+		mes "摔死了。還有些人因為";
+		mes "看著別人往下跳而";
+		mes "心臟病發作...";
 		next;
-		mes "[Jooltan]";
-		mes "So...";
-		mes "Be careful when you walk around,";
-		mes "You don't want to fall off.";
-		mes "And if you want to try a bungee";
-		mes "jump, you should get yourself ready.";
+		mes "[裘坦]";
+		mes "所以...";
+		mes "走路的時候要小心，";
+		mes "你不會想摔下去的。";
+		mes "如果你想試試高空";
+		mes "彈跳，你應該做好準備。";
 		next;
-		mes "[Jooltan]";
-		mes "Oh...right. Supposedly,";
-		mes "there's an unidentified";
-		mes "creature living in the water...";
-		mes "So if you happen to get dunked,";
-		mes "get out of there~!";
+		mes "[裘坦]";
+		mes "喔...對了。據說，";
+		mes "水裡住著";
+		mes "一種不明的生物...";
+		mes "所以如果你不小心掉進水裡，";
+		mes "趕快離開那裡~!";
 		close;
 	}
 	else {
@@ -950,55 +939,55 @@ umbala,139,205,4	script	Utan Man#5	785,{
 	}
 }
 
-um_in,158,71,3	script	Utan villager#um	787,{
+um_in,158,71,3	script	雨檀族 居民#um	787,{
 	if (event_umbala >= 3) {
-		mes "[Mutakutan]";
-		mes "Umbala has many many trees!";
-		mes "I, Mutakutan, like trees so much.";
-		mes "Heh heh~";
+		mes "[穆塔庫坦]";
+		mes "烏巴拉有很多很多的樹!";
+		mes "我，穆塔庫坦，非常喜歡樹。";
+		mes "嘿嘿~";
 		next;
-		mes "[Mutakutan]";
-		mes "There is one special tree I like";
-		mes "the most! That is the oldest and";
-		mes "biggest tree in Umbala!";
-		mes "No wait, I think it is the oldest";
-		mes "and biggest in the world...";
-		mes "I'm sure it is!";
+		mes "[穆塔庫坦]";
+		mes "有一棵我最喜歡的特別的樹!";
+		mes "那是烏巴拉最老、";
+		mes "最大的樹!";
+		mes "不，等等，我想它是世界上最老";
+		mes "最大的樹...";
+		mes "我敢肯定它是!";
 		next;
-		mes "[Mutakutan]";
-		mes "It's really really big and old!";
-		mes "It's so tall, even I haven't seen";
-		mes "the top of this tree yet. I tried";
-		mes "climbing it before, but I could";
-		mes "never reach the top...even though";
-		mes "I'm great at tree climbing.";
+		mes "[穆塔庫坦]";
+		mes "它真的真的很大又很老!";
+		mes "它太高了，即使是我也還沒";
+		mes "看過這棵樹的頂端。我以前";
+		mes "試圖爬它，但我從來";
+		mes "沒有到達頂端...即使";
+		mes "我擅長爬樹。";
 		next;
-		mes "[Mutakutan]";
-		mes "Oh, also the fruits from the tree";
-		mes "are very tasty! I bet they are the";
-		mes "most delicious fruit in the world~";
-		mes "Sweet and sour...eating it just";
-		mes "makes you feel refreshed and";
-		mes "invigorated~!";
+		mes "[穆塔庫坦]";
+		mes "哦，還有，樹上的果實";
+		mes "非常美味!我敢打賭它們是";
+		mes "世界上最美味的水果~";
+		mes "酸酸甜甜的...吃了它只是";
+		mes "讓你感到神清氣爽和";
+		mes "精力充沛~!";
 		next;
-		mes "[Mutakutan]";
-		mes "There's an amazing story about";
-		mes "this fruit. An old man in my";
-		mes "village was suffering from a";
-		mes "mortal disease...nothing";
-		mes "seemed to help...";
+		mes "[穆塔庫坦]";
+		mes "有一個關於";
+		mes "這種水果的驚人故事。我";
+		mes "村裡的一位老人患有";
+		mes "不治之症...什麼";
+		mes "都沒辦法幫他... ";
 		next;
-		mes "[Mutakutan]";
-		mes "But after he took medicine made";
-		mes "from the ground leaves of this";
-		mes "tree, he became healthy and sound";
-		mes "again! I think God sent us the";
-		mes "tree to bless us.";
+		mes "[穆塔庫坦]";
+		mes "但在他吃了用";
+		mes "這種樹的落葉製成的";
+		mes "藥後，他變得健康起來";
+		mes "了! 我認為上帝派給我們這棵";
+		mes "樹來祝福我們。";
 		next;
-		mes "[Mutakutan]";
-		mes "It's at north of my village, so";
-		mes "why don't you go see the greatness";
-		mes "of this tree for yourself?";
+		mes "[穆塔庫坦]";
+		mes "它在我村莊的北部，所以";
+		mes "你為什麼不自己去看看這棵樹";
+		mes "的偉大呢？";
 	}
 	else {
 		mes "[??????]";
@@ -1020,16 +1009,16 @@ um_in,158,71,3	script	Utan villager#um	787,{
 	close;
 }
 
-umbala,140,197,1	script	Bungee Jump	-1,0,0,{
+umbala,140,197,1	script	高空彈跳	-1,0,0,{
 OnTouch_:
 	switch(rand(1,3)) {
 	case 1:
 		percentheal -100,0;
-		mapannounce "umbala","Bungee Jump: "+strcharinfo(0)+" : Kyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa~~~~~~~",bc_map;
+		mapannounce "umbala","高空彈跳: "+strcharinfo(0)+" : Kyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa~~~~~~~",bc_map;
 		end;
 	case 2:
 		percentheal -50,0;
-		mapannounce "umbala","Bungee Jump: "+strcharinfo(0)+" : Wooooooaaaaaaaaaaaaaahhhhhhhhhhhh~~~~~~!",bc_map;
+		mapannounce "umbala","高空彈跳: "+strcharinfo(0)+" : Wooooooaaaaaaaaaaaaaahhhhhhhhhhhh~~~~~~!",bc_map;
 		end;
 	case 3:
 		if (rand(1,2) == 2) {

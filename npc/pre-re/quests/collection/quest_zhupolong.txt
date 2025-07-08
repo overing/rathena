@@ -17,85 +17,85 @@ lou_dun02,161,264,4	script	Dragon Hunter	732,{
 
 	if (checkquest(60182) != -1) {
 		if (checkquest(60182,HUNTING) != 2 ) {
-			mes "[Dragon Hunter]";
-			mes "Have you finished hunting the 50 Zhu Po Long?";
+			mes "[龍之獵人]";
+			mes "你完成狩獵 50 隻朱波龍了嗎？";
 			next;
-			switch(select("Yes:No:I want to quit")) {
+			switch(select("是的:否:我想退出")) {
 			case 1:
-				mes "[Dragon Hunter]";
-				mes "Hmm, I don't think you've hunted 50 yet.";
+				mes "[龍之獵人]";
+				mes "嗯，我不認為你已經狩獵了 50 隻。";
 				close;
 			case 2:
-				mes "[Dragon Hunter]";
-				mes "Remember, I need help hunting Zhu Po Long so go and hunt 50 of them.";
+				mes "[龍之獵人]";
+				mes "記住，我需要你幫忙狩獵朱波龍，所以去狩獵 50 隻吧。";
 				close;
 			case 3:
-				mes "[Dragon Hunter]";
-				mes "Are you sure that you want to stop hunting?";
-				mes "Any progress that you've made will be erased";
+				mes "[龍之獵人]";
+				mes "你確定要停止狩獵嗎？";
+				mes "你所取得的任何進度都將被清除";
 				next;
-				switch(select("Yes:No")) {
+				switch(select("是的:否")) {
 				case 1:
-					mes "[Dragon Hunter]";
-					mes "Ok then, well come back here if you change your mind.";
+					mes "[龍之獵人]";
+					mes "好吧，如果你改變主意就回來這裡。";
 					erasequest 60182;
 					close;
 				case 2:
-					mes "[Dragon Hunter]";
-					mes "Please kill 50 Zhu Po Long in order to make this a Place were people can go to and gather Experience.";
+					mes "[龍之獵人]";
+					mes "請殺死 50 隻朱波龍，以使這個地方成為人們可以去並獲得經驗的地方。";
 					close;
 				}
 			}
 		}
-		mes "[Dragon Hunter]";
-		mes "Amazing, you did that with speed.";
+		mes "[龍之獵人]";
+		mes "太棒了，你做得真快。";
 		getexp 151300,60520;
 		erasequest 60182;
 		close;
 	}
 	if ((BaseLevel > 49) && (BaseLevel < 91)) {
-		mes "[Dragon Hunter]";
-		mes "Oh great!";
-		mes "You are here to help me right?";
-		mes "If not, i don't know what to do with the Monsters in this Place!";
+		mes "[龍之獵人]";
+		mes "喔，太好了！";
+		mes "你是來幫我的對吧？";
+		mes "如果不是，我不知道該如何處理這個地方的怪物！";
 		next;
-		switch(select("Sure:No")) {
+		switch(select("當然:不")) {
 		case 1:
-			mes "[Dragon Hunter]";
-			mes "Great! I knew the moment i saw you that i can count on you!";
-			mes "I need you to reduce the Amount of Monsters which are currently rampaging on this Map!";
-			mes "There are to many Zhu Po Long around, which makes it impossible for the lower level players to gain good experience here.";
+			mes "[龍之獵人]";
+			mes "太好了！當我看到你的那一刻，我就知道我可以依靠你！";
+			mes "我需要你減少目前在這個地圖上橫行的怪物數量！";
+			mes "周圍有太多的朱波龍，這使得低等級的玩家不可能在這裡獲得良好的經驗。";
 			next;
-			mes "[Dragon Hunter]";
-			mes "So, would you still like to help me?";
+			mes "[龍之獵人]";
+			mes "那麼，你還想幫助我嗎？";
 			next;
-			switch(select("Sure:Cancel")) {
+			switch(select("當然:取消")) {
 			case 1:
 				if (BaseLevel > 90) {
-					mes "[Dragon Hunter]";
-					mes "Thank you for your great help with the Zhu Po Long!";
-					mes "Currently the Situation is stable and i'm not in need of your help anymore to kill them.";
+					mes "[龍之獵人]";
+					mes "感謝你對朱波龍的鼎力相助！";
+					mes "目前情況穩定，我不再需要你的幫助來殺死牠們了。";
 					close;
 				}
-				mes "[Dragon Hunter]";
-				mes "Kill 50 of those Zhu Po Long and let me know when you're done. I will reward you for your efforts.";
+				mes "[龍之獵人]";
+				mes "殺死 50 隻朱波龍，並在你完成時告訴我。 我會獎勵你的努力。";
 				setquest 60182;
 				close;
 			case 2:
-				mes "[Dragon Hunter]";
-				mes "If you change your mind, please come back.";
+				mes "[龍之獵人]";
+				mes "如果你改變主意，請回來。";
 				close;
 			}
 		case 2:
-			mes "[Dragon Hunter]";
-			mes "If you change your mind, please come back.";
+			mes "[龍之獵人]";
+			mes "如果你改變主意，請回來。";
 			close;
 		}
 	}
-	mes "[Dragon Hunter]";
-	mes "Oh boy, Oh boy!";
+	mes "[龍之獵人]";
+	mes "哎呀，哎呀！";
 	next;
-	mes "[Dragon Hunter]";
-	mes "Sorry I can't talk right now I am in a world of pain here, these darn Zhu Po Long are going to kill me.";
+	mes "[龍之獵人]";
+	mes "抱歉，我現在無法說話，我正處於痛苦之中，這些該死的朱波龍會殺了我。";
 	close;
 }

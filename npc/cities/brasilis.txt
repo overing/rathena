@@ -14,50 +14,50 @@
 // Brasilis Transportation :: brasilis_trans
 //============================================================
 -	script	::Crewman_bra2	-1,{
-	mes "[Crewman]";
-	mes "Hey, have you heard of a place called Brasilis?";
-	mes "It's a tropical city that's hot like the desert but also rainy. It is a very mysterious place.";
+	mes "[船員]";
+	mes "嘿，你有聽說過一個叫做巴西的地方嗎？";
+	mes "那是一個熱帶城市，像沙漠一樣炎熱，但又多雨。是一個非常神秘的地方。";
 	next;
-	mes "[Crewman]";
-	mes "We recently found a new ocean route to get there easily.";
+	mes "[船員]";
+	mes "我們最近找到了一條新的海上航線，可以輕鬆到達那裡。";
 	if (VIP_SCRIPT) {
 		set .@cost, vip_status(VIP_STATUS_ACTIVE)?1000:10000;
-		mes "It's just 10,000 zeny for a round trip, and 1,000 for VIP! So do you want to go?"; //custom translation (VIP)
+		mes "來回一趟只要 10,000 zeny，VIP 只要 1,000！所以你想去嗎？"; //custom translation (VIP)
 	} else {
 		set .@cost,10000;
-		mes "It's just 10,000 zeny for a round trip! So do you want to go?";
+		mes "來回一趟只要 10,000 zeny！所以你想去嗎？";
 	}
 	next;
-	switch(select("Take me to Brasilis!:I'll stay here.")) {
+	switch(select("帶我去巴西！:我待在這裡。")) {
 	case 1:
 		if (Zeny < .@cost) {
-			mes "[Crewman]";
-			mes "I said "+callfunc("F_InsertComma",.@cost)+" zeny.";
+			mes "[船員]";
+			mes "我說的是 "+callfunc("F_InsertComma",.@cost)+" zeny。";
 			close;
 		}
 		else {
-			mes "[Crewman]";
-			mes "Cool~!! Let's go~!";
+			mes "[船員]";
+			mes "酷喔～！！我們走吧～！";
 			set Zeny, Zeny-.@cost;
 			close2;
 			warp "brasilis",314,60;
 			end;
 		}
 	case 2:
-		mes "[Crewman]";
-		mes "Well if you're ever interested, let me know and I can take you there.";
+		mes "[船員]";
+		mes "如果你有興趣，隨時告訴我，我可以帶你過去。";
 		close;
 	}
 }
 
-brasilis,316,57,3	script	Crewman#bra1	100,{
-	mes "[Crewman]";
-	mes "My ship is going to back to Alberta, do you want to join us?";
+brasilis,316,57,3	script	船員#bra1	100,{
+	mes "[船員]";
+	mes "我的船要開回艾爾貝塔了，你想加入我們嗎？";
 	next;
-	switch(select("Go back to Alberta.:Not yet~.")) {
+	switch(select("回到艾爾貝塔。:還沒～。")) {
 	case 1:
-		mes "[Crewman]";
-		mes "I sure do miss home.";
+		mes "[船員]";
+		mes "我真的很想家。";
 		close2;
 		if (checkre(0))
 			warp "alberta",245,87;
@@ -65,69 +65,69 @@ brasilis,316,57,3	script	Crewman#bra1	100,{
 			warp "alberta",244,115;
 		end;
 	case 2:
-		mes "[Crewman]";
-		mes "Ok, suit yourself. We'll see you when we get back then.";
+		mes "[船員]";
+		mes "好吧，隨你便。那我們回去的時候再見囉。";
 		close;
 	}
 }
 
 // Generic Brasilis NPCs :: brazil_tre
 //============================================================
-brasilis,155,165,3	script	Signpost#bra1	858,{
-	mes ":: Art Museum ::";
+brasilis,155,165,3	script	路標#bra1	858,{
+	mes ":: 美術館 ::";
 	close;
 }
 
-brasilis,191,239,3	script	Signpost#bra2	858,{
-	mes ":: Verass Monument ::";
+brasilis,191,239,3	script	路標#bra2	858,{
+	mes ":: 維拉茲紀念碑 ::";
 	close;
 }
 
-brasilis,240,247,3	script	Signpost#bra3	858,{
-	mes ":: Market ::";
+brasilis,240,247,3	script	路標#bra3	858,{
+	mes ":: 市場 ::";
 	mes " ";
-	mes "- For your Potions and Weaponry -";
+	mes "- 為您提供藥水和武器 -";
 	close;
 }
 
-brasilis,303,309,3	script	Signpost#bra4	858,{
-	mes ":: Jungle Cable ::";
-	mes "- Not for the faint of heart -";
+brasilis,303,309,3	script	路標#bra4	858,{
+	mes ":: 叢林纜車 ::";
+	mes "- 不適合膽小的人 -";
 	close;
 }
 
-brasilis,278,137,3	script	Signpost#bra5	858,{
-	mes ":: Brasilis Hotel ::";
+brasilis,278,137,3	script	路標#bra5	858,{
+	mes ":: 巴西旅館 ::";
 	close;
 }
 
-brasilis,137,77,5	script	Ice-Cream Maker	85,{
-	mes "[Ice Cream Maker]";
-	mes "Come~come~";
-	mes "Ice cream is the perfect snack for a hot day~";
-	mes "It's just ^3355FF100 Zeny^000000~";
-	mes "Ice Cream~";
-	mes "Get 'yer Ice Cream!";
+brasilis,137,77,5	script	冰淇淋商	85,{
+	mes "[冰淇淋商]";
+	mes "來～來～";
+	mes "冰淇淋是炎熱天氣的完美點心～";
+	mes "只要 ^3355FF100 Zeny^000000～";
+	mes "冰淇淋～";
+	mes "來買冰淇淋！";
 	next;
-	switch(select("Give me one!:Ice Cream?:Cancel.")) {
+	switch(select("給我一個！:冰淇淋？:取消。")) {
 	case 1:
-		mes "[Ice Cream Maker]";
-		mes "Since there are so many people want to get a cool ice cream you can order only 5 at a time.";
-		mes "So how many d'ya want?";
+		mes "[冰淇淋商]";
+		mes "由於有很多人想要買冰涼的冰淇淋，你一次只能訂購 5 個。";
+		mes "所以你想要幾個？";
 		next;
 		while(1) {
 			input .@input; //,1,5;
 			if (.@input == 0) {
-				mes "[Ice Cream Maker]";
-				mes "None?";
-				mes "Fine get outta the way, I have customers to serve.";
+				mes "[冰淇淋商]";
+				mes "沒有？";
+				mes "好吧，讓開，我還要服務其他客人。";
 				close;
 			}
 			else if ((.@input < 0) || (.@input > 5)) {
-				mes "[Ice Cream Maker]";
-				mes "Wow.";
-				mes "You ordered too much.";
-				mes "If you eat over 5 you might need to fight with a monster in your stomach. Calm down buddy.";
+				mes "[冰淇淋商]";
+				mes "哇。";
+				mes "你點太多了。";
+				mes "如果你吃超過 5 個，你可能需要在你的胃裡和怪物戰鬥。冷靜點，老兄。";
 				next;
 			}
 			else
@@ -135,35 +135,35 @@ brasilis,137,77,5	script	Ice-Cream Maker	85,{
 		}
 		set .@icecream_hap,.@input*100;
 		if (Zeny < .@icecream_hap) {
-			mes "[Ice Cream Maker]";
-			mes "Dood~! You don't have enough money.";
-			mes "It's only ^3355FF100 Zeny^000000~ Seriously!";
+			mes "[冰淇淋商]";
+			mes "老兄～！你沒有足夠的錢。";
+			mes "只要 ^3355FF100 Zeny^000000～ 說真的！";
 			close;
 		}
 		if (!checkweight(536,.@input)) {
-			mes "[Ice Cream Maker]";
-			mes "You seem to have too much stuff.";
-			mes "Lighten your pack before buying this.";
+			mes "[冰淇淋商]";
+			mes "你好像帶太多東西了。";
+			mes "在購買這個之前，先減輕你的負擔。";
 			close;
 		}
 		set Zeny, Zeny-.@icecream_hap;
 		getitem 536,.@input; //Ice_Cream
 		close;
 	case 2:
-		mes "[Ice Cream Maker]";
-		mes "'Ice cream is...";
-		mes "Wait, don't you know";
-		mes "what Ice Cream is?";
-		mes "What rock have you";
-		mes "been living under?";
+		mes "[冰淇淋商]";
+		mes "「冰淇淋是…";
+		mes "等等，你不知道";
+		mes "什麼是冰淇淋？";
+		mes "你一直住在";
+		mes "哪個石頭下面？";
 		next;
-		mes "[Ice Cream Maker]";
-		mes "I'm not going to even start with how weird that sounds.";
-		mes "Anyway, get 'yer Ice Cream right here while it's nice and cold.";
+		mes "[冰淇淋商]";
+		mes "我甚至不想開始說這聽起來有多奇怪。";
+		mes "總之，趁它又好又冷的時候，在這裡買你的冰淇淋。";
 		close;
 	case 3:
-		mes "[Ice Cream Maker]";
-		mes "Don't miss your chance to eat the greatest Ice Cream in all the land~!";
+		mes "[冰淇淋商]";
+		mes "不要錯過這個機會，來吃這片土地上最棒的冰淇淋～！";
 		close;
 	}
 }

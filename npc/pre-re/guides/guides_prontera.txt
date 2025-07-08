@@ -23,155 +23,151 @@
 //	-Thanks to Brainstorm.
 //============================================================
 
-prontera,154,187,4	script	Guide#prt::PrtGuide	105,{
+prontera,154,187,4	script	嚮導#prt::PrtGuide	105,{
 	cutin "prt_soldier",2;
-	mes "[Prontera Guide]";
-	mes "Welcome to Prontera,";
-	mes "the beautiful capital of the";
-	mes "Rune-Midgarts Kingdom. If";
-	mes "you have questions or need help finding something in the city, don't hesitate to ask.";
+	mes "[普隆德拉嚮導]";
+	mes "歡迎來到普隆德拉，";
+	mes "盧恩-米德加茲王國";
+	mes "美麗的首都。如果您";
+	mes "有任何問題或需要協助尋找城市中的事物，請隨時提出。";
 	set .@loop1,1;
 	while (.@loop1) {
 		next;
-		switch(select("City Guide.:Remove Marks from Mini-Map:Notice:Cancel")) {
+		switch(select("城市嚮導.:從迷你地圖移除標記:注意事項:取消")) {
 		case 1:
-			mes "[Prontera Guide]";
-			mes "Please select";
-			mes "a location from";
-			mes "the following menu.";
+			mes "[普隆德拉嚮導]";
+			mes "請從";
+			mes "以下選單中選擇";
+			mes "一個地點。";
 			if (.@compass_check == 0) {
-				mes "Would you like me";
-				mes "to mark locations";
-				mes "on your Mini-Map?";
+				mes "您是否要我";
+				mes "在您的迷你地圖上";
+				mes "標記地點？";
 				next;
-				if (select("Yes:No") == 1) set .@compass_check,1;
+				if (select("是:否") == 1) set .@compass_check,1;
 			}
 			set .@loop2,1;
 			while (.@loop2) {
 				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
 				else next;
 
-				switch(select("Swordman Association:^0000FFSanctuary^000000:Prontera Chivalry:Weapon Shop:Tool Shop:Inn:Trading Post:Pub:Library:Job Agency:Prontera Castle:City Hall:Cancel")) {
+				switch(select("劍士協會:^0000FF聖堂^000000:普隆德拉騎士團:武器店:道具店:旅館:交易處:酒吧:圖書館:職業介紹所:普隆德拉城堡:市政廳:取消")) {
 				case 1:
-					mes "[Prontera Guide]";
-					mes "The Swordman Association,";
-					mes "which handles Job Changes";
-					mes "to the Swordman class, has";
-					mes "moved to Izlude. This facility";
-					mes "is just an empty building now.";
+					mes "[普隆德拉嚮導]";
+					mes "負責劍士職業";
+					mes "轉職的劍士協會";
+					mes "已經搬到伊茲魯德。這個";
+					mes "設施現在只是一棟空建築。";
 					if (.@compass_check)
 						viewpoint 1,237,41,4,0x00FF00;
 					break;
 				case 2:
-					mes "[Prontera Guide]";
-					mes "The Prontera Sanctuary";
-					mes "handles Job Changes to";
-					mes "the Acolyte class, and can";
-					mes "be found in the northeast";
-					mes "corner of Prontera.";
+					mes "[普隆德拉嚮導]";
+					mes "普隆德拉聖堂";
+					mes "負責服事職業的轉職，";
+					mes "可以在普隆德拉的";
+					mes "東北角找到。";
 					if (.@compass_check)
 						viewpoint 1,236,316,5,0xFF0000;
 					break;
 				case 3:
-					mes "[Prontera Guide]";
-					mes "The Prontera Chivralry,";
-					mes "which is responsible for";
-					mes "the safety of our capital, is";
-					mes "in Prontera's northwest corner.";
+					mes "[普隆德拉嚮導]";
+					mes "負責首都";
+					mes "安全的普隆德拉騎士團";
+					mes "位於普隆德拉的西北角。";
 					if (.@compass_check)
 						viewpoint 1,46,345,6,0x00FF00;
 					break;
 				case 4:
-					mes "[Prontera Guide]";
-					mes "The Weapon Shop";
-					mes "is located northeast";
-					mes "of the central fountain.";
+					mes "[普隆德拉嚮導]";
+					mes "武器店";
+					mes "位於中央噴泉的";
+					mes "東北方。";
 					if (.@compass_check)
 						viewpoint 1,175,220,7,0xFF00FF;
 					break;
 				case 5:
-					mes "[Prontera Guide]";
-					mes "The Tool Shop";
-					mes "is located northwest";
-					mes "of the central fountain.";
+					mes "[普隆德拉嚮導]";
+					mes "道具店";
+					mes "位於中央噴泉的";
+					mes "西北方。";
 					if (.@compass_check)
 						viewpoint 1,134,221,8,0xFF00FF;
 					break;
 				case 6:
-					mes "[Prontera Guide]";
-					mes "The Inns in Prontera are";
-					mes "located both to the east";
-					mes "and west of Prontera's";
-					mes "central fountain area.";
+					mes "[普隆德拉嚮導]";
+					mes "普隆德拉的旅館";
+					mes "位於普隆德拉";
+					mes "中央噴泉區的東方";
+					mes "和西方。";
 					if (.@compass_check) {
 						viewpoint 1,204,191,9,0xFF00FF;
 						viewpoint 1,107,192,10,0xFF00FF;
 					}
 					break;
 				case 7:
-					mes "[Prontera Guide]";
-					mes "The Trading Post";
-					mes "can be found southeast";
-					mes "from the central fountain.";
+					mes "[普隆德拉嚮導]";
+					mes "交易處";
+					mes "可以在中央噴泉的";
+					mes "東南方找到。";
 					if (.@compass_check)
 						viewpoint 1,179,184,11,0x00FF00;
 					break;
 				case 8:
-					mes "[Prontera Guide]";
-					mes "The Pub is located";
-					mes "southeast of the fountain,";
-					mes "behind the Trading Post.";
+					mes "[普隆德拉嚮導]";
+					mes "酒吧位於";
+					mes "噴泉的東南方，";
+					mes "在交易處後面。";
 					if (.@compass_check)
 						viewpoint 1,208,154,12,0x00FF00;
 					break;
 				case 9:
-					mes "[Prontera Guide]";
-					mes "If you head north from";
-					mes "the central fountain, you'll";
-					mes "find an empty area in which";
-					mes "both branches of the Prontera";
-					mes "Library can be accessed if you";
-					mes "head towards the east or west.";
+					mes "[普隆德拉嚮導]";
+					mes "如果您從";
+					mes "中央噴泉往北走，您會";
+					mes "找到一個空曠的區域，在那裡";
+					mes "如果您往東或往西走，都可以";
+					mes "進入普隆德拉圖書館的";
+					mes "兩個分部。";
 					if (.@compass_check) {
 						viewpoint 1,120,267,13,0x00FF00;
 						viewpoint 1,192,267,14,0x00FF00;
 					}
 					break;
 				case 10:
-					mes "[Prontera Guide]";
-					mes "The Job Agency is";
-					mes "just southwest of the";
-					mes "central fountain area.";
+					mes "[普隆德拉嚮導]";
+					mes "職業介紹所";
+					mes "就在";
+					mes "中央噴泉區的西南方。";
 					if (.@compass_check)
 						viewpoint 1,133,183,15,0x00FF00;
 					break;
 				case 11:
-					mes "[Prontera Guide]";
-					mes "The Prontera Castle is";
-					mes "located at the northern";
-					mes "sector of this city. You can";
-					mes "go to the fields that are north";
-					mes "of Prontera by going through";
-					mes "the castle's rear exit.";
+					mes "[普隆德拉嚮導]";
+					mes "普隆德拉城堡";
+					mes "位於這個城市";
+					mes "的北部地區。您可以";
+					mes "穿過城堡的後方出口，";
+					mes "前往普隆德拉北方的";
+					mes "原野。";
 					if (.@compass_check)
 						viewpoint 1,156,360,16,0x00FF00;
 					break;
 				case 12:
-					mes "[Prontera Guide]";
-					mes "The City Hall";
-					mes "is located in the";
-					mes "southwest corner";
-					mes "in our city of Prontera.";
+					mes "[普隆德拉嚮導]";
+					mes "市政廳";
+					mes "位於";
+					mes "普隆德拉的";
+					mes "西南角。";
 					if (.@compass_check)
 						viewpoint 1,75,91,17,0x01FF01;
 					break;
 				case 13:
-					mes "[Prontera Guide]";
-					mes "Please ask me to ''Remove";
-					mes "Marks from Mini-Map'' if you";
-					mes "no longer wish to have the";
-					mes "location marks displayed";
-					mes "on your Mini-Map.";
+					mes "[普隆德拉嚮導]";
+					mes "如果您不再希望";
+					mes "在您的迷你地圖上";
+					mes "顯示位置標記，";
+					mes "請要求我''從迷你地圖移除標記''。";
 					set .@loop2,0;
 					break;
 				}
@@ -195,35 +191,34 @@ prontera,154,187,4	script	Guide#prt::PrtGuide	105,{
 			set .@compass_check,0;
 			break;
 		case 3:
-			mes "[Prontera Guide]";
-			mes "Advances in sorcery and";
-			mes "technology have allowed";
-			mes "us to update our information";
-			mes "system, enabling up to mark";
-			mes "locations on your Mini-Map";
-			mes "for easier navigation.";
+			mes "[普隆德拉嚮導]";
+			mes "巫術和";
+			mes "科技的進步使";
+			mes "我們能夠更新我們的資訊";
+			mes "系統，最多可以在";
+			mes "您的迷你地圖上標記";
+			mes "位置，以便更輕鬆地導航。";
 			next;
-			mes "[Prontera Guide]";
-			mes "Your Mini-Map is located";
-			mes "in the upper right corner";
-			mes "of the screen. If you can't";
-			mes "see it, press the Ctrl + Tab";
-			mes "keys or click the ''Map'' button in your Basic Info Window.";
+			mes "[普隆德拉嚮導]";
+			mes "您的迷你地圖位於";
+			mes "螢幕的右上角。如果您";
+			mes "看不到它，請按 Ctrl + Tab";
+			mes "鍵或點擊您的基本資訊視窗中的 ''Map'' 按鈕。";
 			next;
-			mes "[Prontera Guide]";
-			mes "On your Mini-Map,";
-			mes "click on the ''+'' and ''-''";
-			mes "symbols to zoom in and";
-			mes "our of your Mini-Map. We";
-			mes "hope you enjoy your travels";
-			mes "here in the city of Prontera.";
+			mes "[普隆德拉嚮導]";
+			mes "在您的迷你地圖上，";
+			mes "點擊 ''+'' 和 ''-''";
+			mes "符號可以放大和";
+			mes "縮小您的迷你地圖。";
+			mes "我們希望您在普隆德拉";
+			mes "玩得開心。";
 			break;
 		case 4:
-			mes "[Prontera Guide]";
-			mes "Well, adventurer...";
-			mes "I hope your journeys";
-			mes "through Rune-Midgarts";
-			mes "are both fun and safe.";
+			mes "[普隆德拉嚮導]";
+			mes "冒險者...";
+			mes "我希望您在";
+			mes "盧恩-米德加茲的旅程";
+			mes "既有趣又安全。";
 			close2;
 			set .@loop1,0;
 			break;
@@ -233,10 +228,10 @@ prontera,154,187,4	script	Guide#prt::PrtGuide	105,{
 	end;
 }
 
-prontera,282,208,2	duplicate(PrtGuide)	East Gate-Guide	105
+prontera,282,208,2	duplicate(PrtGuide)	東門嚮導	105
 
-prontera,29,200,6	duplicate(PrtGuide)	West Gate-Guide	105
+prontera,29,200,6	duplicate(PrtGuide)	西門嚮導	105
 
-prontera,160,29,0	duplicate(PrtGuide)	South Gate-Guide	105
+prontera,160,29,0	duplicate(PrtGuide)	南門嚮導	105
 
-prontera,151,330,4	duplicate(PrtGuide)	North Gate-Guide	105
+prontera,151,330,4	duplicate(PrtGuide)	北門嚮導	105

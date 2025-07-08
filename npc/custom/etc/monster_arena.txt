@@ -24,11 +24,11 @@
 //============================================================
 
 // Entrance //
-prontera,158,193,6	script	Monster Arena	702,{
-	mes "[Monster Arena]";
-	mes "Would you like to enter the Monster Arena?";
-	mes "Currently ^FF0000" + getmapusers("gon_test") + "^000000 players";
-	mes "^FF0000Note:^000000 Pecos, Falcons and Carts will be lost on entry.";
+prontera,158,193,6	script	魔物競技場	702,{
+	mes "[魔物競技場]";
+	mes "您想要進入魔物競技場嗎？";
+	mes "目前 ^FF0000" + getmapusers("gon_test") + "^000000 位玩家";
+	mes "^FF0000注意：^000000 進入後會失去腳色身上的鳥、獵鷹和手推車。";
 L_Menu:
 	next;
 	menu "Enter",-,"Information",L_Info,"Cancel",L_Exit;
@@ -40,32 +40,32 @@ L_Menu:
 	close;
 
 L_Exit:
-	mes "[Monster Arena]";
-	mes "Come back any time.";
+	mes "[魔物競技場]";
+	mes "隨時歡迎再來。";
 	close;
 
 L_Info:
-	mes "[Monster Arena]";
-	mes "You must purchase a pet from the Monster Tamer to start fighting.";
+	mes "[魔物競技場]";
+	mes "您必須從魔物馴獸師那裡購買寵物才能開始戰鬥。";
 	next;
-	mes "[Monster Arena]";
-	mes "Then talk to the Usher and tell him you would like to compete.";
+	mes "[魔物競技場]";
+	mes "然後與引導員交談，告訴他您想要比賽。";
 	next;
-	mes "[Monster Arena]";
-	mes "Talk to the referee to summon your monster.";
-	mes "Once your monster has fought, you must talk to the Usher again and choose to spectate.";
+	mes "[魔物競技場]";
+	mes "與裁判交談以召喚您的魔物。";
+	mes "一旦您的魔物戰鬥完畢，您必須再次與引導員交談並選擇觀戰。";
 	next;
-	mes "[Monster Arena]";
-	mes "Talk to the Monster Trainer, he will ask you to heal your pet.";
+	mes "[魔物競技場]";
+	mes "與魔物訓練師交談，他會要求您治療您的寵物。";
 	next;
-	mes "[Monster Arena]";
-	mes "To do this, click the Nurse repeatedly until it says your pet is healed.";
+	mes "[魔物競技場]";
+	mes "為此，請重複點擊護士，直到顯示您的寵物已痊癒。";
 	next;
-	mes "[Monster Arena]";
-	mes "The more monsters you kill, the more exp you get and the quicker you can upgrade.";
+	mes "[魔物競技場]";
+	mes "您殺死的魔物越多，您獲得的經驗就越多，並且升級的速度也越快。";
 	next;
-	mes "[Monster Arena]";
-	mes "The stronger your monster is, the longer it will take to summon again.";
+	mes "[魔物競技場]";
+	mes "您的魔物越強大，再次召喚它所需的時間就越長。";
 
 	goto L_Menu;
 }
@@ -104,33 +104,33 @@ function	script	monstersummon	{
 	end;
 
 L_Start:
-	mes "[Referee]";
-	mes "Your monster is:";
+	mes "[裁判]";
+	mes "您的魔物是：";
 
 	// 2. ---Change to Add Monsters--- //
-	if (#monster == 10) mes "Poring";
-	if (#monster == 20) mes "Faber";
-	if (#monster == 30) mes "Lunatic";
-	if (#monster == 31) mes "Drops";
-	if (#monster == 32) mes "Picky";
-	if (#monster == 40) mes "ChonChon";
-	if (#monster == 41) mes "Super Picky";
-	if (#monster == 42) mes "Willow";
-	if (#monster == 50) mes "Roda Frog";
-	if (#monster == 51) mes "Condor";
-	if (#monster == 60) mes "Thief Bug Larva";
-	if (#monster == 70) mes "Savage Babe";
-	if (#monster == 80) mes "Familiar";
-	if (#monster == 81) mes "Hornet";
-	if (#monster == 90) mes "Desert Wolf Puppy";
-	if (#monster == 91) mes "Spore";
-	if (#monster == 92) mes "Rocker";
-	if (#monster == 100) mes "Skeleton";
-	if (#monster == 101) mes "Plankton";
-	if (#monster == 102) mes "Antonio";
-	if (#monster == 103) mes "Thief Bug Female";
+	if (#monster == 10) mes "波利";
+	if (#monster == 20) mes "朽木妖";
+	if (#monster == 30) mes "瘋兔";
+	if (#monster == 31) mes "果凍蹦蹦";
+	if (#monster == 32) mes "小雞";
+	if (#monster == 40) mes "小雞娃娃";
+	if (#monster == 41) mes "超級小雞";
+	if (#monster == 42) mes "樹精";
+	if (#monster == 50) mes "羅達蛙";
+	if (#monster == 51) mes "禿鷹";
+	if (#monster == 60) mes "盜蟲幼蟲";
+	if (#monster == 70) mes "土撥鼠寶寶";
+	if (#monster == 80) mes "妖道";
+	if (#monster == 81) mes "大黃蜂";
+	if (#monster == 90) mes "沙漠幼狼";
+	if (#monster == 91) mes "孢子";
+	if (#monster == 92) mes "搖滾蝗蟲";
+	if (#monster == 100) mes "骷髏";
+	if (#monster == 101) mes "浮游蟲";
+	if (#monster == 102) mes "安東尼奧";
+	if (#monster == 103) mes "雌盜蟲";
 
-	mes "Would you like to fight?";
+	mes "您想要戰鬥嗎？";
 	next;
 	menu "Fight",-,"Cancel",L_Exit;
 
@@ -191,8 +191,8 @@ Special5:
 	close;
 
 L_Exit:
-	mes "[Referee]";
-	mes "Alright";
+	mes "[裁判]";
+	mes "好的";
 	close;
 }
 gon_test,56,91,6	duplicate(monsterreferee)	Referee#01	61
@@ -201,8 +201,8 @@ gon_test,56,91,6	duplicate(monsterreferee)	Referee#01	61
 // Usher //
 gon_test,58,94,6	script	Usher	86,{
 	set @marena,1;
-	mes "[Usher]";
-	mes "What would you like to do?";
+	mes "[引導員]";
+	mes "您想要做什麼？";
 	next;
 	menu "^0000FFSpectate",L_Spec,"^FF0000Compete^000000",-,"Return to Town",L_Exit,"Cancel",L_Cancel;
 
@@ -262,13 +262,13 @@ L_Spec:
 	end;
 
 L_NoMon:
-	mes "[Usher]";
-	mes "You haven't got a monster, you can only spectate.";
+	mes "[引導員]";
+	mes "您還沒有魔物，您只能觀戰。";
 	close;
 
 L_Heal:
-	mes "[Usher]";
-	mes "You have to heal your monster before you can fight again.";
+	mes "[引導員]";
+	mes "您必須先治療您的魔物才能再次戰鬥。";
 	close;
 
 L_Cancel:
@@ -277,86 +277,86 @@ L_Cancel:
 
 // Monster Trainer //
 gon_test,52,103,6	script	Monster Trainer	87,{
-	mes "[Monster Trainer]";
+	mes "[魔物訓練師]";
 	if (#monster != 0) goto L_Mon;
 
-	mes "Welcome to the monster arena, would you like to start training?";
+	mes "歡迎來到魔物競技場，您想要開始訓練嗎？";
 	next;
 	menu "Yes",-,"No",L_Exit;
 
-	mes "[Monster Trainer]";
-	mes "New trainers may only start with Porings.";
-	mes "They cost 1000z, Would you like to buy one?";
+	mes "[魔物訓練師]";
+	mes "新的訓練師只能從波利開始。";
+	mes "牠們要價 1000z，您想要購買一隻嗎？";
 	next;
 	menu "Yes",-,"No",L_Exit;
 
 	if (Zeny < 1000) goto L_NoZeny;
 	set Zeny, Zeny-1000;
 	set #monster,10;
-	mes "[Monster Trainer]";
-	mes "Congratulations!";
-	mes "When your Poring earns enough experience, talk to me to upgrade.";
+	mes "[魔物訓練師]";
+	mes "恭喜！";
+	mes "當您的波利賺取足夠的經驗時，請與我交談以升級。";
 	close;
 
 L_Mon:
-	mes "Welcome back, " + strcharinfo(0) + ".";
-	mes "Your monster has " + #monpoints + " exp points.";
+	mes "歡迎回來，" + strcharinfo(0) + "。";
+	mes "您的魔物有 " + #monpoints + " 經驗值。";
 	next;
 	if (@fighting == 1) goto L_Heal;
 	menu "Upgrade Monster",L_Upgrade,"Sell Experience",L_Sell,"^FF0000Abandon Monster^000000",L_Abandon,"Cancel",L_Exit;
 
 L_Abandon:
-	mes "[Monster Trainer]";
-	mes "Are you sure you want to abandon your monster?";
+	mes "[魔物訓練師]";
+	mes "您確定要放棄您的魔物嗎？";
 	next;
 	menu "Yes",-,"No",L_Exit;
 	set #monster,0;
 	set #monpoints,0;
-	mes "[Monster Trainer]";
-	mes "Monster released into the wild.";
+	mes "[魔物訓練師]";
+	mes "魔物已釋放到野外。";
 	close;
 
 L_Sell:
-	mes "[Monster Trainer]";
-	mes "You can sell your monster's experience for 100z each.";
+	mes "[魔物訓練師]";
+	mes "您可以出售您魔物的經驗值，每點 100z。";
 	next;
 	menu "Sell",-,"Cancel",L_Exit;
-	mes "[Monster Trainer]";
-	mes "You have: ^FF0000" + #monpoints + "^000000 experience points";
-	mes "How many would you like to sell?";
+	mes "[魔物訓練師]";
+	mes "您有：^FF0000" + #monpoints + "^000000 經驗值";
+	mes "您想要出售多少？";
 	next;
 	input .@sellexp;
 	if (.@sellexp > #monpoints) goto L_NoExp;
 	set #monpoints,#monpoints-.@sellexp;
 	set .@sellearn,100*.@sellexp; // Price of exp
 	set Zeny, Zeny+.@sellearn;
-	mes "[Monster Trainer]";
-	mes "You earned ^0000FF" + .@sellearn + "^000000z.";
+	mes "[魔物訓練師]";
+	mes "您賺了 ^0000FF" + .@sellearn + "^000000z。";
 	close;
 
 
 L_NoExp:
-	mes "[Monster Trainer]";
-	mes "You do not have enough experience.";
+	mes "[魔物訓練師]";
+	mes "您的經驗值不足。";
 	next;
 	goto L_Exit;
 
 	// Monster Upgrades //
 L_Upgrade:
-	mes "[Monster Trainer]";
+	mes "[魔物訓練師]";
 	// 3. ---Change to Add Monsters - May not be required--- //
-	if (#monster > 1 && #monster < 20) mes "You need 10 exp points to upgrade your monster.";
-	if (#monster > 19 && #monster < 30) mes "You need 20 exp points to upgrade your monster.";
-	if (#monster > 29 && #monster < 40) mes "You need 40 exp points to upgrade your monster.";
-	if (#monster > 39 && #monster < 50) mes "You need 80 exp points to upgrade your monster.";
-	if (#monster > 49 && #monster < 60) mes "You need 160 exp points to upgrade your monster.";
-	if (#monster > 59 && #monster < 70) mes "You need 320 exp points to upgrade your monster.";
-	if (#monster > 69 && #monster < 80) mes "You need 640 exp points to upgrade your monster.";
-	if (#monster > 79 && #monster < 90) mes "You need 1280 exp points to upgrade your monster.";
-	if (#monster > 89 && #monster < 100) mes "You need 2560 exp points to upgrade your monster.";
+	if (#monster > 1 && #monster < 20) mes "您需要 10 經驗值才能升級您的魔物。";
+	if (#monster > 19 && #monster < 30) mes "您需要 20 經驗值才能升級您的魔物。";
+	if (#monster > 29 && #monster < 40) mes "您需要 40 經驗值才能升級您的魔物。";
+	if (#monster > 39 && #monster < 50) mes "您需要 80 經驗值才能升級您的魔物。";
+	if (#monster > 49 && #monster < 60) mes "您需要 160 經驗值才能升級您的魔物。";
+	if (#monster > 59 && #monster < 70) mes "您需要 320 經驗值才能升級您的魔物。";
+	if (#monster > 69 && #monster < 80) mes "您需要 640 經驗值才能升級您的魔物。";
+	if (#monster > 79 && #monster < 90) mes "您需要 1280 經驗值才能升級您的魔物。";
+	if (#monster > 89 && #monster < 100) mes "您需要 2560 經驗值才能升級您的魔物。";
 	next;
 	menu "Continue",-,"Cancel",L_Exit;
-	mes "[Monster Trainer]";
+	mes "[魔物訓練師]";
 
 	// 4. ---Change to Add Monsters - May not be required--- //
 	if (#monster > 1 && #monster < 20 && #monpoints > 9) goto L_Up1;
@@ -369,192 +369,192 @@ L_Upgrade:
 	if (#monster > 79 && #monster < 90 && #monpoints > 1279) goto L_Up8;
 	if (#monster > 89 && #monster < 100 && #monpoints > 2559) goto L_Up9;
 
-	mes "Unable to upgrade.";
+	mes "無法升級。";
 	close;
 
 	// 5. ---Change to Add Monsters--- //
 L_Up1:
 	set #monster,20;
 	set #monpoints,#monpoints-10;
-	mes "Upgraded to Fabre!";
+	mes "已升級到朽木妖！";
 	close;
 
 L_Up2:
-	mes "Which monster would you like to upgrade to?";
+	mes "您想要升級到哪個魔物？";
 	next;
 	menu "Lunatic",U_Lunatic,"Drops",U_Drops,"Picky",U_Picky;
 
 U_Drops:
 	set #monster,31;
 	set #monpoints,#monpoints-20;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Drops!";
+	mes "[魔物訓練師]";
+	mes "已升級到果凍蹦蹦！";
 	close;
 
 U_Picky:
 	set #monster,32;
 	set #monpoints,#monpoints-20;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Picky!";
+	mes "[魔物訓練師]";
+	mes "已升級到小雞！";
 	close;
 
 U_Lunatic:
 	set #monster,30;
 	set #monpoints,#monpoints-20;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Lunatic!";
+	mes "[魔物訓練師]";
+	mes "已升級到瘋兔！";
 	close;
 
 L_Up3:
-	mes "Which monster would you like to upgrade to?";
+	mes "您想要升級到哪個魔物？";
 	next;
 	menu "ChonChon",U_ChonChon,"Super Picky",U_SPicky,"Willow",U_Willow;
 
 U_ChonChon:
 	set #monster,40;
 	set #monpoints,#monpoints-40;
-	mes "[Monster Trainer]";
-	mes "Upgraded to ChonChon!";
+	mes "[魔物訓練師]";
+	mes "已升級到小雞娃娃！";
 	close;
 
 U_SPicky:
 	set #monster,41;
 	set #monpoints,#monpoints-40;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Super Picky!";
+	mes "[魔物訓練師]";
+	mes "已升級到超級小雞！";
 	close;
 
 U_Willow:
 	set #monster,42;
 	set #monpoints,#monpoints-40;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Willow!";
+	mes "[魔物訓練師]";
+	mes "已升級到樹精！";
 	close;
 
 L_Up4:
-	mes "Which monster would you like to upgrade to?";
+	mes "您想要升級到哪個魔物？";
 	next;
 	menu "Condor",U_Condor,"Roda Frog",U_Roda;
 
 U_Condor:
 	set #monster,51;
 	set #monpoints,#monpoints-80;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Condor!";
+	mes "[魔物訓練師]";
+	mes "已升級到禿鷹！";
 	close;
 
 U_Roda:
 	set #monster,50;
 	set #monpoints,#monpoints-80;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Roda Frog!";
+	mes "[魔物訓練師]";
+	mes "已升級到羅達蛙！";
 	close;
 
 L_Up5:
 	set #monster,60;
 	set #monpoints,#monpoints-160;
-	mes "Upgraded to Thief Bug Larva!";
+	mes "已升級到盜蟲幼蟲！";
 	close;
 
 L_Up6:
 	set #monster,70;
 	set #monpoints,#monpoints-320;
-	mes "Upgraded to Savage Babe!";
+	mes "已升級到土撥鼠寶寶！";
 	close;
 
 L_Up7:
-	mes "Which monster would you like to upgrade to?";
+	mes "您想要升級到哪個魔物？";
 	next;
 	menu "Familiar",U_Familiar,"Hornet",U_Hornet;
 
 U_Hornet:
 	set #monster,81;
 	set #monpoints,#monpoints-640;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Hornet!";
+	mes "[魔物訓練師]";
+	mes "已升級到大黃蜂！";
 	close;
 
 U_Familiar:
 	set #monster,80;
 	set #monpoints,#monpoints-640;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Familiar!";
+	mes "[魔物訓練師]";
+	mes "已升級到妖道！";
 	close;
 
 L_Up8:
-	mes "[Monster Trainer]";
-	mes "Which monster would you like to upgrade to?";
+	mes "[魔物訓練師]";
+	mes "您想要升級到哪個魔物？";
 	next;
 	menu "Desert Wolf Puppy",U_Puppy,"Spore",U_Spore,"Rocker",U_Rocker;
 
 U_Spore:
 	set #monster,91;
 	set #monpoints,#monpoints-1280;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Spore!";
+	mes "[魔物訓練師]";
+	mes "已升級到孢子！";
 	close;
 
 U_Rocker:
 	set #monster,92;
 	set #monpoints,#monpoints-1280;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Rocker!";
+	mes "[怪物訓練師]";
+	mes "已升級為搖滾蝗蟲!";;
 	close;
 
 U_Puppy:
 	set #monster,90;
 	set #monpoints,#monpoints-1280;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Desert Wolf Puppy!";
+	mes "[怪物訓練師]";
+	mes "已升級為沙漠幼狼!";;
 	close;
 
 L_Up9:
-	mes "Which monster would you like to upgrade to?";
+	mes "你想要將哪隻怪物升級成什麼？";
 	next;
 	menu "Skeleton",U_Skeleton,"Antonio",U_Antonio,"Plankton",U_Plankton,"Thief Bug Female",U_ThiefFemale;
 
 U_Plankton:
 	set #monster,101;
 	set #monpoints,#monpoints-2560;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Plankton!";
+	mes "[怪物訓練師]";
+	mes "已升級為浮游生物!";;
 	close;
 
 U_Antonio:
 	set #monster,102;
 	set #monpoints,#monpoints-2560;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Antonio!";
+	mes "[怪物訓練師]";
+	mes "已升級為安東尼奧!";;
 	close;
 
 U_ThiefFemale:
 	set #monster,103;
 	set #monpoints,#monpoints-2560;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Thief Bug Female!";
+	mes "[怪物訓練師]";
+	mes "已升級為雌盜蟲!";;
 	close;
 
 U_Skeleton:
 	set #monster,100;
 	set #monpoints,#monpoints-2560;
-	mes "[Monster Trainer]";
-	mes "Upgraded to Skeleton!";
+	mes "[怪物訓練師]";
+	mes "已升級為骷髏!";;
 	close;
 
 L_NoZeny:
-	mes "[Monster Trainer]";
-	mes "You don't have enough zeny!";
+	mes "[怪物訓練師]";
+	mes "你沒有足夠的Zeny!";;
 	close;
 
 L_Exit:
-	mes "[Monster Trainer]";
-	mes "Goodbye.";
+	mes "[怪物訓練師]";
+	mes "再見。";
 	close;
 
 L_Heal:
-	mes "[Monster Trainer]";
-	mes "Your monster needs to heal.";
-	mes "It will heal faster if you click the nurse faster.";
+	mes "[怪物訓練師]";
+	mes "你的怪物需要治療。";
+	mes "如果你點擊護士的速度夠快，牠會恢復得更快。";
 	set #heal,1;
 	close;
 }
@@ -717,7 +717,7 @@ gon_test,56,91,6	script	OnSpecialKilled	-1,{
 
 function	script	duelkill	{
 	if (strcharinfo(0) != $@duelist1$ && strcharinfo(0) != $@duelist2$) end;
-	announce strcharinfo(0) + " won the Duel",1;
+	announce strcharinfo(0) + " 贏得了決鬥",1;
 	set @fighting,0;
 	set #heal,0;
 	set @healing,0;
@@ -738,7 +738,7 @@ gon_test,55,103,6	script	Nurse	90,{
 	set #heal,0;
 	set @healing,0;
 	specialeffect2 EF_VALLENTINE2;
-	announce "Your monster has healed.",19;
+	announce "你的怪物已經恢復了。",19;
 	end;
 
 L_Heal:
@@ -747,7 +747,7 @@ L_Heal:
 	end;
 
 L_NoHeal:
-	announce "Your monster does not need healing yet.",19;
+	announce "你的怪物還不需要治療。",19;
 	end;
 }
 
@@ -771,11 +771,11 @@ gon_test,58,103,5	script	Duel Master#01	92,{
 	if ($@duelist1$ == "" || $@monster1 == 0) set $@duel,0;
 	set @marena,1;
 	if (#monster == 0) goto L_NoMon;
-	mes "[Duel Master]";
+	mes "[決鬥大師]";
 	if ($@duel == 1) goto L_Waiting;
 	if ($@duel == 2) goto L_Dueling;
 
-	mes "There are currently no players dueling.";
+	mes "目前沒有玩家正在決鬥。";
 	next;
 	menu "Join",-,"Spectate",L_Spec,"Cancel",L_Exit;
 
@@ -802,7 +802,7 @@ gon_test,58,103,5	script	Duel Master#01	92,{
 
 L_Waiting:
 	mes "^0000FF " + $@duelist1$ + "^000000 [Monster Level: ^FF0000" + $@monster1 + "^000000]";
-	mes "Is waiting for an opponent";
+	mes "正在等待對手";
 	next;
 	menu "Join",-,"Spectate",L_Spec,"Cancel",L_Exit;
 
@@ -842,27 +842,27 @@ L_Spec:
 	close;
 
 L_Exit:
-	mes "[Duel Master]";
-	mes "Goodbye.";
+	mes "[決鬥大師]";
+	mes "再見。";
 	close;
 
 L_NoMon:
-	mes "[Duel Master]";
-	mes "You haven't got a monster, you can't participate.";
+	mes "[決鬥大師]";
+	mes "你沒有怪物，你不能參與。";
 	close;
 
 L_NeedHeal:
-	mes "[Duel Master]";
-	mes "You need to heal before you can join.";
+	mes "[決鬥大師]";
+	mes "你需要先治療才能加入。";
 	close;
 }
 
 // Duel Exit //
 gon_test,42,8,5	script	Duel Master#02	92,{
-	mes "[Duel Master]";
-	mes "Would you like to return?";
+	mes "[決鬥大師]";
+	mes "你想要返回嗎？";
 	menu "Yes",L_Leave,"No",-;
-	mes "Alright";
+	mes "好的";
 	close;
 
 L_Leave:

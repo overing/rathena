@@ -19,75 +19,74 @@ valkyrie,53,47,3	script	Scholar#Valkyrie	743,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Scholar]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[學者]";
+			mes "恭喜。";
+			mes "向戰士們致敬！";
 			close;
 		}
-		mes "[Scholar]";
-		mes "It takes a lifetime...";
-		mes "Literally a lifetime";
-		mes "to amass the knowledge";
-		mes "necessary to become";
-		mes "a Scholar...";
+		mes "[學者]";
+		mes "這需要一輩子...";
+		mes "確實是一輩子";
+		mes "才能積累成為";
+		mes "一名學者必要的";
+		mes "知識...";
 		next;
-		mes "[Scholar]";
-		mes "It's overwhelming.";
-		mes "The more you learn, the";
-		mes "more you discover what";
-		mes "else you don't know.";
-		mes "There's no end to the";
-		mes "process of learning...";
+		mes "[學者]";
+		mes "這令人難以承受。";
+		mes "你學得越多，";
+		mes "就越發現";
+		mes "自己還有哪些不知道的。";
+		mes "學習的過程是沒有";
+		mes "盡頭的...";
 		close;
 	}
 	else if (ADVJOB == Job_Professor && Class == Job_Mage_High && JobLevel > 39) {
-		mes "[Scholar]";
-		mes "Midgard doesn't";
-		mes "have enough Scholars to";
-		mes "help usher in a new age";
-		mes "of prosperity. The";
-		mes "world needs you...";
+		mes "[學者]";
+		mes "米德加爾特沒有";
+		mes "足夠的學者來";
+		mes "幫助引領一個新的";
+		mes "繁榮時代。";
+		mes "世界需要你...";
 		next;
-		mes "[Scholar]";
-		mes "Will you take this";
-		mes "awesome responsibility?";
-		mes "Will you serve Midgard";
-		mes "as a Scholar?";
+		mes "[學者]";
+		mes "你願意承擔這";
+		mes "項重責大任嗎？";
+		mes "你願意以學者的";
+		mes "身分服務米德加爾特嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Scholar]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不要。:是的。") == 1) {
+			mes "[學者]";
+			mes "當你準備好的時候，";
+			mes "隨時歡迎回來。";
+			mes "向戰士們致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Scholar]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[學者]";
+			mes "你仍然可以學習更多技能。請在使用";
+			mes "完所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Professor;
 		set ADVJOB,0;
-		mes "[Scholar]";
-		mes "Congratulations!";
-		mes "As a Professor, I hope";
-		mes "that you will take an";
-		mes "active part in bringing";
-		mes "the light of knowledge";
-		mes "where there is darkness.";
+		mes "[學者]";
+		mes "恭喜！";
+		mes "身為一位教授，我希望";
+		mes "你能積極地";
+		mes "將知識的光芒帶到";
+		mes "黑暗的地方。";
 		close;
 	}
-	mes "[Scholar]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[學者]";
+	mes "歡迎";
+	mes "來到英靈殿，";
+	mes "榮譽殿堂。";
 	next;
-	mes "[Scholar]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[學者]";
+	mes "請在這裡";
+	mes "好好放鬆";
+	mes "自己。";
+	mes "向戰士們致敬！";
 	close;
 }
 

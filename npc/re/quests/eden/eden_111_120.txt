@@ -15,406 +15,406 @@
 //= 1.2 Added use of F_HasEdenGroupMark function. [Ragno]
 //============================================================
 
-moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
-	mes "[Mingmin]";
+moc_para01,17,95,5	script	明敏#1	4_F_GENETIC,{
+	mes "[明敏]";
 	if (!callfunc("F_HasEdenGroupMark")) {
 		cutin "min02",0;
-		mes "A stranger. This place is supposed to be for Eden Group Members only.";
-		mes "I'm in need base level ^FF0000111 - 120^000000 adventurers to help my research.";
+		mes "一位陌生人。這個地方應該只給伊甸園的成員使用。";
+		mes "我需要基礎等級 ^FF0000111 - 120^000000 的冒險家來幫助我的研究。";
 	}
 	else if (para_110lv01 == 0) {
 		cutin "min02",0;
 		mes "......";
 		emotion ET_THINK;
 		next;
-		mes "[Mingmin]";
-		mes "(Wow...)";
+		mes "[明敏]";
+		mes "(哇...)";
 		next;
-		mes "The Geneticist is muttering to herself.";
+		mes "遺傳學者正在喃喃自語。";
 		next;
-		mes "[Mingmin]";
+		mes "[明敏]";
 		mes "...";
 		next;
-		mes "[Mingmin]";
+		mes "[明敏]";
 		mes "......";
 		next;
-		mes "[Mingmin]";
-		mes "^0000ffA question: Art thou my servant?^000000";
+		mes "[明敏]";
+		mes "^0000ff一個問題：汝是吾之僕人嗎？^000000";
 		next;
 		mes "["+ strcharinfo(0) +"]";
-		mes "(What's this lady talking about?)";
+		mes "(這位女士在說什麼？)";
 		emotion ET_THINK, playerattached();
 		next;
-		mes "[Mingmin]";
-		mes "Answer me!";
-		mes "Art thou my servant?";
+		mes "[明敏]";
+		mes "回答我！";
+		mes "汝是吾之僕人嗎？";
 		emotion ET_THINK;
 		next;
-		select( "I am not.", "You be trippin'?" );
-		mes "[Mingmin]";
-		mes "Thou art not? Splendid...because I deigned that any servant of mine would have more dignity.";
+		select( "我不是。", "你在胡說八道嗎？" );
+		mes "[明敏]";
+		mes "汝不是？太好了...因為吾認為吾之僕人應該擁有更多的尊嚴。";
 		emotion ET_OHNO;
 		next;
-		mes "[Mingmin]";
-		mes "Well, non-servant...What are you looking for here?";
+		mes "[明敏]";
+		mes "好吧，非僕人...你在這裡尋找什麼？";
 		next;
-		if (select( "Nothing in particular.", "Quests! Who are you?" ) == 1) {
-			mes "[Mingmin]";
-			mes "That is acceptable, I hope ye find what ye seek.";
+		if (select( "沒什麼特別的。", "任務！妳是誰？" ) == 1) {
+			mes "[明敏]";
+			mes "可以接受，吾希望汝能找到汝所尋求的。";
 			emotion ET_OK;
 		}
 		else {
-			mes "[Mingmin]";
-			mes "Oh me? I am ^E51BD8Busaner Mingmin^000000 and I'm researching monsters by request of the Eden Group.";
+			mes "[明敏]";
+			mes "喔，吾嗎？吾是 ^E51BD8釜山人 明敏^000000，吾正在根據伊甸園的要求研究魔物。";
 			next;
-			mes "[Mingmin]";
-			mes "I used to collect fungus and mold alone at my mountain lab. Since then, I joined a group looking for new monsters...";
+			mes "[明敏]";
+			mes "吾過去常常在吾的山中實驗室獨自收集真菌和黴菌。從那時起，吾加入了一個尋找新魔物的團隊...";
 			next;
-			mes "[Mingmin]";
-			mes "With all my experience, they actually made me a professor here at the Eden Group.";
+			mes "[明敏]";
+			mes "憑藉吾所有的經驗，他們實際上讓吾成為伊甸園的教授。";
 			next;
-			mes "[Mingmin]";
-			mes "Anyways, there is a pressing task I must complete, please excuse me for a moment.";
+			mes "[明敏]";
+			mes "總之，吾必須完成一項緊迫的任務，請允許吾暫時告退。";
 			para_110lv01 = 1;
 		}
 	}
 	else if (para_110lv01 == 1) {
 		cutin "min02",0;
-		mes "^0C0CF2Pop quiz hot shot: Art thou my servant?^000000";
+		mes "^0C0CF2小考突襲：汝是吾之僕人嗎？^000000";
 		next;
-		select("No~ I'm "+ strcharinfo(0) +" remember?");
-		mes "[Mingmin]";
-		mes "Oh I have met you before, living in a house full of fungus seems to cause memory loss.";
+		select("不～我是 "+ strcharinfo(0) +" 記得嗎？");
+		mes "[明敏]";
+		mes "喔，吾以前見過汝，住在充滿真菌的房子裡似乎會導致記憶喪失。";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Mingmin]";
-		mes "Who were you again?";
+		mes "[明敏]";
+		mes "汝又是誰？";
 		emotion ET_QUESTION;
 		next;
-		select("Eden Group requests and research");
-		mes "[Mingmin]";
-		mes "Ah, that I do remember.";
+		select("伊甸園的要求和研究");
+		mes "[明敏]";
+		mes "啊，那吾倒是記得。";
 		next;
-		mes "[Mingmin]";
-		mes "I am collecting information on the flora and fauna of Midgard for the Eden Group.";
+		mes "[明敏]";
+		mes "吾正在為伊甸園收集米德加爾特的動植物信息。";
 		next;
-		mes "[Mingmin]";
-		mes "The intention is to scientifically catalog and itemize the dangers of the world. I do not like this idea personally.";
+		mes "[明敏]";
+		mes "目的是科學地編錄和逐項列出世界的危險。吾個人不喜歡這個想法。";
 		next;
-		mes "[Mingmin]";
-		mes "Theory will only take you so far in this world.";
+		mes "[明敏]";
+		mes "理論在這個世界上只能帶你走這麼遠。";
 		next;
-		mes "[Mingmin]";
-		mes "Morever, an adventurer who travelled outside of Rune-Midgarts should be experienced enough to know themselves.";
+		mes "[明敏]";
+		mes "而且，一位在盧恩-米德加茲之外旅行過的冒險家，應該有足夠的經驗來了解自己。";
 		next;
-		mes "[Mingmin]";
-		mes "This is ^ff0000my opinion^000000 only so do not concern thyself.";
+		mes "[明敏]";
+		mes "這僅僅是 ^ff0000吾的觀點^000000，所以汝不必擔心。";
 		next;
-		mes "[Mingmin]";
-		mes "Well, after all this talking I need to take a rest. My feet are rather tired.";
+		mes "[明敏]";
+		mes "嗯，說了這麼多，吾需要休息一下。吾的腳相當累了。";
 		emotion ET_SLEEPY;
 		para_110lv01 = 2;
 	}
 	else if (para_110lv01 == 2) {
 		cutin "min02",0;
-		mes "Oh, "+ strcharinfo(0) +" its you... it is good you have ed, I was bored.";
+		mes "喔，"+ strcharinfo(0) +" 是你... 很高興你來了，吾很無聊。";
 		next;
-		mes "[Mingmin]";
-		mes "Where was I? I just finished talking about the Eden Group's duty to protect others from danger.";
+		mes "[明敏]";
+		mes "吾剛才說到哪裡了？吾剛才說完伊甸園保護他人免受危險的職責。";
 		next;
-		mes "[Mingmin]";
-		mes "To protect more people, I think they need adventurers who have experienced things first-hand.";
+		mes "[明敏]";
+		mes "為了保護更多的人，吾認為他們需要有第一手經驗的冒險家。";
 		next;
-		mes "[Mingmin]";
-		mes "So we need those brave or foolhardy enough to venture out to gather info in the field.";
+		mes "[明敏]";
+		mes "所以我們需要那些勇敢或愚蠢到足以冒險外出收集信息的人。";
 		next;
-		select("Sounds dangerous... when can I start?");
-		mes "[Mingmin]";
-		mes "Talk to me in a second and we'll get going.";
+		select("聽起來很危險... 我什麼時候可以開始？");
+		mes "[明敏]";
+		mes "待會兒和吾談談，我們就開始。";
 		emotion ET_SLEEPY;
 		para_110lv01 = 3;
 	}
 	else if (para_110lv01 == 3) {
 		cutin "min02",0;
-		mes "Question "+ strcharinfo(0) +"! I was practising because new servant is coming soon.";
+		mes "問題 "+ strcharinfo(0) +"！吾正在練習，因為新的僕人即將到來。";
 		next;
-		select("Waddya mean new servant?");
-		mes "[Mingmin]";
-		mes "Oh...sorry, I meant squire...";
-		mes "I mean adventurer...";
+		select("你說的新僕人是什麼意思？");
+		mes "[明敏]";
+		mes "喔...抱歉，吾是說侍從...";
+		mes "吾是說冒險家...";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Mingmin]";
-		mes "Sorry, the fungus in my home has been getting quite rampant.";
+		mes "[明敏]";
+		mes "抱歉，吾家裡的真菌越來越猖獗了。";
 		next;
-		mes "[Mingmin]";
-		mes "I found Rohtert is working here when I arrived with a request from Eden Group.";
+		mes "[明敏]";
+		mes "吾抵達時發現羅赫特在這裡工作，他帶著伊甸園的要求前來。";
 		next;
 		if (para_100lv02 > 100) {
-			mes "[Mingmin]";
-			mes "Thou has met him prior to now? I do have a history with him.";
+			mes "[明敏]";
+			mes "汝在此之前就認識他了嗎？吾確實和他有一段淵源。";
 		}
 		else {
-			mes "[Mingmin]";
-			mes "The guy with white hair by the entrance. You should drop by if you are interested, he is managing level 100-110 adventurers.";
+			mes "[明敏]";
+			mes "入口處那位白頭髮的傢伙。如果你有興趣，可以去看看，他負責管理 100-110 級的冒險家。";
 		}
 		next;
-		mes "[Mingmin]";
-		mes "Anyways, he had been working here so he knows better than me. I just came by to get advice.";
+		mes "[明敏]";
+		mes "總之，他一直在這裡工作，所以他比吾更了解。吾只是來徵求意見的。";
 		next;
-		mes "[Mingmin]";
-		mes "That was not that difficult so..";
+		mes "[明敏]";
+		mes "那沒有那麼困難，所以...";
 		next;
 		cutin "min01",0;
-		mes "[Mingmin]";
-		mes "Silly adventurers are going to come and ask me, ^ff0000'My queen, treat me like a naughty servant!'^000000";
+		mes "[明敏]";
+		mes "愚蠢的冒險家會來問吾，^ff0000'我的女王，像對待頑皮的僕人一樣對待我！'^000000";
 		next;
-		select("......Uh......");
+		select("......呃......");
 		cutin "min02",0;
-		mes "[Mingmin]";
-		mes " For some reason there aren't many people lining up to assist me yet.";
+		mes "[明敏]";
+		mes " 不知何故，還沒有很多人排隊來協助吾。";
 		emotion ET_THINK, playerattached();
 		next;
-		mes "[Mingmin]";
-		mes "I think it requires ^ff0000bravery^000000 to take a new request.";
+		mes "[明敏]";
+		mes "吾認為接受一項新的請求需要 ^ff0000勇氣^000000。";
 		next;
-		mes "[Mingmin]";
-		mes "Enough dilly-dallying, I want to make a contract with someone who really craves adventure.";
+		mes "[明敏]";
+		mes "別再閒聊了，吾想和真正渴望冒險的人簽訂契約。";
 		next;
-		mes "[Mingmin]";
-		mes "Maybe "+ strcharinfo(0) +" I'll let you be my servant if you are interested in doing this Eden Group request for my research.";
+		mes "[明敏]";
+		mes "或許，"+ strcharinfo(0) +" 如果你有興趣幫我做這個伊甸園的研究請求，我就讓你當我的僕人。";
 		para_110lv01 = 4;
 	}
 	else if (para_110lv01 > 3) {
 		cutin "min01",0;
 		if (para_110lv01 == 5)
-			mes "Welcome! "+ strcharinfo(0) +"...";
+			mes "歡迎！"+ strcharinfo(0) +"...";
 		else
-			mes "Hello "+ strcharinfo(0) +".";
+			mes "哈囉 "+ strcharinfo(0) +"。";
 			next;
-		switch( select( "Request to research monsters", "Make small-talk" ) ) {
-			mes "[Mingmin]";
+		switch( select( "研究怪物的請求", "閒聊" ) ) {
+			mes "[明敏]";
 		case 1:
 			if (BaseLevel < 111) {
 				cutin "min02",0;
-				mes "I think I already told you that I am looking for an adventurer with more experience for my monster research. ";
+				mes "我想我已經告訴過你，我正在尋找更有經驗的冒險者來進行我的怪物研究。";
 				next;
-				mes "[Mingmin]";
-				mes "It is because this mission has very dangerous requests.";
+				mes "[明敏]";
+				mes "因為這個任務有非常危險的要求。";
 				next;
-				mes "[Mingmin]";
-				mes "Lets see. If you can handle all requests from rohtert standing there, then I will reconsider.";
+				mes "[明敏]";
+				mes "讓我想想。如果你能處理站在那裡的 rohtert 的所有請求，我會重新考慮。";
 				next;
-				mes "[Mingmin]";
-				mes "I will reconsider if you turn to base level 111.";
+				mes "[明敏]";
+				mes "如果你轉職成 111 級，我會重新考慮。";
 			}
 			else if (BaseLevel < 121) {
 				if (para_110lv01 == 4) {
 					cutin "min02",0;
-					mes "Oh, you want to help me with my research?";
+					mes "喔，你想幫助我做研究嗎？";
 					next;
-					mes "She seems to be waiting for a ^FF0000special signal.^000000 What do you want to do?";
+					mes "她似乎在等待一個 ^FF0000特殊的信號^000000。你想做什麼？";
 					next;
-					while(select( "Make a heart with two hands.", "Dance around like a crazy person", "Wink at her", "Whistle at her." ) != 2) {
-						mes "[Mingmin]";
-						mes "What's that for?";
+					while(select( "用雙手比個愛心。", "像個瘋子一樣跳舞", "對她眨眼", "對她吹口哨。" ) != 2) {
+						mes "[明敏]";
+						mes "那是為了什麼？";
 						emotion ET_SCRATCH;
 						next;
-						mes "Hmm, she didn't go for that.";
+						mes "嗯，她不吃這套。";
 						next;
 					}
-					mes "[Mingmin]";
-					mes "This signal!?";
+					mes "[明敏]";
+					mes "這個信號！？";
 					emotion ET_SPARK;
 					next;
 					cutin "min01",0;
-					mes "[Mingmin]";
-					mes "^FF0000..................now?^000000";
+					mes "[明敏]";
+					mes "^FF0000..................現在？^000000";
 					emotion ET_SPARK;
 					next;
-					select("Say nothing and nod...");
-					mes "[Mingmin]";
+					select("什麼都不說，點點頭...");
+					mes "[明敏]";
 					mes "......";
 					next;
-					mes "[Mingmin]";
-					mes "Question...! Art thou my servant?";
+					mes "[明敏]";
+					mes "問題是...。你是我的僕人嗎？";
 					next;
-					select("Yes, my leige...");
+					select("是的，我的主人...");
 					cutin "min02",0;
-					mes "[Mingmin]";
+					mes "[明敏]";
 					mes "............";
 					next;
 					cutin "min01",0;
-					mes "[Mingmin]";
-					mes "Well, that's all settled then! Thou shalt signeth this form.";
+					mes "[明敏]";
+					mes "好吧，那就這麼定了！你應該簽署這份表格。";
 					next;
-					mes "[Contract]";
-					mes "A - adventurer shall not talk back to Busaner Mingmin and will not complain under any circumstance.";
+					mes "[合約]";
+					mes "A - 冒險家不得反駁 布薩納 明敏，且在任何情況下皆不得抱怨。";
 					next;
-					mes "[Contract]";
-					mes "B - adventurer shall proceed to complete the request for Busaner Mingmin as quick as humanly possible.";
+					mes "[合約]";
+					mes "B - 冒險家應盡可能以最快速度完成 布薩納 明敏 的請求。";
 					next;
-					mes "[Contract]";
-					mes "C -This contract is terminated on the day that a request of the adventurer is completed.";
+					mes "[合約]";
+					mes "C - 本合約將於冒險家的請求完成之日終止。";
 					next;
 					cutin "min02",0;
-					mes "[Contract]";
-					mes "D - this contract shall be confidential except between the adventurer and Mingmin under ^FF0000penalty of death.^000000";
+					mes "[合約]";
+					mes "D - 本合約應保密，除非在冒險家和明敏之間，否則將處以 ^FF0000死刑^000000。";
 					next;
-					mes "[Mingmin]";
-					mes "Don't worry too much. The Unions require it you know. Just sign on the line that is dotted.";
+					mes "[明敏]";
+					mes "別太擔心。公會需要這樣你知道的。只要在虛線上簽名即可。";
 					next;
-					if (select( "Sign the contract.", "Take time to think." ) == 2) {
-						mes "[Mingmin]";
-						mes "You can take your time....";
+					if (select( "簽署合約。", "花時間思考。" ) == 2) {
+						mes "[明敏]";
+						mes "你可以慢慢來....";
 					}
 					else {
 						cutin "min01",0;
-						mes "[Mingmin]";
-						mes "Did you sign it?";
+						mes "[明敏]";
+						mes "你簽了嗎？";
 						next;
-						mes "[Mingmin]";
+						mes "[明敏]";
 						mes "............";
 						next;
 						cutin "min03",0;
-						mes "[Mingmin]";
-						mes "Haha! I feel much better now.";
+						mes "[明敏]";
+						mes "哈哈！我現在感覺好多了。";
 						emotion ET_BLABLA;
 						next;
-						mes "[Mingmin]";
-						mes "Thank you for accepting the strange contract. Looking forward to working with thee.";
+						mes "[明敏]";
+						mes "感謝你接受這個奇怪的合約。期待與你合作。";
 						next;
-						mes "[Mingmin]";
-						mes "I was careful for public requests because I have to be polite to adventurers.";
+						mes "[明敏]";
+						mes "我對公開請求很小心，因為我必須對冒險家有禮貌。";
 						next;
-						mes "[Mingmin]";
-						mes "I tried to be poilte . But it just doesn't suit my personality.";
+						mes "[明敏]";
+						mes "我試著要有禮貌。但這不適合我的個性。";
 						next;
 						cutin "min02",0;
-						mes "[Mingmin]";
-						mes "Thou shouldst be more careful...Did you notice something about the pen you signed with? There were ^FF0000orange shiitake mushroom spores^000000 on it.";
+						mes "[明敏]";
+						mes "你應該更小心...你有注意到你簽名的筆有什麼問題嗎？上面有 ^FF0000橘色的香菇孢子^000000。";
 						next;
-						mes "[Mingmin]";
-						mes "If the spores get in your bloodstream, you might grow mushrooms inside of your own body.";
+						mes "[明敏]";
+						mes "如果孢子進入你的血液，你可能會在自己體內長出蘑菇。";
 						next;
-						mes "[Mingmin]";
-						mes "It takes quite a long time so do thine best. I might give you the antidote if you do well.";
+						mes "[明敏]";
+						mes "這需要很長的時間，所以盡你所能。如果你做得好，我可能會給你解藥。";
 						next;
 						cutin "min03",0;
-						mes "[Mingmin]";
-						mes "All right we became quite familiar now. So. Shall we get start to work?";
+						mes "[明敏]";
+						mes "好的，我們現在已經很熟悉了。那麼，我們開始工作吧？";
 						para_110lv01 = 5;
 					}
 				}
 				else if (para_110lv01 > 4) {
 					cutin "min01",0;
-					mes "We need some more information on the following monsters. Choose.";
+					mes "我們需要更多關於以下怪物的資訊。請選擇。";
 					next;
-					switch( select( "Glastheim related requests", "Thanatos tower related requests", "Ash Vacuum related requests", "Mingmin's personal request" ) ) {
-						mes "[Mingmin]";
+					switch( select( "與古城相關的請求", "與塔納托斯之塔相關的請求", "與灰燼真空相關的請求", "明敏的個人請求" ) ) {
+						mes "[明敏]";
 					case 1:
-						mes "I heard something is going on in Glastheim. Monsters are afoot.";
+						mes "我聽說古城裡發生了一些事情。怪物出沒。";
 						next;
-						switch( select( "Raydric Research", "Khalitzberg Research", "Wanderer Research" ) ) {
-							mes "[Mingmin]";
+						switch( select( "雷瑞克的研究", "卡利斯格的研究", "漫遊者研究" ) ) {
+							mes "[明敏]";
 						case 1:
 							if (checkquest(13068,PLAYTIME) == 0)
-								mes "Raydric's research is going well. It is better off having more samples to research.!";
+								mes "雷瑞克的研究進展順利。最好有更多的樣本來研究。!";
 							else if (checkquest(13067,HUNTING) == 1) {
-								cutin "溯檜萄葛蘋萄",3;  //daydric_card
-								mes "You can find Raydric in the west entrance or on the 2nd floor of Glastheim.";
+								cutin "????????",3;  //daydric_card
+								mes "你可以在古城西邊入口或二樓找到雷瑞克。";
 								next;
-								mes "[Mingmin]";
-								mes "I need information and document no matter what happens. Come back to me after dealing with ^FF000030 Raydric^000000's.";
+								mes "[明敏]";
+								mes "無論發生什麼事，我都需要資訊和文件。處理完 ^FF000030 隻雷瑞克^000000 後再來找我。";
 								next;
 								cutin "min01",0;
-								mes "[Mingmin]";
-								mes "The experience you learn by fighting with monsters will be a good record for the research!";
+								mes "[明敏]";
+								mes "你從與怪物戰鬥中學到的經驗將是研究的良好記錄！";
 							}
 							else if (checkquest(13067,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "How do you feel dealing with tough monsters? Good documents and good experience to you as well.";
+								mes "與強大的怪物打交道的感覺如何？良好的文件和良好的經驗對你來說也是如此。";
 								callsub S_Quest,13067,13068,700000,200000;
 							}
 							else {
-								cutin "溯檜萄葛蘋萄",3;  //daydric_card
-								mes "Something is happening in Glastheim. And that clue is in Raydrics that is information I have.";
+								cutin "????????",3;  //daydric_card
+								mes "古城裡發生了一些事情。而那個線索就在雷瑞克身上，這是我掌握的訊息。";
 								next;
-								mes "[Mingmin]";
-								mes "I need information and document no matter what happens. Come back to me after dealing with ^FF000030 Raydric^000000's.";
+								mes "[明敏]";
+								mes "我需要資訊和文件，無論發生什麼事。處理完^FF000030雷德里克^000000後再回來找我。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please come back to me after dealing with the monsters. I need all your stories for documentation.";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "請在處理完怪物後再回來找我。我需要你所有的故事來做文件。";
 									callsub S_Quest,13068,13067;
 								}
 							}
 							break;
 						case 2:
 							if (checkquest(13070,PLAYTIME) == 0)
-								mes "Khalitzburg's research is going well. It is better off having more samples to research!";
+								mes "卡利斯格的研究進展順利。最好有更多的樣本可以研究！";
 							else if (checkquest(13069,HUNTING) == 1) {
-								cutin "蝶騷釭檜お蘋萄",3;  //skullknight_card
-								mes "Khalitzburg will be found in west entrance of Glastheim.";
+								cutin "???????????",3;  //skullknight_card
+								mes "卡利斯格將會在古城格拉斯海姆的西邊入口被找到。";
 								next;
-								mes "[Mingmin]";
-								mes "I need information and document no matter what happens. Come back to me after dealing with ^FF000030 Khalitzburg's^000000";
+								mes "[明敏]";
+								mes "我需要資訊和文件，無論發生什麼事。處理完^FF000030卡利斯格^000000後再回來找我。";
 								next;
 								cutin "min01",0;
-								mes "[Mingmin]";
-								mes "The experience you learn by fighting with monsters will be a good record for the research!";
+								mes "[明敏]";
+								mes "你透過與怪物戰鬥所學到的經驗將會是研究的好紀錄！";
 							}
 							else if (checkquest(13069,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "How do you feel of dealing with tough monsters? Good documents and good experience to you as well.";
+								mes "你覺得對付強大的怪物感覺如何？對你來說也是好的文件和好的經驗。";
 								callsub S_Quest,13069,13070,700000,200000;
 							}
 							else {
-								cutin "蝶騷釭檜お蘋萄",3;  //skullknight_card
-								mes "Maybe Khalitzburg is linked to what is happening in glastheim so lets research it.";
+								cutin "???????????",3;  //skullknight_card
+								mes "也許卡利斯格與格拉斯海姆正在發生的事情有關，所以讓我們研究它。";
 								next;
-								mes "[Mingmin]";
-								mes "I need information and document no matter what happens. Come back to me after dealing with ^FF000030 Khalitzburg's^000000";
+								mes "[明敏]";
+								mes "我需要資訊和文件，無論發生什麼事。處理完^FF000030卡利斯格^000000後再回來找我。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please tell me the story after dealing with them one by one. They will be important documents...";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "請一個一個地告訴我處理完牠們後的故事。牠們會是重要的文件...";
 									callsub S_Quest,13070,13069;
 								}
 							}
 							break;
 						case 3:
 							if (checkquest(13072,PLAYTIME) == 0)
-								mes "Wanderer's research is going well. It is better off having more samples to research!";
+								mes "流浪者的研究進展順利。最好有更多的樣本可以研究！";
 							else if (checkquest(13071,HUNTING) == 1) {
-								cutin "寡�裔炴臍矬奏�",3;  //wander_man_card
-								mes "Wanderer will be found if you enter from the north entrance and go to big entrance in the middle of the road in Glastheim.";
+								cutin "???????????",3;  //wander_man_card
+								mes "如果你從北方入口進入，然後前往格拉斯海姆道路中間的大入口，就會找到流浪者。";
 								next;
-								mes "[Mingmin]";
-								mes "I need information and documents no matter what happens. How about dealing with ^FF000030 Wanderers^000000.";
+								mes "[明敏]";
+								mes "我需要資訊和文件，無論發生什麼事。處理^FF000030流浪者^000000如何？";
 								next;
 								cutin "min01",0;
-								mes "[Mingmin]";
-								mes "The experience you learn by fighting with monsters will be a good record for the research!";
+								mes "[明敏]";
+								mes "你透過與怪物戰鬥所學到的經驗將會是研究的好紀錄！";
 							}
 							else if (checkquest(13071,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "How do you feel of dealing with tough monsters? Good documents and good experience to you as well.";
+								mes "你覺得對付強大的怪物感覺如何？對你來說也是好的文件和好的經驗。";
 								callsub S_Quest,13071,13072,700000,200000;
 							}
 							else {
-								cutin "寡�裔炴臍矬奏�",3;  //wander_man_card
-								mes "Wanderer is the representative of Glastheim. It is dangerous but cool!";
+								cutin "???????????",3;  //wander_man_card
+								mes "流浪者是格拉斯海姆的代表。牠們很危險，但也很酷！";
 								next;
-								mes "[Mingmin]";
-								mes "It will be a good research. Come back after dealing with ^FF000030 Wanderers^000000.";
+								mes "[明敏]";
+								mes "這將會是一個好的研究。處理完^FF000030流浪者^000000後再回來。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please tell me the story after dealing with them one by one. They will be important documents...";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "請一個一個地告訴我處理完牠們後的故事。牠們會是重要的文件...";
 									emotion ET_BEST;
 									callsub S_Quest,13072,13071;
 								}
@@ -422,40 +422,40 @@ moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
 						}
 						break;
 					case 2:
-						mes "We need to research monsters in Thanatos tower.";
+						mes "我們需要研究塔納托斯之塔的怪物。";
 						next;
-						switch( select( "Ancient Mimic research", "Deathword research", "Owl Baron research", "Bloody Page research" ) ) {
-							mes "[Mingmin]";
+						switch( select( "古代Mimic研究", "死亡之語研究", "貓頭鷹男爵研究", "血腥的頁研究" ) ) {
+							mes "[明敏]";
 						case 1:
 							if (checkquest(13074,PLAYTIME) == 0)
-								mes "Ancient mimic research is going well. It is better off having more samples for the research!";
+								mes "古代Mimic的研究進展順利。最好有更多的樣本用於研究！";
 							else if (checkquest(13073,HUNTING) == 1) {
-								cutin "縑檣暮お嘐嗶",3;  //ancient_mimic_card
-								mes "It is not far if you move from Juno or Hugel to Thanatos or Abyss lake.";
+								cutin "???μ?????",3;  //ancient_mimic_card
+								mes "如果你從朱諾或毀葛移動到塔納托斯之塔或阿比斯湖，那就不遠了。";
 								next;
-								mes "[Mingmin]";
-								mes "Do not complain! It will be a good experience for you!";
+								mes "[明敏]";
+								mes "別抱怨！這對你來說會是個好經驗！";
 								next;
 								cutin "min01",0;
-								mes "[Mingmin]";
-								mes "The experience you learn by fighting with monsters will be a good record to research!";
+								mes "[明敏]";
+								mes "你透過與怪物戰鬥所學到的經驗將會是研究的好紀錄！";
 							}
 							else if (checkquest(13073,HUNTING) == 2) {
 								cutin "min02",0;
-								mes "You did good work today!";
+								mes "你今天做得很好！";
 								callsub S_Quest,13073,13074,700000,300000;
 							}
 							else {
-								cutin "縑檣暮お嘐嗶",3;  //ancient_mimic_card
-								mes "You will see them often at thanatos tower or abyss lake. They are not generous with their drops but that is not important to finishing this request.";
+								cutin "???μ?????",3;  //ancient_mimic_card
+								mes "你會在塔納托斯之塔或阿比斯湖經常看到牠們。牠們的掉落物並不慷慨，但對於完成這個請求來說並不重要。";
 								next;
-								mes "[Mingmin]";
-								mes "I can not find any connection in two areas but they keep coming up so it is worth researching. Come back after taking care of ^FF000030 ancient mimic^000000.";
+								mes "[明敏]";
+								mes "我找不到兩個區域之間的任何聯繫，但牠們不斷出現，所以值得研究。處理完^FF000030古代Mimic^000000後再回來。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "If you possibly get a good drop from them, you know right? Do not forget about me!";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "如果你可能從牠們身上獲得好的掉落物，你知道吧？別忘了我！";
 									emotion ET_SPARK;
 									callsub S_Quest,13074,13073;
 								}
@@ -463,65 +463,65 @@ moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
 							break;
 						case 2:
 							if (checkquest(13076,PLAYTIME) == 0)
-								mes "Deathword's research is going well. It is better off having more samples for the research!";
+								mes "死亡之語的研究進展順利。最好有更多的樣本用於研究！";
 							else if (checkquest(13075,HUNTING) == 1) {
-								mes "Thanatos tower will be more dangerous than you thought. You might want to organize a party before going there.";
+								mes "塔納托斯之塔會比你想像的更危險。你可能想在去那裡之前組織一個隊伍。";
 								next;
-								mes "[Mingmin]";
-								mes "I want to research this so take this request please!";
+								mes "[明敏]";
+								mes "我想研究這個，所以請接受這個委託！";
 								next;
-								mes "[Mingmin]";
-								mes "I will give you a reward...";
+								mes "[明敏]";
+								mes "我會給你獎勵...";
 							}
 							else if (checkquest(13075,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Thank you so much. This will be great research.";
+								mes "非常感謝你。這將會是個很棒的研究。";
 								callsub S_Quest,13075,13076,700000,300000;
 							}
 							else {
-								mes "That is the reason why I chose Thanatos tower to research. Do not be surprised. This one is an old book that became a monster!";
+								mes "這就是我選擇塔納托斯之塔進行研究的原因。不要感到驚訝。這個是一個變成怪物的舊書！";
 								next;
-								mes "[Mingmin]";
-								mes "I want to research the background of those creatures. Please check ^FF000030 Deathwords^000000.";
+								mes "[明敏]";
+								mes "我想研究這些生物的背景。請調查^FF000030死亡之語^000000。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please take care of them one by one. Those books contain precious history of Midgard so I want to research them.";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "請一個一個地照顧牠們。這些書包含了米德加爾特的珍貴歷史，所以我想研究牠們。";
 									callsub S_Quest,13076,13075;
 								}
 							}
 							break;
 						case 3:
 							if (checkquest(13078,PLAYTIME) == 0)
-								mes "Owl Baron's research is going well. It is better off having more samples for the research!";
+								mes "貓頭鷹男爵的研究進展順利。最好有更多的樣本用於研究！";
 							else if (checkquest(13077,HUNTING) == 1) {
-								cutin "嬴選夥煩蘋萄",3;  //owl_baron_card
-								mes "You can meet it if you climb the tower according to the rumors. For me, well I've never been up there.";
+								cutin "????????",3;  //owl_baron_card
+								mes "如果你按照傳聞爬上塔，你就可以遇到牠。對我來說，嗯，我從未去過那裡。";
 								next;
-								mes "[Mingmin]";
-								mes "The guy with blue hat went to the top but I didn't bother to follow.";
+								mes "[明敏]";
+								mes "戴著藍色帽子的傢伙去了頂樓，但我懶得跟隨。";
 								next;
-								mes "[Mingmin]";
-								mes "Anyways, There will be enough reward for sure.";
+								mes "[明敏]";
+								mes "無論如何，肯定會有足夠的獎勵。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13077,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Safely back!? Eden Group will be happy.";
+								mes "安全回來了！？伊甸園會很高興。";
 								callsub S_Quest,13077,13078,700000,300000;
 							}
 							else {
-								cutin "嬴選夥煩蘋萄",3;  //owl_baron_card
-								mes "Personally I have no interest in this monster but it was requested from the Eden Group.";
+								cutin "????????",3;  //owl_baron_card
+								mes "就我個人而言，我對這個怪物沒有興趣，但這是伊甸園的要求。";
 								next;
-								mes "[Mingmin]";
-								mes "Please take care of ^FF000020 Owl Barons^000000. It will help other adventurers to explore Thanatos tower.";
+								mes "[明敏]";
+								mes "請照顧^FF000020貓頭鷹男爵^000000。這將有助於其他冒險家探索塔納托斯之塔。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "It does not mean I am not going to research them. The more documents the better research.";
+								if (select( "接受委託。", "放棄" ) == 1) {
+									mes "[明敏]";
+									mes "這並不意味著我不打算研究牠們。文件越多，研究越好。";
 									callsub S_Quest,13078,13077;
 								}
 							}
@@ -529,381 +529,381 @@ moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
 						case 4:
 							if (checkquest(13080,PLAYTIME) == 0) {
 								cutin "min03",0;
-								mes "I like old books! Okay I need to analyze this. Bloody Pages! Please bring more tomorrow or the day after tomorrow. Anytime!";
+								mes "我喜歡舊書！好吧，我需要分析這個。血腥的頁！請明天或後天多帶些來。隨時都可以！";
 							}
 							else if (isbegin_quest(13079) == 1) {
 								if (countitem(7449) > 19) {// Bloody_Page
 									cutin "min03",0;
-									mes "Wow. It is so curious. It is exciting!";
+									mes "哇。這太有趣了。真是令人興奮！";
 									delitem 7449,20;
 									callsub S_Quest,13079,13080,700000,300000;
 								}
 								else {
-									cutin "等蝶錶萄",3;  //deathword_card
-									mes "3rd floor of thanatos has Deathword monsers that drop these bloody pages.";
+									cutin "????????",3;  //deathword_card
+									mes "塔納托斯之塔 3 樓的死亡之語怪物會掉落這些血腥之頁。";
 									next;
-									mes "[Mingmin]";
-									mes "I think if thou shalt collect 20 of these it should be enough for my research. It's barbaric, but it is a job!";
+									mes "[明敏]";
+									mes "我想如果你能收集到 20 張，應該就足夠我研究了。雖然很野蠻，但這就是工作！";
 									next;
-									mes "[Mingmin]";
-									mes "There will be enough reward for sure.";
+									mes "[明敏]";
+									mes "肯定會有足夠的報酬的。";
 									cutin "min01",0;
 								}
 							}
 							else {
-								cutin "等蝶錶萄",3;  //deathword_card
-								mes "The fact that I decided to travel to Thanatos has the reason. Haha, I heard that I can get Bloody Pages from Deathword monsters.";
+								cutin "????????",3;  //deathword_card
+								mes "我決定前往塔納托斯是有原因的。哈哈，我聽說我可以從死亡之語怪物那裡獲得血腥之頁。";
 								next;
-								mes "[Mingmin]";
-								mes "I know they're gross and bloody but just imagine the centuries of stories preserved in those pages...";
+								mes "[明敏]";
+								mes "我知道它們很噁心又血腥，但想像一下這些頁面上保存了幾個世紀的故事...";
 								next;
-								mes "[Mingmin]";
-								mes "Can you please get me 20 ^FF0000Bloody Pages^000000? I will be happy if there is one useful bookshelf we can use when you bring them back.";
+								mes "[明敏]";
+								mes "你可以幫我拿 20 張 ^FF0000血腥之頁^000000 嗎？如果你把它們帶回來，我們可以得到一個有用的書架，我會很高興的。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please, I really want to research this.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "拜託，我真的很想研究這個。";
 									callsub S_Quest,13080,13079;
 								}
 							}
 						}
 						break;
 					case 3:
-						mes "The research for Ash Vacuum is just beginning. So there are still many thing to study!";
+						mes "對灰燼真空的研究才剛開始。所以還有很多東西需要研究！";
 						next;
-						switch( select( "Dark Pinguicula research", "Nepenthes research", "Naga research", "Centipede Larva research", "Cornus research", "We know the magic power of the horn we saw that day." ) ) {
-							mes "[Mingmin]";
+						switch( select( "暗黑瓶子草研究", "豬籠草研究", "那迦研究", "蜈蚣幼蟲研究", "傘蜥研究", "我們知道那天我們看到的角所蘊含的魔法力量。" ) ) {
+							mes "[明敏]";
 						case 1:
 							if (checkquest(13082,PLAYTIME) == 0)
-								mes "Pinguicula dark's research is ongoing. Please come back to me next time.!";
+								mes "暗黑瓶子草的研究正在進行中。請下次再來找我！";
 							else if (checkquest(13081,HUNTING) == 1) {
-								cutin "б敝襲塭棻觼蘋萄",3;  //pinguicula_dark_card
-								mes "I think this research is easy. They are not too dangerous from the initial reports I've received.";
+								cutin "???????????",3;  //pinguicula_dark_card
+								mes "我認為這項研究很簡單。從我收到的初步報告來看，它們並沒有太大的危險。";
 								next;
-								mes "[Mingmin]";
-								mes "It is north west from the Allied Forces Camp. It is not that far so hurry up.";
+								mes "[明敏]";
+								mes "它位於聯軍營地的西北方。不是很遠，所以快點去吧。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13081,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Good job! keep helping my research. I still have so much to do.";
+								mes "做得好！繼續幫助我的研究。我還有很多事情要做。";
 								callsub S_Quest,13081,13082,700000,180000;
 							}
 							else {
-								cutin "б敝襲塭棻觼蘋萄",3;  //pinguicula_dark_card
-								mes "It is the monster living northwest of the Allied Forces Camp. I am not interested in going myself but the request was already paid for and I may as well research them.";
+								cutin "???????????",3;  //pinguicula_dark_card
+								mes "它是棲息在聯軍營地西北方的怪物。我對自己去沒有興趣，但委託已經付了錢，我最好還是研究一下它們。";
 								next;
-								mes "[Mingmin]";
-								mes "Hunt ^FF000030 Dark Pinguicula^000000. Battling it will provide some good research materials.";
+								mes "[明敏]";
+								mes "獵殺 ^FF000030 隻暗黑瓶子草^000000。與之戰鬥將提供一些好的研究材料。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Be careful and safe.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "小心安全。";
 									callsub S_Quest,13082,13081;
 								}
 							}
 							break;
 						case 2:
 							if (checkquest(13084,PLAYTIME) == 0)
-								mes "Nepenthes's research is still ongoing. Please come back to me next time!";
+								mes "豬籠草的研究仍在進行中。請下次再來找我！";
 							else if (checkquest(13083,HUNTING) == 1) {
-								cutin "啻も等蝶蘋萄",3;  //nepenthes_card
-								mes "It could be a simple request or tough request. Try to find friends if you are in trouble. That is adventure too!";
+								cutin "???浥?????",3;  //nepenthes_card
+								mes "這可能是一個簡單的請求，也可能是一個艱難的請求。如果你遇到麻煩，試著找朋友幫忙。這也是一種冒險！";
 								next;
-								mes "[Mingmin]";
-								mes "It is east of the Allied Forces Camp. It is not that far so hurry up.";
+								mes "[明敏]";
+								mes "它位於聯軍營地的東方。不是很遠，所以快點去吧。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13083,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Good job! Keep assisting with my research. I still have so much to do.";
+								mes "做得好！繼續協助我的研究。我還有很多事情要做。";
 								callsub S_Quest,13083,13084,700000,180000;
 							}
 							else {
-								cutin "啻も等蝶蘋萄",3;  //nepenthes_card
-								mes "Do you know the monster name as mandragora? There is similar monster to the east of the expedition station. I am sure it will be related for researching monsters.";
+								cutin "???浥?????",3;  //nepenthes_card
+								mes "你知道怪物名叫曼陀羅花嗎？在探險站的東邊有一種相似的怪物。我相信它與研究怪物有關。";
 								next;
-								mes "[Mingmin]";
-								mes "Why don't you hunt 30 ^FF0000Nepenthes^000000? Their vines crawl up everywhere so be careful.";
+								mes "[明敏]";
+								mes "你何不去獵殺 30 隻 ^FF0000豬籠草^000000？它們的藤蔓到處蔓延，所以要小心。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "The request like this satisfies me and the Eden Group. Be careful though.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "像這樣的委託既能滿足我，也能滿足伊甸園。不過要小心。";
 									callsub S_Quest,13084,13083;
 								}
 							}
 							break;
 						case 3:
 							if (checkquest(13086,PLAYTIME) == 0)
-								mes "Naga's research is still ongoing. Please come back to me next time.";
+								mes "那迦的研究仍在進行中。請下次再來找我。";
 							else if (checkquest(13085,HUNTING) == 1) {
-								cutin "釭陛蘋萄",3;  //naga_card
-								mes "You take care of those addicted to magic powers, I have no interest.";
+								cutin "???????",3;  //naga_card
+								mes "你照顧那些沉迷於魔法力量的人，我沒興趣。";
 								next;
-								mes "[Mingmin]";
-								mes "Please take care of 30 Naga monsters northwest of the expedition station.";
+								mes "[明敏]";
+								mes "請處理掉探險站西北方的 30 隻那迦怪物。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13085,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Good. Keep helping my research. I have too many to check out.";
+								mes "很好。繼續幫助我的研究。我還有太多東西要檢查了。";
 								callsub S_Quest,13085,13086,700000,180000;
 							}
 							else {
-								cutin "釭陛蘋萄",3;  //naga_card
-								mes "Please take care of 30 ^FF0000Naga^000000 monsters northwest of the expedition station.";
+								cutin "???????",3;  //naga_card
+								mes "請處理掉探險站西北方的 30 隻 ^FF0000那迦^000000 怪物。";
 								next;
-								mes "[Mingmin]";
-								mes "I have no interest in it but it bothers my time to research the other monsters that I actually want to study. So I want the number of them to be reduced.";
+								mes "[明敏]";
+								mes "我對它沒有興趣，但它打擾了我研究其他我真正想研究的怪物。所以我希望它們的數量減少。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Please do your best. This request is also important to unlock additional research.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "請盡你所能。這個委託對於解鎖額外的研究也很重要。";
 									callsub S_Quest,13086,13085;
 								}
 							}
 							break;
 						case 4:
 							if (checkquest(13088,PLAYTIME) == 0)
-								mes "I'm still researching the Centipede Larva. Please come and help me next time.";
+								mes "我還在研究蜈蚣幼蟲。請下次過來幫我。";
 							else if (checkquest(13087,HUNTING) == 1) {
-								cutin "撫じむ等嶸醱蘋萄",3;  //centipede_larva_card
-								mes "Oh... No Lets take a deep breath. For me, I want to exterminate more than 20 for research.";
+								cutin "????????????",3;  //centipede_larva_card
+								mes "喔... 不。讓我們深呼吸一下。對我來說，我想為了研究消滅超過 20 隻。";
 								next;
 								emotion ET_CRY;
-								mes "[Mingmin]";
-								mes "Be careful. And they're east of the expedition station.";
+								mes "[明敏]";
+								mes "小心。它們在探險站的東邊。";
 								cutin "min02",0;
 							}
 							else if (checkquest(13087,HUNTING) == 2) {
 								cutin "min02",0;
-								mes "Oh. Okay. You do not need to explain.";
+								mes "喔。好的。你不需要解釋。";
 								emotion ET_OTL;
 								callsub S_Quest,13087,13088,700000,180000;
 							}
 							else {
-								cutin "撫じむ等嶸醱蘋萄",3;  //centipede_larva_card
-								mes "Yuck! It is very disgusting. Look at me. It is so creepy I wanted to survey it because I was interested in Nepenthes. But I hate bugs with lots of legs...";
+								cutin "????????????",3;  //centipede_larva_card
+								mes "噁！非常噁心。看看我。太可怕了，我想調查它，因為我對豬籠草很感興趣。但我討厭有很多腿的蟲子...";
 								next;
-								mes "[Mingmin]";
-								mes "Come back after 20 ^FF0000Centipede Larva^000000 are exterminated. Can you imagine how big they became? Just the thought makes my skin crawl.";
+								mes "[明敏]";
+								mes "消滅 20 隻 ^FF0000蜈蚣幼蟲^000000 後再回來。你能想像它們長得有多大嗎？光是想想就讓我毛骨悚然。";
 								next;
 								cutin "min02",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "I'm sorry that I didn't do it myself. I'm not ashamed to admit that it's too disgusting for me.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "我很抱歉我沒有親自去做。我不羞於承認它對我來說太噁心了。";
 									callsub S_Quest,13088,13087;
 								}
 							}
 							break;
 						case 5:
 							if (checkquest(13090,PLAYTIME) == 0)
-								mes "Cornus's research is still ongoing. Please research for other adventurers.";
+								mes "傘蜥的研究仍在進行中。請為其他冒險家研究。";
 							else if (checkquest(13089,HUNTING) == 1) {
-								cutin "囀腦援蝶蘋萄",3;  //cornus_card
-								mes "I need to research those flying horse creatures so please help me out.";
+								cutin "??????????",3;  //cornus_card
+								mes "我需要研究那些飛馬生物，所以請幫我一下。";
 								next;
-								mes "[Mingmin]";
-								mes "Of course, It will help your adventurers too in some way I suppose.";
+								mes "[明敏]";
+								mes "當然，我想它也會在某種程度上幫助你的冒險家。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13089,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "How was it ? Is that monster easy for adventurers to get?";
+								mes "怎麼樣？那種怪物對冒險家來說容易對付嗎？";
 								callsub S_Quest,13089,13090,700000,180000;
 							}
 							else {
-								cutin "囀腦援蝶蘋萄",3;  //cornus_card
-								mes "I found the monster that satisfies my research needs and helps adventurers to gain experience from the Eden Group. It is not weak or fierce monster either.";
+								cutin "??????????",3;  //cornus_card
+								mes "我發現了一種怪物，既能滿足我的研究需求，又能幫助冒險家從伊甸園獲得經驗。它既不弱也不兇猛。";
 								next;
-								mes "[Mingmin]";
-								mes "I believe that Adventurers will handle Cornus in the future, so go out and deal with ^FF000030 Cornus^000000 so I can research that viability.";
+								mes "[明敏]";
+								mes "我相信冒險家將來可以應付傘蜥，所以出去處理 ^FF000030 隻傘蜥^000000，這樣我就可以研究這種可行性。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "This could be a revolution for Eden Group Adventurers. Be positive with this request please.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[明敏]";
+									mes "這可能是伊甸園冒險家的一次革命。請積極看待這個委託。";
 									callsub S_Quest,13090,13089;
 								}
 							}
 							break;
 						case 6:
 							if (checkquest(13092,PLAYTIME) == 0)
-								mes "I'm still researching the Mystic Horns you brought. Quite interesting. I can beat blue hat soon.";
+								mes "我還在研究你帶來的神秘號角。非常有趣。我很快就能打敗藍帽子了。";
 							else if (isbegin_quest(13091) == 1) {
 								if (countitem(6023) > 19) {// Mystic_Horn
 									cutin "min03",0;
-									mes "Yes this one! It is worth doing. Thank you for taking this request.";
+									mes "對！就是這個！非常值得做。感謝你接受這個委託。";
 									emotion ET_THANKS;
 									delitem 6023,20;
 									callsub S_Quest,13091,13092,700000,180000;
 								}
 								else {
-									cutin "囀腦援蝶蘋萄",3;  //cornus_card
-									mes "I am still researching but I hope to extract magic power from magical touched things.";
+									cutin "??????????",3;  //cornus_card
+									mes "我還在研究，但我希望從魔法接觸的東西中提取魔力。";
 									next;
-									mes "[Mingmin]";
-									mes "It will be useful for me and adventurers, right?";
+									mes "[敏敏]";
+									mes "這對我和冒險者都會有幫助，對吧？";
 									cutin "min01",0;
 								}
 							}
 							else {
-								cutin "囀腦援蝶蘋萄",3;  //cornus_card
-								mes "This is why I accepted the request for this from Eden Group. Find 20 ^FF0000Mystic Horn^000000 from the Cornus monsters.";
+								cutin "??????????",3;  //cornus_card
+								mes "這就是我接受伊甸園委託的原因。從克諾斯怪物身上找到 20 個 ^FF0000神秘號角^000000。";
 								next;
-								mes "[Mingmin]";
-								mes "I think I can use this horn for good things. It is easy to get. I will let you know later.";
+								mes "[敏敏]";
+								mes "我想我可以利用這個號角做些好事。它很容易獲得。我稍後會告訴你。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Ye gain experience and I get research material. Good deal right? Excellent!";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[敏敏]";
+									mes "你獲得經驗，我獲得研究材料。很划算吧？太棒了！";
 									callsub S_Quest,13092,13091;
 								}
 							}
 						}
 						break;
 					case 4:
-						mes "This request is for my personal research. I research for Eden Group and they support me to hire people assisting my research.";
+						mes "這個委託是為了我個人的研究。我為伊甸園研究，他們支持我僱用人員協助我的研究。";
 						next;
-						switch( select( "Ancient Mummy research", "Geffenia survey", "Juperos survey", "Fragment and Rusty Screw collecting." ) ) {
-							mes "[Mingmin]";
+						switch( select( "古代木乃伊研究", "吉芬尼亞調查", "朱諾斯調查", "收集碎片和生鏽的螺絲。" ) ) {
+							mes "[敏敏]";
 						case 1:
 							if (checkquest(13094,PLAYTIME) == 0)
-								mes "Ancient Mummy's research is still ongoing.";
+								mes "古代木乃伊的研究仍在進行中。";
 							else if (checkquest(13093,HUNTING) == 1) {
-								cutin "縑檣暮お嘐檜塭蘋萄",3;  //ancient_mummy_card
-								mes "If I finish researching, the first thing I'm going to do is eat a 10 year aged strawberry pudding...";
+								cutin "???μ??????????",3;  //ancient_mummy_card
+								mes "如果我完成研究，我要做的第一件事就是吃一個 10 年陳釀的草莓布丁……";
 								next;
-								mes "[Mingmin]";
-								mes "To finish my research I need you to hunt some Ancient Mummy.";
+								mes "[敏敏]";
+								mes "為了完成我的研究，我需要你去獵殺一些古代木乃伊。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13093,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "Did a good job. Fantastic strawberry pudding is not easy to make. Trust me. I will let thee taste it someday soon.";
+								mes "做得很好。製作美味的草莓布丁並不容易。相信我。我很快就會讓你嚐嚐。";
 								callsub S_Quest,13093,13094,700000,200000;
 							}
 							else {
-								cutin "縑檣暮お嘐檜塭蘋萄",3;  //ancient_mummy_card
-								mes "Things are supposed to go bad. Most of them but people want to keep and preserve food for a long time. ";
+								cutin "???μ??????????",3;  //ancient_mummy_card
+								mes "東西本來應該會變質。大部分都是這樣，但人們希望長期保存食物。";
 								next;
-								mes "[Mingmin]";
-								mes "Have you even seen the bandage that Ancient Mummy are wound up in? They last even for centuries at a time.";
+								mes "[敏敏]";
+								mes "你有沒有看過古代木乃伊纏繞的繃帶？它們甚至可以持續幾個世紀。";
 								next;
-								mes "[Mingmin]";
-								mes "I guess it is rotten but we can make big money if this research goes well. Preservatives can make a strawberry pudding that does not go bad with time.";
+								mes "[敏敏]";
+								mes "我猜它已經腐爛了，但如果這項研究順利進行，我們可以賺大錢。防腐劑可以製作出不會隨著時間變質的草莓布丁。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "This research is necessary so that I can make my strawberry pudding.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[敏敏]";
+									mes "這項研究是必要的，這樣我才能製作我的草莓布丁。";
 									callsub S_Quest,13094,13093;
 								}
 							}
 							break;
 						case 2:
 							if (checkquest(13096,PLAYTIME) == 0)
-								mes "Geffenia's research has just started. It is beginning so go slowly. Lets research.";
+								mes "吉芬尼亞的研究才剛開始。剛開始所以慢慢來。讓我們一起研究。";
 							else if (checkquest(13095,HUNTING) == 1) {
-								cutin "憮聽幗蝶蘋萄",3;  //succubus_card
-								mes "I do not expect a lot because it is very dangerous and not easy to access.";
+								cutin "??????????",3;  //succubus_card
+								mes "我不抱太大期望，因為它非常危險且不易進入。";
 								next;
-								mes "[Mingmin]";
-								mes "This request is attempting to an adventurer who used to enjoy it. Simple! Fun! Worthy experience!";
+								mes "[敏敏]";
+								mes "這個委託是為了嘗試一位曾經喜歡它的冒險家。簡單！有趣！值得的經驗！";
 								cutin "min01",0;
 							}
 							else if (checkquest(13095,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "You are more talented than I thought. If you found a tact, I will request to you for next time as well. This research is up to you.";
+								mes "你比我想像的更有天賦。如果你找到了一個技巧，下次我也會委託你。這項研究取決於你。";
 								callsub S_Quest,13095,13096,700000,200000;
 							}
 							else {
-								cutin "檣聽幗蝶蘋萄",3;  //incubus_card
-								mes "This is pre-survey for precious research because Geffenia is easy to access.";
+								cutin "??????????",3;  //incubus_card
+								mes "這是珍貴研究的初步調查，因為吉芬尼亞很容易進入。";
 								next;
-								mes "[Mingmin]";
-								mes "The request starts from how to find a way in. Please take a look what kind of monsters are in there. first of all, start by hunting ^FF000010^000000 Incubus, Succubus and Violy. Then lets research the details later.";
+								mes "[敏敏]";
+								mes "委託從如何找到進入的方法開始。請看看那裡有哪些怪物。首先，從獵殺 ^FF000010^000000 夢魘、魅魔和紫草開始。然後讓我們稍後研究細節。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "Try to start from Geffen fountain, if you want more information.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[敏敏]";
+									mes "如果你想獲得更多信息，請嘗試從吉芬噴泉開始。";
 									callsub S_Quest,13096,13095;
 								}
 							}
 							break;
 						case 3:
 							if (checkquest(13098,PLAYTIME) == 0)
-								mes "They all look the same for me.	I should research harder.";
+								mes "在我看來它們都一樣。我應該更努力地研究。";
 							else if (checkquest(13097,HUNTING) == 1) {
-								cutin "漆釭癱",3;  //venatu_card
-								mes "There is one more reason why many adventurers are sent to Juperos and that is my real request.";
+								cutin "??????",3;  //venatu_card
+								mes "許多冒險者被派往朱諾斯還有一個原因，那就是我的真正委託。";
 								next;
-								mes "[Mingmin]";
-								mes "If you go to Juperos? I wish you to take a request about ^FF0000Venatus^000000.";
+								mes "[敏敏]";
+								mes "如果你去朱諾斯？我希望你接受關於 ^FF0000毒妖^000000 的委託。";
 								cutin "min01",0;
 							}
 							else if (checkquest(13097,HUNTING) == 2) {
 								cutin "min03",0;
-								mes "You are not confused? I still do not know yet. What is the difference? Anyway good job.";
+								mes "你沒有感到困惑嗎？我仍然不知道。有什麼區別？總之，做得好。";
 								emotion ET_BLABLA;
 								callsub S_Quest,13097,13098,700000,300000;
 							}
 							else {
-								cutin "漆釭癱",3;  //venatu_card
-								mes "The remains of ancient, Juperos is mysterious. There are lots of ^FF0000secrets^000000. But this is yet again a simple monster research survey.";
+								cutin "??????",3;  //venatu_card
+								mes "古老的朱諾斯遺址很神秘。有很多 ^FF0000秘密^000000。但這又是一項簡單的怪物研究調查。";
 								next;
-								mes "[Mingmin]";
-								mes "The monster ^FF0000Venatu^000000 in juperos has 4 types of colors. Which means there are four types of monsters.";
+								mes "[敏敏]";
+								mes "朱諾斯的怪物 ^FF0000毒妖^000000 有 4 種顏色。這意味著有四種類型的怪物。";
 								next;
-								mes "[Mingmin]";
-								mes "I thought they are the same because they look the same. Is it only me? I can not distinguish. Hunt 30 of each Green, Orange and Blue ones just to be sure.";
+								mes "[敏敏]";
+								mes "我以為它們是一樣的，因為它們看起來一樣。只有我這樣嗎？我無法區分。為了確保安全，請獵殺 30 隻綠色、橙色和藍色的。";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "It wil not be easy to be alone. But looking for a fellow for adventure is what an adventurer does.";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[敏敏]";
+									mes "獨自一人並不容易。但是尋找冒險夥伴是冒險者所做的事情。";
 									callsub S_Quest,13098,13097;
 								}
 							}
 							break;
 						case 4:
 							if (checkquest(13100,PLAYTIME) == 0)
-								mes "I will make anything better than you imagine.";
+								mes "我會讓你想像的更好。";
 							else if (isbegin_quest(13099) == 1) {
 								if (countitem(7094) > 9 && countitem(7317) > 19) {
 									cutin "min03",0;
-									mes "Thank you. You will appreciate me if my research is completed.";
+									mes "謝謝你。如果我的研究完成，你會感謝我的。";
 									emotion ET_BLABLA;
 									delitem 7094,10;// Mystery_Piece
 									delitem 7317,20;// Screw
 									callsub S_Quest,13099,13100,700000,200000;
 								}
 								else {
-									cutin "漆釭癱",3;  //venatu_card
-									mes "You can find ^FF0000Fragment and Rusty Screw^000000 in juperos everywhere. Most of the monsters have it.";
+									cutin "??????",3;  //venatu_card
+									mes "你可以在朱諾斯到處找到 ^FF0000碎片和生鏽的螺絲^000000。大多數怪物都有。";
 									next;
-									mes "[Mingmin]";
-									mes "I know it is not easy but I wish thee to take this request. Please.";
+									mes "[敏敏]";
+									mes "我知道這不容易，但我希望你接受這個委託。拜託。";
 									cutin "min01",0;
 								}
 							}
 							else {
-								cutin "漆釭癱",3;  //venatu_card
-								mes "Juperos is intense and mysterious. When he showed up, It seems like it is not Midgard.";
+								cutin "??????",3;  //venatu_card
+								mes "朱諾斯既強烈又神秘。當他出現時，它似乎不是米德加爾特。";
 								next;
-								mes "[Mingmin]";
-								mes "It is core research. I need to know who he is. That will be amazing. Can you bring me 10 ^FF0000Fragment^000000 and 20 ^FF0000Rusty Screw^000000?";
+								mes "[敏敏]";
+								mes "這是核心研究。我需要知道他是誰。那太棒了。你能給我帶來 10 個 ^FF0000碎片^000000 和 20 個 ^FF0000生鏽的螺絲^000000 嗎？";
 								next;
 								cutin "min01",0;
-								if (select( "Take the request.", "Quit" ) == 1) {
-									mes "[Mingmin]";
-									mes "I do not know how many drops you can carry but I want as many as you can. May I ask you to bring 10 ^FF0000Fragment^000000 and 20 ^FF0000Rusty Screw^000000?";
+								if (select( "接受委託。", "離開" ) == 1) {
+									mes "[敏敏]";
+									mes "我不知道你能攜帶多少掉落物，但我想要盡可能多的。我可以請你帶 10 個 ^FF0000碎片^000000 和 20 個 ^FF0000生鏽的螺絲^000000 嗎？";
 									callsub S_Quest,13100,13099;
 								}
 							}
@@ -912,17 +912,17 @@ moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
 				}
 			}
 			else if (para_110lv01 < 5) {
-				mes "The request for researching monsters seem to easy for you.";
+				mes "研究怪物的委託對你來說似乎太容易了。";
 				next;
-				mes "[Mingmin]";
-				mes "There is nothing I can do because these are the rules of the Eden Group.";
+				mes "[敏敏]";
+				mes "我無能為力，因為這些是伊甸園的規則。";
 				next;
-				mes "[Mingmin]";
-				mes "There is someone who strongly wishes you to solve your request.";
+				mes "[敏敏]";
+				mes "有人強烈希望你解決你的請求。";
 			}
 			else {
 				cutin "min01",0;
-				mes "Contract is terminated. "+ strcharinfo(0) +" reward for completed research. ^FF0000I will delete incompleted research from your quest list.^000000";
+				mes "合約已終止。"+ strcharinfo(0) +" 完成研究的獎勵。 ^FF0000我將從你的任務列表中刪除未完成的研究。^000000";
 				para_110lv01 = 6;
 				next;
 				callsub S_Hunting,
@@ -945,141 +945,141 @@ moc_para01,17,95,5	script	Mingmin#1	4_F_GENETIC,{
 					13095,200000,"Geffenia expedition",
 					13097,300000,"Juperos";
 				callsub S_Gathering,13099,200000,"Fragments and Rusty Screws",7094,10,7317,20;
-				mes "[Mingmin]";
-				mes "It is a little bit inconvenient. I will read to you politely ^FF0000again^000000 in public.";
+				mes "[敏敏]";
+				mes "這有點不方便。我將在公開場合 ^FF0000再次^000000 禮貌地向你朗讀。";
 				next;
-				mes "[Mingmin]";
-				mes "Anyway "+ strcharinfo(0) +" thank you for helping me start my research.";
+				mes "[敏敏]";
+				mes "總之，"+ strcharinfo(0) +" 謝謝你幫助我開始我的研究。";
 				next;
 				cutin "min03",0;
-				mes "[Mingmin]";
-				mes "Do not worry, I will treat you like a slave if we meet outside of Eden Group or if you tell anyone I was nice to you.";
+				mes "[明敏]";
+				mes "別擔心，如果我們在伊甸園外面遇到，或是你告訴任何人我對你很好，我就會把你當作奴隸看待。";
 				emotion ET_BLABLA;
 				next;
 				cutin "min01",0;
-				mes "[Mingmin]";
-				mes "Just because I'm being nice now doesn't mean we're automatically friends though.";
+				mes "[明敏]";
+				mes "僅僅因為我現在對你好，並不代表我們自動成為朋友。";
 			}
 			break;
 		case 2:
 			if (para_110lv01 == 5)
-				mes "Do you want to know something? I am busy researching.";
+				mes "你想知道一些事情嗎？我正忙於研究。";
 			else
-				mes "It is fine day for researching. It is always fun to talk to someone of sufficient intelligence.";
+				mes "今天是個適合研究的好日子。和足夠聰明的人交談總是很有趣。";
 			while(1) {
 				next;
-				switch( select( "^0000ffFriends^000000 story", "Something to research", "Orange beard gluey mushroom...", "Finish conversation" ) ) {
-					mes "[Mingmin]";
+				switch( select( "^0000ff朋友^000000的故事", "一些需要研究的東西", "橘色的鬍鬚黏糊糊的蘑菇...", "結束對話" ) ) {
+					mes "[明敏]";
 				case 1:
 					if (para_110lv01 < 5) {
 						cutin "min02",0;
-						mes "I found a familiar face since I arrived to Eden Group with this request. ^ff0000Rohtert^000000 is the one.";
+						mes "自從我帶著這個請求來到伊甸園後，我發現了一張熟悉的面孔。^ff0000羅赫特^000000就是那個人。";
 						next;
-						mes "[Mingmin]";
-						mes "I used to join clubs that researched rare monsters. I heard it became a guild and anyway I met him there.";
+						mes "[明敏]";
+						mes "我以前參加過研究稀有怪物的俱樂部。我聽說它變成了一個公會，總之我在那裡遇見了他。";
 						next;
-						mes "[Mingmin]";
-						mes "I look younger but I am like his sister. There was so many things that happened in that club. However, I shouldn't go on and on about it. I might tell you later when we have time.";
+						mes "[明敏]";
+						mes "我看起來比較年輕，但我就像他的姐姐。那個俱樂部發生了很多事情。但是，我不應該沒完沒了地說下去。我們有時間的話，我以後再告訴你。";
 					}
 					else if (para_110lv01 == 5) {
 						cutin "min03",0;
-						mes "I found a familiar face since I arrived to Eden Group with this request. Do you see the guy ^FF0000Rohtert^000000 with white hair near the entrance?";
+						mes "自從我帶著這個請求來到伊甸園後，我發現了一張熟悉的面孔。你有看到入口附近那個白頭髮的^FF0000羅赫特^000000嗎？";
 						next;
-						mes "[Mingmin]";
-						mes "Now that he's grown up... well he used to follow me calling me his sister. By the way where is the blue hat guy who used to stick to him like glue. Did they have a fight?";
+						mes "[明敏]";
+						mes "既然他已經長大了……嗯，他以前總跟在我後面叫我姐姐。順便問一下，那個像膠水一樣黏著他的藍帽子傢伙在哪裡？他們吵架了嗎？";
 						next;
-						mes "[Mingmin]";
-						mes "That blue hat guy... He used to annoy me even at the club. If I see him again I just might smack him...";
+						mes "[明敏]";
+						mes "那個戴藍帽子的傢伙……即使在俱樂部，他也總是讓我煩惱。如果我再見到他，我就會打他一巴掌……";
 					}
 					else {
 						cutin "min02",0;
-						mes "I used to talk to Rohtert from time to time while researching. There was a lot of things to talk about ever since I left the guild.";
+						mes "我以前在研究時不時會和羅赫特聊天。自從我離開公會後，有很多事情可以談論。";
 						next;
-						mes "[Mingmin]";
-						mes "I think the guild is still around since there were so many members even when I was there.";
+						mes "[明敏]";
+						mes "我想公會還在，因為即使我在那裡的時候也有很多成員。";
 						next;
-						mes "[Mingmin]";
-						mes "I even heard that blue hat guy made himself a guild master. Imagine that fool being a master oh ho ho ho.";
+						mes "[明敏]";
+						mes "我甚至聽說那個戴藍帽子的傢伙讓自己成為了公會會長。想像一下那個傻瓜成為會長，喔呵呵呵呵。";
 					}
 					continue;
 				case 2:
 					if (para_110lv01 < 5) {
 						cutin "min01",0;
-						mes "I research monsters. Especially their features, personality, spleens, locations and relationship with other monsters. Etc.";
+						mes "我研究怪物。特別是它們的特徵、個性、脾臟、位置以及與其他怪物的關係。等等。";
 					}
 					else if (para_110lv01 == 5) {
 						cutin "min03",0;
-						mes "Researching these magic items there is more to it than just having them in your possession.";
+						mes "研究這些魔法物品不僅僅是擁有它們而已。";
 						next;
-						mes "[Mingmin]";
-						mes "My plan so far is like this. Extracted magic from the Mystic Horn is compressed by the Fragments and Screws. Then I will input the ancient information which was written in the Bloody Pages.";
+						mes "[明敏]";
+						mes "我目前的計畫是這樣的。從神秘號角提取的魔力被碎片和螺絲壓縮。然後我會輸入寫在血腥書頁中的古代資訊。";
 						next;
-						mes "[Mingmin]";
-						mes "I'm hoping to create some type of small hand-held storage device.";
+						mes "[明敏]";
+						mes "我希望創造某種類型的小型手持儲存裝置。";
 						next;
-						mes "[Mingmin]";
-						mes "I wil be rich if I complete this research! I am sure.";
+						mes "[明敏]";
+						mes "如果我完成這項研究，我就會變得富有！我確定。";
 					}
 					else {
 						cutin "min01",0;
-						mes "Well do you remember my personal research I mentioned before? It is not easy even I tried to develop...";
+						mes "好吧，你還記得我之前提到的個人研究嗎？即使我嘗試開發，這也不是一件容易的事……";
 						next;
-						mes "[Mingmin]";
-						mes "I tried to make a magic device that you can hold in your hand.";
+						mes "[明敏]";
+						mes "我試圖製作一種你可以握在手中的魔法裝置。";
 						next;
-						mes "[Mingmin]";
-						mes "No. I can not give up for this. I will make it.";
+						mes "[明敏]";
+						mes "不。我不能放棄。我會做到的。";
 					}
 					continue;
 				case 3:
 					if (para_110lv01 < 5) {
 						cutin "min02",0;
-						mes "Orange mushroom? I do not know.";
+						mes "橘色蘑菇？我不知道。";
 					}
 					else if (para_110lv01 == 5) {
 						cutin "min01",0;
-						mes "Do not worry. Ok, maybe worry because mushrooms could be growing in your body. I will get rid of it if you help me to research. It will be dangerous if it takes longer time.";
+						mes "別擔心。好吧，也許要擔心，因為蘑菇可能正在你的身體裡生長。如果你幫我研究，我就會擺脫它。如果時間拖得太長，那將會很危險。";
 					}
 					else {
 						cutin "min02",0;
-						mes "... orange shiitake gluey mushroom?";
+						mes "...橘色的香菇黏糊糊的蘑菇？";
 						next;
-						mes "[Mingmin]";
-						mes "Let me see. It might be dangerous.";
+						mes "[明敏]";
+						mes "讓我想想。這可能很危險。";
 						next;
-						mes "[Mingmin]";
-						mes "You helped me to research so let me help you! I will get rid of your mushroom spore infection.";
+						mes "[明敏]";
+						mes "你幫助我研究，所以讓我幫助你！我會擺脫你的蘑菇孢子感染。";
 						next;
-						mes "[Mingmin]";
+						mes "[明敏]";
 						mes "......";
 						next;
 						cutin "min03",0;
-						mes "[Mingmin]";
-						mes "...hee hee...";
+						mes "[明敏]";
+						mes "...嘻嘻...";
 						emotion ET_SMILE;
 						next;
-						mes "[Mingmin]";
-						mes "Hmmph, You are so naive. Did you believe it? Sticky.. some kind of mushroom is growing in your body? Hahaha";
+						mes "[明敏]";
+						mes "哼，你太天真了。你相信了嗎？黏糊糊的……某種蘑菇正在你的身體裡生長？哈哈哈";
 						next;
-						mes "[Mingmin]";
-						mes "It was just a joke. A little joke between friends.";
+						mes "[明敏]";
+						mes "這只是一個玩笑。朋友之間的小玩笑。";
 						next;
-						mes "[Mingmin]";
-						mes "I am sorry if you are upset. You made it too easy...";
+						mes "[明敏]";
+						mes "如果你不開心，我很抱歉。你讓我太容易了……";
 						next;
 						emotion ET_SMILE;
-						mes "[Mingmin]";
-						mes "You are funnier than I thought. Do not worry. That mushroom does not exist.";
+						mes "[明敏]";
+						mes "你比我想像的更有趣。別擔心。那種蘑菇並不存在。";
 					}
 					continue;
 				case 4:
 					if (para_110lv01 == 5) {
 						cutin "min01",0;
-						mes "Please help me there are so many things to research.";
+						mes "請幫助我，有很多事情需要研究。";
 					}
 					else {
 						cutin "min02",0;
-						mes "I hope you have a good time";
+						mes "希望你玩得開心";
 					}
 				}
 				break;
@@ -1107,14 +1107,14 @@ S_Hunting:
 				erasequest (.@quest_id+1);
 			continue;
 		case 2:
-			mes "[Mingmin]";
-			mes "You finished researching about "+ getarg(.@i+2) +". Thank you.";
+			mes "[明敏]";
+			mes "你完成了關於 "+ getarg(.@i+2) +" 的研究。謝謝你。";
 			getexp 700000,getarg(.@i+1);
 			break;
 		case 0:
 		case 1:
-			mes "[Mingmin]";
-			mes "I will delete "+ getarg(.@i+2) +" research from request list.";
+			mes "[明敏]";
+			mes "我將從請求列表中刪除 "+ getarg(.@i+2) +" 的研究。";
 		}
 		erasequest .@quest_id;
 		next;
@@ -1125,12 +1125,12 @@ S_Gathering:
 	if (isbegin_quest(.@quest_id) > 0) {
 		if (getarg(5,0))
 			.@count_item2 = countitem(getarg(5));
-		mes "[Mingmin]";
+		mes "[明敏]";
 		if (countitem(getarg(3)) >= getarg(4) && .@count_item2 >= getarg(6,0)) {
 			if (.@count_item2)
-				mes "You finished researching about "+ getitemname(getarg(3)) +" and "+ getitemname(getarg(5)) +". Thank you.";
+				mes "你完成了關於 "+ getitemname(getarg(3)) +" 和 "+ getitemname(getarg(5)) +" 的研究。謝謝你。";
 			else
-				mes "You finished researching about "+ getitemname(getarg(3)) +". Thank you.";
+				mes "你完成了關於 "+ getitemname(getarg(3)) +" 的研究。謝謝你。";
 			delitem getarg(3),getarg(4);
 			if (getarg(5,0))
 				delitem getarg(5),getarg(6);
@@ -1138,9 +1138,9 @@ S_Gathering:
 		}
 		else {
 			if (getarg(5,0))
-				mes "I will delete "+  getitemname(getarg(3)) +" and "+ getitemname(getarg(5)) +" research from request list.";
+				mes "我將從請求列表中刪除 "+  getitemname(getarg(3)) +" 和 "+ getitemname(getarg(5)) +" 的研究。";
 			else
-				mes "I will delete "+  getitemname(getarg(3)) +" research from request list.";
+				mes "我將從請求列表中刪除 "+  getitemname(getarg(3)) +" 的研究。";
 		}
 		erasequest .@quest_id;
 		next;

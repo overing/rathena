@@ -12,110 +12,110 @@
 //= 1.0 First Version. [Kisuka]
 //= 1.1 Added support for Baby classes. [Euphy]
 //============================================================ 
-izlude_in,74,172,4	script	Swordman#swd	119,{
+izlude_in,74,172,4	script	劍士公會服務人員#swd	119,{
 	if (Upper == 1) {
 		if (Class == Job_Novice_High && (ADVJOB == Job_Lord_Knight || ADVJOB == Job_Paladin)) {
-			mes "[Swordman]";
-			mes "It...";
-			mes "Can't be...";
-			mes "You've been reborn, haven't you?";
+			mes "[劍士]";
+			mes "這...";
+			mes "不可能...";
+			mes "你已經轉生了，對吧？";
 			next;
-			mes "[Swordman]";
-			mes "I see you're retreading the path of the Swordman! Once you've gotten used to brandishing a sword, you can never go back!!";
+			mes "[劍士]";
+			mes "看來你又要重新踏上劍士之路了！ 一旦習慣了揮舞劍，就再也回不去了！！";
 			next;
 			if (!callfunc("F_CanChangeJob")) {
-				mes "[Swordman]";
-				mes "Hmm? Ah, you must first master the Basic Skills before you are ready to become a Swordman.";
+				mes "[劍士]";
+				mes "嗯？啊，你必須先精通基礎技能，才能成為一名劍士。";
 				next;
-				mes "[Swordman]";
-				mes "Come back to me when you have finished learning the Basic Novice Skills.";
+				mes "[劍士]";
+				mes "等你學完基礎新手技能再來找我。";
 				close;
 			}
-			mes "[Swordman]";
-			mes "Excellent! Let me promote you to a Swordman right away!";
+			mes "[劍士]";
+			mes "太棒了！ 我這就晉升你為劍士！";
 			next;
 			skill "NV_TRICKDEAD",0,SKILL_PERM;
 			jobchange Job_Swordman_High;
 			skill "SM_MOVINGRECOVERY",1,SKILL_PERM;
 			skill "SM_FATALBLOW",1,SKILL_PERM;
 			skill "SM_AUTOBERSERK",1,SKILL_PERM;
-			mes "[Swordman]";
-			mes "Hmm... You look like a well-experienced Swordman. Still, I'm sure that you must train to improve your skills and gain strength!";
+			mes "[劍士]";
+			mes "嗯... 你看起來像個經驗豐富的劍士。 儘管如此，我相信你必須訓練才能提高技能並獲得力量！";
 			close;
 		}else{
-			mes "[Swordman]";
-			mes "Hm...?";
-			mes "You're a reborn";
-			mes "warrior, aren't you?";
+			mes "[劍士]";
+			mes "嗯...？";
+			mes "你是個轉生的";
+			mes "戰士，不是嗎？";
 			next;
-			mes "[Swordman]";
-			mes "Hmmm...";
-			mes "It seems that being";
-			mes "a Swordman is not part";
-			mes "of your destiny. I'm sorry,";
-			mes "but it seems there is nothing";
-			mes "I can do for you.";
+			mes "[劍士]";
+			mes "嗯...";
+			mes "看來成為";
+			mes "劍士並不是你";
+			mes "的命運。我很抱歉，";
+			mes "但似乎我什麼也";
+			mes "幫不了你。";
 			close;
 		}
 	}
-	mes "[Swordman Guildsman]";
-	mes "This is the Swordman Guild.";
-	mes "Why are you here?";
+	mes "[劍士公會人員]";
+	mes "這裡是劍士公會。";
+	mes "你來這裡做什麼？";
 	next;
-	switch(select("Tell me about being a Swordman.:I want to be a Swordman.:Nothing.")) {
+	switch(select("告訴我關於劍士的事。:我想成為劍士。:沒事。")) {
 	case 1:
-		mes "[Swordman Guildsman]";
-		mes "So you wish to know more about the mighty Swordman? Okay!";
+		mes "[劍士公會人員]";
+		mes "所以你想更多地了解強大的劍士？ 好的！";
 		next;
-		mes "[Swordman Guildsman]";
-		mes "The most distinctive feature of the Swordman is that the Swordman can show us his/her real abilities in close combat.";
-		mes "There are three reasons!";
+		mes "[劍士公會人員]";
+		mes "劍士最顯著的特點是劍士可以在近戰中展現他/她的真正能力。";
+		mes "有三個原因！";
 		next;
-		mes "[Swordman Guildsman]";
-		mes "First, Swordman has higher HP than other jobs.";
-		mes "Second, except for Bows and Rods, Swordman can use all other weapons so they can fight at their optimal ability.";
-		mes "And third, most of the skills of the Swordman give powerful physical attacks.";
+		mes "[劍士公會人員]";
+		mes "首先，劍士的 HP 比其他職業更高。";
+		mes "其次，除了弓和法杖，劍士可以使用所有其他武器，因此他們可以發揮最佳能力。";
+		mes "第三，劍士的大多數技能都能提供強大的物理攻擊。";
 		next;
-		mes "[Swordman Guildsman]";
-		mes "Though I gave you a simple explanation, I believe you understand the core meaning of what it is to be a Swordman.";
-		mes "In my opinion, Swordman is the best job ever!";
+		mes "[劍士公會人員]";
+		mes "雖然我給你一個簡單的解釋，但我相信你了解成為劍士的核心意義。";
+		mes "我認為，劍士是有史以來最好的職業！";
 		close;
 	case 2:
-		mes "[Swordman Guildsman]";
+		mes "[劍士公會人員]";
 		if(BaseJob != Job_Novice) {
 			if(BaseJob == Job_Swordman) {
-				mes "You are already an excellent Swordman, aren't you?";
-				mes "Just devote yourself to be a great Swordman.";
+				mes "你已經是一位出色的劍士，不是嗎？";
+				mes "專心致志地成為一位偉大的劍士吧。";
 			}else{
-				mes "You already have one of the other jobs, don't you?";
-				mes "You've gone too far with that joke.";
+				mes "你已經有其他職業了，不是嗎？";
+				mes "你開這個玩笑開過頭了。";
 			}
 			close;
 		}else{
 			if (!callfunc("F_CanChangeJob")) {
-				mes "I'm sorry to tell you this but to be a Swordman, you must reach at least ^4A4AFFJob Level 10^000000.";
-				mes "and ^4A4AFFBasic Skill Level 9^000000.";
+				mes "很抱歉告訴你，要成為劍士，你必須至少達到 ^4A4AFFJob Level 10^000000。";
+				mes "和 ^4A4AFFBasic Skill Level 9^000000。";
 				next;
-				mes "[Swordman Guildsman]";
-				mes "Want to be a Swordman without having the minimum requirement?";
-				mes "Do you think being a Swordman is that easy?";
+				mes "[劍士公會人員]";
+				mes "想在沒有最低要求的情況下成為劍士？";
+				mes "你認為成為劍士是那麼容易的嗎？";
 				close;
 			}
-			mes "Hmm, both your Job Level and Basic Skill Level check out.";
-			mes "Good. Do you want to be a Swordman right away?";
+			mes "嗯，你的職業等級和基礎技能等級都通過了。";
+			mes "很好。 你想馬上成為劍士嗎？";
 			next;
-			if(select("Yes, I do.:I'll consider it again.") == 2) {
-				mes "[Swordman Guildsman]";
-				mes "Yeah. Prudent decision is needed for choosing a job.";
-				mes "But I feel sorry... that you consider it again after overcoming all the hardships....";
+			if(select("是的，我想。:我會再考慮一下。") == 2) {
+				mes "[劍士公會人員]";
+				mes "是的。 選擇職業需要謹慎的決定。";
+				mes "但我感到很遺憾... 你在克服所有困難之後又考慮一遍....";
 				close;
 			}
-			mes "[Swordman Guildsman]";
-			mes "Congratulations! From now on, you are going to live a Swordman's life!";
-			mes "Let's do it right now!";
+			mes "[劍士公會人員]";
+			mes "恭喜你！ 從現在開始，你將過上劍士的生活！";
+			mes "我們現在就開始吧！";
 			next;
-			mes "[Swordman Guildsman]";
-			mes "Congratulations again for being a Swordman and I hope that you participate in many activities for the revival of our guild.";
+			mes "[劍士公會人員]";
+			mes "再次恭喜你成為劍士，我希望你參與許多活動，以振興我們的公會。";
 			callfunc "Job_Change",Job_Swordman;
 			getitem 13415,1; // N_Falchion
 			close;

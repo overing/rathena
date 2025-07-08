@@ -24,62 +24,62 @@
 //callfunc "F_CoolEventCorp","<menu>","<location>","<save map>",<x>,<y>,"<warp map>";
 function	script	F_CoolEventCorp	{
 	cutin "zonda_01",2;
-	mes "[Cool Event Corp. Staff]";
-	mes "Welcome to Cool Event Corp.";
-	mes "Our staff is always working";
-	mes "to surpass your expactations";
-	mes "for quality service. So how";
-	mes "may I assist you today?";
+	mes "[酷炫活動公司工作人員]";
+	mes "歡迎來到酷炫活動公司。";
+	mes "我們的職員總是致力於";
+	mes "超越您對於高品質服務的";
+	mes "期望。那麼今天有什麼";
+	mes "可以為您服務的嗎？";
 	next;
 	switch(select(getarg(0))) {
 	case 1:
-		mes "[Cool Event Corp. Staff]";
-		mes "Your Respawn Point";
-		mes "has been saved here";
+		mes "[酷炫活動公司工作人員]";
+		mes "您的復活點";
+		mes "已經儲存於此";
 		mes getarg(1)+".";
-		mes "Thank you for using the";
-		mes "Cool Event Corp. service~";
+		mes "感謝您使用";
+		mes "酷炫活動公司的服務～";
 		savepoint getarg(2),getarg(3),getarg(4),1,1;
 		close2;
 		break;
 	case 2:
-		mes "[Cool Event Corp. Staff]";
+		mes "[酷炫活動公司工作人員]";
 		if(!callfunc("F_CanOpenStorage")){
-			mes "I'm sorry, but you";
-			mes "need the Novice's";
-			mes "Basic Skill Level 6 to";
-			mes "use the Storage Service.";
+			mes "很抱歉，您需要";
+			mes "新手基本技能等級 6";
+			mes "才能使用";
+			mes "倉庫服務。";
 			close2;
 			break;
 		}
 		if(Zeny < 40){
-			mes "I'm sorry, but you don't";
-			mes "have enough Zeny to use";
-			mes "the Storage Service. Our";
-			mes "Storage access fee is 40 Zeny.";
+			mes "很抱歉，您沒有";
+			mes "足夠的 Zeny 來使用";
+			mes "倉庫服務。我們的";
+			mes "倉庫使用費為 40 Zeny。";
 			close2;
 			break;
 		}
 		set Zeny, Zeny - 40;
-		mes "Let me open your personal";
-		mes "storage for you right away.";
-		mes "Thanks for supporting Cool";
-		mes "Event Corp. by using our";
-		mes "services. Have a good day~";
+		mes "讓我立即為您開啟";
+		mes "您的個人倉庫。";
+		mes "感謝您使用我們的";
+		mes "服務來支持酷";
+		mes "活動公司。祝您有個美好的一天～";
 		callfunc("F_CheckKafCode");	//check your storage password, if set
 		close2;
 		openstorage;
 		break;
 	case 3:
-		mes "Please choose";
-		mes "your destination.";
+		mes "請選擇";
+		mes "您的目的地。";
 		next;
 		if (VIP_SCRIPT && !vip_status(VIP_STATUS_ACTIVE))
 			set .@cost,4400;
 		else
 			set .@cost,2200;
 		.@destination$ = getarg(5);
-		if (select(.@destination$ +" -> "+ .@cost +" z:Cancel") == 1) {
+		if (select(.@destination$ +" -> "+ .@cost +" z:取消") == 1) {
 			if ((countitem(7060) != 0) || (Zeny >= .@cost)) {
 				if (countitem(7060) != 0) {
 					delitem 7060,1; //Warp_Free_Ticket
@@ -93,42 +93,42 @@ function	script	F_CoolEventCorp	{
 				end;
 			}
 			else {
-				mes "[Cool Event Corp. Staff]";
-				mes "I'm sorry, but you don't have";
-				mes "enough zeny for the Teleport";
-				mes "Service. The fee to teleport";
-				mes "to "+ .@destination$ +" is "+.@cost+" zeny.";
+				mes "[酷炫活動公司工作人員]";
+				mes "很抱歉，您沒有足夠的";
+				mes "zeny 來使用傳送";
+				mes "服務。傳送到";
+				mes .@destination$ +" 的費用是 "+.@cost+" zeny。";
 			}
 		}
 		close2;
 		break;
 	case 4:
-		mes "[Cool Event Corp. Staff]";
+		mes "[酷炫活動公司工作人員]";
 		if(BaseClass != Job_Merchant){
-			mes "I'm sorry, but the";
-			mes "Pushcart rental service";
+			mes "很抱歉，";
+			mes "手推車租借服務";
 			if (checkre(0))
-				mes "is only available to Merchant classes.";
+				mes "僅提供給商人職業。";
 			else {
-				mes "is only available to Merchants,";
-				mes "Blacksmiths, White Smiths,";
-				mes "Alchemists and Creators.";
+				mes "僅提供給商人、";
+				mes "鐵匠、神工匠、";
+				mes "鍊金術師和創造者。";
 			}
 			close2;
 			break;
 		}
 		if(getskilllv("MC_PUSHCART") == 0){
-			mes "You can only rent a cart after";
-			mes "learning the Pushcart Skill.";
+			mes "您必須學會";
+			mes "手推車技能後才能租借手推車。";
 			close2;
 			break;
 		}
 		if(checkcart() == 1){
-			mes "You already have";
-			mes "a Pushcart equipped.";
-			mes "Unfortunately, we can't";
-			mes "rent more than one to";
-			mes "each customer at a time.";
+			mes "您已經裝備了";
+			mes "手推車。";
+			mes "很遺憾，我們一次";
+			mes "無法為每位顧客";
+			mes "租借超過一台手推車。";
 			close2;
 			break;
 		}
@@ -138,17 +138,17 @@ function	script	F_CoolEventCorp	{
 			close2;
 			break;
 		}
-		mes "The Pushcart rental";
-		mes "fee is 800 Zeny. Would";
-		mes "you like to rent a Pushcart?";
+		mes "手推車租借";
+		mes "費用為 800 Zeny。您";
+		mes "想要租借手推車嗎？";
 		next;
-		if(select("Rent a Pushcart:Cancel") == 1){
+		if(select("租借手推車:取消") == 1){
 			if(Zeny < 800){
-				mes "[Cool Event Corp. Staff]";
-				mes "I'm sorry, but you";
-				mes "don't have enough";
-				mes "Zeny to pay the Pushcart";
-				mes "rental fee of 800 Zeny.";
+				mes "[酷炫活動公司工作人員]";
+				mes "很抱歉，您";
+				mes "沒有足夠的";
+				mes "Zeny 來支付手推車";
+				mes "的租借費用 800 Zeny。";
 			} else {
 				set Zeny, Zeny - 800;
 				setcart;
@@ -157,17 +157,17 @@ function	script	F_CoolEventCorp	{
 		close2;
 		break;
 	case 5:
-		callfunc("F_SetKafCode","[Cool Event Corp. Staff]","Cool Event Corp.");
+		callfunc("F_SetKafCode","[酷炫活動公司工作人員]","酷炫活動公司.");
 		//the function closes msg and removes cutins
 	case 6:
 	default:
-		mes "[Cool Event Corp. Staff]";
-		mes "Cool Event Corp. is always";
-		mes "striving to provide the best";
-		mes "services for our customers.";
-		mes "Help us become the best by";
-		mes "providing us with your opinions";
-		mes "and honest feedback. Thank you.";
+		mes "[酷炫活動公司工作人員]";
+		mes "酷炫活動公司總是";
+		mes "努力為我們的客戶";
+		mes "提供最好的服務。";
+		mes "請提供您的意見";
+		mes "和誠實的回饋來幫助我們";
+		mes "成為最好的公司。謝謝您。";
 		close2;
 	}
 	cutin "", 255;
@@ -176,28 +176,28 @@ function	script	F_CoolEventCorp	{
 
 lighthalzen,94,248,3	script	Cool Event Corp Staff::CoolEventCorpStaffLighthalzen	4_M_ZONDAMAN,{
 	callfunc "F_CoolEventCorp",
-		"Save:Use Storage::Rent a Pushcart:Storage Password Service:Cancel",
-		"in the town of Lighthalzen","lighthalzen",95,240;
+		"保存為復活點:使用倉庫::租借手推車:倉庫密碼服務:取消",
+		"於里希塔樂鎮","lighthalzen",95,240;
 	end;
 }
 
 hugel,88,168,4	script	Cool Event Corp. Staff::CoolEventCorpStaffHugel	4_M_ZONDAMAN,{
 	callfunc "F_CoolEventCorp",
-		"Save:Use Storage::Rent a Pushcart:Storage Password Service:Cancel",
-		"in the village of Hugel","hugel",96,155;
+		"保存為復活點:使用倉庫::租借手推車:倉庫密碼服務:取消",
+		"於毀葛村內","hugel",96,155;
 	end;
 }
 
 rachel,109,138,5	script	Cool Event Corp. Staff::CoolEventCorpStaffRachel	4_M_ZONDAMAN,{
 	callfunc "F_CoolEventCorp",
-		"Save:Use Storage:Teleport Service:Rent a Pushcart:Storage Password Service:Cancel",
-		"in the town of Rachel","rachel",113,137,"Veins";
+		"保存為復活點:使用倉庫:傳送服務:租借手推車:倉庫密碼服務:取消",
+		"於拉赫鎮","rachel",113,137,"Veins";
 	end;
 }
 
 veins,208,128,5	script	Cool Event Corp. Staff::CoolEventCorpStaffVeins	4_M_ZONDAMAN,{
 	callfunc "F_CoolEventCorp",
-		"Save:Use Storage:Teleport Service:Rent a Pushcart:Storage Password Service:Cancel",
-		"in the town of Veins","veins",204,103,"Rachel";
+		"保存為復活點:使用倉庫:傳送服務:租借手推車:倉庫密碼服務:取消",
+		"於汶巴勒鎮","veins",204,103,"Rachel";
 	end;
 }

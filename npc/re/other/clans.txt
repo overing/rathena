@@ -11,149 +11,149 @@
 //============================================================
 
 prontera,138,183,7	script	Clan Helper	703,{
-	mes "[Clan Helper]";
-	mes "Do you want to build connections without being in a guild?";
+	mes "[氏族助手]";
+	mes "你想要建立人脈，但又不想加入公會嗎？";
 	next;
-	mes "[Clan Helper]";
-	mes "Can't find the perfect guild for yourself?";
+	mes "[氏族助手]";
+	mes "找不到適合自己的完美公會嗎？";
 	next;
-	mes "[Clan Helper]";
-	mes "You can join or leave clans freely! Just join!";
+	mes "[氏族助手]";
+	mes "你可以自由加入或離開氏族！快加入吧！";
 	next;
-	mes "[Clan Helper]";
-	mes "Now, come on in and meet the masters of the Kingdom's best clans!";
+	mes "[氏族助手]";
+	mes "現在，進來認識王國中最佳氏族的領袖吧！";
 	close;
 }
 
 prt_in,33,114,5	script	Raffam Oranpere	10058,{
 	cutin "laperm01.bmp", 2;
-	mes "[Raffam Oranpere]";
-	mes "Hi! I'm Raffam, master of the ^3131FFSword Clan^000000 in the Rune-Midgarts Kingdom.";
+	mes "[拉法姆·奧蘭佩爾]";
+	mes "嗨！我是拉法姆，符文-米德加茲王國中 ^3131FF劍氏族^000000 的領袖。";
 	next;
-	switch( select( "Clan Information:Join.:Leave." ) ){
+	switch( select( "氏族資訊:加入:離開。" ) ){
 		case 1:
-			switch( select( "What are Clans?:About the Sword Clan:Cancel." ) ){
+			switch( select( "什麼是氏族？:關於劍氏族:取消。" ) ){
 				case 1:
-					mes "[Raffam Oranpere]";
-					mes "The ^3131FFClans^000000 are a type of guild ran by the Kingdom.";
-					mes "They don't participate in the Siege, so members are free to join/leave anytime.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "^3131FF氏族^000000 是一種由王國運營的公會。";
+					mes "他們不參與攻城戰，因此成員可以隨時自由加入/離開。";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "I wish we could join the Siege. I'd love flying over on my dragon and burning everyone in my way!";
-					mes "Oops, too thrilled!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "我希望我們能加入攻城戰。我真想騎著我的龍飛過去，燒掉所有擋路的人！";
+					mes "哎呀，太興奮了！";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "Join us, if no Clan suits your taste.";
-					mes "New members are given ^3131FFfree stat bonuses^000000.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "如果沒有氏族適合你的口味，就加入我們吧。";
+					mes "新成員將獲得 ^3131FF免費屬性加成^000000。";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "Melee stats are offered as the name ^3131FFSword Clan^000000 suggests, but not all members are Melee classes.";
-					mes "Don't feel pressured, just count on me!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "如名稱 ^3131FF劍氏族^000000 所示，主要提供近戰屬性，但並非所有成員都是近戰職業。";
+					mes "別感到有壓力，只要相信我就好！";
 					next;
 					cutin "laperm02.bmp", 2;
-					mes "[Raffam Oranpere]";
-					mes "Differences in variety creates the fun.";
-					mes "These odd bunches never bore me in the party.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "多樣性的差異創造了樂趣。";
+					mes "這些古怪的組合在隊伍中從不讓我感到無聊。";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "And who knows you might meet your soul mate in the Clan? Hahah!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "而且誰知道你可能會在氏族中遇到你的靈魂伴侶？哈哈哈！";
 					break;
 				case 2:
-					mes "[Raffam Oranpere]";
-					mes "The ^3131FFSword Clan^000000 mainly supports Melee adventurers.";
-					mes "Join for free ^FF0000<STR+1, VIT+1, MHP+30, MSP+10>^000000!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "^3131FF劍氏族^000000 主要支持近戰冒險者。";
+					mes "加入可免費獲得 ^FF0000<STR+1, VIT+1, MHP+30, MSP+10>^000000！";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "Remember, no Siege participation.";
-					mes "You should contact other guilds for Siege.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "記住，不參與攻城戰。";
+					mes "您應該聯繫其他公會以參與攻城戰。";
 					next;
-					mes "[Raffam Oranpere]";
-					mes "A question?";
-					mes "Excited to join me? Hahah!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "有問題嗎？";
+					mes "很高興加入我嗎？哈哈哈！";
 					break;
 				case 3:
 					break;
 			}			
 			break;
 		case 2:
-			mes "[Raffam Oranpere]";
-			mes "Oh, you'll join? Good choice!";
-			mes "Let's check the Clan policy then to begin admission procedures.";
+			mes "[拉法姆·奧蘭佩爾]";
+			mes "哦，你要加入嗎？好選擇！";
+			mes "讓我們檢查氏族政策，然後開始入會程序。";
 			next;
-			mes "[Raffam Oranpere]";
-			mes "^3131FFClansmen^000000 cannot participate in the Siege.";
-			mes "New members are given these stat bonuses: ^FF0000<STR+1, VIT+1, MHP+30, MSP+10>^000000.";
-			mes "You with me so far?";
+			mes "[拉法姆·奧蘭佩爾]";
+			mes "^3131FF氏族成員^000000 不能參與攻城戰。";
+			mes "新成員將獲得這些屬性加成：^FF0000<STR+1, VIT+1, MHP+30, MSP+10>^000000。";
+			mes "你到目前為止都明白嗎？";
 			next;
-			if( select( "Yes.:No." ) == 1 ){
-				mes "[Raffam Oranpere]";
-				mes "You can join and leave a Clan anytime, but if you don't login for ^FF0000more than 2 weeks^000000, you'll be ^FF0000expelled^000000.";
-				mes "Clan masters exist for reason, like I.";
-				mes "Understood?";
+			if( select( "是的。:不是。" ) == 1 ){
+				mes "[拉法姆·奧蘭佩爾]";
+				mes "你可以隨時加入和離開氏族，但是如果你 ^FF0000超過 2 週^000000 沒有登錄，你將會被 ^FF0000驅逐^000000。";
+				mes "氏族領袖的存在是有原因的，就像我一樣。";
+				mes "明白了？";
 				next;
-				if( select( "Yes.:No." ) == 1 ){
-					mes "[Raffam Oranpere]";
-					mes "Great, sign your name here to register.";
+				if( select( "是的。:不是。" ) == 1 ){
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "太好了，在這裡簽上你的名字來註冊。";
 					next;
 					input .@name$;
-					mes "[Raffam Oranpere]";
-					mes "So, you're ^3131FF" + strcharinfo( 0 ) + "^000000! Nice name!";
-					mes "Let me register you.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "所以，你是 ^3131FF" + strcharinfo( 0 ) + "^000000！好名字！";
+					mes "讓我註冊你。";
 					next;
 					if( getcharid( 2 ) ){
-						mes "[Raffam Oranpere]";
-						mes "Come back to join after you leave your current guild.";
+						mes "[拉法姆·奧蘭佩爾]";
+						mes "在你離開目前的公會後，回來加入。";
 						close3;
 					}else if( getcharid( 5 ) != 0 ){
 						cutin "laperm04.bmp", 2;
-						mes "[Raffam Oranpere]";
-						mes "Eh? Oh, you're in a Clan.";
-						mes "Don't mess with me, it's not cool!";
+						mes "[拉法姆·奧蘭佩爾]";
+						mes "嗯？哦，你在一個氏族裡。";
+						mes "別惹我，這樣不好玩！";
 					}else{
 						cutin "laperm02.bmp", 2;
 						if (clan_join(SWORDCLAN)) {
 							sc_start2 SC_SWORDCLAN, INFINITE_TICK, 0, SWORDCLAN;
-							mes "[Raffam Oranpere]";
-							mes "Welcome to the ^3131FFSword Clan^000000!";
-							mes "You can review Clan info with ^3131FFCtrl+G^000000.";
-							mes "At your service!";
+							mes "[拉法姆·奧蘭佩爾]";
+							mes "歡迎來到 ^3131FF劍氏族^000000！";
+							mes "你可以用 ^3131FFCtrl+G^000000 查看氏族資訊。";
+							mes "為你服務！";
 						} else
-							mes "An error has occurred.";
+							mes "發生錯誤。";
 					}
 				}else{
-					mes "[Raffam Oranpere]";
-					mes "Uh, oh. Let's go back to the beginning.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "呃，哦。讓我們回到起點。";
 				}
 			}else{
 				cutin "laperm03.bmp", 2;
-				mes "[Raffam Oranpere]";
-				mes "Uh, oh. Let's go back to the beginning.";
+				mes "[拉法姆·奧蘭佩爾]";
+				mes "呃，哦。讓我們回到起點。";
 			}
 			break;
 		case 3:
 			cutin "laperm01.bmp", 2;
-			mes "[Raffam Oranpere]";
-			mes "You want to leave?";
-			mes "No problem. I hope you'll find a more suitable Clan.";
-			mes "Ready for withdrawal?";
+			mes "[拉法姆·奧蘭佩爾]";
+			mes "你想離開嗎？";
+			mes "沒問題。我希望你能找到更適合你的氏族。";
+			mes "準備好退出嗎？";
 			next;
-			if( select( "Continue.:Cancel." ) == 1 ){
+			if( select( "繼續。:取消。" ) == 1 ){
 				if( getcharid( 5 ) == 0 ){
 					cutin "laperm04.bmp", 2;
-					mes "[Raffam Oranpere]";
-					mes "Wait, you're not with us! Grr, don't make me breathe fire at you!";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "等等，你不是我們的人！可惡，別逼我對你噴火！";
 				}else if( getcharid( 5 ) != SWORDCLAN ){
 					cutin "laperm04.bmp", 2;
-					mes "[Raffam Oranpere]";
-					mes "Hey, talk to your guild master if you want to leave.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "嘿，如果你想離開，請跟你的公會會長談。";
 				}else{
 					if (clan_leave()) {
 						sc_end SC_SWORDCLAN;
-						mes "[Raffam Oranpere]";
-						mes "Okay, it's done. But let's not be strangers, okay?";
-						mes "It was nice having you!";
+						mes "[拉法姆·奧蘭佩爾]";
+						mes "好的，完成了。但我們別做陌生人，好嗎？";
+						mes "很高興有你！";
 					} else
-						mes "An error has occurred.";
+						mes "發生錯誤。";
 				}
 			}
 			break;
@@ -169,72 +169,72 @@ OnInit:
 
 prt_in,35,114,5	script	Devon Aire	10059,{
 	cutin "debon01.bmp", 2;
-	mes "[Devon Aire]";
-	mes "I'm Devon, master of the ^3131FFArc Wand Clan^000000.";
+	mes "[德文·艾爾]";
+	mes "我是德文，^3131FFArc Wand Clan^000000 的領袖。";
 	next;
-	switch( select( "Clan Information:Join.:Leave." ) ){
+	switch( select( "氏族資訊:加入:離開。" ) ){
 		case 1:
-			switch( select( "What are Clans?:About the Arc Wand Clan:Cancel." ) ){
+			switch( select( "什麼是氏族？:關於奧術魔杖氏族:取消。" ) ){
 				case 1:
-					mes "[Devon Aire]";
-					mes "The ^3131FFClans^000000 are ran by the Kingdom, not privately like others.";
-					mes "And I manage one of them.";
+					mes "[德文·艾爾]";
+					mes "^3131FF氏族^000000 由王國管理，不像其他人那樣是私人的。";
+					mes "而我管理著其中一個。";
 					next;
 					cutin "debon02.bmp", 2;
-					mes "[Devon Aire]";
+					mes "[德文·艾爾]";
 					mes "...";
-					mes "What's with that look? You got a problem?";
+					mes "你看什麼看？有問題嗎？";
 					next;
 					cutin "birman01.bmp", 2;
-					mes "[Berman Aire]";
-					mes "Brother, you're scaring a potential member, be nice.";
+					mes "[伯曼·艾爾]";
+					mes "哥哥，你嚇到潛在成員了，友善點。";
 					next;
 					cutin "debon02.bmp", 2;
-					mes "[Devon Aire]";
+					mes "[德文·艾爾]";
 					mes "...";
 					next;
 					cutin "debon01.bmp", 2;
-					mes "[Devon Aire]";
-					mes "Join if you are seeking a place to fit in. We give ^3131FFfree bonus stats^000000. But no Siege participation.";
+					mes "[德文·艾爾]";
+					mes "如果你正在尋找一個適合自己的地方，就加入吧。我們提供 ^3131FF免費獎勵屬性^000000。但不參與攻城戰。";
 					next;
-					mes "[Devon Aire]";
-					mes "Most members are offensive Mage classes as the name ^3131FFArc Wand Clan^000000 suggests, but that's no requirement.";
+					mes "[德文·艾爾]";
+					mes "大多數成員都是進攻型法師職業，正如名稱 ^3131FFArc Wand Clan^000000 所暗示的那樣，但這不是強制性的。";
 					next;
 					cutin "debon02.bmp", 2;
-					mes "[Devon Aire]";
-					mes "...Hey, Shaam Rumi.";
-					mes "Stop hitting on my brother and get to work.";
+					mes "[德文·艾爾]";
+					mes "...嘿，夏姆·魯米。";
+					mes "別再勾引我弟弟了，去工作。";
 					next;
 					cutin "sham03.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "Whatever!";
+					mes "[夏姆·魯米]";
+					mes "隨便你！";
 					next;
 					cutin "debon02.bmp", 2;
-					mes "[Devon Aire]";
-					mes "...Hmpf!";
-					mes "Listen, Crossbow Clan's master is evil.";
+					mes "[德文·艾爾]";
+					mes "...哼！";
+					mes "聽著，十字弓氏族的領袖是個邪惡的人。";
 					next;
 					cutin "sham02.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "Get over me, Devon! Don't spread rumors!";
+					mes "[夏姆·魯米]";
+					mes "德文，別纏著我！不要散布謠言！";
 					next;
 					cutin "birman01.bmp", 2;
-					mes "[Berman Aire]";
-					mes "Haha. Stop it. You two are making a scene.";
-					mes "Come on, back to work guys.";
+					mes "[博爾曼·艾爾]";
+					mes "哈哈。別鬧了。你們兩個別吵了。";
+					mes "好了，回去工作吧。";
 					break;
 				case 2:
 					cutin "debon01.bmp", 2;
-					mes "[Devon Aire]";
-					mes "The ^3131FFArc Wand Clan^000000 mainly supports offensive Mage classes.";
-					mes "We offer ^FF0000<INT+1, DEX+1, MHP+30, MSP+10>^000000 to new members. Don't ask for more; it's the Kingdom's rule.";
+					mes "[德文·艾爾]";
+					mes "這個 ^3131FF奧術魔杖氏族^000000 主要支援進攻型法師職業。";
+					mes "我們提供 ^FF0000<INT+1, DEX+1, MHP+30, MSP+10>^000000 給新成員。別要求更多了，這是王國的規定。";
 					next;
-					mes "[Devon Aire]";
-					mes "^3131FFClansmen^000000 can't participate in the Siege.";
-					mes "If you like the Siege, then go join a regular guild.";
+					mes "[德文·艾爾]";
+					mes "^3131FF氏族成員^000000 不能參與攻城戰。";
+					mes "如果你喜歡攻城戰，那就去加入一個普通的公會吧。";
 					next;
-					mes "[Devon Aire]";
-					mes "That is all. No questions.";
+					mes "[德文·艾爾]";
+					mes "就這樣。沒有問題了。";
 					break;
 				case 3:
 					break;
@@ -242,85 +242,85 @@ prt_in,35,114,5	script	Devon Aire	10059,{
 			break;
 		case 2:
 			cutin "debon01.bmp", 2;
-			mes "[Devon Aire]";
-			mes "...";
-			mes "Let's check the Clan policy then to begin admission procedures.";
+			mes "[德文·艾爾]";
+			mes "......";
+			mes "讓我們檢查氏族政策，然後開始入會程序。";
 			next;
-			mes "[Devon Aire]";
-			mes "^3131FFClansmen^000000 cannot participate in the Siege.";
-			mes "New members are given these stat bonuses: ^FF0000<INT+1, DEX+1, MHP+30, MSP+10>^000000.";
-			mes "You with me so far?";
+			mes "[德文·艾爾]";
+			mes "^3131FF氏族成員^000000 不能參與攻城戰。";
+			mes "新成員將獲得以下屬性加成：^FF0000<INT+1, DEX+1, MHP+30, MSP+10>^000000。";
+			mes "你還跟得上嗎？";
 			next;
-			if( select( "Yes.:No." ) == 1 ){
-				mes "[Devon Aire]";
-				mes "You can join and leave a Clan anytime, but if you don't login for ^FF0000more than 2 weeks^000000, you'll be ^FF0000expelled^000000.";
-				mes "Do you agree?";
+			if( select( "是.:否." ) == 1 ){
+				mes "[德文·艾爾]";
+				mes "你可以隨時加入和離開氏族，但如果你 ^FF0000超過 2 週^000000 沒有登入，你將被 ^FF0000開除^000000。";
+				mes "你同意嗎？";
 				next;
-				if( select( "Yes.:No." ) == 1 ){
-					mes "[Devon Aire]";
-					mes "Sign your name here.";
+				if( select( "是.:否." ) == 1 ){
+					mes "[德文·艾爾]";
+					mes "在這裡簽上你的名字。";
 					next;
 					input .@name$;
-					mes "[Devon Aire]";
+					mes "[德文·艾爾]";
 					mes "^3131FF" + strcharinfo( 0 ) + "^000000.....";
-					mes "Good, let me invite you in.";
+					mes "很好，讓我邀請你進來。";
 					next;
 					if( getcharid( 2 ) ){
-						mes "[Devon Aire]";
-						mes "Leave your guild first to join my Clan, duh.";
+						mes "[德文·艾爾]";
+						mes "先離開你的公會才能加入我的氏族，笨蛋。";
 						close3;
 					}else if( getcharid( 5 ) != 0 ){
 						cutin "debon03.bmp", 2;
-						mes "[Devon Aire]";
-						mes "You're already in a Clan. You joking?!";
-						mes "Oh, I can be funny, too--FIRE PILLAR!";
+						mes "[德文·艾爾]";
+						mes "你已經在氏族裡了。你在開玩笑嗎？！";
+						mes "哦，我也會開玩笑，火焰之柱！";
 					}else{
 						if (clan_join(ARCWANDCLAN)) {
 							sc_start2 SC_ARCWANDCLAN, INFINITE_TICK, 0, ARCWANDCLAN;
-							mes "[Devon Aire]";
-							mes "You have joined the ^3131FFArc Wand Clan^000000.";
+							mes "[德文·艾爾]";
+							mes "你已經加入了 ^3131FF奧術魔杖氏族^000000。";
 							next;
-							mes "[Devon Aire]";
-							mes "You can review Clan info with ^3131FFCtrl+G^000000.";
-							mes "So don't bother me later.";
+							mes "[德文·艾爾]";
+							mes "你可以用 ^3131FFCtrl+G^000000 檢視氏族資訊。";
+							mes "所以別再來煩我。";
 							next;
-							mes "[Devon Aire]";
-							mes "That's all. Visit often or be expelled. Dismissed.";
+							mes "[德文·艾爾]";
+							mes "就這樣。經常來訪，否則將被開除。退下。";
 						} else
-							mes "An error has occurred.";
+							mes "發生錯誤。";
 					}
 				}else{
-					mes "[Devon Aire]";
-					mes "Then I don't want you.";
+					mes "[德文·艾爾]";
+					mes "那麼我不想要你。";
 				}
 			}else{
-				mes "[Devon Aire]";
-				mes "Gosh, listen to the policy again.";
+				mes "[德文·艾爾]";
+				mes "哎呀，再聽一次政策。";
 			}
 			break;
 		case 3:
-			mes "[Devon Aire]";
-			mes "Want to leave, huh?";
-			mes "I understand, it's about Sieges. If not, why are..Never mind..";
-			mes "I'll process your withdrawal.";
+			mes "[德文·艾爾]";
+			mes "想離開，嗯？";
+			mes "我理解，這是關於攻城戰。如果不是，為什麼是...沒事...";
+			mes "我將處理你的退出。";
 			next;
-			if( select( "Continue.:Cancel." ) == 1 ){
+			if( select( "繼續.:取消." ) == 1 ){
 				if( getcharid( 5 ) == 0 ){
 					cutin "debon03.bmp", 2;
-					mes "[Devon Aire]";
-					mes "Naughty children deserve a good Jupitel Thunder.";
+					mes "[德文·艾爾]";
+					mes "頑皮的孩子應該受到雷鳴術的懲罰。";
 				}else if( getcharid( 5 ) != ARCWANDCLAN ){
 					cutin "debon02.bmp", 2;
-					mes "[Devon Aire]";
-					mes "You're barking up the wrong tree. Go to your Clan master.";
+					mes "[德文·艾爾]";
+					mes "你找錯人了。去找你的氏族首領。";
 				}else{
 					if (clan_leave()) {
 						sc_end SC_ARCWANDCLAN;
-						mes "[Devon Aire]";
-						mes "You are withdrawn from the Clan.";
-						mes "Now leave. I don't feel like talking anymore.";
+						mes "[德文·艾爾]";
+						mes "你已退出氏族。";
+						mes "現在離開。我不想再說話了。";
 					} else
-						mes "An error has occurred.";
+						mes "發生錯誤。";
 				}
 			}		
 			break;
@@ -336,135 +336,135 @@ OnInit:
 
 prt_in,37,114,5	script	Berman Aire	10060,{
 	cutin "birman01.bmp", 2;
-	mes "[Berman Aire]";
-	mes "Nice to meet you. I'm Berman Aire, master of the ^3131FFGolden Mace Clan^000000.";
-	mes "I'm also the older brother of Devon Aire. Devon looks tough, but he's kind hearted.";
+	mes "[博爾曼·艾爾]";
+	mes "很高興認識你。我是博爾曼·艾爾，^3131FF金鎚氏族^000000 的首領。";
+	mes "我也是德文·艾爾的哥哥。德文看起來很強硬，但他心地善良。";
 	next;
-	switch( select( "Clan Information:Join.:Leave." ) ){
+	switch( select( "氏族資訊:加入.:離開." ) ){
 		case 1:
-			switch( select( "What are Clans?:About the Golden Mace Clan:Cancel." ) ){
+			switch( select( "什麼是氏族？:關於金鎚氏族:取消." ) ){
 				case 1:
-					mes "[Berman Aire]";
-					mes "The ^3131FFClans^000000 are established by the Kingdom to help adventurers connect and share information.";
+					mes "[博爾曼·艾爾]";
+					mes "^3131FF氏族^000000 是由王國建立的，旨在幫助冒險者聯繫並分享資訊。";
 					next;
-					mes "[Berman Aire]";
-					mes "Because the Kingdom runs the Clan, there is no Siege participation, but at least the members are given ^3131FFstat bonuses^000000.";
-					mes "The stat bonuses are small, but can be very useful for beginning adventurers.";
+					mes "[博爾曼·艾爾]";
+					mes "由於氏族由王國管理，因此沒有攻城戰參與，但至少成員可以獲得 ^3131FF屬性加成^000000。";
+					mes "屬性加成很小，但對於初級冒險者來說非常有用。";
 					next;
-					mes "[Berman Aire]";
-					mes "We're named the ^3131FFGolden Mace Clan^000000, but we don't discriminate against applicants based on their classes.";
-					mes "The name is just to help you easily choose your Clan.";
+					mes "[博爾曼·艾爾]";
+					mes "我們被命名為 ^3131FF金鎚氏族^000000，但我們不會根據申請人的職業歧視他們。";
+					mes "這個名稱只是為了幫助你輕鬆選擇你的氏族。";
 					next;
 					cutin "sham02.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "Berman, enough with the explanation. Let's go hang out in Glast Heim.";
+					mes "[夏姆·魯米]";
+					mes "博爾曼，別再解釋了。我們去格拉斯海姆玩吧。";
 					next;
 					cutin "debon03.bmp", 2;
-					mes "[Devon Aire]";
-					mes "... Hey.";
+					mes "[德文·艾爾]";
+					mes "... 嘿。";
 					next;
 					cutin "sham03.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "Ooh, you're scaring me.";
-					mes "Berman, call me when you can!~";
+					mes "[夏姆·魯米]";
+					mes "喔，你嚇到我了。";
+					mes "博爾曼，有空就打給我！~";
 					next;
 					cutin "birman03.bmp", 2;
-					mes "[Berman Aire]";
-					mes "Hah hah, I apologize for their bickering.";
+					mes "[博爾曼·艾爾]";
+					mes "哈哈，我很抱歉他們的爭吵。";
 					next;
 					cutin "birman01.bmp", 2;
-					mes "[Berman Aire]";
-					mes "Do you have a question?";
-					mes "If you're tired of traveling alone, join us! You can join and leave the Clan anytime you want.";
+					mes "[博爾曼·艾爾]";
+					mes "你有問題嗎？";
+					mes "如果你厭倦了獨自旅行，就加入我們吧！你可以隨時加入和離開氏族。";
 					break;
 				case 2:
-					mes "[Berman Aire]";
-					mes "The ^3131FFGolden Mace Clan^000000 mainly helps supportive classes.";
-					mes "We offer ^FF0000<INT+1, LUK+1, MHP+30, MSP+10>^000000 to new members.";
+					mes "[博爾曼·艾爾]";
+					mes "這個 ^3131FF金鎚氏族^000000 主要幫助支援型職業。";
+					mes "我們提供 ^FF0000<INT+1, LUK+1, MHP+30, MSP+10>^000000 給新成員。";
 					next;
-					mes "[Berman Aire]";
-					mes "As I told you earlier, Clans cannot join the Siege because they already belong to the Kingdom.";
-					mes "If you want to be in the Siege, then I recommend you join a regular guild.";
+					mes "[博爾曼·艾爾]";
+					mes "正如我之前告訴你的，氏族不能加入攻城戰，因為他們已經屬於王國。";
+					mes "如果你想參加攻城戰，那麼我建議你加入一個普通的公會。";
 					next;
-					mes "[Berman Aire]";
-					mes "Do you understand what the Clans are about now?";
+					mes "[博爾曼·艾爾]";
+					mes "你現在了解氏族是怎麼回事了嗎？";
 					break;
 				case 3:
 					break;
 			}
 			break;
 		case 2:
-			mes "[Berman Aire]";
-			mes "Great!";
-			mes "Let's check the Clan policy then to begin admission procedures.";
+			mes "[博爾曼·艾爾]";
+			mes "太好了！";
+			mes "讓我們檢查氏族政策，然後開始入會程序。";
 			next;
-			mes "[Berman Aire]";
-			mes "^3131FFClansmen^000000 cannot participate in the Siege.";
-			mes "As our new member, you'll receive the following stat bonuses: ^FF0000<INT+1, LUK+1, MHP+30, MSP+10>^000000.";
-			mes "Do you agree?";
+			mes "[博爾曼·艾爾]";
+			mes "^3131FF氏族成員^000000 不能參與攻城戰。";
+			mes "作為我們的新成員，你將獲得以下屬性加成：^FF0000<INT+1, LUK+1, MHP+30, MSP+10>^000000。";
+			mes "你同意嗎？";
 			next;
-			if( select( "Yes.:No." ) == 1 ){
-				mes "[Berman Aire]";
-				mes "You can join and leave a Clan anytime, but if you don't login for ^FF0000more than 2 weeks^000000, you'll be ^FF0000expelled^000000.";
-				mes "Do you agree to maintain good standing in the Clan?";
+			if( select( "是.:否." ) == 1 ){
+				mes "[博爾曼·艾爾]";
+				mes "你可以隨時加入和離開氏族，但如果你 ^FF0000超過 2 週^000000 沒有登入，你將被 ^FF0000開除^000000。";
+				mes "你是否同意在氏族中保持良好的信譽？";
 				next;
-				if( select( "Yes.:No." ) == 1 ){
-					mes "[Berman Aire]";
-					mes "Now, please write your name here.";
+				if( select( "是.:否." ) == 1 ){
+					mes "[博爾曼·艾爾]";
+					mes "現在，請在這裡寫下你的名字。";
 					next;
 					input .@name$;
-					mes "[Berman Aire]";
-					mes "^3131FF" + strcharinfo( 0 ) + "^000000! What a good name!";
-					mes "Okay, then...";
+					mes "[博爾曼·艾爾]";
+					mes "^3131FF" + strcharinfo( 0 ) + "^000000！真是個好名字！";
+					mes "好吧，那麼...";
 					next;
 					if( getcharid( 2 ) ){
-						mes "[Berman Aire]";
-						mes "Oh, no.";
-						mes "In order to join, you first have to leave your current guild.";
+						mes "[博爾曼·艾爾]";
+						mes "哦，不。";
+						mes "為了加入，你必須先離開你目前的公會。";
 						close3;
 					}else if( getcharid( 5 ) != 0 ){
-						mes "[Berman Aire]";
-						mes "You're already in a Clan.";
-						mes "You're just confused, right?";
+						mes "[博爾曼·艾爾]";
+						mes "你已經在氏族裡了。";
+						mes "你只是糊塗了，對吧？";
 					}else{
 						if (clan_join(GOLDENMACECLAN)) {
 							sc_start2 SC_GOLDENMACECLAN, INFINITE_TICK, 0, GOLDENMACECLAN;
 							cutin "birman02.bmp", 2;
-							mes "[Berman Aire]";
-							mes "Welcome to the ^3131FFGolden Mace Clan^000000!";
+							mes "[伯曼·艾爾]";
+							mes "歡迎來到 ^3131FF黃金鎚氏族^000000！";
 							next;
-							mes "[Berman Aire]";
-							mes "You can review Clan info with ^3131FFCtrl+G^000000.";
+							mes "[伯曼·艾爾]";
+							mes "您可以使用 ^3131FFCtrl+G^000000 查看氏族資訊。";
 							next;
-							mes "[Berman Aire]";
-							mes "Please remember the few precautions I gave you, and enjoy your Clan activities!";
+							mes "[伯曼·艾爾]";
+							mes "請記住我給您的一些注意事項，並享受您的氏族活動！";
 						} else
-							mes "An error has occurred.";
+							mes "發生錯誤。";
 					}
 				}
 			}
 			break;
 		case 3:
-			mes "[Berman Aire]";
-			mes "With meeting, there is parting.";
-			mes "I hope you enjoyed your time in the ^3131FFGolden Mace Clan^000000.";
-			mes "Now, should I process your withdrawal?";
+			mes "[伯曼·艾爾]";
+			mes "有相遇，就有離別。";
+			mes "希望您在 ^3131FF黃金鎚氏族^000000 度過愉快的時光。";
+			mes "現在，我應該處理您的退出嗎？";
 			next;
-			if( select( "Continue.:Cancel." ) == 1 ){
+			if( select( "繼續.:取消." ) == 1 ){
 				if( getcharid( 5 ) == 0 ){
-					mes "[Berman Aire]";
-					mes "You can't leave the Clan without joining it first.";
+					mes "[伯曼·艾爾]";
+					mes "您必須先加入氏族才能離開。";
 				}else if( getcharid( 5 ) != GOLDENMACECLAN ){
-					mes "[Berman Aire]";
-					mes "I'm sorry, but I can't remove you from another Clan...";
+					mes "[伯曼·艾爾]";
+					mes "很抱歉，我無法將您從其他氏族中移除...";
 				}else{
 					if (clan_leave()) {
 						sc_end SC_GOLDENMACECLAN;
-						mes "[Berman Aire]";
-						mes "It's processed.";
-						mes "Come back anytime to the ^3131FFGolden Mace Clan^000000. I'll be here.";
+						mes "[伯曼·艾爾]";
+						mes "已處理完畢。";
+						mes "隨時回來 ^3131FF黃金鎚氏族^000000。我會在這裡。";
 					} else
-						mes "An error has occurred.";
+						mes "發生錯誤。";
 				}
 			}
 			break;
@@ -480,144 +480,144 @@ OnInit:
 
 prt_in,39,114,5	script	Shaam Rumi	10027,{
 	cutin "sham01.bmp", 2;
-	mes "[Shaam Rumi]";
-	mes "Hi, there! I'm Shaam, master of the ^3131FFCrossbow Clan^000000";
-	mes "What can I do for you?";
+	mes "[夏姆·魯米]";
+	mes "哈囉！我是夏姆，^3131FF十字弓氏族^000000 的大師";
+	mes "有什麼我可以為您效勞的嗎？";
 	next;
-	switch( select( "Clan Information:Join.:Leave." ) ){
+	switch( select( "氏族資訊:加入.:離開." ) ){
 		case 1:
-			switch( select( "What are Clans?:About the Crossbow Clan:Cancel." ) ){
+			switch( select( "什麼是氏族？:關於十字弓氏族:取消." ) ){
 				case 1:
-					mes "[Shaam Rumi]";
-					mes "The Clans were established by the Rune-Midgarts Kingdom to...";
-					mes "Raffam, why were our ^3131FFclans^000000 made?";
+					mes "[夏姆·魯米]";
+					mes "氏族是由盧恩-米德加爾特王國建立的，目的是為了...";
+					mes "拉法姆，我們的 ^3131FF氏族^000000 是為什麼建立的？";
 					next;
 					cutin "laperm01.bmp", 2;
-					mes "[Raffam Oranpere]";
-					mes "Did you sleep in class? Gosh.";
-					mes "The Clans help lone adventurers connect with each other and share information.";
+					mes "[拉法姆·奧蘭佩爾]";
+					mes "你上課睡覺了嗎？天啊。";
+					mes "氏族幫助孤獨的冒險者彼此聯繫並分享資訊。";
 					next;
 					cutin "sham01.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "A-ha, got it! Thank you, Captain!";
-					mes "You heard that too, right?";
+					mes "[夏姆·魯米]";
+					mes "啊哈，我明白了！謝謝你，隊長！";
+					mes "您也聽到了，對吧？";
 					next;
-					mes "[Shaam Rumi]";
-					mes "Run by the Kingdom itself, the Clans are not allowed to participate in the Siege, but the good news is that the members are given some ^3131FFstat bonuses^000000.";
+					mes "[夏姆·魯米]";
+					mes "氏族本身由王國管理，不允許參加攻城戰，但好消息是成員會獲得一些 ^3131FF屬性加成^000000。";
 					next;
-					mes "[Shaam Rumi]";
-					mes "In case you wonder if the ^3131FFCrossbow Clan^000000 only recruits Archers, no, it doesn't.";
-					mes "All the Clans accept all classes. You can choose the one that suits your needs best.";
+					mes "[夏姆·魯米]";
+					mes "如果您想知道 ^3131FF十字弓氏族^000000 是否只招募弓箭手，不，並非如此。";
+					mes "所有氏族都接受所有職業。您可以選擇最適合您需求的氏族。";
 					next;
 					cutin "sham02.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "That should cover everything there is to know.";
-					mes "Berman, let's go hang out in Glast Heim.";
+					mes "[夏姆·魯米]";
+					mes "應該涵蓋了所有需要知道的資訊。";
+					mes "伯曼，我們去格拉斯海姆玩吧。";
 					next;
 					cutin "debon03.bmp", 2;
-					mes "[Devon Aire]";
-					mes "You...";
+					mes "[戴文·艾爾]";
+					mes "你...";
 					next;
 					cutin "sham03.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "Ooh, scary! You're so protective of your brother.";
+					mes "[夏姆·魯米]";
+					mes "喔，好可怕！你對你的兄弟好保護。";
 					break;
 				case 2:
-					mes "[Shaam Rumi]";
-					mes "The ^3131FFCrossbow Clan^000000 is ideal for ranged classes.";
+					mes "[夏姆·魯米]";
+					mes "^3131FF十字弓氏族^000000 非常適合遠程職業。";
 					next;
-					mes "[Shaam Rumi]";
-					mes "Eh, let me check the Clan manual. Ah, and we offer stat bonuses to new members: ^FF0000<DEX+1, AGI+1, MHP+30, MSP+10>^000000.";
+					mes "[夏姆·魯米]";
+					mes "呃，讓我查一下氏族手冊。啊，我們為新成員提供屬性加成：^FF0000<DEX+1, AGI+1, MHP+30, MSP+10>^000000。";
 					next;
-					mes "[Shaam Rumi]";
-					mes "The Clans are not allowed to participate in the Siege; you should join a private guild instead for Siege.";
-					mes "The Clans are for adventurers that hate being tied down.";
+					mes "[夏姆·魯米]";
+					mes "氏族不允許參加攻城戰；您應該加入一個私人公會參加攻城戰。";
+					mes "氏族是為那些討厭被束縛的冒險者而設的。";
 					next;
-					mes "[Shaam Rumi]";
-					mes "Do you have a question?";
+					mes "[夏姆·魯米]";
+					mes "您有問題嗎？";
 					break;
 				case 3:
 					break;
 			}
 			break;
 		case 2:
-			mes "[Shaam Rumi]";
-			mes "Oh, yeah? Good choice!";
-			mes "Let's check the Clan policy then to begin admission procedures.";
+			mes "[夏姆·魯米]";
+			mes "喔，是嗎？好選擇！";
+			mes "讓我們檢查氏族政策，然後開始入會程序。";
 			next;
-			mes "[Shaam Rumi]";
-			mes "^3131FFClansmen^000000 cannot participate in the Siege.";
-			mes "As our new member, you'll receive the following stat bonuses: ^FF0000<DEX+1, AGI+1, MHP+30, MSP+10>^000000.";
-			mes "Do you agree?";
+			mes "[夏姆·魯米]";
+			mes "^3131FF氏族成員^000000 不能參加攻城戰。";
+			mes "作為我們的新成員，您將獲得以下屬性加成：^FF0000<DEX+1, AGI+1, MHP+30, MSP+10>^000000。";
+			mes "您同意嗎？";
 			next;
-			if( select( "Yes.:No." ) == 1 ){
-				mes "[Shaam Rumi]";
-				mes "You can join and leave a Clan anytime, but if you don't login for ^FF0000more than 2 weeks^000000, you'll be ^FF0000expelled^000000.";
-				mes "Do you promise you'll maintain good standing?";
+			if( select( "是的.:否." ) == 1 ){
+				mes "[夏姆·魯米]";
+				mes "您可以隨時加入和離開氏族，但如果您 ^FF0000超過 2 週^000000 沒有登入，您將被 ^FF0000開除^000000。";
+				mes "您保證會保持良好的聲譽嗎？";
 				next;
-				if( select( "Yes.:No." ) == 1 ){
-					mes "[Shaam Rumi]";
-					mes "Good, write your name here.";
+				if( select( "是的.:否." ) == 1 ){
+					mes "[夏姆·魯米]";
+					mes "很好，在這裡寫下您的名字。";
 					next;
 					input .@name$;
-					mes "[Shaam Rumi]";
-					mes "^3131FF" + strcharinfo( 0 ) + "^000000..!";
-					mes "Ugh, your penmanship needs work. Let me process your application.";
+					mes "[夏姆·魯米]";
+					mes "^3131FF" + strcharinfo( 0 ) + "^000000..！";
+					mes "呃，您的筆跡需要改進。讓我處理您的申請。";
 					next;
 					if( getcharid( 2 ) ){
-						mes "[Shaam Rumi]";
-						mes "Did you finish things up with your guild?";
+						mes "[夏姆·魯米]";
+						mes "您和您的公會處理完事情了嗎？";
 						close3;
 					}else if( getcharid( 5 ) != 0 ){
-						mes "[Shaam Rumi]";
-						mes "Eh, you're already in a Clan. Hey, this isn't funny.";
+						mes "[夏姆_魯米]";
+						mes "呃，您已經在一個氏族裡了。嘿，這不好笑。";
 					}else{
 						if (clan_join(CROSSBOWCLAN)) {
 							sc_start2 SC_CROSSBOWCLAN, INFINITE_TICK, 0, CROSSBOWCLAN;
 							cutin "sham02.bmp", 2;
-							mes "[Shaam Rumi]";
-							mes "Welcome to the ^3131FFCrossbow Clan^000000!";
+							mes "[夏姆·魯米]";
+							mes "歡迎來到 ^3131FF十字弓氏族^000000！";
 							next;
 							cutin "sham01.bmp", 2;
-							mes "[Shaam Rumi]";
-							mes "You can review Clan info with ^3131FFCtrl+G^000000.";
+							mes "[夏姆·魯米]";
+							mes "您可以使用 ^3131FFCtrl+G^000000 查看氏族資訊。";
 							next;
-							mes "[Shaam Rumi]";
-							mes "Don't pick fights with other clansmen. Be social.";
-							mes "If you need help, you can always whisper me, okay? See you around!";
+							mes "[夏姆·魯米]";
+							mes "不要與其他氏族成員打架。保持社交。";
+							mes "如果您需要幫助，可以隨時私訊我，好嗎？再見！";
 						} else
-							mes "An error has occurred.";
+							mes "發生錯誤。";
 					}
 				}else{
-					mes "[Shaam Rumi]";
-					mes "All right then. I'm just going to go have some fun.";
+					mes "[夏姆·魯米]";
+					mes "好吧。我只是要去玩玩。";
 				}
 			}else{
-				mes "[Shaam Rumi]";
-				mes "Ah, do you need time to think about this? No problem.";
+				mes "[夏姆·魯米]";
+				mes "啊，您需要時間考慮一下嗎？沒問題。";
 			}
 			break;
 		case 3:
-			mes "[Shaam Rumi]";
-			mes "Why, did you find a better Clan?";
-			mes "I'm disappointed, but it's your call. Let me process your withdrawal.";
+			mes "[夏姆·魯米]";
+			mes "為什麼，您找到更好的氏族了嗎？";
+			mes "我很失望，但這是您的決定。讓我處理您的退出。";
 			next;
-			if( select( "Continue.:Cancel." ) == 1 ){
+			if( select( "繼續.:取消." ) == 1 ){
 				if( getcharid( 5 ) == 0 ){
 					cutin "sham04.bmp", 2;
-					mes "[Shaam Rumi]";
-					mes "I can't let you leave--you're not even in my Clan!";
+					mes "[夏姆·魯米]";
+					mes "我不能讓您離開——您甚至不在我的氏族裡！";
 				}else if( getcharid( 5 ) != CROSSBOWCLAN ){
-					mes "[Shaam Rumi]";
-					mes "Sorry, but I don't meddle with other Clans' business.";
+					mes "[夏姆·魯米]";
+					mes "抱歉，我不干涉其他氏族的事務。";
 				}else{
 					if (clan_leave()) {
 						sc_end SC_CROSSBOWCLAN;
-						mes "[Shaam Rumi]";
-						mes "It's done.";
-						mes "If you ever miss us, don't hesitate to come back, alright?";
+						mes "[夏姆·魯米]";
+						mes "完成了。";
+						mes "如果您想念我們，請隨時回來，好嗎？";
 					} else
-						mes "An error has occurred.";
+						mes "發生錯誤。";
 				}
 			}
 			break;

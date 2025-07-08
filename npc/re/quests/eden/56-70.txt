@@ -20,25 +20,25 @@
 //= 1.8 Reverting Magic Wand Quest to request Trunks. [Carlosgrr]
 //============================================================
 
-moc_para01,42,38,3	script	Mission [56 - 70]	857,{
+moc_para01,42,38,3	script	任務 [56 - 70]	857,{
 	if (!callfunc("F_HasEdenGroupMark")) {
-		mes "To get these missions, I need to Join the Eden Group first. I must find Secretary Lime Evenor and become a member.";
+		mes "為了接這些任務，我需要先加入伊甸園。我必須找到萊姆?伊韋諾秘書並成為會員。";
 		close;
 	}
-	mes "Here is the list of various adventures for level 56~70 adventurers.";
+	mes "這是為等級 56~70 的冒險者提供的各種冒險列表。";
 	next;
-	mes "Lots of missions such as a Monster Hunting, Delivery Goods, Finding People.";
+	mes "有許多任務，例如怪物狩獵、運送貨物、尋找人物。";
 	next;
-	switch(select("Mission Numbers 1~5:Mission Numbers 6~10:Mission Numbers 11~15")) {
+	switch(select("任務編號 1~5:任務編號 6~10:任務編號 11~15")) {
 	case 1:
-		switch(select("What is this Bandage?:Dangerous Alligators.:That wasn't a mermaid...:My country is calling me!")) {
+		switch(select("這是什麼繃帶？:危險的鱷魚。:那不是美人魚...:我的國家正在呼喚我！")) {
 			case 1: callsub L_HuntingQuest,3250,15000,5000,930,30;
 			case 2: callsub L_HuntingQuest,3251,16000,6000;
 			case 3: callsub L_HuntingQuest,3252,17000,8000;
 			case 4: callsub L_Quest,3254,18000,8000,7043,10,1056,30;
 		}
 	case 2:
-		switch(select("Hunt Wild Boar:Preparing the Summer:A Woman's Grudge:Special ingredients:Puppet Master's Agony")) {
+		switch (select("狩獵野豬:為夏天做準備:女人的怨恨:特殊的藥劑成分:傀儡師的煩惱")) {
 			case 1: callsub L_HuntingQuest,3255,16000,7000;
 			case 2: callsub L_Quest,3256,15000,5000,918,30;
 			case 3: callsub L_HuntingQuest,3257,17000,8000;
@@ -46,7 +46,7 @@ moc_para01,42,38,3	script	Mission [56 - 70]	857,{
 			case 5: callsub L_HuntingQuest,3259,17000,7000,1060,30;
 		}
 	case 3:
-		switch(select("Tiresome Flies:Dangerous Munak:Make the World green:Magic Wand")) {
+		switch (select("煩人的蟲子:危險的殭屍:讓世界充滿綠色:魔法杖")) {
 			case 1: callsub L_HuntingQuest,3260,16000,6000;
 			case 2: callsub L_HuntingQuest,3261,16000,7000;
 			case 3: callsub L_Quest,3262,17000,7000,1032,40;
@@ -60,17 +60,17 @@ L_Quest:
 	if (checkquest(.@quest_id) == -1) {
 		callsub L_Details, .@quest_id;
 		next;
-		mes "Would you like to accept this mission?";
+		mes "您要接受這個任務嗎？";
 		next;
-		if(select("Accept the mission.:Do not accept the mission.") == 1) {
+		if(select("接受任務。:不接受任務。") == 1) {
 			if (BaseLevel < 55 || BaseLevel > 70) {
-				mes "These missions are not fit for my level. I should look for other missions.";
+				mes "這些任務不適合我的等級。我應該尋找其他任務。";
 				close;
 			}
 			setquest .@quest_id;
-			mes "I have successfully accepted the mission. I have to come back and confirm my work after I complete the mission.";
+			mes "我已成功接受任務。完成任務後，我必須回來確認我的工作。";
 			next;
-			mes "This mission doesn't have time limits.";
+			mes "這個任務沒有時間限制。";
 		}
 		close;
 	}
@@ -81,21 +81,21 @@ L_Quest:
 			set .@items,2; //complete
 	}
 	if (checkquest(.@quest_id) < 2 && (countitem(getarg(3)) < getarg(4) || .@items == 1)) {
-		mes "You have an on-going mission. Would you like to check the details?";
+		mes "您有一個正在進行的任務。您要查看詳細資訊嗎？";
 		next;
-		if(select("Check the details.:Cancel.") == 1)
+		if(select("查看詳細資訊。:取消。") == 1)
 			callsub L_Details, .@quest_id;
 		close;
 	} else {
-		mes "I have done pretty well for the mission. Should I report it now?";
+		mes "我為這個任務做得很好。我現在應該回報嗎？";
 		next;
-		if(select("Report the mission.:Do not report it yet.") == 1) {
+		if(select("回報任務。:暫時不回報。") == 1) {
 			delitem getarg(3),getarg(4);
 			if (.@items)
 				delitem getarg(5),getarg(6);
 			getexp getarg(1),getarg(2);
 			erasequest .@quest_id;
-			mes "You have completed the mission. Get rewards.";
+			mes "您已完成任務。領取獎勵。";
 		}
 		close;
 	}
@@ -106,17 +106,17 @@ L_HuntingQuest:
 	if (checkquest(.@quest_id) == -1) {
 		callsub L_Details, .@quest_id;
 		next;
-		mes "Would you like to accept this mission?";
+		mes "您要接受這個任務嗎？";
 		next;
-		if(select("Accept the mission.:Do not accept the mission.") == 1) {
+		if(select("接受任務。:不接受任務。") == 1) {
 			if (BaseLevel < 55 || BaseLevel > 70) {
-				mes "These missions are not fit for my level. I should look for other missions.";
+				mes "這些任務不適合我的等級。我應該尋找其他任務。";
 				close;
 			}
 			setquest .@quest_id;
-			mes "I have successfully accepted the mission. I have to come back and confirm my work after I complete the mission.";
+			mes "我已成功接受任務。完成任務後，我必須回來確認我的工作。";
 			next;
-			mes "This mission doesn't have time limits.";
+			mes "這個任務沒有時間限制。";
 		}
 		close;
 	}
@@ -127,20 +127,20 @@ L_HuntingQuest:
 			set .@items,2; //complete
 	}
 	if (checkquest(.@quest_id,HUNTING) < 2 || .@items == 1) {
-		mes "You have an on-going mission. Would you like to check the details?";
+		mes "您有一個正在進行的任務。您要查看詳細資訊嗎？";
 		next;
-		if(select("Check the details.:Cancel.") == 1)
+		if(select("查看詳細資訊。:取消。") == 1)
 			callsub L_Details, .@quest_id;
 		close;
 	} else if (checkquest(.@quest_id,HUNTING) == 2) {
-		mes "I have done pretty well for the mission. Should I report it now?";
+		mes "我為這個任務做得很好。我現在應該回報嗎？";
 		next;
-		if(select("Report the mission.:Do not report it yet.") == 1) {
+		if(select("回報任務。:暫時不回報。") == 1) {
 			if (.@items)
 				delitem getarg(3),getarg(4);
 			getexp getarg(1),getarg(2);
 			erasequest .@quest_id;
-			mes "You have completed the mission. Get rewards.";
+			mes "您已完成任務。領取獎勵。";
 		}
 		close;
 	}
@@ -149,217 +149,217 @@ L_HuntingQuest:
 L_Details:
 	switch(getarg(0)) {
 	case 3250:
-		mes "This mission is assigned by the Rekenber corporation from Lighthalzen. Below are the details.";
+		mes "這個任務是由來自里希塔樂園的雷根貝勒公司指派的。以下是詳細資訊。";
 		next;
-		mes "Rekenber corporation is about to launch a new project called 'Green Medical Center'. For the first product of the project, we are preparing well-being Bandages.";
+		mes "雷根貝勒公司即將啟動一個名為「綠色醫療中心」的新項目。對於該項目的第一個產品，我們正在準備健康繃帶。";
 		next;
-		mes "Regarding the project, we need to research monster's reactions when they are wrapped with Rotten Bandages.";
+		mes "關於這個項目，我們需要研究怪物在包裹腐爛繃帶時的反應。";
 		next;
-		mes "If you are interested, please hunt 30 Mummies and bring 30 Rotten Bandages. You can find them in the Pyramid West of Morocc.";
+		mes "如果您有興趣，請獵殺 30 隻木乃伊並攜帶 30 個腐爛繃帶。您可以在夢羅克西部的金字塔中找到它們。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們將給您適當的獎勵。";
 		next;
-		mes "- Rekenber corporation chief director 'Julie E Delph' -";
+		mes "- 雷根貝勒公司首席董事「茱莉?E?戴爾福」-";
 		break;
 	case 3251:
-		mes "This mission is assigned by the Comodo cooperative society. Below are the details.";
+		mes "這個任務是由克魔島合作社指派的。以下是詳細資訊。";
 		next;
-		mes "Alligators have gone wild these days, they attack women and drunken people who hang out near the beach.";
+		mes "最近鱷魚變得非常狂暴，它們攻擊在海灘附近閒逛的婦女和醉酒的人。";
 		next;
-		mes "This is a very shameful situation for us, the most wonderful vacation spot in Rune-Midgarts.";
+		mes "對於我們這個盧恩-米德加爾特最棒的度假勝地來說，這是一個非常可恥的情況。";
 		next;
-		mes "So, it would be very helpful if you hunt 30 Alligators to clean out this situation.";
+		mes "因此，如果您獵殺 30 隻鱷魚來清理這種情況，將會非常有幫助。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們將給您適當的獎勵。";
 		break;
 	case 3252:
-		mes "This mission is assigned by an unknown client from Izlude.";
+		mes "這個任務是由來自艾音布羅克的未知客戶指派的。";
 		next;
-		mes "I have admired the beach of Izlude, ever since I was born.";
+		mes "自從我出生以來，我就一直欽佩艾音布羅克的海灘。";
 		next;
-		mes "When I was young, I found a mysterious creature in the Izlude dungeon, I had never seen something like that before...";
+		mes "當我年輕的時候，我在艾音布羅克地牢中發現了一個神秘生物，我從未見過這樣的東西……";
 		next;
-		mes "I instantly thought it was a mermaid. I was so supprised, I have studied about mermaids in whole my life.";
+		mes "我立刻認為那是一條美人魚。我太驚訝了，我一生都在研究關於美人魚的事情。";
 		next;
-		mes "But, as I studied harder, I found that the creature was not a mermaid... yes, It wasn't beautiful at all like other mermaids...";
+		mes "但是，隨著我更加努力地學習，我發現這個生物不是美人魚……是的，它一點也不像其他美人魚那樣美麗……";
 		next;
-		mes "I finally tracked down the fact that it was a Merman, not a Mermaid!";
+		mes "我終於追查到那是人魚，而不是美人魚！";
 		next;
-		mes "Merman... I have wasted my life studying this monster! So please hunt 30 Mermans to make me feel better.";
+		mes "人魚...我浪費了我的一生來研究這種怪物！所以請狩獵 30 隻人魚，讓我感覺好一點。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "請在完成任務後向我們確認，然後我們將給予您適當的獎勵。";
 		next;
-		mes "-- Izlude 'The Lost dream mermaid' --";
+		mes "-- 伊斯魯得 '迷失夢想的美人魚' --";
 		break;
 	case 3254:
-		mes "This mission is assigned by the government officer of the Rune-Midgarts Kingdom.";
+		mes "此任務由盧恩-米德加茲王國的政府官員指派。";
 		next;
-		mes "To prevent a flood in Prontera, we decided to build a huge dam to regulate the water supply.";
+		mes "為了防止普隆德拉發生洪水，我們決定建造一個巨大的水壩來調節供水。";
 		next;
-		mes "But, we are shorthanded on supplies and we need to collect Fine Sand and Grit.";
+		mes "但是，我們的物資短缺，需要收集細沙和砂礫。";
 		next;
-		mes "So, we would like to ask for help. People, please bring us 10 Fine Sand and 30 Grit each so we can build the dam.";
+		mes "所以，我們想請求幫助。各位，請每人給我們帶來 10 個細沙和 30 個砂礫，以便我們建造水壩。";
 		next;
-		mes "You can get those materials from Sand Man, I wish you good luck!";
+		mes "您可以從沙人那裡獲得這些材料，祝您好運！";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "請在完成任務後向我們確認，然後我們將給予您適當的獎勵。";
 		next;
-		mes "-- Government officer of the Rune-Midgarts Kingdom, Dufre Kent --";
+		mes "-- 盧恩-米德加茲王國的政府官員，杜弗雷·肯特 --";
 		break;
 	case 3255:
-		mes "This mission is assigned by the Payon town hall.";
+		mes "此任務由斐揚鎮公所指派。";
 		next;
-		mes "Wild animals are always annoyances to farmers.";
+		mes "野生動物一直是農民的煩惱。";
 		next;
-		mes "They attack our farm and ruin whole crops!! We can't stand it anymore!";
+		mes "它們攻擊我們的農場並摧毀整片莊稼！！我們再也無法忍受了！";
 		next;
-		mes "So, we would like to ask for the help from brave adventurers.";
+		mes "所以，我們想請求勇敢的冒險家的幫助。";
 		next;
-		mes "Please, hunt 30 Savages to save our crops!";
+		mes "請狩獵 30 隻野豬，以拯救我們的莊稼！";
 		next;
-		mes "You can easily find those monsters around our town and field.";
+		mes "您可以在我們城鎮和田野周圍輕易找到這些怪物。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "請在完成任務後向我們確認，然後我們將給予您適當的獎勵。";
 		next;
-		mes "-- Payon town hall members --";
+		mes "-- 斐揚鎮公所成員 --";
 		break;
 	case 3256:
-		mes "This mission is assigned by the Morocc blacksmith Aragham.";
+		mes "此任務由夢羅克的鐵匠阿拉加姆指派。";
 		next;
-		mes "Hello~~~~, Adventurers! This is Aragham, the hottest blacksmith in Morocc!";
+		mes "哈囉~~~~，冒險家們！我是夢羅克最火熱的鐵匠阿拉加姆！";
 		next;
-		mes "Anyway, I have a son named Aragam Junior, the cute one. Haha.";
+		mes "總之，我有一個兒子名叫阿拉加姆二世，很可愛。哈哈。";
 		next;
-		mes "He will be attending summer camp this summer, but he doesn't know how to swim.";
+		mes "他今年夏天將參加夏令營，但他不知道如何游泳。";
 		next;
-		mes "I want to teach him, but as you know I am a blacksmith, a far cry from swimming! Hehe.";
+		mes "我想教他，但如您所知，我是一個鐵匠，與游泳相去甚遠！呵呵。";
 		next;
-		mes "But, I figured that if I make swim fins, it will be great for his confidence~!";
+		mes "但是，我想如果我製作游泳蛙鞋，那將對他的信心有很大幫助~！";
 		next;
-		mes "To make it, I need 30 Sticky Webfoots from a Roda Frog. Can you bring them to me?";
+		mes "為了製作它，我需要 30 個來自羅達蛙的黏稠蹼。你能把它們帶給我嗎？";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "請在完成任務後向我們確認，然後我們將給予您適當的獎勵。";
 		next;
-		mes "PS. Do not compare me with Hollgrehenn or Antonio!!!!";
+		mes "PS. 請不要把我與霍爾格倫或安東尼奧比較!!!!";
 		next;
-		mes "-- The hottest blacksmith, Morocc blacksmith Aragham --";
+		mes "-- 最火熱的鐵匠，夢羅克鐵匠阿拉加姆 --";
 		break;
 	case 3257:
-		mes "This mission is assigned by an inventor Dorian from Izlude.";
+		mes "此任務由依斯魯得的發明家多里安指派。";
 		next;
-		mes "Have you heard the story that if women have a grudge on their mind, it will bring natural disasters.";
+		mes "您有沒有聽說過，如果女人心中懷有怨恨，就會帶來天災的故事。";
 		next;
-		mes "Wow, so guys must watch out for those sensitive women! Make sure they don't have any grudges on you.";
+		mes "哇，所以男人們必須小心那些敏感的女人！確保她們沒有對您有任何怨恨。";
 		next;
-		mes "Women can bring strange phenomenons with them!";
+		mes "女人可以帶來奇怪的現象！";
 		next;
-		mes "I am so intrigued with that story that I'm trying to prove that it can be true.";
+		mes "我對那個故事非常感興趣，我正試圖證明它是真的。";
 		next;
-		mes "So I need to make women upset! Haha, I know what a mean idea, right?";
+		mes "所以我需要讓女人不高興！哈哈，我知道這是個卑鄙的主意，對吧？";
 		next;
-		mes "But this is seriously just for studying... So please hunt 30 Sohee's who seems to be revived from victimized souls.";
+		mes "但這只是為了研究...所以請狩獵 30 隻似乎是從受害者靈魂中復活的蘇海。";
 		next;
-		mes "So I can keep observing the case.";
+		mes "所以我可以繼續觀察這個案例。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "請在完成任務後向我們確認，然後我們將給予您適當的獎勵。";
 		next;
-		mes "-- Elegance inventor Dorian --";
+		mes "-- 優雅的發明家多里安 --";
 		break;
 	case 3258:
-		mes "This mission is assigned by Wallah from Payon.";
+		mes "此任務由斐揚的瓦拉指派。";
 		next;
-		mes "Hello, adventurer. How are you? How is your health?";
+		mes "哈囉，冒險家。你好嗎？你的身體好嗎？";
 		next;
-		mes "I am a pharmacist and I am having a hard time getting special ingredients lately.";
+		mes "我是一名藥劑師，最近我很難獲得特殊的成分。";
 		next;
-		mes "Because I am a little sensitive girl, how can I possibly get those things by myself.";
+		mes "因為我是個有點敏感的女孩，我怎麼可能自己得到那些東西。";
 		next;
-		mes "So, please help me. Just bring 40 Huge Leafs to me, that will be enough to complete my special medicine!";
+		mes "所以，請幫幫我。只要帶 40 個巨大的葉子給我，那就足以完成我的特殊藥物了！";
 		next;
-		mes "Please bring it as soon as possible, people need my medicine.";
+		mes "請盡快帶過來，人們需要我的藥物。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "-- Wallah --";
+		mes "-- 瓦拉 --";
 		break;
 	case 3259:
-		mes "This mission is assigned by puppet master Woonute from Geffen.";
+		mes "這個任務是由吉芬的傀儡師伍努特指派的。";
 		next;
-		mes "You know being a puppet master is kind of a hard job to satisfy people.";
+		mes "你知道，要當一個傀儡師並滿足人們的需求，這是一項艱鉅的工作。";
 		next;
-		mes "People can search and see so many different things on their own thesedays.";
+		mes "現在的人們可以自己搜尋和看到許多不同的東西。";
 		next;
-		mes "Their expectations are getting high, I can't satisfy them anymore.";
+		mes "他們的期望越來越高，我再也無法滿足他們了。";
 		next;
-		mes "But if I can make new toy concepts, like living toys, it will be ground breaking.";
+		mes "但是，如果我可以創造新的玩具概念，像是活生生的玩具，那將會是突破性的。";
 		next;
-		mes "I heard that there are live dolls called Marionettes. Can you hunt 30 Marionettes for me? And also bring 30 Golden Hair, those will be great materials for the new toys.";
+		mes "我聽說有一種叫做瑪果尼特的活人偶。你可以幫我獵殺 30 隻瑪果尼特嗎？還有帶 30 個金髮，那些將會是新玩具的好材料。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "-- Puppet Master Woonute --";
+		mes "-- 傀儡師伍努特 --";
 		break;
 	case 3260:
-		mes "This mission is assigned by an exterminator from Prontera.";
+		mes "這個任務是由普隆德拉的滅蟲者指派的。";
 		next;
-		mes "As the weather gets warmer, insects multiply more and more. It is already out of control.";
+		mes "隨著天氣越來越暖和，昆蟲繁殖得越來越多。情況已經失控了。";
 		next;
-		mes "People in Prontera cannot sleep because of all the bugs in their house.";
+		mes "普隆德拉的人們因為家裡所有的蟲子而無法入睡。";
 		next;
-		mes "So, please help us, hunt 30 Hunter Flies. Then the flies can be reduced slowly.";
+		mes "所以，請幫幫我們，獵殺 30 隻獵蠅。這樣蒼蠅就可以慢慢減少了。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "-- The Prontera exterminator --";
+		mes "-- 普隆德拉滅蟲者 --";
 		break;
 	case 3261:
-		mes "This mission is assigned by Cheese Dongja from Payon.";
+		mes "這個任務是由斐揚的起司東加指派的。";
 		next;
-		mes "Have you heard about Munak?";
+		mes "你聽過木乃伊嗎？";
 		next;
-		mes "The ugly monster Munak is threatening people in Payon.";
+		mes "醜陋的怪物木乃伊正在威脅斐揚的人們。";
 		next;
-		mes "So we need brave adventurers like you!";
+		mes "所以我們需要像你一樣勇敢的冒險家！";
 		next;
-		mes "Please hunt 30 Munaks then Payon will be in peace.";
+		mes "請獵殺 30 隻木乃伊，這樣斐揚就會和平了。";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "- Payon Cheese Dongja -";
+		mes "- 斐揚起司東加 -";
 		break;
 	case 3262:
-		mes "This mission is assigned by a gem dealer, Ibraham from Morocc.";
+		mes "這個任務是由夢羅克的寶石商人伊布拉漢指派的。";
 		next;
-		mes "A small beautiful flower in the barren desert... What an incredible scene it would be!";
+		mes "在貧瘠的沙漠中一朵美麗的小花... 那會是多麼令人難以置信的景象啊！";
 		next;
-		mes "Planting flowers can make the world green and it will be so pretty everywhere.";
+		mes "種植花朵可以使世界變得綠色，而且到處都會非常漂亮。";
 		next;
-		mes "I plan to plant strong flowers in the Morocc desert so the soil gets better.";
+		mes "我計劃在夢羅克沙漠中種植強壯的花朵，以便使土壤變得更好。";
 		next;
-		mes "I need 40 Maneater Blossom from Flora, I know Maneater Blossom is an ugly flower, but still it is a plant.";
+		mes "我需要 40 個來自弗羅拉的食人花花苞，我知道食人花花苞是一種醜陋的花，但它仍然是一種植物。";
 		next;
-		mes "I hope you can hunt Flora and get me 40 Maneater Blossoms. You are making the world green! Be proud!";
+		mes "我希望你能獵殺弗羅拉，並給我 40 個食人花花苞。你正在使世界變得綠色！感到驕傲吧！";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "-- Morocc Ibraham --";
+		mes "-- 夢羅克伊布拉漢 --";
 		break;
 	case 3263:
-		mes "This mission is assigned by the Payon blacksmith Antonio.";
+		mes "這個任務是由斐揚的鐵匠安東尼奧指派的。";
 		next;
-		mes "Magic wand! Have you heard about it? It is an incredible wand!";
+		mes "魔杖！你聽說過嗎？那是一根令人難以置信的魔杖！";
 		next;
-		mes "If you say the magic words and swing the wand, it will make your wishes come true.";
+		mes "如果你說出咒語並揮動魔杖，它將使你的願望成真。";
 		next;
-		mes "So, I decided to make it by myself. Then I will be rich and powerful~! Haha!!";
+		mes "所以，我決定自己製作。然後我會變得富有而強大～！哈哈！！";
 		next;
-		mes "To make the wand, I need some special materials.";
+		mes "為了製作魔杖，我需要一些特殊的材料。";
 		next;
-		mes "Please bring me 30 Dokebi Horns and 30 Trunks. If you do so, I will lend you my magic wand once. Haha, good deal?";
+		mes "請帶給我 30 個鬼火角和 30 個樹幹。如果你這樣做，我會借給你我的魔杖一次。哈哈，划算的交易？";
 		next;
-		mes "Please confirm it to us after you complete the mission, then we will give you proper rewards.";
+		mes "完成任務後，請向我們確認，然後我們會給你適當的獎勵。";
 		next;
-		mes "-- Payon blacksmith Antonio --";
+		mes "-- 斐揚鐵匠安東尼奧 --";
 		break;
 	}
 	return;

@@ -16,112 +16,111 @@
 
 einbroch,72,202,4	script	Einbroch Guide#ein01::GuideEinbroch	852,{
 	cutin "ein_soldier",2;
-	mes "[Einbroch Guide]";
-	mes "Welcome";
-	mes "to ^8B4513Einbroch^000000,";
-	mes "the City of Steel.";
-	mes "Please ask me if you";
-	mes "have any questions.";
+	mes "[艾音布羅克導遊]";
+	mes "歡迎來到";
+	mes "到 ^8B4513艾音布羅克^000000，";
+	mes "鋼鐵之都。";
+	mes "如果您有任何疑問，請";
+	mes "隨時問我。";
 	F_Navi("[Einbroch Guide]");
 	next;
 	while (1) {
-		switch(select("[ Main Facilities ]:[ Merchants & Helpers ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 主要設施 ]:[ 商人 & 幫手 ]:從迷你地圖移除標記:取消")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Airport ]:[ Factory ]:[ Plaza ]:[ Hotel ]:[ Train Station ]:[ Weapon Shop ]:[ Laboratory ]:[ Monument ]:[ Blacksmith Guild ]:[ Gunslinger Guild ]:Previous Menu")) {
+				switch(select("[ 機場 ]:[ 工廠 ]:[ 廣場 ]:[ 旅館 ]:[ 火車站 ]:[ 武器店 ]:[ 實驗室 ]:[ 紀念碑 ]:[ 鐵匠公會 ]:[ 神槍手公會 ]:上一個選單")) {
 				case 1:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Airport","einbroch,64,204","^FF0000")+" is located";
-					mes "in the northwestern part";
-					mes "of the city. There you can";
-					mes "see our city's pride and joy, the Airship. Remember that you must pay admission to board the Airship.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Airport","einbroch,64,204","^FF0000")+" 位於";
+					mes "城市西北部";
+					mes "在那裡你可以";
+					mes "看到我們城市的光榮和喜悅，飛空艇。請記住，您必須支付入場費才能登上飛空艇。";
 					viewpoint 1,64,204,0,0xFF0000;
 					next;
 					break;
 				case 2:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Factory","einbroch,129,79")+", perhaps the";
-					mes "most important facility in";
-					mes "Einbroch, is located in the";
-					mes "southern part of the city.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Factory","einbroch,129,79")+"，也許是";
+					mes "艾音布羅克最重要的設施";
+					mes "位於";
+					mes "城市的南部。";
 					viewpoint 1,129,79,1,0xFF4500;
 					next;
 					break;
 				case 3:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Plaza","einbroch,129,79")+", our biggest";
-					mes "shopping district, can be";
-					mes "found just east from the";
-					mes "center of Einbroch.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Plaza","einbroch,129,79")+"，我們最大的";
+					mes "購物區，可以";
+					mes "在艾音布羅克";
+					mes "中心以東找到。";
 					viewpoint 1,254,199,2,0xDAA520;
 					next;
 					break;
 				case 4:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Hotel","einbroch,254,199")+" is east of";
-					mes "the Plaza and offers top";
-					mes "caliber accomodations.";
-					mes "There, you can enjoy your";
-					mes "stay in Einbroch in comfort~";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Hotel","einbroch,254,199")+"在廣場的東邊";
+					mes "提供頂級";
+					mes "水平的住宿。";
+					mes "在那裡，您可以享受";
+					mes "在艾音布羅克舒適地度過您的時光~";
 					viewpoint 1,254,199,3,0x008000;
 					next;
 					break;
 				case 5:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Train Station","einbroch,232,272")+" is";
-					mes "located in the northeast";
-					mes "part of Einbroch. Trains";
-					mes "running between here";
-					mes "and Einbech run all day";
-					mes "long, everyday.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Train Station","einbroch,232,272")+"位於";
+					mes "艾音布羅克的東北部";
+					mes "每天都有火車";
+					mes "往返於此地";
+					mes "和艾音貝赫之間。";
 					viewpoint 1,232,272,4,0x0000FF;
 					next;
 					break;
 				case 6:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Weapon Shop","einbroch,216,211")+" is";
-					mes "located north from the";
-					mes "Plaza. There you can";
-					mes "purchase weapons for";
-					mes "your personal use.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Weapon Shop","einbroch,216,211")+"位於";
+					mes "廣場的北邊";
+					mes "在那裡你可以";
+					mes "購買武器";
+					mes "供您個人使用。";
 					viewpoint 1,216,211,5,0x000080;
 					next;
 					break;
 				case 7:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Laboratory","einbroch,55,52")+" is an";
-					mes "annex of the Factory and";
-					mes "is located in the southwest";
-					mes "sector of Einbroch.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Laboratory","einbroch,55,52")+"是";
+					mes "工廠的附屬建築，並且";
+					mes "位於";
+					mes "艾音布羅克的西南";
+					mes "區。";
 					viewpoint 1,55,52,6,0x800080;
 					next;
 					break;
 				case 8:
-					mes "[Einbroch Guide]";
-					mes "I will mark the location";
-					mes "of the "+F_Navi("Monument","einbroch,178,173","^808080");
-					mes "on your mini-map.";
-					mes "Would you like to check any other locations?";
+					mes "[艾音布羅克導遊]";
+					mes "我將在地圖上標記";
+					mes "的 "+F_Navi("Monument","einbroch,178,173","^808080");
+					mes "位置";
+					mes "你想查看其他位置嗎？";
 					viewpoint 1,178,173,7,0x808080;
 					next;
 					break;
 				case 9:
-					mes "[Einbroch Guide]";
-					mes "The "+F_Navi("Blacksmith Guild","einbroch,255,110")+" is";
-					mes "located in the southeast";
-					mes "part of Einbroch. You can";
-					mes "upgrade your equipment";
-					mes "by using their services.";
+					mes "[艾音布羅克導遊]";
+					mes "The "+F_Navi("Blacksmith Guild","einbroch,255,110")+"位於";
+					mes "艾音布羅克的東南";
+					mes "部。您可以";
+					mes "透過他們的服?升級您的裝備。";
 					viewpoint 1,255,110,8,0x556B2F;
 					next;
 					break;
 				case 10:
-					mes "[Einbroch Guide]";
-					mes "I will mark the location";
-					mes "of the "+F_Navi("Gunslinger Guild","einbroch,130,197","^008080");
-					mes "on your mini-map.";
-					mes "Would you like to check any other locations?";
+					mes "[艾音布羅克導遊]";
+					mes "我將在地圖上標記";
+					mes "的 "+F_Navi("Gunslinger Guild","einbroch,130,197","^008080");
+					mes "位置";
+					mes "你想查看其他位置嗎？";
 					viewpoint 1,130,197,9,0x008080;
 					next;
 					break;
@@ -134,43 +133,41 @@ einbroch,72,202,4	script	Einbroch Guide#ein01::GuideEinbroch	852,{
 		case 2:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Armsmith ]:[ Kafra Employees ]:[ Eden Teleport Officer ]:Previous Menu")) {
+				switch(select("[ 武器工匠 ]:[ 卡普拉職員 ]:[ 伊甸園傳送員 ]:上一個選單")) {
 				case 1:
-					mes "[Einbroch Guide]";
-					mes "You may go to ^FF1493Manthasman^000000,";
-					mes "the ^FF1493Armsmith^000000";
-					mes "on the 1st basement floor in the Blacksmith Guild.";
+					mes "[艾音布羅克導遊]";
+					mes "您可以去 ^FF1493曼薩斯曼^000000，";
+					mes "位於鐵匠公會地下1樓的 ^FF1493武器工匠^000000。";
 					viewpoint 1,255,110,10,0xFF1493;
 					next;
-					mes "[Einbroch Guide]";
-					mes "I will mark the location";
-					mes "of the "+F_Navi("Armsmith","einbroch,255,110","^FF1493");
-					mes "on your mini-map.";
-					mes "Would you like to check any other locations?";
+					mes "[艾音布羅克導遊]";
+					mes "我將在地圖上標記";
+					mes "的 "+F_Navi("Armsmith","einbroch,255,110","^FF1493");
+					mes "位置";
+					mes "你想查看其他位置嗎？";
 					next;
 					break;
 				case 2:
-					mes "[Einbroch Guide]";
-					mes "I will mark the locations";
-					mes "of the ^DA70D6Kafra Employees^000000";
-					mes "on your mini-map.";
-					mes "Would you like to check any other locations?";
+					mes "[艾音布羅克導遊]";
+					mes "我將在地圖上標記";
+					mes "的 ^DA70D6卡普拉職員^000000";
+					mes "位置";
+					mes "你想查看其他位置嗎？";
 					viewpoint 1,242,205,11,0xDA70D6;
 					viewpoint 1,59,203,12,0xDA70D6;
 					next;
 					break;
 				case 3:
-					mes "[Einbroch Guide]";
-					mes "You can find";
-					mes "the ^CD1039Eden Teleport Officer^000000";
-					mes "on the 1st floor of the Gunslinger Guild.";
+					mes "[艾音布羅克導遊]";
+					mes "您可以在";
+					mes "神槍手公會的一樓找到 ^CD1039伊甸園傳送員^000000。";
 					viewpoint 1,130,197,13,0xCD1039;
 					next;
-					mes "[Einbroch Guide]";
-					mes "I will mark the location";
-					mes "of the "+F_Navi("Eden Teleport Officer","einbroch,130,197","^CD1039");
-					mes "on your mini-map.";
-					mes "Would you like to check any other locations?";
+					mes "[艾音布羅克導遊]";
+					mes "我將在地圖上標記";
+					mes "的 "+F_Navi("伊甸園傳送人員","einbroch,130,197","^CD1039");
+					mes "位置";
+					mes "你想查看其他位置嗎？";
 					next;
 					break;
 				case 4:
@@ -180,9 +177,9 @@ einbroch,72,202,4	script	Einbroch Guide#ein01::GuideEinbroch	852,{
 			}
 			break;
 		case 3:
-			mes "[Einbroch Guide]";
-			mes "I'll remove the marks from your mini-map.";
-			mes "Do you need any other help?";
+			mes "[艾音布羅克導遊]";
+			mes "我會從你的迷你地圖上移除標記。";
+			mes "您需要其他協助嗎？";
 			viewpoint 2,64,204,0,0xFFFFFF;
 			viewpoint 2,129,79,1,0xFFFFFF;
 			viewpoint 2,254,199,2,0xFFFFFF;
@@ -200,8 +197,8 @@ einbroch,72,202,4	script	Einbroch Guide#ein01::GuideEinbroch	852,{
 			next;
 			break;
 		case 4:
-			mes "[Einbroch Guide]";
-			mes "Have a safe journey!";
+			mes "[艾音布羅克導遊]";
+			mes "祝您旅途平安！";
 			close2;
 			cutin "ein_soldier",255;
 			end;
@@ -214,67 +211,68 @@ einbroch,252,320,3	duplicate(GuideEinbroch)	Einbroch Guide#ein04	852
 
 einbech,67,37,4	script	Einbech Guide#einbech01::GuideEinbech	852,{
 	cutin "ein_soldier",2;
-	mes "[Einbech Guide]";
-	mes "Welcome to ^8B4513Einbech^000000,";
-	mes "the Mining Town. We're";
-	mes "here to assist tourists,";
-	mes "so if you have any questions,";
-	mes "please feel free to ask us.";
+	mes "[艾音貝赫導遊]";
+	mes "歡迎來到 ^8B4513艾音貝赫^000000，";
+	mes "採礦小鎮。我們";
+	mes "在這裡協助遊客，";
+	mes "因此，如果您有任何疑問，";
+	mes "請隨時問我們。";
 	F_Navi("[Einbech Guide]");
 	next;
 	while (1) {
-		switch(select("[ Tavern ]:[ Tool Shop ]:[ Train Station ]:[ Mine ]:[ Kafra Employee ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 酒館 ]:[ 工具店 ]:[ 火車站 ]:[ 礦坑 ]:[ 卡普拉職員 ]:從迷你地圖移除標記:取消")) {
 		case 1:
-			mes "[Einbech Guide]";
-			mes "The "+F_Navi("Tavern","einbech,157,106")+" is located";
-			mes "in the southern part of";
-			mes "Einbech. It's a nice place";
-			mes "to relax after a long day.";
+			mes "[艾音貝赫導遊]";
+			mes "The "+F_Navi("酒館","einbech,157,106")+" 位於";
+			mes "艾音貝赫南部";
+			mes "在漫長的一天后，這是個放鬆的好地方。";
 			viewpoint 1,157,106,0,0x497649;
 			next;
 			break;
 		case 2:
-			mes "[Einbech Guide]";
-			mes "You can find the "+F_Navi("Tool Shop","einbech,177,133")+" in the center of";
-			mes "Einbech. There, you can";
-			mes "purchase any tools you";
-			mes "might need for your travels.";
+			mes "[艾音貝赫導遊]";
+			mes "您可以在";
+			mes "艾音貝赫中心找到 "+F_Navi("Tool Shop","einbech,177,133")+"。";
+			mes "在那裡，您可以";
+			mes "購買您旅行可能";
+			mes "需要的任何工具。";
 			viewpoint 1,177,133,1,0xFA8072;
 			next;
 			break;
 		case 3:
-			mes "[Einbech Guide]";
-			mes "The "+F_Navi("Train Stations","einbech,39,215")+" are";
-			mes "located in the northwest";
-			mes "and northeast parts of";
-			mes "Einbech. There, you can";
-			mes "take a train to Einbroch.";
+			mes "[艾音貝赫導遊]";
+			mes "The "+F_Navi("Train Stations","einbech,39,215")+" 位於";
+			mes "西北方";
+			mes "和東北部的";
+			mes "艾音貝赫。";
+			mes "在那裡，您可以";
+			mes "搭乘火車前往艾音布羅克。";
 			viewpoint 1,39,215,2,0xCD1039;
 			next;
 			break;
 		case 4:
-			mes "[Einbech Guide]";
-			mes "The "+F_Navi("Mine","einbech,137,248")+", which is";
-			mes "Einbech's major industry,";
-			mes "is located in the northern";
-			mes "part of this town. It's where";
-			mes "we get all our ores, although monsters get in the miners' way.";
+			mes "[艾音貝赫導遊]";
+			mes "The "+F_Navi("Mine","einbech,137,248")+"，這是";
+			mes "艾音貝赫的主要產業，";
+			mes "位於";
+			mes "這個城鎮的北部。這是";
+			mes "我們獲得所有礦石的地方，儘管怪物妨礙了礦工。";
 			viewpoint 1,137,248,3,0xDA70D6;
 			next;
 			break;
 		case 5:
-			mes "[Einbech Guide]";
-			mes "I will mark the location";
-			mes "of the ^FF1493Kafra Employee^000000";
-			mes "on your mini-map.";
-			mes "Would you like to check any other locations?";
+			mes "[艾音貝赫導遊]";
+			mes "我將在地圖上標記";
+			mes "的 ^FF1493卡普拉職員^000000";
+			mes "位置";
+			mes "你想查看其他位置嗎？";
 			viewpoint 1,181,132,4,0xFF1493;
 			next;
 			break;
 		case 6:
-			mes "[Einbech Guide]";
-			mes "I'll remove the marks from your mini-map.";
-			mes "Do you need any other help?";
+			mes "[艾音貝赫導遊]";
+			mes "我會從你的迷你地圖上移除標記。";
+			mes "您需要其他協助嗎？";
 			viewpoint 2,157,106,0,0xFFFFFF;
 			viewpoint 2,177,133,1,0xFFFFFF;
 			viewpoint 2,39,215,2,0xFFFFFF;
@@ -283,8 +281,8 @@ einbech,67,37,4	script	Einbech Guide#einbech01::GuideEinbech	852,{
 			next;
 			break;
 		case 7:
-			mes "[Einbech Guide]";
-			mes "Have a safe journey!";
+			mes "[艾音貝赫導遊]";
+			mes "祝您旅途平安！";
 			close2;
 			cutin "ein_soldier",255;
 			end;

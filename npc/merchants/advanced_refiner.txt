@@ -18,13 +18,13 @@
 //= 1.7 Removed re-roll behavior. [Secret]
 //============================================================
 
-payon,157,146,6	script	Suhnbi#cash	85,{
+payon,157,146,6	script	順飛#cash	85,{
 	disable_items;
-	mes "[Suhnbi]";
-	mes "I am the Armsmith";
-	mes "I can refine all kinds of weapons,";
-	mes "armor and equipment, so let me";
-	mes "know what you want to refine.";
+	mes "[順飛]";
+	mes "我是武器匠";
+	mes "我可以精鍊各式各樣的武器、";
+	mes "盔甲和裝備，所以請";
+	mes "讓我知道你想精鍊什麼。";
 	next;
 
 	setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
@@ -36,8 +36,8 @@ payon,157,146,6	script	Suhnbi#cash	85,{
 		set .@menu$, .@menu$ + ":";
 	}
 	if (.@equipped == 0) {
-		mes "[Suhnbi]";
-		mes "I don't think I can refine any items you have...";
+		mes "[順飛]";
+		mes "我不認為我可以精鍊你擁有的任何物品...";
 		close;
 	}
 	set .@part, .@indices[ select(.@menu$) ];
@@ -45,13 +45,13 @@ payon,157,146,6	script	Suhnbi#cash	85,{
 	if (!getequipisequiped(.@part)) //custom check
 		close;
 	if (!getequipisenableref(.@part)) {
-		mes "[Suhnbi]";
-		mes "Go find another Blacksmith. You can't refine this thing.";
+		mes "[順飛]";
+		mes "去找其他的鐵匠吧。你不能精鍊這個東西。";
 		close;
 	}
 	if (getequiprefinerycnt(.@part) >= 10) {
-		mes "[Suhnbi]";
-		mes "Hmm... someone perfected this already. I don't think I can work on it further.";
+		mes "[順飛]";
+		mes "嗯... 已經有人將它完美化了。我不認為我可以再對它做更多處理。";
 		close;
 	}
 
@@ -65,28 +65,28 @@ payon,157,146,6	script	Suhnbi#cash	85,{
 	// Determines chance of failure and verifies that you want to continue.
 	callsub S_RefineValidate,.@itemtype,.@material,.@price,.@part,.@refineitemid,.@refinerycnt;
 
-	mes "[Suhnbi]";
-	mes "Clang! Clang! Clang!";
+	mes "[順飛]";
+	mes "鏗！鏗！鏗！";
 	if (getequippercentrefinery(.@part, true) > rand(100)) {
 		successrefitem .@part;
 		next;
 		emotion ET_BEST;
-		mes "[Suhnbi]";
-		mes "There you go! It's done.";
-		mes "It's been a while since I've made such a fine "+((.@itemtype == IT_WEAPON)?"weapon":"armor")+". You must be happy because it has become stronger!";
+		mes "[順飛]";
+		mes "給你！完成了。";
+		mes "我已經很久沒製作出這麼好的"+((.@itemtype == IT_WEAPON)?"武器":"盔甲")+"了。你一定很高興它變得更強了！";
 		close;
 	}
 	failedrefitem .@part;
 	next;
 	emotion (!rand(5))?ET_MONEY:ET_HUK;
-	mes "[Suhnbi]";
-	mes "Uuuuuuuuuummmmmph!!!";
+	mes "[順飛]";
+	mes "嗚嗚嗚嗚嗚嗚嗚嗚!!!";
 	next;
-	mes "[Suhnbi]";
+	mes "[順飛]";
 	mes "...";
 	mes ".....";
-	mes ".......Huhuhuhuhu~";
-	mes "........It was your choice and my ability, no regret.";
+	mes ".......呼呼呼呼～";
+	mes "........這是你的選擇和我的能力，不後悔。";
 	close;
 
 S_RefineValidate:
@@ -138,49 +138,49 @@ S_RefineValidate:
 		close;
 	}
 
-	mes "[Suhnbi]";
+	mes "[順飛]";
 	if (.@itemtype == IT_WEAPON)
-		mes "You want to refine a level "+ .@equip_lv +" weapon?";
-	mes "To refine that, you'll need to have one ^ff9999"+ getitemname(.@item_req) +"^000000 and "+ .@price +" zeny.";
-	mes "Would you like to continue?";
+		mes "你想精鍊一個等級 "+ .@equip_lv +" 的武器嗎？";
+	mes "要精鍊它，你需要有一個 ^ff9999"+ getitemname(.@item_req) +"^000000 和 "+ .@price +" zeny。";
+	mes "你想要繼續嗎？";
 	next;
-	if(select("Yes:No") == 1) {
+	if(select("是:否") == 1) {
 		if (getequippercentrefinery(.@part) < 100) {
 			if (.@itemtype == IT_WEAPON) {
-				mes "[Suhnbi]";
-				mes "Wow!!";
-				mes "This weapon probably";
-				mes "looks like it's been refined...";
-				mes "many times...";
-				mes "It may break if";
-				mes "you refine it again.";
+				mes "[順飛]";
+				mes "哇！！";
+				mes "這件武器看起來";
+				mes "可能已經被精鍊過...";
+				mes "很多次了...";
+				mes "如果再次精鍊";
+				mes "它可能會損壞。";
 				next;
-				mes "And if it breaks,";
-				mes "you can't use it anymore!";
-				mes "All the cards in it and the properties ^ff0000will be lost^000000!";
-				mes "^ff0000Besides, the equipment will break!^000000";
-				mes "Are you sure you still want to continue?";
+				mes "如果它損壞了，";
+				mes "你就不能再使用它了！";
+				mes "裡面的所有卡片和屬性^ff0000都會遺失^000000！";
+				mes "^ff0000此外，裝備也會損壞！^000000";
+				mes "你確定你還想繼續嗎？";
 				next;
-				if(select("Yes:No") == 2) {
-					mes "[Suhnbi]";
-					mes "Good.";
-					mes "Because if the weapon breaks from unreasonable refining, then I get a bad mood, too.";
+				if(select("是:否") == 2) {
+					mes "[順飛]";
+					mes "很好。";
+					mes "因為如果武器因為不合理的精鍊而損壞，我的心情也會很糟糕。";
 					close;
 				}
 			} else {
-				mes "[Suhnbi]";
-				mes "Giggle. Giggle. Oh, you have guts, daring to refine this.";
-				mes "You know it's pretty risky, don't you?";
+				mes "[順飛]";
+				mes "咯咯。咯咯。喔，你真有膽量，敢精鍊這個。";
+				mes "你知道這非常冒險，不是嗎？";
 				next;
-				mes "If your defensive equipment is broken, you'll never be able to use it again.";
-				mes "Even your cards and your modifications will ^ff0000completely disappear^000000.";
-				//mes "Everything will disappear. As in... GONE!";
-				mes "Do you really wish to continue?";
+				mes "如果你的防禦裝備損壞，你將永遠無法再次使用它。";
+				mes "即使你的卡片和你的改造也將會^ff0000完全消失^000000。";
+				//mes "一切都會消失。就像... 消失得無影無蹤！";
+				mes "你真的希望繼續嗎？";
 				next;
-				if(select("Yes:No") == 2) {
-					mes "[Suhnbi]";
-					mes "What nonsense. You waste my precious time.";
-					mes "Get lost, punk.";
+				if(select("是:否") == 2) {
+					mes "[順飛]";
+					mes "胡說八道。你浪費我寶貴的時間。";
+					mes "滾開，混蛋。";
 					close;
 				}
 			}
@@ -192,22 +192,22 @@ S_RefineValidate:
 			// anti-hack
 			if (callfunc("F_IsEquipIDHack", .@part, getarg(4)) ||
 				callfunc("F_IsEquipRefineHack", .@part, getarg(5)) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3])) {
-				mes "[Holink]";
+				mes "[霍林克]";
 				emotion ET_FRET;
-				mes "Wait a second...";
-				mes "Do you think I'm stupid?!";
-				mes "You switched the item while I wasn't looking! Get out of here!";
+				mes "等一下...";
+				mes "你認為我很笨嗎？！";
+				mes "當我不注意的時候，你換了物品！滾出去！";
 				close;
 			}
 
 			return;
 		}
-		mes "[Suhnbi]";
-		mes "Are these all you have?";
-		mes "I'm very sorry, but I can't do anything without all the materials. Besides, I deserve some payments for my work, don't I?";
+		mes "[順飛]";
+		mes "這些就是你全部擁有的嗎？";
+		mes "我很抱歉，但是如果沒有所有材料，我什麼都做不了。此外，我應該得到一些我的工作報酬，不是嗎？";
 		close;
 	}
-	mes "[Suhnbi]";
-	mes "I can't help it even if you're not happy about it...";
+	mes "[順飛]";
+	mes "即使你不高興，我也無能為力...";
 	close;
 }

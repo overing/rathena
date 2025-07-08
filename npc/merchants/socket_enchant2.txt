@@ -15,73 +15,72 @@
 //= 1.1a Added 'disable_items' command. [Euphy]
 //============================================================ 
 
--	script	Leablem#dummy::SocketEnchant2	-1,{
+-	script	莉艾布倫#dummy::SocketEnchant2	-1,{
 	if (checkweight(1201,1) == 0)
 	{
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你攜帶的 -";
+		mes "- 物品太多了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 等你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Leablem]";
-	mes "Good day. My name is Leablem,";
-	mes "and I'm a technician that specializes in";
-	mes "adding slots to weapons and armors.";
-	mes "It can be very hard sometimes, but I like";
-	mes "what I do, and take pride in it.";
+	mes "[莉艾布倫]";
+	mes "您好。我叫莉艾布倫，";
+	mes "我是專門";
+	mes "為武器和盔甲增加插槽的技術員。";
+	mes "有時可能很困難，但我喜歡";
+	mes "我所做的事情，並以此為榮。";
 	next;
-	mes "[Leablem]";
-	mes "I've learned most of the things from my brother, Seyablem,";
-	mes "but I think I still have a lot to learn.";
-	mes "So please understand my slotting services are limited,";
-	mes "unlike my brother Seyablem.";
+	mes "[莉艾布倫]";
+	mes "我大部分的東西都是從我哥哥賽亞布倫那裡學來的，";
+	mes "但我認為我還有很多東西要學。";
+	mes "所以請理解我的打洞服務有限，";
+	mes "不像我的哥哥賽亞布倫。";
 	next;
-	mes "[Leablem]";
-	mes "My brother wasn't so happy to teach me";
-	mes "his skills because he was worried that his skills";
-	mes "wouldn't be unique anymore. He did, however, his best";
-	mes "to teach me.";
+	mes "[莉艾布倫]";
+	mes "我哥哥不太樂意教我";
+	mes "他的技能，因為他擔心他的技能";
+	mes "不再獨特。但他盡了最大的努力";
+	mes "教我。";
 	next;
-	mes "[Leablem]";
-	mes "Thanks to him, I've learned lots of things.";
-	mes "I'm not very confident";
-	mes "in trying many different things,";
-	mes "but I'll do what";
-	mes "I can do for now.";
+	mes "[莉艾布倫]";
+	mes "多虧了他，我學到了很多東西。";
+	mes "我不是很自信";
+	mes "嘗試許多不同的事物，";
+	mes "但我會盡我所能";
+	mes "現在能做的。";
 	next;
-	mes "[Leablem]";
-	mes "In fact, there's one thing";
-	mes "that my brother doesn't want me to do.";
-	mes "I don't want to upset him, so...let's just skip that part.";
-	mes "I'll say no more about it!";
+	mes "[莉艾布倫]";
+	mes "事實上，有一件事";
+	mes "我哥哥不希望我做。";
+	mes "我不想讓他不高興，所以...我們跳過那部分吧。";
+	mes "我不會再說了！";
 	next;
-	mes "[Leablem]";
-	mes "Anyways, do you have any equipment";
-	mes "which you'd like to add to the slots?";
-	mes "My service charge, the materials,";
-	mes "and the success chance all depend on";
-	mes "the specific item I'm working on.";
+	mes "[莉艾布倫]";
+	mes "總之，你有任何設備";
+	mes "想要增加插槽嗎？";
+	mes "我的服務費、材料、";
+	mes "和成功機率都取決於";
+	mes "我正在處理的特定物品。";
 	next;
-	switch(select("Weapon:Armor:About that thing you skipped:More information:Quit"))
+	switch(select("武器:盔甲:關於你跳過的那件事:更多資訊:離開"))
 	{
 		case 1:
-			mes "[Leablem]";
-			mes "Weapon, you said? Sure, no problem.";
-			mes "Weapons are divided into 4 different class";
-			mes "depending on the work difficulty.";
-			mes "C class is the easiest one, and S class is the hardest one.";
-			mes "Which class would you like to try?";
+			mes "[莉艾布倫]";
+			mes "你說武器？ 當然，沒問題。";
+			mes "武器根據工作難度分為4個不同的等級";
+			mes "C級是最簡單的，S級是最難的。";
+			mes "你想試試哪個等級？";
 			next;
 			switch(select("C:B:A:S"))
 			{
 				case 1:
-					mes "[Leablem]";
-					mes "C class, I see.";
-					mes "So, what kind of weapon do you have?";
+					mes "[莉艾布倫]";
+					mes "C級，我知道了。";
+					mes "那麼，你擁有什麼樣的武器？";
 					next;
-					switch(select("Book of Mother Earth:Book of Billows:Book of Gust of Wind:Book of the Blazing Sun"))
+					switch(select("大地之書:巨浪之書:狂風之書:烈日之書"))
 					{
 						case 1: callfunc "Func_Socket2",1554,1569,40,66,200,1010,10;
 						case 2: callfunc "Func_Socket2",1553,1568,40,66,200,1010,10;
@@ -89,22 +88,22 @@
 						case 4: callfunc "Func_Socket2",1555,1570,40,66,200,1010,10;
 					}
 				case 2:
-					mes "[Leablem]";
-					mes "You have chosen average B class.";
-					mes "So, what kind of weapon do you have?";
+					mes "[莉艾布倫]";
+					mes "你選擇了平均的B級。";
+					mes "那麼，你擁有什麼樣的武器？";
 					next;
-					switch(select("Orcish Axe:Scimiter:Spike"))
+					switch(select("獸人戰斧:彎刀:釘錘"))
 					{
 						case 1: callfunc "Func_Socket2",1304,1309,40,66,200,984,1;
 						case 2: callfunc "Func_Socket2",1113,1114,40,66,200,984,1;
 						case 3: callfunc "Func_Socket2",1523,1538,40,61,300,984,1;
 					}
 				case 3:
-					mes "[Leablem]";
-					mes "A class? You seem to want little too much. But, no problem.";
-					mes "So, what kind of weapon do you have?";
+					mes "[莉艾布倫]";
+					mes "A級？ 你似乎想要太多了。 但，沒問題。";
+					mes "那麼，你擁有什麼樣的武器？";
 					next;
-					switch(select("Dragon Killer:Katar of Quaking:Katar of Raging Blaze:Katar of Frozen Icicle:Katar of Piercing Wind:Golden Mace:Oriental Lute:Queen's Whip:Spectral Spear:Gae Bolg:Schweizersabel"))
+					switch(select("屠龍劍:震動刺藤:狂焰刺藤:冰凍刺藤:穿刺之風刺藤:黃金錘:東方樂器:女王鞭:幽靈之矛:昆古尼爾:瑞士刀"))
 					{
 						case 1:  callfunc "Func_Socket2",13001,13030,40,61,500,984,2;
 						case 2:  callfunc "Func_Socket2", 1257, 1276,40,66,500,984,2;
@@ -119,11 +118,11 @@
 						case 11: callfunc "Func_Socket2", 1167, 1178,40,61,500,984,2;
 					}
 				case 4:
-					mes "[Leablem]";
-					mes "Huh, S Class?! Oh my god, are you serious?*Tremble*";
-					mes "So...which S class weapon would you like to make a slot?!";
+					mes "[莉艾布倫]";
+					mes "嗯，S級？！ 哦，我的天啊，你是認真的嗎？*顫抖*";
+					mes "那麼...你想要為哪種S級武器開槽呢？！";
 					next;
-					switch(select("Zephyrus:Mailbreaker:Dragon Slayer:Swordbreaker:Assasin Dagger:Grand Cross:Executioner"))
+					switch(select("傑菲勒斯:破甲短劍:屠龍者:碎劍者:刺客短劍:聖十字:處刑劍"))
 					{
 						case 1: callfunc "Func_Socket2",1468, 1481,40,51,1000,984,5,999,10;
 						case 2: callfunc "Func_Socket2",1225,13032,40,51,1000,984,5,999,10;
@@ -135,21 +134,20 @@
 					}
 			}
 		case 2:
-			mes "[Leablem]";
-			mes "Armor, you said? Sure, no problem.";
-			mes "Armors are divided into 4 different class";
-			mes "depending on the work difficulty.";
-			mes "C class is the easiest one, and S class is the hardest one.";
-			mes "Which class would you like to try?";
+			mes "[莉艾布倫]";
+			mes "你說盔甲？ 當然，沒問題。";
+			mes "盔甲根據工作難度分為4個不同的等級";
+			mes "C級是最簡單的，S級是最難的。";
+			mes "你想試試哪個等級？";
 			next;
 			switch(select("C:B:A:S"))
 			{
 				case 1:
-					mes "[Leablem]";
-					mes "C class, I see.";
-					mes "So, what kind of armor do you have?";
+					mes "[莉艾布倫]";
+					mes "C級，我知道了。";
+					mes "那麼，你擁有什麼樣的盔甲？";
 					next;
-					switch(select("Sunflower:Ph.D Hat:Big Ribbon:Boys Cap"))
+					switch(select("向日葵:博士帽:大緞帶:男孩帽"))
 					{
 						case 1: callfunc "Func_Socket2",2253,5351,40,66,100,999,3;
 						case 2: callfunc "Func_Socket2",5012,5347,40,66,100,999,3;
@@ -157,32 +155,32 @@
 						case 4: callfunc "Func_Socket2",5016,5349,40,66,100,999,5;
 					}
 				case 2:
-					mes "[Leablem]";
-					mes "You have chosen average B class.";
-					mes "So, what kind of armor do you have?";
+					mes "[莉艾布倫]";
+					mes "你選擇了平均的B級。";
+					mes "那麼，你擁有什麼樣的盔甲？";
 					next;
-					switch(select("Skull Ring:High Heels"))
+					switch(select("骷髏戒指:高跟鞋"))
 					{
 						case 1: callfunc "Func_Socket2",2609,2715,40,61,300,999,5;
 						case 2: callfunc "Func_Socket2",2409,2432,40,61,300,999,5;
 					}
 				case 3:
-					mes "[Leablem]";
-					mes "A class? You seem to want little too much. But, no problem.";
-					mes "So, what kind of armor do you have?";
+					mes "[莉艾布倫]";
+					mes "A級？ 你似乎想要太多了。 但，沒問題。";
+					mes "那麼，你擁有什麼樣的盔甲？";
 					next;
-					switch(select("Pirate Bandana:Black Leather Boots"))
+					switch(select("海盜頭巾:黑色皮靴"))
 					{
 						case 1: callfunc "Func_Socket2",2287,5350,50,61,500,985,1; // 50,61 - it's not a typo
 						case 2: callfunc "Func_Socket2",2425,2434,40,51,500,985,1;
 						//case 3: callfunc "Func_Socket2",15053,15056,x,x,x,x,x;	// Special Ninja Suit (Needs more info)
 					}
 				case 4:
-					mes "[Leablem]";
-					mes "Huh, S Class?! Oh my god, are you serious?*Tremble*";
-					mes "So...which S class armor would you like to make a slot?!";
+					mes "[莉艾布倫]";
+					mes "嗯，S級？！ 哦，我的天啊，你是認真的嗎？*顫抖*";
+					mes "那麼...你想要為哪種S級盔甲開槽呢？！";
 					next;
-					switch(select("Mage Coat:Holy Robe:Sacred Mission:Undershirt:Pantie"))
+					switch(select("法師外袍:聖袍:神聖使命:緊身便衣:內褲"))
 					{
 						case 1: callfunc "Func_Socket2",2334,2372,40,51,1000,985,1; // Mage Coat has 10% success chance
 						case 2: callfunc "Func_Socket2",2327,2373,45,51,1000,985,1; // the rest has 5%
@@ -192,197 +190,197 @@
 					}
 			}
 		case 3:
-			mes "[Leablem]";
-			mes "Oh, it's nothing special, but he thinks";
-			mes "it's not something for humans to mess with. ";
-			mes "I don't want to upset my brother,";
-			mes "so I'd better forget about it.";
+			mes "[莉艾布倫]";
+			mes "哦，沒什麼特別的，但他認為";
+			mes "這不是人類可以擺弄的東西。";
+			mes "我不想讓我哥哥不高興，";
+			mes "所以最好忘記它。";
 			next;
-			mes "[Leablem]";
-			mes "...That service itself has a very high success chance,";
-			mes "but requires a lot of materials and a high-rate service charge.";
-			mes "I highly doubt that anyone would actually want to use";
-			mes "the service, even if I did open it.";
+			mes "[莉艾布倫]";
+			mes "...該服務本身具有非常高的成功率，";
+			mes "但需要大量的材料和高額的服務費。";
+			mes "我非常懷疑是否真的有人會想使用";
+			mes "該服務，即使我確實開放了它。";
 			next;
-			mes "[Leablem]";
-			mes "...Ummm...";
+			mes "[莉艾布倫]";
+			mes "...嗯...";
 			next;
-			mes "[Leablem]";
+			mes "[莉艾布倫]";
 			mes ".............";
 			next;
-			mes "[Leablem]";
+			mes "[莉艾布倫]";
 			mes ".............";
 			next;
-			mes "[Leablem]";
-			mes "You seem interested in using that service.";
-			mes "If you want, I can at least tell you about it.";
-			mes "But you must promise to keep this a secret.";
-			mes "If my brother finds out what I'm about to tell you,";
-			mes "he's gonna give me a beating!";
+			mes "[莉艾布倫]";
+			mes "你似乎對使用該服務感興趣。";
+			mes "如果你願意，我至少可以告訴你一些關於它的資訊。";
+			mes "但你必須保證保守這個秘密。";
+			mes "如果我哥哥發現我即將告訴你的事情，";
+			mes "他會揍我的！";
 			next;
-			mes "[Leablem]";
-			mes "This special service has a 90% success chance,";
-			mes "but requires 2 Gold and 2 hundred million zeny:";
-			mes "I can add slots to the Hat of the Sun God.";
+			mes "[莉艾布倫]";
+			mes "這項特殊服務有 90% 的成功機率，";
+			mes "但需要 2 個黃金和 2 億 Zeny：";
+			mes "我可以為太陽神之帽增加插槽。";
 			next;
-			mes "[Leablem]";
-			mes "My brother said that, even since ancient times, it's forbidden to modify that hat.";
-			mes "But I believe humans are too curious not to";
-			mes "experiment, especially when it's forbidden.";
-			mes "I just don't want my brother to yell at me. That's all.";
+			mes "[莉艾布倫]";
+			mes "我哥哥說，即使從古代開始，也禁止修改那頂帽子。";
+			mes "但我相信人類太好奇了，不能不去";
+			mes "實驗，尤其是在被禁止的時候。";
+			mes "我只是不希望我哥哥對我大吼大叫。就這樣。";
 			next;
-			switch(select("Use the Service","Quit"))
+			switch(select("使用該服務","離開"))
 			{
 				case 1:
-					mes "[Leablem]";
+					mes "[莉亞布雷姆]";
 					mes ".................";
 					next;
-					mes "[Leablem]";
+					mes "[莉亞布雷姆]";
 					mes ".................";
 					next;
-					mes "[Leablem]";
-					mes "...Wh... What? No!";
-					mes "Giving me that dirty look";
-					mes "won't make me do it!";
-					mes "No, I said no! No is no! No!";
+					mes "[莉亞布雷姆]";
+					mes "...什... 什麼？不要！";
+					mes "用那種骯髒的眼神看著我";
+					mes "也不會讓我做的！";
+					mes "不，我說不！不就是不！不！";
 					next;
-					mes "[Leablem]";
-					mes "No, I won't! No!";
+					mes "[莉亞布雷姆]";
+					mes "不，我不會！不要！";
 					next;
-					mes "[Leablem]";
-					mes "I can't do it...";
+					mes "[莉亞布雷姆]";
+					mes "我做不到...";
 					next;
-					mes "[Leablem]";
-					mes "I can't do... It...";
+					mes "[莉亞布雷姆]";
+					mes "我做不到... 這... ";
 					next;
-					mes "[Leablem]";
+					mes "[莉亞布雷姆]";
 					mes ".................";
 					next;
-					mes "[Leablem]";
-					mes "Umm...";
+					mes "[莉亞布雷姆]";
+					mes "嗯...";
 					next;
-					mes "[Leablem]";
-					mes "You're so persistent. Okay, I'll make you an exception.";
-					mes "Just don't tell anyone,";
-					mes "especially my brother. Do you promise?";
+					mes "[莉亞布雷姆]";
+					mes "你真是固執。好吧，我就為你破例一次。";
+					mes "別告訴任何人，";
+					mes "特別是我的哥哥。你答應嗎？";
 					next;
-					mes "[Leablem]";
-					mes "Okay then, please bring me";
-					mes "^FF00002 Gold, 2 hundred million zeny -- the service charge --,";
-					mes "^FF0000and a Hat of the Sun God.";
-					mes "^FF0000You know your chance of success is 90% with this, don't you?^000000";
-					mes "We don't have time to waste,";
-					mes "so let's get down to business right away.";
+					mes "[莉亞布雷姆]";
+					mes "好吧，請帶給我";
+					mes "^FF00002個黃金，2億 Zeny -- 服務費 -- ,";
+					mes "^FF0000以及太陽神之帽。";
+					mes "^FF0000你知道這樣做的成功機率是 90%，不是嗎？^000000";
+					mes "我們沒有時間可以浪費了，";
+					mes "所以讓我們馬上開始吧。";
 					next;
 					if ((Zeny > 199999999) && (countitem(969) > 1) && (countitem(5022) > 0))
 					{
-						mes "[Leablem]";
-						mes "Shall we start now?";
-						mes "Pray to your gods for good luck.";
+						mes "[莉亞布雷姆]";
+						mes "我們要開始了嗎？";
+						mes "向你的神祈禱，祝你好運。";
 						next;
 						set .@a, rand(1,100);
 						if ((.@a > 4) && (.@a < 95))
 						{
 							specialeffect EF_LORD;
-							mes "[Leablem]";
-							mes "Excellent! Wow, I guess the 90% success chance is true!";
-							mes "Look, the slot was added in the perfect place.";
-							mes "Congratulations.";
+							mes "[莉亞布雷姆]";
+							mes "太棒了！哇，看來 90% 的成功機率是真的！";
+							mes "你看，插槽加在完美的位置。";
+							mes "恭喜你。";
 							delitem 5022,1; //Helm_Of_Sun
 							delitem 969,2; //Gold
 							set Zeny, Zeny - 200000000;
 							getitem 5353,1; //Helm_Of_Sun_
 							next;
-							mes "[Leablem]";
-							mes "This is the first and last time I will do this for you.";
-							mes "Don't ever tell anyone";
-							mes "about this. Okay?";
+							mes "[莉亞布雷姆]";
+							mes "這是我第一次，也是最後一次為你做這種事。";
+							mes "千萬別告訴任何人";
+							mes "關於這件事。好嗎？";
 							close;
 						}
 						else
 						{
 							specialeffect EF_SUI_EXPLOSION;
-							mes "[Leablem]";
-							mes "Wah! Oh my god, we failed!";
-							mes "My god, I guess we had the worst kind of luck...";
-							mes "What should we do? ...This is why";
-							mes "I didn't want to do in the first place!";
+							mes "[莉亞布雷姆]";
+							mes "哇！喔我的天啊，我們失敗了！";
+							mes "我的天啊，我想我們遇到了最糟糕的運氣...";
+							mes "我們該怎麼辦？...這就是為什麼";
+							mes "我一開始就不想做的！";
 							delitem 5022,1; //Helm_Of_Sun
 							delitem 969,2; //Gold
 							set Zeny, Zeny - 200000000;
 							next;
-							mes "[Leablem]";
-							mes "No, don't ever ask me to do such a risky thing again!";
-							mes "Bah~";
+							mes "[莉亞布雷姆]";
+							mes "不，永遠不要再要求我做這種冒險的事情了！";
+							mes "呸～";
 							close;
 						}
 					}
 					else
 					{
-						mes "[Leablem]";
-						mes "Umm...";
+						mes "[莉亞布雷姆]";
+						mes "嗯...";
 						next;
-						mes "[Leablem]";
-						mes "You don't have enough materials.";
-						mes "Man, why did you even ask me to try?";
-						mes "I'm not going to do this again for you,";
-						mes "even if you bring enough materials. Bah~";
+						mes "[莉亞布雷姆]";
+						mes "你的材料不夠。";
+						mes "老天，你為什麼還要我試試看？";
+						mes "我不會再為你做這種事了，";
+						mes "即使你帶來足夠的材料。呸～";
 						close;
 					}
 				case 2:
-					mes "[Leablem]";
-					mes "Don't ever tell anyone";
-					mes "about what I told you. Okay?";
+					mes "[莉亞布雷姆]";
+					mes "千萬別告訴任何人";
+					mes "關於我告訴你的事。好嗎？";
 					close;
 			}
 		case 4:
-			mes "[Leablem]";
-			mes "Do you want to know more information?";
-			mes "Well, I don't think there's something";
-			mes "that you specifically need to know.";
-			mes "But I can at least give you a tip.";
+			mes "[莉亞布雷姆]";
+			mes "你想知道更多資訊嗎？";
+			mes "嗯，我不認為有什麼";
+			mes "是你特別需要知道的。";
+			mes "但我至少可以給你一個提示。";
 			next;
-			mes "[Leablem]";
-			mes "The slot technicians in each town";
-			mes "provide different slotting success chances";
-			mes "depending on your equipment's upgrade level.";
-			mes "I don't know if that's true,";
-			mes "but I can see the difference in each town.";
+			mes "[莉亞布雷姆]";
+			mes "每個城鎮的插槽技術員";
+			mes "會根據你的裝備升級等級";
+			mes "提供不同的開洞成功機率。";
+			mes "我不知道這是真的，";
+			mes "但我可以看到每個城鎮的差異。";
 			next;
-			mes "[Leablem]";
-			mes "For instance, a slot technician in one town";
-			mes "provides a higher success chance to";
-			mes "equipment items at higher upgrade levels,";
-			mes "while a technician in another town has higher";
-			mes "success at lower upgrade levels.";
+			mes "[莉亞布雷姆]";
+			mes "例如，一個城鎮的插槽技術員";
+			mes "對較高升級等級的";
+			mes "裝備物品提供更高的成功機率，";
+			mes "而另一個城鎮的技術員在較低的";
+			mes "升級等級有較高的成功機率。";
 			next;
-			mes "[Leablem]";
-			mes "When you fail to add a slot, the equipment";
-			mes "will become broken and disappear.";
-			mes "I try my best to succeed, but";
-			mes "slotting is complicated work.";
+			mes "[莉亞布雷姆]";
+			mes "當你添加插槽失敗時，裝備";
+			mes "將會損壞並消失。";
+			mes "我盡力做到最好，但是";
+			mes "開洞是一項複雜的工作。";
 			next;
-			mes "[Leablem]";
-			mes "Oh, there's an important thing that you need to be careful about.";
-			mes "^FF0000Try not to carry two identical equipment items";
-			mes "^FF0000with you when you add slots.";
-			mes "^FF0000Otherwise, slots may be added to one of the randomly chosen items,";
-			mes "^FF0000and in the worst case, you may lose an item that is more valuable to you.^000000";
+			mes "[莉亞布雷姆]";
+			mes "哦，有一件重要的事情你需要小心。";
+			mes "^FF0000當你添加插槽時，盡量不要攜帶兩件相同的裝備物品";
+			mes "^FF0000。";
+			mes "^FF0000否則，插槽可能會添加到隨機選擇的其中一件物品上，";
+			mes "^FF0000而且在最糟糕的情況下，你可能會失去一件對你來說更有價值的物品。^000000";
 			next;
-			mes "[Leablem]";
-			mes "I hope this information will be helpful to you.";
-			mes "Thanks.";
+			mes "[莉亞布雷姆]";
+			mes "我希望這些資訊對你有幫助。";
+			mes "謝謝。";
 			close;
 		case 5:
-			mes "[Leablem]";
-			mes "Alright, then.";
+			mes "[莉亞布雷姆]";
+			mes "好吧，就這樣。";
 			close;
 	}
 }
 
-payon,236,199,3	duplicate(SocketEnchant2)	Leablem#pay	86
-lighthalzen,96,137,3	duplicate(SocketEnchant2)	Leablem#lhz	86
-prt_in,22,60,6	duplicate(SocketEnchant2)	Leablem#prt	86
+payon,236,199,3	duplicate(SocketEnchant2)	莉艾布倫#pay	86
+lighthalzen,96,137,3	duplicate(SocketEnchant2)	莉艾布倫#lhz	86
+prt_in,22,60,6	duplicate(SocketEnchant2)	莉艾布倫#prt	86
 
 function	script	Func_Socket2	{
 	.@item_id = getarg(0);
@@ -391,45 +389,45 @@ function	script	Func_Socket2	{
 	setarray .@req_amount[0], getarg(6), getarg(8,0);
 
 	disable_items;
-	mes "[Leablem]";
+	mes "[莉亞布雷姆]";
 	if (.@item_req[1] != 0 && .@req_amount[1] != 0)
 	{
-		mes getitemname(.@item_id) +"... Okay, then you need to bring me";
-		mes "^FF0000"+ (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny as service charge,";
-		mes "^FF0000"+ .@req_amount[0] +"ea "+ getitemname(.@item_req[0]) +" and "+ .@req_amount[1] +"ea "+ getitemname(.@item_req[1]) +".";
-		mes "^FF0000Of course, you need a "+ getitemname(.@item_id) +".^000000";
+		mes getitemname(.@item_id) +"... 好吧，那麼你需要帶給我";
+		mes "^FF0000"+ (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 Zeny 作為服務費,";
+		mes "^FF0000"+ .@req_amount[0] +"個 "+ getitemname(.@item_req[0]) +" 和 "+ .@req_amount[1] +"個 "+ getitemname(.@item_req[1]) +".";
+		mes "^FF0000當然，你需要一個 "+ getitemname(.@item_id) +"。^000000";
 	}
 	else
 	{
-		mes getitemname(.@item_id) +"? Okay, then you need to bring me";
-		mes "^FF0000"+ (.@zeny_req >= 1000 ? (.@zeny_req/1000 +",000") : .@zeny_req) +",000 zeny as service charge and "+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "s":"") +" as the requirement.";
-		mes "^FF0000Of course, don't forget to bring me a "+ getitemname(.@item_id) +".";
-		mes "^FF0000You should have all items.^000000";
+		mes getitemname(.@item_id) +"? 好吧，那麼你需要帶給我";
+		mes "^FF0000"+ (.@zeny_req >= 1000 ? (.@zeny_req/1000 +",000") : .@zeny_req) +",000 Zeny 作為服務費，以及 "+ .@req_amount[0] +" 個 "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "s":"") +" 作為需求。";
+		mes "^FF0000當然，別忘了帶給我一個 "+ getitemname(.@item_id) +"。";
+		mes "^FF0000你應該擁有所有物品。^000000";
 	}
 	next;
-	mes "[Leablem]";
-	mes "Did you already bring all of them?";
-	mes "For your information, if you fail to create a slot,";
-	mes "you will lose all the item requirement as well as the target "+ ((getiteminfo(.@item_id, ITEMINFO_LOCATIONS)&EQP_HAND_R) ? "weapon" : "armor") +".";
-	mes "Also remember, if the "+ ((getiteminfo(.@item_id, ITEMINFO_LOCATIONS)&EQP_HAND_R) ? "weapon" : "armor") +" has been upgraded, and has been inserted with a card,";
-	mes "you will lose them even if you succeed in creating a slot.";
+	mes "[莉亞布雷姆]";
+	mes "你已經把所有東西都帶來了嗎？";
+	mes "告訴你一聲，如果你開洞失敗，";
+	mes "你將會失去所有需求的物品以及目標 "+ ((getiteminfo(.@item_id, ITEMINFO_LOCATIONS)&EQP_HAND_R) ? "武器" : "盔甲") +"。";
+	mes "另外請記住，如果 "+ ((getiteminfo(.@item_id, ITEMINFO_LOCATIONS)&EQP_HAND_R) ? "武器" : "盔甲") +" 已經升級，並且已經插入卡片，";
+	mes "即使你成功開洞，你也會失去它們。";
 	next;
-	switch(select("Ask for slot creation.:Try next time."))
+	switch(select("要求開洞:下次再試試。"))
 	{
 		case 1:
 			if ((Zeny >= .@zeny_req*1000) && countitem(.@item_req[0]) >= .@req_amount[0] && countitem(getarg(7,512)) >= .@req_amount[1] && countitem(.@item_id) > 0)// if there's no .@req_amount[0] and .@req_amount[1] provided, check itemcount against 0 (we still need a valid item ID though)
 			{
-				mes "[Leablem]";
-				mes "Alright then, let the work begin!";
-				mes "You'd better pray for a successful result.";
+				mes "[莉亞布雷姆]";
+				mes "好吧，那麼開始工作吧！";
+				mes "你最好祈禱有個成功的結果。";
 				next;
 				set .@a, rand(1,100);
 				if ((.@a > getarg(2)) && (.@a < getarg(3)))
 				{
 					specialeffect EF_LORD;
-					mes "[Leablem]";
-					mes "Great, it seems to be successful.";
-					mes "It looks pretty well done. Congratulations!";
+					mes "[莉亞布雷姆]";
+					mes "太好了，看起來很成功。";
+					mes "看起來做得很好。恭喜你！";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
@@ -437,40 +435,40 @@ function	script	Func_Socket2	{
 					Zeny = Zeny - .@zeny_req *1000;
 					getitem getarg(1),1;
 					next;
-					mes "[Leablem]";
-					mes "See you again, buddy!";
+					mes "[莉亞布雷姆]";
+					mes "再見了，夥伴！";
 					close;
 				}
 				else
 				{
 					specialeffect EF_SUI_EXPLOSION;
-					mes "[Leablem]";
-					mes "Wah! ...I am so sorry, it failed.";
-					mes "However, I am completely innocent.";
-					mes "This is your luck, and it is destined by god, okay?";
-					mes "Don't be so disappointed,";
-					mes "and try next time.";
+					mes "[莉亞布雷姆]";
+					mes "哇！ ...我很抱歉，失敗了。";
+					mes "但是，我是完全無辜的。";
+					mes "這是你的運氣，而且是神注定的，好嗎？";
+					mes "別太失望，";
+					mes "下次再試試。";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
 						delitem .@item_req[1],.@req_amount[1];
 					Zeny = Zeny - .@zeny_req *1000;
 					next;
-					mes "[Leablem]";
-					mes "See you again, buddy!";
+					mes "[莉亞布雷姆]";
+					mes "再見了，夥伴！";
 					close;
 				}
 			}
 			else
 			{
-				mes "[Leablem]";
-				mes "Are you stupid or what? You didn't bring all of the required items!";
-				mes "Go bring them quick!";
+				mes "[莉亞布雷姆]";
+				mes "你是笨蛋嗎？你沒有帶所有需要的物品！";
+				mes "快去把它們帶來！";
 				close;
 			}
 		case 2:
-			mes "[Leablem]";
-			mes "See you next time.";
+			mes "[莉亞布雷姆]";
+			mes "下次再見。";
 			close;
 	}
 }

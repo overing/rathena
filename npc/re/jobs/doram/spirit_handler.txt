@@ -10,63 +10,63 @@
 //============================================================
 
 // Step 1
-payon,165,116,5	script	Request Board#JQ_SH	4_BOARD3,{
+payon,165,116,5	script	任務板#JQ_SH	4_BOARD3,{
 	if (Class == JOB_SPIRIT_HANDLER) {
-		mes "- This request has already been completed. -";
+		mes "- 這個請求已經完成了。 -";
 		close;
 	}
 	if (Class != JOB_SUMMONER) {
-		mes "[Urgent Firewood Request]";
-		mes "A request to capture a wild beast.";
-		mes "^123456Requirement:^000000";
-		mes "Good with animals.";
-		mes "Adventurer of ^dd5555Base LV200/Job LV60^000000 or higher.";
-		mes "Prefer <FONT SIZE = 14>^dd5555<B>Summoner</B>^000000</FONT> class.";
+		mes "[緊急柴火請求]";
+		mes "捕捉野生野獸的請求。";
+		mes "^123456需求：^000000";
+		mes "擅長與動物相處。";
+		mes "^dd5555Base LV200/Job LV60^000000 或更高的冒險者。";
+		mes "最好是 <FONT SIZE = 14>^dd5555<B>召喚師</B>^000000</FONT> 職業。";
 		emotion ET_HELP;
 		next;
-		mes "- It seems like a difficult request to carry out with my current job. -";
+		mes "- 似乎以我目前的工作很難執行這個請求。 -";
 		close;
 	}
 	if (BaseLevel < 200 || JobLevel < 60) {	// !TODO: unknown dialog
-		mes "[Urgent Firewood Request]";
-		mes "A request to capture a wild beast.";
-		mes "^123456Requirement:^000000";
-		mes "Good with animals.";
-		mes "Adventurer of ^dd5555Base LV200/Job LV60^000000 or higher.";
-		mes "Prefer <FONT SIZE = 14>^dd5555<B>Summoner</B>^000000</FONT> class.";
+		mes "[緊急柴火請求]";
+		mes "捕捉野生野獸的請求。";
+		mes "^123456需求：^000000";
+		mes "擅長與動物相處。";
+		mes "^dd5555Base LV200/Job LV60^000000 或更高的冒險者。";
+		mes "最好是 <FONT SIZE = 14>^dd5555<B>召喚師</B>^000000</FONT> 職業。";
 		emotion ET_HELP;
 		next;
-		mes "- Your level is too low for this request board. -";
+		mes "- 您的等級對於這個請求版來說太低了。 -";
 		close;
 	}
 	switch( isbegin_quest(11770) ) {
 	case 0:
-		mes "[Urgent Firewood Request]";
-		mes "A request to capture a wild beast.";
-		mes "^123456Requirement:^000000";
-		mes "Good with animals.";
-		mes "Adventurer of ^dd5555Base LV200/Job LV60^000000 or higher.";
-		mes "Prefer <FONT SIZE = 14>^dd5555<B>Summoner</B>^000000</FONT> class.";
+		mes "[緊急柴火請求]";
+		mes "捕捉野生野獸的請求。";
+		mes "^123456需求：^000000";
+		mes "擅長與動物相處。";
+		mes "^dd5555Base LV200/Job LV60^000000 或更高的冒險者。";
+		mes "最好是 <FONT SIZE = 14>^dd5555<B>召喚師</B>^000000</FONT> 職業。";
 		emotion ET_HELP;
 		next;
-		mes "[Urgent Firewood Request]";
-		mes "^123456Special note:^000000";
-		mes "Those who still smell like a carnivore,";
-		mes "such as a wolf or hawk,";
-		mes "cannot complete the quest.";
+		mes "[緊急柴火請求]";
+		mes "^123456特別注意：^000000";
+		mes "那些身上仍然有食肉動物氣味的人，";
+		mes "例如狼或鷹，";
+		mes "無法完成任務。";
 		next;
-		mes "[Urgent Firewood Request]";
-		mes "For other details, please contact the <NAVI>[Woodworker]<INFO>payon,252,297,0,101,0</INFO></NAVI> near the firewood factory.";
+		mes "[緊急柴火請求]";
+		mes "如需其他詳細信息，請聯繫柴火工廠附近的 <NAVI>[木工]<INFO>payon,252,297,0,101,0</INFO></NAVI>。";
 		setquest 11770;
 		navigateto("payon",252,297);
 		close;
 	case 1:
-		mes "[Urgent Firewood Request]";
-		mes "For other details, please contact the <NAVI>[Woodworker]<INFO>payon,252,297,0,101,0</INFO></NAVI> near the firewood factory.";
+		mes "[緊急柴火請求]";
+		mes "如需其他詳細信息，請聯繫柴火工廠附近的 <NAVI>[木工]<INFO>payon,252,297,0,101,0</INFO></NAVI>。";
 		navigateto("payon",252,297);
 		close;
 	case 2:
-		mes "- There are no more requests. -";
+		mes "- 沒有更多請求了。 -";
 		close;
 	}
 	end;
@@ -77,72 +77,72 @@ OnInit:
 }
 
 // Step 2
-payon,252,297,3	script	Woodworker#JQ_SH	2_M_BARD_ORIENT,{
+payon,252,297,3	script	木工#JQ_SH	2_M_BARD_ORIENT,{
 	if (isbegin_quest(11770) == 0) {
-		mes "[Woodworker]";
-		mes "<FONT SIZE = 14>Welcome~ Customer~!</FONT>";
-		mes "This is a woodworking shop for firewood~";
+		mes "[木工]";
+		mes "<FONT SIZE = 14>歡迎～顧客～！</FONT>";
+		mes "這裡是柴火的木工店～";
 		emotion ET_DELIGHT;
-		npctalk "Welcome~ Customer~!", "", bc_self;
+		npctalk "歡迎～顧客～！", "", bc_self;
 		next;
-		mes "[Woodworker]";
-		mes "Is there anything~ you're looking for~?";
+		mes "[木工]";
+		mes "有什麼～你在找的嗎～？";
 		close;
 	}
 	if (isbegin_quest(11770) == 1) {
-		mes "[Woodworker]";
-		mes "<FONT SIZE = 14>Welcome~ Customer~!</FONT>";
-		mes "This is a woodworking shop for firewood~";
+		mes "[木工]";
+		mes "<FONT SIZE = 14>歡迎～顧客～！</FONT>";
+		mes "這裡是柴火的木工店～";
 		emotion ET_DELIGHT;
-		npctalk "Welcome~ Customer~!", "", bc_self;
+		npctalk "歡迎～顧客～！", "", bc_self;
 		next;
-		mes "[Woodworker]";
-		mes "Is there anything~ you're looking for~?";
+		mes "[木工]";
+		mes "有什麼～你在找的嗎～？";
 		next;
-		select( "About the request." );
-		mes "[Woodworker]";
-		mes "Are you talking about a request~ customer~?";
-		mes "Could you wait a moment, please~?";
+		select( "關於請求。" );
+		mes "[木工]";
+		mes "你說的是請求～顧客～？";
+		mes "請稍等一下～？";
 		emotion ET_AHA;
 		next;
-		mes "[Woodworker]";
-		mes "The carpentry request...";
-		mes "Hm...";
-		npctalk "Let's see...", "", bc_self;
+		mes "[木工]";
+		mes "木工請求...";
+		mes "嗯...";
+		npctalk "讓我想想...", "", bc_self;
 		next;
-		mes "[Woodworker]";
-		mes "I'm sorry, but it's confirmed that there's no request from our woodwork.";
-		mes "May I know what kind of request you've received? Customer~";
+		mes "[木工]";
+		mes "對不起，但已確認我們的木工作坊沒有任何請求。";
+		mes "請問您收到了什麼樣的請求？顧客～";
 		emotion ET_PROFUSELY_SWEAT;
 		next;
-		select( "Request for firewood." );
-		mes "[Woodworker]";
-		mes "Aaah!!!";
-		mes "I'm sorry!";
-		mes "I don't think it's from the woodworking shop, but it's a personal request from the owner~";
+		select( "柴火請求。" );
+		mes "[木工]";
+		mes "啊啊啊！！！";
+		mes "對不起！";
+		mes "我不認為這是來自木工店的請求，而是來自老闆的個人請求～";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Woodworker]";
-		mes "<FONT SIZE = 10>If the boss asked you to do it, you should've told me!</FONT>";
-		mes "May I have a moment, please? Customer?";
-		mes "I'll call the boss...";
+		mes "[木工]";
+		mes "<FONT SIZE = 10>如果老闆要求你這樣做，你應該告訴我！</FONT>";
+		mes "可以給我一點時間嗎？顧客？";
+		mes "我會打電話給老闆...";
 		emotion ET_SORRY;
 		next;
-		mes "[Woodworker]";
-		mes "<FONT SIZE = 14>This gentleman is out and gone again!!</FONT>";
-		mes "<FONT SIZE = 10>Did he go to the forest again!</FONT>";
-		mes "This can't be happening!!!";
+		mes "[木工]";
+		mes "<FONT SIZE = 14>這位先生又出去了！！</FONT>";
+		mes "<FONT SIZE = 10>他又去森林了嗎！</FONT>";
+		mes "這不可能發生！！！";
 		emotion ET_FRET;
-		npctalk "This guy, seriously!!!!", "", bc_self;
+		npctalk "這傢伙，真的！！！！", "", bc_self;
 		next;
-		mes "[Woodworker]";
-		mes "I'm sorry~ Customer.";
-		mes "The boss is out of the office right now.";
+		mes "[木工]";
+		mes "對不起～顧客。";
+		mes "老闆現在不在辦公室。";
 		next;
-		mes "[Woodworker]";
-		mes "I don't know when he'll be back.";
-		mes "If you're in a hurry, why don't you go to ^dd5555Payon Forest^000000?";
-		mes "You go <NAVI>[there]<INFO>pay_fild08,157,129,0,101,0</INFO></NAVI>.";
+		mes "[木工]";
+		mes "我不知道他什麼時候回來。";
+		mes "如果你很趕時間，為什麼不去 ^dd5555裴揚森林^000000 呢？";
+		mes "你去 <NAVI>[那裡]<INFO>pay_fild08,157,129,0,101,0</INFO></NAVI>。";
 		emotion ET_SORRY;
 		completequest 11770;
 		setquest 11771;
@@ -150,26 +150,26 @@ payon,252,297,3	script	Woodworker#JQ_SH	2_M_BARD_ORIENT,{
 		close;
 	}
 	if (isbegin_quest(11771) == 1) {
-		mes "[Woodworker]";
-		mes "I'm sorry~ Customer.";
-		mes "The boss is out of the office right now.";
+		mes "[木工]";
+		mes "對不起～顧客。";
+		mes "老闆現在不在辦公室。";
 		next;
-		mes "[Woodworker]";
-		mes "I don't know when he'll be back.";
-		mes "If you're in a hurry, why don't you go to ^dd5555Payon Forest^000000?";
-		mes "You go <NAVI>[there]<INFO>pay_fild08,157,129,0,101,0</INFO></NAVI>.";
+		mes "[木工]";
+		mes "我不知道他什麼時候回來。";
+		mes "如果你很趕時間，為什麼不去 ^dd5555裴揚森林^000000 呢？";
+		mes "你去 <NAVI>[那裡]<INFO>pay_fild08,157,129,0,101,0</INFO></NAVI>。";
 		emotion ET_SORRY;
 		navigateto("pay_fild08",157,129);
 		close;
 	}
-	mes "[Woodworker]";
-	mes "<FONT SIZE = 14>Welcome~ Customer~!</FONT>";
-	mes "This is a woodworking shop for firewood~";
+	mes "[木工]";
+	mes "<FONT SIZE = 14>歡迎～顧客～！</FONT>";
+	mes "這裡是柴火的木工店～";
 	emotion ET_DELIGHT;
-	npctalk "Welcome~ Customer~!", "", bc_self;
+	npctalk "歡迎～顧客～！", "", bc_self;
 	next;
-	mes "[Woodworker]";
-	mes "Do you have any other business?";
+	mes "[木工]";
+	mes "您還有其他事嗎？";
 	close;
 
 OnInit:
@@ -183,211 +183,211 @@ pay_fild08,152,129,5	duplicate(dummy_cloaked_npc)	Lee Daegam#JQ_SH_1	2_M_PHARMAC
 
 pay_fild08,157,129,3	script	Carpenter Firewood#JQ_SH	1_M_SMITH,{
 	if (isbegin_quest(11770) != 2) {
-		mes "[Carpenter Firewood]";
-		mes "Aaaah~~";
-		mes "I'm completely blown away today! I messed up!!!";
+		mes "[木匠 柴火]";
+		mes "啊啊啊～～";
+		mes "我今天完全崩潰了！我搞砸了！！！";
 		emotion ET_CRY;
-		npctalk "Aaaah...", "", bc_self;
+		npctalk "啊啊啊...", "", bc_self;
 		close;
 	}
 	if (isbegin_quest(11771) == 1) {
-		mes "[Carpenter Firewood]";
-		mes "Aaaah~~";
-		mes "I'm completely blown away today! I messed up!!!";
+		mes "[木匠 柴火]";
+		mes "啊啊啊～～";
+		mes "我今天完全崩潰了！我搞砸了！！！";
 		emotion ET_CRY;
-		npctalk "Aaaah...", "", bc_self;
+		npctalk "啊啊啊...", "", bc_self;
 		next;
-		select( "Chief?" );
-		mes "[Carpenter Firewood]";
-		mes "Who?";
+		select( "首領？" );
+		mes "[木匠 柴火]";
+		mes "誰？";
 		mes "...";
-		mes "Did Lee Daegam send you?";
+		mes "是李大監派你來的嗎？";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "How long has it been since you roasted it? Are you sending someone here again?!";
-		mes "Just pushing doesn't mean it's going to work!";
+		mes "[木匠 柴火]";
+		mes "你烤了多久了？你又要派人來了嗎？！";
+		mes "光是推動並不代表它會起作用！";
 		emotion ET_FRET;
 		next;
-		select( "I came for the request." );
-		mes "[Carpenter Firewood]";
-		mes "Huh...";
-		mes "<FONT SIZE = 14>Huh...</FONT>";
-		mes "<FONT SIZE = 18><B>Ah!!!!!!!!!</B></FONT>";
+		select( "我是為了請求而來的。" );
+		mes "[木匠 柴火]";
+		mes "蛤...";
+		mes "<FONT SIZE = 14>蛤...</FONT>";
+		mes "<FONT SIZE = 18><B>啊！！！！！！！</B></FONT>";
 		emotion ET_SURPRISE;
-		npctalk "Aaah!!!!!!!", "", bc_self;
+		npctalk "啊啊啊！！！！！！！", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Eheh~~!!";
-		mes "Aaaah!!!";
-		mes "<FONT SIZE = 16>That's right!!!!!</FONT>";
+		mes "[木匠 柴火]";
+		mes "欸嘿～～！！";
+		mes "啊啊啊！！！";
+		mes "<FONT SIZE = 16>沒錯！！！！！</FONT>";
 		emotion ET_HUK;
-		npctalk "That's right!!!!!!!!!", "", bc_self;
+		npctalk "沒錯！！！！！！！", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "<FONT SIZE = 14>Sorry!</FONT>";
-		mes "I came out for a while because I didn't have any progress on my work and I was so frustrated, but I didn't expect a customer to visit me.";
-		mes "What a shame!";
-		mes "Eheheh!";
+		mes "[木匠 柴火]";
+		mes "<FONT SIZE = 14>抱歉！</FONT>";
+		mes "我出來一會兒是因為我的工作沒有任何進展，我感到很沮喪，但我沒想到會有顧客來訪。";
+		mes "真可惜！";
+		mes "欸嘿嘿！";
 		emotion ET_PROFUSELY_SWEAT;
-		npctalk "I thought the request was from Lee Daegam~", "", bc_self;
+		npctalk "我以為請求是來自李大監的～", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "It's the perfect timing!";
-		mes "Now that you've come all the way here, don't go back to the woodwork, come here and look at what the nasty beasts have done.";
-		npctalk "They've made a mess of all the tools, what can I do!", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "真是完美的時機！";
+		mes "既然你都來到這裡了，就別回木工店了，過來看看那些討厭的野獸做了什麼。";
+		npctalk "它們把所有的工具都弄得一團糟，我該怎麼辦！", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "It looks like they're hoofed guys like deer and wild boars, but...";
-		mes "Why are they so fierce when they're grazing in the woods!";
-		npctalk "Don't you guys ever get caught! I'm so angry!!", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "看起來它們像是鹿和野豬之類的蹄類動物，但是...";
+		mes "為什麼它們在樹林裡吃草時這麼兇猛！";
+		npctalk "你們這些傢伙永遠不會被抓住嗎！我很生氣！！", "", bc_self;
 		erasequest 11771;
 		setquest 11772;
 		close;
 	}
 	if (isbegin_quest(11772) == 1) {
-		mes "[Carpenter Firewood]";
-		mes "It's the perfect timing!";
-		mes "Now that you've come all the way here, don't go back to the woodwork, come here and look at what the nasty beasts have done.";
-		npctalk "They've made a mess of all the tools, what can I do!", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "真是完美的時機！";
+		mes "既然你都來到這裡了，就別回木工店了，過來看看那些討厭的野獸做了什麼。";
+		npctalk "它們把所有的工具都弄得一團糟，我該怎麼辦！", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "It looks like they're hoofed guys like deer and wild boars, but...";
-		mes "Why are they so fierce when they're grazing in the woods!";
-		npctalk "Don't you guys ever get caught! I'm so angry!!", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "看起來它們像是鹿和野豬之類的蹄類動物，但是...";
+		mes "為什麼它們在樹林裡吃草時這麼兇猛！";
+		npctalk "你們這些傢伙永遠不會被抓住嗎！我很生氣！！", "", bc_self;
 		close;
 	}
 	if (isbegin_quest(11773) == 1 || isbegin_quest(11774) == 1 || isbegin_quest(11775) == 1 || isbegin_quest(11776) == 1 || isbegin_quest(11777) == 1) {
-		mes "[Carpenter Firewood]";
-		mes "So, how is your investigation going?";
-		mes "Have you found those wild animals yet?";
+		mes "[木匠 柴火]";
+		mes "所以，你的調查進行得如何？";
+		mes "你找到那些野生動物了嗎？";
 		close;
 	}
 	if (isbegin_quest(11778) == 1) {
-		mes "[Carpenter Firewood]";
-		mes "What have you found, adventurer?";
-		mes "What have you got?";
+		mes "[木匠 柴火]";
+		mes "你發現了什麼，冒險家？";
+		mes "你得到了什麼？";
 		next;
-		select( "About the food that fell on the street." );
-		mes "[Carpenter Firewood]";
-		mes "How could someone throw food on the street? Food is precious, it's such a waste!!";
+		select( "關於掉在街上的食物。" );
+		mes "[木匠 柴火]";
+		mes "怎麼會有人把食物丟在街上呢？食物很珍貴，這太浪費了！！";
 		emotion ET_ANGER;
-		npctalk "When I was young, I used to eat tree roots because I didn't have anything to eat!!!", "", bc_self;
+		npctalk "我年輕的時候，因為沒有東西吃，還吃過樹根呢！！！", "", bc_self;
 		next;
-		select( "About wild animals." );
-		mes "[Carpenter Firewood]";
-		mes "I'm glad it fed some wild animals, but...";
+		select( "關於野生動物。" );
+		mes "[木匠 柴火]";
+		mes "我很高興它餵飽了一些野生動物，但是...";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Then didn't the wild animals come all the way here while picking up the food?";
+		mes "[木匠 柴火]";
+		mes "那野生動物豈不是在撿食物的時候一路跑到這裡來了？";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Who could have done such a strange thing...";
+		mes "[木匠 柴火]";
+		mes "誰會做出這麼奇怪的事情...";
 		emotion ET_QUESTION;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Anyway, the adventurer took over the job, so I can see some clues!";
-		mes "With this momentum, we'll solve this before Lee Daegam goes crazy again...";
+		mes "[木匠 柴火]";
+		mes "總之，冒險家接手了這項工作，所以我可以看到一些線索！";
+		mes "有了這個勢頭，我們會在李大監再次發瘋之前解決這個問題的...";
 		next;
 		mes "[???]";
-		mes "<FONT SIZE = 16>Ahem!</FONT>";
-		mes "<FONT SIZE = 14>Do you have a factory~</FONT>";
+		mes "<FONT SIZE = 16>咳！</FONT>";
+		mes "<FONT SIZE = 14>你有工廠嗎~</FONT>";
 		emotion ET_HUK;
 		emotion ET_HUK, playerattached();
 		cloakoffnpcself( "Lee Daegam#JQ_SH_1" );
-		npctalk "What!!! Hem!!!!!!", "Lee Daegam#JQ_SH_1", bc_self;
+		npctalk "什麼！！！ 咳！！！", "Lee Daegam#JQ_SH_1", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Ugh....";
-		mes "Eddga told me he was coming...";
-		npctalk "Eddga is better.", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "呃....";
+		mes "艾德嘉告訴我他要來...";
+		npctalk "艾德嘉更好。", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Lee Daegam, what brings you here?";
+		mes "[木匠 柴火]";
+		mes "李大監，是什麼風把你吹來了？";
 		next;
-		mes "[Lee Daegam]";
-		mes "Oh~~ Eheh~ It's nothing special~";
-		mes "I'm here to see if everything is going well~";
-		npctalk "Oops! What's all this on the floor?", "Lee Daegam#JQ_SH_1", bc_self;
+		mes "[李大監]";
+		mes "喔~~ 呵呵~ 沒什麼特別的~";
+		mes "我來看看一切是否順利~";
+		npctalk "哎呀！ 地上這些是什麼？", "Lee Daegam#JQ_SH_1", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "It won't work if you come all the time like this...";
+		mes "[木匠 柴火]";
+		mes "如果你一直這樣來，那是不行的...";
 		next;
-		mes "[Lee Daegam]";
-		mes "Oh my~";
-		mes "It doesn't look much different from yesterday.";
-		mes "You didn't even start working on it, but I hear loud noises~";
+		mes "[李大監]";
+		mes "哎呀~";
+		mes "看起來和昨天沒什麼不同嘛。";
+		mes "你甚至還沒開始工作，但我卻聽到很大的噪音~";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "<FONT SIZE = 14>Oh... I... I...!!!</FONT>";
-		mes "<FONT SIZE = 14>I can't work because the tools keep breaking down!!!</FONT>";
-		mes "<FONT SIZE = 14>If you're here to tease me, you're just disturbing me, so go back!</FONT>";
+		mes "[木匠 柴火]";
+		mes "<FONT SIZE = 14>喔... 我... 我...！！！</FONT>";
+		mes "<FONT SIZE = 14>我無法工作，因為工具一直壞掉！！！</FONT>";
+		mes "<FONT SIZE = 14>如果你是來取笑我的，你只是在打擾我，所以回去吧！</FONT>";
 		emotion ET_FRET;
 		next;
-		mes "[Lee Daegam]";
-		mes "Oh my!";
-		mes "You don't have to yell that much. I'm going!";
-		mes "<FONT SIZE = 18>Hmph!</FONT>";
-		npctalk "Hmph!!!", "Lee Daegam#JQ_SH_1", bc_self;
+		mes "[李大監]";
+		mes "哎呀！";
+		mes "你不必叫那麼大聲。我要走了！";
+		mes "<FONT SIZE = 18>哼！</FONT>";
+		npctalk "哼！！！", "Lee Daegam#JQ_SH_1", bc_self;
 		emotion ET_HNG, getnpcid(0,"Lee Daegam#JQ_SH_1");
 		next;
-		mes "[Carpenter Firewood]";
-		mes "<FONT SIZE = 14>Oh, that old man!</FONT>";
-		mes "Are you asking me to work or not? You're just increasing my temper again!";
+		mes "[木匠 柴火]";
+		mes "<FONT SIZE = 14>喔，那個老頭！</FONT>";
+		mes "你是要我工作還是不要？你只是在增加我的脾氣而已！";
 		cloakonnpcself( "Lee Daegam#JQ_SH_1" );
 		next;
-		mes "[Carpenter Firewood]";
-		mes "He's only disturbing me, let alone helping me with what I've entrusted with you.";
-		mes "<FONT SIZE = 14>Oh my!</FONT>";
+		mes "[木匠 柴火]";
+		mes "他只是在打擾我，更別說幫助我完成你委託我的事情了。";
+		mes "<FONT SIZE = 14>我的天啊！</FONT>";
 		emotion ET_FRET;
-		npctalk "Salt! I should sprinkle salt!", "", bc_self;
+		npctalk "鹽！ 我應該撒鹽！", "", bc_self;
 		next;
-		select( "About Lee Daegam." );
-		mes "[Carpenter Firewood]";
-		mes "As you've heard before, he is a great leader, ^123456Lee Daegam^000000, who left this job to me.";
+		select( "關於李大監。" );
+		mes "[木匠 柴火]";
+		mes "正如你之前聽到的，他是一位偉大的領導者，^123456Lee Daegam^000000，他把這份工作留給了我。";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "I'll be making a vacation spot for young people around here! What do you say!";
-		npctalk "I think we need to make it even grander.", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "我將在這裡為年輕人建造一個度假勝地！ 你覺得怎麼樣！";
+		npctalk "我認為我們需要把它做得更加盛大。", "", bc_self;
 		next;
-		mes "[Carpenter Firewood]";
-		mes "I told you that construction would be difficult because it was an area full of monsters, but who knew that even wild animals would be such a problem?";
+		mes "[木匠 柴火]";
+		mes "我告訴過你，因為這是一個充滿怪物的地區，所以施工會很困難，但誰知道即使是野生動物也會成為一個問題呢？";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "In the meantime, he came to me a today and teased me like that...";
-		mes "If you can't solve this problem again, I think I should quit...";
+		mes "[木匠 柴火]";
+		mes "在這段時間裡，他今天來找我，像那樣取笑我...";
+		mes "如果你不能再次解決這個問題，我想我應該辭職...";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Then I'll be organizing my luggage in the cart.";
-		mes "Take a closer look at ^dd5555Broken Tools^000000.";
+		mes "[木匠 柴火]";
+		mes "那我會在馬車裡整理我的行李。";
+		mes "仔細看看 ^dd5555損壞的工具^000000。";
 		emotion ET_HNG;
-		npctalk "It's my fortune!", "", bc_self;
+		npctalk "這是我的財產！", "", bc_self;
 		erasequest 11778;
 		setquest 11779;
 		close;
 	}
 	if (isbegin_quest(11779) == 1) {
-		mes "[Carpenter Firewood]";
-		mes "In the meantime, he came to me a today and teased me like that...";
-		mes "If you can't solve this problem again, I think I should quit...";
+		mes "[木匠 柴火]";
+		mes "在這段時間裡，他今天來找我，像那樣取笑我...";
+		mes "如果你不能再次解決這個問題，我想我應該辭職...";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Then I'll be organizing my luggage in the cart.";
-		mes "Take a closer look at ^dd5555Broken Tools^000000.";
+		mes "[木匠 柴火]";
+		mes "那我會在馬車裡整理我的行李。";
+		mes "仔細看看 ^dd5555損壞的工具^000000。";
 		emotion ET_HNG;
-		npctalk "It's my fortune!", "", bc_self;
+		npctalk "這是我的財產！", "", bc_self;
 		close;
 	}
 	// !TODO: unknown dialog for steps [11-14]
 	if (isbegin_quest(11769) == 2) {
-		mes "[Carpenter Firewood]";
-		mes "Oh my... Oh my...";
-		mes "How in the world could that happen...";
+		mes "[木匠 柴火]";
+		mes "我的天啊... 我的天啊...";
+		mes "這到底會怎麼發生...";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "He was a grumpy gentleman, but he wasn't that bad of a person, so what happened...";
-		mes "Oh my...";
-		npctalk "Oh my...", "", bc_self;
+		mes "[木匠 柴火]";
+		mes "他是一個脾氣暴躁的紳士，但他並不是一個那麼糟糕的人，所以發生了什麼事...";
+		mes "我的天啊...";
+		npctalk "我的天啊...", "", bc_self;
 		emotion ET_THINK;
 		close;
 	}
@@ -403,136 +403,136 @@ OnInit:
 }
 
 // Step 4, 11
-pay_fild08,153,129,5	duplicate(dummy_cloaked_npc)	Chulho#JQ_SH_1	4_POINT_BLUE
-pay_fild08,153,129,5	duplicate(dummy_cloaked_npc)	Chulho#JQ_SH_1_1	4_EXJOB_CHUL_HO
+pay_fild08,153,129,5	duplicate(dummy_cloaked_npc)	哲浩#JQ_SH_1	4_POINT_BLUE
+pay_fild08,153,129,5	duplicate(dummy_cloaked_npc)	哲浩#JQ_SH_1_1	4_EXJOB_CHUL_HO
 
 pay_fild08,155,128,3	script	Broken Tools#JQ_SH	4_BRICKPILE,{
 	if (isbegin_quest(11772) == 1) {
-		mes "- It contains broken tools. -";
+		mes "- 它包含損壞的工具。 -";
 		next;
-		mes "- Around the box, animal footprints are imprinted in disorder, and as the Carpenter Firewood said, they appear to be herbivorous footprints. -";
+		mes "- 在箱子周圍，動物的腳印無序地印在上面，正如木匠柴火所說，它們似乎是草食動物的腳印。 -";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "What do you say, adventurer?";
-		mes "You think you know something?";
+		mes "[木匠 柴火]";
+		mes "你怎麼說，冒險家？";
+		mes "你認為你知道些什麼？";
 		next;
-		select( "I think I need to look around a little more." );
-		mes "[Carpenter Firewood]";
-		mes "Then look around carefully.";
-		mes "We have to start construction as soon as possible, so don't take too long.";
+		select( "我想我需要再四處看看。" );
+		mes "[木匠 柴火]";
+		mes "那就仔細看看。";
+		mes "我們必須盡快開始施工，所以不要花太長時間。";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Let me know if you find out anything while you take a look.";
+		mes "[木匠 柴火]";
+		mes "如果你在查看時發現了什麼，請告訴我。";
 		erasequest 11772;
 		setquest 11773;
 		navigateto("pay_fild08",153,116);
 		close;
 	}
 	if (isbegin_quest(11773) == 1) {
-		mes "- It contains broken tools. -";
+		mes "- 它包含損壞的工具。 -";
 		next;
-		mes "- Around the box, animal footprints are imprinted in disorder, and as the Carpenter Firewood said, they appear to be herbivorous footprints. -";
+		mes "- 在箱子周圍，動物的腳印無序地印在上面，正如木匠柴火所說，它們似乎是草食動物的腳印。 -";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "What do you say, adventurer?";
-		mes "You think you know something?";
+		mes "[木匠 柴火]";
+		mes "你怎麼說，冒險家？";
+		mes "你認為你知道些什麼？";
 		next;
-		select( "I think I need to look around a little more." );
-		mes "[Carpenter Firewood]";
-		mes "Then look around carefully.";
-		mes "We have to start construction as soon as possible, so don't take too long.";
+		select( "我想我需要再四處看看。" );
+		mes "[木匠 柴火]";
+		mes "那就仔細看看。";
+		mes "我們必須盡快開始施工，所以不要花太長時間。";
 		next;
-		mes "[Carpenter Firewood]";
-		mes "Let me know if you find out anything while you take a look.";
+		mes "[木匠 柴火]";
+		mes "如果你在查看時發現了什麼，請告訴我。";
 		navigateto("pay_fild08",153,116);
 		close;
 	}
 	if (isbegin_quest(11779) == 1) {
-		mes "- A closer look at the broken tools shows a blurry stain. -";
+		mes "- 仔細觀察損壞的工具，可以看到模糊的污漬。 -";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 16>Oh no!!</FONT>";
-		mes "<FONT SIZE = 14>You can't eat that!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 16>不好了！！</FONT>";
+		mes "<FONT SIZE = 14>你不能吃那個！</FONT>";
 		cutin "ex_sh_chulho00.png",2;
-		cloakoffnpcself( "Chulho#JQ_SH_1" );
-		npctalk "Oh my gosh!!", "Chulho#JQ_SH_1", bc_self;
+		cloakoffnpcself( "哲浩#JQ_SH_1" );
+		npctalk "我的天啊！！", "哲浩#JQ_SH_1", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>It smells delicious, but it makes you sick.</FONT>";
-		npctalk "I tried it!", "Chulho#JQ_SH_1", bc_self;
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>它聞起來很香，但會讓你生病。</FONT>";
+		npctalk "我試過了！", "哲浩#JQ_SH_1", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>The things I ate in the forest were sweet and delicious, but the snake strawberries I picked up earlier were bitter!</FONT>";
-		mes "<FONT SIZE = 16>I'm angry!</FONT>";
-		mes "<FONT SIZE = 18>My stomach hurts!</FONT>";
-		npctalk "My stomach is still burning!", "Chulho#JQ_SH_1", bc_self;
-		emotion ET_PROFUSELY_SWEAT, getnpcid(0,"Chulho#JQ_SH_1");
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>我在森林裡吃的東西又甜又好吃，但我之前撿到的蛇莓卻很苦！</FONT>";
+		mes "<FONT SIZE = 16>我很生氣！</FONT>";
+		mes "<FONT SIZE = 18>我的肚子痛！</FONT>";
+		npctalk "我的胃還在燃燒！", "哲浩#JQ_SH_1", bc_self;
+		emotion ET_PROFUSELY_SWEAT, getnpcid(0,"哲浩#JQ_SH_1");
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Even the friends who followed the food here went home angry!</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>連跟著食物來的那些朋友都氣沖沖地回家了！</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>The road over there smells delicious, but that road is on the way to the village, so we, the mountain animals, will be in trouble if we go that way!</FONT>";
-		npctalk "You're going to get in trouble!", "Chulho#JQ_SH_1", bc_self;
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>那邊的路聞起來很香，但是那條路是通往村莊的路，如果我們這些山裡的動物走那條路的話，就會有麻煩了！</FONT>";
+		npctalk "你會有麻煩的！", "哲浩#JQ_SH_1", bc_self;
 		next;
-		select( "About the delicious smell." );
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>The smell from the front of the forest is connected to the road to the village.</FONT>";
-		mes "<FONT SIZE = 14>But it doesn't matter if it smells good and it's bitter, angry, and gives a stomachache.</FONT>";
+		select( "關於那股美味的味道。" );
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>森林前面傳來的味道跟通往村莊的路有關。</FONT>";
+		mes "<FONT SIZE = 14>但就算聞起來再香，它也是苦澀的、令人憤怒的，而且還會引起胃痛。</FONT>";
 		next;
-		if (select( "Give him a strawberry.", "Stop." ) == 2) {
+		if (select( "給他一顆草莓。", "停止。" ) == 2) {
 			// !TODO: unknown dialog
 			cutin "",255;
-			cloakonnpcself( "Chulho#JQ_SH_1" );
+			cloakonnpcself( "哲浩#JQ_SH_1" );
 			end;
 		}
 		if (countitem(578) < 1) {
-			mes "[Chulho]";
-			mes "<FONT SIZE = 14>Huh?</FONT>";
-			mes "<FONT SIZE = 14>What are you giving me?</FONT>";
+			mes "[秋浩]";
+			mes "<FONT SIZE = 14>嗯？</FONT>";
+			mes "<FONT SIZE = 14>你要給我什麼？</FONT>";
 			cutin "ex_sh_chulho00.png",2;
 			close2;
 			cutin "",255;
-			cloakonnpcself( "Chulho#JQ_SH_1" );
+			cloakonnpcself( "哲浩#JQ_SH_1" );
 			end;
 		}
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Are you really giving it to me?!</FONT>";
-		mes "<FONT SIZE = 14>It's delicious! Delicious!</FONT>";
-		mes "<FONT SIZE = 14>It's much better than the strawberries I ate in the forest!</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>你真的要給我嗎？！</FONT>";
+		mes "<FONT SIZE = 14>太好吃了！太好吃了！</FONT>";
+		mes "<FONT SIZE = 14>比我在森林裡吃的草莓好吃多了！</FONT>";
 		cutin "ex_sh_chulho03.png",2;
-		cloakonnpcself( "Chulho#JQ_SH_1" );
-		cloakoffnpcself( "Chulho#JQ_SH_1_1" );
-		npctalk "It's good! It's good!!!!", "Chulho#JQ_SH_1_1", bc_self;
-		emotion ET_BIGTHROB, getnpcid(0,"Chulho#JQ_SH_1");
+		cloakonnpcself( "哲浩#JQ_SH_1" );
+		cloakoffnpcself( "哲浩#JQ_SH_1_1" );
+		npctalk "好吃！好吃!!!!", "哲浩#JQ_SH_1_1", bc_self;
+		emotion ET_BIGTHROB, getnpcid(0,"哲浩#JQ_SH_1");
 		delitem 578,1;	// Strawberry
 		erasequest 11779;
 		setquest 11780;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>You gave me delicious food, so I'll take you to the place you're curious about, with the delicious smell!</FONT>";
-		mes "<FONT SIZE = 14>Follow me.</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>你給了我這麼好吃的食物，所以我會帶你去你好奇的地方，就是那個有美味氣味的地方！</FONT>";
+		mes "<FONT SIZE = 14>跟我來。</FONT>";
 		cutin "ex_sh_chulho01.png",2;
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_1_1" );
+		cloakonnpcself( "哲浩#JQ_SH_1_1" );
 		navigateto("payon",233,159);
 		end;
 	}
 	if (isbegin_quest(11780) == 1) {
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>You gave me delicious food, so I'll take you to the place you're curious about, with the delicious smell!</FONT>";
-		mes "<FONT SIZE = 14>Follow me.</FONT>";
-		cloakoffnpcself( "Chulho#JQ_SH_1_1" );
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>你給了我這麼好吃的食物，所以我會帶你去你好奇的地方，就是那個有美味氣味的地方！</FONT>";
+		mes "<FONT SIZE = 14>跟我來。</FONT>";
+		cloakoffnpcself( "哲浩#JQ_SH_1_1" );
 		cutin "ex_sh_chulho01.png",2;
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_1_1" );
+		cloakonnpcself( "哲浩#JQ_SH_1_1" );
 		navigateto("payon",233,159);
 		end;
 	}
 	// Default dialog
-	mes "- It contains broken tools. -";
+	mes "- 裡面裝著損壞的工具。 -";
 	close;
 
 OnInit:
@@ -547,26 +547,26 @@ OnInit:
 // Step 5
 pay_fild08,153,116,3	script	Clutter Traces#JQ_SH1	4_SOIL,{
 	if (isbegin_quest(11773) == 1) {
-		mes "- I found another trace.";
-		mes "Footprints similar to those found next to the toolbox are stamped. -";
+		mes "- 我發現了另一個痕跡。";
+		mes "上面印著和工具箱旁邊發現的腳印相似的痕跡。 -";
 		next;
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		erasequest 11773;
 		setquest 11774;
 		navigateto("pay_fild08",137,88);
 		close;
 	}
 	if (isbegin_quest(11774) == 1) {
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		navigateto("pay_fild08",137,88);
 		close;
 	}
 	// Default dialog
-	mes "- There is a trace of something messy. -";
+	mes "- 這裡有一些凌亂的痕跡。 -";
 	close;
 
 OnInit:
@@ -577,26 +577,26 @@ OnInit:
 // Step 6
 pay_fild08,137,88,3	script	Clutter Traces#JQ_SH2	4_SOIL,{
 	if (isbegin_quest(11774) == 1) {
-		mes "- I found another trace.";
-		mes "Given the large and deep footprints, it seems to be a huge herbivore. -";
+		mes "- 我發現了另一個痕跡。";
+		mes "從又大又深的腳印來看，似乎是一種巨大的草食動物。 -";
 		next;
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		erasequest 11774;
 		setquest 11775;
 		navigateto("pay_fild08",165,68);
 		close;
 	}
 	if (isbegin_quest(11775) == 1) {
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		navigateto("pay_fild08",165,68);
 		close;
 	}
 	// Default dialog
-	mes "- There is a trace of something messy. -";
+	mes "- 這裡有一些凌亂的痕跡。 -";
 	close;
 
 OnInit:
@@ -609,22 +609,22 @@ pay_fild08,165,70,6	duplicate(dummy_cloaked_npc)	???#JQ_SH_1	4_POINT_BLUE
 
 pay_fild08,165,68,3	script	Clutter Traces#JQ_SH3	4_SOIL,{
 	if (isbegin_quest(11775) == 1) {
-		mes "- I found another trace.";
-		mes "Looking at the closely footprints, it doesn't look like one or two. -";
+		mes "- 我發現了另一個痕跡。";
+		mes "看看那些密集的腳印，好像不是一兩個動物留下的。 -";
 		next;
 		mes "[???]";
-		mes "What are you doing, enjoying watching?";
+		mes "你在幹嘛，喜歡看戲嗎？";
 		cutin "ex_sh_spirit01.png",2;
 		cloakoffnpcself( "???#JQ_SH_1" );
-		npctalk "What are you looking at?", "???#JQ_SH_1", bc_self;
+		npctalk "你在看什麼？", "???#JQ_SH_1", bc_self;
 		emotion ET_HUK, playerattached();
 		next;
 		cutin "",255;
-		mes "- I looked around at the sudden voice, but I couldn't see anyone. -";
+		mes "- 我朝著突然出現的聲音四處張望，但卻什麼也沒看到。 -";
 		next;
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		erasequest 11775;
 		setquest 11776;
 		cloakonnpcself( "???#JQ_SH_1" );
@@ -632,14 +632,14 @@ pay_fild08,165,68,3	script	Clutter Traces#JQ_SH3	4_SOIL,{
 		close;
 	}
 	if (isbegin_quest(11776) == 1) {
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		navigateto("pay_fild08",214,89);
 		close;
 	}
 	// Default dialog
-	mes "- There is a trace of something messy. -";
+	mes "- 這裡有一些凌亂的痕跡。 -";
 	close;
 
 OnInit:
@@ -652,24 +652,24 @@ pay_fild08,213,91,6	duplicate(dummy_cloaked_npc)	???#JQ_SH_2	4_POINT_BLUE
 
 pay_fild08,214,89,3	script	Clutter Traces#JQ_SH4	4_SOIL,{
 	if (isbegin_quest(11776) == 1) {
-		mes "- I found another trace.";
-		mes "It is a neat footprint unlike what I saw in the firewood workshop. -";
+		mes "- 我發現了另一個痕跡。";
+		mes "這是整齊的腳印，不像我在柴火工作坊裡看到的那樣。 -";
 		next;
-		mes "- The animals seem to have moved straight down the road to the firewood workshop. -";
+		mes "- 這些動物似乎直接沿著通往柴火工作坊的路前進。 -";
 		next;
 		mes "[???]";
-		mes "Is it fun to see footprints?";
+		mes "看腳印很有趣嗎？";
 		cloakoffnpcself( "???#JQ_SH_2" );
-		npctalk "There are so many footprints.", "???#JQ_SH_2", bc_self;
+		npctalk "好多腳印啊。", "???#JQ_SH_2", bc_self;
 		cutin "ex_sh_spirit02.png",2;
 		emotion ET_HUK, playerattached();
 		next;
 		cutin "",255;
-		mes "- I heard a voice again, but I couldn't see anything. -";
+		mes "- 我又聽到了一個聲音，但我什麼也沒看到。 -";
 		next;
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		erasequest 11776;
 		setquest 11777;
 		cloakonnpcself( "???#JQ_SH_2" );
@@ -677,14 +677,14 @@ pay_fild08,214,89,3	script	Clutter Traces#JQ_SH4	4_SOIL,{
 		close;
 	}
 	if (isbegin_quest(11777) == 1) {
-		mes "- Footprints are showing the way.";
-		mes "It seems to keep going.";
-		mes "Let's follow the footsteps. -";
+		mes "- 腳印正在指路。";
+		mes "似乎會一直延伸下去。";
+		mes "我們跟著腳印走吧。 -";
 		navigateto("pay_fild09",31,87);
 		close;
 	}
 	// Default dialog
-	mes "- There is a trace of something messy. -";
+	mes "- 這裡有一些凌亂的痕跡。 -";
 	close;
 
 OnInit:
@@ -697,52 +697,52 @@ pay_fild09,33,89,6	duplicate(dummy_cloaked_npc)	???#JQ_SH_3	4_POINT_BLUE
 
 pay_fild09,31,87,3	script	Clutter Traces#JQ_SH5	4_SOIL,{
 	if (isbegin_quest(11777) == 1) {
-		mes "- I found another trace. -";
+		mes "- 我發現了另一個痕跡。 -";
 		next;
 		mes "[???]";
-		mes "If it's a footprint, it extends all the way to that deep forest.";
+		mes "如果是腳印的話，它會一直延伸到那片深林裡。";
 		cloakoffnpcself( "???#JQ_SH_3" );
 		cutin "ex_sh_spirit02.png",2;
 		emotion ET_HUK, playerattached();
 		next;
-		select( "Who's speaking?" );
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>I am Chulho.</FONT>";
-		mes "<FONT SIZE = 14>I~~ I'm a spirit from the forest.</FONT>";
-		npctalk "Ahem!", "???#JQ_SH_3", bc_self;
+		select( "誰在說話？" );
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>我是秋浩。</FONT>";
+		mes "<FONT SIZE = 14>我~~ 我是森林裡的精靈。</FONT>";
+		npctalk "咳！", "???#JQ_SH_3", bc_self;
 		cutin "ex_sh_chulho00.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>There are many friends in the forest!</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>森林裡有很多朋友！</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Today, I'm playing in the forest waving branches, and other friends are flocking along the road.</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>今天，我在森林裡揮舞樹枝玩耍，其他的朋友則沿著道路聚集在一起。</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>I followed you because I thought something interesting happened and you were walking so excitedly.</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>我跟著你，因為我覺得發生了有趣的事情，而且你走得太興奮了。</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Walking with everyone, it was quite fun because there were ^dd5555fruits and grains^000000. Things that were hard to see in the forest on the floor!</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>和大家一起走，很有趣，因為沿途有^dd5555水果和穀物^000000。那些在森林裡很難在地板上看到的東西！</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Then I saw an unusually ripe fruit on the floor, so I looked away for a moment and everyone left.</FONT>";
-		npctalk "It was very coveted!", "???#JQ_SH_3", bc_self;
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>然後我看到地板上有一顆異常成熟的水果，所以我把視線移開了一下，然後大家就都走了。</FONT>";
+		npctalk "非常想要！", "???#JQ_SH_3", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>After everyone left, there were no delicious fruits left, but there were footprints everywhere. So... I followed them here.</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>大家都走後，就沒有留下什麼好吃的果實了，但到處都是腳印。所以... 我就跟著它們來到這裡了。</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>How delicious was it to eat it without a trace?</FONT>";
+		mes "[秋浩]";
+		mes "<FONT SIZE = 14>要怎樣才能吃得一點痕跡都不留呢？</FONT>";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 17>Oh!!!</FONT>";
-		mes "<FONT SIZE = 14>There's another great snake strawberry!!!</FONT>";
-		npctalk "It looks delicious!!", "???#JQ_SH_3", bc_self;
+		mes "[秋浩]";
+		mes "<FONT SIZE = 17>喔！！！</FONT>";
+		mes "<FONT SIZE = 14>那裡還有另一個很棒的蛇莓！！！</FONT>";
+		npctalk "看起來很好吃！！", "???#JQ_SH_3", bc_self;
 		emotion ET_HUK, getnpcid(0,"???#JQ_SH_3");
 		next;
 		cutin "",255;
-		mes "- I got information that there was something to eat on the way the wild animals passed by.";
-		mes "Let's go back to firewood. -";
+		mes "- 我得到消息說，野生動物經過的路上有東西可以吃。";
+		mes "我們回柴火工作坊吧。 -";
 		erasequest 11777;
 		setquest 11778;
 		cloakonnpcself( "???#JQ_SH_3" );
@@ -750,13 +750,13 @@ pay_fild09,31,87,3	script	Clutter Traces#JQ_SH5	4_SOIL,{
 		close;
 	}
 	if (isbegin_quest(11778) == 1) {
-		mes "- I got information that there was something to eat on the way the wild animals passed by.";
-		mes "Let's go back to firewood. -";
+		mes "- 我得到消息說，野生動物經過的路上有東西可以吃。";
+		mes "我們回柴火工作坊吧。 -";
 		navigateto("pay_fild08",157,129);
 		close;
 	}
 	// Default dialog
-	mes "- There is a trace of something messy. -";
+	mes "- 有點凌亂的痕跡。 -";
 	close;
 
 OnInit:
@@ -771,295 +771,295 @@ OnInit:
 // pay_fild08,155,128,3	script	Broken Tools#JQ_SH	4_BRICKPILE,{
 
 // Step 12
-payon,233,158,3	duplicate(dummy_cloaked_npc)	Chulho#JQ_SH_2	4_EXJOB_CHUL_HO
+payon,233,158,3	duplicate(dummy_cloaked_npc)	哲浩#JQ_SH_2	4_EXJOB_CHUL_HO
 payon,232,157,6	duplicate(dummy_cloaked_npc)	???#JQ_SH_k	4_POINT_BLUE
 payon,238,157,5	duplicate(dummy_cloaked_npc)	???#JQ_SH_lee	4_M_ORIENT01
-payon,242,157,3	duplicate(dummy_cloaked_npc)	Kwang Saeng#JQ_SH_lee	4_M_DARKPRIEST
-payon,240,156,5	duplicate(dummy_cloaked_npc)	Admiral Lee Daegam#JQ_SH_lee	2_M_PHARMACIST
+payon,242,157,3	duplicate(dummy_cloaked_npc)	廣生#JQ_SH_lee	4_M_DARKPRIEST
+payon,240,156,5	duplicate(dummy_cloaked_npc)	李大鑑上將#JQ_SH_lee	2_M_PHARMACIST
 	
-payon,233,159,3	script	Food Pile#JQ_SH	4_EP16_FOOD,2,2,{
+payon,233,159,3	script	食物堆#JQ_SH	4_EP16_FOOD,2,2,{
 	if (isbegin_quest(11780) == 1) {
-		mes "- The food seems to be piled up.";
-		mes "Let's get closer and check. -";
+		mes "- 食物好像堆積起來了。";
+		mes "讓我們靠近一點檢查。 -";
 		close;
 	}
 	// Default dialog
-	mes "- The food seems to be piled up.";
-	mes "Who would do something like this in a place like this??? -";
+	mes "- 食物好像堆積起來了。";
+	mes "誰會在這種地方做這種事??? -";
 	close;
 
 OnTouch:
 	if (isbegin_quest(11780) == 1) {
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Here it is!</FONT>";
-		mes "<FONT SIZE = 14>It smells so bad here!</FONT>";
-		mes "<FONT SIZE = 16>Churup...</FONT>";
-		cloakoffnpcself( "Chulho#JQ_SH_2" );
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>在這裡!</FONT>";
+		mes "<FONT SIZE = 14>這裡聞起來好糟糕!</FONT>";
+		mes "<FONT SIZE = 16>啜嚕...</FONT>";
+		cloakoffnpcself( "哲浩#JQ_SH_2" );
 		cutin "ex_sh_chulho03.png",2;
-		emotion ET_HUNGRY, getnpcid(0,"Chulho#JQ_SH_2");
+		emotion ET_HUNGRY, getnpcid(0,"哲浩#JQ_SH_2");
 		next;
 		mes "[???]";
-		mes "<FONT SIZE = 14>Cute!</FONT>";
-		mes "You punk!";
-		mes "What if you covet someone else's in the village?";
+		mes "<FONT SIZE = 14>可愛!</FONT>";
+		mes "你這小混混!";
+		mes "要是你覬覦村裡別人的東西怎麼辦？";
 		cloakoffnpcself( "???#JQ_SH_k" );
 		// npctalk "Cute!!!!", "???#JQ_SH_lee", bc_self;	// bug?
 		npctalk "Cute!!!!", "???#JQ_SH_k", bc_self;
 		cutin "ex_sh_spirit01.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>I didn't want it!</FONT>";
-		mes "<FONT SIZE = 14>I just drooled!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>我不是故意的!</FONT>";
+		mes "<FONT SIZE = 14>我只是流口水了!</FONT>";
 		cutin "ex_sh_chulho02.png",2;
 		next;
 		mes "[???]";
-		mes "Besides, those are things you shouldn't eat!";
+		mes "而且，那些是你不能吃的東西!";
 		cutin "ex_sh_spirit01.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 18><B>Why?</B></FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 18><B>為什麼？</B></FONT>";
 		cutin "ex_sh_chulho02.png",2;
-		emotion ET_HUK, getnpcid(0,"Chulho#JQ_SH_2");
+		emotion ET_HUK, getnpcid(0,"哲浩#JQ_SH_2");
 		next;
 		mes "[???]";
-		mes "These days, ^dd5555mountain animals who are sick after eating what they fell on the road^000000 keep coming to me, and it's all because of them.";
+		mes "最近，^dd5555吃了路上的東西後生病的山裡的動物^000000一直來找我，這都是因為它們。";
 		cutin "ex_sh_spirit02.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Kisul is nice!</FONT>";
-		mes "<FONT SIZE = 14>Are you worried about your stomachache?</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>基瑟真好!</FONT>";
+		mes "<FONT SIZE = 14>你是在擔心你的肚子痛嗎？</FONT>";
 		cutin "ex_sh_chulho03.png",2;
 		next;
-		mes "[Kisul]";
-		mes "I came to scold those who sprayed strange things because it was <FONT SIZE = 14><B>annoying</B></FONT> to keep coming.";
+		mes "[基瑟]";
+		mes "我來責罵那些灑奇怪東西的人，因為一直來真的 <FONT SIZE = 14><B>很煩</B></FONT>。";
 		cutin "ex_sh_spirit02.png",2;
 		emotion ET_HNG, getnpcid(0,"???#JQ_SH_k");
 		next;
-		mes "[Chulho]";
+		mes "[哲浩]";
 		mes "...";
 		cutin "ex_sh_chulho02.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 18>Good boy!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 18>好孩子!</FONT>";
 		cutin "ex_sh_chulho01.png",2;
-		npctalk "That's nice!!!!!!!", "Chulho#JQ_SH_2", bc_self;
+		npctalk "That's nice!!!!!!!", "哲浩#JQ_SH_2", bc_self;
 		next;
-		mes "[Kisul]";
-		mes "Shh!";
-		mes "Seeing that you can hear the running sound, you must have finally discovered it.";
+		mes "[基瑟]";
+		mes "噓!";
+		mes "看來你聽到了跑步的聲音，你一定是終於發現了。";
 		cutin "ex_sh_spirit02.png",2;
 		npctalk "It's noisy.", "???#JQ_SH_k", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 10>What?</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 10>什麼？</FONT>";
 		cutin "ex_sh_chulho01.png",2;
 		next;
-		mes "[Kisul]";
-		mes "I've been playing a little trick on you to see the faces of the old white guys who bothered me.";
-		mes "Stay still.";
+		mes "[基瑟]";
+		mes "我一直在對你耍一些小把戲，想看看那些煩我的老白臉的表情。";
+		mes "安靜點。";
 		cutin "ex_sh_spirit02.png",2;
 		next;
 		cutin "",255;
 		mes "[???]";
-		mes "<FONT SIZE = 16>Sir!</FONT>";
+		mes "<FONT SIZE = 16>大人!</FONT>";
 		cloakoffnpcself( "???#JQ_SH_lee" );
 		npctalk "Sir!!!!!", "???#JQ_SH_lee", bc_self;
 		next;
 		mes "[???]";
-		mes "<FONT SIZE = 16>Sir!!!</FONT>";
-		mes "<FONT SIZE = 16>We're in trouble!!!</FONT>";
+		mes "<FONT SIZE = 16>大人!!!</FONT>";
+		mes "<FONT SIZE = 16>我們有麻煩了!!!</FONT>";
 		npctalk "What should I do with this?", "???#JQ_SH_lee", bc_self;
 		emotion ET_HELP, getnpcid(0,"???#JQ_SH_lee");
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "What's the matter?";
-		mes "Please explain quickly.";
-		cloakoffnpcself( "Admiral Lee Daegam#JQ_SH_lee" );
+		mes "[李大監]";
+		mes "什麼事？";
+		mes "請快點說明。";
+		cloakoffnpcself( "李大鑑上將#JQ_SH_lee" );
 		next;
-		mes "[Lee Daegam's Subordinate]";
-		mes "I put it in the barn... The...the food is all gone!";
+		mes "[李大監的下屬]";
+		mes "我把它放在穀倉裡...那...食物都不見了!";
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "<FONT SIZE = 14>What!?</FONT>";
-		mes "Where did all the food go!";
+		mes "[李大監]";
+		mes "<FONT SIZE = 14>什麼!?</FONT>";
+		mes "所有的食物都去哪裡了!";
 		next;
-		mes "[Lee Daegam's Subordinate]";
-		mes "The barn door was locked well, I was in the yard the whole time and no one passed by.";
+		mes "[李大監的下屬]";
+		mes "穀倉的門鎖得很好，我一直都在院子裡，沒有人經過。";
 		emotion ET_PROFUSELY_SWEAT, getnpcid(0,"???#JQ_SH_lee");
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "So you're saying the food walked out on its own?!";
+		mes "[李大監]";
+		mes "所以你是說食物自己走掉了？！";
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "Well...";
-		mes "First of all, call a person to investigate the barn quietly. Next, tell them to go to the kitchen and prepare a meal quickly because they need food for immediate use.";
-		npctalk "You can't mess things up like this!", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
+		mes "[李大監]";
+		mes "嗯...";
+		mes "首先，叫人悄悄地調查穀倉。 接著，告訴他們去廚房準備一頓飯，因為他們需要食物來應急。";
+		npctalk "You can't mess things up like this!", "李大監#JQ_SH_lee", bc_self;
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "Then go to the men's quarters and tell them to come to Kwang Saeng.";
-		npctalk "Don't make a noise and go quietly.", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
+		mes "[李大監]";
+		mes "然後去男人們的住處，告訴他們到廣生來。";
+		npctalk "Don't make a noise and go quietly.", "李大監#JQ_SH_lee", bc_self;
 		next;
-		mes "[Lee Daegam's Subordinate]";
-		mes "Yes, sir.";
+		mes "[李大監的下屬]";
+		mes "是的，大人。";
 		next;
 		cloakonnpcself( "???#JQ_SH_lee" );
-		mes "[Admiral Lee Daegam]";
-		mes "Sigh~";
-		mes "What a ghost!";
-		npctalk "How did you prepare that food!!!", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
+		mes "[李大監]";
+		mes "唉~";
+		mes "真是見鬼了!";
+		npctalk "How did you prepare that food!!!", "李大監#JQ_SH_lee", bc_self;
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "<FONT SIZE = 14>I don't know who it is, but I better not catch you stealing in my barn!!!</FONT>";
-		npctalk "I'll catch you!!!", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
+		mes "[李大監]";
+		mes "<FONT SIZE = 14>我不知道是誰，但我最好不要抓到你在我的穀倉裡偷東西!!!</FONT>";
+		npctalk "I'll catch you!!!", "李大監#JQ_SH_lee", bc_self;
 		next;
-		mes "[Kwang Saeng]";
-		mes "Lee Daegam, you're looking for me?";
-		cloakoffnpcself( "Kwang Saeng#JQ_SH_lee" );
-		npctalk "Haha!", "Kwang Saeng#JQ_SH_lee", bc_self;
+		mes "[廣生]";
+		mes "李大監，你在找我？";
+		cloakoffnpcself( "廣生#JQ_SH_lee" );
+		npctalk "Haha!", "廣生#JQ_SH_lee", bc_self;
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "<FONT SIZE = 16>Aaah~~!</FONT>";
-		mes "<FONT SIZE = 16>Kwang Saeng!!!</FONT>";
-		mes "How did you get here so soon?!";
-		npctalk "Welcome.", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
+		mes "[李大監]";
+		mes "<FONT SIZE = 16>啊~~!</FONT>";
+		mes "<FONT SIZE = 16>廣生!!!</FONT>";
+		mes "你怎麼這麼快就到了？！";
+		npctalk "Welcome.", "李大監#JQ_SH_lee", bc_self;
 		next;
-		mes "[Kwang Saeng]";
-		mes "I came quickly because you said you were looking for me in a hurry.";
+		mes "[廣生]";
+		mes "我很快就來了，因為你說你在緊急情況下找我。";
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "It's not much, but there was a thief in the barn, and all the food disappeared.";
+		mes "[李大監]";
+		mes "沒什麼大不了的，但穀倉裡有小偷，所有的食物都不見了。";
 		next;
-		mes "[Kwang Saeng]";
-		mes "Oh no!";
+		mes "[廣生]";
+		mes "糟糕!";
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "That's why we're trying to catch the criminals, but we need to make new food for the people right now...";
-		emotion ET_SCRATCH, getnpcid(0,"Admiral Lee Daegam#JQ_SH_lee");
+		mes "[李大監]";
+		mes "所以我們正在努力抓捕罪犯，但我們現在需要為人們製作新的食物...";
+		emotion ET_SCRATCH, getnpcid(0,"李大鑑上將#JQ_SH_lee");
 		next;
-		mes "[Kwang Saeng]";
-		mes "All right.";
-		mes "I'll get you some medicines.";
+		mes "[廣生]";
+		mes "好的。";
+		mes "我會給你一些藥。";
 		next;
-		mes "[Kwang Saeng]";
-		mes "By the way...";
-		mes "I'm preparing medicine ^123456because^000000 Lee Daegam asked me to, but isn't the construction of the forest done by Lee Daegam himself?";
-		mes "Why don't you let me handle that?";
+		mes "[廣生]";
+		mes "順便問一下...";
+		mes "我正在準備藥^123456因為^000000李大監要求我這麼做，但森林的建設不是李大監自己完成的嗎？";
+		mes "你為什麼不讓我來處理呢？";
 		next;
-		mes "[Admiral Lee Daegam]";
-		mes "It takes effort to buy good land for cheap.";
+		mes "[李大監]";
+		mes "要以低廉的價格購買優良的土地需要付出努力。";
 		next;
-		mes "[Kwang Saeng]";
-		mes "Haha.";
-		mes "Lee Daegam.";
-		npctalk "Hahahahaha!", "Kwang Saeng#JQ_SH_lee", bc_self;
+		mes "[廣生]";
+		mes "哈哈。";
+		mes "李大監。";
+		npctalk "Hahahahaha!", "廣生#JQ_SH_lee", bc_self;
 		next;
-		npctalk "Hahahahaha!!!", "Admiral Lee Daegam#JQ_SH_lee", bc_self;
-		emotion ET_SMILE, getnpcid(0,"Admiral Lee Daegam#JQ_SH_lee");
-		emotion ET_SMILE, getnpcid(0,"Kwang Saeng#JQ_SH_lee");
+		npctalk "Hahahahaha!!!", "李大監#JQ_SH_lee", bc_self;
+		emotion ET_SMILE, getnpcid(0,"李大鑑上將#JQ_SH_lee");
+		emotion ET_SMILE, getnpcid(0,"廣生#JQ_SH_lee");
 		sleep2 1000;
-		cloakonnpcself( "Admiral Lee Daegam#JQ_SH_lee" );
-		cloakonnpcself( "Kwang Saeng#JQ_SH_lee" );
-		mes "[Kisul]";
-		mes "Oh, my~";
-		mes "What was that.";
-		mes "I wondered if there was a big reason, but it was a boring reason.";
+		cloakonnpcself( "李大鑑上將#JQ_SH_lee" );
+		cloakonnpcself( "廣生#JQ_SH_lee" );
+		mes "[基瑟]";
+		mes "哎呀~";
+		mes "那是什麼。";
+		mes "我還以為有什麼重大原因，但原來是個無聊的理由。";
 		cutin "ex_sh_kisul00.png",2;
 		npctalk "What a letdown~", "???#JQ_SH_k", bc_self;
 		next;
-		mes "[Kisul]";
-		mes "Then I'll go home since my interest has cooled down.";
+		mes "[基瑟]";
+		mes "既然我的興趣已經冷卻了，那我回家了。";
 		emotion ET_SLEEPY, getnpcid(0,"???#JQ_SH_k");
-		npctalk "That was boring~", "???#JQ_SH_k", bc_self;
+		npctalk "真無聊~", "???#JQ_SH_k", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "Oh!";
-		mes "Are you not going to stop me?";
+		mes "[哲浩]";
+		mes "喔！";
+		mes "你不打算阻止我嗎？";
 		cutin "ex_sh_chulho01.png",2;
-		emotion ET_HUK, getnpcid(0,"Chulho#JQ_SH_2");
+		emotion ET_HUK, getnpcid(0,"哲浩#JQ_SH_2");
 		next;
-		mes "[Kisul]";
-		mes "No, well.";
-		mes "He's already in over his head, so wouldn't he take care of it?";
+		mes "[基瑟]";
+		mes "不，嗯。";
+		mes "他已經泥足深陷了，所以他不會自己處理嗎？";
 		cutin "ex_sh_kisul00.png",2;
 		next;
-		mes "[Kisul]";
-		mes "It's gonna be fun to watch.";
-		mes "Hehehe.";
+		mes "[基瑟]";
+		mes "看來會很有趣。";
+		mes "呵呵。";
 		cutin "ex_sh_kisul00.png",2;
 		emotion ET_KIK, getnpcid(0,"???#JQ_SH_k");
 		next;
 		cloakonnpcself( "???#JQ_SH_k" );
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Gasp!</FONT>";
-		mes "<FONT SIZE = 14>That's right!</FONT>";
-		mes "<FONT SIZE = 14>I'm in trouble!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>倒抽一口氣！</FONT>";
+		mes "<FONT SIZE = 14>沒錯！</FONT>";
+		mes "<FONT SIZE = 14>我麻煩大了！</FONT>";
 		cutin "ex_sh_chulho02.png",2;
-		npctalk "It's crazy!!!", "Chulho#JQ_SH_2", bc_self;
+		npctalk "瘋了！！！", "哲浩#JQ_SH_2", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Hyunrok will be in big trouble if he finds out that he gave strange medicine to his friends as well as digging through the forest to make something weird!!</FONT>";
-		npctalk "If you don't stop me, I'll destroy everything!", "Chulho#JQ_SH_2", bc_self;
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>如果炫祿發現他給了他的朋友們奇怪的藥，而且還在森林裡挖掘來製作奇怪的東西，他就會有大麻煩了！！</FONT>";
+		npctalk "如果你不阻止我，我就毀掉一切！", "哲浩#JQ_SH_2", bc_self;
 		cutin "ex_sh_chulho01.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 16>Let's go!</FONT>";
-		mes "<FONT SIZE = 16>Hurry up!!</FONT>";
-		emotion ET_GO, getnpcid(0,"Chulho#JQ_SH_2");
+		mes "[哲浩]";
+		mes "<FONT SIZE = 16>走吧！</FONT>";
+		mes "<FONT SIZE = 16>快點！！</FONT>";
+		emotion ET_GO, getnpcid(0,"哲浩#JQ_SH_2");
 		erasequest 11780;
 		setquest 11781;
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_2" );
+		cloakonnpcself( "哲浩#JQ_SH_2" );
 		navigateto("pay_fild09",108,346);
 		end;
 	}
 	if (isbegin_quest(11781) == 1) {
 		// Debug (npcs not uncloaked on official server)
 		cloakoffnpcself( "???#JQ_SH_k" );
-		cloakoffnpcself( "Chulho#JQ_SH_2" );
+		cloakoffnpcself( "哲浩#JQ_SH_2" );
 
-		mes "[Kisul]";
-		mes "Then I'll go home since my interest has cooled down.";
+		mes "[基瑟]";
+		mes "既然我的興趣已經冷卻了，那我回家了。";
 		emotion ET_SLEEPY, getnpcid(0,"???#JQ_SH_k");
-		npctalk "That was boring~", "???#JQ_SH_k", bc_self;
+		npctalk "真無聊~", "???#JQ_SH_k", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "Oh!";
-		mes "Are you not going to stop me?";
+		mes "[哲浩]";
+		mes "喔！";
+		mes "你不打算阻止我嗎？";
 		cutin "ex_sh_chulho01.png",2;
-		emotion ET_HUK, getnpcid(0,"Chulho#JQ_SH_2");
+		emotion ET_HUK, getnpcid(0,"哲浩#JQ_SH_2");
 		next;
-		mes "[Kisul]";
-		mes "No, well.";
-		mes "He's already in over his head, so wouldn't he take care of it?";
+		mes "[基瑟]";
+		mes "不，嗯。";
+		mes "他已經泥足深陷了，所以他不會自己處理嗎？";
 		cutin "ex_sh_kisul00.png",2;
 		next;
-		mes "[Kisul]";
-		mes "It's gonna be fun to watch.";
-		mes "Hehehe.";
+		mes "[基瑟]";
+		mes "看來會很有趣。";
+		mes "呵呵。";
 		cutin "ex_sh_kisul00.png",2;
 		emotion ET_KIK, getnpcid(0,"???#JQ_SH_k");
 		next;
 		cloakonnpcself( "???#JQ_SH_k" );
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Gasp!</FONT>";
-		mes "<FONT SIZE = 14>That's right!</FONT>";
-		mes "<FONT SIZE = 14>I'm in trouble!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>倒抽一口氣！</FONT>";
+		mes "<FONT SIZE = 14>沒錯！</FONT>";
+		mes "<FONT SIZE = 14>我麻煩大了！</FONT>";
 		cutin "ex_sh_chulho02.png",2;
-		npctalk "It's crazy!!!", "Chulho#JQ_SH_2", bc_self;
+		npctalk "瘋了！！！", "哲浩#JQ_SH_2", bc_self;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Hyunrok will be in big trouble if he finds out that he gave strange medicine to his friends as well as digging through the forest to make something weird!!</FONT>";
-		npctalk "If you don't stop me, I'll destroy everything!", "Chulho#JQ_SH_2", bc_self;
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>如果炫祿發現他給了他的朋友們奇怪的藥，而且還在森林裡挖掘來製作奇怪的東西，他就會有大麻煩了！！</FONT>";
+		npctalk "如果你不阻止我，我就毀掉一切！", "哲浩#JQ_SH_2", bc_self;
 		cutin "ex_sh_chulho01.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 16>Let's go!</FONT>";
-		mes "<FONT SIZE = 16>Hurry up!!</FONT>";
-		emotion ET_GO, getnpcid(0,"Chulho#JQ_SH_2");
+		mes "[哲浩]";
+		mes "<FONT SIZE = 16>走吧！</FONT>";
+		mes "<FONT SIZE = 16>快點！！</FONT>";
+		emotion ET_GO, getnpcid(0,"哲浩#JQ_SH_2");
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_2" );
+		cloakonnpcself( "哲浩#JQ_SH_2" );
 		navigateto("pay_fild09",108,346);
 		end;
 	}
@@ -1071,42 +1071,42 @@ OnInit:
 }
 
 // Step 13, 15
-pay_fild09,109,344,5	duplicate(dummy_cloaked_npc)	Chulho#JQ_SH_door	4_EXJOB_CHUL_HO
+pay_fild09,109,344,5	duplicate(dummy_cloaked_npc)	哲浩#JQ_SH_door	4_EXJOB_CHUL_HO
 
-pay_fild09,108,346,3	script	Suspicious Light#JQ_SH	4_ENERGY_WHITE,{
+pay_fild09,108,346,3	script	可疑的漣漪#JQ_SH	4_ENERGY_WHITE,{
 	if (isbegin_quest(11770) == 0) {
-		mes "- A suspicious ripple is visible. -";
+		mes "- 看起來有可疑的漣漪。 -";
 		close;
 	}
 	// !TODO: unknown dialog for steps [2-12]
 	if (isbegin_quest(11781) == 1) {
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Oh no!</FONT>";
-		mes "<FONT SIZE = 14>What's this hideous atmosphere!</FONT>";
-		mes "<FONT SIZE = 14>As expected, Hyunrok seems to have noticed!</FONT>";
-		cloakoffnpcself( "Chulho#JQ_SH_door" );
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>不好了！</FONT>";
+		mes "<FONT SIZE = 14>這是什麼可怕的氣氛！</FONT>";
+		mes "<FONT SIZE = 14>果然，炫祿似乎已經注意到了！</FONT>";
+		cloakoffnpcself( "哲浩#JQ_SH_door" );
 		cutin "ex_sh_chulho02.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>What if we're in big trouble?</FONT>";
-		mes "<FONT SIZE = 14>Let's hurry up, go in and stop Hyunrok.</FONT>";
-		npctalk "It's really scary when Hyunrok is angry!", "Chulho#JQ_SH_door", bc_self;
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>如果我們遇到大麻煩怎麼辦？</FONT>";
+		mes "<FONT SIZE = 14>我們趕快進去阻止炫祿吧。</FONT>";
+		npctalk "炫祿生氣的時候真的很可怕！", "哲浩#JQ_SH_door", bc_self;
 		erasequest 11781;
 		setquest 11782;
 		next;
-		cloakonnpcself( "Chulho#JQ_SH_door" );
+		cloakonnpcself( "哲浩#JQ_SH_door" );
 		cutin "",255;
 	}
 	if (isbegin_quest(11782) == 1) {
 		.@md_name$ = "Deep Forest";
 
-		mes "- A suspicious ripple appears where Chulho disappeared. -";
+		mes "- 哲浩消失的地方出現了可疑的漣漪。 -";
 		next;
 		if (is_party_leader() == true) {	// !TODO: confirm if it's solo party
 			.@menu$[0] = "Open the door.";
 			.@menu$[1] = "Enter.";
 		}
-		switch( select( .@menu$[0], .@menu$[1], "Quit." ) ) {
+		switch( select( .@menu$[0], .@menu$[1], "離開。" ) ) {
 		case 1:
 			if (is_party_leader() == true)
 				instance_create(.@md_name$);
@@ -1115,11 +1115,11 @@ pay_fild09,108,346,3	script	Suspicious Light#JQ_SH	4_ENERGY_WHITE,{
 			if (is_party_leader() == true) {
 				switch( instance_enter(.@md_name$) ) {
 				case IE_OTHER:
-					mes "^ff0000An unknown error occurred.^000000";
+					mes "^ff0000發生不明錯誤。^000000";
 					close;
 				case IE_NOINSTANCE:
-					mes "- The swaying looks unsettling.";
-					mes "Let's wait a bit and then go in. -";
+					mes "- 搖晃的樣子讓人感到不安。";
+					mes "讓我們稍等一下再進去吧。 -";
 					close;
 				case IE_NOMEMBER:
 					end;
@@ -1139,92 +1139,92 @@ pay_fild09,108,346,3	script	Suspicious Light#JQ_SH	4_ENERGY_WHITE,{
 	if (isbegin_quest(11769) == 1) {
 		if (checkweight(490087,1) == 0) {
 			// !TODO: unknown dialog
-			mes "- Hold on a second here!! -";
-			mes "- You have too many items. -";
-			mes "- That means you can no longer receive any items. -";
-			mes "- Free up some space -";
-			mes "- and try again. -";
+			mes "- 等一下！！ -";
+			mes "- 您的物品太多了。 -";
+			mes "- 這表示您無法再收到任何物品。 -";
+			mes "- 清出一些空間 -";
+			mes "- 然後再試一次。 -";
 			close;
 		}
 		if (SkillPoint > 0) {
 			// !TODO: unknown dialog
-			mes "[Chulho]";
-			mes "Please use all your skill points before proceeding.";
+			mes "[哲浩]";
+			mes "在繼續之前，請使用完所有技能點數。";
 			close3;
 		}
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>I've been waiting!</FONT>";
-		mes "<FONT SIZE = 14>It's hard to come to the Deep Forest now, but come to think of it, I just have to come out to play!</FONT>";
-		mes "<FONT SIZE = 14>Although Hyunrok won't come out!</FONT>";
-		cloakoffnpcself( "Chulho#JQ_SH_door" );
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>我一直在等！</FONT>";
+		mes "<FONT SIZE = 14>現在很難來到幽深森林，但仔細想想，我只需要出來玩就好啦！</FONT>";
+		mes "<FONT SIZE = 14>雖然炫祿不會出來！</FONT>";
+		cloakoffnpcself( "哲浩#JQ_SH_door" );
 		cutin "ex_sh_chulho01.png",2;
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Oh, and this is a letter from Hyunrok!</FONT>";
-		mes "<FONT SIZE = 14>Go ahead and read it!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>哦，這封信是炫祿寫的！</FONT>";
+		mes "<FONT SIZE = 14>請讀一下吧！</FONT>";
 		cutin "ex_sh_chulho03.png",2;
 		next;
-		if (select( "Read the letter.", "Stop." ) == 2) {
+		if (select( "讀取信件。", "停止。" ) == 2) {
 			// !TODO: unknown dialog
 			cutin "",255;
-			cloakonnpcself( "Chulho#JQ_SH_door" );
+			cloakonnpcself( "哲浩#JQ_SH_door" );
 			end;
 		}
-		mes "[Hyunrok's Letter]";
-		mes "Dear " + strcharinfo(0) + ".";
+		mes "[炫祿的信]";
+		mes "親愛的 " + strcharinfo(0) + "。";
 		cutin "ex_sh_hyunrok00.png",2;
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "It's a relationship just by touching your clothes...";
-		mes "The reason you entered this forest and the reason we met must be all fate that the heavens decided.";
+		mes "[炫祿的信]";
+		mes "只是觸碰到你的衣服就是一種緣分...";
+		mes "你進入這片森林的原因，以及我們相遇的原因，一定是上天決定的命運。";
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "I will never forget the grace that helped us in danger even though we did not see the relationship properly and were disrespectful in the immediate event.";
+		mes "[炫祿的信]";
+		mes "我永遠不會忘記您在危難中幫助我們的恩情，即使我們沒有好好地看待這段關係，並且在當下是不敬的。";
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "As Chulho said, I wanted to at least hold a feast to repay you, but staying in this Deep Forest for a long time is dangerous to those outside the forest, so I feel heavy to send them back in a hurry without even telling them a proper goodbye.";
+		mes "[炫祿的信]";
+		mes "正如哲浩所說的，我本來至少想舉辦一場盛宴來回報您，但長時間待在這幽深森林對森林外的人來說很危險，所以我感到沉重，只能匆忙地送他們回去，甚至沒有好好地告別。";
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "I'm sure you'll understand because I did it for you.";
+		mes "[炫祿的信]";
+		mes "我相信你會理解的，因為我這樣做是為了你。";
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "And it's not a small reward for your help, but it's engraved in our souls so that we can call out our strength whenever we need help.";
+		mes "[炫祿的信]";
+		mes "這不是對您幫助的小小回報，而是銘刻在我們的靈魂中，以便我們在需要幫助時可以呼喚我們的力量。";
 		next;
-		mes "[Hyunrok's Letter]";
-		mes "Then, let's look forward to seeing each other again...";
+		mes "[炫祿的信]";
+		mes "那麼，讓我們期待再次見面...";
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Have you finished reading the letter?</FONT>";
-		mes "<FONT SIZE = 14>What did it say?</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>你看完信了嗎？</FONT>";
+		mes "<FONT SIZE = 14>上面寫了什麼？</FONT>";
 		cutin "ex_sh_chulho01.png",2;
 		next;
-		select( "Show the letter." );
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>Hyunrok always says things that are hard to understand!</FONT>";
-		mes "<FONT SIZE = 14>And take this, too!</FONT>";
-		mes "<FONT SIZE = 14>I saved it because it was a fun item, but I'll give it to you!</FONT>";
+		select( "展示信件。" );
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>炫祿總是說一些很難理解的事情！</FONT>";
+		mes "<FONT SIZE = 14>還有，把這個也拿去！</FONT>";
+		mes "<FONT SIZE = 14>我存起來是因為這是一個有趣的物品，但我會把它給你！</FONT>";
 		cutin "ex_sh_chulho02.png",2;
 		completequest 11769;
 		jobchange JOB_SPIRIT_HANDLER;
 		getitem 490087,1;	// 4th_Q_Necklace
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_door" );
+		cloakonnpcself( "哲浩#JQ_SH_door" );
 		end;
 	}
 	if (isbegin_quest(11769) == 2) {
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>See you again</FONT>";
-		mes "<FONT SIZE = 14>I was just out playing.</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>再見</FONT>";
+		mes "<FONT SIZE = 14>我只是出來玩而已。</FONT>";
 		cutin "ex_sh_chulho01.png",2;
-		cloakoffnpcself( "Chulho#JQ_SH_door" );
+		cloakoffnpcself( "哲浩#JQ_SH_door" );
 		next;
-		mes "[Chulho]";
-		mes "<FONT SIZE = 14>There's so much fun outside the forest!</FONT>";
-		mes "<FONT SIZE = 14>Of course the forest is fun too!</FONT>";
+		mes "[哲浩]";
+		mes "<FONT SIZE = 14>森林外面有很多樂趣！</FONT>";
+		mes "<FONT SIZE = 14>當然森林也很有趣！</FONT>";
 		close2;
 		cutin "",255;
-		cloakonnpcself( "Chulho#JQ_SH_door" );
+		cloakonnpcself( "哲浩#JQ_SH_door" );
 		end;
 	}
 	end;
@@ -1245,4 +1245,4 @@ OnInit:
 // (inside the instance)
 
 // Step 15 (final)
-// pay_fild09,108,346,3	script	Suspicious Light#JQ_SH	4_ENERGY_WHITE,{
+// pay_fild09,108,346,3	script	可疑的漣漪#JQ_SH	4_ENERGY_WHITE,{

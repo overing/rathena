@@ -13,20 +13,20 @@
 //============================================================ 
 
 lhz_airport,143,43,5	script	Airport Staff#lhz_air1a::lhz_airport1	90,{
-	mes "[Airport Staff]";
-	mes "Welcome to the";
-	mes "Lighthalzen Airport,";
-	mes "where we offer nonstop";
-	mes "flights to Einbroch, Juno and Hugel.";
+	mes "[機場人員]";
+	mes "歡迎來到";
+	mes "里希塔樂鎮機場，";
+	mes "我們提供直飛";
+	mes "艾音布羅克、朱諾和毀葛的航班。";
 	next;
-	if (select("Board the Airship.:Cancel.") == 1) {
-		mes "[Airport Staff]";
-		mes "The boarding fee is";
-		mes "1,200 zeny, but you can";
-		mes "waive the fee if you redeem";
-		mes "a Free Ticket for Airship.";
+	if (select("搭乘飛空艇.:取消。") == 1) {
+		mes "[機場人員]";
+		mes "搭乘費用是";
+		mes "1,200 Zeny，但你可以";
+		mes "兌換一張飛空艇免費搭乘券來";
+		mes "免除費用。";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			if (countitem(7311) > 0) {
 				delitem 7311,1; //Free_Flying_Ship_Ticket
 				warp "lhz_airport",148,51;
@@ -37,17 +37,17 @@ lhz_airport,143,43,5	script	Airport Staff#lhz_air1a::lhz_airport1	90,{
 				warp "lhz_airport",148,51;
 				end;
 			}
-			mes "[Airship Staff]";
-			mes "I'm sorry, but you don't";
-			mes "have 1,200 zeny to pay";
-			mes "for the boarding fee.";
+			mes "[飛空艇人員]";
+			mes "很抱歉，你沒有";
+			mes "1,200 Zeny來支付";
+			mes "搭乘費用。";
 			close;
 		}
 	}
-	mes "[Airport Staff]";
-	mes "Thank you and";
-	mes "please come again.";
-	mes "Have a good day~";
+	mes "[機場人員]";
+	mes "謝謝光臨";
+	mes "歡迎再次光臨。";
+	mes "祝您有個美好的一天~";
 	close;
 }
 
@@ -55,29 +55,29 @@ lhz_airport,158,43,5	duplicate(lhz_airport1)	Airship Staff#lhz_air1b	90
 lhz_airport,126,43,5	duplicate(lhz_airport1)	Airship Staff#lhz_air1c	90
 
 lhz_airport,143,49,3	script	Arrival Staff#lhz_air2a::lhz_airport2	90,{
-	mes "[Arrival Staff]";
-	mes "Welcome to Lighthalzen Airport.";
-	mes "Please let me guide you to the";
-	mes "main terminal if you are arriving from your flight. Otherwise, please";
-	mes "board the departing Airship to reach your intended destination.";
+	mes "[抵達人員]";
+	mes "歡迎來到里希塔樂鎮機場。";
+	mes "如果您是搭乘飛機抵達，請讓我引導您前往";
+	mes "主航廈。否則，請";
+	mes "搭乘離港飛空艇到達您的目的地。";
 	next;
-	if (select("Exit to main terminal.:Cancel.") == 1) {
-		mes "[Arrival Staff]";
-		mes "Once you're in the main terminal, you will need to pay the fee again";
-		mes "to board an Airship. You should";
-		mes "only exit if Lighthalzen is your intended destination. Shall we";
-		mes "proceed to the main terminal?";
+	if (select("前往主航廈。:取消。") == 1) {
+		mes "[抵達人員]";
+		mes "一旦你進入主航廈，你需要再次支付費用";
+		mes "才能搭乘飛空艇。您應該";
+		mes "只有在里希塔樂鎮是您的目的地時才離開。我們";
+		mes "要繼續前往主航廈嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			warp "lhz_airport",142,40;
 			end;
 		}
 	}
-	mes "[Arrival Staff]";
-	mes "Alright, thank you";
-	mes "for your patronage";
-	mes "and I hope you have";
-	mes "a pleasant flight~";
+	mes "[抵達人員]";
+	mes "好的，謝謝";
+	mes "您的惠顧";
+	mes "我希望您";
+	mes "有個愉快的飛行~";
 	close;
 }
 

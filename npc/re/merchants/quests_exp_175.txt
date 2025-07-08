@@ -9,41 +9,41 @@
 
 einbech,149,257,4	script	Site manager Elmen#extdq0	4_TOWER_16,{
 	if (checkweight(25814,100) == 0 || checkweight(1201,1) == 0 || (MaxWeight - Weight) < 10000) {
-		mes "- You cannot proceed because you have too many items. -";
+		mes "- 你不能繼續，因為你攜帶的物品過多。 -";
 		close;
 	}
-	mes "[Elmen]";
-	mes "Hello. Adventurer.";
-	mes "If you're here to purchase Dynite mining equipment or refine ore into Dynite, you've come to the right place.";
+	mes "[艾爾門]";
+	mes "你好。冒險者。";
+	mes "如果你來這裡是要購買戴納特礦物採集設備或將礦石提煉成戴納特，你來對地方了。";
 	next;
-	switch( select( "Dynite Refinement", "Dynite Shop", "Dynite Equipment Exchange" ) ) {
+	switch( select( "戴納特提煉", "戴納特商店", "戴納特裝備兌換" ) ) {
 	case 1:
-		npctalk "Elmen: You can refine up to 100 Dynite at a time. The machine is small.", "", bc_self;
-		mes "[Elmen]";
-		mes "" + mesitemlink(25814) + " Refined Ore.";
-		mes "" + mesitemlink(25809) + " ^777777(currently " + countitem(25809) + ")^000000";
-		mes "" + mesitemlink(25810) + " ^777777(currently " + countitem(25810) + ")^000000";
-		mes "" + mesitemlink(25811) + " ^777777(currently " + countitem(25811) + ")^000000";
-		mes "" + mesitemlink(25812) + " ^777777(currently " + countitem(25812) + ")^000000";
-		mes "" + mesitemlink(25813) + " ^777777(currently " + countitem(25813) + ")^000000";
-		mes "You need one each of the five types of ore.";
+		npctalk "Elmen: 你一次最多可以提煉 100 個戴納特。這台機器很小。", "", bc_self;
+		mes "[艾爾門]";
+		mes "" + mesitemlink(25814) + " 精煉礦石。";
+		mes "" + mesitemlink(25809) + " ^777777(目前 " + countitem(25809) + ")^000000";
+		mes "" + mesitemlink(25810) + " ^777777(目前 " + countitem(25810) + ")^000000";
+		mes "" + mesitemlink(25811) + " ^777777(目前 " + countitem(25811) + ")^000000";
+		mes "" + mesitemlink(25812) + " ^777777(目前 " + countitem(25812) + ")^000000";
+		mes "" + mesitemlink(25813) + " ^777777(目前 " + countitem(25813) + ")^000000";
+		mes "你需要五種礦石各一個。";
 		next;
 		input .@val;
 		if (.@val > 100) {
-			mes "[Elmen]";
-			mes "I'm sorry. Adventurer.";
-			mes "Dynite Refinement can only be refined up to 100 at a time? The machine is small, so there is no help. Please understand.";
+			mes "[艾爾門]";
+			mes "我很抱歉。冒險者。";
+			mes "戴納特提煉一次最多只能提煉 100 個？ 這台機器很小，所以沒辦法。請理解。";
 			close;
 		}
 		if (.@val == 0) {
-			mes "[Elmen]";
-			mes "Cancel?";
-			mes "If you need refinement of the Dynite, please find it anytime. There is no one who can do it without me.";
+			mes "[艾爾門]";
+			mes "取消？";
+			mes "如果你需要提煉戴納特，請隨時來找我。沒有人可以做到，除了我。";
 			close;
 		}
 		if (countitem(25809) < .@val || countitem(25810) < .@val || countitem(25811) < .@val || countitem(25812) < .@val || countitem(25813) < .@val) {
-			mes "[Elmen]";
-			mes "Hey! This makes it difficult for each other, don't you run out of materials needed for refining? The materials!";
+			mes "[艾爾門]";
+			mes "嘿！這樣會讓彼此都很為難，你難道不會用完提煉所需的材料嗎？這些材料！";
 			close;
 		}
 		specialeffect EF_REPAIRWEAPON;
@@ -54,32 +54,32 @@ einbech,149,257,4	script	Site manager Elmen#extdq0	4_TOWER_16,{
 		delitem 25812,.@val;	// Ein_PURDIUM
 		delitem 25813,.@val;	// Ein_WHIDIUM
 		getitem 25814,.@val;	// Ein_DYNITE
-		mes "[Elmen]";
-		mes "" + .@val + " Dynite have been refined. It's perfect today!";
+		mes "[艾爾門]";
+		mes "" + .@val + " 戴納特已經被提煉了。 今天非常完美！";
 		close;
 	case 2:
-		mes "[Elmen]";
-		mes "There are various accessories and modification permits. Look carefully at what you want before buying.";
+		mes "[艾爾門]";
+		mes "這裡有各種飾品和改造許可證。在購買之前仔細看看你想要什麼。";
 		close2;
 		callshop "barter_ein_dun03";
 		end;
 	case 3:
-		mes "[Elmen]";
-		mes "I can exchange the equipment with the Dynite, but it's already in a tightly sealed box.";
-		mes "Give me 50 ^4d4dffDynites^000000 and I will open a ^4d4dffweapon box^000000 for you.";
+		mes "[艾爾門]";
+		mes "我可以交換裝備與戴納特，但它已經在一個密封的盒子裡了。";
+		mes "給我 50 個 ^4d4dff戴納特^000000，我就為你打開一個 ^4d4dff武器箱^000000。";
 		next;
-		mes "[Elmen]";
-		mes "I don't know what will come out, but the quality is good. Would you like to open it?";
+		mes "[艾爾門]";
+		mes "我不知道會出現什麼，但品質很好。你想要打開它嗎？";
 		next;
-		if (select( "Close your eyes and exchange.", "Do not exchange." ) == 2) {
-			mes "[Elmen]";
-			mes "Kee, this is a waste, it was a good deal.";
+		if (select( "閉上眼睛交換。", "不要交換。" ) == 2) {
+			mes "[艾爾門]";
+			mes "嘖，這是一種浪費，這是一個很好的交易。";
 			close;
 		}
 		if (countitem(25814) < 50) {
-			mes "[Elmen]";
-			mes "You don't have enough Dynite friends.";
-			mes "I don't know what's going to come out, so it's hard to go anywhere and get this kind of equipment at this price.";
+			mes "[艾爾門]";
+			mes "你的戴納特朋友不夠多。";
+			mes "我不知道會出現什麼，所以在這個價格下很難到任何地方獲得這種裝備。";
 			close;
 		}
 		delitem 25814,50;

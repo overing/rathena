@@ -69,10 +69,10 @@
 //========================Function=&=Script========================
 
 function	script	Q_Warpra	{
-	mes "[Warpra]";
-	mes "Hello,";
-	mes "I can warp you to any town or dungeon, but you need to unlock them first by visiting us.";
-	mes "What do you need?";
+	mes "[傳送師]";
+	mes "哈囉，";
+	mes "我可以將你傳送到任何城鎮或地下城，但你必須先親自去過才能解鎖它們。";
+	mes "你需要什麼？";
 	
 	if(getarg(0) == 0) callfunc "QWS_MMarray",0;
 	if(getarg(0) == 1) callfunc "QWS_MMarray",1;
@@ -103,21 +103,21 @@ function	script	Q_Warpra	{
 
 GM_Menu:
 	next;
-	mes "Town warping = "+(($QW_TW_OFF)?"^FF0000 Off":"^00FF00 On")+"^000000";
-	mes "Dungeon warping = "+(($QW_DW_OFF)?"^FF0000 Off":"^00FF00 On")+"^000000";
-	mes "Dungeon Depth limit is "+(($QW_DL)?"^00FF00 On":"^FF0000 Off")+"^000000";
-	mes "If on Dungeon Depth limit is set to ^0000FF"+$QW_DDL+"^000000";
-	mes "Show Map Users = "+(($QW_MapUserShow)?"^00FF00 On":"^FF0000 Off")+"^000000";
+	mes "城鎮傳送 = "+(($QW_TW_OFF)?"^FF0000 關閉":"^00FF00 開啟")+"^000000";
+	mes "地下城傳送 = "+(($QW_DW_OFF)?"^FF0000 關閉":"^00FF00 開啟")+"^000000";
+	mes "地下城深度限制為 "+(($QW_DL)?"^00FF00 開啟":"^FF0000 關閉")+"^000000";
+	mes "如果開啟，地下城深度限制設定為 ^0000FF"+$QW_DDL+"^000000";
+	mes "顯示地圖使用者 = "+(($QW_MapUserShow)?"^00FF00 開啟":"^FF0000 關閉")+"^000000";
 
-	if ($QW_HF) mes "Healing full = ^00FF00 On ^000000";
-	if ($QW_HP) mes "Healing partly = ^00FF00 On ^000000";
-	if (!$QW_HF && !$QW_HP) mes "Healing = ^FF0000 Off ^000000";
+	if ($QW_HF) mes "完全治癒 = ^00FF00 開啟 ^000000";
+	if ($QW_HP) mes "部分治癒 = ^00FF00 開啟 ^000000";
+	if (!$QW_HF && !$QW_HP) mes "治癒 = ^FF0000 關閉 ^000000";
 
-	mes "Storage = "+(($QW_Stor)?"^00FF00 On":"^FF0000 Off")+"^000000";
-	mes "Guild Storage = "+(($QW_GStor)?"^00FF00 On":"^FF0000 Off")+"^000000";
-	mes "Kafra points collect = "+(($QW_KPoint)?"^00FF00 On":"^FF0000 Off")+"^000000";
+	mes "倉庫 = "+(($QW_Stor)?"^00FF00 開啟":"^FF0000 關閉")+"^000000";
+	mes "公會倉庫 = "+(($QW_GStor)?"^00FF00 開啟":"^FF0000 關閉")+"^000000";
+	mes "卡普拉點數收集 = "+(($QW_KPoint)?"^00FF00 開啟":"^FF0000 關閉")+"^000000";
 
-	switch(select("Town Warping","Dungeon Warping","Dungeon Level Limit","Show Map Users","Healing full","Healing partly","Storage","Guild Storage","Kafra points collect","Set Prices","Special Warp","Exit")) {
+	switch(select("城鎮傳送","地下城傳送","地下城等級限制","顯示地圖使用者","完全治癒","部分治癒","倉庫","公會倉庫","卡普拉點數收集","設定價格","特殊傳送","離開")) {
 	case 1: set $QW_TW_OFF,($QW_TW_OFF)?0:1; goto GM_Menu;
 	case 2: set $QW_DW_OFF,($QW_DW_OFF)?0:1; goto GM_Menu;
 	case 3: goto DungeonLevelLimit;
@@ -151,96 +151,96 @@ GM_Menu:
 Setprice:
 	if ($QW_DW_FEE != 0) set $QW_DW_FEE,0;
 	next;
-	mes "Scroll through the list to see all the options.";
+	mes "滾動列表以查看所有選項。";
 
-	mes "Basic - Warps are = "+(($QW_BW_PRICE)?"^00FF00"+$QW_BW_PRICE:"^FF0000Free")+"^000000";
-	mes "Advanced - Warps are = "+(($QW_AW_PRICE)?"^00FF00"+$QW_AW_PRICE:"^FF0000Free")+"^000000";
-	mes "Overseas - Warps are = "+(($QW_OW_PRICE)?"^00FF00"+$QW_OW_PRICE:"^FF0000Free")+"^000000";
+	mes "基本 - 傳送價格 = "+(($QW_BW_PRICE)?"^00FF00"+$QW_BW_PRICE:"^FF0000免費")+"^000000";
+	mes "進階 - 傳送價格 = "+(($QW_AW_PRICE)?"^00FF00"+$QW_AW_PRICE:"^FF0000免費")+"^000000";
+	mes "海外 - 傳送價格 = "+(($QW_OW_PRICE)?"^00FF00"+$QW_OW_PRICE:"^FF0000免費")+"^000000";
 
-	mes "Basic Dungeon level warp fee = "+(($QW_BW_FEE)?"^00FF00"+$QW_BW_FEE:"^FF0000NO")+"^000000 zeny per level";
-	mes "Advanced Dungeon level warp fee = "+(($QW_AW_FEE)?"^00FF00"+$QW_AW_FEE:"^FF0000NO")+"^000000 zeny per level";
-	mes "Overseas Dungeon level warp fee = "+(($QW_OW_FEE)?"^00FF00"+$QW_OW_FEE:"^FF0000NO")+"^000000 zeny per level";
+	mes "基本地下城等級傳送費用 = "+(($QW_BW_FEE)?"^00FF00"+$QW_BW_FEE:"^FF0000無")+"^000000 zeny 每等級";
+	mes "進階地下城等級傳送費用 = "+(($QW_AW_FEE)?"^00FF00"+$QW_AW_FEE:"^FF0000無")+"^000000 zeny 每等級";
+	mes "海外地下城等級傳送費用 = "+(($QW_OW_FEE)?"^00FF00"+$QW_OW_FEE:"^FF0000無")+"^000000 zeny 每等級";
 
-	mes "Full Healing = "+(($QW_HF_PRICE)?"^00FF00"+$QW_HF_PRICE:"^FF0000Free")+"^000000";
-	mes "^FF0000HP ^000000Part Healing = "+(($QW_HP_H_PRICE)?"^00FF00"+$QW_HP_H_PRICE+"^000000 a point":"^FF0000Free^000000");
-	mes "^FF0000SP ^000000Part Healing = "+(($QW_HP_S_PRICE)?"^00FF00"+$QW_HP_S_PRICE+"^000000 a point":"^FF0000Free^000000");
+	mes "完全治癒 = "+(($QW_HF_PRICE)?"^00FF00"+$QW_HF_PRICE:"^FF0000免費")+"^000000";
+	mes "^FF0000HP ^000000部分治癒 = "+(($QW_HP_H_PRICE)?"^00FF00"+$QW_HP_H_PRICE+"^000000 一點":"^FF0000免費^000000");
+	mes "^FF0000SP ^000000部分治癒 = "+(($QW_HP_S_PRICE)?"^00FF00"+$QW_HP_S_PRICE+"^000000 一點":"^FF0000免費^000000");
 
-	if ($QW_S_PRICE && $QW_S_PRICE != 60) mes "Storage = ^00FF00 "+$QW_S_PRICE+" ^000000";
-	if (!$QW_S_PRICE) mes "Storage = ^FF0000 Free ^000000";
-	if ($QW_S_PRICE == 60) mes "Storage = ^0000FF Kafra Mode ^000000";
-	mes "Guild Storage = "+(($QW_GS_PRICE)?"^00FF00"+$QW_GS_PRICE:"^FF0000Free")+"^000000";
+	if ($QW_S_PRICE && $QW_S_PRICE != 60) mes "倉庫 = ^00FF00 "+$QW_S_PRICE+" ^000000";
+	if (!$QW_S_PRICE) mes "倉庫 = ^FF0000 免費 ^000000";
+	if ($QW_S_PRICE == 60) mes "倉庫 = ^0000FF 卡普拉模式 ^000000";
+	mes "公會倉庫 = "+(($QW_GS_PRICE)?"^00FF00"+$QW_GS_PRICE:"^FF0000免費")+"^000000";
 	
-	switch(select("Basic - Warps","Advanced - Warps","Overseas - Warps","Basic Dungeon warp fee","Advanced Dungeon warp fee","Overseas Dungeon warp fee","Full Healing","Part Healing","Storage","Guild Storage","Back","Exit")) {
+	switch(select("基本 - 傳送","進階 - 傳送","海外 - 傳送","基本地下城傳送費用","進階地下城傳送費用","海外地下城傳送費用","完全治癒","部分治癒","倉庫","公會倉庫","返回","離開")) {
 	case 1:
 		next;
-		mes "Basic - Warps are = "+(($QW_BW_PRICE)?"^00FF00"+$QW_BW_PRICE:"^FF0000Free")+"^000000";
-		mes "Basic - Warps are starter towns and related dungeons.";
+		mes "基本 - 傳送價格 = "+(($QW_BW_PRICE)?"^00FF00"+$QW_BW_PRICE:"^FF0000免費")+"^000000";
+		mes "基本 - 傳送為新手城鎮和相關的地下城。";
 		input $QW_BW_PRICE;
 		goto Setprice;
 	case 2:
 		next;
-		mes "Advanced - Warps are = "+(($QW_AW_PRICE)?"^00FF00"+$QW_AW_PRICE:"^FF0000Free")+"^000000";
-		mes "Advanced - Warps are towns and dungeons on the same island but not close to any starter town.";
+		mes "進階 - 傳送價格 = "+(($QW_AW_PRICE)?"^00FF00"+$QW_AW_PRICE:"^FF0000免費")+"^000000";
+		mes "進階 - 傳送為在同一個島嶼上的城鎮和地下城，但不靠近任何新手城鎮。";
 		input $QW_AW_PRICE;
 		goto Setprice;
 	case 3:
 		next;
-		mes "Overseas - Warps are = "+(($QW_OW_PRICE)?"^00FF00"+$QW_OW_PRICE:"^FF0000Free")+"^000000";
-		mes "Overseas - Warps are towns and dungeons overseas reachable by boat from Alberta.";
+		mes "海外 - 傳送價格 = "+(($QW_OW_PRICE)?"^00FF00"+$QW_OW_PRICE:"^FF0000免費")+"^000000";
+		mes "海外 - 傳送為可從艾爾貝塔乘船到達的海外城鎮和地下城。";
 		input $QW_OW_PRICE;
 		goto Setprice;
 	case 4:
 		next;
-		mes "Basic Dungeon level warp fee = "+(($QW_BW_FEE)?"^00FF00"+$QW_BW_FEE:"^FF0000NO")+"^000000 zeny per level";
-		mes "Basic - Warps are starter town related dungeons.";
-		mes "Dungeon warp fees are calculated by maps away from entrance of the dungeon times Dungeon warp fee.";
-		mes "These costs are on top of the regular Warp costs.";
+		mes "基本地下城等級傳送費用 = "+(($QW_BW_FEE)?"^00FF00"+$QW_BW_FEE:"^FF0000無")+"^000000 zeny 每等級";
+		mes "基本 - 傳送為與新手城鎮相關的地下城。";
+		mes "地下城傳送費用是根據地圖離地下城入口的距離乘以地下城傳送費用來計算的。";
+		mes "這些費用是在常規傳送費用之上的。";
 		input $QW_BW_FEE;
 		goto Setprice;
 	case 5:
 		next;
-		mes "Advanced Dungeon level warp fee = "+(($QW_AW_FEE)?"^00FF00"+$QW_AW_FEE:"^FF0000NO")+"^000000 zeny per level";
-		mes "Advanced - Warps are dungeons not close to any starter town.";
-		mes "Dungeon warp fees are calculated by maps away from entrance of the dungeon times Dungeon warp fee.";
-		mes "These costs are on top of the regular Warp costs.";
+		mes "進階地下城等級傳送費用 = "+(($QW_AW_FEE)?"^00FF00"+$QW_AW_FEE:"^FF0000無")+"^000000 zeny 每等級";
+		mes "進階 - 傳送為不靠近任何新手城鎮的地下城。";
+		mes "地下城傳送費用是根據地圖離地下城入口的距離乘以地下城傳送費用來計算的。";
+		mes "這些費用是在常規傳送費用之上的。";
 		input $QW_AW_FEE;
 		goto Setprice;
 	case 6:
 		next;
-		mes "Overseas Dungeon level warp fee = "+(($QW_OW_FEE)?"^00FF00"+$QW_OW_FEE:"^FF0000NO")+"^000000 zeny per level";
-		mes "Overseas - Warps are dungeons related to towns overseas reachable by boat from Alberta.";
-		mes "Dungeon warp fees are calculated by maps away from entrance of the dungeon times Dungeon warp fee.";
-		mes "These costs are on top of the regular Warp costs.";
+		mes "海外地下城等級傳送費用 = "+(($QW_OW_FEE)?"^00FF00"+$QW_OW_FEE:"^FF0000無")+"^000000 zeny 每等級";
+		mes "海外 - 傳送為與可從艾爾貝塔乘船到達的海外城鎮相關的地下城。";
+		mes "地下城傳送費用是根據地圖離地下城入口的距離乘以地下城傳送費用來計算的。";
+		mes "這些費用是在常規傳送費用之上的。";
 		input $QW_OW_FEE;
 		goto Setprice;
 	case 7:
 		next;
-		mes "Full Healing = "+(($QW_HF_PRICE)?"^00FF00"+$QW_HF_PRICE:"^FF0000Free")+"^000000";
-		mes "Instant full healing 1 price.";
+		mes "完全治癒 = "+(($QW_HF_PRICE)?"^00FF00"+$QW_HF_PRICE:"^FF0000免費")+"^000000";
+		mes "立即完全治癒一個價格。";
 		input $QW_HF_PRICE;
 		goto Setprice;
 	case 8:
 		next;
-		mes "^FF0000HP ^000000Part Healing = "+(($QW_HP_H_PRICE)?"^00FF00"+$QW_HP_H_PRICE+"^000000 a point":"^FF0000Free^000000");
-		mes "^FF0000SP ^000000Part Healing = "+(($QW_HP_S_PRICE)?"^00FF00"+$QW_HP_S_PRICE+"^000000 a point":"^FF0000Free^000000");
-		mes "Healing price per 1 HP.";
-		mes "Healing price per 1 SP.";
-		mes "2 inputs, first HP then SP.";
+		mes "^FF0000HP ^000000部分治癒 = "+(($QW_HP_H_PRICE)?"^00FF00"+$QW_HP_H_PRICE+"^000000 一點":"^FF0000免費^000000");
+		mes "^FF0000SP ^000000部分治癒 = "+(($QW_HP_S_PRICE)?"^00FF00"+$QW_HP_S_PRICE+"^000000 一點":"^FF0000免費^000000");
+		mes "每 1 HP 的治癒價格。";
+		mes "每 1 SP 的治癒價格。";
+		mes "2 個輸入，先 HP 後 SP。";
 		input $QW_HP_H_PRICE;
 		input $QW_HP_S_PRICE;
 		goto Setprice;
 	case 9:
 		next;
-		if ($QW_S_PRICE && $QW_S_PRICE != 60) mes "Storage = ^00FF00 "+$QW_S_PRICE+" ^000000";
-		if (!$QW_S_PRICE) mes "Storage = ^FF0000 Free ^000000";
-		if ($QW_S_PRICE == 60) mes "Storage = ^0000FF Kafra Mode ^000000";
-		mes "Storage cost, if set to 60 Kafra pricing will be handled.";
+		if ($QW_S_PRICE && $QW_S_PRICE != 60) mes "倉庫 = ^00FF00 "+$QW_S_PRICE+" ^000000";
+		if (!$QW_S_PRICE) mes "倉庫 = ^FF0000 免費 ^000000";
+		if ($QW_S_PRICE == 60) mes "倉庫 = ^0000FF 卡普拉模式 ^000000";
+		mes "倉庫費用，如果設定為 60，將處理卡普拉定價。";
 		input $QW_S_PRICE;
 		goto Setprice;
 	case 10:
 		next;
-		mes "Guild Storage = "+(($QW_GS_PRICE)?"^00FF00"+$QW_GS_PRICE:"^FF0000Free")+"^000000";
-		mes "Guild Storage, free on Guild Kafras.";
+		mes "公會倉庫 = "+(($QW_GS_PRICE)?"^00FF00"+$QW_GS_PRICE:"^FF0000免費")+"^000000";
+		mes "公會倉庫，在公會卡普拉免費。";
 		input $QW_GS_PRICE;
 		goto Setprice;
 	case 11:
@@ -255,30 +255,30 @@ Setprice:
 SpecialWarpMenu:
 	if ($QW_SP_Warpname$ == "") set $QW_SP_Warpname$,"Special Warp";
 	next;
-	mes "Scroll down to see all the information";
-	mes "The Special warp menu option will show in the main menu when all towns & dungeons are unlocked";
-	mes "And when the map for special warping has been set";
-	mes "menu option name set to ^0000FF"+$QW_SP_Warpname$+"^000000";
-	if ($QW_SP_WarpMap$ == "") mes "map is currently ^FF0000not^000000 set, and Special warp menu is off";
-	if ($QW_SP_WarpMap$ != "") mes "map is currently set to ^0000FF"+$QW_SP_WarpMap$+"^000000 and Special Warp menu is on";
-	mes "coords are set to ^0000FF"+$QW_SP_WarpX+","+$QW_SP_WarpY+"^000000";
-	switch(select("Set Special Warp name to show in menu", "Set WarpMap","Set Coords","Go Back to GM_Menu","Exit")){
+	mes "向下滾動以查看所有信息";
+	mes "當所有城鎮和地下城都解鎖時，特殊傳送菜單選項將顯示在主菜單中";
+	mes "並且當已設定用於特殊傳送的地圖時";
+	mes "菜單選項名稱設定為 ^0000FF"+$QW_SP_Warpname$+"^000000";
+	if ($QW_SP_WarpMap$ == "") mes "地圖目前^FF0000未^000000設定，並且特殊傳送菜單已關閉";
+	if ($QW_SP_WarpMap$ != "") mes "地圖目前已設定為 ^0000FF"+$QW_SP_WarpMap$+"^000000 並且特殊傳送菜單已開啟";
+	mes "座標設定為 ^0000FF"+$QW_SP_WarpX+","+$QW_SP_WarpY+"^000000";
+	switch(select("設定要在菜單中顯示的特殊傳送名稱", "設定 WarpMap","設定座標","返回 GM_Menu","離開")){
 	case 1:
 		next;
-		mes "Set the name to show in the menu as option.";
+		mes "設定要在菜單中顯示為選項的名稱。";
 		input $QW_SP_Warpname$;
 		goto SpecialWarpMenu;
 	case 2:
 		next;
-		mes "Set the map in the ^0000FFmapname^000000 format.";
-		mes "When this warpmap is set the option for players will show once they meet the requirements.";
-		mes "To disable Special Warp Menu option, clear this!";
+		mes "以 ^0000FFmapname^000000 格式設定地圖。";
+		mes "當設定此 warpmap 時，一旦玩家滿足要求，該選項將顯示。";
+		mes "要禁用特殊傳送菜單選項，請清除此項！";
 		input $QW_SP_WarpMap$;
 		goto SpecialWarpMenu;
 	case 3:
 		next;
-		mes "First input = Xcoord";
-		mes "Second input = Ycoord";
+		mes "第一個輸入 = X 座標";
+		mes "第二個輸入 = Y 座標";
 		input $QW_SP_WarpX;
 		input $QW_SP_WarpY;
 		goto SpecialWarpMenu;
@@ -293,16 +293,16 @@ SpecialWarpMenu:
 
 DungeonLevelLimit:
 	next;
-	mes "Dungeon Depth limit is "+(($QW_DL)?"^00FF00On":"^FF0000Off")+"^000000";
-	mes "If^00FF00 On ^000000Dungeon Depth limit is set to ^0000FF"+$QW_DDL+"^000000";
+	mes "地下城深度限制為 "+(($QW_DL)?"^00FF00開啟":"^FF0000關閉")+"^000000";
+	mes "如果^00FF00 開啟 ^000000地下城深度限制設定為 ^0000FF"+$QW_DDL+"^000000";
 
-	switch(select("Toggle Dungeon Depth Limit","Set Dungeon Depth Limit","Go Back to GM_Menu","Exit")){
+	switch(select("切換地下城深度限制","設定地下城深度限制","返回 GM_Menu","離開")){
 	case 1: set $QW_DL,($QW_DL)?0:1; goto DungeonLevelLimit;
 	case 2:
 		next;
-		mes "Set limit of Dungeon Depth 0 = entrance";
-		mes "Depth 1 is a map connected to 0 and so on";
-		mes "Shortest Route to map counts as depth";
+		mes "設定地下城深度限制 0 = 入口";
+		mes "深度 1 是連接到 0 的地圖，依此類推";
+		mes "到地圖的最短路線算作深度";
 		input $QW_DDL;
 		goto DungeonLevelLimit;
 	case 3: goto GM_Menu;
@@ -348,8 +348,8 @@ L_dungeon:
 	callfunc "QWS_DLarray";
 
 	next;
-	mes "[Warpra]";
-	mes "Please select where you want to go:";
+	mes "[傳送師]";
+	mes "請選擇您想要前往的地方：";
 	freeloop(1);
 	set .@menu$,"";
 	for(set .@i,0; .@i<18; set .@i,.@i+1)	// Expected maximum is 18
@@ -378,14 +378,14 @@ L_heal_Full:
 	set Zeny, Zeny-@healfee;
 	if ($QW_KPoint == 1) set RESRVPTS, RESRVPTS + (@healfee/500);
 	next;
-	mes "[Warpra]";
-	mes "Close this window and I will heal you.";
+	mes "[傳送師]";
+	mes "關閉此視窗，我會幫你治療。";
 	close2;
 	percentheal 100,100;
 	end;
 
 L_heal_Part:
-	set @healchoice,select("Full heal","Health Points only","Skill Points only","Exit");
+	set @healchoice,select("完全治癒","僅恢復生命值","僅恢復技能點數","離開");
 	if (@healchoice == 1) callsub PHeal,1,1;
 	if (@healchoice == 2) callsub PHeal,1,0;
 	if (@healchoice == 3) callsub PHeal,0,1;
@@ -397,12 +397,12 @@ PHeal:
 	set @Sp, MaxSp-Sp;
 	set @HpPrice, @hp*$QW_HP_H_PRICE;
 	set @SpPrice, @sp*$QW_HP_S_PRICE;
-	mes "[Warpra]";
-	if(getarg(0) == 1) mes ""+@HpPrice+" Zeny for "+@Hp+" health points";
-	if(getarg(1) == 1) mes ""+@SpPrice+" Zeny for "+@Sp+" skill points";
+	mes "[傳送師]";
+	if(getarg(0) == 1) mes "需要 "+@HpPrice+" Zeny 才能恢復 "+@Hp+" 點生命值";
+	if(getarg(1) == 1) mes "需要 "+@SpPrice+" Zeny 才能恢復 "+@Sp+" 點技能點數";
 	set @total, @HpPrice+@SpPrice;
-	mes "for a total of "+@total+" zeny";
-    	if (select("Heal me","Let me see the choices again")==2) goto L_heal_Part;
+	mes "總共需要 "+@total+" zeny";
+    	if (select("治癒我","讓我再看看選項")==2) goto L_heal_Part;
     	
     	if(getarg(0) == 1)set @HpPrice, (MaxHp-Hp)*$QW_HP_H_PRICE;
 	if(getarg(1) == 1)set @SpPrice, (MaxSp-Sp)*$QW_HP_S_PRICE;
@@ -418,19 +418,19 @@ PHeal:
 	end;
 
 Zeny_Short_Both:
-	mes "[Warpra]";
-	mes "Choose another option, you can afford both.";
-	mes "I can heal as much as you can afford, too.";
-	if (select("OK","Exit") == 2) goto L_end;
+	mes "[傳送師]";
+	mes "選擇其他選項，你負擔得起全部。";
+	mes "我能治癒你所有能負擔的量。";
+	if (select("好","離開") == 2) goto L_end;
 	goto PHeal;
 
 Zeny_short_HP:
-	mes "[Warpra]";
-	mes "Do you want me to partly heal your HP?";
-	if (select("Yes","No") == 2) goto L_end;
+	mes "[傳送師]";
+	mes "你想要我部分恢復你的生命值嗎？";
+	if (select("是","否") == 2) goto L_end;
 	set @Hp, Zeny/$QW_HP_H_PRICE;
     	set @HpPrice, @Hp*$QW_HP_H_PRICE;
-    	if (@Hp == 1) mes "You're not worth the effort.";
+    	if (@Hp == 1) mes "你不值得我花費力氣。";
     	if (@Hp == 1) goto L_end;
     	set Zeny, Zeny-@HpPrice;
 	heal @Hp,0;
@@ -438,12 +438,12 @@ Zeny_short_HP:
 	end;
 
 Zeny_short_SP:
-	mes "[Warpra]";
-	mes "Do you want me to partly heal your SP?";
-	if (select("Yes","No") == 2) goto L_end;
+	mes "[傳送師]";
+	mes "你想要我部分恢復你的技能點數嗎？";
+	if (select("是","否") == 2) goto L_end;
 	set @Sp, Zeny/$QW_HP_S_PRICE;
     	set @SpPrice, @Sp*$QW_HP_S_PRICE;
-    	if (@Sp == 1) mes "You're not worth the effort.";
+    	if (@Sp == 1) mes "你不值得我花費力氣。";
     	if (@Sp == 1) goto L_end;
     	set Zeny, Zeny-@SpPrice;
 	heal 0,@Sp;
@@ -462,9 +462,9 @@ L_Storage:
 	set Zeny, Zeny-@fee;
 	if ($QW_KPoint == 1) set RESRVPTS, RESRVPTS + (@fee/5);
 
-	mes "[Warpra]";
+	mes "[傳送師]";
 	if(#kafra_code) {
-		mes "Enter your storage password:";
+		mes "請輸入您的倉庫密碼：";
 		set @code_,0;
 		input @code_;
 		if(@code_ != #kafra_code) {
@@ -474,21 +474,21 @@ L_Storage:
 		set @kafcode_try,0;
 		set @code_,0;
 	}
-	mes "Close this window and I will open your storage.";
+	mes "關閉此視窗，我會開啟你的倉庫。";
 	close2;
 	openstorage;
 	end;
 
 L_StorageJBlow:
-	mes "[Warpra]";
-	mes "I am sorry but you have to be at least Novice level 6 if you want to use the storage.";
+	mes "[傳送師]";
+	mes "抱歉，如果您想要使用倉庫，您必須至少是初心者等級 6。";
 	return;
 
 L_GStorage:
 	if (!@GID) {
 		next;
-		mes "[Warpra]";
-		mes "You are not a part of a guild I can't help you.";
+		mes "[傳送師]";
+		mes "你不是公會的一員，我無法幫助你。";
 		close;
 		end;
 	}
@@ -496,8 +496,8 @@ L_GStorage:
 	set Zeny, Zeny-$QW_GS_PRICE;
 	if ($QW_KPoint == 1) set RESRVPTS, RESRVPTS + ($QW_GS_PRICE/5);
 	next;
-	mes "[Warpra]";
-	mes "Close this window and I will open the ^5533FF" + GetGuildName(@GID) + "^000000 storage.";
+	mes "[傳送師]";
+	mes "關閉此視窗，我會開啟 ^5533FF" + GetGuildName(@GID) + "^000000 的公會倉庫。";
 	close2;
 	guildopenstorage;
 	end;
@@ -509,20 +509,20 @@ L_end:
 //============================Few=Warp=============================
 L_FewWarps:
 	next;
-	mes "[Warpra]";
-	mes "You need to unlock locations before they come available to you.";
-	mes "To unlock a location talk to my colleagues all over the world.";
-	mes "Each account has its own stamp card.";
-	mes "Want me to check what stamps you have collected so far?";
-	if (select("Yes","No")==1) callsub stampcard;
+	mes "[傳送師]";
+	mes "您需要解鎖地點，它們才會對您開放。";
+	mes "要解鎖地點，請與我在世界各地的同事交談。";
+	mes "每個帳戶都有自己的集點卡。";
+	mes "想要我查看您目前收集了哪些印章嗎？";
+	if (select("是","否")==1) callsub stampcard;
 	close;
 	end;
 
 //============================No=Unlock============================
 L_NoUnlock:
 	next;
-	mes "[Warpra]";
-	mes "I don't unlock this location, my assistant deeper in the dungeon will unlock this place.";
+	mes "[傳送師]";
+	mes "我無法解鎖這個地點，我在地牢深處的助手會解鎖這個地方。";
 	close;
 	end;
 	
@@ -530,11 +530,11 @@ L_NoUnlock:
 L_Short_on_zeny:
 	next;
 	switch(getarg(0)) {
-	case 0: mes "You don't seem to have "+@pTprice[@Tmenuref[@TWMenu-1]]+" zeny to pay for the warp to "+@pTmenuitems$[@Tmenuref[@TWMenu-1]]+"."; break;
-	case 1: mes "You don't seem to have "+@warpprice+" zeny to pay for the warp to "+@DLevelName$[@DWLmenuref[@DWLMenu-1]]+" at "+@pDmenuitems$[@Dmenuref[@DWMenu-1]]+"."; break;
-	case 2: mes "You don't seem to have "+@fee+" zeny to pay the storage fee."; break;
-	case 3: mes "You don't seem to have "+$QW_GS_PRICE+" zeny to pay the guild storage fee."; break;
-	case 4: mes "You don't seem to have "+@healfee+" zeny to pay for your healing."; break;
+	case 0: mes "您似乎沒有 "+@pTprice[@Tmenuref[@TWMenu-1]]+" zeny 來支付傳送到 "+@pTmenuitems$[@Tmenuref[@TWMenu-1]]+" 的費用。"; break;
+	case 1: mes "您似乎沒有 "+@warpprice+" zeny 來支付傳送到 "+@DLevelName$[@DWLmenuref[@DWLMenu-1]]+" 在 "+@pDmenuitems$[@Dmenuref[@DWMenu-1]]+" 的費用。"; break;
+	case 2: mes "您似乎沒有 "+@fee+" zeny 來支付倉庫費用。"; break;
+	case 3: mes "您似乎沒有 "+$QW_GS_PRICE+" zeny 來支付公會倉庫費用。"; break;
+	case 4: mes "您似乎沒有 "+@healfee+" zeny 來支付您的治療費用。"; break;
 	}
 	close;
 	end;
@@ -543,19 +543,19 @@ L_Short_on_zeny:
 stampcard:
 // Counting of the amount of places you have unlocked
 	next;
-	mes "Let me check what Towns you have.";
+	mes "讓我檢查你有什麼城鎮。";
 	callfunc "QWS_TownStamps";
-	mes "You collected^00FF00 "+@Tstamp+" of "+@MaxTstamp+" ^000000Towns.";
+	mes "你收集了^00FF00 "+@Tstamp+" 個，總共 "+@MaxTstamp+" ^000000個城鎮。";
 	if (@Tstamp == 15) {
-		mes "They say there is an island you can only get to when married...";
+		mes "他們說有一個島嶼只有結婚才能到達...";
 		emotion ET_SMILE;
 	}
 	next;
-	mes "Let me check what dungeons you have.";
+	mes "讓我檢查你有什麼地下城。";
 	callfunc "QWS_DungeonStamps";
-	mes "You collected^00FF00 "+@Dstamp+" of "+@MaxDstamp+" ^000000Dungeons.";
-	mes "To unlock a dungeon, search for my colleagues.";
-	mes "You can usually find them near the middle or end of the dungeon.";
+	mes "你收集了^00FF00 "+@Dstamp+" 個，總共 "+@MaxDstamp+" ^000000個地下城。";
+	mes "要解鎖地下城，請尋找我的同事。";
+	mes "你通常可以在地下城的中心或尾端找到他們。";
 	return;
 }
 
@@ -682,7 +682,7 @@ function	script	QWS_MMarray	{
 //	QWS_Make_Town_Menu 0;	// Use a free number (last used is 30, Eclage)
 //
 // Adding a warpra:
-//	map,x,y,facing	script	Warpra#example	113,{
+//	map,x,y,facing	script	傳送師#example	113,{
 //		callfunc "QWS_Town_Warpra",<town number>,"Your Town";
 //		close;
 //	}
@@ -1026,7 +1026,7 @@ menu_item:
 //	QWS_Make_Dungeon_Menu 0;	// Use a free number (last used is 28, Kiel Dungeon)
 //
 // Adding a warpra:
-//	map,x,y,facing	script	Warpra Helper#example	112,{
+//	map,x,y,facing	script	傳送師 幫手#example	112,{
 //		callfunc "QWS_Dungeon_Warpra",<dungeon number>,"Your Dungeon";
 //		close;
 //	}
@@ -1531,13 +1531,13 @@ function	script	QWS_Dungeon_Warpra	{
 	function QWS_D_setbin;
 	
 	if ((QWS_D_getbin(getarg(0)) == 0) && (getarg(1) != "")) {
-		mes "[Warpra]";
-		mes getarg(1)+" unlocked!";
+		mes "[傳送師]";
+		mes getarg(1)+" 已解鎖！";
 		QWS_D_setbin(getarg(0));
 		return;
 	} else if (QWS_D_getbin(getarg(0)) == 1) {
-		mes "[Warpra]";
-		mes "Sorry, I can only unlock this location.";
+		mes "[傳送師]";
+		mes "抱歉，我只能解鎖這個地點。";
 	} else
 		debugmes "QWS_Dungeon_Warpra error, improper syntax?";
 	return;
@@ -1577,8 +1577,8 @@ function	script	QWS_Town_Warpra	{
 	function QWS_T_setbin;
 	
 	if ((QWS_T_getbin(getarg(0)) == 0) && (getarg(1) != "")) {
-		mes "[Warpra]";
-		mes getarg(1)+" unlocked!";
+		mes "[傳送師]";
+		mes getarg(1)+" 已解鎖！";
 		QWS_T_setbin(getarg(0));
 		return;
 	} else if (QWS_T_getbin(getarg(0)) == 1) {
@@ -1615,80 +1615,80 @@ binget:
 }
 //============================Warpras==============================
 
--	script	Warpra#0	-1,{ callfunc "Q_Warpra",1; }
-alb2trea,73,101,4	duplicate(Warpra#0)	Warpra#1	113
-ama_fild01,178,325,1	duplicate(Warpra#0)	Warpra#2	113
-gef_fild10,71,339,4	duplicate(Warpra#0)	Warpra#3	113
-izlu2dun,104,82,4	duplicate(Warpra#0)	Warpra#4	113
-mjolnir_02,85,363,4	duplicate(Warpra#0)	Warpra#5	113
-moc_fild04,207,331,4	duplicate(Warpra#0)	Warpra#6	113
-moc_fild19,106,97,4	duplicate(Warpra#0)	Warpra#7	113
-moc_ruins,64,166,4	duplicate(Warpra#0)	Warpra#8	113
-niflheim,197,192,3	duplicate(Warpra#0)	Warpra#9	113
-pay_arche,39,135,4	duplicate(Warpra#0)	Warpra#10	113
-prt_fild05,273,215,4	duplicate(Warpra#0)	Warpra#11	113
-tur_dun01,148,239,4	duplicate(Warpra#0)	Warpra#12	113
-valkyrie,48,35,8	duplicate(Warpra#0)	Warpra#13	113
-yuno_fild03,37,135,4	duplicate(Warpra#0)	Warpra#14	113
+-	script	傳送師#0	-1,{ callfunc "Q_Warpra",1; }
+alb2trea,73,101,4	duplicate(傳送師#0)	傳送師#1	113
+ama_fild01,178,325,1	duplicate(傳送師#0)	傳送師#2	113
+gef_fild10,71,339,4	duplicate(傳送師#0)	傳送師#3	113
+izlu2dun,104,82,4	duplicate(傳送師#0)	傳送師#4	113
+mjolnir_02,85,363,4	duplicate(傳送師#0)	傳送師#5	113
+moc_fild04,207,331,4	duplicate(傳送師#0)	傳送師#6	113
+moc_fild19,106,97,4	duplicate(傳送師#0)	傳送師#7	113
+moc_ruins,64,166,4	duplicate(傳送師#0)	傳送師#8	113
+niflheim,197,192,3	duplicate(傳送師#0)	傳送師#9	113
+pay_arche,39,135,4	duplicate(傳送師#0)	傳送師#10	113
+prt_fild05,273,215,4	duplicate(傳送師#0)	傳送師#11	113
+tur_dun01,148,239,4	duplicate(傳送師#0)	傳送師#12	113
+valkyrie,48,35,8	duplicate(傳送師#0)	傳送師#13	113
+yuno_fild03,37,135,4	duplicate(傳送師#0)	傳送師#14	113
 
-alberta,32,240,4	script	Warpra#15	113,{ callfunc "QWS_Town_Warpra",1,"Alberta Town"; close; }
-aldebaran,146,118,4	script	Warpra#16	113,{ callfunc "QWS_Town_Warpra",2,"Aldebaran Town"; close; }
-ayothaya,216,171,5	script	Warpra#17	113,{ callfunc "QWS_Town_Warpra",4,"Ayothaya Town"; close; }
-amatsu,193,81,1	script	Warpra#18	113,{ callfunc "QWS_Town_Warpra",3,"Amatsu Town"; close; }
-comodo,195,158,4	script	Warpra#19	113,{ callfunc "QWS_Town_Warpra",5,"Comodo Town"; close; }
-einbroch,229,196,5	script	Warpra#20	113,{ callfunc "QWS_Town_Warpra",7,"Einbroch Town"; close; }
-einbech,173,131,5	script	Warpra#21	113,{ callfunc "QWS_Town_Warpra",6,"Einbech Town"; close; }
-geffen,116,66,4	script	Warpra#22	113,{ callfunc "QWS_Town_Warpra",8,"Geffen Town"; close; }
-gonryun,152,130,4	script	Warpra#23	113,{ callfunc "QWS_Town_Warpra",9,"Kunlun Town"; close; }
-hugel,90,127,5	script	Warpra#24	113,{ callfunc "QWS_Town_Warpra",10,"Hugel Town"; close; }
-jawaii,107,182,5	script	Warpra#25	113,{ callfunc "QWS_Town_Warpra",12,"Jawaii Town"; close; }
-izlude,132,116,4	script	Warpra#26	113,{ callfunc "QWS_Town_Warpra",11,"Izlude Town"; close; }
-lighthalzen,153,100,5	script	Warpra#27	113,{ callfunc "QWS_Town_Warpra",13,"Lighthalzen Town"; close; }
-louyang,211,106,4	script	Warpra#28	113,{ callfunc "QWS_Town_Warpra",14,"Luoyang Town"; close; }
-morocc,157,95,4	script	Warpra#29	113,{ callfunc "QWS_Town_Warpra",16,"Morocc Town"; close; }
-nif_fild01,319,77,1	script	Warpra#30	113,{ callfunc "QWS_Town_Warpra",17,"Niflheim Town"; close; }
-payon,183,110,4	script	Warpra#31	113,{ callfunc "QWS_Town_Warpra",18,"Payon Town"; close; }
-prontera,147,172,5	script	Warpra#32	113,{ callfunc "QWS_Town_Warpra",0,"Prontera Town"; close; }
-umbala,133,130,4	script	Warpra#33	113,{ callfunc "QWS_Town_Warpra",19,"Umbala Town"; close; }
-xmas,151,136,4	script	Warpra#34	113,{ callfunc "QWS_Town_Warpra",15,"Lutie Town"; close; }
-yuno,138,162,4	script	Warpra#35	113,{ callfunc "QWS_Town_Warpra",20,"Juno Town"; close; }
-brasilis,201,222,4	script	Warpra#36	113,{ callfunc "QWS_Town_Warpra",21,"Brasilis Town"; close; }
-dicastes01,194,194,6	script	Warpra#37	113,{ callfunc "QWS_Town_Warpra",22,"El Dicastes Town"; close; }
-manuk,262,177,4	script	Warpra#38	113,{ callfunc "QWS_Town_Warpra",23,"Manuk Town"; close; }
-mora,110,100,4	script	Warpra#39	113,{ callfunc "QWS_Town_Warpra",24,"Mora Town"; close; }
-moscovia,216,196,6	script	Warpra#40	113,{ callfunc "QWS_Town_Warpra",25,"Moscovia Town"; close; }
-rachel,135,116,4	script	Warpra#41	113,{ callfunc "QWS_Town_Warpra",26,"Rachel Town"; close; }
-splendide,205,153,4	script	Warpra#42	113,{ callfunc "QWS_Town_Warpra",27,"Splendide Town"; close; }
-veins,214,123,4	script	Warpra#43	113,{ callfunc "QWS_Town_Warpra",28,"Veins Town"; close; }
-dewata,194,178,6	script	Warpra#44	113,{ callfunc "QWS_Town_Warpra",29,"Dewata Town"; close; }
-eclage,107,37,4	script	Warpra#45	113,{ callfunc "QWS_Town_Warpra",30,"Eclage Town"; close; }
+alberta,32,240,4	script	傳送師#15	113,{ callfunc "QWS_Town_Warpra",1,"Alberta Town"; close; }
+aldebaran,146,118,4	script	傳送師#16	113,{ callfunc "QWS_Town_Warpra",2,"Aldebaran Town"; close; }
+ayothaya,216,171,5	script	傳送師#17	113,{ callfunc "QWS_Town_Warpra",4,"Ayothaya Town"; close; }
+amatsu,193,81,1	script	傳送師#18	113,{ callfunc "QWS_Town_Warpra",3,"Amatsu Town"; close; }
+comodo,195,158,4	script	傳送師#19	113,{ callfunc "QWS_Town_Warpra",5,"Comodo Town"; close; }
+einbroch,229,196,5	script	傳送師#20	113,{ callfunc "QWS_Town_Warpra",7,"Einbroch Town"; close; }
+einbech,173,131,5	script	傳送師#21	113,{ callfunc "QWS_Town_Warpra",6,"Einbech Town"; close; }
+geffen,116,66,4	script	傳送師#22	113,{ callfunc "QWS_Town_Warpra",8,"Geffen Town"; close; }
+gonryun,152,130,4	script	傳送師#23	113,{ callfunc "QWS_Town_Warpra",9,"Kunlun Town"; close; }
+hugel,90,127,5	script	傳送師#24	113,{ callfunc "QWS_Town_Warpra",10,"Hugel Town"; close; }
+jawaii,107,182,5	script	傳送師#25	113,{ callfunc "QWS_Town_Warpra",12,"Jawaii Town"; close; }
+izlude,132,116,4	script	傳送師#26	113,{ callfunc "QWS_Town_Warpra",11,"Izlude Town"; close; }
+lighthalzen,153,100,5	script	傳送師#27	113,{ callfunc "QWS_Town_Warpra",13,"Lighthalzen Town"; close; }
+louyang,211,106,4	script	傳送師#28	113,{ callfunc "QWS_Town_Warpra",14,"Luoyang Town"; close; }
+morocc,157,95,4	script	傳送師#29	113,{ callfunc "QWS_Town_Warpra",16,"Morocc Town"; close; }
+nif_fild01,319,77,1	script	傳送師#30	113,{ callfunc "QWS_Town_Warpra",17,"Niflheim Town"; close; }
+payon,183,110,4	script	傳送師#31	113,{ callfunc "QWS_Town_Warpra",18,"Payon Town"; close; }
+prontera,147,172,5	script	傳送師#32	113,{ callfunc "QWS_Town_Warpra",0,"Prontera Town"; close; }
+umbala,133,130,4	script	傳送師#33	113,{ callfunc "QWS_Town_Warpra",19,"Umbala Town"; close; }
+xmas,151,136,4	script	傳送師#34	113,{ callfunc "QWS_Town_Warpra",15,"Lutie Town"; close; }
+yuno,138,162,4	script	傳送師#35	113,{ callfunc "QWS_Town_Warpra",20,"Juno Town"; close; }
+brasilis,201,222,4	script	傳送師#36	113,{ callfunc "QWS_Town_Warpra",21,"Brasilis Town"; close; }
+dicastes01,194,194,6	script	傳送師#37	113,{ callfunc "QWS_Town_Warpra",22,"El Dicastes Town"; close; }
+manuk,262,177,4	script	傳送師#38	113,{ callfunc "QWS_Town_Warpra",23,"Manuk Town"; close; }
+mora,110,100,4	script	傳送師#39	113,{ callfunc "QWS_Town_Warpra",24,"Mora Town"; close; }
+moscovia,216,196,6	script	傳送師#40	113,{ callfunc "QWS_Town_Warpra",25,"Moscovia Town"; close; }
+rachel,135,116,4	script	傳送師#41	113,{ callfunc "QWS_Town_Warpra",26,"Rachel Town"; close; }
+splendide,205,153,4	script	傳送師#42	113,{ callfunc "QWS_Town_Warpra",27,"Splendide Town"; close; }
+veins,214,123,4	script	傳送師#43	113,{ callfunc "QWS_Town_Warpra",28,"Veins Town"; close; }
+dewata,194,178,6	script	傳送師#44	113,{ callfunc "QWS_Town_Warpra",29,"Dewata Town"; close; }
+eclage,107,37,4	script	傳送師#45	113,{ callfunc "QWS_Town_Warpra",30,"Eclage Town"; close; }
 
-abyss_02,274,266,1	script	Warpra Helper#0	112,{ callfunc "QWS_Dungeon_Warpra",0,"Abyss Lake"; close; }
-ama_dun02,192,118,5	script	Warpra Helper#1	112,{ callfunc "QWS_Dungeon_Warpra",1,"Amatsu Dungeon"; close; }
-anthell02,170,165,3	script	Warpra Helper#2	112,{ callfunc "QWS_Dungeon_Warpra",2,"Ant Hell Dungeon"; close; }
-ayo_dun02,258,193,5	script	Warpra Helper#3	112,{ callfunc "QWS_Dungeon_Warpra",3,"Ayothaya Dungeon"; close; }
-ein_dun02,292,282,1	script	Warpra Helper#4	112,{ callfunc "QWS_Dungeon_Warpra",8,"Einbech Dungeon"; close; }
-iz_dun03,202,47,2	script	Warpra Helper#5	112,{ callfunc "QWS_Dungeon_Warpra",4,"Byalan Dungeon"; close; }
-c_tower3,129,106,4	script	Warpra Helper#6	112,{ callfunc "QWS_Dungeon_Warpra",5,"Clock Tower Dungeon"; close; }
-mjo_dun02,39,25,4	script	Warpra Helper#7	112,{ callfunc "QWS_Dungeon_Warpra",6,"Coal Mine Dungeon"; close; }
-prt_sewb2,176,30,3	script	Warpra Helper#8	112,{ callfunc "QWS_Dungeon_Warpra",7,"Culvert Dungeon"; close; }
-gefenia03,137,34,0	script	Warpra Helper#9	112,{ callfunc "QWS_Dungeon_Warpra",9,"Gefenia Dungeon"; close; }
-gef_dun02,218,61,2	script	Warpra Helper#10	112,{ callfunc "QWS_Dungeon_Warpra",10,"Gefen Dungeon"; close; }
-glast_01,371,308,3	script	Warpra Helper#11	112,{ callfunc "QWS_Dungeon_Warpra",11,"Glast Heim Dungeon"; close; }
-gon_dun01,167,273,4	script	Warpra Helper#12	112,{ callfunc "QWS_Dungeon_Warpra",12,"Kunlun Dungeon"; close; }
-juperos_02,127,154,5	script	Warpra Helper#13	112,{ callfunc "QWS_Dungeon_Warpra",14,"Juperos Cave"; close; }
-kh_dun01,14,224,3	script	Warpra Helper#14	112,{ callfunc "QWS_Dungeon_Warpra",28,"Kiel Dungeon"; close; }
-lhz_dun02,156,151,5	script	Warpra Helper#15	112,{ callfunc "QWS_Dungeon_Warpra",15,"Lighthalzen Bio Lab"; close; }
-lou_dun02,168,264,4	script	Warpra Helper#16	112,{ callfunc "QWS_Dungeon_Warpra",16,"Luoyang Dungeon"; close; }
-mag_dun02,46,41,3	script	Warpra Helper#17	112,{ callfunc "QWS_Dungeon_Warpra",17,"Magma Dungeon"; close; }
-odin_tem01,115,148,3	script	Warpra Helper#18	112,{ callfunc "QWS_Dungeon_Warpra",18,"Odin Temple"; close; }
-orcsdun01,185,11,3	script	Warpra Helper#19	112,{ callfunc "QWS_Dungeon_Warpra",19,"Orc Dungeon"; close; }
-pay_dun03,162,143,3	script	Warpra Helper#20	112,{ callfunc "QWS_Dungeon_Warpra",20,"Payon Dungeon"; close; }
-moc_pryd02,101,95,3	script	Warpra Helper#21	112,{ callfunc "QWS_Dungeon_Warpra",21,"Pyramides Dungeon"; close; }
-in_sphinx2,274,268,1	script	Warpra Helper#22	112,{ callfunc "QWS_Dungeon_Warpra",22,"Sphinx Dungeon"; close; }
-tha_t07,111,162,3	script	Warpra Helper#23	112,{ callfunc "QWS_Dungeon_Warpra",24,"Thanatos Tower"; close; }
-treasure02,104,40,3	script	Warpra Helper#24	112,{ callfunc "QWS_Dungeon_Warpra",23,"Sunken Ship Dungeon"; close; }
-xmas_dun02,124,131,3	script	Warpra Helper#25	112,{ callfunc "QWS_Dungeon_Warpra",25,"Toy Factory Dungeon"; close; }
-um_dun02,44,28,3	script	Warpra Helper#26	112,{ callfunc "QWS_Dungeon_Warpra",27,"Umbala Dungeon"; close; }
-tur_dun02,162,23,3	script	Warpra Helper#27	112,{ callfunc "QWS_Dungeon_Warpra",26,"Turtle Island Dungeon"; close; }
-prt_maze02,102,69,4	script	Warpra Helper#28	112,{ callfunc "QWS_Dungeon_Warpra",13,"Hidden Dungeon"; close; }
+abyss_02,274,266,1	script	傳送師 幫手#0	112,{ callfunc "QWS_Dungeon_Warpra",0,"Abyss Lake"; close; }
+ama_dun02,192,118,5	script	傳送師 幫手#1	112,{ callfunc "QWS_Dungeon_Warpra",1,"Amatsu Dungeon"; close; }
+anthell02,170,165,3	script	傳送師 幫手#2	112,{ callfunc "QWS_Dungeon_Warpra",2,"Ant Hell Dungeon"; close; }
+ayo_dun02,258,193,5	script	傳送師 幫手#3	112,{ callfunc "QWS_Dungeon_Warpra",3,"Ayothaya Dungeon"; close; }
+ein_dun02,292,282,1	script	傳送師 幫手#4	112,{ callfunc "QWS_Dungeon_Warpra",8,"Einbech Dungeon"; close; }
+iz_dun03,202,47,2	script	傳送師 幫手#5	112,{ callfunc "QWS_Dungeon_Warpra",4,"Byalan Dungeon"; close; }
+c_tower3,129,106,4	script	傳送師 幫手#6	112,{ callfunc "QWS_Dungeon_Warpra",5,"Clock Tower Dungeon"; close; }
+mjo_dun02,39,25,4	script	傳送師 幫手#7	112,{ callfunc "QWS_Dungeon_Warpra",6,"Coal Mine Dungeon"; close; }
+prt_sewb2,176,30,3	script	傳送師 幫手#8	112,{ callfunc "QWS_Dungeon_Warpra",7,"Culvert Dungeon"; close; }
+gefenia03,137,34,0	script	傳送師 幫手#9	112,{ callfunc "QWS_Dungeon_Warpra",9,"Gefenia Dungeon"; close; }
+gef_dun02,218,61,2	script	傳送師 幫手#10	112,{ callfunc "QWS_Dungeon_Warpra",10,"Gefen Dungeon"; close; }
+glast_01,371,308,3	script	傳送師 幫手#11	112,{ callfunc "QWS_Dungeon_Warpra",11,"Glast Heim Dungeon"; close; }
+gon_dun01,167,273,4	script	傳送師 幫手#12	112,{ callfunc "QWS_Dungeon_Warpra",12,"Kunlun Dungeon"; close; }
+juperos_02,127,154,5	script	傳送師 幫手#13	112,{ callfunc "QWS_Dungeon_Warpra",14,"Juperos Cave"; close; }
+kh_dun01,14,224,3	script	傳送師 幫手#14	112,{ callfunc "QWS_Dungeon_Warpra",28,"Kiel Dungeon"; close; }
+lhz_dun02,156,151,5	script	傳送師 幫手#15	112,{ callfunc "QWS_Dungeon_Warpra",15,"Lighthalzen Bio Lab"; close; }
+lou_dun02,168,264,4	script	傳送師 幫手#16	112,{ callfunc "QWS_Dungeon_Warpra",16,"Luoyang Dungeon"; close; }
+mag_dun02,46,41,3	script	傳送師 幫手#17	112,{ callfunc "QWS_Dungeon_Warpra",17,"Magma Dungeon"; close; }
+odin_tem01,115,148,3	script	傳送師 幫手#18	112,{ callfunc "QWS_Dungeon_Warpra",18,"Odin Temple"; close; }
+orcsdun01,185,11,3	script	傳送師 幫手#19	112,{ callfunc "QWS_Dungeon_Warpra",19,"Orc Dungeon"; close; }
+pay_dun03,162,143,3	script	傳送師 幫手#20	112,{ callfunc "QWS_Dungeon_Warpra",20,"Payon Dungeon"; close; }
+moc_pryd02,101,95,3	script	傳送師 幫手#21	112,{ callfunc "QWS_Dungeon_Warpra",21,"Pyramides Dungeon"; close; }
+in_sphinx2,274,268,1	script	傳送師 幫手#22	112,{ callfunc "QWS_Dungeon_Warpra",22,"Sphinx Dungeon"; close; }
+tha_t07,111,162,3	script	傳送師 幫手#23	112,{ callfunc "QWS_Dungeon_Warpra",24,"Thanatos Tower"; close; }
+treasure02,104,40,3	script	傳送師 幫手#24	112,{ callfunc "QWS_Dungeon_Warpra",23,"Sunken Ship Dungeon"; close; }
+xmas_dun02,124,131,3	script	傳送師 幫手#25	112,{ callfunc "QWS_Dungeon_Warpra",25,"Toy Factory Dungeon"; close; }
+um_dun02,44,28,3	script	傳送師 幫手#26	112,{ callfunc "QWS_Dungeon_Warpra",27,"Umbala Dungeon"; close; }
+tur_dun02,162,23,3	script	傳送師 幫手#27	112,{ callfunc "QWS_Dungeon_Warpra",26,"Turtle Island Dungeon"; close; }
+prt_maze02,102,69,4	script	傳送師 幫手#28	112,{ callfunc "QWS_Dungeon_Warpra",13,"Hidden Dungeon"; close; }

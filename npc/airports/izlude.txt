@@ -13,21 +13,20 @@
 //============================================================ 
 
 -	script	::Airship_Staff_izlude	-1,{
-	mes "[Airship Staff]";
-	mes "Welcome! Would you like";
-	mes "to board the Airship that";
-	mes "departs on the flight which stops";
-	mes "in Juno and Rachel?";
+	mes "[飛空艇服務人員]";
+	mes "歡迎！您想要";
+	mes "搭乘飛往";
+	mes "朱諾和拉赫的飛空艇嗎？";
 	next;
-	if (select("Board the Airship to Juno/Rachel.:Cancel.") == 1) {
-		mes "[Airship Staff]";
-		mes "The boarding fee is";
-		mes "1,200 zeny. However, this";
-		mes "charged is waived if you use";
-		mes "a Free Ticket for Airship. Now,";
-		mes "would you still like to board?";
+	if (select("搭乘前往朱諾/拉赫的飛空艇.:取消。") == 1) {
+		mes "[飛空艇服務人員]";
+		mes "登機費用是";
+		mes "1,200 遊戲幣。但是，如果您使用";
+		mes "飛空艇免費票券，";
+		mes "則可免除此費用。現在，";
+		mes "您還想登機嗎？";
 		next;
-		if (select("Yes:No") == 1) {
+		if (select("是:否") == 1) {
 			if (countitem(7311) > 0) {
 				delitem 7311,1; //Free_Flying_Ship_Ticket
 				warp "airplane_01",244,58;
@@ -38,16 +37,16 @@
 				warp "airplane_01",244,58;
 				end;
 			}
-			mes "[Airship Staff]";
-			mes "I'm sorry, but you don't";
-			mes "have 1,200 zeny to pay";
-			mes "for the boarding fee.";
+			mes "[飛空艇服務人員]";
+			mes "很抱歉，您沒有";
+			mes "1,200 遊戲幣來支付";
+			mes "登機費用。";
 			close;
 		}
 	}
-	mes "[Airship Staff]";
-	mes "Thank you and";
-	mes "please come again.";
-	mes "Have a good day~";
+	mes "[飛空艇服務人員]";
+	mes "謝謝光臨";
+	mes "歡迎再次光臨。";
+	mes "祝您有美好的一天～";
 	close;
 }

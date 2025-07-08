@@ -16,94 +16,93 @@
 //============================================================
 
 louyang,213,213,3	script	Soldier#BA::LouGuide	825,{
-	mes "[Soldier]";
-	mes "Welcome to Luoyang,";
-	mes "a city with a long";
-	mes "and colorful history.";
+	mes "[士兵]";
+	mes "歡迎來到洛陽，";
+	mes "一座擁有悠久";
+	mes "且多采多姿歷史的城市。";
 	next;
-	mes "[Soldier]";
-	mes "Recently we've developed";
-	mes "an ocean lane to accomodate";
-	mes "positive exchange with";
-	mes "foreign nations.";
+	mes "[士兵]";
+	mes "最近我們開闢了";
+	mes "一條海上航線，以促進";
+	mes "與外國的交流。";
 	next;
-	mes "[Soldier]";
-	mes "Luoyang is well-known for various specialties in addition to its rich history. Here you can find many things unique to our land.";
+	mes "[士兵]";
+	mes "除了豐富的歷史，洛陽還以各種特產而聞名。在這裡，您可以找到許多我們土地上獨有的東西。";
 	next;
-	mes "[Soldier]";
-	mes "Please take your time";
-	mes "and we invite you to enjoy";
-	mes "your trip here in Luoyang.";
+	mes "[士兵]";
+	mes "請慢慢欣賞，";
+	mes "我們邀請您享受";
+	mes "在洛陽的旅程。";
 	next;
-	switch(select("Ask Building Locations.:Remove all marks from mini-map.:Cancel.")) {
+	switch(select("詢問建築物位置。:移除小地圖上的所有標記。:取消。")) {
 	case 1:
-		mes "[Soldier]";
-		mes "Where would you like to go?";
+		mes "[士兵]";
+		mes "您想去哪裡？";
 		next;
-		switch(select("Dragon Castle:Doctor's Office:City Hall:Weapon Shop:Tool Shop:Tavern:Cancel")) {
+		switch(select("龍之城堡:醫師辦公室:市政廳:武器店:道具店:酒館:取消")) {
 		case 1:
-			mes "[Soldier]";
-			mes "The Dragon Castle is located at ^FF3355+^000000. It is where all the nobles reside, including our lord.";
+			mes "[士兵]";
+			mes "龍之城堡位於 ^FF3355+^000000。所有貴族都居住在那裡，包括我們的領主。";
 			next;
-			mes "[Soldier]";
-			mes "Since you're an outsider, I guess it would be appropriate for you to visit our lord first.";
+			mes "[士兵]";
+			mes "既然您是外來者，我想您應該先去拜訪我們的領主。";
 			viewpoint 1,218,255,2,0xFF3355;
 			break;
 		case 2:
-			mes "[Soldier]";
-			mes "We have a very skillful doctor.";
-			mes "You can find her office at ^CE6300+^000000.";
+			mes "[士兵]";
+			mes "我們有一位非常厲害的醫生。";
+			mes "您可以在 ^CE6300+^000000 找到她的辦公室。";
 			next;
-			mes "[Soldier]";
-			mes "It is said that there";
-			mes "is no disease she cannot cure. Well, I can't guarantee if that's true or not.";
+			mes "[士兵]";
+			mes "據說沒有她";
+			mes "治不好的疾病。嗯，我不能保證那是真的。";
 			viewpoint 1,263,94,3,0xCE6300;
 			break;
 		case 3:
-			mes "[Soldier]";
-			mes "We have a City Hall where the federal government operates.";
-			mes "It is located at ^A5BAAD+^000000.";
+			mes "[士兵]";
+			mes "我們有一個聯邦政府運作的市政廳。";
+			mes "它位於 ^A5BAAD+^000000。";
 			next;
-			mes "[Soldier]";
-			mes "If you have any problems,";
-			mes "you should talk with the";
-			mes "employees in City Hall.";
+			mes "[士兵]";
+			mes "如果您有任何問題，";
+			mes "您應該與";
+			mes "市政廳的員工交談。";
 			viewpoint 1,309,80,4,0xA5BAAD;
 			break;
 		case 4:
-			mes "[Soldier]";
-			mes "The Weapon Shop is located at ^55FF33+^000000.";
+			mes "[士兵]";
+			mes "武器店位於 ^55FF33+^000000。";
 			next;
-			mes "[Soldier]";
-			mes "You will see";
-			mes "marvelous weapons forged";
-			mes "by the well-experienced";
-			mes "blacksmiths of Luoyang.";
+			mes "[士兵]";
+			mes "您將會看到";
+			mes "由經驗豐富的";
+			mes "洛陽鐵匠所鍛造的";
+			mes "精妙武器。";
 			viewpoint 1,145,174,5,0x55FF33;
 			break;
 		case 5:
-			mes "[Soldier]";
-			mes "The Tool Shop is located at ^3355FF+^000000.";
+			mes "[士兵]";
+			mes "道具店位於 ^3355FF+^000000。";
 			next;
-			mes "[Soldier]";
-			mes "Knowing your enemy";
-			mes "is half the battle!";
-			mes "It's also safer to prepare yourself than to be sorry later. Why don't you go check their supplies?";
+			mes "[士兵]";
+			mes "知己知彼";
+			mes "百戰不殆！";
+			mes "做好準備總比事後後悔好。您何不去看看他們的補給品？";
 			viewpoint 1,135,98,6,0x3355FF;
 			break;
 		case 6:
-			mes "[Soldier]";
-			mes "When you get tired during your trip, I suggest that you visit the Tavern. It's located at ^00FF00+^000000.";
+			mes "[士兵]";
+			mes "如果您在旅途中感到疲倦，我建議您去酒館。它位於 ^00FF00+^000000。";
 			next;
-			mes "[Soldier]";
-			mes "The Tavern is a good place";
-			mes "to meet other tourists, as well as to hear of any news that may be helpful to know.";
+			mes "[士兵]";
+			mes "酒館是一個好地方，";
+			mes "可以結識其他遊客，以及聽到任何可能有用的消息。";
 			viewpoint 1,280,167,7,0x00FF00;
 			break;
 		case 7:
-			mes "[Soldier]";
-			mes "If you wish to remove all marks";
-			mes "on your mini-map, please choose 'Remove all marks from mini-map.' from the menu.";
+			mes "[士兵]";
+			mes "如果您想移除";
+			mes "小地圖上的所有標記，請從選單中選擇“移除小地圖上的所有標記”。";
 		}
 		break;
 	case 2:
@@ -113,14 +112,14 @@ louyang,213,213,3	script	Soldier#BA::LouGuide	825,{
 		viewpoint 2,145,174,5,0xFF00FF;
 		viewpoint 2,135,98,6,0xFF00FF;
 		viewpoint 2,280,167,7,0xFF00FF;
-		mes "[Soldier]";
-		mes "There, I've erased all the marks on your mini-map. Feel free to ask me about building locations whenever you need to.";
+		mes "[士兵]";
+		mes "好了，我已經擦除了您小地圖上的所有標記。 隨時需要時，請隨時問我有關建築物位置的信息。";
 		break;
 	case 3:
-		mes "[Soldier]";
-		mes "I guess it's fun";
-		mes "sometimes to go exploring";
-		mes "on your own. Take care.";
+		mes "[士兵]";
+		mes "我想有時候";
+		mes "自己去探索";
+		mes "也很有趣。 保重。";
 	}
 	close;
 }
@@ -128,89 +127,88 @@ louyang,213,213,3	script	Soldier#BA::LouGuide	825,{
 louyang,160,175,3	duplicate(LouGuide)	Soldier#BB	825
 
 louyang,224,104,3	script	Representative#lou	818,{
-	mes "[Representative]";
-	mes "Welcome to Luoyang,";
-	mes "an ancient land with";
-	mes "a history full of tales";
-	mes "of bravery.";
+	mes "[代表]";
+	mes "歡迎來到洛陽，";
+	mes "一片古老的土地，";
+	mes "擁有一段充滿";
+	mes "勇敢傳說的歷史。";
 	next;
-	mes "[Representative]";
-	mes "We now provide an ocean lane to accomodate foreign travelers and intercultural exchange from which all can benefit.";
+	mes "[代表]";
+	mes "我們現在提供一條海上航線，以促進外國遊客和跨文化交流，所有人都可以?中受益。";
 	next;
-	mes "[Representative]";
-	mes "Luoyang is famous for";
-	mes "its elaborate history, as well as specialties that are unique to this nation. Please take your time and enjoy your stay.";
+	mes "[代表]";
+	mes "洛陽以其精心的歷史以及這個國家獨有的特色而聞名。請慢慢欣賞並享受您的住宿。";
 	next;
-	switch(select("Ask Building Locations.:Remove all marks from mini-map.:Cancel.")) {
+	switch(select("詢問建築物位置。:移除小地圖上的所有標記。:取消。")) {
 	case 1:
 		set .@compass_check,1;
-		mes "[Representative]";
-		mes "Where would you like to go?";
+		mes "[代表]";
+		mes "您想去哪裡？";
 		next;
-		switch(select("Dragon Castle:Doctor's Office:City Hall:Weapon Shop:Tool Shop:Tavern:Cancel")) {
+		switch(select("龍之城堡:醫師辦公室:市政廳:武器店:道具店:酒館:取消")) {
 		case 1:
-			mes "[Representative]";
-			mes "The Dragon Castle is located at ^FF3355+^000000. It is where all the nobles reside, including our lord.";
+			mes "[代表]";
+			mes "龍之城堡位於 ^FF3355+^000000。所有貴族都居住在那裡，包括我們的領主。";
 			next;
-			mes "[Representative]";
-			mes "Since you're an outsider, I guess it would be appropriate for you to visit our lord first.";
+			mes "[代表]";
+			mes "既然您是外來者，我想您應該先去拜訪我們的領主。";
 			viewpoint 1,218,255,2,0xFFFF33;
 			break;
 		case 2:
-			mes "[Representative]";
-			mes "We have a very skillful doctor.";
-			mes "You can find her office at ^CE6300+^000000.";
+			mes "[代表]";
+			mes "我們有一位非常厲害的醫生。";
+			mes "您可以在 ^CE6300+^000000 找到她的辦公室。";
 			next;
-			mes "[Representative]";
-			mes "It is said that there";
-			mes "is no disease she cannot cure. Well, I can't guarantee if that's true or not.";
+			mes "[代表]";
+			mes "據說沒有她";
+			mes "治不好的疾病。嗯，我不能保證那是真的。";
 			viewpoint 1,263,94,3,0xFFCE63;
 			break;
 		case 3:
-			mes "[Representative]";
-			mes "We have a City Hall where the federal government operates.";
-			mes "It is located at ^A5BAAD+^000000.";
+			mes "[代表]";
+			mes "我們有一個聯邦政府運作的市政廳。";
+			mes "它位於 ^A5BAAD+^000000。";
 			next;
-			mes "[Representative]";
-			mes "If you have any problems,";
-			mes "you should talk with the";
-			mes "employees in City Hall.";
+			mes "[代表]";
+			mes "如果您有任何問題，";
+			mes "您應該與";
+			mes "市政廳的員工交談。";
 			viewpoint 1,309,80,4,0xFF00FF;
 			break;
 		case 4:
-			mes "[Representative]";
-			mes "The Weapon Shop is located at ^55FF33+^000000.";
+			mes "[代表]";
+			mes "武器店位於 ^55FF33+^000000。";
 			next;
-			mes "[Representative]";
-			mes "You will see";
-			mes "marvelous weapons forged";
-			mes "by the well-experienced";
-			mes "blacksmiths of Luoyang.";
+			mes "[代表]";
+			mes "您將會看到";
+			mes "由經驗豐富的";
+			mes "洛陽鐵匠所鍛造的";
+			mes "精妙武器。";
 			viewpoint 1,145,174,5,0xFF55FF;
 			break;
 		case 5:
-			mes "[Representative]";
-			mes "The Tool Shop is located at ^3355FF+^000000.";
+			mes "[代表]";
+			mes "道具店位於 ^3355FF+^000000。";
 			next;
-			mes "[Representative]";
-			mes "Knowing your enemy";
-			mes "is half the battle!";
-			mes "It's also safer to prepare yourself than to be sorry later. Why don't you go check their supplies?";
+			mes "[代表]";
+			mes "知己知彼";
+			mes "百戰不殆！";
+			mes "做好準備總比事後後悔好。您何不去看看他們的補給品？";
 			viewpoint 1,135,98,6,0xFF3355;
 			break;
 		case 6:
-			mes "[Representative]";
-			mes "When you get tired during your trip, I suggest that you visit the Tavern. It's located at ^00FF00+^000000.";
+			mes "[代表]";
+			mes "如果您在旅途中感到疲倦，我建議您去酒館。它位於 ^00FF00+^000000。";
 			next;
-			mes "[Soldier]";
-			mes "The Tavern is a good place";
-			mes "to meet other tourists, as well as to hear of any news that may be helpful to know.";
+			mes "[士兵]";
+			mes "酒館是一個好地方，";
+			mes "可以結識其他遊客，以及聽到任何可能有用的消息。";
 			viewpoint 1,280,167,7,0xFF00FF;
 			break;
 		case 7:
-			mes "[Representative]";
-			mes "If you wish to remove all marks";
-			mes "on your mini-map, please choose 'Remove all marks from mini-map.' from the menu.";
+			mes "[代表]";
+			mes "如果您想移除";
+			mes "小地圖上的所有標記，請從選單中選擇“移除小地圖上的所有標記”。";
 		}
 		break;
 	case 2:
@@ -220,13 +218,13 @@ louyang,224,104,3	script	Representative#lou	818,{
 		viewpoint 2,145,174,5,0xFF00FF;
 		viewpoint 2,135,98,6,0xFF00FF;
 		viewpoint 2,280,167,7,0xFF00FF;
-		mes "[Representative]";
-		mes "Done! All the marks on your mini-map are erased. Feel free to ask me about building locations whenever you need to.";
+		mes "[代表]";
+		mes "好了！您小地圖上的所有標記都已擦除。隨時需要時，請隨時問我有關建築物位置的信息。";
 		break;
 	case 3:
-		mes "[Representative]";
-		mes "I understand that you want to explore Luoyang and see the";
-		mes "sights for yourself. Alright then, take care!";
+		mes "[代表]";
+		mes "我知道你想自己探索洛陽，看看";
+		mes "景點。好吧，保重！";
 		break;
 	}
 	close;

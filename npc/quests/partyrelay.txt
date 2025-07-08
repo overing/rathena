@@ -15,49 +15,49 @@
 //= 1.2 Updated RE/Pre-RE EXP. [Euphy]
 //============================================================
 
-payon,103,113,3	script	Ledrion#payon::RelayLedrion	109,{
+payon,103,113,3	script	雷德里昂#payon::RelayLedrion	109,{
 	getpartymember(getcharid(1));
 	set .@partymembercount,$@partymembercount;
 	set .@partyleader, is_party_leader();
 	if (checkweight(907,300) == 0) {
-		mes "^3355FFWait a minute! You're";
-		mes "carrying too many items";
-		mes "right now: store some of";
-		mes "your extra things in Kafra";
-		mes "Storage, and then come back.^000000";
+		mes "^3355FF等一下！你";
+		mes "現在攜帶太多物品了";
+		mes "：將一些額外的東西存放在卡普拉";
+		mes "倉庫中，然後再回來。^000000";
 		close;
 	}
 	if ((countitem(7731) > 0) || (countitem(7732) > 0) || (countitem(7735) > 0) || (countitem(7736) > 0) || (countitem(7739) > 0) || (countitem(7740) > 0)) {
-		mes "[Ledrion]";
-		mes "Hm? I'm afraid that you've";
-		mes "misunderstood me earlier...";
-		mes "You're not ready to see";
-		mes "me until you bring enough";
-		mes "of your group members with you.";
+		mes "[雷德里昂]";
+		mes "嗯？恐怕你";
+		mes "之前誤會我了...";
+		mes "在你帶足夠的";
+		mes "團隊成員來之前，你還沒準備好見";
+		mes "我。";
 		close;
 	}
 	if ((countitem(7741) > 0) && .@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5)) {
-		mes "[Ledrion]";
-		mes "Ah, you've brought the";
-		mes "last ticket from Rospii.";
-		mes "Now I'm convinced that";
-		mes "you and your group really";
-		mes "work well together. Good";
-		mes "job on passing the trials!";
+		mes "[雷德里昂]";
+		mes "啊，你帶來了";
+		mes "從羅斯皮伊那裡拿到的";
+		mes "最後一張票。";
+		mes "現在我確信";
+		mes "你和你的團隊真的";
+		mes "合作得很好。做得";
+		mes "好，通過了試煉！";
 		next;
-		mes "[Ledrion]";
-		mes "Your group must truly";
-		mes "understand the value of";
-		mes "teamwork. And thanks to";
-		mes "you, I've won the bet! Er, but";
-		mes "what's more important is you";
-		mes "proving my faith in you guys.";
+		mes "[雷德里昂]";
+		mes "你們的團隊一定很";
+		mes "了解";
+		mes "團隊合作的價值。而且多虧了";
+		mes "你，我贏了賭局！呃，但";
+		mes "更重要的是你";
+		mes "證明了我對你們的信任。";
 		next;
-		mes "[Ledrion]";
-		mes "I'm really proud of";
-		mes "you guys for your great";
-		mes "accomplishment. Here...";
-		mes "You deserve a real reward!";
+		mes "[雷德里昂]";
+		mes "我真的為你們";
+		mes "的偉大成就感到";
+		mes "驕傲。給你...";
+		mes "你值得一份真正的獎勵！";
 		next;
 		set .@present,rand(1,7);
 		delitem 7741,1; //Mission_Certificate12
@@ -77,56 +77,57 @@ payon,103,113,3	script	Ledrion#payon::RelayLedrion	109,{
 			getitem 617,3; //Old_Violet_Box
 		}
 		callfunc "F_PartyRelay_Exp";
-		mes "[Ledrion]";
-		mes "Well, I hope you like it!";
-		mes "If you can't use it, then";
-		mes "why don't you share it with";
-		mes "someone in your guild? Feel";
-		mes "free to come back if you want";
-		mes "to try my trials again, okay?";
+		mes "[雷德里昂]";
+		mes "嗯，我希望你喜歡它！";
+		mes "如果你不能使用它，那麼";
+		mes "你為什麼不和";
+		mes "你公會裡的某人分享呢？隨";
+		mes "時回來，如果你想";
+		mes "再次嘗試我的試煉，好嗎？";
 		next;
-		mes "[Ledrion]";
-		mes "Once again, I'd like to";
-		mes "thank you. I'm not sure";
-		mes "if we'll ever meet again,";
-		mes "but I'll be praying for you as";
-		mes "you go on your adventures.";
+		mes "[雷德里昂]";
+		mes "再次，我想向你";
+		mes "道謝。我不確定";
+		mes "我們是否還會再見，";
+		mes "但我會為你祈禱，";
+		mes "當你繼續你的冒險時。";
 		close;
 	}
 	if (countitem(7741) > 0) {
-		mes "[Ledrion]";
-		mes "Hm? Why aren't your";
-		mes "comrades with you?";
-		mes "You must bring your";
-		mes "group members here to";
-		mes "proceed with these trials.";
+		mes "[雷德里昂]";
+		mes "嗯？為什麼你的";
+		mes "同伴沒有和你在一起？";
+		mes "你必須帶你的";
+		mes "團隊成員到這裡";
+		mes "才能繼續進行這些試煉。";
 		close;
 	}
 	if (party_relay == 23) {
-		mes "[Ledrion]";
-		mes "Aren't you supposed to";
-		mes "ask one a Swordman or";
-		mes "Mage Class member of ";
-		mes "your group to bring a ticket";
-		mes "over to Gatan right now?";
+		mes "[雷德里昂]";
+		mes "你不應該";
+		mes "請一位劍士或";
+		mes "法師職業的成員";
+		mes "的你的團隊現在帶一張票";
+		mes "到迦旦那裡嗎？";
 		close;
 	}
 	if ((countitem(7737) > 0) && .@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5)) {
-		mes "[Ledrion]";
-		mes "Great, you've brought";
-		mes "me the eighth ticket from";
-		mes "Lospii. Your group must";
-		mes "work pretty well together,";
-		mes "eh? It usually isn't easy to";
-		mes "gather people like that...";
+		mes "[雷德里昂]";
+		mes "太好了，你帶來了";
+		mes "我從";
+		mes "洛斯皮伊那裡拿到的第八張票。";
+		mes "你的團隊一定";
+		mes "合作得很好，";
+		mes "是嗎？通常不容易";
+		mes "聚集像那樣的人...";
 		next;
-		mes "[Ledrion]";
-		mes "Please keep up the good";
-		mes "work until you finish all";
-		mes "of the trials, okay? Here's";
-		mes "a little reward for your";
-		mes "effort thus far, and the";
-		mes "nineth ticket for your guild.";
+		mes "[雷德里昂]";
+		mes "請繼續保持";
+		mes "良好的工作，直到你完成所有";
+		mes "的試煉，好嗎？這是";
+		mes "對你的一點小";
+		mes "獎勵，因為你";
+		mes "迄今為止的努力，以及你的公會的第九張票。";
 		delitem 7737,1; //Mission_Certificate8
 		set party_relay,23;
 		getitem 603,3; //Old_Blue_Box
@@ -134,48 +135,49 @@ payon,103,113,3	script	Ledrion#payon::RelayLedrion	109,{
 		getitem 7738,1; //Mission_Certificate9
 		callfunc "F_PartyRelay_Exp";
 		next;
-		mes "[Ledrion]";
-		mes "Please give that ticket";
-		mes "to someone in your guild";
-		mes "that's a Swordman or Mage";
-		mes "Class character, and tell";
-		mes "him to deliver it to Gatan.";
-		mes "Okay? I'll be seeing you.";
+		mes "[雷德里昂]";
+		mes "請把那張票";
+		mes "給你公會裡的";
+		mes "某個劍士或法師";
+		mes "職業的角色，並告訴";
+		mes "他把它送到迦旦。";
+		mes "好嗎？我會再見到你的。";
 		close;
 	}
 	if (countitem(7737) > 0) {
-		mes "[Ledrion]";
-		mes "Hm? Why aren't your";
-		mes "comrades with you?";
-		mes "You must bring your";
-		mes "group members here to";
-		mes "proceed with these trials.";
+		mes "[雷德里昂]";
+		mes "嗯？為什麼你的";
+		mes "同伴沒有和你在一起？";
+		mes "你必須帶你的";
+		mes "團隊成員到這裡";
+		mes "才能繼續進行這些試煉。";
 		close;
 	}
 	if (party_relay == 12) {
-		mes "[Ledrion]";
-		mes "Hm? Aren't you supposed to";
-		mes "ask a Mage Class character";
-		mes "in your group to deliver";
-		mes "a ticket to Gatan?";
+		mes "[雷德里昂]";
+		mes "嗯？你不應該";
+		mes "請你團隊裡的一個法師職業角色";
+		mes "送一張票";
+		mes "到迦旦嗎？";
 		close;
 	}
 	if ((countitem(7733) > 0) && .@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5)) {
-		mes "[Ledrion]";
-		mes "I see that you've brought";
-		mes "me the fourth ticket from";
-		mes "Lospii. Good work, good work.";
-		mes "Please hang in there, and";
-		mes "finish all the trials we've";
-		mes "set before you guys, alright?";
+		mes "[雷德里昂]";
+		mes "我看到你帶來了";
+		mes "我從";
+		mes "洛斯皮伊那裡拿到的第四張票。";
+		mes "做得好，做得好。";
+		mes "請堅持下去，";
+		mes "完成我們";
+		mes "在你面前設置的所有試煉，好嗎？";
 		next;
-		mes "[Ledrion]";
-		mes "Here's a little something";
-		mes "to reward you for your";
-		mes "efforts for now. Now, please";
-		mes "give this ticket to a Mage";
-		mes "Class character, and tell";
-		mes "him to bring it to Gatan.";
+		mes "[雷德里昂]";
+		mes "這是一點小東西";
+		mes "獎勵你";
+		mes "現在的努力。現在，請";
+		mes "把這張票給一個法師";
+		mes "職業的角色，並告訴";
+		mes "他把它帶到迦旦。";
 		delitem 7733,1; //Mission_Certificate4
 		set party_relay,12;
 		getitem 644,3; //Gift_Box
@@ -185,1671 +187,1642 @@ payon,103,113,3	script	Ledrion#payon::RelayLedrion	109,{
 		close;
 	}
 	if (countitem(7733) > 0) {
-		mes "[Ledrion]";
-		mes "Hm? Why aren't your";
-		mes "comrades with you?";
-		mes "You must bring your";
-		mes "group members here to";
-		mes "proceed with these trials.";
+		mes "[雷德里昂]";
+		mes "嗯？為什麼你的";
+		mes "同伴沒有和你在一起？";
+		mes "你必須帶你的";
+		mes "團隊成員到這裡";
+		mes "才能繼續進行這些試煉。";
 		close;
 	}
 	if (party_relay == 2) {
-		mes "[Ledrion]";
-		mes "You didn't finish what";
-		mes "I asked you to do, did you?";
-		mes "It's not time for you to";
-		mes "come to me, not yet.";
+		mes "[雷德里昂]";
+		mes "你沒有完成";
+		mes "我要求你做的事情，是嗎？";
+		mes "現在還不是你";
+		mes "來找我的時候，還沒。";
 		close;
 	}
 	if ((BaseLevel > 39) && .@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5) && (party_relay == 1)) {
-		mes "[Ledrion]";
-		mes "As I mentioned earlier,";
-		mes "I'm challenging guild";
-		mes "parties with missions";
-		mes "that will require ";
-		mes "cooperation between";
-		mes "the group members.";
+		mes "[雷德里昂]";
+		mes "正如我之前提到的，";
+		mes "我正在挑戰公會";
+		mes "派對與任務";
+		mes "這將需要";
+		mes "成員之間的";
+		mes "合作。";
 		next;
-		mes "[Ledrion]";
-		mes "These challenges are";
-		mes "something of a relay";
-		mes "race, where we'll ask";
-		mes "for an item to be passed";
-		mes "to a member of a specific";
-		mes "Class to deliver for us.";
+		mes "[雷德里昂]";
+		mes "這些挑戰是";
+		mes "某種接力";
+		mes "賽跑，我們將要求";
+		mes "將物品傳遞";
+		mes "給特定";
+		mes "職業的成員來為我們傳遞。";
 		next;
-		mes "[Ledrion]";
-		mes "Of course, we, the";
-		mes "administrators of this";
-		mes "test, might add our own";
-		mes "little challenges here and";
-		mes "there to see just how";
-		mes "capable your group is.";
+		mes "[雷德里昂]";
+		mes "當然，我們，";
+		mes "這個測試的";
+		mes "管理者，可能會添加我們自己的";
+		mes "一些小挑戰在這裡";
+		mes "和那裡，看看你的團隊";
+		mes "有多能幹。";
 		next;
-		mes "[Ledrion]";
-		mes "Why don't you give it";
-		mes "a shot? You won't lose";
-		mes "anything by trying our";
-		mes "test. I guarantee that";
-		mes "you'll benefit from";
-		mes "our little exercise.";
+		mes "[雷德里昂]";
+		mes "你為什麼不給它";
+		mes "一個機會？你不會失去";
+		mes "任何東西通過嘗試我們的";
+		mes "測試。我保證";
+		mes "你會受益於";
+		mes "我們的小練習。";
 		next;
-		mes "[Ledrion]";
-		mes "Heh! Let's start with you!";
-		mes "Here, take this ticket, and";
-		mes "give it to a Swordman Class";
-		mes "member of your guild, and";
-		mes "ask him to bring it to Gatan.";
-		mes "The relay has started~";
+		mes "[雷德里昂]";
+		mes "嘿！讓我們從你開始！";
+		mes "來，拿著這張票，並";
+		mes "把它給你公會的一個劍士職業";
+		mes "的成員，並";
+		mes "請他把它帶到迦旦。";
+		mes "接力已經開始了~";
 		next;
 		set party_relay,2;
 		getitem 7730,1; //Mission_Certificate1
-		mes "[Ledrion]";
-		mes "Now, since you're the";
-		mes "one that started the relay,";
-		mes "you'll have to come back";
-		mes "to me later on. Don't";
-		mes "worry, we'll let you know";
-		mes "once the time is right.";
+		mes "[雷德里昂]";
+		mes "現在，既然你是";
+		mes "發起接力的人，";
+		mes "你必須回來";
+		mes "稍後再來找我。不要";
+		mes "擔心，一旦時間到了，我們就會";
+		mes "通知你。";
 		close;
 	}
 	if (.@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5) && (party_relay > 0)) {
-		mes "[Ledrion]";
-		mes "As leader of your";
-		mes "Party, you should";
-		mes "always think of what";
-		mes "would be best for all";
-		mes "of your partners.";
+		mes "[雷德里昂]";
+		mes "作為你的";
+		mes "隊伍的領導者，你應該";
+		mes "始終考慮什麼";
+		mes "對所有";
+		mes "你的夥伴來說是最好的。";
 		close;
 	}
 	if (.@partyleader == false && (getcharid(2) > 0)) {
-		mes "[Ledrion]";
-		mes "I'm sorry, but there's";
-		mes "nothing I can really offer";
-		mes "you... Unless you formed";
-		mes "a Party and became its";
-		mes "leader, there's absolutely";
-		mes "nothing I can do for you...";
+		mes "[雷德里昂]";
+		mes "我很抱歉，但我";
+		mes "真的沒有什麼可以提供給你的...";
+		mes "除非你組成";
+		mes "了一個隊伍並成為它的";
+		mes "領導者，否則我絕對";
+		mes "幫不了你...";
 		close;
 	}
-	mes "[Ledrion]";
-	mes "Ah, pleased to make your";
-	mes "acquaintance, adventurer.";
-	mes "I am Ledrion, a man of great";
-	mes "intelligence, mystery, and";
-	mes "most importantly, wealth.";
-	mes "Yes, I'm a philanthropist.";
+	mes "[雷德里昂]";
+	mes "啊，很高興認識你，";
+	mes "冒險家。";
+	mes "我是雷德里昂，一個擁有偉大";
+	mes "智慧、神秘，";
+	mes "最重要的是，財富的人。";
+	mes "是的，我是一個慈善家。";
 	next;
-	mes "[Ledrion]";
-	mes "I'm always working to make";
-	mes "a meaningful contribution";
-	mes "to all of Rune-Midgarts, which";
-	mes "brings me to why I am here.";
-	mes "There are many adventurers like you, but we have a problem.";
+	mes "[雷德里昂]";
+	mes "我一直在努力做出";
+	mes "對整個盧恩-米德加茲有意義的貢獻";
+	mes "，這";
+	mes "讓我想到了我為什麼在這裡。";
+	mes "有很多像你這樣的冒險家，但我們有一個問題。";
 	next;
-	mes "[Ledrion]";
-	mes "So many adventurers have";
-	mes "chosen the ways of greed,";
-	mes "and have forgotten how to";
-	mes "work well together with their";
-	mes "colleagues. Such selfishness";
-	mes "sickens me to no end! Ugh!";
+	mes "[雷德里昂]";
+	mes "這麼多冒險家都";
+	mes "選擇了貪婪的道路，";
+	mes "並且忘記了如何";
+	mes "與他們的";
+	mes "同事們合作。這種自私";
+	mes "讓我厭惡至極！啊！";
 	next;
-	mes "[Ledrion]";
-	mes "I may not be an adventurer,";
-	mes "but I have the money to do";
-	mes "something. I am hosting";
-	mes "my own little challenge";
-	mes "to adventurers to encourage";
-	mes "camaraderie and teamwork.";
+	mes "[雷德里昂]";
+	mes "我可能不是一個冒險家，";
+	mes "但我有錢可以做";
+	mes "一些事情。我正在舉辦";
+	mes "我自己的小挑戰";
+	mes "給冒險家，以鼓勵";
+	mes "同志情誼和團隊合作。";
 	next;
-	mes "[Ledrion]";
-	mes "Please, I invite you to";
-	mes "give it a try! Allow me to";
-	mes "state some of my conditions.";
-	mes "Firstly, you must be part of";
-	mes "a group of 6 or more members,";
-	mes "such as a Party or a Guild.";
+	mes "[雷德里昂]";
+	mes "請，我邀請你";
+	mes "試一試！請允許我";
+	mes "說明我的一些條件。";
+	mes "首先，你必須是";
+	mes "一個由 6 個或更多成員組成的團體的一部分，";
+	mes "例如一個隊伍或一個公會。";
 	next;
-	mes "[Ledrion]";
-	mes "Secondly, only the leader";
-	mes "of the group can begin the";
-	mes "first part of my challenge.";
-	mes "If you are not the leader,";
-	mes "let him know that he should";
-	mes "speak to me for the challenge.";
+	mes "[雷德里昂]";
+	mes "其次，只有";
+	mes "該團體的領導者可以開始";
+	mes "我的挑戰的第一部分。";
+	mes "如果你不是領導者，";
+	mes "讓他知道他應該";
+	mes "與我交談以進行挑戰。";
 	next;
-	mes "[Ledrion]";
-	mes "Thirdly, you must have a";
-	mes "Swordman Class, Mage Class,";
-	mes "Acolyte Class, Archer Class,";
-	mes "Thief Class, and Merchant";
-	mes "Class character to complete";
-	mes "the challenges you'll receive.";
+	mes "[雷德里昂]";
+	mes "第三，你必須有一個";
+	mes "劍士職業、法師職業、";
+	mes "服事職業、弓箭手職業、";
+	mes "盜賊職業和商人";
+	mes "職業角色才能完成";
+	mes "你將收到的挑戰。";
 	next;
-	mes "[Ledrion]";
-	mes "Transcended characters";
-	mes "are good too. Fourthly, all";
-	mes "group members must be";
-	mes "at least Base Level 40.";
-	mes "Everything else, well,";
-	mes "you'll learn along the way.";
+	mes "[雷德里昂]";
+	mes "轉生角色";
+	mes "也很好。第四，所有";
+	mes "團體成員必須";
+	mes "至少是基本等級 40。";
+	mes "其他的一切，嗯，";
+	mes "你會一路學到的。";
 	next;
-	mes "[Ledrion]";
-	mes "Don't fret, I won't have you";
-	mes "jumping through hoops for";
-	mes "no reason at all. I'll provide";
-	mes "plenty of rewards as an";
-	mes "incentive for your group.";
-	mes "Would you like to participate?";
+	mes "[雷德里昂]";
+	mes "別擔心，我不會讓你";
+	mes "無緣無故地跳火圈。";
+	mes "我會提供";
+	mes "充足的獎勵作為對你團隊的";
+	mes "激勵。";
+	mes "你想參加嗎？";
 	next;
-	switch(select("Sure!:No.")) {
+	switch(select("當然!:不用了.")) {
 	case 1:
 		if ((BaseLevel > 39) && .@partyleader == true && (getcharid(2) > 0) && (.@partymembercount > 5)) {
-			mes "[Ledrion]";
-			mes "Great! Let's see...";
-			mes "Well, you meet all the";
-			mes "requirements. It looks";
-			mes "like I'll win the bet! Er, let";
-			mes "me give you your first";
-			mes "set of instructions.";
+			mes "[雷德里昂]";
+			mes "太好了！讓我看看...";
+			mes "嗯，你滿足所有";
+			mes "要求。看起來";
+			mes "我會贏得賭局！呃，讓";
+			mes "我給你你的第一組";
+			mes "指令。";
 			next;
 			set party_relay,1;
-			mes "[Ledrion]";
-			mes "Just--^666666*Cough!*^000000";
-			mes "Lemme clear my";
-			mes "throat for a second...";
+			mes "[雷德里昂]";
+			mes "只是--^666666*咳嗽！*^000000";
+			mes "讓我清一下";
+			mes "喉嚨。";
 			close;
 		}
 		else {
-			mes "[Ledrion]";
-			mes "That's great! Still,";
-			mes "you're not ready to tackle";
-			mes "my little challenge until";
-			mes "you fulfill all of my";
-			mes "conditions. Come back";
-			mes "once you do that, alright?";
+			mes "[雷德里昂]";
+			mes "太好了！不過，";
+			mes "在你滿足我所有的";
+			mes "條件之前，你還沒準備好迎接";
+			mes "我的小挑戰。";
+			mes "一旦你做到了，就回來";
+			mes "，好嗎？";
 			close;
 		}
 	case 2:
-		mes "[Ledrion]";
-		mes "Really? Trust me, this";
-		mes "little challenge will be";
-		mes "worthwhile for you, and it";
-		mes "would bring a greater sense";
-		mes "of solidarity and teamwork";
-		mes "to Rune-Midgarts. It's win-win!";
+		mes "[雷德里昂]";
+		mes "真的嗎？相信我，這個";
+		mes "小挑戰將會";
+		mes "對你來說是有價值的，而且它";
+		mes "會帶來更大的團結感和團隊合作精神";
+		mes "給盧恩-米德加茲。這是雙贏！";
 		close;
 	}
 }
 
-payon,83,327,3	script	Gatan#payon::RelayGatan	86,{
+payon,83,327,3	script	迦旦#payon::RelayGatan	86,{
 	if (checkweight(907,300) == 0) {
-		mes "^3355FFWait a minute! You're";
-		mes "carrying too many items";
-		mes "right now: store some of";
-		mes "your extra things in Kafra";
-		mes "Storage, and then come back.^000000";
+		mes "^3355FF等一下！你";
+		mes "現在攜帶太多物品了";
+		mes "：將一些額外的東西存放在卡普拉";
+		mes "倉庫中，然後再回來。^000000";
 		close;
 	}
 	if ((countitem(7732) > 0) || (countitem(7733) > 0) || (countitem(7736) > 0) || (countitem(7737) > 0) || (countitem(7740) > 0) || (countitem(7741) > 0)) {
-		mes "[Gatan]";
-		mes "Say, aren't you forgetting";
-		mes "something? Try to remember...";
-		mes "Earlier, you received some";
-		mes "instructions, didn't you?";
+		mes "[迦旦]";
+		mes "說，你沒忘記";
+		mes "什麼東西嗎？試著記起來...";
+		mes "早些時候，你收到了一些";
+		mes "指示，不是嗎？";
 		close;
 	}
 	set .@relaytime,gettime(DT_HOUR);
 	if (party_relay == 28) {
-		mes "[Gatan]";
-		mes "Say, I don't think it's";
-		mes "your turn to meet up with";
-		mes "me. I think you need to ask a";
-		mes "Thief or Acolyte Class member";
-		mes "of your group to bring the";
-		mes "tenth ticket to Bafhail.";
+		mes "[迦旦]";
+		mes "說，我不認為輪到";
+		mes "你來見我了。";
+		mes "我認為你需要請一位";
+		mes "盜賊或服事職業成員";
+		mes "的你的團隊將第十張";
+		mes "票帶到巴菲爾。";
 		close;
 	}
 	if (party_relay == 27) {
-		mes "[Gatan]";
-		mes "Ah, very nice! Please";
-		mes "give this ticket to a Thief";
-		mes "or Acolyte Class member";
-		mes "of your group, and ask him";
-		mes "to bring it to Bafhail. Ah, and";
-		mes "here's a little reward for you~";
+		mes "[迦旦]";
+		mes "啊，非常好！請";
+		mes "把這張票給一位盜賊";
+		mes "或服事職業成員";
+		mes "的你的團隊，並請他";
+		mes "把它帶到巴菲爾。啊，還有";
+		mes "這是給你的小獎勵~";
 		set party_relay,28;
 		getitem 7739,1; //Mission_Certificate10
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
 		next;
-		mes "[Gatan]";
-		mes "Alright, get that done.";
-		mes "I'll see you around.";
+		mes "[迦旦]";
+		mes "好吧，完成它。";
+		mes "我會再見到你的。";
 		close;
 	}
 	if ((party_relay == 26) && (BaseLevel > (party_relay_lv + 2)) && (.@relaytime >= 14) && (.@relaytime < 17)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[迦旦]";
+		mes "太好了，你獲得了一些";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找到你的下一個--我發誓";
+		mes "我把它留在某個地方了--";
+		mes "我會給你你的下一組";
+		mes "指令。等等...";
 		set party_relay,27;
 		close;
 	}
 	else if ((party_relay == 26) && (BaseLevel > (party_relay_lv + 2)) && (.@relaytime >= 18) && (.@relaytime < 21)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[迦旦]";
+		mes "太好了，你獲得了一些";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找到你的下一個--我發誓";
+		mes "我把它留在某個地方了--";
+		mes "我會給你你的下一組";
+		mes "指令。等等...";
 		set party_relay,27;
 		close;
 	}
 	if (party_relay == 26) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 3 more Base Levels.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[迦旦]";
+		mes "你的任務是";
+		mes "再獲得 3 個基本等級。";
+		mes "一旦你";
+		mes "完成它，就在我的";
+		mes "工作時間來找我，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "I can't tell you exactly";
-		mes "when I work, but my work";
-		mes "hours are in the afternoon...";
-		mes "Pacific Standard Time, anyway.";
-		mes "I might not be here if you";
-		mes "come here too late, alright?";
+		mes "[加坦]";
+		mes "我不能確切地告訴你";
+		mes "我什麼時候工作，但是我的";
+		mes "工作時間是在下午...";
+		mes "太平洋標準時間，總之。";
+		mes "如果你";
+		mes "太晚來這裡，我可能不在，好嗎？";
 		close;
 	}
 	if ((party_relay == 25) && (BaseLevel > (party_relay_lv + 1)) && (.@relaytime >= 14) && (.@relaytime < 17)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[加坦]";
+		mes "太好了，你升了一些";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找找你的下一個--我發誓";
+		mes "我把它放在某個地方--";
+		mes "然後我會給你你的下一組";
+		mes "指示。等等...";
 		set party_relay,27;
 		close;
 	}
 	else if ((party_relay == 25) && (BaseLevel > (party_relay_lv + 1)) && (.@relaytime >= 18) && (.@relaytime < 21)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[加坦]";
+		mes "太好了，你升了一些";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找找你的下一個--我發誓";
+		mes "我把它放在某個地方--";
+		mes "然後我會給你你的下一組";
+		mes "指示。等等...";
 		set party_relay,27;
 		close;
 	}
 	if (party_relay == 25) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 2 more Base Levels.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[加坦]";
+		mes "你的任務是";
+		mes "再獲得 2 個 Base 等級。";
+		mes "一旦你";
+		mes "完成，在我的工作時間來找我，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "I can't tell you exactly";
-		mes "when I work, but my work";
-		mes "hours are in the afternoon...";
-		mes "Pacific Standard Time, anyway.";
-		mes "I might not be here if you";
-		mes "come here too late, alright?";
+		mes "[加坦]";
+		mes "我不能確切地告訴你";
+		mes "我什麼時候工作，但是我的";
+		mes "工作時間是在下午...";
+		mes "太平洋標準時間，總之。";
+		mes "如果你";
+		mes "太晚來這裡，我可能不在，好嗎？";
 		close;
 	}
 	if ((party_relay == 24) && (BaseLevel > party_relay_lv) && (.@relaytime >= 14) && (.@relaytime < 17)) {
-		mes "[Gatan]";
-		mes "Great, you gained a";
-		mes "level, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[加坦]";
+		mes "太好了，你升了一個";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找找你的下一個--我發誓";
+		mes "我把它放在某個地方--";
+		mes "然後我會給你你的下一組";
+		mes "指示。等等...";
 		set party_relay,27;
 		close;
 	}
 	else if ((party_relay == 24) && (BaseLevel > party_relay_lv) && (.@relaytime >= 18) && (.@relaytime < 21)) {
-		mes "[Gatan]";
-		mes "Great, you gained a";
-		mes "level, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[加坦]";
+		mes "太好了，你升了一個";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找找你的下一個--我發誓";
+		mes "我把它放在某個地方--";
+		mes "然後我會給你你的下一組";
+		mes "指示。等等...";
 		set party_relay,27;
 		close;
 	}
 	if (party_relay == 24) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 1 more Base Level.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[加坦]";
+		mes "你的任務是";
+		mes "再獲得 1 個 Base 等級。";
+		mes "一旦你";
+		mes "完成，在我的工作時間來找我，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "I can't tell you exactly";
-		mes "when I work, but my work";
-		mes "hours are in the afternoon...";
-		mes "Pacific Standard Time, anyway.";
-		mes "I might not be here if you";
-		mes "come here too late, alright?";
+		mes "[加坦]";
+		mes "我不能確切地告訴你";
+		mes "我什麼時候工作，但是我的";
+		mes "工作時間是在下午...";
+		mes "太平洋標準時間，總之。";
+		mes "如果你";
+		mes "太晚來這裡，我可能不在，好嗎？";
 		close;
 	}
 	if ((countitem(7738) > 0) && ((BaseClass == Job_Swordman) || (BaseClass == Job_Mage))) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是來自";
+		mes "雷德里昂的票，嗯？ (^666666糟糕！我";
+		mes "現在得工作了？^000000) 很高興";
+		mes "見到你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "Well, now I've got a little";
-		mes "test for you. You ready?";
-		mes "Your objective is to gain";
-		mes "more levels! Let's see...";
-		mes "What would be fair?";
+		mes "[加坦]";
+		mes "好吧，現在我給你準備了一個";
+		mes "小測試。你準備好了嗎？";
+		mes "你的目標是獲得";
+		mes "更多等級！讓我想想...";
+		mes "什麼才算公平？";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[加坦]";
+			mes "實際上，你已經";
+			mes "很強了。我也不想";
+			mes "做太多工作，";
+			mes "所以我們就說你";
+			mes "完成了我的測試，好嗎？";
+			mes "別告訴任何人！";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,27;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[加坦]";
+			mes "等一下...";
+			mes "我應該告訴";
+			mes "你一些事情...給我";
+			mes "一分鐘，可以嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 1 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,24;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 1 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,24;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 2 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,25;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 2 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,25;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，你可能會";
+			mes "從變得更";
+			mes "強一點中受益。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,26;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，你可能會";
+			mes "從變得更";
+			mes "強一點中受益。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,26;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 	}
 	else if ((countitem(7738) > 0) && ((BaseClass == Job_Swordman) || (BaseClass == Job_Mage))) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是來自";
+		mes "雷德里昂的票，嗯？ (^666666糟糕！我";
+		mes "現在得工作了？^000000) 很高興";
+		mes "見到你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "Well, now I've got a little";
-		mes "test for you. You ready?";
-		mes "Your objective is to gain";
-		mes "more levels! Let's see...";
-		mes "What would be fair?";
+		mes "[加坦]";
+		mes "好吧，現在我給你準備了一個";
+		mes "小測試。你準備好了嗎？";
+		mes "你的目標是獲得";
+		mes "更多等級！讓我想想...";
+		mes "什麼才算公平？";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[加坦]";
+			mes "實際上，你已經";
+			mes "很強了。我也不想";
+			mes "做太多工作，";
+			mes "所以我們就說你";
+			mes "完成了我的測試，好嗎？";
+			mes "別告訴任何人！";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,27;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[加坦]";
+			mes "等一下...";
+			mes "我應該告訴";
+			mes "你一些事情...給我";
+			mes "一分鐘，可以嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 1 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,24;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 1 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,24;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 2 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,25;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再升 2 級";
+			mes "Base 等級也不會";
+			mes "要你的命。去吧";
+			mes "去做，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,25;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，你可能會";
+			mes "從變得更";
+			mes "強一點中受益。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,26;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，你可能會";
+			mes "從變得更";
+			mes "強一點中受益。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7738,1; //Mission_Certificate9
 			set party_relay,26;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我現在先";
+			mes "收下你的票。等你";
+			mes "完成我";
+			mes "的要求後再回來，然後我們就可以";
+			mes "繼續下一部分。";
 			close;
 		}
 	}
 	if ((countitem(7738) > 0) && ((BaseClass == Job_Swordman) || (BaseClass == Job_Mage))) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是來自";
+		mes "雷德里昂的票，嗯？很高興";
+		mes "見到你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "I'm not on shift right";
-		mes "now, though: even I need";
-		mes "to take some off time to";
-		mes "avoid getting swamped with";
-		mes "work. Come back to me during";
-		mes "my work hours, alright?";
+		mes "[加坦]";
+		mes "我現在沒有當班";
+		mes "不過，即使我也需要";
+		mes "休息一下，以避免";
+		mes "被工作淹沒。";
+		mes "在我的工作時間回來找我，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "I can't tell you exactly";
-		mes "when I'm working (^666666well,";
-		mes "I just want to avoid working";
-		mes "altogether to be honest^000000) but";
-		mes "come back in the afternoon,";
-		mes "Pacific Standard Time, that is.";
+		mes "[加坦]";
+		mes "我不能確切地告訴你";
+		mes "我什麼時候工作 (^666666嗯，";
+		mes "老實說，我只是想完全避免工作^000000)，但";
+		mes "在下午回來，";
+		mes "太平洋標準時間，也就是說。";
 		close;
 	}
 	if (party_relay == 17) {
-		mes "[Gatan]";
-		mes "Say, it's not time for";
-		mes "you to meet up with me";
-		mes "just yet. I think you need";
-		mes "to ask an Acolyte Class";
-		mes "member in your group to bring";
-		mes "your sixth ticket to Bafhail.";
+		mes "[加坦]";
+		mes "說，現在不是";
+		mes "你和我會面的時間";
+		mes "還沒到。我想你需要";
+		mes "請你隊伍中的一個";
+		mes "服事職業成員將";
+		mes "你的第六張票帶到巴夫海爾。";
 		close;
 	}
 	if (party_relay == 16) {
-		mes "[Gatan]";
-		mes "Ah, very nice! Please";
-		mes "give this ticket to an";
-		mes "Acolyte Class member";
-		mes "of your group, and ask him";
-		mes "to bring it to Bafhail. Ah, and";
-		mes "here's a little reward for you~";
+		mes "[加坦]";
+		mes "啊，非常好！請";
+		mes "把這張票給";
+		mes "你隊伍中的一位";
+		mes "服事職業成員，並且請他";
+		mes "將其帶到巴夫海爾。啊，而且";
+		mes "這是一點小獎勵給你~";
 		set party_relay,17;
 		getitem 7735,1; //Mission_Certificate6
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
 		next;
-		mes "[Gatan]";
-		mes "Alright, get that done.";
-		mes "I'll see you around.";
+		mes "[加坦]";
+		mes "好了，完成它。";
+		mes "我們到時見。";
 		close;
 	}
 	if ((party_relay == 15) && (BaseLevel > (party_relay_lv + 2)) && (.@relaytime >= 8) && (.@relaytime < 11)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[加坦]";
+		mes "太好了，你升了一些";
+		mes "等級，就像我要求的那樣。";
+		mes "讓我找找你的下一個--我發誓";
+		mes "我把它放在某個地方--";
+		mes "然後我會給你你的下一組";
+		mes "指示。等等...";
 		set party_relay,16;
 		close;
 	}
 	else if ((party_relay == 15) && (BaseLevel > (party_relay_lv + 2)) && (.@relaytime >= 21) && (.@relaytime < 1)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[賈坦]";
+		mes "很好，你提升了一些";
+		mes "等級，就像我要求的。";
+		mes "讓我想想你下一個--我發誓";
+		mes "我把它放在某處了--";
+		mes "然後我會給你下一組";
+		mes "指示。等一下…";
 		set party_relay,16;
 		close;
 	}
 	if (party_relay == 15) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 3 more Base Levels.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[賈坦]";
+		mes "你的任務是";
+		mes "再獲得 3 個Base等級。";
+		mes "在我的工作時間來找我";
+		mes "完成之後，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "Now I work three hours";
-		mes "just before I have lunch,";
-		mes "and three hours around";
-		mes "midnight. Go ahead and";
-		mes "look me up around those";
-		mes "times. A bit confusing, I know~";
+		mes "[賈坦]";
+		mes "現在我在午餐前工作三個小時";
+		mes "午夜前後工作三個小時。";
+		mes "去吧，在那些";
+		mes "時間來找我。有點混亂，我知道～";
 		close;
 	}
 	if ((party_relay == 14) && (BaseLevel > (party_relay_lv + 1)) && (.@relaytime >= 8)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[賈坦]";
+		mes "很好，你提升了一些";
+		mes "等級，就像我要求的。";
+		mes "讓我想想你下一個--我發誓";
+		mes "我把它放在某處了--";
+		mes "然後我會給你下一組";
+		mes "指示。等一下…";
 		set party_relay,16;
 		close;
 	}
 	else if ((party_relay == 14) && (BaseLevel > (party_relay_lv + 1)) && (.@relaytime >= 21)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[賈坦]";
+		mes "很好，你提升了一些";
+		mes "等級，就像我要求的。";
+		mes "讓我想想你下一個--我發誓";
+		mes "我把它放在某處了--";
+		mes "然後我會給你下一組";
+		mes "指示。等一下…";
 		set party_relay,16;
 		close;
 	}
 	if (party_relay == 14) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 2 more Base Levels.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[賈坦]";
+		mes "你的任務是";
+		mes "再獲得 2 個Base等級。";
+		mes "在我的工作時間來找我";
+		mes "完成之後，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "Now I work three hours";
-		mes "just before I have lunch,";
-		mes "and three hours around";
-		mes "midnight. Go ahead and";
-		mes "look me up around those";
-		mes "times. A bit confusing, I know~";
+		mes "[賈坦]";
+		mes "現在我在午餐前工作三個小時";
+		mes "午夜前後工作三個小時。";
+		mes "去吧，在那些";
+		mes "時間來找我。有點混亂，我知道～";
 		close;
 	}
 	if ((party_relay == 13) && (BaseLevel > party_relay_lv) && (.@relaytime >= 8) && (.@relaytime < 11)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[賈坦]";
+		mes "很好，你提升了一些";
+		mes "等級，就像我要求的。";
+		mes "讓我想想你下一個--我發誓";
+		mes "我把它放在某處了--";
+		mes "然後我會給你下一組";
+		mes "指示。等一下…";
 		set party_relay,16;
 		close;
 	}
 	else if ((party_relay == 13) && (BaseLevel > party_relay_lv) && (.@relaytime >= 21)) {
-		mes "[Gatan]";
-		mes "Great, you gained some";
-		mes "levels, just like I asked.";
-		mes "Let me find your next--I swore";
-		mes "I left it around somewhere--";
-		mes "and I'll give you your next set";
-		mes "of instructions. Hang on...";
+		mes "[賈坦]";
+		mes "很好，你提升了一些";
+		mes "等級，就像我要求的。";
+		mes "讓我想想你下一個--我發誓";
+		mes "我把它放在某處了--";
+		mes "然後我會給你下一組";
+		mes "指示。等一下…";
 		set party_relay,16;
 		close;
 	}
 	if (party_relay == 13) {
-		mes "[Gatan]";
-		mes "Your mission is to";
-		mes "gain 1 more Base Level.";
-		mes "Come see me during my";
-		mes "working hours once you";
-		mes "accomplish that, alright?";
+		mes "[賈坦]";
+		mes "你的任務是";
+		mes "再獲得 1 個Base等級。";
+		mes "在我的工作時間來找我";
+		mes "完成之後，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "Now I work three hours";
-		mes "just before I have lunch,";
-		mes "and three hours around";
-		mes "midnight. Go ahead and";
-		mes "look me up around those";
-		mes "times. A bit confusing, I know~";
+		mes "[賈坦]";
+		mes "現在我在午餐前工作三個小時";
+		mes "午夜前後工作三個小時。";
+		mes "去吧，在那些";
+		mes "時間來找我。有點混亂，我知道～";
 		close;
 	}
 	if ((BaseLevel > 39) && (countitem(7734) > 0) && (.@relaytime >= 8) && (.@relaytime < 11) && (BaseClass == Job_Mage)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[賈坦]";
+		mes "哦，嗯... 那是...？";
+		mes "那是來自";
+		mes "雷德里翁的票，嗯？ (^666666Nuts! I've";
+		mes "got to work now?^000000) 很高興";
+		mes "見到你。我是賈坦。";
 		next;
-		mes "[Gatan]";
-		mes "Well, now I've got a little";
-		mes "test for you. You ready?";
-		mes "Your objective is to gain";
-		mes "more levels! Let's see...";
-		mes "What would be fair?";
+		mes "[賈坦]";
+		mes "好吧，現在我給你出個";
+		mes "小小的考驗。你準備好了嗎？";
+		mes "你的目標是獲得";
+		mes "更多等級！讓我想想...";
+		mes "什麼才算公平？";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[賈坦]";
+			mes "實際上，你已經";
+			mes "非常強大了。我也不想";
+			mes "做太多工作，";
+			mes "所以我們就說你";
+			mes "完成了我的測試，好嗎？";
+			mes "別告訴任何人！";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,16;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[賈坦]";
+			mes "等一下...";
+			mes "我應該告訴";
+			mes "你一些事... 給";
+			mes "我一分鐘，好嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 1 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,13;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 1 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,13;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 2 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,14;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 2 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,14;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[賈坦]";
+			mes "你知道，你可能會";
+			mes "受益於再變得";
+			mes "稍微強大一點。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,15;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[賈坦]";
+			mes "你知道，你可能會";
+			mes "受益於再變得";
+			mes "稍微強大一點。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,15;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 	}
 	else if ((BaseLevel > 39) && (countitem(7734) > 0) && (.@relaytime >= 21) && (BaseClass == Job_Mage)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[賈坦]";
+		mes "哦，嗯... 那是...？";
+		mes "那是來自";
+		mes "雷德里翁的票，嗯？ (^666666Nuts! I've";
+		mes "got to work now?^000000) 很高興";
+		mes "見到你。我是賈坦。";
 		next;
-		mes "[Gatan]";
-		mes "Well, now I've got a little";
-		mes "test for you. You ready?";
-		mes "Your objective is to gain";
-		mes "more levels! Let's see...";
-		mes "What would be fair?";
+		mes "[賈坦]";
+		mes "好吧，現在我給你出個";
+		mes "小小的考驗。你準備好了嗎？";
+		mes "你的目標是獲得";
+		mes "更多等級！讓我想想...";
+		mes "什麼才算公平？";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[賈坦]";
+			mes "實際上，你已經";
+			mes "非常強大了。我也不想";
+			mes "做太多工作，";
+			mes "所以我們就說你";
+			mes "完成了我的測試，好嗎？";
+			mes "別告訴任何人！";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,16;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[賈坦]";
+			mes "等一下...";
+			mes "我應該告訴";
+			mes "你一些事... 給";
+			mes "我一分鐘，好嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 1 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,13;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 1 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,13;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 2 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,14;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[賈坦]";
+			mes "你很強大，";
+			mes "但再獲得 2 個";
+			mes "Base等級也無妨。";
+			mes "去吧，做吧，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,14;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[賈坦]";
+			mes "你知道，你可能會";
+			mes "受益於再變得";
+			mes "稍微強大一點。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,15;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[賈坦]";
+			mes "你知道，你可能會";
+			mes "受益於再變得";
+			mes "稍微強大一點。現在";
+			mes "出去為我獲得 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7734,1; //Mission_Certificate5
 			set party_relay,15;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[賈坦]";
+			mes "我會先拿走";
+			mes "你的票。在你完成";
+			mes "我所要求的之後再來，";
+			mes "然後我們就可以";
+			mes "進入下一個部分。";
 			close;
 		}
 	}
 	if ((BaseLevel > 39) && (countitem(7734) > 0) && (BaseClass == Job_Mage)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[賈坦]";
+		mes "哦，嗯... 那是...？";
+		mes "那是來自";
+		mes "雷德里翁的票，嗯？很高興";
+		mes "見到你。我是賈坦。";
 		next;
-		mes "[Gatan]";
-		mes "I'm not on shift right";
-		mes "now, though: even I need";
-		mes "to take some off time to";
-		mes "avoid getting swamped with";
-		mes "work. Come back to me during";
-		mes "my work hours, alright?";
+		mes "[賈坦]";
+		mes "但我現在不在值班";
+		mes "時間：即使我也需要";
+		mes "休息時間來";
+		mes "避免被工作淹沒。";
+		mes "在我的工作時間回來找我，好嗎？";
 		next;
-		mes "[Gatan]";
-		mes "Now I work three hours";
-		mes "just before I have lunch,";
-		mes "and three hours around";
-		mes "midnight. Go ahead and";
-		mes "look me up around those";
-		mes "times. A bit confusing, I know~";
+		mes "[賈坦]";
+		mes "現在我在午餐前工作三個小時";
+		mes "午夜前後工作三個小時。";
+		mes "去吧，在那些";
+		mes "時間來找我。有點混亂，我知道～";
 		close;
 	}
 	if (party_relay == 6) {
-		mes "[Gatan]";
-		mes "Did you give that ticket";
-		mes "to the Thief Class member";
-		mes "of your group? ^666666*Yawn*^000000 If you";
-		mes "wanna finish all of these";
-		mes "challenges, then that's";
-		mes "what you gotta do~";
+		mes "[賈坦]";
+		mes "你有把票給了";
+		mes "你隊伍裡的盜賊職業";
+		mes "成員嗎？ ^666666*Yawn*^000000 如果你";
+		mes "想完成所有這些";
+		mes "挑戰，那就";
+		mes "你必須這麼做～";
 		close;
 	}
 	if (party_relay == 5) {
-		mes "[Gatan]";
-		mes "Ah, very nice!";
-		mes "Now please give this";
-		mes "ticket to the Thief Class";
-		mes "member of the your group,";
-		mes "and ask him to deliver";
-		mes "it to Bafhail. Easy, right?";
+		mes "[賈坦]";
+		mes "啊，非常好！";
+		mes "現在請把這張";
+		mes "票交給你隊伍裡的盜賊職業";
+		mes "成員，並請他";
+		mes "把它交給巴發伊。很簡單，對吧？";
 		next;
-		mes "[Gatan]";
-		mes "Here you are...";
-		mes "Just a little";
-		mes "something for";
-		mes "your troubles~";
+		mes "[加坦]";
+		mes "給你...";
+		mes "只是一點";
+		mes "小小的";
+		mes "報酬而已~";
 		set party_relay,6;
 		getitem 7731,1; //Mission_Certificate2
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
 		next;
-		mes "[Gatan]";
-		mes "Don't forget to make";
-		mes "sure that Bafhail gets";
-		mes "that ticket from a Thief";
-		mes "Class character in your";
-		mes "group. I'll see you around.";
+		mes "[加坦]";
+		mes "別忘了";
+		mes "確保你隊伍裡";
+		mes "有盜賊職業的角色";
+		mes "把票給巴發伊爾。";
+		mes "回頭見。";
 		close;
 	}
 	if ((party_relay == 4) && (BaseLevel > (party_relay_lv + 2)) && ((.@relaytime >= 11) && (.@relaytime < 14))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	else if ((party_relay == 4) && (BaseLevel > (party_relay_lv + 2)) && ((.@relaytime >= 0) && (.@relaytime < 3))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	if (party_relay == 4) {
-		mes "[Gatan]";
-		mes "You didn't forget that";
-		mes "you had to gain 3 more";
-		mes "Base Levels, did you?";
-		mes "Oh, and come back during";
-		mes "my regular working hours.";
-		mes "Don't bother me when I'm off~";
+		mes "[加坦]";
+		mes "你沒有忘記你";
+		mes "必須再提升 3 個";
+		mes "Base 等級，對吧？";
+		mes "喔，還有，要在";
+		mes "我正常的工作時間回來。";
+		mes "我休息的時候別來煩我～";
 		next;
-		mes "[Gatan]";
-		mes "I'll tell you when I work";
-		mes "one more time: come from";
-		mes "11 AM to 2 PM, or 12 AM to";
-		mes "3 AM, Pacific Standard Time.";
-		mes "Good luck to you, alright?";
+		mes "[加坦]";
+		mes "我再告訴你一次我的工作時間：";
+		mes "太平洋標準時間早上 11 點到下午 2 點，";
+		mes "或是凌晨 12 點到";
+		mes "凌晨 3 點再來。";
+		mes "祝你好運，好嗎？";
 		close;
 	}
 	if ((party_relay == 3) && (BaseLevel > (party_relay_lv + 1)) && ((.@relaytime >= 11) && (.@relaytime < 14))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	else if ((party_relay == 3) && (BaseLevel > (party_relay_lv + 1)) && ((.@relaytime >= 0) && (.@relaytime < 3))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	if (party_relay == 3) {
-		mes "[Gatan]";
-		mes "You didn't forget that";
-		mes "you had to gain 2 more";
-		mes "Base Levels, did you?";
-		mes "Oh, and come back during";
-		mes "my regular working hours.";
-		mes "Don't bother me when I'm off~";
+		mes "[加坦]";
+		mes "你沒有忘記你";
+		mes "必須再提升 2 個";
+		mes "Base 等級，對吧？";
+		mes "喔，還有，要在";
+		mes "我正常的工作時間回來。";
+		mes "我休息的時候別來煩我～";
 		next;
-		mes "[Gatan]";
-		mes "I'll tell you when I work";
-		mes "one more time: come from";
-		mes "11 AM to 2 PM, or 12 AM to";
-		mes "3 AM, Pacific Standard Time.";
-		mes "Good luck to you, alright?";
+		mes "[加坦]";
+		mes "我再告訴你一次我的工作時間：";
+		mes "太平洋標準時間早上 11 點到下午 2 點，";
+		mes "或是凌晨 12 點到";
+		mes "凌晨 3 點再來。";
+		mes "祝你好運，好嗎？";
 		close;
 	}
 	if ((party_relay == 99) && (BaseLevel > party_relay_lv) && ((.@relaytime >= 11) && (.@relaytime < 14))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	else if ((party_relay == 99) && (BaseLevel > party_relay_lv) && ((.@relaytime >= 0) && (.@relaytime < 3))) {
-		mes "[Gatan]";
-		mes "Nice work. I guess";
-		mes "that Ledrion really knows";
-		mes "good adventurers when he";
-		mes "sees them. Now, you mind";
-		mes "waiting a bit? Um, there's";
-		mes "something I have to give you...";
+		mes "[加坦]";
+		mes "做得好。我想";
+		mes "雷里昂真的很懂";
+		mes "什麼是優秀的冒險者。";
+		mes "現在，你可以等一下嗎？";
+		mes "嗯，有些";
+		mes "東西我必須給你...";
 		set party_relay,5;
 		close;
 	}
 	if (party_relay == 99) {
-		mes "[Gatan]";
-		mes "You didn't forget that";
-		mes "you had to gain 1 more";
-		mes "Base Level, did you?";
-		mes "Oh, and come back during";
-		mes "my regular working hours.";
-		mes "Don't bother me when I'm off~";
+		mes "[加坦]";
+		mes "你沒有忘記你";
+		mes "必須再提升 1 個";
+		mes "Base 等級，對吧？";
+		mes "喔，還有，要在";
+		mes "我正常的工作時間回來。";
+		mes "我休息的時候別來煩我～";
 		next;
-		mes "[Gatan]";
-		mes "I'll tell you when I work";
-		mes "one more time: come from";
-		mes "11 AM to 2 PM, or 12 AM to";
-		mes "3 AM, Pacific Standard Time.";
-		mes "Good luck to you, alright?";
+		mes "[加坦]";
+		mes "我再告訴你一次我的工作時間：";
+		mes "太平洋標準時間早上 11 點到下午 2 點，";
+		mes "或是凌晨 12 點到";
+		mes "凌晨 3 點再來。";
+		mes "祝你好運，好嗎？";
 		close;
 	}
 	if ((BaseLevel > 39) && (countitem(7730) > 0) && (.@relaytime >= 11) && (.@relaytime < 14) && (BaseClass == Job_Swordman)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是雷里昂的";
+		mes "票，是嗎？(^666666糟了！我";
+		mes "現在得工作了？^000000) 很高興";
+		mes "認識你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "Ledrion wanted me to give";
-		mes "a little test if any Swordman";
-		mes "Class guys brought me a ticket,";
-		mes "and were working with a group.";
-		mes "Ready? Increasing your Base";
-		mes "Level will be my test for you.";
+		mes "[加坦]";
+		mes "雷里昂要我稍微";
+		mes "測試一下，看看有沒有劍士";
+		mes "職業的人帶票給我，";
+		mes "而且是跟隊伍一起。";
+		mes "準備好了嗎？提升你的Base";
+		mes "等級就是我給你的考驗。";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[加坦]";
+			mes "實際上，你已經";
+			mes "很強了。我也不想";
+			mes "花太多力氣工作，";
+			mes "所以我們就說你";
+			mes "通過了我的考驗，好嗎？";
+			mes "別告訴任何人喔！";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,5;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[加坦]";
+			mes "等一下...";
+			mes "我應該要";
+			mes "告訴你一些事...";
+			mes "給我一分鐘，好嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 1 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,99;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 1 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,99;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 2 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,3;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 2 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,3;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，如果";
+			mes "你再強一點點";
+			mes "可能會更好。現在";
+			mes "去幫我提升 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,4;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，如果";
+			mes "你再強一點點";
+			mes "可能會更好。現在";
+			mes "去幫我提升 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,4;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 	}
 	else if ((BaseLevel > 39) && (countitem(7730) > 0) && (.@relaytime >= 0) && (.@relaytime < 3) && (BaseClass == Job_Swordman)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是雷里昂的";
+		mes "票，是嗎？(^666666糟了！我";
+		mes "現在得工作了？^000000) 很高興";
+		mes "認識你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "Ledrion wanted me to give";
-		mes "a little test if any Swordman";
-		mes "Class guys brought me a ticket,";
-		mes "and were working with a group.";
-		mes "Ready? Increasing your Base";
-		mes "Level will be my test for you.";
+		mes "[加坦]";
+		mes "雷里昂要我稍微";
+		mes "測試一下，看看有沒有劍士";
+		mes "職業的人帶票給我，";
+		mes "而且是跟隊伍一起。";
+		mes "準備好了嗎？提升你的Base";
+		mes "等級就是我給你的考驗。";
 		next;
 		if (BaseLevel > 94) {
-			mes "[Gatan]";
-			mes "Actually, you're already";
-			mes "pretty strong. I don't feel";
-			mes "like doing much work either,";
-			mes "so we'll just say that you";
-			mes "finished my test, alright?";
-			mes "Just don't tell anyone!";
+			mes "[加坦]";
+			mes "實際上，你已經";
+			mes "很強了。我也不想";
+			mes "花太多力氣工作，";
+			mes "所以我們就說你";
+			mes "通過了我的考驗，好嗎？";
+			mes "別告訴任何人喔！";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,5;
-			mes "[Gatan]";
-			mes "Hold on a second...";
-			mes "I'm supposed to tell";
-			mes "you something... Give";
-			mes "me a minute, will you?";
+			mes "[加坦]";
+			mes "等一下...";
+			mes "我應該要";
+			mes "告訴你一些事...";
+			mes "給我一分鐘，好嗎？";
 			close;
 		}
 		else if (BaseLevel > 89) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 1 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,99;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 79) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 1 more";
-			mes "Base Level. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 1 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,99;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 69) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 2 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,3;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 59) {
-			mes "[Gatan]";
-			mes "You're pretty strong,";
-			mes "but it wouldn't kill";
-			mes "you to gain 2 more";
-			mes "Base Levels. Go ahead";
-			mes "and do that, alright?";
+			mes "[加坦]";
+			mes "你很強，";
+			mes "但再提升 2 個";
+			mes "Base 等級也不會";
+			mes "要你的命。去";
+			mes "提升吧，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,3;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 49) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，如果";
+			mes "你再強一點點";
+			mes "可能會更好。現在";
+			mes "去幫我提升 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,4;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll go ahead and take";
-			mes "your ticket now. Come";
-			mes "back after you finish what";
-			mes "I've asked, and then we can";
-			mes "move on to the next part.";
+			mes "[加坦]";
+			mes "我先收下";
+			mes "你的票了。等你";
+			mes "完成我要求的事情之後";
+			mes "再回來，然後我們就可以";
+			mes "進行到下一個階段。";
 			close;
 		}
 		else if (BaseLevel > 39) {
-			mes "[Gatan]";
-			mes "You know, you'd probably";
-			mes "benefit from being just";
-			mes "a little bit stronger. Now";
-			mes "go out and gain 3 Base";
-			mes "Levels for me, okay?";
+			mes "[加坦]";
+			mes "你知道嗎，如果";
+			mes "你再強一點點";
+			mes "可能會更好。現在";
+			mes "去幫我提升 3 個 Base";
+			mes "等級，好嗎？";
 			next;
 			delitem 7730,1; //Mission_Certificate1
 			set party_relay,4;
 			set party_relay_lv,BaseLevel;
-			mes "[Gatan]";
-			mes "I'll keep your ticket.";
-			mes "When you're finished, please come back.";
+			mes "[加坦]";
+			mes "我會保管你的票。";
+			mes "完成後，請回來。";
 			close;
 		}
 	}
 	else if ((BaseLevel > 39) && (countitem(7730) > 0) && (BaseClass == Job_Swordman)) {
-		mes "[Gatan]";
-		mes "Oh, um... Is that...?";
-		mes "That's a ticket from";
-		mes "Ledrion, huh? (^666666Nuts! I've";
-		mes "got to work now?^000000) It's nice";
-		mes "to meet you. I'm Gatan.";
+		mes "[加坦]";
+		mes "喔，嗯...那是...?";
+		mes "那是雷里昂的";
+		mes "票，是嗎？(^666666糟了！我";
+		mes "現在得工作了？^000000) 很高興";
+		mes "認識你。我是加坦。";
 		next;
-		mes "[Gatan]";
-		mes "Hate to tell you, but";
-		mes "I'm not on duty right now.";
-		mes "You should really come back";
-		mes "and talk to me during my";
-		mes "work hours, okay? I need";
-		mes "my rest from work, you know?";
+		mes "[加坦]";
+		mes "很抱歉告訴你，";
+		mes "但我現在沒有值班。";
+		mes "你真的應該在";
+		mes "我的工作時間回來";
+		mes "跟我談談，好嗎？我需要";
+		mes "從工作中休息一下，你知道嗎？";
 		next;
-		mes "[Gatan]";
-		mes "I'll tell you when I work,";
-		mes "just don't forget: come from";
-		mes "11 AM to 2 PM, or 12 AM to";
-		mes "3 AM, Pacific Standard Time.";
-		mes "Good luck to you, alright?";
+		mes "[迦丹]";
+		mes "我會告訴你我的工作時間，";
+		mes "別忘了：從上午 11 點到下午 2 點，或凌晨 12 點到";
+		mes "凌晨 3 點，太平洋標準時間來找我。";
+		mes "祝你好運，好嗎？";
 		close;
 	}
-	mes "[Gatan]";
-	mes "Hey, nice meeting you.";
-	mes "I'm Gatan. I'm not up to";
-	mes "much, just helping out";
-	mes "a friend. He's loaded, but";
-	mes "he's also a really good guy.";
-	mes "Working me to the bone, though.";
+	mes "[迦丹]";
+	mes "嘿，很高興見到你。";
+	mes "我是迦丹。我沒做什麼";
+	mes "大事，只是在幫";
+	mes "一個朋友。他很有錢，但";
+	mes "他也是個很好的人。";
+	mes "不過他把我累得要死。";
 	close;
 }
 
-payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
+payon,204,221,3	script	巴菲爾#payon::RelayBafhail	731,{
 	if (checkweight(907,300) == 0) {
-		mes "^3355FFWait a minute! You're";
-		mes "carrying too many items";
-		mes "right now: store some of";
-		mes "your extra things in Kafra";
-		mes "Storage, and then come back.^000000";
+		mes "^3355FF等等！你身上帶著太多的物品";
+		mes "現在：把一些多餘的東西";
+		mes "存放在卡普拉";
+		mes "倉庫裡，然後再回來。^000000";
 		close;
 	}
 	if (countitem(7730) > 0) || (countitem(7733) > 0) || (countitem(7734) > 0) || (countitem(7737) > 0) || (countitem(7738) > 0) || (countitem(7741) > 0) {
-		mes "[Bafhail]";
-		mes "You must be confused...";
-		mes "It's not time for you";
-		mes "to see me just yet.";
-		mes "Have you tried meeting";
-		mes "with any of the other guys?";
+		mes "[巴菲爾]";
+		mes "你一定是搞錯了...";
+		mes "現在還不是你";
+		mes "來見我的時候。";
+		mes "你有試著去見見";
+		mes "其他人了嗎？";
 		close;
 	}
 	set .@relaytime,gettime(DT_HOUR);
 	if (party_relay == 30) {
-		mes "[Bafhail]";
-		mes "Did you give that ticket";
-		mes "to an Archer or Merchant";
-		mes "Class member of your group?";
-		mes "Just a reminder in case";
-		mes "you've already forgotten.";
+		mes "[巴菲爾]";
+		mes "你有把那張票";
+		mes "給你的隊伍中的弓箭手或商人";
+		mes "職業成員了嗎？";
+		mes "只是提醒你一下，以防";
+		mes "你已經忘記了。";
 		close;
 	}
 	if ((party_relay == 29) && (.@relaytime >= 0) && (.@relaytime < 3) && (countitem(1012) > 19) && (countitem(1048) > 19) && (countitem(7003) > 19)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 1012,20; //Lizard_Scruff
 		delitem 1048,20; //Slender_Snake
@@ -1859,22 +1832,22 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Make sure that you give";
-		mes "that ticket to an Archer";
-		mes "or Merchant Class member";
-		mes "of your group, and have him";
-		mes "bring it to a boy named Lospii.";
-		mes "Goodbye now, and good luck~";
+		mes "[巴菲爾]";
+		mes "請務必把";
+		mes "那張票給弓箭手";
+		mes "或你隊伍中的商人";
+		mes "職業成員，讓他";
+		mes "帶去給一個名叫洛斯皮的男孩。";
+		mes "再見了，祝你好運～";
 		close;
 	}
 	else if ((party_relay == 29) && (.@relaytime >= 11) && (.@relaytime < 14) && (countitem(1012) > 19) && (countitem(1048) > 19) && (countitem(7003) > 19)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 1012,20; //Lizard_Scruff
 		delitem 1048,20; //Slender_Snake
@@ -1884,120 +1857,120 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Make sure that you give";
-		mes "that ticket to an Archer";
-		mes "or Merchant Class member";
-		mes "of your group, and have him";
-		mes "bring it to a boy named Lospii.";
-		mes "Goodbye now, and good luck~";
+		mes "[巴菲爾]";
+		mes "請務必把";
+		mes "那張票給弓箭手";
+		mes "或你隊伍中的商人";
+		mes "職業成員，讓他";
+		mes "帶去給一個名叫洛斯皮的男孩。";
+		mes "再見了，祝你好運～";
 		close;
 	}
 	if (party_relay == 29) {
-		mes "[Bafhail]";
-		mes "My mission for you is";
-		mes "to bring me some items";
-		mes "at the right time. I'll only";
-		mes "accept your items for 3 hours";
-		mes "once the day starts, and for 3";
-		mes "hours in the middle of the day.";
+		mes "[巴菲爾]";
+		mes "我給你的任務是";
+		mes "在正確的時間";
+		mes "帶一些物品給我。我只會";
+		mes "在一天開始後的 3 小時內接受你的物品";
+		mes "還有在中午的 3 個";
+		mes "小時內。";
 		next;
-		mes "[Bafhail]";
-		mes "I need";
-		mes "^4D4DFF20 Frills^000000,";
-		mes "^4D4DFF20 Anolian Skins^000000, and";
-		mes "^4D4DFF20 Horrendous Hairs^000000.";
-		mes "Don't forget now, alright?";
+		mes "[巴菲爾]";
+		mes "我需要";
+		mes "^4D4DFF20 荷葉邊^000000，";
+		mes "^4D4DFF20 鱷魚皮^000000，還有";
+		mes "^4D4DFF20 恐怖的毛髮^000000。";
+		mes "別忘了，好嗎？";
 		close;
 	}
 	if ((countitem(7739) > 0) && (.@relaytime >= 11) && (.@relaytime < 14) && ((BaseClass == Job_Thief) || (BaseClass == Job_Acolyte))) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
-		mes "Now, let's get to business.";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
+		mes "現在，讓我們開始辦正事。";
 		next;
-		mes "[Bafhail]";
-		mes "My mission is";
-		mes "for you to collect";
-		mes "^4D4DFF20 Frills^000000,";
-		mes "^4D4DFF20 Anolian Skins^000000, and";
-		mes "^4D4DFF20 Horrendous Hairs^000000.";
+		mes "[巴菲爾]";
+		mes "我的任務是";
+		mes "讓你收集";
+		mes "^4D4DFF20 荷葉邊^000000，";
+		mes "^4D4DFF20 鱷魚皮^000000，還有";
+		mes "^4D4DFF20 恐怖的毛髮^000000。";
 		next;
 		delitem 7739,1; //Mission_Certificate10
 		set party_relay,29;
-		mes "[Bafhail]";
-		mes "Understood?";
-		mes "Alright then, if you'll";
-		mes "just hand me your ticket,";
-		mes "you can start gathering";
-		mes "those items I listed.";
-		mes "I'll see you later~";
+		mes "[巴菲爾]";
+		mes "了解了嗎？";
+		mes "好的，如果你";
+		mes "把你的票給我，";
+		mes "你就可以開始收集";
+		mes "我列出的那些物品了。";
+		mes "再見～";
 		close;
 	}
 	else if ((countitem(7739) > 0) && (.@relaytime >= 0) && (.@relaytime < 3) && ((BaseClass == Job_Thief) || (BaseClass == Job_Acolyte))) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
-		mes "Now, let's get to business.";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
+		mes "現在，讓我們開始辦正事。";
 		next;
-		mes "[Bafhail]";
-		mes "My mission is";
-		mes "for you to collect";
-		mes "^4D4DFF20 Frills^000000,";
-		mes "^4D4DFF20 Anolian Skins^000000, and";
-		mes "^4D4DFF20 Horrendous Hairs^000000.";
+		mes "[巴菲爾]";
+		mes "我的任務是";
+		mes "讓你收集";
+		mes "^4D4DFF20 荷葉邊^000000，";
+		mes "^4D4DFF20 鱷魚皮^000000，還有";
+		mes "^4D4DFF20 恐怖的毛髮^000000。";
 		next;
 		delitem 7739,1; //Mission_Certificate10
 		set party_relay,29;
-		mes "[Bafhail]";
-		mes "Understood?";
-		mes "Understood?";
-		mes "Alright then, if you'll";
-		mes "just hand me your ticket,";
-		mes "you can start gathering";
-		mes "those items I listed.";
-		mes "I'll see you later~";
+		mes "[巴菲爾]";
+		mes "了解了嗎？";
+		mes "了解了嗎？";
+		mes "好的，如果你";
+		mes "把你的票給我，";
+		mes "你就可以開始收集";
+		mes "我列出的那些物品了。";
+		mes "再見～";
 		close;
 	}
 	if ((countitem(7739) > 0) && ((BaseClass == Job_Thief) || (BaseClass == Job_Acolyte))) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Would you mind coming ";
-		mes "back to me later? Now";
-		mes "isn't the right time to talk";
-		mes "to me. I'm available for 3";
-		mes "hours at the start of the day,";
-		mes "and 3 hours in midday.";
+		mes "[巴菲爾]";
+		mes "你介意晚點";
+		mes "再來找我嗎？現在";
+		mes "不是跟我說話的正確時間。";
+		mes "我會在一天開始的 3 個";
+		mes "小時內，還有中午的 3";
+		mes "個小時內有空。";
 		close;
 	}
 	if (party_relay == 20) {
-		mes "[Bafhail]";
-		mes "Did you give that ticket";
-		mes "to an Archer or Merchant";
-		mes "Class member of your group?";
-		mes "Just a reminder in case";
-		mes "you've already forgotten.";
+		mes "[巴菲爾]";
+		mes "你有把那張票";
+		mes "給你的隊伍中的弓箭手或商人";
+		mes "職業成員了嗎？";
+		mes "只是提醒你一下，以防";
+		mes "你已經忘記了。";
 		close;
 	}
 	if ((party_relay == 19) && (.@relaytime >= 14) && (.@relaytime < 17) && (countitem(1015) > 9) && (countitem(7172) > 9) && (countitem(7155) > 9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 1015,10; //Thin_N'_Long_Tongue
 		delitem 7172,10; //Leopard_Talon
@@ -2006,22 +1979,21 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 7736,1; //Mission_Certificate7
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Do me a favor and make";
-		mes "sure that the Merchant";
-		mes "Class character in your";
-		mes "group delivers that ticket";
-		mes "to Lospii. Alright, I guess";
-		mes "I'll see you later, then.";
+		mes "[巴菲爾]";
+		mes "幫我一個忙，確定";
+		mes "你隊伍中的商人";
+		mes "職業角色把那張票";
+		mes "交給洛斯皮。好吧，我想";
+		mes "我待會再見到你。";
 		close;
 	}
 	else if ((party_relay == 19) && (.@relaytime >= 18) && (.@relaytime < 21) && (countitem(1015) > 9) && (countitem(7172) > 9) && (countitem(7155) > 9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 1015,10; //Thin_N'_Long_Tongue
 		delitem 7172,10; //Leopard_Talon
@@ -2030,40 +2002,39 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 7736,1; //Mission_Certificate7
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Do me a favor and make";
-		mes "sure that the Merchant";
-		mes "Class character in your";
-		mes "group delivers that ticket";
-		mes "to Lospii. Alright, I guess";
-		mes "I'll see you later, then.";
+		mes "[巴菲爾]";
+		mes "幫我一個忙，確定";
+		mes "你隊伍中的商人";
+		mes "職業角色把那張票";
+		mes "交給洛斯皮。好吧，我想";
+		mes "我待會再見到你。";
 		close;
 	}
 	if (party_relay == 19) {
-		mes "[Bafhail]";
-		mes "Remember to bring me";
-		mes "the items I requested";
-		mes "at the right time, during";
-		mes "the 3 hours after noon or";
-		mes "3 hours in the early evening.";
-		mes "Now, I want you to bring...";
+		mes "[巴菲爾]";
+		mes "記得在正確的時間";
+		mes "把我要的物品";
+		mes "帶給我，在";
+		mes "中午之後的 3 個小時或";
+		mes "傍晚的 3 個小時。";
+		mes "現在，我希望你帶...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Tongues^000000,";
-		mes "^4D4DFF10 Leopard Claws^000000, and";
-		mes "^4D4DFF10 Poisonous Toad Skins^000000.";
-		mes "I'll be waiting for you here";
-		mes "and will accept those items";
-		mes "when the time is right.";
+		mes "[巴菲爾]";
+		mes "^4D4DFF10 舌頭^000000，";
+		mes "^4D4DFF10 豹爪^000000，還有";
+		mes "^4D4DFF10 毒蟾蜍皮^000000。";
+		mes "我會在這裡等你";
+		mes "並在時間正確時";
+		mes "接受這些物品。";
 		close;
 	}
 	if ((party_relay == 18) && (.@relaytime >= 14) && (.@relaytime < 17) && (countitem(7157) > 9) && (countitem(1021) > 9) && (countitem(7101) >9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 7157,10; //Black_Mask
 		delitem 1021,10; //Dokkaebi_Horn
@@ -2072,22 +2043,21 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 7736,1; //Mission_Certificate7
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Do me a favor and make";
-		mes "sure that the Merchant";
-		mes "Class character in your";
-		mes "group delivers that ticket";
-		mes "to Lospii. Alright, I guess";
-		mes "I'll see you later, then.";
+		mes "[巴菲爾]";
+		mes "幫我一個忙，確定";
+		mes "你隊伍中的商人";
+		mes "職業角色把那張票";
+		mes "交給洛斯皮。好吧，我想";
+		mes "我待會再見到你。";
 		close;
 	}
 	else if ((party_relay == 18) && (.@relaytime >= 18) && (.@relaytime < 21) && (countitem(7157) > 9) && (countitem(1021) > 9) && (countitem(7101) >9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 7157,10; //Black_Mask
 		delitem 1021,10; //Dokkaebi_Horn
@@ -2096,138 +2066,138 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 7736,1; //Mission_Certificate7
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Do me a favor and make";
-		mes "sure that the Merchant";
-		mes "Class character in your";
-		mes "group delivers that ticket";
-		mes "to Lospii. Alright, I guess";
-		mes "I'll see you later, then.";
+		mes "[巴菲爾]";
+		mes "幫我一個忙，確定";
+		mes "你隊伍中的商人";
+		mes "職業角色把那張票";
+		mes "交給洛斯皮。好吧，我想";
+		mes "我待會再見到你。";
 		close;
 	}
 	if (party_relay == 18) {
-		mes "[Bafhail]";
-		mes "Remember that your";
-		mes "mission from me is";
-		mes "to collect some items,";
-		mes "and to bring them to";
-		mes "me at the right time.";
+		mes "[巴菲爾]";
+		mes "記得你從我這裡接到的";
+		mes "任務是";
+		mes "收集一些物品，";
+		mes "並在正確的時間";
+		mes "帶給我。";
 		next;
-		mes "[Bafhail]";
-		mes "I'll only accept your";
-		mes "items for 3 hours after";
-		mes "the day starts, and for";
-		mes "3 hours during midday.";
-		mes "These are the items";
-		mes "that I want you to bring...";
+		mes "[巴菲爾]";
+		mes "我只會在";
+		mes "一天開始後的 3 個小時";
+		mes "和中午的";
+		mes "3 個小時內接受你的";
+		mes "物品。";
+		mes "這些是我";
+		mes "希望你帶來的物品...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Dark Masks^000000,";
-		mes "^4D4DFF10 Dokebi Horns^000000, and";
-		mes "^4D4DFF10 PecoPeco Feathers^000000.";
-		mes "I'll be here waiting for";
-		mes "you during the hours";
-		mes "I just described, okay?";
+		mes "[巴菲爾]";
+		mes "^4D4DFF10 黑暗面具^000000，";
+		mes "^4D4DFF10 妖道角的角^000000，還有";
+		mes "^4D4DFF10 貝殼鳥羽毛^000000。";
+		mes "我會在這裡等你";
+		mes "在我剛才描述的";
+		mes "時間裡，好嗎？";
 		close;
 	}
 	if ((countitem(7735) > 0) && (.@relaytime >= 14) && (.@relaytime < 17) && (BaseClass == Job_Acolyte)) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Alright, let's get down";
-		mes "to what you came for.";
-		mes "My mission is for you to";
-		mes "collect some items, and";
-		mes "for you to bring them at";
-		mes "the right time. Bring me...";
+		mes "[巴菲爾]";
+		mes "好吧，讓我們開始";
+		mes "處理你來的目的。";
+		mes "我的任務是讓你";
+		mes "收集一些物品，並且";
+		mes "在正確的時間";
+		mes "把牠們帶來。帶給我...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Dark Masks^000000,";
-		mes "^4D4DFF10 Dokebi Horns^000000, and";
-		mes "^4D4DFF10 PecoPeco Feathers^000000.";
+		mes "[巴菲爾]";
+		mes "^4D4DFF10 黑暗面具^000000，";
+		mes "^4D4DFF10 妖道角的角^000000，還有";
+		mes "^4D4DFF10 貝殼鳥羽毛^000000。";
 		next;
 		delitem 7735,1; //Mission_Certificate6
 		set party_relay,18;
-		mes "[Bafhail]";
-		mes "Understood?";
-		mes "Alright then, if you'll";
-		mes "just hand me your ticket,";
-		mes "you can start gathering";
-		mes "those items I listed.";
-		mes "I'll see you later~";
+		mes "[巴菲爾]";
+		mes "了解了嗎？";
+		mes "好的，如果你";
+		mes "把你的票給我，";
+		mes "你就可以開始收集";
+		mes "我列出的那些物品了。";
+		mes "再見～";
 		close;
 	}
 	else if ((countitem(7735) > 0) && (.@relaytime >= 18) && (.@relaytime < 21) && (BaseClass == Job_Acolyte)) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Alright, let's get down";
-		mes "to what you came for.";
-		mes "My mission is for you to";
-		mes "collect some items, and";
-		mes "for you to bring them at";
-		mes "the right time. Bring me...";
+		mes "[巴菲爾]";
+		mes "好吧，讓我們開始";
+		mes "處理你來的目的。";
+		mes "我的任務是讓你";
+		mes "收集一些物品，並且";
+		mes "在正確的時間";
+		mes "把牠們帶來。帶給我...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Tongues^000000,";
-		mes "^4D4DFF10 Leopard Claws^000000, and";
-		mes "^4D4DFF10 Poisonous Toad Skins^000000.";
+		mes "[巴菲爾]";
+		mes "^4D4DFF10 舌頭^000000，";
+		mes "^4D4DFF10 豹爪^000000，還有";
+		mes "^4D4DFF10 毒蟾蜍皮^000000。";
 		next;
 		delitem 7735,1; //Mission_Certificate6
 		set party_relay,19;
-		mes "[Bafhail]";
-		mes "Understood?";
-		mes "Alright then, if you'll";
-		mes "just hand me your ticket,";
-		mes "you can start gathering";
-		mes "those items I listed.";
-		mes "I'll see you later~";
+		mes "[巴菲爾]";
+		mes "了解了嗎？";
+		mes "好的，如果你";
+		mes "把你的票給我，";
+		mes "你就可以開始收集";
+		mes "我列出的那些物品了。";
+		mes "再見～";
 		close;
 	}
 	if ((countitem(7735) > 0) && (BaseClass == Job_Acolyte)) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那張票是...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是迦丹";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Would you mind coming ";
-		mes "back to me later? Now";
-		mes "isn't the right time to talk";
-		mes "to me. I'm available for 3";
-		mes "hours at the start of the day,";
-		mes "and 3 hours in midday.";
+		mes "[巴菲爾]";
+		mes "你介意晚點";
+		mes "再來找我嗎？現在";
+		mes "不是跟我說話的正確時間。";
+		mes "我會在一天開始的 3 個";
+		mes "小時內，還有中午的 3";
+		mes "個小時內有空。";
 		close;
 	}
 	if (party_relay == 9) {
-		mes "[Bafhail]";
-		mes "Oh, did you already";
-		mes "deliver the ticket that";
-		mes "I gave you? If that's the";
-		mes "case, we won't have any";
-		mes "business with each other";
-		mes "for a while, I suppose.";
+		mes "[巴菲爾]";
+		mes "哦，你已經";
+		mes "交了";
+		mes "我給你的那張票了嗎？";
+		mes "如果是這樣的話，我們";
+		mes "在一段時間內";
+		mes "不會有任何業務往來了。";
 		close;
 	}
 	if ((party_relay == 8) && ((.@relaytime >= 8) && (.@relaytime < 11)) && (countitem(7196) > 9) && (countitem(7184) > 9) && (countitem(920) > 9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		next;
 		delitem 7196,10; //Shoulder_Protection
 		delitem 7189,10; //Heart_Of_Tree
@@ -2236,22 +2206,22 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 7732,1; //Mission_Certificate3
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Bafhail]";
-		mes "Please give that";
-		mes "ticket to the Archer";
-		mes "Class member of your";
-		mes "group, and have him";
-		mes "deliver it to Lospii, okay?";
-		mes "Good luck on your travels~";
+		mes "[巴菲爾]";
+		mes "請把那張";
+		mes "票給你的";
+		mes "隊伍中的弓箭手";
+		mes "職業成員，讓他";
+		mes "把它交給洛斯皮，好嗎？";
+		mes "祝你旅途愉快～";
 		close;
 	}
 	else if ((party_relay == 8) && ((.@relaytime >= 21) && (countitem(7196) > 9) && (countitem(7184) > 9) && (countitem(920) > 9))) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來";
+		mes "的時間很對，而且帶來了";
+		mes "我要求的東西。做得好。";
+		mes "請拿好你的下一張票";
+		mes "還有這份小小的獎勵給你。";
 		delitem 7196,10; //Shoulder_Protection
 		delitem 7189,10; //Heart_Of_Tree
 		delitem 920,10; //Claw_Of_Wolves
@@ -2260,811 +2230,807 @@ payon,204,221,3	script	Bafhail#payon::RelayBafhail	731,{
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
 		next;
-		mes "[Bafhail]";
-		mes "Please give that";
-		mes "ticket to the Archer";
-		mes "Class member of your";
-		mes "group, and have him";
-		mes "deliver it to Lospii, okay?";
-		mes "Good luck on your travels~";
+		mes "[巴菲爾]";
+		mes "請把那張";
+		mes "票給你的";
+		mes "隊伍中的弓箭手";
+		mes "職業成員，讓他";
+		mes "把它交給洛斯皮，好嗎？";
+		mes "祝你旅途愉快～";
 		close;
 	}
 	if (party_relay == 8) {
-		mes "[Bafhail]";
-		mes "Your mission";
-		mes "is to bring me";
-		mes "^4D4DFF10 Wooden Hearts^000000,";
-		mes "^4D4DFF10 Wolf Claws^000000, and";
-		mes "^4D4DFF10 Shoulder Protectors^000000";
-		mes "during hours I accept items.";
+		mes "[巴菲爾]";
+		mes "你的任務";
+		mes "是要帶給我";
+		mes "^4D4DFF1010 個木製的心臟^000000，";
+		mes "^4D4DFF1010 個狼爪^000000，以及";
+		mes "^4D4DFF1010 個肩部護甲^000000";
+		mes "在我接受物品的時間內。";
 		next;
-		mes "[Bafhail]";
-		mes "Remember that I only";
-		mes "accept items from 8 AM";
-		mes "to 11 AM, and from 9 PM";
-		mes "to 12 AM. That's Pacific";
-		mes "Standard Time. Don't forget!";
+		mes "[巴菲爾]";
+		mes "記住我只";
+		mes "在早上 8 點到";
+		mes "11 點，以及晚上 9 點";
+		mes "到 12 點之間接受物品。";
+		mes "那是太平洋";
+		mes "標準時間。別忘了！";
 		close;
 	}
 	if ((party_relay == 7) && ((.@relaytime >= 8) && (.@relaytime < 11)) && (countitem(1027) > 9) && (countitem(1040) > 9) && (countitem(1023) > 9)) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來的";
+		mes "時間正好，而且帶了";
+		mes "我所要求的一切。幹得好。";
+		mes "請拿走你的下一張票";
+		mes "以及這個小小的獎勵。";
 		next;
 		delitem 1027,10; //Porcupine_Spike
 		delitem 1040,10; //Elder_Pixie's_Beard
 		delitem 1023,10; //Fish_Tail
 		set party_relay,9;
 		getitem 7732,1; //Mission_Certificate3
-		mes "[Bafhail]";
-		mes "Please give that";
-		mes "ticket to the Archer";
-		mes "Class member of your";
-		mes "group, and have him";
-		mes "deliver it to Lospii, okay?";
-		mes "Good luck on your travels~";
+		mes "[巴菲爾]";
+		mes "請把那張";
+		mes "票交給你的";
+		mes "隊伍中的弓箭手";
+		mes "職業成員，並且讓他";
+		mes "將它交給洛斯皮，好嗎？";
+		mes "祝你旅途愉快～";
 		close;
 	}
 	else if ((party_relay == 7) && ((.@relaytime >= 21) && (countitem(1027) > 9) && (countitem(1040) > 9) && (countitem(1023) > 9))) {
-		mes "[Bafhail]";
-		mes "Well, it looks like you came";
-		mes "at the right time and brought";
-		mes "everything I asked. Good work.";
-		mes "Please take your next ticket";
-		mes "and this small reward for you.";
+		mes "[巴菲爾]";
+		mes "嗯，看來你來的";
+		mes "時間正好，而且帶了";
+		mes "我所要求的一切。幹得好。";
+		mes "請拿走你的下一張票";
+		mes "以及這個小小的獎勵。";
 		next;
 		delitem 1027,10; //Porcupine_Spike
 		delitem 1040,10; //Elder_Pixie's_Beard
 		delitem 1023,10; //Fish_Tail
 		set party_relay,9;
 		getitem 7732,1; //Mission_Certificate3
-		mes "[Bafhail]";
-		mes "Please give that";
-		mes "ticket to the Archer";
-		mes "Class member of your";
-		mes "group, and have him";
-		mes "deliver it to Lospii, okay?";
-		mes "Good luck on your travels~";
+		mes "[巴菲爾]";
+		mes "請把那張";
+		mes "票交給你的";
+		mes "隊伍中的弓箭手";
+		mes "職業成員，並且讓他";
+		mes "將它交給洛斯皮，好嗎？";
+		mes "祝你旅途愉快～";
 		close;
 	}
 	if (party_relay == 7) {
-		mes "[Bafhail]";
-		mes "Your mission";
-		mes "is to bring me";
-		mes "^4D4DFF10 Fish Tails^000000,";
-		mes "^4D4DFF10 Porcupine Quills^000000, and";
-		mes "^4D4DFF10 Elder Pixie's Moustaches^000000";
-		mes "during hours I accept items.";
+		mes "[巴菲爾]";
+		mes "你的任務";
+		mes "是要帶給我";
+		mes "^4D4DFF1010 個魚尾^000000，";
+		mes "^4D4DFF1010 個豪豬刺^000000，以及";
+		mes "^4D4DFF1010 個妖精長老的鬍鬚^000000";
+		mes "在我接受物品的時間內。";
 		next;
-		mes "[Bafhail]";
-		mes "Remember that I only";
-		mes "accept items from 8 AM";
-		mes "to 11 AM, and from 9 PM";
-		mes "to 12 AM. That's Pacific";
-		mes "Standard Time. Don't forget!";
+		mes "[巴菲爾]";
+		mes "記住我只";
+		mes "在早上 8 點到";
+		mes "11 點，以及晚上 9 點";
+		mes "到 12 點之間接受物品。";
+		mes "那是太平洋";
+		mes "標準時間。別忘了！";
 		close;
 	}
 	if ((countitem(7731) > 0) && (BaseLevel > 39) && ((.@relaytime >= 8) && (.@relaytime < 11)) && (BaseClass == Job_Thief)) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那不是票嗎...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是卡坦";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Alright, let's get down";
-		mes "to what you came for.";
-		mes "My mission is for you to";
-		mes "collect some items, and";
-		mes "for you to bring them at";
-		mes "the right time. Bring me...";
+		mes "[巴菲爾]";
+		mes "好吧，讓我們開始";
+		mes "討論你來的目的。";
+		mes "我的任務是要你";
+		mes "收集一些物品，並且";
+		mes "在正確的時間把它們帶來。";
+		mes "帶給我...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Wooden Hearts^000000,";
-		mes "^4D4DFF10 Wolf Claws^000000, and";
-		mes "^4D4DFF10 Shoulder Protectors^000000";
+		mes "[巴菲爾]";
+		mes "^4D4DFF1010 個木製的心臟^000000，";
+		mes "^4D4DFF1010 個狼爪^000000，以及";
+		mes "^4D4DFF1010 個肩部護甲^000000";
 		next;
 		delitem 7731,1; //Mission_Certificate2
 		set party_relay,8;
-		mes "[Bafhail]";
-		mes "Remember that I won't";
-		mes "accept your items, even";
-		mes "if you have everything,";
-		mes "if you don't come during";
-		mes "the hours when I accept";
-		mes "items for missions, okay?";
+		mes "[巴菲爾]";
+		mes "記住，即使你";
+		mes "擁有一切，我也不會";
+		mes "接受你的物品，";
+		mes "如果你沒有在我";
+		mes "接受任務物品的";
+		mes "時間內來的話，知道嗎？";
 		close;
 	}
 	else if ((countitem(7731) > 0) && (BaseLevel > 39) && ((.@relaytime >= 21) && (BaseClass == Job_Thief))) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那不是票嗎...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是卡坦";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Alright, let's get down";
-		mes "to what you came for.";
-		mes "My mission is for you to";
-		mes "collect some items, and";
-		mes "for you to bring them at";
-		mes "the right time. Bring me...";
+		mes "[巴菲爾]";
+		mes "好吧，讓我們開始";
+		mes "討論你來的目的。";
+		mes "我的任務是要你";
+		mes "收集一些物品，並且";
+		mes "在正確的時間把它們帶來。";
+		mes "帶給我...";
 		next;
-		mes "[Bafhail]";
-		mes "^4D4DFF10 Fish Tails^000000,";
-		mes "^4D4DFF10 Porcupine Quills^000000, and";
-		mes "^4D4DFF10 Elder Pixie's Moustaches^000000";
+		mes "[巴菲爾]";
+		mes "^4D4DFF1010 個魚尾^000000，";
+		mes "^4D4DFF1010 個豪豬刺^000000，以及";
+		mes "^4D4DFF1010 個妖精長老的鬍鬚^000000";
 		next;
 		delitem 7731,1; //Mission_Certificate2
 		set party_relay,7;
-		mes "[Bafhail]";
-		mes "Remember that I won't";
-		mes "accept your items, even";
-		mes "if you have everything,";
-		mes "if you don't come during";
-		mes "the hours when I accept";
-		mes "items for missions, okay?";
+		mes "[巴菲爾]";
+		mes "記住，即使你";
+		mes "擁有一切，我也不會";
+		mes "接受你的物品，";
+		mes "如果你沒有在我";
+		mes "接受任務物品的";
+		mes "時間內來的話，知道嗎？";
 		close;
 	}
 	if ((countitem(7731) > 0) && (BaseLevel > 39) && (BaseClass == Job_Thief)) {
-		mes "[Bafhail]";
-		mes "Oh, isn't that ticket...?";
-		mes "Ah, good, good. Judging";
-		mes "from your Job, Gatan must";
-		mes "have sent you, right? Nice";
-		mes "to meet you, I'm Bafhail~";
+		mes "[巴菲爾]";
+		mes "哦，那不是票嗎...？";
+		mes "啊，很好，很好。從你的";
+		mes "職業來看，一定是卡坦";
+		mes "派你來的，對吧？很高興";
+		mes "認識你，我是巴菲爾～";
 		next;
-		mes "[Bafhail]";
-		mes "Would you mind coming";
-		mes "back to me later? Now";
-		mes "isn't the right time to";
-		mes "talk to me. I'm available";
-		mes "from 8 AM to 11 AM, and";
-		mes "from 9 PM to 12 AM.";
+		mes "[巴菲爾]";
+		mes "你介意晚點再來找我嗎？";
+		mes "現在不是";
+		mes "跟我說話的適當時機。";
+		mes "我在早上 8 點到 11 點，以及";
+		mes "晚上 9 點到 12 點之間有空。";
 		close;
 	}
-	mes "[Bafhail]";
-	mes "...Hm? I don't think";
-	mes "we have any business";
-	mes "with each other. You mind";
-	mes "leaving me alone? I'm pretty";
-	mes "busy administering a bunch";
-	mes "of these missions for a friend.";
+	mes "[巴菲爾]";
+	mes "...嗯？我不認為";
+	mes "我們有任何";
+	mes "業務往來。你介意";
+	mes "讓我一個人靜一靜嗎？我正忙著";
+	mes "為一個朋友管理一堆";
+	mes "這些任務。";
 	next;
-	mes "[Bafhail]";
-	mes "If we're lucky, maybe";
-	mes "you'll be one of those";
-	mes "adventurers that'll carry";
-	mes "out these fun little missions";
-	mes "for my friend Ledrion.";
+	mes "[巴菲爾]";
+	mes "如果我們幸運的話，或許";
+	mes "你會是那些";
+	mes "冒險家之一，他們會";
+	mes "為我的朋友雷德里翁";
+	mes "執行這些有趣的小任務。";
 	close;
 }
 
-payon,168,314,3	script	Lospii#payon::RelayLospii	706,{
+payon,168,314,3	script	洛斯皮#payon::RelayLospii	706,{
 	if (checkweight(907,300) == 0) {
-		mes "^3355FFWait a minute! You're";
-		mes "carrying too many items";
-		mes "right now: store some of";
-		mes "your extra things in Kafra";
-		mes "Storage, and then come back.^000000";
+		mes "^3355FF等一下！你現在";
+		mes "攜帶太多物品了";
+		mes "現在，把一些";
+		mes "多餘的東西存放在卡普拉";
+		mes "倉庫裡，然後再回來。^000000";
 		close;
 	}
 	if (countitem(7730) > 0) || (countitem(7731) > 0) || (countitem(7734) > 0) || (countitem(7735) > 0) || (countitem(7738) > 0) || (countitem(7739) > 0) {
-		mes "[Lospii]";
-		mes "Hey, didn't you figure";
-		mes "out what you need to do?";
-		mes "You're not supposed to";
-		mes "talk to me now! Mmm...";
-		mes "I don't know who you";
-		mes "have to meet either, but...";
+		mes "[洛斯皮]";
+		mes "嘿，你還沒弄清楚";
+		mes "你需要做什麼嗎？";
+		mes "你不應該";
+		mes "現在跟我說話！嗯...";
+		mes "我也不知道你";
+		mes "必須見誰，但是...";
 		close;
 	}
 	set .@relaytime,gettime(DT_HOUR);
 	getmapxy(.@m$,.@x,.@y,BL_NPC,strnpcinfo(3));
 	set .@juwi,getareausers(.@m$,.@x-8,.@y-8,.@x+8,.@y+8);
 	if (party_relay == 32) {
-		mes "[Lospii]";
-		mes "Hey! Did you give";
-		mes "that ticket to the";
-		mes "leader of your group";
-		mes "yet? The guy that started";
-		mes "this whole relay thing!";
+		mes "[洛斯皮]";
+		mes "嘿！你把";
+		mes "那張票給了";
+		mes "你的隊伍的";
+		mes "隊長了嗎？就是那個發起";
+		mes "整個接力活動的傢伙！";
 		close;
 	}
 	if ((party_relay == 31) && ((.@relaytime >= 8) && (.@relaytime < 11)) && (.@juwi > 13)) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "哦！你帶來了這麼多";
+		mes "朋友！一... 二... ";
+		mes "你帶來了 " + .@juwi + "？! 哼。";
+		mes "也許我給了你一些";
+		mes "太容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為此，你會得到這個";
+		mes "我送的禮物。很酷吧？";
 		next;
 		set party_relay,32;
 		getitem 7741,1; //Mission_Certificate12
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好，現在拿走這張";
+		mes "票，然後把它交給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力";
+		mes "活動的傢伙。他需要把";
+		mes "票交給雷德里翁，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "...我想。嗯，我不";
+		mes "真的確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記得我必須";
+		mes "做的事情。拜託！我只是一個孩子！";
 		close;
 	}
 	else if ((party_relay == 31) && ((.@relaytime >= 21) && (.@juwi > 13))) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "哦！你帶來了這麼多";
+		mes "朋友！一... 二... ";
+		mes "你帶來了 " + .@juwi + "？! 哼。";
+		mes "也許我給了你一些";
+		mes "太容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為此，你會得到這個";
+		mes "我送的禮物。很酷吧？";
 		next;
 		set party_relay,32;
 		getitem 7741,1; //Mission_Certificate12
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好，現在拿走這張";
+		mes "票，然後把它交給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力";
+		mes "活動的傢伙。他需要把";
+		mes "票交給雷德里翁，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "...我想。嗯，我不";
+		mes "真的確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記得我必須";
+		mes "做的事情。拜託！我只是一個孩子！";
 		close;
 	}
 	if (party_relay == 31) {
-		mes "[Lospii]";
-		mes "Okay, you have to bring";
-		mes "me 10 of your friends when";
-		mes "I'm working, okay? That's, uh,";
-		mes "3 hours before noon, and then";
-		mes "another 3 hours after midnight.";
-		mes "Just only those times, okay?";
+		mes "[洛斯皮]";
+		mes "好，你必須帶";
+		mes "10 個你的朋友來找我，當";
+		mes "我在工作的時候，好嗎？也就是說，";
+		mes "中午前的 3 個小時，然後";
+		mes "午夜後的另外 3 個小時。";
+		mes "只有這些時間喔，好嗎？";
 		close;
 	}
 	if ((countitem(7740) > 0) && (.@relaytime >= 8) && (.@relaytime < 11) && ((BaseJob == Job_Archer) || (BaseJob == Job_Merchant))) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是我";
+		mes "負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "嘿嘿！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在正在為這個";
+		mes "任務工作，所以你來的";
+		mes "正是時候！讓我想想...";
+		mes "我需要給你... 一些";
+		mes "任務讓你去做...";
+		mes "哦！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "14 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你";
+		mes "是否了解團隊合作，對吧？";
+		mes "你為什麼不給我看很多";
+		mes "你的朋友呢？帶給我...";
+		mes "14 個！是的，這樣很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有";
+		mes "對我說謊。讓他們";
+		mes "靠得很近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他人。";
 		next;
 		delitem 7740,1; //Mission_Certificate11
 		set party_relay,31;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡";
+		mes "等著！哦！而且你必須";
+		mes "在你朋友在";
+		mes "我在工作的時候一起來！那";
+		mes "是很重要的喔！";
 		close;
 	}
 	else if ((countitem(7740) > 0) && (.@relaytime >= 21) && ((BaseClass == Job_Archer) || (BaseClass == Job_Merchant))) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是我";
+		mes "負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "嘿嘿！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在正在為這個";
+		mes "任務工作，所以你來的";
+		mes "正是時候！讓我想想...";
+		mes "我需要給你... 一些";
+		mes "任務讓你去做...";
+		mes "哦！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "14 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你";
+		mes "是否了解團隊合作，對吧？";
+		mes "你為什麼不給我看很多";
+		mes "你的朋友呢？帶給我...";
+		mes "14 個！是的，這樣很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有";
+		mes "對我說謊。讓他們";
+		mes "靠得很近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他人。";
 		next;
 		delitem 7740,1; //Mission_Certificate11
 		set party_relay,31;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡";
+		mes "等著！哦！而且你必須";
+		mes "在你朋友在";
+		mes "我在工作的時候一起來！那";
+		mes "是很重要的喔！";
 		close;
 	}
 	if ((countitem(7740) > 0) && ((BaseClass == Job_Archer) || (BaseClass == Job_Merchant))) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是我";
+		mes "負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "嘿嘿！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "Uh oh... I forgot";
-		mes "that I'm not supposed";
-		mes "to be working now. Come";
-		mes "back when I'm working, okay?";
+		mes "[洛斯皮]";
+		mes "喔喔...我忘記了";
+		mes "我不應該";
+		mes "現在工作。來";
+		mes "我工作的時候再來，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "I... I work before";
-		mes "noon for 3 hours, and";
-		mes "then... 3 hours after";
-		mes "midnight? Yes, those";
-		mes "are the times when";
-		mes "I'm working!";
+		mes "[洛斯皮]";
+		mes "我...我在中午";
+		mes "前工作 3 個小時，然後";
+		mes "...午夜後 3 個小時？";
+		mes "是的，那些";
+		mes "是我工作的";
+		mes "時間！";
 		close;
 	}
 	if (party_relay == 22) {
-		mes "[Lospii]";
-		mes "Huh? No, no, you're";
-		mes "not supposed to be here!";
-		mes "Give the eighth ticket to";
-		mes "your leader so he can give";
-		mes "it to Ledrion! Your leader...";
-		mes "You know him, right?";
+		mes "[洛斯皮]";
+		mes "蛤？不，不，你不";
+		mes "應該在這裡！";
+		mes "把第八張票交給";
+		mes "你的隊長，這樣他才能把它";
+		mes "交給雷德里翁！你的隊長...";
+		mes "你認識他，對吧？";
 		close;
 	}
 	if ((party_relay == 21) && ((.@relaytime >= 11) && (.@relaytime < 14)) && (.@juwi > 11)) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "哦！你帶來了這麼多";
+		mes "朋友！一... 二... ";
+		mes "你帶來了 " + .@juwi + "？! 哼。";
+		mes "也許我給了你一些";
+		mes "太容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為此，你會得到這個";
+		mes "我送的禮物。很酷吧？";
 		next;
 		set party_relay,22;
 		getitem 7737,1; //Mission_Certificate8
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好啦，現在拿著這個";
+		mes "票券，然後把它給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力的人。";
+		mes "他需要把票券給雷德利昂，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "......我想。嗯，我不";
+		mes "太確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記住我必須做的部分。";
+		mes "拜託！我只是一個孩子！";
 		close;
 	}
 	else if ((party_relay == 21) && ((.@relaytime >= 0) && (.@relaytime < 3)) && (.@juwi > 11)) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "喔！你帶了這麼多";
+		mes "朋友來！一... 二...";
+		mes "你帶了 " + .@juwi + "？！哼。";
+		mes "也許我給了你太";
+		mes "容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "喔，好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為了這個，你得到";
+		mes "這個來自我的禮物。很酷吧？";
 		next;
 		set party_relay,22;
 		getitem 7737,1; //Mission_Certificate8
 		getitem 610,2; //Leaf_Of_Yggdrasil
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好啦，現在拿著這個";
+		mes "票券，然後把它給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力的人。";
+		mes "他需要把票券給雷德利昂，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "......我想。嗯，我不";
+		mes "太確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記住我必須做的部分。";
+		mes "拜託！我只是一個孩子！";
 		close;
 	}
 	if (party_relay == 21) {
-		mes "[Lospii]";
-		mes "Okay, you have to bring";
-		mes "me 12 of your friends when";
-		mes "I'm working, okay? That's, uh,";
-		mes "3 hours before noon, and then";
-		mes "another 3 hours after midnight.";
-		mes "Just only those times, okay?";
+		mes "[洛斯皮]";
+		mes "好，你必須帶";
+		mes "12個你的朋友在我";
+		mes "工作的時候來，好嗎？那就是，呃，";
+		mes "中午前3小時，然後";
+		mes "午夜後再3小時。";
+		mes "只能在那段時間，好嗎？";
 		close;
 	}
 	if ((countitem(7736) > 0) && (.@relaytime >= 11) && (.@relaytime < 14) && (BaseClass == Job_Merchant)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在在為這個";
+		mes "任務工作，所以你來";
+		mes "的時間剛剛好！讓我想想...";
+		mes "我需要給你...一些";
+		mes "任務讓你去做喔喔喔...";
+		mes "喔！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "12 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你是否";
+		mes "懂得團隊合作，對吧？";
+		mes "你何不讓我看看很多";
+		mes "你的朋友？帶給我...";
+		mes "12個他們！是的，很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有對我說謊。";
+		mes "把他們帶得非～常";
+		mes "靠近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他什麼人。";
 		next;
 		delitem 7736,1; //Mission_Certificate7
 		set party_relay,21;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡！";
+		mes "喔！而且你必須";
+		mes "在你和你的朋友";
+		mes "在我工作的時候一起來！";
+		mes "這很重要喔！";
 		close;
 	}
 	else if ((countitem(7736) > 0) && (.@relaytime >= 0) && (.@relaytime < 3) && (BaseClass == Job_Merchant)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在在為這個";
+		mes "任務工作，所以你來";
+		mes "的時間剛剛好！讓我想想...";
+		mes "我需要給你...一些";
+		mes "任務讓你去做喔喔喔...";
+		mes "喔！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "12 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你是否";
+		mes "懂得團隊合作，對吧？";
+		mes "你何不讓我看看很多";
+		mes "你的朋友？帶給我...";
+		mes "12個他們！是的，很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有對我說謊。";
+		mes "把他們帶得非～常";
+		mes "靠近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他什麼人。";
 		next;
 		delitem 7736,1; //Mission_Certificate7
 		set party_relay,21;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡！";
+		mes "喔！而且你必須";
+		mes "在你和你的朋友";
+		mes "在我工作的時候一起來！";
+		mes "這很重要喔！";
 		close;
 	}
 	if ((countitem(7736) > 0) && (BaseClass == Job_Merchant)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "Uh oh... I forgot";
-		mes "that I'm not supposed";
-		mes "to be working now. Come";
-		mes "back when I'm working, okay?";
+		mes "[洛斯皮]";
+		mes "喔喔...我忘記了";
+		mes "我不應該";
+		mes "現在工作的。回來";
+		mes "當我在工作的時候，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "I... I work before";
-		mes "noon for 3 hours, and";
-		mes "then... 3 hours after";
-		mes "midnight? Yes, those";
-		mes "are the times when";
-		mes "I'm working!";
+		mes "[洛斯皮]";
+		mes "我...我在";
+		mes "中午前工作3小時，然後";
+		mes "...午夜後3小時？";
+		mes "是的，那些";
+		mes "是我工作的時間！";
 		close;
 	}
 	if (party_relay == 11) {
-		mes "[Lospii]";
-		mes "Umm... Did you bring";
-		mes "the fourth ticket to your";
-		mes "leader yet? You know,";
-		mes "the leader of the group.";
-		mes "The one that started this";
-		mes "whole relay test thingee.";
+		mes "[洛斯皮]";
+		mes "嗯...你把";
+		mes "第四張票券給你的";
+		mes "隊長了嗎？你知道的，";
+		mes "團隊的領導者。";
+		mes "就是那個發起";
+		mes "這個接力測試的人。";
 		close;
 	}
 	if ((party_relay == 10) && ((.@relaytime >= 14) && (.@relaytime < 17)) && (.@juwi > 9)) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "喔！你帶了這麼多";
+		mes "朋友來！一... 二...";
+		mes "你帶了 " + .@juwi + "？！哼。";
+		mes "也許我給了你太";
+		mes "容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "喔，好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為了這個，你得到";
+		mes "這個來自我的禮物。很酷吧？";
 		next;
 		set party_relay,11;
 		getitem 7733,1; //Mission_Certificate4
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好啦，現在拿著這個";
+		mes "票券，然後把它給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力的人。";
+		mes "他需要把票券給雷德利昂，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "......我想。嗯，我不";
+		mes "太確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記住我必須做的部分。";
+		mes "拜託！我只是一個孩子！";
 		close;
 	}
 	else if ((party_relay == 10) && ((.@relaytime >= 18) && (.@relaytime < 21)) && (.@juwi > 9)) {
-		mes "[Lospii]";
-		mes "Oh! You brought so many";
-		mes "friends! One... T-two...";
-		mes "You brought " + .@juwi + "?! Hmpf.";
-		mes "Maybe I gave you something";
-		mes "too easy to do. I didn't know";
-		mes "you knew this many people!";
+		mes "[洛斯皮]";
+		mes "喔！你帶了這麼多";
+		mes "朋友來！一... 二...";
+		mes "你帶了 " + .@juwi + "？！哼。";
+		mes "也許我給了你太";
+		mes "容易做的事情。我不知道";
+		mes "你認識這麼多人！";
 		next;
-		mes "[Lospii]";
-		mes "Oh well, thanks for";
-		mes "bringing everyone here.";
-		mes "For that, you get this";
-		mes "gift from me. Cool, huh?";
+		mes "[洛斯皮]";
+		mes "喔，好吧，謝謝";
+		mes "你把大家帶來這裡。";
+		mes "為了這個，你得到";
+		mes "這個來自我的禮物。很酷吧？";
 		next;
 		set party_relay,11;
 		getitem 7733,1; //Mission_Certificate4
 		getitem 607,2; //Yggdrasilberry
 		callfunc "F_PartyRelay_Exp";
-		mes "[Lospii]";
-		mes "Okay, now take this";
-		mes "ticket, and give it to";
-		mes "your leader, the guy that";
-		mes "started this whole relay";
-		mes "thing. He needs to give";
-		mes "the ticket to Ledrion, okay?";
+		mes "[洛斯皮]";
+		mes "好啦，現在拿著這個";
+		mes "票券，然後把它給";
+		mes "你的隊長，就是那個";
+		mes "發起這個接力的人。";
+		mes "他需要把票券給雷德利昂，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "You're almost done!";
-		mes "...I think. Um, I'm not";
-		mes "really sure what will";
-		mes "happen next. I can only";
-		mes "remember the parts I have";
-		mes "to do. C'mon! I'm just a kid!";
+		mes "[洛斯皮]";
+		mes "你快完成了！";
+		mes "......我想。嗯，我不";
+		mes "太確定接下來會";
+		mes "發生什麼事。我只能";
+		mes "記住我必須做的部分。";
+		mes "拜託！我只是一個孩子！";
 		close;
 	}
 	if (party_relay == 10) {
-		mes "[Lospii]";
-		mes "Bring 10 of your friends";
-		mes "here to me while I'm working,";
-		mes "okay? Umm... I work frooom...";
-		mes "2 PM to 5 PM, and 6 PM to 9 PM.";
-		mes "I think those are the times.";
-		mes "I... I can't read watches...";
+		mes "[洛斯皮]";
+		mes "帶10個你的朋友";
+		mes "來這裡找我，當我在工作的時候，";
+		mes "好嗎？嗯...我的工作時間是...";
+		mes "下午2點到下午5點，以及下午6點到下午9點。";
+		mes "我想是這些時間。";
+		mes "我...我不擅長看錶...";
 		close;
 	}
 	if ((countitem(7732) > 0) && (BaseLevel > 39) && ((.@relaytime >= 14) && (.@relaytime < 17)) && (BaseClass == Job_Archer)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在在為這個";
+		mes "任務工作，所以你來";
+		mes "的時間剛剛好！讓我想想...";
+		mes "我需要給你...一些";
+		mes "任務讓你去做喔喔喔...";
+		mes "喔！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "10 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你是否";
+		mes "懂得團隊合作，對吧？";
+		mes "你何不讓我看看很多";
+		mes "你的朋友？帶給我...";
+		mes "10個他們！是的，很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有對我說謊。";
+		mes "把他們帶得非～常";
+		mes "靠近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他什麼人。";
 		next;
 		delitem 7732,1; //Mission_Certificate3
 		set party_relay,10;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡！";
+		mes "喔！而且你必須";
+		mes "在你和你的朋友";
+		mes "在我工作的時候一起來！";
+		mes "這很重要喔！";
 		close;
 	}
 	else if ((countitem(7732) > 0) && (BaseLevel > 39) && ((.@relaytime >= 18) && (.@relaytime < 21)) && (BaseClass == Job_Archer)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "I'm working now for this";
-		mes "mission thing so you came";
-		mes "at a good time! Let's see...";
-		mes "I need to give you... Some";
-		mes "mission for you to doooo...";
-		mes "Oh! I know! I got it!";
+		mes "[洛斯皮]";
+		mes "我現在在為這個";
+		mes "任務工作，所以你來";
+		mes "的時間剛剛好！讓我想想...";
+		mes "我需要給你...一些";
+		mes "任務讓你去做喔喔喔...";
+		mes "喔！我知道了！我想到了！";
 		next;
-		mes "[Lospii]";
-		mes "We're seeing if you";
-		mes "know about teamwork, right?";
-		mes "Why don't you show me a lot";
-		mes "of your friends? Bring me...";
-		mes "10 of them! Yes, that's good!";
+		mes "[洛斯皮]";
+		mes "我們正在看你是否";
+		mes "懂得團隊合作，對吧？";
+		mes "你何不讓我看看很多";
+		mes "你的朋友？帶給我...";
+		mes "10個他們！是的，很好！";
 		next;
-		mes "[Lospii]";
-		mes "I need to be able to";
-		mes "see them, you know, so";
-		mes "I know you're not lying";
-		mes "to me. Bring them reeeally";
-		mes "close so I know they're your";
-		mes "friends, not some other guys.";
+		mes "[洛斯皮]";
+		mes "我需要能夠";
+		mes "看到他們，你知道的，所以";
+		mes "我知道你沒有對我說謊。";
+		mes "把他們帶得非～常";
+		mes "靠近，這樣我就知道他們是你的";
+		mes "朋友，而不是其他什麼人。";
 		next;
 		delitem 7732,1; //Mission_Certificate3
 		set party_relay,10;
-		mes "[Lospii]";
-		mes "Okay, I'll be right";
-		mes "here! Oh! And you have";
-		mes "to come with your friends";
-		mes "while I'm at work! That's";
-		mes "important to know!";
+		mes "[洛斯皮]";
+		mes "好，我就在這裡！";
+		mes "喔！而且你必須";
+		mes "在你和你的朋友";
+		mes "在我工作的時候一起來！";
+		mes "這很重要喔！";
 		close;
 	}
 	if ((countitem(7732) > 0) && (BaseLevel > 39) && (BaseClass == Job_Archer)) {
-		mes "[Lospii]";
-		mes "Hi, I'm Lospii! Maybe";
-		mes "I'm younger than you, but";
-		mes "I'm in charge of this mission!";
-		mes "So you have to listen, okay?";
-		mes "Heh heh! Don't be scared~";
+		mes "[洛斯皮]";
+		mes "嗨，我是洛斯皮！也許";
+		mes "我比你年輕，但是";
+		mes "我負責這個任務！";
+		mes "所以你必須聽我的，好嗎？";
+		mes "呵呵！別害怕～";
 		next;
-		mes "[Lospii]";
-		mes "Uh oh... I forgot";
-		mes "that I'm not supposed";
-		mes "to be working now. Come";
-		mes "back when I'm working, okay?";
+		mes "[洛斯皮]";
+		mes "喔喔...我忘記了";
+		mes "我不應該";
+		mes "現在工作的。回來";
+		mes "當我在工作的時候，好嗎？";
 		next;
-		mes "[Lospii]";
-		mes "I work frooom... Uh...";
-		mes "2 PM to 5 PM? Oh!";
-		mes "And also 6 PM to 9 PM.";
-		mes "I think those are the";
-		mes "times... I mean, clocks";
-		mes "are hard to read, man!";
+		mes "[洛斯皮]";
+		mes "我的工作時間是...呃...";
+		mes "下午2點到下午5點？喔！";
+		mes "還有下午6點到下午9點。";
+		mes "我想是這些";
+		mes "時間...我的意思是，時鐘";
+		mes "很難看懂，老兄！";
 		close;
 	}
-	mes "[Lospii]";
-	mes "Hi! I'm Lospii!";
-	mes "Hey, does it look like";
-	mes "I'm at work? Ha ha!";
-	mes "I got a job! I'm helping";
-	mes "my friends a lot!";
+	mes "[洛斯皮]";
+	mes "嗨！我是洛斯皮！";
+	mes "嘿，我看起來像";
+	mes "在工作嗎？哈哈！";
+	mes "我找到工作了！我在幫";
+	mes "我的朋友很多忙！";
 	close;
 }
 
@@ -3091,31 +3057,31 @@ function	script	F_PartyRelay_Exp	{
 }
 
 // Comodo Relay
-comodo,71,137,3	duplicate(RelayLedrion)	Ledrion#comodo	109
-comodo,236,197,3	duplicate(RelayGatan)	Gatan#comodo	86
-comodo,152,184,3	duplicate(RelayBafhail)	Bafhail#comodo	731
-comodo,64,219,3	duplicate(RelayLospii)	Lospii#comodo	706
+comodo,71,137,3	duplicate(RelayLedrion)	雷德里昂#comodo	109
+comodo,236,197,3	duplicate(RelayGatan)	迦旦#comodo	86
+comodo,152,184,3	duplicate(RelayBafhail)	巴菲爾#comodo	731
+comodo,64,219,3	duplicate(RelayLospii)	洛斯皮#comodo	706
 
 // Einbroch Relay
-einbroch,107,93,3	duplicate(RelayLedrion)	Ledrion#einbroch	109
-einbroch,260,128,3	duplicate(RelayGatan)	Gatan#einbroch	86
-einbroch,251,178,3	duplicate(RelayBafhail)	Bafhail#einbroch	731
-einbroch,173,72,3	duplicate(RelayLospii)	Lospii#einbroch	706
+einbroch,107,93,3	duplicate(RelayLedrion)	雷德里昂#einbroch	109
+einbroch,260,128,3	duplicate(RelayGatan)	迦旦#einbroch	86
+einbroch,251,178,3	duplicate(RelayBafhail)	巴菲爾#einbroch	731
+einbroch,173,72,3	duplicate(RelayLospii)	洛斯皮#einbroch	706
 
 // Relay Hugel
-hugel,102,130,3	duplicate(RelayLedrion)	Ledrion#hugel	109
-hugel,169,139,3	duplicate(RelayGatan)	Gatan#hugel	86
-hugel,55,200,3	duplicate(RelayBafhail)	Bafhail#hugel	731
-hugel,144,201,3	duplicate(RelayLospii)	Lospii#hugel	706
+hugel,102,130,3	duplicate(RelayLedrion)	雷德里昂#hugel	109
+hugel,169,139,3	duplicate(RelayGatan)	迦旦#hugel	86
+hugel,55,200,3	duplicate(RelayBafhail)	巴菲爾#hugel	731
+hugel,144,201,3	duplicate(RelayLospii)	洛斯皮#hugel	706
 
 // Relay Rachel
-rachel,215,71,3	duplicate(RelayLedrion)	Ledrion#rachel	109
-rachel,45,163,3	duplicate(RelayGatan)	Gatan#rachel	86
-rachel,245,132,3	duplicate(RelayBafhail)	Bafhail#rachel	731
-rachel,158,215,3	duplicate(RelayLospii)	Lospii#rachel	706
+rachel,215,71,3	duplicate(RelayLedrion)	雷德里昂#rachel	109
+rachel,45,163,3	duplicate(RelayGatan)	迦旦#rachel	86
+rachel,245,132,3	duplicate(RelayBafhail)	巴菲爾#rachel	731
+rachel,158,215,3	duplicate(RelayLospii)	洛斯皮#rachel	706
 
 // Relay Veins
-veins,274,188,5	duplicate(RelayLedrion)	Ledrion#veins	109
-veins,138,207,3	duplicate(RelayGatan)	Gatan#veins	86
-veins,202,235,3	duplicate(RelayBafhail)	Bafhail#veins	731
-veins,97,245,5	duplicate(RelayLospii)	Lospii#veins	706
+veins,274,188,5	duplicate(RelayLedrion)	雷德里昂#veins	109
+veins,138,207,3	duplicate(RelayGatan)	迦旦#veins	86
+veins,202,235,3	duplicate(RelayBafhail)	巴菲爾#veins	731
+veins,97,245,5	duplicate(RelayLospii)	洛斯皮#veins	706

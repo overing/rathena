@@ -27,57 +27,57 @@ que_job01,75,96,3	script	Guild Member#3rdgc01	997,{
 		if (Class == Job_Assassin || Class == Job_Assassin_Cross || Class == Job_Baby_Assassin) {
 			if (BaseLevel > 98) {
 			L_Mission:
-				mes "[Ahcart]";
-				mes "Finally, it's time...";
-				mes "Hey, what's your name?";
+				mes "[阿卡特]";
+				mes "終於，時候到了...";
+				mes "嘿，你叫什麼名字？";
 				next;
 				switch(select(strcharinfo(0),".....")) {
 				case 1:
-					mes "[Ahcart]";
+					mes "[阿卡特]";
 					mes strcharinfo(0)+"?";
-					mes "Got it. I'll remember your name.";
-					mes "A master told me that you are a person with ability.";
+					mes "知道了。我會記住你的名字。";
+					mes "一位大師告訴我，你是一位有能力的人。";
 					break;
 				case 2:
-					mes "[Ahcart]";
-					mes "What? You are a distrustful person.";
-					mes "Hmm, whatever.";
-					mes "I heard that you are a person with ability.";
+					mes "[阿卡特]";
+					mes "什麼？你是個不信任別人的人。";
+					mes "嗯，隨便啦。";
+					mes "我聽說你是一位有能力的人。";
 					break;
 				}
 				next;
-				mes "[Ahcart]";
-				mes "My duty is delivering a guild message to a capable assassin.";
-				mes "I think that you are suitable to perform the guild's duty.";
+				mes "[阿卡特]";
+				mes "我的職責是將公會訊息傳達給一位有能力的刺客。";
+				mes "我認為你很適合執行公會的任務。";
 				next;
-				mes "[Ahcart]";
-				mes "So, would you perform this duty for us?";
-				mes "Of course, I'm going to offer a reward for completing your task.";
+				mes "[阿卡特]";
+				mes "所以，你願意為我們執行這個任務嗎？";
+				mes "當然，我會提供完成任務的獎勵。";
 				next;
-				select("What is the request?");
-				mes "[Ahcart]";
-				mes "It's unclear.";
-				mes "I told you. It's a special task.";
-				mes "The only thing I know is the condition to bring a person with the master's ability.";
+				select("請求是什麼？");
+				mes "[阿卡特]";
+				mes "這並不清楚。";
+				mes "我告訴過你，這是一個特殊的任務。";
+				mes "我唯一知道的是，帶一位擁有大師能力的人的條件。";
 				next;
-				mes "[Ahcart]";
-				mes "First, one who has patience.";
-				mes "Second, one who is quiet.";
-				mes "Third, one who is focused.";
+				mes "[阿卡特]";
+				mes "首先，要擁有耐心。";
+				mes "第二，要保持安靜。";
+				mes "第三，要專注。";
 				next;
-				mes "[Ahcart]";
-				mes "What do you think about what I told you?";
-				mes "This task means that it needs a person who can perform a task irrespective of their own will.";
+				mes "[阿卡特]";
+				mes "你覺得我告訴你的事情怎麼樣？";
+				mes "這個任務意味著，它需要一個可以執行任務而不考慮自身意願的人。";
 				next;
-				mes "[Ahcart]";
-				mes "It's necessary to keep this request secret.";
-				mes "But it's also your duty not to tell anyone.";
+				mes "[阿卡特]";
+				mes "有必要對這個請求保密。";
+				mes "但你的職責也是不要告訴任何人。";
 				next;
-				mes "[Ahcart]";
-				mes "This is all your choice.";
-				mes "Will you help us with this request?";
+				mes "[阿卡特]";
+				mes "這都是你的選擇。";
+				mes "你願意幫我們完成這個請求嗎？";
 				next;
-				switch(select("I'll do it.:Give me time to think.")) {
+				switch(select("我會做的。:給我時間考慮。")) {
 				case 1:
 					if (VIP_SCRIPT) {
 						callfunc "VIP_Third_Class";
@@ -85,52 +85,52 @@ que_job01,75,96,3	script	Guild Member#3rdgc01	997,{
 						setquest 7101;
 						next;
 					}
-					mes "[Ahcart]";
-					mes "Ok, to Veins.";
-					mes "I'll contact them.";
-					mes "It's your first duty to go to Veins.";
+					mes "[阿卡特]";
+					mes "好的，去維茵斯。";
+					mes "我會聯絡他們。";
+					mes "你的首要任務是去維茵斯。";
 					next;
-					mes "[Ahcart]";
-					mes "You should be able to find it easily.";
-					mes "Go now.";
+					mes "[阿卡特]";
+					mes "你應該可以很容易地找到它。";
+					mes "現在就去吧。";
 					set job_3rd_gc, 3;
 					setquest 7101;
 					close;
 				case 2:
-					mes "[Ahcart]";
-					mes "Got it.";
-					mes "But don't think about it for too long.";
+					mes "[阿卡特]";
+					mes "知道了。";
+					mes "但是不要想太久。";
 					set job_3rd_gc, 2;
 					close;
 				}
 			}
-			mes "[Ahcart]";
-			mes "Hmm, you are my peer.";
-			mes "I'm Ahcart. I'm from Veins.";
-			mes "Hmm...";
+			mes "[阿卡特]";
+			mes "嗯，你是我的同僚。";
+			mes "我是阿卡特。我來自維茵斯。";
+			mes "嗯...";
 			next;
-			mes "[Ahcart]";
-			mes "Of course, a chapter of the assassin guild is not only in Morocc. If you have a chance to go there, visit there.";
-			mes "I think you might go there.";
+			mes "[阿卡特]";
+			mes "當然，刺客公會的分部不僅僅在夢羅克。如果你有機會去那裡，去那裡看看。";
+			mes "我想你可能會去那裡。";
 			set job_3rd_gc, 1;
 			close;
 		}
-		mes "[A man of a sharp impression]";
+		mes "[一位印象敏銳的人]";
 		mes "....";
-		mes "What the...?";
-		mes "You are not an assassin.";
+		mes "什麼...？";
+		mes "你不是刺客。";
 		close;
 	} else if (job_3rd_gc == 1) {
 		if (BaseLevel > 98) goto L_Mission;
-		mes "[Ahcart]";
-		mes "If you become stronger and more skillful, then the assassin's guild will give you a special task.";
-		mes "Go for it.";
+		mes "[阿卡特]";
+		mes "如果你變得更強大，更有技巧，那麼刺客公會會給你一個特殊的任務。";
+		mes "加油。";
 		close;
 	} else if (job_3rd_gc == 2) {
-		mes "[Ahcart]";
-		mes "Have you thought about it more?";
+		mes "[阿卡特]";
+		mes "你有更深入的考慮過了嗎？";
 		next;
-		switch(select("I'll do it.:I'm not ready.")) {
+		switch(select("我會做的。:我還沒準備好。")) {
 		case 1:
 			if (VIP_SCRIPT) {
 				callfunc "VIP_Third_Class";
@@ -138,31 +138,31 @@ que_job01,75,96,3	script	Guild Member#3rdgc01	997,{
 				setquest 7101;
 				next;
 			}
-			mes "[Ahcart]";
-			mes "Ok, to Veins.";
-			mes "I'll contact them.";
-			mes "It's your first duty to go to Veins.";
+			mes "[阿卡特]";
+			mes "好的，去維茵斯。";
+			mes "我會聯絡他們。";
+			mes "你的首要任務是去維茵斯。";
 			next;
-			mes "[Ahcart]";
-			mes "You should be able to find it easily.";
-			mes "Go now.";
+			mes "[阿卡特]";
+			mes "你應該可以很容易地找到它。";
+			mes "現在就去吧。";
 			set job_3rd_gc, 3;
 			setquest 7101;
 			close;
 		case 2:
-			mes "[Ahcart]";
-			mes "You are too cautious.";
-			mes "I get the sense that you don't want to work for us.";
+			mes "[阿卡特]";
+			mes "你太謹慎了。";
+			mes "我感覺你不想為我們工作。";
 			close;
 		}
 	} else if (job_3rd_gc == 3) {
-		mes "[Ahcart]";
-		mes "Go to Veins and find a chapter.";
-		mes "You can hear more details from there.";
+		mes "[阿卡特]";
+		mes "去維茵斯，找到一個分部。";
+		mes "你可以從那裡聽到更多細節。";
 		close;
 	} else {
-		mes "[Ahcart]";
-		mes "Good luck to you.";
+		mes "[阿卡特]";
+		mes "祝你好運。";
 		close;
 	}
 }
@@ -170,670 +170,670 @@ que_job01,75,96,3	script	Guild Member#3rdgc01	997,{
 function	script	func_3rdgc	{
 	set .@n$, "["+strcharinfo(0)+"]";
 	mes .@n$;
-	mes "Let me collect all the information...";
+	mes "讓我收集所有的資訊...";
 	set .@i,0;
-	if (checkquest(7112) == 1) { mes "Madelle saw a person who looked like a priest from Rachel late at night."; set .@i,.@i+1; }
-	if (checkquest(7113) == 1) { mes "Crave said that there was a girl who bought lots of things day and night."; set .@i,.@i+1; }
-	if (checkquest(7114) == 1) { mes "Trovan said that there was a guy who could be seen often but is not a hotel guest, so he is suspicious."; set .@i,.@i+1; }
+	if (checkquest(7112) == 1) { mes "瑪德琳在深夜看到一個看起來像拉赫教士的人。"; set .@i,.@i+1; }
+	if (checkquest(7113) == 1) { mes "克雷夫說，有個女孩日夜都在買很多東西。"; set .@i,.@i+1; }
+	if (checkquest(7114) == 1) { mes "托羅凡說，有個人經常出現，但不是旅館的客人，所以他很可疑。"; set .@i,.@i+1; }
 	if (!getarg(0)) {
 		set .@i,.@i-2;
-		if (checkquest(7115) == 1) { mes "A peddler wears shabby clothes, but she buys fresh and expensive things every single day."; set .@i,.@i+1; }
-		if (checkquest(7116) == 1) { mes "The old man in village said that there was a girl who showed up in same place at the same time, so maybe moved here."; set .@i,.@i+1; }
+		if (checkquest(7115) == 1) { mes "一個小販穿著破舊的衣服，但她每天都買新鮮且昂貴的東西。"; set .@i,.@i+1; }
+		if (checkquest(7116) == 1) { mes "村里的老人說，有個女孩在同一個地方，同一時間出現，所以可能搬到這裡了。"; set .@i,.@i+1; }
 	}
 	next;
 	if (.@i == 3) {
 		mes .@n$;
-		mes "One day, Madelle saw a person who looked like a priest of Rachel,";
-		mes "and Trovan is suspicious of why that person is here.";
+		mes "有一天，瑪德琳看到一個看起來像拉赫教士的人，";
+		mes "而托羅凡懷疑那個人為什麼在這裡。";
 		next;
 		mes .@n$;
-		mes "But the reason that Trovan suspects them is...";
+		mes "但托羅凡懷疑他們的原因是...";
 		next;
-		switch(select("They are unfamiliar:The residence is unclear")) {
+		switch(select("他們不熟悉:住所不明")) {
 		case 1:
 			mes .@n$;
-			mes "No, that's not the reason. The guard sees new adventurers every day.";
-			mes "Besides, Madelle told me that it was a guy and Crave said it was a girl.";
-			mes "I'm confused.";
+			mes "不，這不是原因。警衛每天都會看到新的冒險者。";
+			mes "此外，瑪德琳告訴我那是一個男人，而克雷夫說那是一個女孩。";
+			mes "我很困惑。";
 			next;
 			mes .@n$;
-			mes "Let me rethink this.";
+			mes "讓我重新思考一下。";
 			set job_3rd_gc, 7;
 			close;
 		case 2:
 			mes .@n$;
-			mes "Yeah, adventurers often visit so it can't be a proper reason.";
+			mes "是啊，冒險者經常來訪，所以這不能是一個正當的理由。";
 			next;
 			mes .@n$;
-			mes "The thing Trovan suspected is that his residence is unclear. But he shows up often and buys supplies regularly.";
+			mes "托羅凡懷疑的事情是他的住所不明。但他經常出現並定期購買物資。";
 			next;
 			mes .@n$;
-			mes "But Crave said it was a girl.";
-			mes "Madelle said that she witnessed a guy.";
+			mes "但克雷夫說那是一個女孩。";
+			mes "瑪德琳說她親眼看到一個男人。";
 			next;
 			if (getarg(0)) {
-				if(select("Madelle witnessed 2...:There are more than 2...") == 1) {
+				if(select("瑪德琳目擊了 2...:有超過 2...") == 1) {
 					mes .@n$;
-					mes "Madelle said that she saw one more person in the darkness.";
-					mes "Then is it a girl who brought the supplies?";
+					mes "瑪德琳說她在黑暗中看到了一個人。";
+					mes "那麼是那個女孩帶來了補給品嗎？";
 					next;
 				}
 			}
-			else select("It could be a helper.");
+			else select("可能有一個幫手。");
 			mes .@n$;
-			mes "Yeah. There could be one more helper.";
-			mes "She sent a person to buy the stuff instead of herself.";
-			mes "Or it could be a peer Madelle can't see.";
+			mes "是啊。可能還有一個幫手。";
+			mes "她派一個人代替她買東西。";
+			mes "或者可能是瑪德琳看不到的同夥。";
 			next;
 			mes .@n$;
-			mes "Crave said that she comes here day and night to buy stuff regularly.";
-			mes "Then I know what I have to do.";
+			mes "克雷夫說她日夜都來這裡定期購買東西。";
+			mes "那麼我知道我該做什麼了。";
 			set job_3rd_gc, 8;
 			close;
 		}
 	}
 	mes .@n$;
-	mes "Umm...";
-	mes "Do I need more information? I think something more is needed.";
+	mes "嗯...";
+	mes "我需要更多資訊嗎？我認為需要更多的東西。";
 	close;
 }
 
 job3_guil01,82,95,3	script	Daora#3rdgc02	940,{
-	mes "[Daora]";
+	mes "[朵拉]";
 	if (Class == Job_Assassin || Class == Job_Assassin_Cross || Class == Job_Baby_Assassin) {
 		if (job_3rd_gc < 4) {
 			if (Sex == SEX_MALE) {
-				mes "Oh~ you're good-looking!";
-				mes "So, what do you want?";
+				mes "哦~你長得真好看!";
+				mes "所以，你想要什麼？";
 			} else {
-				mes "Hmm, you're a girl.";
-				mes "Ok pick up whatever you want.";
+				mes "嗯，你是個女孩。";
+				mes "好吧，隨便挑你想要的東西。";
 			}
 			next;
-			mes "[Daora]";
-			mes "I'm not sure that you already know or not, but we are selling special Morocc liquor.";
-			mes "Which one do you want?";
+			mes "[朵拉]";
+			mes "我不確定你是否已經知道，但我們正在販售特別的夢羅克酒。";
+			mes "你想要哪一種？";
 			next;
-			switch(select("Tropical Sograt:Vermilion on the Beach:No thanks!:......")) {
+			switch(select("熱帶蘇克拉特:沙灘上的朱紅:不用了!:......")) {
 			case 1:
-				mes "[Daora]";
+				mes "[朵拉]";
 				if (Zeny > 799) {
-					mes "Here you are, take it.";
+					mes "給你，拿去吧。";
 					set Zeny, Zeny - 800;
 					getitem 12112,1; //Tropical_Sograt
 					close;
 				}
-				mes "It's 800 zeny per glass of Tropical Sograt.";
+				mes "一杯熱帶蘇克拉特要價 800 Zeny。";
 				close;
 			case 2:
-				mes "[Daora]";
+				mes "[朵拉]";
 				if (Zeny > 799) {
-					mes "Here you are, take it.";
+					mes "給你，拿去吧。";
 					set Zeny, Zeny - 800;
 					getitem 12113,1; //Vermilion_The_Beach
 					close;
 				}
-				mes "It's 800 zeny per glass of Vermilion on the Beach.";
+				mes "一杯海灘上的朱紅要價 800 Zeny。";
 				close;
 			case 3:
-				mes "[Daora]";
-				mes "Don't show me your nervousness!";
+				mes "[朵拉]";
+				mes "別在我面前表現得這麼緊張！";
 				specialeffect2 EF_HIT1;
 				percentheal -30,0;
 				close;
 			case 4:
-				mes "[Daora]";
-				mes "What? Why are you looking at me like that?";
-				mes "Oh? You are a person of this world.";
-				mes "Your name is...";
+				mes "[朵拉]";
+				mes "什麼？你為什麼那樣看著我？";
+				mes "喔？你是這個世界的人。";
+				mes "你的名字是...";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes strcharinfo(0)+".";
+				mes strcharinfo(0)+"。";
 				next;
-				mes "[Daora]";
+				mes "[朵拉]";
 				if (job_3rd_gc == 3) {
-					mes "Ah~ I've heard your name before.";
-					mes "Umm... right!";
-					mes "You were recommended by Ahcart.";
+					mes "啊～我以前聽過你的名字。";
+					mes "嗯...沒錯！";
+					mes "你是阿卡特推薦的。";
 					next;
-					mes "[Daora]";
-					mes "Yeah, can you find an entrance to an alley in the corner?";
-					mes "Go in there, then you can hear a more detailed story.";
-					mes "Take on this special task~!";
+					mes "[朵拉]";
+					mes "是啊，你能不能在角落裡找到一條小巷的入口？";
+					mes "進去那裡，你就能聽到更詳細的故事。";
+					mes "接受這個特殊的任務吧～！";
 					set job_3rd_gc, 4;
 					changequest 7101,7102;
 					close;
 				}
-				mes "What, I don't know that name.";
-				mes "Hey, I have to be in business, so can you move over?";
+				mes "什麼，我不認識這個名字。";
+				mes "嘿，我還要做生意，你能不能讓開？";
 				close;
 			}
 		} else if (job_3rd_gc == 4) {
-			mes "The room in the corner. Feel free to enter it because no one enters that room anyway.";
-			mes "Or do you need something?";
+			mes "角落裡的房間。隨便進去吧，反正沒人會進那個房間。";
+			mes "還是你需要什麼？";
 			next;
-			mes "[Daora]";
-			mes "Ah, I'm not selling liquir to someone who's started the special task.";
+			mes "[朵拉]";
+			mes "啊，我不會賣酒給開始特殊任務的人。";
 			next;
-			switch(select("Not selling liquor...:I need information.:Fine then punk!")) {
+			switch(select("不賣酒...:我需要情報。:好吧，你這傢伙！")) {
 			case 1:
-				mes "[Daora]";
-				mes "Hey, you are performing a task now.";
-				mes "And you want me to sell you booze?!";
-				mes "Is every assasin like you? Lazy boozers?";
+				mes "[朵拉]";
+				mes "嘿，你現在正在執行任務。";
+				mes "然後你想要我賣你酒？！";
+				mes "每個刺客都像你這樣嗎？懶惰的酒鬼？";
 				close;
 			case 2:
-				mes "[Daora]";
-				mes "You dare to demand information after taking a task.";
-				mes "You didn't meet a master yet?";
-				mes "As if I would just tell you because you ask!";
-				mes "You are childish.";
+				mes "[朵拉]";
+				mes "你竟然在接了任務後要求情報。";
+				mes "你還沒遇到師父嗎？";
+				mes "好像我會因為你問就告訴你一樣！";
+				mes "你太幼稚了。";
 				close;
 			case 3:
-				mes "[Daora]";
-				mes "Don't talk to me like I'm one of your friends!";
-				mes "You have no right to be that way!";
+				mes "[朵拉]";
+				mes "別像對朋友一樣跟我說話！";
+				mes "你沒有資格那樣！";
 				specialeffect2 EF_HIT1;
 				percentheal -30,0;
 				close;
 			}
 		} else if (job_3rd_gc == 10) {
-			mes "Oh~! good for me.";
-			mes "Who is she?";
-			mes "You told her that we'll protect her?";
+			mes "喔～！對我來說很好。";
+			mes "她是誰？";
+			mes "你告訴她我們會保護她？";
 			next;
-			select("Yes,I did.");
-			mes "[Daora]";
-			mes "Hmm, I see...";
-			mes "Your opinion will be important.";
-			mes "I got it.";
+			select("是的，我說了。");
+			mes "[朵拉]";
+			mes "嗯，我知道了...";
+			mes "你的意見很重要。";
+			mes "我明白了。";
 			next;
-			mes "[Daora]";
-			mes "She was so scared,";
-			mes "so I gave her a hot drink";
-			mes "and took her to a her room.";
+			mes "[朵拉]";
+			mes "她嚇壞了，";
+			mes "所以我給她一杯熱飲";
+			mes "並帶她到她的房間。";
 			next;
-			mes "[Daora]";
-			mes "Well... there is better place to keep an eye on her than this room.";
+			mes "[朵拉]";
+			mes "嗯... 有比這個房間更好的地方來監視她。";
 			next;
-			select("No, I just protect...");
-			mes "[Daora]";
-			mes "Ah~ whatever anyway you make me work.";
-			mes "To protect that young girl.";
+			select("不，我只是保護...");
+			mes "[朵拉]";
+			mes "啊～隨便啦，反正你讓我工作。";
+			mes "為了保護那個年輕女孩。";
 			next;
-			mes "[Daora]";
-			mes "Mayshell told me that I have to support you, so I'm not going to complain.";
+			mes "[朵拉]";
+			mes "梅雪兒告訴我我必須支持你，所以我不會抱怨。";
 			next;
-			mes "[Daora]";
-			mes "So, don't worry.";
-			mes "Are you supposed to be here for her?";
-			mes "Go ahead.";
+			mes "[朵拉]";
+			mes "所以，別擔心。";
+			mes "你是來這裡找她的嗎？";
+			mes "去吧。";
 			set job_3rd_gc, 11;
 			close;
 		} else if (job_3rd_gc == 11) {
-			mes "She is in a room.";
-			mes "The one in front of master's room.";
-			mes "Can you find it?";
+			mes "她在一個房間裡。";
+			mes "就在師父房間的前面。";
+			mes "你能找到嗎？";
 			close;
 		} else if (job_3rd_gc == 12) {
-			mes "That girl...";
-			mes "will be sent to her home?";
-			mes "Don't worry about that.";
+			mes "那個女孩...";
+			mes "會被送回她的家？";
+			mes "別擔心這個。";
 			next;
-			mes "[Daora]";
-			mes "Mayshell and the other guys will handle it.";
+			mes "[朵拉]";
+			mes "梅雪兒和其他人會處理的。";
 			close;
 		} else if (job_3rd_gc == 14) {
-			mes "Oh, it's perfect timing.";
-			mes "Mayshell will call you.";
-			mes "Go to the master's room.";
+			mes "喔，真是完美時機。";
+			mes "梅雪兒會叫你。";
+			mes "去師父的房間。";
 			close;
 		} else if (job_3rd_gc > 4 && job_3rd_gc < 18) {
-			mes "What do you need?";
-			mes "We don't sell to anyone who has started the special task.";
+			mes "你需要什麼？";
+			mes "我們不賣給任何已經開始特殊任務的人。";
 			next;
-			switch(select("....:Give me 1 glass.:Then, can you give milk?")) {
+			switch(select("....:給我一杯。:那麼，你能給我牛奶嗎？")) {
 			case 1:
-				mes "[Daora]";
-				mes "Why? Are you disappointed?";
-				mes "Um~";
-				mes "I can't let anyone on duty drink.";
+				mes "[朵拉]";
+				mes "為什麼？你很失望嗎？";
+				mes "嗯～";
+				mes "我不能讓任何值勤的人喝酒。";
 				close;
 			case 2:
-				mes "[Daora]";
+				mes "[朵拉]";
 				if (job_3rd_gc == 5) {
-					mes "I told you that I won't sell you any.";
-					mes "An empty glass is fine without liquor.";
-					mes "I already told you...";
+					mes "我告訴過你我不會賣給你任何東西。";
+					mes "沒有酒的空杯子很好。";
+					mes "我已經告訴過你了...";
 					next;
-					mes "[Daora]";
-					mes "I'll let you know all the information that I know.";
+					mes "[朵拉]";
+					mes "我會讓你知道我所知道的所有資訊。";
 					next;
-					mes "[Daora]";
-					mes "If you need to, visit me anytime and I'll serve you a drink after your task is done.";
+					mes "[朵拉]";
+					mes "如果你需要，隨時來找我，我會在你的任務完成後為你倒一杯。";
 					set job_3rd_gc, 6;
 					close;
 				} else if (job_3rd_gc == 6) {
 					if (checkquest(7091) == 1) {
-						mes "You hope that there will be something in the glass?";
-						mes "Information can't come out of empty glasses.";
+						mes "你希望杯子裡會有東西？";
+						mes "資訊不會從空杯子裡出來。";
 						close;
 					}
-					mes "You need a glass?";
-					mes "Mayshell's order distracted you, so you can't understand anything.";
+					mes "你需要一個杯子？";
+					mes "梅雪兒的命令讓你分心了，所以你什麼都聽不懂。";
 					next;
-					mes "[Daora]";
-					mes "Ok, what do you want to know?";
-					mes "You hope that there will be something in the glass?";
+					mes "[朵拉]";
+					mes "好吧，你想知道什麼？";
+					mes "你希望杯子裡會有東西？";
 					next;
-					switch(select("Ask for help.:Handle it by yourself.")) {
+					switch(select("尋求協助。:自己處理。")) {
 					case 1:
-						mes "[Daora]";
-						mes "So, it means just killing a strange guy in the village?";
-						mes "Why were you in agony because of that?";
-						mes "Hmm... Let me see...";
+						mes "[朵拉]";
+						mes "所以，這意味著只是殺死村莊裡一個奇怪的傢伙？";
+						mes "你為什麼為此感到痛苦？";
+						mes "嗯... 讓我想想...";
 						next;
-						mes "[Daora]";
-						mes "Then it will need legwork?";
-						mes "Where is the most crowded place in this village?";
-						mes "The pub and motel.";
+						mes "[朵拉]";
+						mes "那麼這需要跑腿？";
+						mes "這個村莊裡最擁擠的地方在哪裡？";
+						mes "酒吧和汽車旅館。";
 						next;
-						mes "[Daora]";
-						mes "And the guard of the village always keeps an eye on strange people.";
-						mes "Or the old merchant is quick in visual learning.";
+						mes "[朵拉]";
+						mes "村莊的守衛總是留意奇怪的人。";
+						mes "或者老商人很快就能從視覺上學習。";
 						next;
-						mes "[Daora]";
-						mes "I can say that especially...";
-						mes "Trovan, Crave who is a trader, and Madelle in the pub are quick in visual learning.";
+						mes "[朵拉]";
+						mes "我可以說特別是...";
+						mes "特羅凡、克雷夫（一個商人），以及酒吧裡的瑪黛爾都很快就能從視覺上學習。";
 						next;
-						mes "[Daora]";
-						mes "It's good information, isn't it?";
+						mes "[朵拉]";
+						mes "這是好資訊，不是嗎？";
 						setquest 7091;
 						next;
-						mes "- The advice of Daora is attached to the board with quest information. -";
+						mes "- 朵拉的建議附加在帶有任務資訊的板子上。 -";
 						close;
 					case 2:
-						mes "[Daora]";
-						mes "Ok. It's great.";
-						mes "Each word and behavior will be an important key of the events.";
-						mes "So, look around carefully and figure it out.";
+						mes "[朵拉]";
+						mes "好的。太棒了。";
+						mes "每個字和行為都將是事件的重要關鍵。";
+						mes "所以，仔細觀察並弄清楚。";
 						next;
-						mes "[Daora]";
-						mes "Something good will happen.";
+						mes "[朵拉]";
+						mes "好事會發生的。";
 						close;
 					}
 				} else if (job_3rd_gc == 7) {
-					mes "You seem to be worried.";
-					mes "Here, It's cold water.";
-					mes "You think over with cold water.";
+					mes "你似乎很擔心。";
+					mes "給你，這是冷水。";
+					mes "用冷水好好想想。";
 					next;
-					switch(select("Figure out based on information.:Stop the stage.")) {
+					switch(select("基於資訊想出辦法.:停止階段。")) {
 					case 1:
 						if (checkquest(7091) == 1) set .@j,1;
 						callfunc "func_3rdgc",.@j;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止確認資訊。";
 						close;
 					}
 				} else if (job_3rd_gc == 8) {
 					if (checkquest(7092) == 1) {
-						mes "Wait in an alley where she usually shows up to find her, and you will be able to pursue the question.";
+						mes "在她經常出現的小巷裡等候，你就可以追問問題。";
 						next;
-						mes "[Daora]";
-						mes "Trying wouldn't hurt.";
-						mes "If you want to find a root, you have to find a leaf first.";
-						mes "Work hard.";
+						mes "[多拉]";
+						mes "試試看也無妨。";
+						mes "如果你想找到根，你必須先找到葉子。";
+						mes "努力吧。";
 						close;
 					}
-					mes "Did you solve it?";
-					mes "What will you do?";
+					mes "你解決了嗎？";
+					mes "你會怎麼做？";
 					next;
-					switch(select("Get advice.:It's a secret.")) {
+					switch(select("取得建議.:這是秘密。")) {
 					case 1:
-						mes "[Daora]";
-						mes "Can you let me know about an information you collected?";
+						mes "[多拉]";
+						mes "你可以告訴我你收集到的資訊嗎？";
 						next;
-						if(select("You have a heart-to-heart talk with him.:That's impossible.") == 2) {
-							mes "[Daora]";
-							mes "What, I can't support you properly?";
-							mes "You solve it by yourself.";
+						if(select("你和他真心交談.:那不可能。") == 2) {
+							mes "[多拉]";
+							mes "什麼，我不能好好支持你嗎？";
+							mes "你自己解決它。";
 							close;
 						}
-						mes "[Daora]";
-						mes "Hum. Got it.";
+						mes "[多拉]";
+						mes "嗯。知道了。";
 						next;
-						mes "[Daora]";
-						mes "There is a guy who looks like a priest and Trovan and Madelle saw him.";
-						mes "A merchant saw a girl who buys things regularly.";
+						mes "[多拉]";
+						mes "有個看起來像牧師的人，Trovan 和 Madelle 看到他了。";
+						mes "一個商人看到一個經常買東西的女孩。";
 						next;
-						mes "[Daora]";
-						mes "The main target is a guy,";
-						mes "but the helper is a girl.";
-						mes "Maybe.";
+						mes "[多拉]";
+						mes "主要目標是個傢伙，";
+						mes "但幫手是個女孩。";
+						mes "可能吧。";
 						next;
-						mes "[Daora]";
-						mes "Above all,";
-						mes "it's really getting to you.";
+						mes "[多拉]";
+						mes "最重要的是，";
+						mes "它真的讓你很在意。";
 						next;
-						mes "[Daora]";
-						mes "Then it's simple.";
-						mes "Why don't you meet her in the place where she visits often?";
+						mes "[多拉]";
+						mes "那就簡單了。";
+						mes "你為什麼不在她經常拜訪的地方和她見面？";
 						next;
-						mes "[Daora]";
-						mes "It's the transience of duty.";
-						mes "You don't know the meaning with a piece of the puzzle.";
+						mes "[多拉]";
+						mes "這是職責的短暫。";
+						mes "你不知道拼圖的意義。";
 						next;
-						mes "[Daora]";
-						mes "They can be related people or not.";
-						mes "Ok, I'll be very attentive to my want.";
+						mes "[多拉]";
+						mes "他們可能有關聯，也可能沒有。";
+						mes "好吧，我會非常注意我的慾望。";
 						next;
-						mes "[Daora]";
-						mes "Right~?";
-						mes "Go on a place where can look down a village well and find Melissa.";
-						mes "That will be helpful.";
+						mes "[多拉]";
+						mes "對吧~？";
+						mes "去一個可以俯瞰村莊水井的地方，找到梅麗莎。";
+						mes "那會很有幫助。";
 						next;
-						mes "- Daora's advice is attached on the board of quest. -";
+						mes "- 多拉的建議附加在任務看板上。 -";
 						setquest 7092;
 						close;
 					case 2:
-						mes "[Daora]";
-						mes "Umm~.";
-						mes "Right. There is a secret";
-						mes "you can't tell anyone while perfoming a task.";
+						mes "[多拉]";
+						mes "嗯~。";
+						mes "對。有個秘密";
+						mes "你在執行任務時不能告訴任何人。";
 						next;
-						mes "[Daora]";
-						mes "In those regards, you surpass the standards.";
+						mes "[多拉]";
+						mes "在這些方面，你超越了標準。";
 						close;
 					}
 				} else if (job_3rd_gc == 9) {
 					if (checkquest(7093) == 1) {
-						mes "So, go to the east of village, you can see a narrow alley directed to the north.";
+						mes "所以，去村莊的東邊，你可以看到一條通往北方的小巷。";
 						next;
-						mes "[Daora]";
-						mes "The blind alley that Melissa told means this street.";
-						mes "You are thinking like a child.";
+						mes "[多拉]";
+						mes "梅麗莎說的死胡同就是這條街。";
+						mes "你像個孩子一樣思考。";
 						close;
 					}
-					mes "Haha... how's it going?";
+					mes "哈哈... 近況如何？";
 					next;
-					switch(select("Where is the blind alley?:It's okay.")) {
+					switch(select("死胡同在哪裡？:沒關係。")) {
 					case 1:
-						mes "[Daora]";
-						mes "The blind alley?";
-						mes "Hmm... well.";
-						mes "Is there a blind alley like our pub...";
+						mes "[多拉]";
+						mes "死胡同？";
+						mes "嗯... 好吧。";
+						mes "有沒有像我們酒吧這樣的死胡同...";
 						next;
-						mes "[Daora]";
-						mes "Ah, in the northeast alley";
-						mes "directed upside in the village,";
-						mes "there is no street because";
-						mes "the houses stand close together in that area.";
+						mes "[多拉]";
+						mes "啊，在東北方的小巷";
+						mes "在村莊裡朝上，";
+						mes "那裡沒有街道，因為";
+						mes "房屋在那一區緊密地排列在一起。";
 						next;
-						mes "[Daora]";
-						mes "Around Melissa's house,";
-						mes "that is the blind alley";
-						mes "for the boy, maybe.";
+						mes "[多拉]";
+						mes "在梅麗莎的房子周圍，";
+						mes "那是個死胡同";
+						mes "對於那個男孩來說，也許。";
 						next;
-						mes "[Daora]";
-						mes "It's very easy to find walking around the village.";
+						mes "[多拉]";
+						mes "在村莊裡走動很容易找到它。";
 						setquest 7093;
 						next;
-						mes "- Daora's advice is attached on the board of quest. -";
+						mes "- 多拉的建議附加在任務看板上。 -";
 						close;
 					case 2:
-						mes "[Daora]";
-						mes "Ok. It's going well.";
-						mes "Can I expect a good result?";
+						mes "[多拉]";
+						mes "好的。進展順利。";
+						mes "我可以期待一個好結果嗎？";
 						close;
 					}
 				} else if (job_3rd_gc == 13) {
-					mes "I sent a girl named Estillda to her home.";
-					mes "Why do we handle worthless things like it?";
+					mes "我派了一個名叫埃斯蒂爾達的女孩去她家。";
+					mes "為什麼我們要處理像這樣毫無價值的東西？";
 					next;
 					if (checkquest(7094) == 1) {
-						mes "[Daora]";
-						mes "I'm not sure if he still lives...";
-						mes "Anyway, he is a key artisan in Rachel,";
-						mes "and can recognize all kinds of keys.";
+						mes "[多拉]";
+						mes "我不確定他是否還活著...";
+						mes "無論如何，他是拉赫爾的關鍵工匠，";
+						mes "並且可以識別各種鑰匙。";
 						next;
-						mes "[Daora]";
-						mes "What? Residence?";
-						mes "I told you, it's Rachel.";
-						mes "He maybe lives in comfort for the rest of his days in Rachel.";
+						mes "[多拉]";
+						mes "什麼？住所？";
+						mes "我告訴過你，是拉赫爾。";
+						mes "他可能在拉赫爾舒適地度過餘生。";
 						next;
-						mes "[Daora]";
-						mes "Go ask inside a pub of Rachel...";
+						mes "[多拉]";
+						mes "去拉赫爾的酒吧裡問問...";
 						close;
 					}
-					mes "[Daora]";
-					mes "Yeah, how's it going?";
+					mes "[多拉]";
+					mes "是的，近況如何？";
 					next;
-					switch(select("It progress satisfactorily.:Show the key.")) {
+					switch(select("進展令人滿意。:展示鑰匙。")) {
 					case 1:
-						mes "[Daora]";
-						mes "My glass, you don't need it?";
+						mes "[多拉]";
+						mes "我的杯子，你不需要它嗎？";
 						next;
 						mes "["+strcharinfo(0)+"]";
-						mes "Yes. I already have enough information.";
-						mes "If that is a stuff has a long story behind it,";
-						mes "we have only one way.";
+						mes "是的。我已經有足夠的資訊。";
+						mes "如果那是一件有著悠久歷史的東西，";
+						mes "我們只有一種方法。";
 						next;
-						mes "[Daora]";
-						mes "Right.";
-						mes "If you think carefully,";
-						mes "you can find a way.";
+						mes "[多拉]";
+						mes "對。";
+						mes "如果你仔細思考，";
+						mes "你可以找到一個方法。";
 						next;
-						mes "[Daora]";
-						mes "Good luck~";
+						mes "[多拉]";
+						mes "祝你好運~";
 						close;
 					case 2:
-						mes "[Daora]";
-						mes "What is th--";
-						mes "I see, that guy had this key...?";
+						mes "[多拉]";
+						mes "這是什麼--";
+						mes "我明白了，那個傢伙有這把鑰匙...?";
 						next;
-						mes "[Daora]";
-						mes "It's a symbol of shrines";
-						mes "and has a showy pattern.";
-						mes "Hmm...";
+						mes "[多拉]";
+						mes "這是神殿的象徵";
+						mes "並帶有華麗的圖案。";
+						mes "嗯...";
 						next;
-						mes "[Daora]";
-						mes "So, you want to know this key's use?";
-						mes "If you do, go to Rachel.";
-						mes "There is a key artisan there.";
+						mes "[多拉]";
+						mes "所以，你想知道這把鑰匙的用途？";
+						mes "如果是的話，去拉赫爾。";
+						mes "那裡有個鑰匙工匠。";
 						next;
-						mes "[Daora]";
-						mes "Now, he is retired, but he";
-						mes "spends his declining years in peace.";
-						mes "You can ask him yourself.";
+						mes "[多拉]";
+						mes "現在，他退休了，但他";
+						mes "平靜地度過了他的晚年。";
+						mes "你可以自己問他。";
 						next;
-						mes "[Daora]";
-						mes "Ask what this key's use is.";
+						mes "[多拉]";
+						mes "問問這把鑰匙的用途是什麼。";
 						setquest 7094;
 						next;
-						mes "- Daora's advice is attached on the quest board. -";
+						mes "- 多拉的建議附加在任務看板上。 -";
 						close;
 					}
 				} else if (job_3rd_gc == 15) {
 					if (checkquest(7095) == 1) {
-						mes "The field northwest of Veins.";
-						mes "You can find that easily with a map.";
-						mes "There are lots of wolves, so be careful.";
+						mes "迷霧森林的西北方。";
+						mes "你可以用地圖輕鬆找到它。";
+						mes "那裡有很多狼，所以要小心。";
 						close;
 					}
-					mes "Hey, how's Mayshell?";
-					mes "Can you fix an uncomfortable way of talking?";
+					mes "嘿，梅謝爾近況如何？";
+					mes "你可以修正不舒服的說話方式嗎？";
 					next;
-					mes "[Daora]";
-					mes "Don't pretend to be a noblewoman.";
+					mes "[多拉]";
+					mes "別假裝成貴婦。";
 					next;
-					switch(select("I'm going to go.:Do you know a mansion around Veins?")) {
+					switch(select("我要出發了。:你知道在遺跡周圍的豪宅嗎？")) {
 					case 1:
-						mes "[Daora]";
-						mes "Ok.";
-						mes "Don't be carried away by ill-advised bravery.";
-						mes "Well... it's also hard to be killed.";
+						mes "[達奧拉]";
+						mes "好的。";
+						mes "不要被不明智的勇敢沖昏頭腦。";
+						mes "嗯...也很難被殺死。";
 						close;
 					case 2:
-						mes "[Daora]";
-						mes "Yes, sure.";
-						mes "There is a mansion between ravines.";
-						mes "It's very gloomy.";
-						mes "I don't understand his taste.";
+						mes "[達奧拉]";
+						mes "是的，當然。";
+						mes "在峽谷之間有一棟豪宅。";
+						mes "非常陰暗。";
+						mes "我不懂他的品味。";
 						next;
-						mes "[Daora]";
-						mes "And that mansion is built in back of a ravine...";
-						mes "It's always dark like the night.";
+						mes "[達奧拉]";
+						mes "那棟豪宅建在峽谷的後面...";
+						mes "總是像夜晚一樣黑暗。";
 						next;
-						mes "[Daora]";
-						mes "The location?";
-						mes "Well...";
-						mes "It's in the northwest field of Veins.";
-						mes "You can go through a narrow road to northeast.";
+						mes "[達奧拉]";
+						mes "地點？";
+						mes "嗯...";
+						mes "它在遺跡西北方的原野。";
+						mes "你可以通過一條通往東北方的狹窄道路。";
 						setquest 7095;
 						next;
-						mes "- Daora's advice is attached on the board of quest. -";
+						mes "- 達奧拉的建議附在任務板上。 -";
 						next;
-						mes "[Daora]";
-						mes "There are lots of scary wolves in that area, be careful.";
+						mes "[達奧拉]";
+						mes "那個區域有很多可怕的狼，要小心。";
 						close;
 					}
 				} else {
-					mes "No. It's not funny anymore.";
+					mes "不。這不再有趣了。";
 					close;
 				}
 			case 3:
-				mes "[Daora]";
-				mes "Our milk is expensive!";
-				mes "Give me 500 zeny for a cup.";
+				mes "[達奧拉]";
+				mes "我們的牛奶很貴！";
+				mes "一杯給我 500 Zeny。";
 				next;
-				switch(select("It's ok. Give me a cup of milk.:You are a barefaced robber!")) {
+				switch(select("好的。給我一杯牛奶。:你是個厚顏無恥的強盜！")) {
 				case 1:
-					mes "[Daora]";
+					mes "[達奧拉]";
 					if (Zeny > 499) {
-						mes "Here you are. Milk.";
-						mes "Then take a rest.";
+						mes "給你。牛奶。";
+						mes "好好休息吧。";
 						set Zeny, Zeny - 500;
 						getitem 519,1; //Milk
 						close;
 					}
-					mes "I told you, it's 500 zeny.";
-					mes "A poor man. You have only a fine figure!";
+					mes "我告訴過你，要 500 Zeny。";
+					mes "真窮。你只有一副好身材！";
 					close;
 				case 2:
-					mes "[Daora]";
-					mes "An impertinent fellow!";
+					mes "[達奧拉]";
+					mes "放肆的傢伙！";
 					specialeffect2 EF_HIT1;
 					percentheal -30,0;
 					close;
 				}
 			}
 		} else {
-			mes "You've completed the task perfectly.";
-			mes "What do you need now?";
-			mes "Do you need something else?";
+			mes "你完美地完成了任務。";
+			mes "現在你需要什麼？";
+			mes "你還需要什麼嗎？";
 			next;
-			mes "[Daora]";
-			mes "If you decide on a way to walk, it's time to start newly.";
-			mes "Everyone is waiting for you.";
+			mes "[達奧拉]";
+			mes "如果你決定好要走的路，現在是重新開始的時候了。";
+			mes "每個人都在等你。";
 			close;
 		}
 	} else if (Class == Job_Guillotine_Cross || Class == Job_Guillotine_Cross_T || Class == Job_Baby_Guillotine_Cross) {
 		if (Sex == SEX_MALE) {
-			mes "Oh~ you're good-looking~!";
-			mes "It's worthwhile to open a pub~";
-			mes "I can feel fruitful labors whenever I see a guy like you~";
+			mes "噢～你真好看～！";
+			mes "開一間酒吧真值得～";
+			mes "每當我看到像你這樣的傢伙，我就能感受到豐碩的勞動成果～";
 		} else {
-			mes "Hmm... You look as good as I did in my youth.";
-			mes "What do you want?";
+			mes "嗯...你看起來和我年輕時一樣好。";
+			mes "你想要什麼？";
 		}
 		next;
-		switch(select("Tropical Sograt:Vermilion on the Beach:Milk")) {
+		switch(select("熱帶蘇克拉特:海灘上的朱紅:牛奶")) {
 		case 1:
-			mes "[Daora]";
+			mes "[達奧拉]";
 			if (Zeny > 799) {
-				mes "Here you are, take it.";
+				mes "給你，拿去吧。";
 				set Zeny, Zeny - 800;
 				getitem 12112,1; //Tropical_Sograt
 				close;
 			}
-			mes "It's 800 zeny per 1 glass of Tropical Sograt.";
+			mes "一杯熱帶蘇克拉特 800 Zeny。";
 			close;
 		case 2:
-			mes "[Daora]";
+			mes "[達奧拉]";
 			if (Zeny > 799) {
-				mes "Here you are, take it.";
+				mes "給你，拿去吧。";
 				set Zeny, Zeny - 800;
 				getitem 12113,1; //Vermilion_The_Beach
 				close;
 			}
-			mes "[Daora]";
-			mes "It's 800 zeny per 1 glass of Vermilion on the Beach.";
+			mes "[達奧拉]";
+			mes "一杯海灘上的朱紅 800 Zeny。";
 			close;
 		case 3:
-			mes "[Daora]";
+			mes "[達奧拉]";
 			if (Sex == SEX_MALE) {
-				mes "Uh... Umm...";
-				mes "It's complicated order. but I don't have any choice since you want it.";
+				mes "呃...嗯...";
+				mes "這是個複雜的訂單。但既然你想要，我也沒辦法。";
 				next;
-				mes "[Daora]";
+				mes "[達奧拉]";
 				if (Zeny > 499) {
-					mes "I feel sorry to take 500 zeny per bottle, but I have to.";
-					mes "It's very hard to get milk in Veins.";
+					mes "一瓶收你 500 Zeny我很抱歉，但我不得不這麼做。";
+					mes "在遺跡裡很難得到牛奶。";
 					set Zeny, Zeny - 500;
 					getitem 519,1; //Milk
 					close;
 				}
-				mes "Umm... I think I can't help you.";
-				mes "There is no milk in Veins.";
+				mes "嗯...我想我幫不了你。";
+				mes "遺跡裡沒有牛奶。";
 				close;
 			} else {
-				mes "Ah, milk.";
-				mes "Huu! Milk!";
+				mes "啊，牛奶。";
+				mes "呼！牛奶！";
 				next;
-				mes "[Daora]";
-				mes "I don't have anything like that.";
+				mes "[達奧拉]";
+				mes "我沒有那種東西。";
 				close;
 			}
 		}
 	} else {
 		if (Sex == SEX_MALE) {
-			mes "Oh~ you're good-looking!";
-			mes "So, what do you want?";
+			mes "噢～你真好看！";
+			mes "所以，你想要什麼？";
 		}
 		else {
-			mes "Hum...you're a girl.";
-			mes "Ok pick up whatever you want.";
+			mes "嗯...你是個女孩。";
+			mes "好吧，隨便挑你想要的東西。";
 		}
 		next;
-		mes "[Daora]";
-		mes "I'm not sure that you already know or not, but we are selling special liquor of Morocc.";
-		mes "Which one do you want?";
+		mes "[達奧拉]";
+		mes "我不確定你是否已經知道，但我們正在販售夢羅克的特製酒。";
+		mes "你想要哪一種？";
 		next;
-		switch(select("Tropical Sograt:Vermilion the beach:No thanks!")) {
+		switch(select("熱帶蘇克拉特:海灘上的朱紅:不用了！")) {
 		case 1:
-			mes "[Daora]";
+			mes "[達奧拉]";
 			if (Zeny > 999) {
-				mes "Here you are, take it.";
+				mes "給你，拿去吧。";
 				set Zeny, Zeny - 1000;
 				getitem 12112,1; //Tropical_Sograt
 				close;
 			}
-			mes "It's 1000 zeny per glass of Tropical Sograt.";
+			mes "一杯熱帶蘇克拉特 1000 Zeny。";
 			close;
 		case 2:
-			mes "[Daora]";
+			mes "[達奧拉]";
 			if (Zeny > 999) {
-				mes "Here you are, take it.";
+				mes "給你，拿去吧。";
 				set Zeny, Zeny - 1000;
 				getitem 12113,1; //Vermilion_The_Beach
 				close;
 			}
-			mes "It's 1000 zeny per glass of Vermilion on the Beach.";
+			mes "一杯海灘上的朱紅 1000 Zeny。";
 			close;
 		case 3:
-			mes "[Daora]";
-			mes "Don't show me your nervousness!";
+			mes "[達奧拉]";
+			mes "別在我面前表現出你的緊張！";
 			specialeffect2 EF_HIT1;
 			percentheal -30,0;
 			close;
@@ -846,208 +846,208 @@ job3_guil01,16,20,4	script	Mayshell#3rdgc03	894,{
 		mes "- You can't continue this quest because you have too many items. -";
 		close;
 	}
-	mes "[Mayshell]";
+	mes "[梅雪兒]";
 	if (job_3rd_gc == 4) {
-		mes "You were sent here by Ahcart?";
-		mes "I'll give you a task without asking anymore questions.";
-		mes "Ok, listen carefully.";
+		mes "你是阿卡特派來的？";
+		mes "我會給你一個任務，不再多問。";
+		mes "好，仔細聽。";
 		next;
-		mes "[Mayshell]";
-		mes "We are chasing a person trying to dissolve an organization.";
-		mes "We got information about a guy who looks like a town leader.";
+		mes "[梅雪兒]";
+		mes "我們正在追捕一個試圖瓦解組織的人。";
+		mes "我們得到了關於一個看起來像城鎮領導者的傢伙的消息。";
 		next;
-		mes "[Mayshell]";
-		mes "Your task is to punish him under the cover of shadow.";
+		mes "[梅雪兒]";
+		mes "你的任務是在暗影的掩護下懲罰他。";
 		next;
-		mes "[Mayshell]";
-		mes "Our objective shouldn't be released to anybody.";
-		mes "Your memories should disappear in shadow.";
-		mes "Be cautious and avoid observation.";
+		mes "[梅雪爾]";
+		mes "我們的目標不應該洩漏給任何人。";
+		mes "你的記憶應該消失在陰影中。";
+		mes "保持警惕，避免被觀察。";
 		next;
-		select("Ok...:So the task is...?");
-		mes "[Mayshell]";
-		mes "What does he look like?";
-		mes "How do you recognize him?";
-		mes "I can't tell you.";
-		mes "That's for you to find out.";
+		select("好吧...:所以任務是...?");
+		mes "[梅雪爾]";
+		mes "他長什麼樣子？";
+		mes "你怎麼認出他？";
+		mes "我不能告訴你。";
+		mes "這需要你自己去發現。";
 		next;
-		mes "[Mayshell]";
-		mes "You will need a compass.";
-		mes "You need a lamp and a light to see in the darkness.";
+		mes "[梅雪爾]";
+		mes "你需要一個指南針。";
+		mes "你需要一盞燈和光，以便在黑暗中看見。";
 		next;
-		mes "[Mayshell]";
-		mes "At that point, you will be able to have a drink and rest.";
+		mes "[梅雪爾]";
+		mes "到那時，你才能喝一杯並休息。";
 		next;
-		mes "[Mayshell]";
-		mes "Overcome the adversity.";
-		mes "It is up to you to judge.";
-		mes "We can't help you, so you must figure it out for yourself.";
+		mes "[梅雪爾]";
+		mes "克服逆境。";
+		mes "這取決於你的判斷。";
+		mes "我們無法幫助你，所以你必須自己弄清楚。";
 		next;
-		mes "[Mayshell]";
-		mes "We saw a stranger in this village, we are quite sure that he is the person who we are looking for your task.";
+		mes "[梅雪爾]";
+		mes "我們在這個村莊裡看到一個陌生人，我們非常確定他就是我們正在尋找的你的任務目標。";
 		next;
-		mes "[Mayshell]";
+		mes "[梅雪爾]";
 		mes strcharinfo(0)+".";
-		mes "Time is not waiting for you.";
-		mes "Go ahead. Spill blood with the blade of a knife that stands for a stoic life.";
+		mes "時間不等人。";
+		mes "去吧。用代表堅忍生活的刀刃染血。";
 		set job_3rd_gc, 5;
 		changequest 7102,7103;
 		close;
 	} else if (job_3rd_gc == 5) {
-		mes "You already have your orders.";
-		mes "Even though you don't have any evidence, I trust you to do a good job.";
+		mes "你已經收到命令了。";
+		mes "即使你沒有任何證據，我相信你能做好。";
 		next;
-		mes "[Mayshell]";
-		mes "It's a test to watch you.";
-		mes "Let me see, "+strcharinfo(0)+"...";
-		mes "Go out and think about what you have to do first.";
+		mes "[梅雪爾]";
+		mes "這是一個觀察你的測試。";
+		mes "讓我想想，"+strcharinfo(0)+"...";
+		mes "出去想想你首先要做什麼。";
 		next;
-		mes "[Mayshell]";
-		mes "Your task is finding a stranger.";
+		mes "[梅雪爾]";
+		mes "你的任務是找到一個陌生人。";
 		next;
-		mes "[Mayshell]";
-		mes "Go out search diligently.";
-		mes "I'll allow you to have some water.";
+		mes "[梅雪爾]";
+		mes "出去勤奮地搜尋。";
+		mes "我允許你喝點水。";
 		next;
-		mes "[Mayshell]";
-		mes "Meet Daora before you start.";
-		mes "She may be helpful to you.";
+		mes "[梅雪爾]";
+		mes "開始之前先去見 Daora。";
+		mes "她可能對你有幫助。";
 		close;
 	} else if (job_3rd_gc == 14) {
-		mes "Welcome.";
-		mes "How was your day?";
-		mes "I heard about your activity.";
+		mes "歡迎。";
+		mes "你今天過得如何？";
+		mes "我聽說了你的活動。";
 		next;
-		mes "[Mayshell]";
-		mes "You found a key, right?";
-		mes "Huhu. I have my ways of finding out.";
+		mes "[梅雪爾]";
+		mes "你找到一把鑰匙，對吧？";
+		mes "呵呵。我有我的方法來找出真相。";
 		next;
-		mes "[Mayshell]";
-		mes "Can you show me the key?";
-		mes "I'm going to check if";
-		mes "you were capable or not...";
+		mes "[梅雪爾]";
+		mes "你可以給我看看鑰匙嗎？";
+		mes "我要檢查一下";
+		mes "你是否有能力...";
 		next;
-		select("Give a key to him.");
-		mes "[Mayshell]";
+		select("把鑰匙給他。");
+		mes "[梅雪爾]";
 		if (countitem(6150) == 0) {
-			mes "You didn't bring a key?";
-			mes "I'll be in lots of trouble.";
+			mes "你沒帶鑰匙？";
+			mes "我會惹上很多麻煩。";
 			close;
 		}
-		mes "I didn't expect your success without a clear target...";
-		mes "You are a man of greater ability than I thought.";
+		mes "我沒想到你沒有明確目標就能成功...";
+		mes "你比我想像的更有能力。";
 		next;
-		mes "[Mayshell]";
-		mes "I think you find a target what we look for.";
-		mes "Then you handle it after finding a key's host.";
+		mes "[梅雪爾]";
+		mes "我想你找到了我們正在尋找的目標。";
+		mes "然後你在找到鑰匙的主人後處理它。";
 		next;
-		mes "[Mayshell]";
-		mes "Then it'll be over.";
-		mes "But you have to find the key's host by yourself.";
+		mes "[梅雪爾]";
+		mes "這樣就結束了。";
+		mes "但你必須自己找到鑰匙的主人。";
 		next;
-		mes "[Mayshell]";
-		mes "When you find the mansion, there will be a person waiting for you.";
+		mes "[梅雪爾]";
+		mes "當你找到那棟宅邸時，會有人在那裡等你。";
 		next;
-		mes "[Mayshell]";
-		mes "This is the last step.";
-		mes "Don't make any mistakes.";
+		mes "[梅雪爾]";
+		mes "這是最後一步。";
+		mes "不要犯任何錯誤。";
 		delitem 6150,1; //Key_Of_The_Mansion
 		set job_3rd_gc, 15;
 		changequest 7108,7109;
 		close;
 	} else if (job_3rd_gc == 15) {
-		mes "Ok, you have something to do?";
-		mes "If you are late, Renzak might get upset.";
+		mes "好的，你有什麼事要做嗎？";
+		mes "如果你遲到，倫扎克可能會不高興。";
 		close;
 	} else if (job_3rd_gc == 18 || job_3rd_gc == 19) {
-		mes "I already got a report from Renzak.";
+		mes "我已經收到倫扎克的報告了。";
 		if (job_3rd_gc == 18) {
-			mes "You completed the task quickly.";
-			mes "That's great.";
+			mes "你很快就完成了任務。";
+			mes "太棒了。";
 		} else {
-			mes "I'm so happy to see you.";
-			mes "But quickness is very important to us.";
+			mes "我很高興見到你。";
+			mes "但速度對我們來說非常重要。";
 			next;
-			mes "[Mayshell]";
-			mes "You were not punctual...";
-			mes "At least you came back alive.";
+			mes "[梅雪爾]";
+			mes "你沒有準時...";
+			mes "至少你活著回來了。";
 		}
 		next;
 		set .@all_wine,0;
 		for(set .@i,0; .@i<5; set .@i,.@i+1)
 			if (checkquest(7091+.@i) == 1) set .@all_wine, .@all_wine+1;
-		mes "[Mayshell]";
+		mes "[梅雪爾]";
 		if (.@all_wine < 2) {
-			mes "You did the job by yourself";
-			mes "even though there wasn't any";
-			mes "information about it, and you";
-			mes "collected it.";
+			mes "你獨自完成了這項工作";
+			mes "即使沒有任何";
+			mes "相關信息，而且你";
+			mes "收集到了。";
 			next;
-			mes "[Mayshell]";
-			mes "You corresponded with all conditions";
-			mes "promptly and with patience.";
+			mes "[梅雪爾]";
+			mes "你及時且耐心地";
+			mes "符合所有條件。";
 			next;
-			mes "[Mayshell]";
+			mes "[梅雪爾]";
 			if (job_3rd_gc == 18) {
-				mes "The evaluation of your task is... [S].";
-				mes "[S] is for 'special'.";
+				mes "你的任務評價是... [S]。";
+				mes "[S] 代表 '特殊'。";
 				set .@quest,7099;
 			} else {
-				mes "The evaluation of your task is... [A].";
-				mes "If you were punctual, you would have received higher.";
+				mes "你的任務評價是... [A]。";
+				mes "如果你準時，你會得到更高的評價。";
 				set .@quest,7096;
 			}
 			next;
 		} else {
-			mes "You made full use of Daora's advice.";
-			mes "But, didn't I mention it?";
+			mes "你充分利用了 Daora 的建議。";
+			mes "但是，我沒有提到嗎？";
 			next;
-			mes "[Mayshell]";
-			mes "I told you to keep it a secret...";
-			mes "Of course, I don't want to blame you.";
+			mes "[梅雪爾]";
+			mes "我告訴過你要保密...";
+			mes "當然，我不想責怪你。";
 			next;
-			mes "[Mayshell]";
-			mes "It's important not only to solve this by yourself,";
-			mes "but also to make an effort getting information.";
+			mes "[梅雪爾]";
+			mes "不僅要靠自己解決問題很重要，";
+			mes "努力獲取信息也很重要。";
 			next;
-			mes "[Mayshell]";
+			mes "[梅雪爾]";
 			if (.@all_wine > 3) {
 				if (job_3rd_gc == 18) {
-					mes "The evaluation of your task is... [B].";
+					mes "你的任務評價是... [B]。";
 					set .@quest,7097;
 				} else {
-					mes "The evaluation of your task is... [C].";
-					mes "You need to act by yourself.";
+					mes "你的任務評價是... [C]。";
+					mes "你需要自己行動。";
 					set .@quest,7098;
 				}
 				next;
 			} else {
-				mes "You adjusted an affair with flexible points of view.";
-				mes "You were not dependent on the others and you used the surroundings properly.";
+				mes "你以靈活的觀點調整了一件事。";
+				mes "你不依賴他人，並且正確地利用了周圍的環境。";
 				next;
-				mes "[Mayshell]";
-				mes "I like that.";
+				mes "[梅雪爾]";
+				mes "我喜歡這樣。";
 				if (job_3rd_gc == 18) {
-					mes "The evaluation of your task is... [A].";
+					mes "你的任務評價是... [A]。";
 					set .@quest,7096;
 				} else {
-					mes "The evaluation of your task is... [B].";
+					mes "你的任務評價是... [B]。";
 					set .@quest,7097;
 				}
 				next;
 			}
 		}
-		mes "[Mayshell]";
-		mes "You got a new qualification for completing this task.";
-		mes "It's a shadow of our assasin as a shadow of the world...";
+		mes "[梅雪爾]";
+		mes "你因完成此任務而獲得了新的資格。";
+		mes "這是我們刺客的影子，如同世界的影子...";
 		next;
-		mes "[Mayshell]";
-		mes "I'm going to give you the qualification to be a ^4d4dffGuillotine Cross^000000.";
-		mes "I'm not pushing you, so you can come whenever you want to visit.";
+		mes "[梅雪爾]";
+		mes "我將授予你成為 ^4d4dffGuillotine Cross^000000 的資格。";
+		mes "我不會強迫你，所以你可以隨時來拜訪。";
 		next;
-		mes "[Mayshell]";
-		mes "I reward you for your labor, and I'm going to give you a present.";
-		mes "I got this one from guild, I hope it's helpful to you.";
+		mes "[梅雪爾]";
+		mes "我獎勵你的勞動，並將送你一份禮物。";
+		mes "我從公會那裡得到的，我希望它對你有幫助。";
 		set job_3rd_gc, 20;
 		getitem 12106,1; //Accessory_Box
 		erasequest 7091;
@@ -1062,1027 +1062,1026 @@ job3_guil01,16,20,4	script	Mayshell#3rdgc03	894,{
 		if (checkquest(7116) > -1) erasequest 7116;
 		changequest 7111,.@quest;
 		next;
-		mes "[Mayshell]";
-		mes "I want to tell you something.";
-		mes "I order you that ^4d4dffyou should not leave a document at all^000000, whatever it is.";
+		mes "[梅雪爾]";
+		mes "我想告訴你一些事情。";
+		mes "我命令你^4d4dff無論如何都不應該留下任何文件^000000。";
 		next;
-		mes "[Mayshell]";
-		mes "There are two types of information:";
-		mes "Things that can be shared and those that cannot.";
+		mes "[梅雪爾]";
+		mes "有兩種信息：";
+		mes "可以分享的和不能分享的。";
 		next;
-		mes "[Mayshell]";
-		mes "And never leave records or tell anybody about a task you completed...";
-		mes "for your junior who will follow your steps.";
+		mes "[梅雪兒]";
+		mes "而且絕對不要留下紀錄或告訴任何人你完成的任務...";
+		mes "為了你之後會跟隨你的腳步的後輩。";
 		next;
-		mes "[Mayshell]";
-		mes "Don't forget.";
-		mes "And the task you did is related to Rachel, Rune-Midgarts, and our assassin guild.";
-		mes "So the others should not be known. Of course, you are included, so please forget everything.";
+		mes "[梅雪兒]";
+		mes "別忘了。";
+		mes "而你所做的任務與瑞秋、盧恩-米德加茲，以及我們的刺客公會相關。";
+		mes "所以其他人不應該知道。當然，你也包括在內，所以請忘記一切。";
 		close;
 	} else if (job_3rd_gc == 20) {
-		mes "You are acknowledged by the guild.";
-		mes "Feel free to come whenever you want to become a Guillotine Cross.";
+		mes "你已獲得公會的認可。";
+		mes "隨時歡迎你來成為斷頭台之刃。";
 		next;
-		mes "[Mayshell]";
-		mes "That choice means that you will have to walk a street of blood again.";
+		mes "[梅雪兒]";
+		mes "那個選擇意味著你將不得不再次走上一條血腥之路。";
 		next;
-		mes "[Mayshell]";
-		mes "Bercasell is waiting in the room on the opposite side.";
-		mes "Meet him.";
+		mes "[梅雪兒]";
+		mes "巴卡賽爾正在對面的房間裡等著。";
+		mes "去見他。";
 		close;
 	} else if (job_3rd_gc > 20) {
-		mes "Even though I gave you a qualification,";
-		mes "I don't want to celebrate that qualification.";
+		mes "即使我給了你資格，";
+		mes "我也不想慶祝那個資格。";
 		next;
-		mes "[Mayshell]";
-		mes "It's a way to abandon one's mind and the way of pain, of adversity.";
-		mes "I pushed you that way.";
+		mes "[梅雪兒]";
+		mes "這是一種放棄一個人的思想和痛苦、逆境的方式。";
+		mes "我把你推向了那條路。";
 		next;
-		mes "[Mayshell]";
-		mes "It's funny.";
-		mes "We live for checking our comrades...";
-		mes "But it's a rule of the assasin.";
+		mes "[梅雪兒]";
+		mes "真可笑。";
+		mes "我們為了檢查我們的同志而活著...";
+		mes "但這是刺客的規則。";
 		next;
-		mes "[Mayshell]";
-		mes "In a dark night, it's the fate of a person who is going on the shadow of the moon.";
-		mes "I wish you to store one's mind, please...";
+		mes "[梅雪兒]";
+		mes "在黑暗的夜晚，這是一個走在月亮陰影下的人的命運。";
+		mes "我希望你把一個人的思想儲存起來，拜託...";
 		close;
 	} else {
-		mes "You are not allowed in here.";
+		mes "你不被允許進入這裡。";
 		close;
 	}
 }
 
 ve_in,228,108,3	script	Waitress#3rdgc04	80,{
-	mes "[Waitress]";
+	mes "[女服務生]";
 	if (job_3rd_gc < 6) {
-		mes "Welcome~";
-		mes "Visit and take a rest~";
+		mes "歡迎光臨～";
+		mes "進來休息一下吧～";
 		close;
 	} else if (job_3rd_gc == 6) {
 		if (checkquest(7091) == 1) {
 			if (checkquest(7112) == 1) {
-				mes "That's all the information that I know.";
-				mes "After that, I can't remember anything else.";
+				mes "這就是我知道的所有資訊。";
+				mes "在那之後，我不記得任何其他事情了。";
 				next;
-				mes "Then can we figure it out with the information you collected?-";
+				mes "那麼我們可以根據你收集的資訊來弄清楚嗎？-";
 				next;
-				switch(select("Do it.:Stop it.")) {
+				switch(select("開始吧。:停止吧。")) {
 				case 1:
 					callfunc "func_3rdgc",1;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止了資訊的確認。";
 					close;
 				}
 			} else {
-				mes "Welcome.";
-				mes "Are you ready to order?";
+				mes "歡迎光臨。";
+				mes "你準備好點餐了嗎？";
 				next;
-				switch(select("You are...:Your name is..?:Water, please.")) {
+				switch(select("你是...:妳的名字是...?:請給我水。")) {
 				case 1:
-					mes "[Waitress]";
-					mes "What's the matter?";
-					mes "Are you ready to order?";
+					mes "[女服務生]";
+					mes "怎麼了？";
+					mes "你準備好點餐了嗎？";
 					next;
-					select("I'm looking for Madelle...");
-					mes "[Madelle]";
-					mes "Ah? Madelle? Do you know about Daora?";
-					mes "I'm Madelle.";
-					mes "I think you have business because you came from Daora.";
+					select("我在找瑪德爾...");
+					mes "[瑪德爾]";
+					mes "啊？瑪德爾？你知道多爾拉嗎？";
+					mes "我就是瑪德爾。";
+					mes "我想你有事要辦，因為你來自多爾拉。";
 					next;
-					select("Was there a suspicious guest?");
-					mes "[Madelle]";
-					mes "A suspicious guest?";
-					mes "What kind of...?";
-					mes "Ah, well... we have had a few strangers.";
+					select("有沒有可疑的客人？");
+					mes "[瑪德爾]";
+					mes "可疑的客人？";
+					mes "什麼樣的...?";
+					mes "啊，嗯...我們確實有一些陌生人。";
 					next;
-					mes "[Madelle]";
-					mes "We don't have lots of floating population because of the rough terrain in the village.";
-					mes "Almost all people have been here since they were born or adventurers who are regulars.";
+					mes "[瑪德爾]";
+					mes "由於村莊地形崎嶇，我們沒有很多流動人口。";
+					mes "幾乎所有人都是從出生起就在這裡，或是常來的冒險家。";
 					next;
-					mes "[Madelle]";
-					mes "But if they are not that kind of people...";
-					mes "Yes, there were strangers.";
+					mes "[瑪德爾]";
+					mes "但如果他們不是那種人...";
+					mes "是的，有陌生人。";
 					next;
-					select("Can you tell me about them?");
-					mes "[Madelle]";
-					mes "Um... One looked like a priest from Rachel.";
-					mes "A priest in this village...";
-					mes "Maybe he is a soldier, I understand.";
+					select("你能告訴我關於他們的事嗎？");
+					mes "[瑪德爾]";
+					mes "嗯...一個看起來像來自瑞秋的牧師。";
+					mes "一個牧師在這個村莊...";
+					mes "也許他是一個士兵，我明白。";
 					next;
-					mes "[Madelle]";
-					mes "One day, there was a guy who seemed to be exhausted and bought food.";
-					mes "I remember him because he visited after closing a store.";
+					mes "[瑪德爾]";
+					mes "有一天，有一個人看起來很疲憊，並買了食物。";
+					mes "我記得他，因為他在商店關門後才來。";
 					next;
-					mes "[Madelle]";
-					mes "I'm not sure but there was a person who was wearing a hood.";
-					mes "He seemed be exhausted and they wanted to buy a small drink and a snack.";
+					mes "[瑪德爾]";
+					mes "我不確定，但有一個人戴著兜帽。";
+					mes "他似乎很疲憊，他們想買一小杯飲料和零食。";
 					next;
-					mes "[Madelle]";
-					mes "I haven't seen any of them since.";
-					mes "So I don't know anymore.";
+					mes "[瑪德爾]";
+					mes "從那以後我就沒有再見過他們了。";
+					mes "所以我不知道更多了。";
 					setquest 7112;
 					next;
-					mes "- The information of Madelle is attached on the guest board.";
-					mes "Then can we figure out what information you've collected? -";
+					mes "- 瑪德爾的資訊附加在留言板上。";
+					mes "那麼我們可以根據你收集的資訊來弄清楚嗎？ -";
 					next;
-					switch(select("Do it.:Stop it.")) {
+					switch(select("開始吧。:停止吧。")) {
 					case 1:
 						callfunc "func_3rdgc",1;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止了資訊的確認。";
 						close;
 					}
 				case 2:
-					mes "[Waitress]";
-					mes "What? My name?";
-					mes "Are you hitting on me?";
-					mes "Don't do that.";
-					if (Sex == SEX_MALE) mes "You are not my type.";
-					else mes "I don't swing that way.";
+					mes "[女服務生]";
+					mes "什麼？我的名字？";
+					mes "你在泡我嗎？";
+					mes "別這樣。";
+					if (Sex == SEX_MALE) mes "你不是我的菜。";
+					else mes "我對那方面沒興趣。";
 					close;
 				case 3:
-					mes "[Waitress]";
-					mes "Do you want ice with that?";
+					mes "[女服務生]";
+					mes "你要加冰塊嗎？";
 					close;
 				}
 			}
 		} else {
 			if (checkquest(7112) == 1) {
-				mes "That's all the information that I know.";
-				mes "I haven't seen them since.";
+				mes "這就是我知道的所有資訊。";
+				mes "從那以後我就沒有再見過他們了。";
 				next;
-				mes "- I wonder if I can figure it out with the information I've collected... -";
+				mes "- 我想知道我是否可以根據我收集的資訊來弄清楚... -";
 				next;
-				switch(select("Do it.:Stop it.")) {
+				switch(select("開始吧。:停止吧。")) {
 				case 1:
 					callfunc "func_3rdgc",0;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止了資訊的確認。";
 					close;
 				}
 			} else {
-				mes "Welcome.";
-				mes "Are you ready to order?";
+				mes "歡迎光臨。";
+				mes "你準備好點餐了嗎？";
 				next;
-				switch(select("Suspicious people?:Which one is the best food?")) {
+				switch(select("可疑的人？:哪個食物最好吃？")) {
 				case 1:
-					mes "[Waitress]";
-					mes "A suspicious person?";
-					mes "You are a suspicious person.";
+					mes "[女服務生]";
+					mes "可疑的人？";
+					mes "你就是個可疑的人。";
 					close;
 				case 2:
-					mes "[Waitress]";
-					mes "Umm? well...";
-					mes "If you want to have a simple dish, have a meal from our fixed menu.";
-					mes "It's 5000 zeny, Do you want it?";
+					mes "[女服務生]";
+					mes "嗯？嗯...";
+					mes "如果你想要簡單的菜，那就點我們的套餐吧。";
+					mes "要價5000zeny，你要點嗎？";
 					next;
-					switch(select("Yes, I'll try it.:......")) {
+					switch(select("是的，我想試試。:......")) {
 					case 1:
 						if (Zeny > 4999) {
-							mes "[Waitress]";
-							mes "Here you are, this is a meal from the fixed menu.";
-							mes "Feel free to call me when you need.";
+							mes "[女服務生]";
+							mes "給你，這是套餐。";
+							mes "有需要隨時叫我。";
 							next;
-							switch(select("How's your business?:Do you have lots of guests?")) {
+							switch(select("妳的生意如何？:妳有很多客人嗎？")) {
 							case 1:
-								mes "[Waitress]";
-								mes "Well... not bad.";
-								mes "This is the only pub here so it's good.";
+								mes "[女服務生]";
+								mes "嗯...還不錯。";
+								mes "這是這裡唯一的酒吧，所以還不錯。";
 								break;
 							case 2:
-								mes "[Waitress]";
-								mes "Not that much lately.";
-								mes "It's so-so.";
+								mes "[女服務生]";
+								mes "最近沒那麼多。";
+								mes "就那樣。";
 								break;
 							}
 							next;
-							mes "[Waitress]";
-							mes "A business in a village can keep up with customers.";
-							mes "Thesedays, adventurers have been visiting more often.";
+							mes "[女服務生]";
+							mes "一個村莊的生意可以跟上顧客的腳步。";
+							mes "最近，冒險家來訪的次數越來越多了。";
 							next;
-							select("Any suspicious visitors?");
-							mes "[Waitress]";
-							mes "Sure, I see some everyday.";
-							mes "I can recognize when I see their outfits.";
-							mes "I have to memorize their characters because of business.";
+							select("有什麼可疑的訪客嗎？");
+							mes "[女服務生]";
+							mes "當然，我每天都看到一些。";
+							mes "當我看到他們的服裝時，我可以認出來。";
+							mes "我必須記住他們的特徵，因為生意上的需要。";
 							next;
-							select("It's boring...");
-							mes "[Waitress]";
-							mes "Yeah sometimes.";
-							mes "Everyday I have to talk";
-							mes "with same people.";
-							mes "But...";
+							select("好無聊...");
+							mes "[女服務生]";
+							mes "是啊，有時候。";
+							mes "每天我都必須和";
+							mes "同樣的人說話。";
+							mes "但是...";
 							next;
-							mes "[Waitress]";
-							mes "I'm refreshed when I see guests like you.";
-							mes "I remember something that happened a few days ago.";
+							mes "[女服務生]";
+							mes "看到像你這樣的客人，我就精神百倍。";
+							mes "我記得幾天前發生的一件事。";
 							next;
-							mes "[Waitress]";
-							mes "When I closed the store,";
-							mes "he seemed be exhausted and they wanted to buy a small drink and a snack.";
+							mes "[女服務生]";
+							mes "當我關店時，";
+							mes "他看起來很疲憊，想要買一小杯飲料和一份點心。";
 							next;
-							mes "[Waitress]";
-							mes "He was a stranger but I'm sure that he is from Rachel.";
-							mes "He looked like a priest.";
+							mes "[女服務生]";
+							mes "他是一個陌生人，但我確信他來自拉赫。";
+							mes "他看起來像個牧師。";
 							next;
-							mes "[Waitress]";
-							mes "I thought that a priest came here, but it's wrong.";
-							mes "I was starting to get scared.";
+							mes "[女服務生]";
+							mes "我以為牧師來了這裡，但不是。";
+							mes "我開始感到害怕。";
 							next;
-							mes "[Waitress]";
-							mes "I thought that I may have opened the door to a thief.";
-							mes "Ah, sorry, I must be talking too much.";
+							mes "[女服務生]";
+							mes "我以為我可能為小偷打開了大門。";
+							mes "啊，抱歉，我一定是說太多了。";
 							next;
-							mes "[Waitress]";
-							mes "It was boring to talk with that old man...";
-							mes "Anyway, don't let me disturb you anymore.";
-							mes "Bon Appetit!";
+							mes "[女服務生]";
+							mes "和那個老頭說話很無聊...";
+							mes "總之，別讓我再打擾你了。";
+							mes "祝您好胃口！";
 							next;
-							mes "[Waitress]";
-							mes "Oh by the way, my name is Madelle.";
-							mes "I hope you remember my name.";
+							mes "[女服務生]";
+							mes "喔，順便說一下，我的名字是瑪黛爾。";
+							mes "我希望你記得我的名字。";
 							set Zeny, Zeny - 5000;
 							setquest 7112;
 							next;
-							mes "- Madelle's information is attached to a quest board. What information have I collected? -";
+							mes "- 瑪黛爾的資訊附加在任務看板上。我收集到了哪些資訊？ -";
 							next;
-							switch(select("Check information.:Cancel.")) {
+							switch(select("查看資訊。:取消。")) {
 							case 1:
 								callfunc "func_3rdgc",0;
 								close;
 							case 2:
-								mes "You stop the confirmation of information.";
+								mes "您停止了資訊的確認。";
 								close;
 							}
 						} else {
-							mes "[Waitress]";
-							mes "A meal from our menu is 5000 zeny.";
-							mes "You have to pay.";
-							mes "It's prepay.";
+							mes "[女服務生]";
+							mes "我們菜單上的一份餐點是 5000 Zeny。";
+							mes "你必須付錢。";
+							mes "是預付。";
 							close;
 						}
 					case 2:
-						mes "[Waitress]";
-						mes "You feel annoyed.";
-						mes "I see. I won't push you.";
-						mes "Take a rest there.";
+						mes "[女服務生]";
+						mes "你感到惱火。";
+						mes "我明白了。我不會勉強你。";
+						mes "在那邊休息一下吧。";
 						close;
 					}
 				}
 			}
 		}
 	} else {
-		mes "Hi~!";
-		mes "We can see often each other.";
+		mes "嗨～！";
+		mes "我們可以常常見面。";
 		next;
-		mes "[Madelle]";
-		mes "A meal? Liquor?";
-		mes "Hoho, have a good time!";
+		mes "[瑪黛爾]";
+		mes "餐點？酒？";
+		mes "呵呵，玩得開心！";
 		close;
 	}
 }
 
 ve_in,246,303,3	script	Young Merchant#3rdgc05	930,{
 	if (job_3rd_gc < 6) {
-		mes "[Young Merchant]";
-		mes "If you want to buy stuff, go to this person.";
-		mes "I'm a distributor.";
+		mes "[年輕商人]";
+		mes "如果你想買東西，去找這個人。";
+		mes "我是經銷商。";
 		close;
 	}
 	else if (job_3rd_gc == 6) {
 		if (checkquest(7091) == 1) {
 			if (checkquest(7113) == 1) {
-				mes "[Crave]";
-				mes "I already gave you all the information I have.";
-				mes "I'm quick in visual learning.";
-				mes "I can't find the other girl, only the one who matches your condition.";
+				mes "[克雷夫]";
+				mes "我已經把我知道的所有資訊都給你了。";
+				mes "我很快就能視覺學習。";
+				mes "我找不到另一個女孩，只有一個符合你的條件。";
 				next;
-				mes "Can we figure out with the information you collected?";
+				mes "我們可以根據你收集到的資訊來判斷嗎？";
 				next;
-				switch(select("Do it.:Stop it.")) {
+				switch(select("進行判斷。:停止判斷。")) {
 				case 1:
 					callfunc "func_3rdgc",1;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "您停止了資訊的確認。";
 					close;
 				}
 			} else {
-				mes "[Young Merchant]";
-				mes "How about increasing potion in next time...";
-				mes "Um, do you have something to tell me?";
+				mes "[年輕商人]";
+				mes "下次要不要增加藥水...";
+				mes "嗯，你有什麼話要告訴我嗎？";
 				next;
-				switch(select("Do you know Crave?:Give me a potion.")) {
+				switch(select("你認識克雷夫嗎？:給我一罐藥水。")) {
 				case 1:
-					mes "[Crave]";
-					mes "I'm Crave, who are you...?";
+					mes "[克雷夫]";
+					mes "我是克雷夫，你是誰……？";
 					//mes "You're not a usual stuff in connection.."; //FIXME: Dialogue.
 					next;
-					mes "[Crave]";
-					mes "Ah, is it about Daora?";
-					mes "Yes, what can I do for you?";
+					mes "[克雷夫]";
+					mes "啊，是關於朵拉的事情嗎？";
+					mes "是的，我能為你做些什麼？";
 					next;
-					select("Did you see a stranger these past days?");
-					mes "[Crave]";
-					mes "Stranger... about Daora's business?";
-					mes "Ok. I understand what you are talking about.";
+					select("你這幾天有看到陌生人嗎？");
+					mes "[克雷夫]";
+					mes "陌生人……關於朵拉的事情？";
+					mes "好的。我明白你在說什麼。";
 					next;
-					mes "[Crave]";
-					mes "I found a new face while";
-					mes "watching the stores.";
-					mes "It was a girl...";
+					mes "[克雷夫]";
+					mes "我在觀察商店時發現了一張新面孔。";
+					mes "那是一個女孩……";
 					next;
-					mes "[Crave]";
-					mes "She buys food and the necessities of life regularly in the morning and afternoon.";
-					mes "I wanted to know more about her, because she was pretty.";
-					mes "But there is no person who knows her residence.";
+					mes "[克雷夫]";
+					mes "她每天早上和下午都會定期購買食物和生活必需品。";
+					mes "我想更多地了解她，因為她很漂亮。";
+					mes "但是沒有人知道她的住處。";
 					next;
-					mes "[Crave]";
-					mes "Is it a mysterious person?";
-					mes "I don't know who she is, or where she lives!";
+					mes "[克雷夫]";
+					mes "她是一個神秘的人嗎？";
+					mes "我不知道她是誰，也不知道她住在哪里！";
 					next;
-					mes "[Crave]";
-					mes "I want to talk to her, but she runs away...";
-					mes "She must be hiding something.";
+					mes "[克雷夫]";
+					mes "我想和她說話，但她跑掉了……";
+					mes "她一定隱藏了什麼。";
 					setquest 7113;
 					next;
-					mes "- The information Crave gave is attached on the quest board.";
-					mes "Then can we figure out with information you collected? -";
+					mes "- 克雷夫提供的資訊附加在任務看板上。";
+					mes "那麼我們可以根據你收集到的資訊來判斷嗎？ -";
 					next;
-					switch(select("Do it.:Stop it.")) {
+					switch(select("進行判斷。:停止判斷。")) {
 					case 1:
 						callfunc "func_3rdgc",1;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "您停止了資訊的確認。";
 						close;
 					}
 				case 2:
-					mes "[Young Merchant]";
-					mes "I carry on a wholesale trade, not a retail trade.";
-					mes "Buy that from a tool salesperson.";
+					mes "[年輕商人]";
+					mes "我進行的是批發貿易，而不是零售貿易。";
+					mes "從工具銷售員那裡購買。";
 					close;
 				}
 			}
 		} else {
 			if (checkquest(7113) == 1) {
-				mes "[Crave]";
-				mes "I already gave you all the information I have.";
-				mes "I'm quick in visual learning.";
-				mes "I can't find the other girl, only the one who matches your condition.";
+				mes "[克雷夫]";
+				mes "我已經把我知道的所有資訊都給你了。";
+				mes "我很快就能視覺學習。";
+				mes "我找不到另一個女孩，只有一個符合你的條件。";
 				next;
-				mes "Can we figure out with the information you collected?";
+				mes "我們可以根據你收集到的資訊來判斷嗎？";
 				next;
-				switch(select("Do it.:Stop it.")) {
+				switch(select("進行判斷。:停止判斷。")) {
 				case 1:
 					callfunc "func_3rdgc",0;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "您停止了資訊的確認。";
 					close;
 				}
 			} else {
-				mes "[Young Merchant]";
-				mes "What's wrong?";
-				mes "I'm a merchant, but not a retail merchant.";
-				mes "If you want to buy things, go to the others.";
+				mes "[年輕商人]";
+				mes "怎麼了？";
+				mes "我是一個商人，但不是零售商人。";
+				mes "如果你想買東西，去找其他人。";
 				next;
-				switch(select("Suspicious people?:I heard that you are sharp.")) {
+				switch(select("可疑的人？:我聽說你很敏銳。")) {
 				case 1:
-					mes "[Young Merchant]";
-					mes "A suspicious person?";
-					mes "There are lots of people who are suspicious.";
+					mes "[年輕商人]";
+					mes "可疑的人？";
+					mes "有很多可疑的人。";
 					next;
-					mes "[Young Merchant]";
-					mes "It's that lame person that's suspicious, isn't it?";
+					mes "[年輕商人]";
+					mes "是那個跛腳的人很可疑，不是嗎？";
 					close;
 				case 2:
-					mes "[Young Merchant]";
-					mes "Hmm? It's reasonable.";
-					mes "I have to be quick in visual learning for living as a merchant.";
+					mes "[年輕商人]";
+					mes "嗯？這很合理。";
+					mes "我必須快速視覺學習才能以商人為生。";
 					next;
-					mes "[Young Merchant]";
-					mes "I have to memorize the faces of people who do business with me so I can make a profit.";
-					mes "Then I can make steady customers.";
+					mes "[年輕商人]";
+					mes "我必須記住與我做生意的人的面孔，這樣我才能獲利。";
+					mes "然後我才能有穩定的客戶。";
 					next;
-					switch(select("I'm looking for a cousin...:End conversation.")) {
+					switch(select("我在找一個堂/表兄弟...:結束對話。")) {
 					case 1:
-						mes "[Young Merchant]";
-						mes "Is she a beautiful blonde?";
+						mes "[年輕商人]";
+						mes "她是一個金髮美女嗎？";
 						next;
-						switch(select("No, it's a boy.:Yes, she is.")) {
+						switch(select("不，是個男孩。:是的，她是。")) {
 						case 1:
-							mes "[Young Merchant]";
-							mes "Is he?";
-							mes "I don't know.";
-							mes "I know only a mysterious blonde beauty.";
+							mes "[年輕商人]";
+							mes "他是？";
+							mes "我不知道。";
+							mes "我只知道一個神秘的金髮美女。";
 							close;
 						case 2:
-							mes "[Crave]";
-							mes "Oh, she is?";
-							mes "I'm Crave. If you find her later, please contact me.";
+							mes "[克雷夫]";
+							mes "喔，她是嗎？";
+							mes "我是克雷夫。如果你晚點找到她，請聯絡我。";
 							next;
-							mes "[Crave]";
-							mes "Don't give me a fierce scowl.";
-							mes "I'm a man of ability.";
+							mes "[克雷夫]";
+							mes "別給我一個兇狠的怒容。";
+							mes "我是個有能力的人。";
 							next;
-							select("Where did you see her?");
+							select("妳在哪裡看到她的？");
 							mes "["+strcharinfo(0)+"]";
-							mes "A few days have passed already.";
-							mes "I want to find her as soon as possible.";
-							mes "You said you saw that child? Where did you see her?";
+							mes "已經過了幾天了。";
+							mes "我想盡快找到她。";
+							mes "你說你看到那個孩子？妳在哪裡看到她的？";
 							next;
-							mes "[Crave]";
-							mes "So... that's why we don't know her residence.";
-							mes "I can understand buying food and other supplies.";
+							mes "[克雷夫]";
+							mes "所以... 這就是我們不知道她住處的原因。";
+							mes "我可以理解購買食物和其他補給品。";
 							next;
-							mes "[Crave]";
-							mes "She always runs away without saying anything.";
-							mes "I like her because of her mysterious atmosphere.";
+							mes "[克雷夫]";
+							mes "她總是默默地跑掉。";
+							mes "我喜歡她，因為她神秘的氣氛。";
 							next;
-							mes "[Crave]";
-							mes "I think that she ran away from home.";
-							mes "She visits here to buy stuff every day and every night regularly.";
+							mes "[克雷夫]";
+							mes "我認為她是離家出走的。";
+							mes "她每天每夜都會定期來這裡買東西。";
 							next;
-							mes "[Crave]";
-							mes "She may run away when she sees you.";
-							mes "It's probably better to hide in the alley to catch her.";
+							mes "[克雷夫]";
+							mes "她可能會在看到你的時候逃跑。";
+							mes "最好躲在巷子裡抓她。";
 							setquest 7113;
 							next;
-							mes "- Crave's information is attached to the quest board. What information have I collected? -";
+							mes "- 克雷夫的資訊已附加到任務看板上。我收集了哪些資訊？ -";
 							next;
-							switch(select("Check information.:Cancel.")) {
+							switch(select("檢查資訊。:取消。")) {
 							case 1:
 								callfunc "func_3rdgc",0;
 								close;
 							case 2:
-								mes "You stop the confirmation of information.";
+								mes "你停止確認資訊。";
 								close;
 							}
 						}
 					case 2:
-						mes "[Young Merchant]";
-						mes "Why do you change your face while I'm talking about a steady customer?";
-						mes "Oh, you are...";
-						mes "It's a sword of darkness that can't make a profit unrelated to memorizing people's faces.";
+						mes "[年輕商人]";
+						mes "當我在說一個穩定的客戶時，你為什麼要改變你的臉色？";
+						mes "喔，你是...";
+						mes "這是一把黑暗之劍，與記住別人的臉無關，無法帶來利潤。";
 						close;
 					}
 				}
 			}
 		}
 	} else {
-		mes "[Crave]";
-		mes "Excuse me?";
-		mes "Did you find who you were looking for?";
+		mes "[克雷夫]";
+		mes "不好意思？";
+		mes "你找到你要找的人了嗎？";
 		close;
 	}
 }
 
 veins,291,215,3	script	Vigilante#3rdgc06	939,{
 	if (job_3rd_gc < 6) {
-		mes "[Vigilante]";
-		mes "Do you have any inconveniences while you are traveling?";
-		mes "At the outskirts of the city, there are many monsters. Be careful.";
+		mes "[義勇警衛]";
+		mes "你在旅行時有任何不便嗎？";
+		mes "在城市的外圍，有很多怪物。小心。";
 		close;
 	}
 	else if (job_3rd_gc == 6) {
 		if (checkquest(7091) == 1) {
 			if (checkquest(7114) == 1) {
-				mes "[Trovan]";
-				mes "I already gave you all the information I have.";
-				mes "He's the only suspicious person that's been seen.";
-				mes "But nothing has happened yet, so I'm keeping watch.";
+				mes "[托洛凡]";
+				mes "我已經把我知道的所有資訊都給你了。";
+				mes "他是一直以來唯一被看到的，可疑的人。";
+				mes "但到目前為止還沒有發生任何事情，所以我會繼續觀察。";
 				next;
-				mes "- What information have I collected? -";
+				mes "- 我收集了哪些資訊？ -";
 				next;
-				switch(select("Check information.:Cancel.")) {
+				switch(select("檢查資訊。:取消。")) {
 				case 1:
 					callfunc "func_3rdgc",1;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止確認資訊。";
 					close;
 				}
 			} else {
-				mes "[Vigilante]";
-				mes "Hello?";
-				mes "Do you need help?";
+				mes "[義勇警衛]";
+				mes "你好？";
+				mes "你需要幫忙嗎？";
 				next;
-				switch(select("Do you know Trovan?:No thanks.")) {
+				switch(select("你認識托洛凡嗎？:不用了。")) {
 				case 1:
-					mes "[Vigilante]";
-					mes "Eh? I'm Trovan, a member of the vigilante corps of Veins.";
-					mes "What's the matter?";
+					mes "[義勇警衛]";
+					mes "欸？我是托洛凡，靜脈村義勇警衛隊的成員。";
+					mes "怎麼了嗎？";
 					next;
-					mes "[Trovan]";
-					mes "Ah, you were recommended by Daora.";
-					mes "I remember all of the faces of people who live in this village.";
+					mes "[托洛凡]";
+					mes "啊，妳是朵拉推薦的。";
+					mes "我記得所有住在這個村莊裡的人的臉。";
 					next;
-					mes "[Trovan]";
-					mes "Maybe he is a stranger.";
-					mes "We should exclude normal adventurers.";
+					mes "[托洛凡]";
+					mes "也許他是個陌生人。";
+					mes "我們應該排除普通的冒險者。";
 					next;
-					mes "[Trovan]";
-					mes "And if Daora finds a person, he must not be a normal person.";
-					mes "So we should exclude normal guests...";
+					mes "[托洛凡]";
+					mes "如果朵拉找到一個人，那個人一定不是普通人。";
+					mes "所以我們應該排除普通的客人...";
 					next;
-					mes "[Trovan]";
-					mes "Then we can set limits for guessing who it is.";
-					mes "A few days ago, a priest visited this village.";
-					mes "He covered his face with a hood, so I couldn't see him too well.";
+					mes "[托洛凡]";
+					mes "那麼我們可以設定限制來猜測他是誰了。";
+					mes "幾天前，一位牧師拜訪了這個村莊。";
+					mes "他用兜帽遮住了臉，所以我看不清楚他。";
 					next;
-					mes "[Trovan]";
-					mes "I can detect suspicious people pretty well.";
-					mes "He might be a criminal if he were hiding his face.";
+					mes "[托洛凡]";
+					mes "我可以很好地察覺到可疑的人。";
+					mes "如果他隱藏自己的臉，他可能就是個罪犯。";
 					next;
-					mes "[Trovan]";
-					mes "Why is he suspicious?";
-					mes "He shows up here regularly, but he has no definite residence.";
-					mes "And I always lose him when I try to follow him.";
+					mes "[托洛凡]";
+					mes "他為什麼可疑？";
+					mes "他定期出現在這裡，但他沒有明確的住所。";
+					mes "而且當我試圖跟蹤他時，總是會把他弄丟。";
 					next;
-					mes "[Trovan]";
-					mes "I can't offer any more information.";
-					mes "I always have to guard the entrance of the village, so I can't follow him for too long.";
+					mes "[托洛凡]";
+					mes "我不能提供更多的資訊了。";
+					mes "我總是必須守衛村莊的入口，所以我不能跟蹤他太久。";
 					next;
-					mes "[Trovan]";
-					mes "Anyway. He is a only person who I suspect.";
-					mes "He hasn't been caught doing anything criminal,";
-					mes "but he's always covering himself up.";
+					mes "[托洛凡]";
+					mes "總之，他是我懷疑的唯一人選。";
+					mes "他還沒有被抓到做任何犯罪的事情，";
+					mes "但他總是把自己遮掩起來。";
 					setquest 7114;
 					next;
-					mes "- Trovan's information is attached to the quest board. What information have I collected? -";
+					mes "- 托洛凡的資訊已附加到任務看板上。我收集了哪些資訊？ -";
 					next;
-					switch(select("Check information.:Cancel.")) {
+					switch(select("檢查資訊。:取消。")) {
 					case 1:
 						callfunc "func_3rdgc",1;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止確認資訊。";
 						close;
 					}
 				case 2:
-					mes "[Trovan]";
-					mes "Recently, I've seen many suspicious people.";
-					mes "I'm keeping strict watch.";
+					mes "[托洛凡]";
+					mes "最近，我看到了很多可疑的人。";
+					mes "我正在嚴密監視。";
 					close;
 				}
 			}
 		} else {
 			if (checkquest(7114) == 1) {
-				mes "[Trovan]";
-				mes "I already gave you all the information I have.";
-				mes "He's the only suspicious person that's been seen.";
-				mes "But nothing has happened yet, so I'm keeping watch.";
+				mes "[托洛凡]";
+				mes "我已經把我知道的所有資訊都給你了。";
+				mes "他是一直以來唯一被看到的，可疑的人。";
+				mes "但到目前為止還沒有發生任何事情，所以我會繼續觀察。";
 				next;
-				mes "- Should I figure out the information collected? -";
+				mes "- 我應該弄清楚收集到的資訊嗎？ -";
 				next;
-				switch(select("Check the information.:Cancel.")) {
+				switch(select("檢查資訊。:取消。")) {
 				case 1:
 					callfunc "func_3rdgc",0;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止確認資訊。";
 					close;
 				}
 			} else {
-				mes "[Trovan]";
-				mes "I'm Trovan, a guard of Veins.";
-				mes "What's wrong?";
+				mes "[托洛凡]";
+				mes "我是托洛凡，靜脈村的警衛。";
+				mes "怎麼了嗎？";
 				next;
-				switch(select("Is there a wanted man?:Nothing.")) {
+				switch(select("有通緝犯嗎？:沒事。")) {
 				case 1:
-					mes "[Trovan]";
-					mes "A wanted man?";
-					mes "No, what's the matter?";
+					mes "[托洛凡]";
+					mes "通緝犯？";
+					mes "沒有，怎麼了嗎？";
 					next;
-					mes "[Trovan]";
-					mes "Did you find any suspicious people entering this village lately?";
-					mes "Umm...";
+					mes "[托洛凡]";
+					mes "你最近有發現任何可疑的人進入這個村莊嗎？";
+					mes "嗯...";
 					next;
-					mes "[Trovan]";
-					mes "Recently, there's been a man in this village wearing a hood.";
-					mes "He is not a traveler. He bought food and slipped out of the village.";
+					mes "[托洛凡]";
+					mes "最近，有個男人戴著兜帽出現在這個村莊裡。";
+					mes "他不是旅行者。他買了食物，然後溜出了村莊。";
 					next;
-					mes "[Trovan]";
-					mes "I'm wondering about his identity.";
-					mes "I think he is related to a shrine...";
-					mes "Or maybe he isn't...";
+					mes "[托洛凡]";
+					mes "我想知道他的身份。";
+					mes "我認為他與聖壇有關...";
+					mes "或者也許沒有...";
 					next;
-					mes "[Trovan]";
-					mes "There is no one else like him among the people living in this village.";
-					mes "I wonder where he is from.";
+					mes "[托洛凡]";
+					mes "住在這個村莊裡的人當中，沒有其他像他這樣的人。";
+					mes "我想知道他是從哪裡來的。";
 					next;
-					mes "[Trovan]";
-					mes "He might still be here.";
-					mes "There are no new people except for him. I know almost all of the adventurer's faces that visit here.";
-					mes "So that's not much news.";
+					mes "[托洛凡]";
+					mes "他可能還在這裡。";
+					mes "除了他之外，沒有新的人。我幾乎認識所有來這裡的冒險者的臉。";
+					mes "所以沒什麼新聞。";
 					setquest 7114;
 					next;
-					mes "- Trovan's information is attached to the quest board. What information have I collected? -";
+					mes "- 托洛凡的資訊已附加到任務看板上。我收集了哪些資訊？ -";
 					next;
-					switch(select("Check information.:Cancel.")) {
+					switch(select("檢查資訊。:取消。")) {
 					case 1:
 						callfunc "func_3rdgc",0;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止確認資訊。";
 						close;
 					}
 				case 2:
-					mes "[Trovan]";
-					mes "Don't go too far away.";
+					mes "[托洛凡]";
+					mes "不要走太遠。";
 					close;
 				}
 			}
 		}
 	} else {
-		mes "[Trovan]";
-		mes "How's it going?";
+		mes "[托洛凡]";
+		mes "怎麼樣了？";
 		close;
 	}
 }
 
 veins,187,143,5	script	Peddler#3rdgc07	892,{
-	mes "[Peddler]";
+	mes "[小販]";
 	if (job_3rd_gc < 6) {
-		mes "What a huge sandstorm.";
-		mes "Are you ok?";
+		mes "多大的沙塵暴啊。";
+		mes "你還好嗎？";
 		close;
 	}
 	else if (job_3rd_gc == 6) {
 		if (checkquest(7091) == 1) {
-			mes "What a huge sandstorm.";
-			mes "Are you ok?";
+			mes "多大的沙塵暴啊。";
+			mes "你還好嗎？";
 			close;
 		} else {
 			if (checkquest(7115) == 1) {
-				mes "So, did you find that girl?";
-				mes "If you do, let her know that she has to come and visit me.";
+				mes "所以，你有找到那個女孩嗎？";
+				mes "如果你找到了，讓她知道她必須來拜訪我。";
 				next;
-				mes "- You can't get more information from the peddler. What information have I collected? -";
+				mes "- 你無法從小販那裡獲得更多資訊。我收集了哪些資訊？ -";
 				next;
-				switch(select("check information.:Cancel.")) {
+				switch(select("確認資訊。:取消。")) {
 				case 1:
 					callfunc "func_3rdgc",1;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止了資訊確認。";
 					close;
 				}
 			} else {
-				mes "Hey. Hey!";
-				mes "I'm talking to you!";
+				mes "嘿。嘿！";
+				mes "我在跟你說話！";
 				next;
-				switch(select("Ignore him.:Listen to the story.")) {
+				switch(select("不理他。:聽他說。")) {
 				case 1:
-					mes "[Peddler]";
-					mes "You are too cold.";
+					mes "[小販]";
+					mes "你太冷淡了。";
 					close;
 				case 2:
-					mes "[Peddler]";
-					mes "A pretty girl just bought food.";
-					mes "You know that freshness is important when buying fish...";
+					mes "[小販]";
+					mes "一個漂亮的女孩剛買了食物。";
+					mes "你知道買魚時，新鮮度很重要...";
 					next;
-					mes "[Peddler]";
-					mes "But I gave the wrong fish to her.";
-					mes "Recently, she bought food from my store.";
-					mes "I can't find her, maybe she doesn't live here.";
+					mes "[小販]";
+					mes "但我給了她壞掉的魚。";
+					mes "最近，她從我的店裡買了食物。";
+					mes "我找不到她，也許她不住在這。";
 					next;
-					mes "[Peddler]";
-					mes "She looks shabby but she always buys expensive food.";
-					mes "I thought that she was a maid but we don't have a mansion that can hire maids in Veins.";
+					mes "[小販]";
+					mes "她看起來寒酸，但總是買昂貴的食物。";
+					mes "我以為她是個女僕，但我們在維茵斯沒有可以雇用女僕的豪宅。";
 					next;
-					mes "[Peddler]";
-					mes "Kind of suspicious, isn't it?";
-					mes "But, I gave spoiled fish to her...";
+					mes "[小販]";
+					mes "有點可疑，不是嗎？";
+					mes "但是，我給了她腐爛的魚...";
 					next;
-					mes "[Peddler]";
-					mes "So I have to find her and exchange the fish for a refund.";
+					mes "[小販]";
+					mes "所以我必須找到她並交換魚以退款。";
 					next;
-					mes "[Peddler]";
-					mes "If you find her, send that message, please?";
-					mes "I can't miss a guest like her.";
+					mes "[小販]";
+					mes "如果你找到她，請傳達這個訊息？";
+					mes "我不能錯過像她這樣的客人。";
 					next;
-					mes "[Peddler]";
-					mes "Ok, let's see...";
-					mes "She is blonde girl.";
-					mes "You should be able";
-					mes "to find her easily.";
+					mes "[小販]";
+					mes "好吧，讓我想想...";
+					mes "她是個金髮女孩。";
+					mes "你應該可以";
+					mes "很容易找到她。";
 					next;
-					mes "[Peddler]";
-					mes "Actually, nobody knows where she's from.";
-					mes "You're an adventurer, so I'm asking you.";
+					mes "[小販]";
+					mes "實際上，沒有人知道她從哪裡來。";
+					mes "你是一個冒險家，所以我才問你。";
 					next;
-					select("I'll send her your message.:Hmm...");
+					select("我會把你的訊息傳給她。:嗯...");
 					mes "["+strcharinfo(0)+"]";
-					mes "- Even though I don't have time to spare, the girl mentioned by the peddler is suspicious. -";
+					mes "- 即使我沒有空閒時間，小販提到的那個女孩很可疑。 -";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "- A girl who has no clear residence and buys expensive food. I have to find out. -";
+					mes "- 一個沒有明確住所且購買昂貴食物的女孩。我必須查清楚。 -";
 					next;
-					mes "[Peddler]";
-					mes "Then send my message to her, please.";
-					mes "If I can't exchange the fish, it will spoil.";
+					mes "[小販]";
+					mes "那就請你把我的訊息傳給她。";
+					mes "如果我不能更換那條魚，它就會壞掉。";
 					setquest 7115;
 					next;
-					mes "- The peddler's information is attached to the quest board. What information have I collected? -";
+					mes "- 小販的資訊已附加到任務板上。我收集了哪些資訊？ -";
 					next;
-					switch(select("Check information.:Cancel.")) {
+					switch(select("確認資訊。:取消。")) {
 					case 1:
 						callfunc "func_3rdgc",0;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止了資訊確認。";
 						close;
 					}
 				}
 			}
 		}
 	} else {
-		mes "Did you send my message properly?";
-		mes "Then why she hasn't she visited here to exchange the fish?";
+		mes "你有好好地傳達我的訊息嗎？";
+		mes "那為什麼她還沒來這裡交換魚呢？";
 		close;
 	}
 }
 
 veins,235,126,3	script	Old Man#3rdgc07	945,{
-	mes "[Old Man]";
+	mes "[老爺爺]";
 	if (job_3rd_gc < 6) {
-		mes "Haha... I can remember my past when I see a young adventurer like you...";
+		mes "哈哈... 當我看到像你這樣的年輕冒險家時，我可以想起我的過去...";
 		close2;
 	} else if (job_3rd_gc == 6) {
 		if (checkquest(7091) == 1) {
-			mes "Haha... I can remember my past when I see a young adventurer like you...";
+			mes "哈哈... 當我看到像你這樣的年輕冒險家時，我可以想起我的過去...";
 			close;
 		} else {
 			if (checkquest(7116) == 1) {
-				mes "Thanks for talking to me.";
+				mes "謝謝你跟我說話。";
 				next;
-				mes "- I can't get anymore information from the Old Man. What information have I collected? -";
+				mes "- 我無法從老爺爺那裡獲得更多資訊。我收集了哪些資訊？ -";
 				next;
-				switch(select("Check information.:Cancel.")) {
+				switch(select("確認資訊。:取消。")) {
 				case 1:
 					callfunc "func_3rdgc",0;
 					close;
 				case 2:
-					mes "You stop the confirmation of information.";
+					mes "你停止了資訊確認。";
 					close;
 				}
 			} else {
-				mes "What? What's the matter?";
-				mes "You want to talk with me?";
+				mes "什麼？怎麼了？";
+				mes "你想跟我說話？";
 				next;
-				switch(select("Suspicious person...:You look good.")) {
+				switch(select("可疑人物...:你看起來不錯。")) {
 				case 1:
-					mes "[Old Man]";
-					mes "A suspicious person?";
-					mes "Well, Trovan may know more about her than me.";
+					mes "[老爺爺]";
+					mes "可疑人物？";
+					mes "嗯，托洛凡可能比我更了解她。";
 					close;
 				case 2:
-					mes "[Old Man]";
-					mes "Thanks anyway.";
-					mes "I'll just sit down here...";
+					mes "[老爺爺]";
+					mes "總之謝謝你。";
+					mes "我就在這裡坐著...";
 					next;
-					mes "[Old Man]";
-					mes "I look around at people who pass by here all the time.";
-					mes "I can find out where they're from easily by watching what they wear.";
+					mes "[老爺爺]";
+					mes "我總是環顧四周，觀察從這裡經過的人。";
+					mes "我可以透過觀察他們穿什麼來輕易地找出他們來自哪裡。";
 					next;
-					mes "[Old Man]";
-					mes "I can't forget her at all because of her funny outfit.";
-					mes "It's not difficult to forget a person wearing a formal dress.";
+					mes "[老爺爺]";
+					mes "我永遠忘不了她，因為她穿著滑稽的衣服。";
+					mes "要忘記一個穿著正式服裝的人並不難。";
 					next;
-					select("Then what's funny?");
-					mes "[Old Man]";
-					mes "Umm, this village is not funny anymore.";
-					mes "I know everything~ I even found out everyone's job.";
+					select("那什麼滑稽？");
+					mes "[老爺爺]";
+					mes "嗯，這個村莊不再滑稽了。";
+					mes "我知道一切～我甚至找到了每個人的工作。";
 					next;
-					mes "[Old Man]";
-					mes "But...";
-					mes "Recently, a girl showed up.";
-					mes "In the morning, she buys some food from a peddler and then disappears.";
+					mes "[老爺爺]";
+					mes "但是...";
+					mes "最近，一個女孩出現了。";
+					mes "早上，她從小販那裡買了一些食物，然後就消失了。";
 					next;
-					mes "[Old Man]";
-					mes "And in the afternoon she usually buys the necessities of life.";
-					mes "A little bit at a time.";
-					mes "And then she goes somewhere after...";
+					mes "[老爺爺]";
+					mes "下午，她通常會購買生活必需品。";
+					mes "一次一點點。";
+					mes "然後她就去某個地方了...";
 					next;
-					mes "[Old Man]";
-					mes "I figure that she must be preparing something.";
-					mes "If she buys a lot of stuff, then she can be found easily.";
+					mes "[老爺爺]";
+					mes "我認為她一定在準備什麼。";
+					mes "如果她買了很多東西，那麼就很容易找到她。";
 					next;
-					mes "[Old Man]";
-					mes "I think she stocks up heavily on foods that help during battles.";
+					mes "[老爺爺]";
+					mes "我認為她大量儲備了在戰鬥中有幫助的食物。";
 					next;
-					mes "[Old Man]";
-					mes "She just recently started this routine.";
-					mes "Is she a newcomer?";
+					mes "[老爺爺]";
+					mes "她最近才開始這個習慣。";
+					mes "她是個新手嗎？";
 					next;
-					mes "[Old Man]";
-					mes "I'm going to watch you for a while.";
-					mes "Ah, why am I bothering you with this story?";
+					mes "[老爺爺]";
+					mes "我要觀察你一段時間。";
+					mes "啊，我為什麼要用這個故事來打擾你？";
 					setquest 7116;
 					next;
-					mes "- The information of the Old Man is attached to the quest board. What information have I collected?";
+					mes "- 老爺爺的資訊已附加到任務板上。我收集了哪些資訊？";
 					next;
-					switch(select("Check information.:Cancel.")) {
+					switch(select("確認資訊。:取消。")) {
 					case 1:
 						callfunc "func_3rdgc",0;
 						close;
 					case 2:
-						mes "You stop the confirmation of information.";
+						mes "你停止了資訊確認。";
 						close;
 					}
 				}
 			}
 		}
 	} else if (job_3rd_gc == 8) {
-		mes "You want to know something?";
-		mes "We have a marvelous girl in our village.";
+		mes "你想知道什麼？";
+		mes "我們村莊裡有一個了不起的女孩。";
 		next;
-		mes "[Old Man]";
-		mes "I don't know what kind of gift she has, but she knows how to find people.";
+		mes "[老爺爺]";
+		mes "我不知道她有什麼樣的天賦，但她知道如何找到人。";
 		next;
-		mes "[Old Man]";
-		mes "If you want to find her, ask that kid.";
+		mes "[老爺爺]";
+		mes "如果你想找到她，去問那個孩子。";
 		close;
 	} else {
-		mes "I still don't know.";
-		mes "I'm too old...";
+		mes "我還是不知道。";
+		mes "我太老了...";
 		close;
 	}
 }
 
 veins,223,180,3	script	Girl#3rdgc09	941,{
-	mes "[Melissa]";
+	mes "[梅莉莎]";
 	if (job_3rd_gc == 8) {
-		mes "Hi?";
-		mes "What?";
-		mes "Have you lost a friend?";
+		mes "嗨？";
+		mes "什麼？";
+		mes "你失去了一個朋友嗎？";
 		next;
-		switch(select("Do you know something?:No...")) {
+		switch(select("你知道些什麼嗎？:不...")) {
 		case 1:
-			mes "[Melissa]";
-			mes "I have a special gift that I've had my whole life.";
-			mes "People visit me when they need to find something.";
+			mes "[梅莉莎]";
+			mes "我有一種特別的天賦，我從小就擁有的。";
+			mes "當人們需要找到東西時，他們會來找我。";
 			next;
-			mes "[Melissa]";
-			mes "Are looking for someone?";
-			mes "Can you tell me about their character?";
+			mes "[梅莉莎]";
+			mes "你在找人嗎？";
+			mes "你可以告訴我他們的性格嗎？";
 			next;
-			switch(select("You are joking.:Let me do it.")) {
+			switch(select("你在開玩笑吧。:讓我來做吧。")) {
 			case 1:
-				mes "[Melissa]";
-				mes "Ha! But you'll come back to me when you need to find someone.";
-				mes "I know everything.";
+				mes "[梅莉莎]";
+				mes "哈！但是當你需要找到某人時，你會回來找我的。";
+				mes "我知道一切。";
 				close;
 			case 2:
 				set .@ans00, 0;
-				mes "[Melissa]";
-				mes "Ok, answer my question.";
-				mes "Is it a boy or a girl?";
+				mes "[梅莉莎]";
+				mes "好吧，回答我的問題。";
+				mes "是男孩還是女孩？";
 				next;
-				switch(select("A boy:A girl")) {
+				switch(select("一個男孩:一個女孩")) {
 				case 1:
-					mes "[Melissa]";
-					mes "A boy and...";
+					mes "[梅莉莎]";
+					mes "一個男孩而且...";
 					break;
 				case 2:
-					mes "[Melissa]";
-					mes "A girl and...";
+					mes "[梅莉莎]";
+					mes "一個女孩而且...";
 					set .@ans00, .@ans00+1;
 					break;
 				}
 				next;
-				mes "[Melissa]";
-				mes "What is the hair color?";
+				mes "[梅莉莎]";
+				mes "頭髮是什麼顏色？";
 				next;
-				switch(select("Dark:Red:Light yellowish:White")) {
+				switch(select("深色:紅色:淺黃色:白色")) {
 				case 1:
-					mes "[Melissa]";
-					mes "Dark hair color... hmm...";
-					mes "Dark brown or black hair...";
+					mes "[梅莉莎]";
+					mes "深色頭髮...嗯...";
+					mes "深棕色或黑色頭髮...";
 					break;
 				case 2:
-					mes "[Melissa]";
-					mes "Light brown or dark orange... Red hair...";
+					mes "[梅莉莎]";
+					mes "淺棕色或深橙色... 紅色頭髮...";
 					break;
 				case 3:
-					mes "[Melissa]";
-					mes "Light orange to blonde hair.";
+					mes "[梅莉莎]";
+					mes "淺橙色到金髮。";
 					set .@ans00, .@ans00+1;
 					break;
 				case 4:
-					mes "[Melissa]";
-					mes "Gray... white... gold... silver hair...";
+					mes "[梅莉莎]";
+					mes "灰色... 白色... 金色... 銀色頭髮...";
 					break;
 				}
 				next;
-				mes "[Melissa]";
-				mes "Young or old?";
+				mes "[梅莉莎]";
+				mes "年輕還是年老？";
 				next;
-				switch(select("Like a child.:Young.:Middle-aged.:Very old.")) {
+				switch(select("像個孩子一樣。:年輕。:中年。:非常老。")) {
 				case 1:
-					mes "[Melissa]";
-					mes "And a child.";
+					mes "[梅莉莎]";
+					mes "還有一個孩子。";
 					break;
 				case 2:
-					mes "[Melissa]";
-					mes "A young person.";
-					mes "Like you?";
+					mes "[梅莉莎]";
+					mes "一個年輕人。";
+					mes "像你一樣？";
 					set .@ans00, .@ans00+1;
 					break;
 				case 3:
-					mes "[Melissa]";
-					mes "Same age as a tool salesman?";
-					mes "Middle-aged.";
+					mes "[梅莉莎]";
+					mes "和工具銷售員一樣的年紀？";
+					mes "中年。";
 					break;
 				case 4:
-					mes "[Melissa]";
-					mes "Yes, very old.";
+					mes "[梅莉莎]";
+					mes "是的，非常老。";
 					break;
 				}
 				next;
-				mes "[Melissa]";
-				mes "Hi, "+((Sex == SEX_MALE)?"brother":"sister")+"~ Let me collect all of the information you've provided...";
+				mes "[梅莉莎]";
+				mes "嗨，"+((Sex == SEX_MALE)?"哥哥":"姊姊")+"~ 讓我收集你提供的所有資訊...";
 				next;
-				mes "- She begins to murmur and gestures toward the sky. Her hair springs up as she says... -";
+				mes "- 她開始低語，並朝天空示意。當她說的時候，她的頭髮豎了起來... -";
 				next;
 				if (.@ans00 == 3) {
-					mes "[Melissa]";
-					mes "Got it!";
-					mes "I know her.";
-					mes "Her name is ^4d4dffEstillda^000000.";
-					mes "Right?";
+					mes "[梅莉莎]";
+					mes "找到了！";
+					mes "我知道她。";
+					mes "她的名字是 ^4d4dffEstillda^000000。";
+					mes "對吧？";
 					next;
-					mes "[Melissa]";
-					mes "Why are you looking for her? Is she your friend?";
-					mes "She gave me candy the other day.";
+					mes "[梅莉莎]";
+					mes "你為什麼要找她？她是你的朋友嗎？";
+					mes "她前幾天給了我糖果。";
 					next;
-					mes "[Melissa]";
-					mes "Umm... this girl...";
-					mes "will pass around";
-					mes "a blind alley in";
-					mes "about 1 hour!";
-					mes "Hehehe!";
+					mes "[梅莉莎]";
+					mes "嗯... 這個女孩...";
+					mes "將會經過";
+					mes "在一個死胡同";
+					mes "大約 1 小時後！";
+					mes "呵呵！";
 					erasequest 7103;
 					setquest 7104;
 					set job_3rd_gc, 9;
 					next;
-					mes "[Melissa]";
-					mes "She has to be who you're looking for. I'm never wrong.";
-					mes "Tell me I did a good job!";
+					mes "[梅莉莎]";
+					mes "她一定是你要找的人。我從來沒有錯過。";
+					mes "告訴我我做得很好！";
 					next;
-					switch(select("Pat Melissa on the head.:Giver her a thumbs up sign.")) {
+					switch(select("拍拍梅莉莎的頭。:給她一個讚。")) {
 					case 1:
-						mes "You pat Melissa on the head.";
-						mes "She reacts like a puppy would.";
+						mes "你拍了拍梅莉莎的頭。";
+						mes "她的反應就像一隻小狗一樣。";
 						next;
-						mes "[Melissa]";
-						mes "Hehehe...";
-						mes "I'm here to help~!";
+						mes "[梅莉莎]";
+						mes "呵呵...";
+						mes "我來這裡幫忙~！";
 						close;
 					case 2:
-						mes "[Melissa]";
-						mes "Hehehe...";
-						mes "I did good!";
+						mes "[梅莉莎]";
+						mes "呵呵...";
+						mes "我做得很好！";
 						close;
 					}
 				} else {
-					mes "[Melissa]";
-					mes "Umm...";
-					mes "That person who has those characteristics is...";
+					mes "[梅莉莎]";
+					mes "嗯...";
+					mes "那個具有這些特徵的人是...";
 					next;
-					mes "[Melissa]";
-					mes "Wha-...? Eww, I've never been wrong.";
-					mes "I don't know why, but I can't see that person.";
+					mes "[梅莉莎]";
+					mes "哇-...? 噁，我從來沒有錯過。";
+					mes "我不知道為什麼，但我看不到那個人。";
 					next;
-					mes "[Melissa]";
-					mes "Eeeahhh! Wahhh!";
+					mes "[梅莉莎]";
+					mes "咿呀！哇！";
 					next;
-					mes "- All I can do is soothe Melissa as she cries. I have to think about the person's characteristics again. -";
+					mes "- 我所能做的就是安慰哭泣的梅莉莎。我必須再次思考這個人的特徵。 -";
 					close;
 				}
 			}
 		case 2:
-			mes "[Melissa]";
-			mes "It's strange.";
-			mes "In this village people are always looking for someone.";
+			mes "[梅莉莎]";
+			mes "真奇怪。";
+			mes "在這個村莊裡，人們總是在尋找某人。";
 			close;
 		}
 	} else if (job_3rd_gc == 9) {
-		mes "Did you find her?";
-		mes "Say thanks to her for giving me candy the other day.";
+		mes "你找到她了嗎？";
+		mes "替我謝謝她前幾天給我糖果。";
 		close;
 	} else {
-		mes "When I'm looking for people, an angel wearing black clothes gives me information.";
+		mes "當我在找人的時候，一個穿著黑色衣服的天使會給我資訊。";
 		next;
-		mes "[Melissa]";
-		mes "I told Daora about this story, then she said to me not to do it again.";
-		mes "Maybe she isn't a good angel.";
+		mes "[梅莉莎]";
+		mes "我告訴道拉這個故事，然後她告訴我不要再這樣做了。";
+		mes "也許她不是一個好天使。";
 		close;
 	}
 }
@@ -2093,107 +2092,107 @@ OnTouch:
 	if (job_3rd_gc == 9) {
 		if ((checkquest(7104,PLAYTIME) == 0) || (checkquest(7105,PLAYTIME) == 0)) {
 			mes ".....?";
-			mes "There's a sign of somebody present.";
-			mes "You still have time.";
+			mes "這裡有某人存在的跡象。";
+			mes "你還有時間。";
 			close;
 		} else if ((checkquest(7104,PLAYTIME) == 2) || (checkquest(7105,PLAYTIME) == 2)) {
-			mes "The blind alley that Melissa told me about must be this street.";
+			mes "梅莉莎告訴我的那個死胡同一定是這條街。";
 			next;
-			mes "There's a sign of somebody present.";
-			mes "A blonde girl shows up!";
+			mes "這裡有某人存在的跡象。";
+			mes "一個金髮女孩出現了！";
 			donpcevent "Estillda#3rdgc10::OnEnable";
 			next;
-			select("Make a surprise attack.");
+			select("發動突襲。");
 			set .@c_spec, readparam(bDex)+readparam(bAspd)+readparam(bCritical);
 			if (.@c_spec > 209 || (!rand(2) && .@c_spec > 190 && .@c_spec < 210) || (!rand(3) && .@c_spec < 191)) {
-				mes "You take her by the wrist trying not to let her see you.";
-				mes "The food that she is holding falls on the floor.";
+				mes "你抓住她的手腕，試圖不讓她看到你。";
+				mes "她拿著的食物掉到了地上。";
 				next;
-				mes "[Estillda]";
-				mes "Ahhhh!";
-				mes "Who are you?";
-				mes "What are you doing?";
+				mes "[艾斯提爾達]";
+				mes "啊~~~！";
+				mes "你是誰？";
+				mes "你在做什麼？";
 				next;
-				if(select("Who sent you?:Who's from Rachel?") == 2) {
-					mes "[Estillda]";
-					mes "I don't know! I don't have any idea. I don't know him!";
+				if(select("是誰派你來的？:瑞秋的人是誰？") == 2) {
+					mes "[艾斯提爾達]";
+					mes "我不知道！我一點都不知道。我不認識他！";
 					next;
 				}
-				mes "[Estillda]";
-				mes "If I buy stuff for him...";
-				mes "He said that he can pay for my labor and production costs.";
+				mes "[艾斯提爾達]";
+				mes "如果我幫他買東西...";
+				mes "他說他可以支付我的勞力和生產成本。";
 				next;
-				mes "[Estillda]";
-				mes "I don't know who he is.";
-				mes "It's true.";
-				mes "Is he bad guy?";
+				mes "[艾斯提爾達]";
+				mes "我不知道他是誰。";
+				mes "是真的。";
+				mes "他是壞人嗎？";
 				next;
-				mes "[Estillda]";
-				mes "Help me, please?";
-				mes "Help me.";
-				mes "I'll do anything you want.";
+				mes "[艾斯提爾達]";
+				mes "救救我，拜託？";
+				mes "救我。";
+				mes "我會做任何你想做的事。";
 				next;
-				mes "[Estillda]";
-				mes "I didn't know anything about him, I don't know if he's a bad guy.";
-				mes "I just bought some stuff... (sobbing)...";
+				mes "[艾斯提爾達]";
+				mes "我對他一無所知，我不知道他是不是壞人。";
+				mes "我只是買了一些東西... (啜泣)...";
 				next;
-				mes "- Estillda is in shock because she thinks that she's in trouble. -";
+				mes "- 艾斯提爾達因為覺得自己有麻煩而感到震驚。-";
 				next;
-				select("Calm her down.");
+				select("讓她冷靜下來。");
 				mes "["+strcharinfo(0)+"]";
-				mes "Just relax for a second.";
-				mes "I totally understand what you're saying.";
-				mes "You won't get into any trouble.";
-				next;
-				mes "["+strcharinfo(0)+"]";
-				mes "I'm looking for a guy who committed a crime and ran away.";
-				mes "I have to catch him.";
+				mes "先放輕鬆一下。";
+				mes "我完全了解你在說什麼。";
+				mes "你不會有任何麻煩的。";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "So who made you get those supplies?";
+				mes "我正在找一個犯罪後逃跑的傢伙。";
+				mes "我必須抓住他。";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "If you cooperate with me, I'm going to protect you until this is all done.";
-				mes "The Assassin Guild will protect you.";
-				next;
-				mes "[Estillda]";
-				mes "You promise, right?";
-				mes "How can I help you?";
-				next;
-				select("When are you supposed to meet?");
-				mes "[Estillda]";
-				mes "Oh, I already delivered the stuff.";
-				mes "I'm on my way back.";
-				next;
-				mes "[Estillda]";
-				mes "Ah, these are mine.";
-				mes "I got a lot of zeny.";
+				mes "所以是誰讓你去買那些補給品的？";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "Then go straight this way and pretend that nothing happened.";
+				mes "如果你與我合作，我會保護你直到事情結束。";
+				mes "刺客公會會保護你。";
 				next;
-				mes "- I demand that she walks as usual and tell her how to get to Daora's pub. -";
+				mes "[艾斯提爾達]";
+				mes "你保證，對吧？";
+				mes "我該如何幫助你？";
+				next;
+				select("你預計什麼時候見面？");
+				mes "[艾斯提爾達]";
+				mes "喔，我已經把東西送過去了。";
+				mes "我正在回來的路上。";
+				next;
+				mes "[艾斯提爾達]";
+				mes "啊，這些是我的。";
+				mes "我賺了很多錢。";
+				next;
+				mes "["+strcharinfo(0)+"]";
+				mes "那就直接往這邊走，假裝什麼事都沒發生。";
+				next;
+				mes "- 我要求她像往常一樣行走，並告訴她如何前往達歐拉的酒吧。-";
 				donpcevent "Estillda#3rdgc10::OnDisable";
 				if (checkquest(7104) > -1) erasequest 7104;
 				if (checkquest(7105) > -1) erasequest 7105;
 				set job_3rd_gc, 10;
 				setquest 7106;
 				next;
-				mes "- The pub in the underground of Veins is the best place to keep her safe. -";
+				mes "- 在維茵斯地下室的酒吧是保護她安全最好的地方。-";
 				close;
 			} else {
-				mes "- I tried to take her by the wrist, but she already knew and ran away screaming. -";
+				mes "- 我試圖抓住她的手腕，但她已經知道了，並尖叫著跑開。-";
 				donpcevent "Estillda#3rdgc10::OnDisable";
 				if (checkquest(7104) > -1) erasequest 7104;
 				if (checkquest(7105) > -1) erasequest 7105;
 				setquest 7105;
 				next;
-				mes "You couldn't catch Estillda.";
+				mes "你抓不到艾斯提爾達。";
 				close;
 			}
 		} else {
-			mes "An error has occurred.";
-			mes "Please contact the GM team to fix this situation.";
+			mes "發生錯誤。";
+			mes "請聯繫 GM 團隊來解決這個情況。";
 			close;
 		}
 	}
@@ -2212,118 +2211,118 @@ OnEnable:
 
 job3_guil01,79,15,1	script	Estillda#3rdgc11	919,{
 	if (job_3rd_gc == 11) {
-		mes "Estillda is looking around with an anxious expression on her face.";
+		mes "艾斯提爾達正一臉焦慮地四處張望。";
 		next;
-		switch(select("Are you ok?:Intimidate her.")) {
+		switch(select("妳還好嗎？:威脅她。")) {
 		case 1:
-			mes "[Estillda]";
-			mes "Yes? Yes...";
-			mes "I thought assassins were scary.";
-			mes "But I don't think so...";
+			mes "[艾斯提爾達]";
+			mes "是的？是的...";
+			mes "我以為刺客很可怕。";
+			mes "但我不這麼認為...";
 			next;
-			select("You don't look like you're from Veins");
-			mes "[Estillda]";
-			mes "Yes? Yes...";
-			mes "I'm from Rachel.";
-			mes "I'm here to make zeny.";
-			mes "I had a desolate life in Rachel.";
+			select("妳看起來不像維茵斯的人");
+			mes "[艾斯提爾達]";
+			mes "是的？是的...";
+			mes "我來自瑞秋。";
+			mes "我來這裡賺錢。";
+			mes "我在瑞秋過著淒涼的生活。";
 			next;
-			switch(select("You came here with alone?:Had a desolate life...")) {
+			switch(select("妳一個人來這裡的嗎？:過著淒涼的生活...")) {
 			case 1:
-				mes "[Estillda]";
-				mes "No.";
-				mes "I don't think so.";
-				mes "I came here with a guy.";
+				mes "[艾斯提爾達]";
+				mes "不。";
+				mes "我不這麼認為。";
+				mes "我和一個傢伙一起來的。";
 				next;
-				mes "[Estillda]";
-				mes "I usually come here by myself. Sometimes he checks my destination.";
-				mes "I thought that he is an important person from some company.";
+				mes "[艾斯提爾達]";
+				mes "我通常自己來這裡。 有時他會確認我的目的地。";
+				mes "我以為他是某家公司的重要人物。";
 				next;
-				mes "[Estillda]";
-				mes "But I don't know who he is.";
+				mes "[艾斯提爾達]";
+				mes "但我不知道他是誰。";
 				break;
 			case 2:
-				mes "[Estillda]";
-				mes "I'm a native,";
-				mes "I work in his house.";
-				mes "I think it's not bad.";
-				mes "I just left my home...";
+				mes "[艾斯提爾達]";
+				mes "我是當地人，";
+				mes "我在他家工作。";
+				mes "我覺得還不錯。";
+				mes "我只是離開了我的家...";
 				next;
-				mes "[Estillda]";
-				mes "He said that he needed a maid and that he could pay me enough money.";
+				mes "[艾斯提爾達]";
+				mes "他說他需要一個女僕，並且可以付我足夠的錢。";
 				break;
 			}
 			next;
-			mes "[Estillda]";
-			mes "Actually I don't know him well.";
-			mes "...I'll never do it.";
-			mes "I want to go home. I miss my mommy.";
+			mes "[艾斯提爾達]";
+			mes "實際上我不太了解他。";
+			mes "...我永遠不會這麼做。";
+			mes "我想回家。我想念我的媽媽。";
 			next;
-			switch(select("What can you tell me?:Tell me what you know!")) {
+			switch(select("妳能告訴我什麼？:告訴我妳知道什麼！")) {
 			case 1:
-				mes "[Estillda]";
-				mes "Yes. Right?";
-				mes "I'm going to tell you everything that I know.";
+				mes "[艾斯提爾達]";
+				mes "是的。對吧？";
+				mes "我會告訴你我所知道的一切。";
 				break;
 			case 2:
-				mes "[Estillda]";
-				mes "Sorry. I'm sorry.";
-				mes "I'm going to do what you want...";
+				mes "[艾斯提爾達]";
+				mes "對不起。我很抱歉。";
+				mes "我會做任何你想做的事...";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "Your attitude is a problem.";
-				mes "Let's take up the main subject.";
+				mes "妳的態度是個問題。";
+				mes "讓我們進入正題。";
 				break;
 			}
 			next;
-			mes "[Estillda]";
-			mes "I usually supply food";
-			mes "and other life necessities.";
+			mes "[艾斯提爾達]";
+			mes "我通常提供食物";
+			mes "和其他生活必需品。";
 			next;
-			mes "[Estillda]";
-			mes "I buy some food to eat for myself.";
-			mes "And I buy expensive food for him everyday.";
+			mes "[艾斯提爾達]";
+			mes "我買一些食物給自己吃。";
+			mes "而且我每天都為他買昂貴的食物。";
 			next;
-			mes "[Estillda]";
-			mes "I think he is very fussy about food...";
-			mes "And I get money whenever I deliver food..";
+			mes "[艾斯提爾達]";
+			mes "我想他對食物非常講究...";
+			mes "而且我每次送食物都會收到錢..";
 			next;
-			select("Where did you sleep?");
-			mes "[Estillda]";
-			mes "Yes? Yes, around here.";
-			mes "There is a place that soldiers stay.";
-			mes "He wants me to stay there...";
+			select("妳睡在哪裡？");
+			mes "[艾斯提爾達]";
+			mes "是的？是的，就在這附近。";
+			mes "有一個士兵們住的地方。";
+			mes "他要我待在那裡...";
 			next;
-			select("When are you supposed to meet?");
-			mes "[Estillda]";
-			mes "In a couple of hours.";
-			mes "At a warehouse underground in the south.";
-			next;
-			mes "["+strcharinfo(0)+"]";
-			mes "Thanks for your cooperation.";
-			mes "Your house is in Rachel?";
-			mes "Estillda is your real name?";
-			mes "Yes, I'm going to draw his rations in Rachel.";
+			select("你預計什麼時候見面？");
+			mes "[艾斯提爾達]";
+			mes "幾個小時後。";
+			mes "在南邊的地下倉庫裡。";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "To go back home without an accident.";
+			mes "感謝妳的合作。";
+			mes "妳的家在瑞秋？";
+			mes "艾斯提爾達是妳的真名嗎？";
+			mes "是的，我打算在瑞秋領取他的口糧。";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			mes "為了能平安地回到家。";
 			set job_3rd_gc, 12;
 			changequest 7106,7107;
 			close;
 		case 2:
-			mes "[Estillda]";
-			mes "Yes?";
-			mes "Please...";
-			mes "Don't kill me.";
+			mes "[艾斯提爾達]";
+			mes "是的？";
+			mes "拜託...";
+			mes "不要殺我。";
 			next;
-			mes "- Estillda looks scared. You need to change the subject. -";
+			mes "- 艾斯提爾達看起來很害怕。 你需要換個話題。-";
 			close;
 		}
 	} else if (job_3rd_gc == 12) {
-		mes "[Estillda]";
-		mes "We usually meet at the same place at the same time.";
-		mes "It's in a warehouse underground in the south.";
-		mes "Don't tell him that I told you.";
+		mes "[艾斯提爾達]";
+		mes "我們通常在同一個時間同一個地點見面。";
+		mes "它在南邊的地下倉庫裡。";
+		mes "別告訴他是我告訴你的。";
 		close;
 	}
 	end;
@@ -2337,31 +2336,31 @@ OnInit:
 OnTouch_:
 	if (job_3rd_gc == 12) {
 		if (checkquest(7107,PLAYTIME) == 2) {
-			mes "This must be the place Estillda told me about.";
+			mes "這一定是艾斯提爾達告訴我的地方。";
 			next;
-			switch(select("Go inside.:Observe the situation.")) {
+			switch(select("進去看看。:觀察情況。")) {
 			case 1:
 				if ($@3rdgc_room01 == 0) {
 					warp "job3_guil02",34,44;
 					set $@3rdgc_room01, 1;
 				} else {
-					mes "You tried to open the door but it's locked.";
-					mes "It doesn't show any signs of life.";
+					mes "你試著打開門，但它鎖上了。";
+					mes "它沒有任何生命跡象。";
 					next;
-					mes "Come back here later.";
+					mes "晚點再回來這裡。";
 				}
 				close;
 			case 2:
-				mes "I back up to watch the situation unfold.";
+				mes "我退後一步，觀察情況發展。";
 				close;
 			}
 		} else if (checkquest(7107,PLAYTIME) == 0) {
-			mes "This must be the place Estillda told me about.";
-			mes "I have enough time for meeting.";
+			mes "這一定是艾絲蒂爾達告訴我的地方。";
+			mes "我還有足夠的時間開會。";
 			close;
 		} else {
-			mes "An error has occurred.";
-			mes "Contact the GM team to resolve the situation.";
+			mes "發生錯誤。";
+			mes "請聯絡 GM 團隊以解決問題。";
 			close;
 		}
 	}
@@ -2385,7 +2384,7 @@ OnTouch_:
 		donpcevent "A man with black clothes::OnEnable";
 		disablenpc "#3rdgc_room01_mag01";
 	} else {
-		mes "You don't have to come here now.";
+		mes "你現在不必來這裡。";
 		close;
 		warp "veins",178,62;
 		set $@3rdgc_room01, 0;
@@ -2393,11 +2392,11 @@ OnTouch_:
 	}
 	end;
 OnTimer295000:
-	mapannounce "job3_guil02","Dandelion: ...Ha, you are strong and sticky!",bc_map,"0xA8A8A8"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil02","蒲公英：...哈，你又強又黏！",bc_map,"0xA8A8A8"; //FW_NORMAL 12 0 0
 	donpcevent "A man with black clothes::OnReset";
 	end;
 OnTimer296000:
-	mapannounce "job3_guil02","The Dandelion ran away.",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil02","蒲公英逃走了。",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
 	end;
 OnTimer298000:
 	mapwarp "job3_guil02","veins",186,65;
@@ -2429,34 +2428,34 @@ OnReset:
 	end;
 OnTouch_:
 	if (!.on) end;
-	mes "[A man with black clothes]";
-	mes "You just arrived here.";
-	mes "Why are you so late?";
-	mes "Put your stuff down.";
+	mes "[黑衣男子]";
+	mes "你才剛到這裡。";
+	mes "為什麼你這麼晚才到？";
+	mes "放下你的東西。";
 	next;
 	select("......");
-	mes "[A man with black clothes]";
-	mes "May the goddess bless you eternally...";
+	mes "[黑衣男子]";
+	mes "願女神永遠保佑你...";
 	npcskill "AL_BLESSING",10,0,0;
 	next;
 	emotion ET_SURPRISE;
-	mes "[A man with black clothes]";
-	mes "Who... who are you?!";
-	mes "A... Assassin Guild?!";
-	mes "What?!";
-	mes "When did I give you a clue?!";
+	mes "[黑衣男子]";
+	mes "你...你是誰？！";
+	mes "刺...刺客公會？！";
+	mes "什麼？！";
+	mes "我什麼時候給你線索的？！";
 	next;
-	select("You lost your head...");
+	select("你失去理智了...");
 	mes "["+strcharinfo(0)+"]";
-	mes "Is this the correct target?";
-	mes "Can you talk with me for a sec?";
+	mes "這是正確的目標嗎？";
+	mes "我可以跟你談一下嗎？";
 	next;
-	mes "[A man with black clothes]";
-	mes "No way!!!!";
-	mes "You... I'll make you close your eyes forever!";
+	mes "[黑衣男子]";
+	mes "不可能！！！！";
+	mes "你...我會讓你永遠閉上眼睛！";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "What?!";
+	mes "什麼？！";
 	close2;
 	donpcevent "A man with black clothes::OnDisable";
 	monster "job3_guil02",51,43,"Dandelion",2031,1,"A man with black clothes::OnMyMobDead";
@@ -2490,36 +2489,36 @@ OnTimer61000:
 
 job3_guil02,49,43,5	script	Dandelion#3rdgc12	457,{
 	if (!checkweight(1201,2)) {
-		mes "- You can't continue this quest because you have too many items. -";
+		mes "- 你不能繼續這個任務，因為你身上的物品太多了。 -";
 		close;
 	}
 	if (job_3rd_gc == 12) {
-		mes "[Dandelion]";
-		mes "Eyah!";
-		mes "You... won't find anything.";
-		mes "Everything... is guided... by the goddess...";
-		mes "Keeek!";
+		mes "[蒲公英]";
+		mes "咿呀！";
+		mes "你...什麼也找不到的。";
+		mes "一切...都是由...女神引導的...";
+		mes "科克！";
 		next;
-		mes "- He puts something in his mouth and swallows. -";
+		mes "- 他把東西放進嘴裡並吞了下去。 -";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "What is that?!";
-		mes "What do you have in your mouth...?";
-		mes "Why did you do that?";
+		mes "那是什麼？！";
+		mes "你嘴裡有什麼...?";
+		mes "你為什麼要這麼做？";
 		next;
-		mes "It's too late to save him.";
-		mes "He passed away.";
-		mes "You find a key with a fancy decoration around his neck.";
+		mes "現在救他已經太遲了。";
+		mes "他過世了。";
+		mes "你發現一把鑰匙，脖子上裝飾得很漂亮。";
 		set job_3rd_gc, 13;
 		getitem 6150,1; //Key_Of_The_Mansion
 		changequest 7107,7108;
 		close;
 	} else {
 		if (job_3rd_gc == 13) {
-			mes "There is nothing to do.";
-			mes "Let's get out of here.";
+			mes "沒有什麼可做的。";
+			mes "我們離開這裡吧。";
 		} else
-			mes "You are shoved by an unknown force.";
+			mes "你被一股不明的力量推了一下。";
 		close2;
 		warp "veins",178,62;
 		end;
@@ -2534,132 +2533,132 @@ OnEnable:
 }
 
 rachel,115,77,3	script	Girke#3rdgc13	85,{
-	mes "[Girke]";
-	mes "Oh~ young man.";
-	mes "I'm Girke Sara.";
-	mes "Just call me Girke.";
+	mes "[吉爾克]";
+	mes "喔～年輕人。";
+	mes "我是吉爾克‧莎拉。";
+	mes "叫我吉爾克就好。";
 	next;
-	mes "- He smells like alcohol. -";
+	mes "- 他身上有酒味。 -";
 	next;
-	mes "[Girke]";
-	mes "You know what?";
-	mes "A man who is a legendary key artisan lives in our village.";
-	mes "Hiccup~";
+	mes "[吉爾克]";
+	mes "你知道嗎？";
+	mes "一位傳奇的鑰匙工匠住在我們村莊裡。";
+	mes "打嗝~";
 	next;
-	mes "[Girke]";
-	mes "Ah~hahahaha";
-	mes "My dad likes pieces of work like that.";
-	mes "One day, he said to me.";
+	mes "[吉爾克]";
+	mes "啊～哈哈哈";
+	mes "我爸喜歡那樣的作品。";
+	mes "有一天，他對我說。";
 	next;
-	mes "[Girke]";
-	mes "'Girke, my wish is having a key crafted from Oresa.'";
+	mes "[吉爾克]";
+	mes "'吉爾克，我的願望是擁有一把用歐瑞薩製作的鑰匙。'";
 	next;
-	mes "[Girke]";
-	mes "But Oresa already disappeared after handing everything over to his apprentice.";
-	mes "Finally, my dad passed away without seeing such a key...";
+	mes "[吉爾克]";
+	mes "但是歐瑞薩在將一切交給他的學徒後就已經消失了。";
+	mes "最後，我父親沒有看到那樣的鑰匙就去世了...";
 	next;
-	mes "[Girke]";
-	mes "You know.";
-	mes "That Oresa! He lives in our town?!";
-	mes "Hiccup~";
+	mes "[吉爾克]";
+	mes "你知道。";
+	mes "那個歐瑞薩！他住在我們鎮上？！";
+	mes "打嗝~";
 	next;
-	mes "[Girke]";
-	mes "But he is too old...";
-	mes "But the artisan is...";
+	mes "[吉爾克]";
+	mes "但他太老了...";
+	mes "但是那位工匠...";
 	next;
-	mes "[Girke]";
-	mes "...difficult to meet.";
-	mes "Like my dad... He's a bit of a loner.";
+	mes "[吉爾克]";
+	mes "...很難見到。";
+	mes "像我爸爸... 他有點孤僻。";
 	next;
-	mes "[Girke]";
-	mes "What am I talking to you about.";
-	mes "Are you drunken? Daddy... (sobbing)";
-	mes "Ah... Daddy...";
+	mes "[吉爾克]";
+	mes "我在跟你說什麼啊。";
+	mes "你喝醉了嗎？爸爸...（啜泣）";
+	mes "啊...爸爸...";
 	next;
-	mes "- Girke starts to cry. -";
+	mes "- 吉爾克開始哭了。 -";
 	close;
 }
 
 ra_in01,175,196,3	script	Oresa Rava#3rdgc13	866,{
-	mes "[Oresa Rava]";
+	mes "[歐瑞薩‧拉瓦]";
 	if (job_3rd_gc == 13) {
-		mes "I don't know why you are visiting me, but I'm not crafting anymore.";
-		mes "I'm too old to craft.";
+		mes "我不知道你為什麼來拜訪我，但我不再製作了。";
+		mes "我太老了，無法製作。";
 		next;
-		select("Do you know this key?");
-		mes "[Oresa Rava]";
-		mes "Hmm? Umm... Give it to me.";
-		mes "This pattern...";
-		mes "Where did you get this from?";
+		select("你認識這把鑰匙嗎？");
+		mes "[歐瑞薩‧拉瓦]";
+		mes "嗯？嗯...給我看看。";
+		mes "這個圖案...";
+		mes "你從哪裡得到這個的？";
 		next;
-		switch(select("I just picked it up.:I have a story...")) {
+		switch(select("我只是撿到的。:我有一個故事...")) {
 		case 1:
-			mes "[Oresa Rava]";
-			mes "Umm? Did you just pick it up?";
-			mes "That's impossible.";
-			mes "Did something happen in that house.";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "嗯？你只是撿到的？";
+			mes "這是不可能的。";
+			mes "那間房子裡發生了什麼事。";
 			next;
-			mes "[Oresa Rava]";
-			mes "So what will you do with this key?";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "那麼你打算如何處理這把鑰匙？";
 			next;
-			select("I'm going to find the owner.");
-			mes "[Oresa Rava]";
-			mes "Ah~! That's why you came here to see me.";
-			mes "I gave that key to a person who was a priest.";
+			select("我打算找到它的主人。");
+			mes "[歐瑞薩‧拉瓦]";
+			mes "啊~! 這就是你來這裡見我的原因。";
+			mes "我把那把鑰匙給了一個神父。";
 			next;
-			mes "[Oresa Rava]";
-			mes "I couldn't see my home after he became a priest, but I made a key for a celebration.";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "在他成為神父後，我就沒辦法再看到我的家了，但我做了一把鑰匙來慶祝。";
 			next;
-			mes "[Oresa Rava]";
-			mes "It's a key to his mansion.";
-			mes "Now I don't know where he lives.";
-			mes "But can you visit there and send over the caretaker of the summer cottage?";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "它是他豪宅的鑰匙。";
+			mes "現在我不知道他住在哪裡了。";
+			mes "但是你可以去那裡拜訪一下，然後把避暑小屋的看守人送過來嗎？";
 			next;
 			break;
 		case 2:
-			mes "[Oresa Rava]";
-			mes "I don't know what's going on.";
-			mes "I gave that key to a person who was a priest.";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "我不知道發生了什麼事。";
+			mes "我把那把鑰匙給了一個神父。";
 			next;
-			mes "[Oresa Rava]";
-			mes "I couldn't see my home after he became a priest, but I made a key for a celebration.";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "在他成為神父後，我就沒辦法再看到我的家了，但我做了一把鑰匙來慶祝。";
 			next;
-			mes "[Oresa Rava]";
-			mes "It's a key to his mansion.";
-			mes "Now I don't know where he lives.";
-			mes "But can you visit there and send over the caretaker of the summer cottage?";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "它是他豪宅的鑰匙。";
+			mes "現在我不知道他住在哪裡了。";
+			mes "但是你可以去那裡拜訪一下，然後把避暑小屋的看守人送過來嗎？";
 			next;
-			mes "[Oresa Rava]";
-			mes "Actually, I can't trust you...";
-			mes "But you showed up with a key. It may be an act of providence.";
+			mes "[歐瑞薩‧拉瓦]";
+			mes "實際上，我不能信任你...";
+			mes "但是你帶著一把鑰匙出現了。這可能是一種天意。";
 			next;
-			select("Sure.");
+			select("當然。");
 			break;
 		}
-		mes "[Oresa Rava]";
-		mes "That mansion was...";
-		mes "built in a gorge of Veins.";
-		mes "I don't know the exact location of it though.";
+		mes "[歐瑞薩‧拉瓦]";
+		mes "那間豪宅是...";
+		mes "建在靜脈峽谷裡。";
+		mes "但我不知道它的確切位置。";
 		next;
-		select("That should be enough.");
-		mes "[Oresa Rava]";
-		mes "Are you sure?";
-		mes "You are so kind.";
-		mes "Send over that key.";
+		select("這樣應該夠了。");
+		mes "[歐瑞薩‧拉瓦]";
+		mes "你確定嗎？";
+		mes "你真是太好了。";
+		mes "把鑰匙送過來吧。";
 		next;
-		mes "- Find the owner of that key soon and tell Mayshell. -";
+		mes "- 盡快找到那把鑰匙的主人並告訴梅謝爾。 -";
 		set job_3rd_gc, 14;
 		close;
 	} else if (job_3rd_gc == 14) {
-		mes "That key is of a mansion built in a gorge of Veins.";
-		mes "I'm sure of it.";
+		mes "那把鑰匙是靜脈峽谷裡建造的豪宅的。";
+		mes "我確定。";
 		close;
 	} else {
-		mes "It's an old story about that artisan.";
-		mes "Now... It's best to see my grandchild.";
+		mes "那是關於那個工匠的舊故事。";
+		mes "現在... 最好去看看我的孫子/孫女。";
 		next;
-		mes "[Oresa Rava]";
-		mes "You are laughing now, but you will understand me soon.";
+		mes "[歐瑞莎·拉瓦]";
+		mes "你現在在笑，但你很快就會明白我的。";
 		close;
 	}
 }
@@ -2667,35 +2666,35 @@ ra_in01,175,196,3	script	Oresa Rava#3rdgc13	866,{
 //Pre-RE: ve_fild05 (327,308)
 ve_fild02,330,384,3	script	Girl#3rdgc14	466,{
 	if (job_3rd_gc > 14 && job_3rd_gc < 18) {
-		mes "[Renzak]";
+		mes "[倫扎克]";
 		if (job_3rd_gc == 15) {
-			mes "You are here.";
-			mes "I'm Renzak.";
-			mes "You sent here from Mayshell?";
+			mes "你在這裡了。";
+			mes "我是倫扎克。";
+			mes "你是梅謝爾派來的？";
 			//mes "I'm not dwelling on."; //FIXME: Dialogue.
 			next;
-			mes "[Renzak]";
-			mes "Our final target is over there.";
-			mes "The mansion is surrounded by cliffs.";
-			mes "You must remove the target in the mansion.";
+			mes "[倫扎克]";
+			mes "我們最終的目標就在那邊。";
+			mes "這座豪宅被懸崖環繞。";
+			mes "你必須移除豪宅裡的目標。";
 			next;
-			mes "[Renzak]";
-			mes "I'm going to give you 10 min.";
-			mes "Complete your task and then wait in the backdoor of the mansion.";
-			mes "I'll wait for you there.";
+			mes "[倫扎克]";
+			mes "我會給你 10 分鐘。";
+			mes "完成你的任務，然後在豪宅的後門等候。";
+			mes "我會在那里等你。";
 		} else if (job_3rd_gc == 16) {
-			mes "You have to attain our goal and come out of the mansion's backdoor within 10 minutes.";
-			mes "You can do it.";
+			mes "你必須達成我們的目標，並在 10 分鐘內從豪宅的後門出來。";
+			mes "你可以做到。";
 		} else {
-			mes "You failed.";
-			mes "You must succeed.";
+			mes "你失敗了。";
+			mes "你必須成功。";
 			next;
-			mes "[Renzak]";
-			mes "You have to come out of the mansion's backdoor.";
-			mes "I'll wait for you.";
+			mes "[倫扎克]";
+			mes "你必須從豪宅的後門出來。";
+			mes "我會等你。";
 		}
 		next;
-		switch(select("I got it.:I'll be ready.")) {
+		switch(select("我明白了。:我準備好了。")) {
 		case 1:
 			if ($@3rdgc_room02 == 0) {
 				erasequest ((job_3rd_gc == 17)?7110:7109);
@@ -2704,19 +2703,19 @@ ve_fild02,330,384,3	script	Girl#3rdgc14	466,{
 				set $@3rdgc_room02, 1;
 				warp "job3_guil03",22,70;
 			} else {
-				mes "[Renzak]";
-				mes "Wait a second.";
-				mes "Just wait until it gets dark.";
+				mes "[倫扎克]";
+				mes "稍等一下。";
+				mes "就等到天黑。";
 				next;
-				mes "[Renzak]";
-				mes "It'll be easy to infiltrate because it's covered by the cliff's shadow.";
+				mes "[倫扎克]";
+				mes "因為它被懸崖的陰影覆蓋，所以很容易滲透。";
 				set job_3rd_gc, 16;
 			}
 			close;
 		case 2:
-			mes "[Renzak]";
-			mes "You don't have time to spare.";
-			mes "You should prepare for action.";
+			mes "[倫扎克]";
+			mes "你沒有時間可以浪費。";
+			mes "你應該準備行動。";
 			if (job_3rd_gc == 17) {
 				erasequest 7110;
 				setquest 7109;
@@ -2725,18 +2724,18 @@ ve_fild02,330,384,3	script	Girl#3rdgc14	466,{
 			close;
 		}
 	} else if (job_3rd_gc > 18) {
-		mes "[Renzak]";
-		mes "You look good.";
-		mes "Me? I've always had the same figure.";
+		mes "[倫扎克]";
+		mes "你看起來不錯。";
+		mes "我？我一直都保持著同樣的身材。";
 		next;
-		mes "[Renzak]";
-		mes "I just wait for guys who will do what I ask.";
+		mes "[倫扎克]";
+		mes "我只是在等待那些會按照我要求做事的人。";
 		close;
 	} else {
-		mes "[Shadow-faced girl]";
+		mes "[黑影少女]";
 		mes "......";
-		mes "This road is blocked.";
-		mes "Go back.";
+		mes "這條路被封鎖了。";
+		mes "回去吧。";
 		close;
 	}
 OnInit:
@@ -2761,7 +2760,7 @@ OnTouch_:
 		donpcevent "#3rdgc_event_master::OnEnable";
 		disablenpc "#3rdgc_event01";
 	} else {
-		mes "You don't have to come here.";
+		mes "你不必來這裡。";
 		close2;
 		warp "ve_fild02",330,379;	//Pre-RE: ve_fild05 (341,303)
 		set $@3rdgc_room02, 0;
@@ -2839,11 +2838,11 @@ OnDisable:
 	disablenpc "Barbed-Wire Entanglement";
 	end;
 OnTouch_:
-	mes "There is space on the bottom of the old fence.";
+	mes "舊柵欄底部有一個空間。";
 	next;
-	if(select("Find another way.:Climb into the space.") == 2) {
-		mes "You climb into the narrow space.";
-		mes "The hole is blocked with the old barbed-wire entanglements.";
+	if(select("找別的路。:爬進那個空間。") == 2) {
+		mes "你爬進了狹窄的空間。";
+		mes "這個洞被舊的帶刺鐵絲網纏繞著。";
 		close2;
 		warp "job3_guil03",57,79;
 		disablenpc "Barbed-Wire Entanglement";
@@ -3388,7 +3387,7 @@ OnTimer70000:
 	mapannounce "job3_guil03","Guard : What's the matter?",bc_map,"0xA8A8A8"; //FW_NORMAL 12 0 0
 	end;
 OnTimer10000:
-	mapannounce "job3_guil03","Guard : Something's wrong, take caution!",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","守衛：情況不對勁，小心！",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
 	donpcevent "#3rdgc_guard::OnEnable";
 	stopnpctimer;
 	end;
@@ -3405,7 +3404,7 @@ OnDisable:
 	disablenpc();
 	end;
 OnStop:
-	mapannounce "job3_guil03","Guard : Am I imagining things? I just heard something.",bc_map,"0xA8A8A8"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","守衛：我是不是在幻想？我剛剛好像聽到什麼了。",bc_map,"0xA8A8A8"; //FW_NORMAL 12 0 0
 	stopnpctimer;
 	end;
 OnReset:
@@ -3415,7 +3414,7 @@ OnTouch_:
 	set .@i, atoi(charat(strnpcinfo(0),19));
 	setarray .@x[1],64,86,83;
 	setarray .@y[1],68,63,36;
-	mapannounce "job3_guil03","Guard : Who are you?!",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","守衛：你們是誰？！",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
 	disablenpc();
 	monster "job3_guil03",.@x[.@i],.@y[.@i],"Guard",1985,1,strnpcinfo(0)+"::OnMyMobDead";
 	initnpctimer;
@@ -3426,7 +3425,7 @@ OnMyMobDead:
 OnTimer5000:
 	if (strnpcinfo(0) == "#3rdgc_gojung_kill03") end;
 OnTimer10000:
-	mapannounce "job3_guil03","Guard : I need support! Take caution!",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","守衛：我需要支援！小心！",bc_map,"0x7b68ee"; //FW_NORMAL 12 0 0
 	donpcevent "#3rdgc_guard::OnEnable";
 	stopnpctimer;
 	end;
@@ -3437,7 +3436,7 @@ job3_guil03,83,36,5	duplicate(#3rdgc_gojung_kill01)	#3rdgc_gojung_kill03	456,6,6
 job3_guil03,88,71,0	script	#3rdgc_safezone01	139,1,1,{
 	end;
 OnTouch_:
-	mes "It's a good bush to hide yourself.";
+	mes "這是個躲藏的好灌木叢。";
 	donpcevent strnpcinfo(0)+"::OnTimer";
 	close;
 OnTimer:
@@ -3461,31 +3460,31 @@ job3_guil03,72,53,0	duplicate(#3rdgc_safezone01)	#3rdgc_safezone03	139,1,1
 
 job3_guil03,111,51,7	script	Priest from Rachel	928,{
 	if (!.on) end;
-	mes "[Priest from Rachel]";
+	mes "[瑞秋的神官]";
 	if (job_3rd_gc == 17) {
-		mes "Are you from the Assassin Guild?";
+		mes "你是刺客公會的人嗎？";
 		next;
-		mes "[Priest from Rachel]";
-		mes "The reason that our organization was dissolved was because of you guys.";
-		mes "You are a thorough person?";
+		mes "[瑞秋的神官]";
+		mes "我們組織解散的原因就是因為你們這些傢伙。";
+		mes "你是一個徹底的人？";
 		next;
-		mes "[Priest from Rachel]";
-		mes "Because of you, you ruined everything!";
+		mes "[瑞秋的神官]";
+		mes "因為你，你毀了一切！";
 		setnpcdisplay(strnpcinfo(0),2030);
 		next;
-		mes "[Priest from Rachel]";
-		mes "You want to destroy us forever!";
-		mes "I can't put the Goddess to shame on a dirty Odin!";
+		mes "[瑞秋的神官]";
+		mes "你想永遠摧毀我們！";
+		mes "我不能讓女神在骯髒的奧丁身上蒙羞！";
 		next;
-		mes "[Priest from Rachel]";
-		mes "I'll never forgive you!!!";
-		mes "Pagan! Justice will be swift!";
+		mes "[瑞秋的神官]";
+		mes "我永遠不會原諒你！！！";
+		mes "異教徒！正義即將到來！";
 		donpcevent "Priest from Rachel::OnDisable";
 		monster "job3_guil03",111,51,"Priest from Rachel",2030,1,"Priest from Rachel::OnMyMobDead";
 		close;
 	}
-	mes "Who are you?";
-	mes "Get out of here.";
+	mes "你是誰？";
+	mes "滾出去。";
 	close2;
 	warp "ve_fild02",330,379;	//Pre-RE: ve_fild05 (341,303)
 	end;
@@ -3503,15 +3502,15 @@ OnReset:
 	end;
 OnMyMobDead:
 	donpcevent "Renzak#3rdgc16::OnEnable";
-	mapannounce "job3_guil03","I... I can't die in vain...",bc_map,"0xFF0000"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","我...我不能白白犧牲...",bc_map,"0xFF0000"; //FW_NORMAL 12 0 0
 	donpcevent "#3rdgc_event01::OnStop";
 	initnpctimer;
 	end;
 OnTimer3000:
-	mapannounce "job3_guil03","Renzak : Hey! Come out!",bc_map,"0x4d4dff"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","倫扎克：嘿！出來！",bc_map,"0x4d4dff"; //FW_NORMAL 12 0 0
 	end;
 OnTimer40000:
-	mapannounce "job3_guil03","Renzak : Don't lag!",bc_map,"0x4d4dff"; //FW_NORMAL 12 0 0
+	mapannounce "job3_guil03","倫扎克：別LAG！",bc_map,"0x4d4dff"; //FW_NORMAL 12 0 0
 	end;
 OnTimer60000:
 	mapwarp "job3_guil03","ve_fild02",330,379;	//Pre-RE: ve_fild05 (341,303)
@@ -3555,20 +3554,20 @@ OnTimer61500:
 }
 
 job3_guil03,146,70,3	script	Renzak#3rdgc16	466,{
-	mes "[Renzak]";
+	mes "[倫扎克]";
 	if (checkquest(7110,HUNTING) == 2) {
-		mes "My peers will come here to settle this affair.";
-		mes "Go to Mayshell for the report.";
+		mes "我的同伴會來這裡解決這件事。";
+		mes "去梅謝爾那邊回報。";
 		next;
-		mes "[Renzak]";
+		mes "[倫扎克]";
 		if (checkquest(7110,PLAYTIME) == 0) {
-			mes "You finished quickly.";
-			mes "Good job.";
+			mes "你完成得很快。";
+			mes "做得好。";
 			set job_3rd_gc, 18;
 		} else {
-			mes "I told you that you have to finish within 10 minutes.";
-			mes "You might be exhausted.";
-			mes "Fortunately you are ok.";
+			mes "我告訴過你必須在 10 分鐘內完成。";
+			mes "你可能很累了。";
+			mes "幸運的是你沒事。";
 			set job_3rd_gc, 19;
 		}
 		erasequest 7110;
@@ -3577,8 +3576,8 @@ job3_guil03,146,70,3	script	Renzak#3rdgc16	466,{
 		warp "job3_guil01",51,50;
 		end;
 	}
-	mes "Get the target!";
-	mes "Actually, I'm not supposed to be here. Is something wrong with you?";
+	mes "取得目標！";
+	mes "實際上，我不應該在這裡。你是不是有什麼問題？";
 	close;
 OnInit:
 	disablenpc "Renzak#3rdgc16";
@@ -3593,80 +3592,80 @@ OnDisable:
 
 job3_guil01,148,53,3	script	Bercasell#3rdgc16	467,{
 	if (!checkweight(1201,2)) {
-		mes "- You can't continue this quest because you have too many items. -";
+		mes "- 你無法繼續這個任務，因為你身上有太多物品了。 -";
 		close;
 	}
-	mes "[Bercasell]";
+	mes "[伯卡塞爾]";
 	if (Class == Job_Assassin || Class == Job_Assassin_Cross || Class == Job_Baby_Assassin) {
 		if (job_3rd_gc == 20) {
 			if (JobLevel > 49 && SkillPoint == 0 && BaseLevel > 98) {
-				mes "I'm so tired...";
-				mes "You were sent by Mayshell?";
-				mes "Tell me why you came to see me.";
+				mes "我好累...";
+				mes "你是梅謝爾派來的？";
+				mes "告訴我你來找我的原因。";
 				next;
-				switch(select("What is a Guillotine Cross?:I want to be a Guillotine Cross.:Nothing.")) {
+				switch(select("什麼是斷頭台十字刺客？:我想成為斷頭台十字刺客。:沒事。")) {
 				case 1:
-					mes "[Bercasell]";
+					mes "[伯卡塞爾]";
 					mes ".....";
 					next;
-					mes "[Bercasell]";
-					mes "So you want to know about the Guillotine Cross?";
-					mes "Get out!";
+					mes "[伯卡塞爾]";
+					mes "所以你想了解斷頭台十字刺客？";
+					mes "滾出去！";
 					next;
-					switch(select("Just tell me...:......")) {
+					switch(select("告訴我嘛...:......")) {
 					case 1:
-						mes "[Bercasell]";
+						mes "[伯卡塞爾]";
 						callsub L_Info;
-						mes "[Bercasell]";
-						mes "It's funny that I'm talking to you like this.";
-						mes "I want to stop you from becoming a Guillotine Cross because of your defiance.";
+						mes "[伯卡塞爾]";
+						mes "我這樣跟你說話真是可笑。";
+						mes "我因為你的反抗，想阻止你成為斷頭台十字刺客。";
 						close;
 					case 2:
-						mes "[Bercasell]";
-						mes "Yes, you don't ask questions.";
-						mes "That's good. You are qualified. What about being a Guillotine Cross?";
-						mes "Do you want to be a Guillotine Cross?";
+						mes "[伯卡塞爾]";
+						mes "是的，你不問問題。";
+						mes "很好。你有資格。成為斷頭台十字刺客如何？";
+						mes "你想成為斷頭台十字刺客嗎？";
 						next;
-						switch(select("Yes, change my job.:I need to think about it.")) {
+						switch(select("是的，轉職。:我需要考慮一下。")) {
 						case 1:
 							L_JobChange:
-							mes "[Bercasell]";
-							mes "You don't regret it?";
+							mes "[伯卡塞爾]";
+							mes "你不後悔嗎？";
 							callsub L_Info;
-							mes "[Bercasell]";
-							mes "You can become a living offensive weapon.";
-							mes "Do you really want to become a Guillotine Cross?";
+							mes "[伯卡塞爾]";
+							mes "你可以成為一個活生生的進攻武器。";
+							mes "你真的想成為斷頭台十字刺客嗎？";
 							next;
-							switch(select("Yes, change my job.:I need to rethink it.")) {
+							switch(select("是的，轉職。:我需要重新考慮一下。")) {
 							case 1:
-								mes "[Bercasell]";
+								mes "[伯卡塞爾]";
 								if (ismounting()) {
-									mes "I cannot perform the job change.";
-									mes "Please remove your mount and try again.";
+									mes "我無法執行轉職。";
+									mes "請移除您的坐騎並重試。";
 									close;
 								} else if (SkillPoint != 0) {
-									mes "You still have unspent skill points.";
-									mes "Please use all your skill points and try again.";
+									mes "您還有未使用的技能點數。";
+									mes "請使用您所有的技能點數並重試。";
 									close;
 								}
-								mes "Is your decision final?";
-								mes "Good.";
+								mes "你的決定是最終的嗎？";
+								mes "很好。";
 								next;
-								mes "[Bercasell]";
-								mes "Now, you are an assassin, yet you are not an assassin anymore.";
-								mes "You are in the shadows, but it's different from the other shadows.";
+								mes "[伯卡塞爾]";
+								mes "現在，你是一個刺客，但你不再是一個刺客了。";
+								mes "你在陰影中，但它與其他的陰影不同。";
 								next;
-								mes "[Bercasell]";
-								mes "Your enemy is everything you can see.";
-								mes "Don't forget yourself.";
-								mes "A weight of the blood on your weapons.";
+								mes "[伯卡塞爾]";
+								mes "你的敵人是你所能看到的一切。";
+								mes "不要忘記自己。";
+								mes "武器上鮮血的重量。";
 								next;
-								mes "[Bercasell]";
-								mes "Ok, change your clothes to your new uniform.";
-								mes "You are now a Guillotine Cross.";
+								mes "[伯卡塞爾]";
+								mes "好吧，換上你的新制服。";
+								mes "你現在是一個斷頭台十字刺客了。";
 								next;
-								mes "[Bercasell]";
-								mes "A sword of the shadow...";
+								mes "[伯卡塞爾]";
+								mes "陰影之劍...";
 								setlook 7,0;
 								jobchange roclass(eaclass()|EAJL_THIRD);
 								if (checkquest(7096) == 1) {
@@ -3685,119 +3684,119 @@ job3_guil01,148,53,3	script	Bercasell#3rdgc16	467,{
 								getitem 2795,1; //Green_Apple_Ring
 								getitem 5755,1; //Silent_Executer
 								next;
-								mes "[Bercasell]";
-								mes "And... these are presents to celebrate your becoming a Guillotine Cross.";
+								mes "[伯卡塞爾]";
+								mes "還有...這些是慶祝你成為斷頭台十字刺客的禮物。";
 								close;
 							case 2:
-								mes "[Bercasell]";
-								mes "You are prudent. That's a good thing.";
-								mes "I'll wait for the day that you decide to join us as a Guillotine Cross.";
+								mes "[伯卡塞爾]";
+								mes "你很謹慎。這是件好事。";
+								mes "我會等待你決定加入我們成為斷頭台十字刺客的那一天。";
 								close;
 							}
 						case 2:
-							mes "[Bercasell]";
-							mes "You are prudent. That's a good thing.";
-							mes "I'll wait for the day that you decide to join us as a Guillotine Cross.";
+							mes "[伯卡塞爾]";
+							mes "你很謹慎。這是件好事。";
+							mes "我會等待你決定加入我們成為斷頭台十字刺客的那一天。";
 							close;
 						}
 					}
 				case 2:
 					goto L_JobChange;
 				case 3:
-					mes "[Bercasell]";
-					mes "Don't bother me.";
+					mes "[伯卡塞爾]";
+					mes "別煩我。";
 					close;
 				}
 			}
 			mes "......";
-			mes "What can I do for you?";
+			mes "我能為你做什麼？";
 			next;
-			switch(select("I want to be a Guillotine.:Nothing.")) {
+			switch(select("我想成為十字刺客。:沒事。")) {
 			case 1:
-				mes "[Bercasell]";
-				mes "Do you?";
-				mes "What for...?";
-				mes "Of course, you came here with your own will...";
+				mes "[貝爾卡賽爾]";
+				mes "你想嗎？";
+				mes "為了什麼...?";
+				mes "當然，你是憑自己的意志來到這裡的...";
 				next;
-				mes "[Bercasell]";
-				mes "Guillotine Cross is an enforcer of the Assassin Guild's laws.";
-				mes "Can you put a dagger in the back of one of your peers?";
+				mes "[貝爾卡賽爾]";
+				mes "十字刺客是刺客公會法律的執行者。";
+				mes "你能將匕首插入同伴的背後嗎？";
 				next;
-				mes "[Bercasell]";
-				mes "You are not ready to do it yet...";
+				mes "[貝爾卡賽爾]";
+				mes "你還沒準備好這麼做...";
 				close;
 			case 2:
-				mes "[Bercasell]";
-				mes "Don't bother me.";
+				mes "[貝爾卡賽爾]";
+				mes "別打擾我。";
 				close;
 			}
 		} else if (job_3rd_gc > 20) {
-			mes "Don't pursue only strength.";
-			mes "You'll get tired.";
-			mes "It's no better than living.";
-			mes "If you only seek power...";
+			mes "不要只追求力量。";
+			mes "你會感到疲倦。";
+			mes "這與活著沒什麼不同。";
+			mes "如果你只追求力量...";
 			next;
-			mes "[Bercasell]";
-			mes "Someday, it'll come back to you.";
-			mes "Well, I'm just a weapon, suppose I have no right to talk about life...";
+			mes "[貝爾卡賽爾]";
+			mes "總有一天，它會回到你身上。";
+			mes "好吧，我只是一個武器，我想我沒有權利談論生活...";
 			close;
 		} else {
-			mes "What's going on with Daora?";
-			mes "Why are you in here?";
-			mes "Did I say you could come here?";
+			mes "Daora 怎麼了？";
+			mes "你在這裡做什麼？";
+			mes "我說過你可以來這裡嗎？";
 			next;
-			mes "[Bercasell]";
-			mes "Or did Mayshell send you?";
-			mes "Or what, are you my fan?";
-			mes "You found the wrong place!";
+			mes "[貝爾卡賽爾]";
+			mes "還是 Mayshell 派你來的？";
+			mes "還是什麼，你是我的粉絲？";
+			mes "你找錯地方了！";
 			next;
-			mes "[Bercasell]";
-			mes "Get out of here now!!!";
+			mes "[貝爾卡賽爾]";
+			mes "現在就滾出去!!!";
 			close;
 		}
 	} else if (Class == Job_Guillotine_Cross || Class == Job_Guillotine_Cross_T || Class == Job_Baby_Guillotine_Cross) {
-		mes "Don't pursue only strength.";
-		mes "You'll get tired.";
-		mes "It's no better than living.";
-		mes "If you only seek power...";
+		mes "不要只追求力量。";
+		mes "你會感到疲倦。";
+		mes "這與活著沒什麼不同。";
+		mes "如果你只追求力量...";
 		next;
-		mes "[Bercasell]";
-		mes "Someday, it'll come back to you.";
-		mes "Well, I'm just a weapon, suppose I have no right to talk about life...";
+		mes "[貝爾卡賽爾]";
+		mes "總有一天，它會回到你身上。";
+		mes "好吧，我只是一個武器，我想我沒有權利談論生活...";
 		close;
 	}
-	mes "What?";
-	mes "Hey, you aren't supposed to be here!";
-	mes "Get out now!";
+	mes "什麼？";
+	mes "嘿，你不應該在這裡！";
+	mes "現在就滾出去！";
 	close;
 
 L_Info:
-	mes "Guillotine Cross is an enforcer.";
-	mes "A living offensive weapon...";
+	mes "十字刺客是執法者。";
+	mes "一個活著的進攻性武器...";
 	next;
-	mes "[Bercasell]";
-	mes "Who is an assassin's natural enemy?";
-	mes "Swordman? Priest?";
-	mes "Wizard?";
-	mes "Things of evil in great abundance?";
+	mes "[貝爾卡賽爾]";
+	mes "誰是刺客的天然敵人？";
+	mes "劍士？牧師？";
+	mes "巫師？";
+	mes "大量的邪惡事物？";
 	next;
-	mes "[Bercasell]";
-	mes "No, an assassin's natural enemy is other assassins.";
-	mes "The most threatening thing to us is us.";
+	mes "[貝爾卡賽爾]";
+	mes "不，刺客的天然敵人是其他刺客。";
+	mes "對我們來說，最具威脅的事情是我們自己。";
 	next;
-	mes "[Bercasell]";
-	mes "In the darkness of the guild, in the shadows we are the Guillotine Crosses.";
-	mes "We maintain the law and order within the Assassin Guild.";
+	mes "[貝爾卡賽爾]";
+	mes "在公會的黑暗中，在陰影中我們是十字刺客。";
+	mes "我們維護刺客公會內的法律和秩序。";
 	next;
-	mes "[Bercasell]";
-	mes "Sometimes we set examples for our peers, sometimes we aim swords at our members' necks in the name of the Guild.";
-	mes "We are the Guillotine Cross, the sword of the Assassin Guild.";
+	mes "[貝爾卡賽爾]";
+	mes "有時我們為同伴樹立榜樣，有時我們以公會的名義將劍指向我們成員的脖子。";
+	mes "我們是十字刺客，刺客公會的劍。";
 	next;
-	mes "[Bercasell]";
-	mes "We have the skill to find members who are in the darkness, and you are being way too pushy.";
+	mes "[貝爾卡賽爾]";
+	mes "我們有能力找到那些身處黑暗中的成員，而你卻太過於咄咄逼人。";
 	next;
-	mes "[Bercasell]";
-	mes "We have highly advanced combat skills.";
+	mes "[貝爾卡賽爾]";
+	mes "我們擁有高度先進的戰鬥技能。";
 	next;
 	return;
 }
@@ -3810,9 +3809,9 @@ OnTouch:
 	if (job_3rd_gc > 3)
 		warp "job3_guil01",60,50;
 	else {
-		mes "[Daora]";
-		mes "Hey, there!";
-		mes "No trespassing!";
+		mes "[朵拉]";
+		mes "嘿，那邊的！";
+		mes "禁止擅自進入！";
 		close;
 	}
 	end;
@@ -3824,10 +3823,10 @@ OnTouch:
 		warp "job3_guil01",12,7;
 	else {
 		mes " [-----------------------------]";
-		mes " No trespassing without ";
-		mes " permission. ";
-		mes " I'm not a ";
-		mes " generous person. ";
+		mes " 未經許可不得 ";
+		mes " 擅自進入。 ";
+		mes " 我不是個 ";
+		mes " 慷慨的人。 ";
 		mes " - Mayshell ";
 		mes " [-----------------------------]";
 		close;
@@ -3842,7 +3841,7 @@ OnTouch:
 	else if (job_3rd_gc > 19)
 		warp "job3_guil01",144,57;
 	else {
-		mes "You don't have anything to do.";
+		mes "你沒什麼事可做。";
 		close;
 	}
 	end;
@@ -3850,11 +3849,11 @@ OnTouch:
 
 job3_guil02,1,3,0	script	#GMhelper01_gc	844,{
 	callfunc "F_GM_NPC";
-	mes "What can I do for you?";
+	mes "我能為你做什麼？";
 	next;
 	if (callfunc("F_GM_NPC",1854,0) == 1) {
 		set .@room01, $@3rdgc_room01;
-		mes "I check the recent situation.";
+		mes "我檢查最近的情況。";
 		mes "The battle situation of storage: "+.@room01+"";
 		mes "1 : In progress. 0 : Standby status.";
 		next;
@@ -3865,7 +3864,7 @@ job3_guil02,1,3,0	script	#GMhelper01_gc	844,{
 			next;
 			switch(select("No.:Reset.")) {
 			case 1:
-				mes "I did nothing.";
+				mes "我什麼都沒做。";
 				close;
 			case 2:
 				mes "Reset a situation of storage.";
@@ -3889,7 +3888,7 @@ job3_guil02,1,3,0	script	#GMhelper01_gc	844,{
 
 job3_guil03,1,8,0	script	#GMhelper02_gc	844,{
 	callfunc "F_GM_NPC";
-	mes "What can I do for you?";
+	mes "我能為你做什麼？";
 	next;
 	if (callfunc("F_GM_NPC",1854,0) == 1) {
 		set .@room02, $@3rdgc_room02;

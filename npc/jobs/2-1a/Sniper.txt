@@ -19,65 +19,63 @@ valkyrie,44,55,5	script	Sniper#Valkyrie	727,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Sniper]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[狙擊手]";
+			mes "恭喜。";
+			mes "榮耀歸於戰士們！";
 			close;
 		}
-		mes "[Sniper]";
-		mes "One shot.";
-		mes "One kill.";
-		mes "It's not so hard";
-		mes "once you develop the";
-		mes "vision for that style";
-		mes "of battling.";
+		mes "[狙擊手]";
+		mes "一發射擊。";
+		mes "一擊斃命。";
+		mes "這並不難";
+		mes "一旦你培養出";
+		mes "那種戰鬥方式的";
+		mes "視野。";
 		close;
 	}
 	else if (ADVJOB == Job_Sniper && Class == Job_Archer_High && JobLevel > 39) {
-		mes "[Sniper]";
-		mes "The world is in";
-		mes "need of mighty Bowmen";
-		mes "like you. Are you ready for";
-		mes "the awesome responsibility?";
+		mes "[狙擊手]";
+		mes "世界需要";
+		mes "像你一樣強大的弓箭手";
+		mes "你準備好承擔";
+		mes "這份重大的責任了嗎？";
 		next;
-		mes "[Sniper]";
-		mes "Are you willing to";
-		mes "take the next step and";
-		mes "become a Sniper?";
+		mes "[狙擊手]";
+		mes "你是否願意";
+		mes "邁出下一步，";
+		mes "成為一名狙擊手？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Sniper]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不用了。:是的。") == 1) {
+			mes "[狙擊手]";
+			mes "當你準備好的時候，";
+			mes "隨時歡迎回來。";
+			mes "榮耀歸於戰士們！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Sniper]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[狙擊手]";
+			mes "你仍然可以學習更多技能。請在使用";
+			mes "完所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Sniper;
 		set ADVJOB,0;
-		mes "[Sniper]";
-		mes "Congratulations!";
-		mes "As a Sniper, I hope";
-		mes "that the minions of evil";
-		mes "will never be safe so";
-		mes "long as they are in";
-		mes "your sight!";
+		mes "[狙擊手]";
+		mes "恭喜！";
+		mes "身為一名狙擊手，我希望";
+		mes "只要邪惡的爪牙在";
+		mes "你的視野範圍內，";
+		mes "他們就永遠不會安全！";
 		close;
 	}
-	mes "[Sniper]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[狙擊手]";
+	mes "歡迎來到";
+	mes "瓦爾哈拉，";
+	mes "榮耀殿堂。";
 	next;
-	mes "[Sniper]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[狙擊手]";
+	mes "請在這裡";
+	mes "放輕鬆。";
+	mes "榮耀歸於戰士們！";
 	close;
 }

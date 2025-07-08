@@ -19,75 +19,75 @@ valkyrie,53,58,3	script	Stalker#Valkyrie	747,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Stalker]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[潛行者]";
+			mes "恭喜。";
+			mes "向戰士致敬！";
 			close;
 		}
-		mes "[Stalker]";
-		mes "Heh...";
-		mes "It's tough";
-		mes "being a hero";
-		mes "and being shady,";
-		mes "untrustworthy,";
-		mes "sneaky...";
+		mes "[潛行者]";
+		mes "嘿...";
+		mes "當英雄";
+		mes "和當個見不得光、";
+		mes "不可信任、";
+		mes "偷偷摸摸的人";
+		mes "真難...";
 		next;
-		mes "[Stalker]";
-		mes "But when the";
-		mes "going gets rough";
-		mes "my pals know they";
-		mes "can count on me.";
-		mes "I need them and";
-		mes "they need me.";
+		mes "[潛行者]";
+		mes "但是當";
+		mes "情況變得糟糕時";
+		mes "我的朋友們知道他們";
+		mes "可以依靠我。";
+		mes "我需要他們，";
+		mes "他們也需要我。";
 		close;
 	}
 	else if (ADVJOB == Job_Stalker && Class == Job_Thief_High && JobLevel > 39) {
-		mes "[Stalker]";
-		mes "This world needs";
-		mes "more heroes who are";
-		mes "willing to walk the line";
-		mes "between order and lawlessness.";
+		mes "[潛行者]";
+		mes "這個世界需要";
+		mes "更多願意遊走在";
+		mes "秩序和不法之間的";
+		mes "英雄。";
 		next;
-		mes "[Stalker]";
-		mes "Are you ready";
-		mes "to join the ranks";
-		mes "of the sneakiest of";
-		mes "warriors? Are you ready";
-		mes "to become a Stalker?";
+		mes "[潛行者]";
+		mes "你準備好";
+		mes "加入";
+		mes "最偷偷摸摸的";
+		mes "戰士行列了嗎？你準備好";
+		mes "成為一個潛行者了嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Stalker]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("否.:是.") == 1) {
+			mes "[潛行者]";
+			mes "當你準備好時，";
+			mes "隨時歡迎回來。";
+			mes "向戰士致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Stalker]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[潛行者]";
+			mes "你仍然有可能學習更多技能。請在使用";
+			mes "剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Stalker;
 		set ADVJOB,0;
-		mes "[Stalker]";
-		mes "Congratulations!";
-		mes "As a Stalker, I hope";
-		mes "you stab the right people";
-		mes "in the back. Banish the";
-		mes "wicked using their own";
-		mes "dastardly methods!";
+		mes "[潛行者]";
+		mes "恭喜！";
+		mes "身為一個潛行者，我希望";
+		mes "你背刺正確的人";
+		mes "用他們自己";
+		mes "卑鄙的手段消滅";
+		mes "邪惡！";
 		close;
 	}
-	mes "[Stalker]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[潛行者]";
+	mes "歡迎";
+	mes "來到英靈殿，";
+	mes "榮譽大廳。";
 	next;
-	mes "[Stalker]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[潛行者]";
+	mes "請讓";
+	mes "自己在這裡";
+	mes "感到舒適。";
+	mes "向戰士致敬！";
 	close;
 }

@@ -12,30 +12,30 @@
 //============================================================
 
 glast_01,195,273,3	script	Hugin's follower#1	2_F_MAGICMASTER,{
-	mes "[Hugin's Follower]";
-	mes "I can't move between time and dimensions like master Hugin but I can pretend to.";
+	mes "[胡金的追隨者]";
+	mes "我無法像胡金大人那樣在時間和維度之間移動，但我可以假裝一下。";
 	next;
-	mes "[Hugin's Follower]";
-	mes "What's causing this Glast Heim to be imbued with such a powerful dark force?";
+	mes "[胡金的追隨者]";
+	mes "是什麼原因導致這個古城格拉斯頓海姆被注入如此強大的黑暗力量？";
 	next;
-	if( select( "I don't care:That is interesting, please tell me more" ) == 2 ){
-		mes "[Hugin's Follower]";
-		mes "Thanks to Hugin, I found the way to access this Old Glast Heim, which is imbued by such powerful dark forces.";
+	if( select( "我不在乎:那很有趣，請告訴我更多" ) == 2 ){
+		mes "[胡金的追隨者]";
+		mes "感謝胡金，我找到了進入這個被強大黑暗力量注入的古城格拉斯頓海姆的方法。";
 		next;
-		mes "[Hugin's Follower]";
-		mes "What do you say? Do you want to explore there?";
+		mes "[胡金的追隨者]";
+		mes "你覺得如何？你想去那裡探險嗎？";
 		next;
-		if( select( "No exploration for me:I really want to explore!" ) == 2 ){
-			mes "[Hugin's Follower]";
-			mes "Sure, but this is not a free service! I have to get something in return. Hoho...";
+		if( select( "我不想探險:我真的很想探險！" ) == 2 ){
+			mes "[胡金的追隨者]";
+			mes "當然，但這不是免費的服務！我必須得到一些回報。呵呵...";
 			next;
-			mes "[Hugin's Follower]";
-			mes "I can send you to two places. Which place would you like me to send you?";
+			mes "[胡金的追隨者]";
+			mes "我可以送你去兩個地方。你希望我送你去哪裡？";
 			next;
-			switch( select( "Cancel:Monastery Cemetery (Lv100~130) - 5000z:2nd floor Corridor (Over Lv140) - 10000z" ) ){
+			switch( select( "取消:修道院墓地 (Lv100~130) - 5000z:第二層走廊 (Lv140以上) - 10000z" ) ){
 				case 1:
-					mes "[Hugin's Follower]";
-					mes "Alright, please come back whenever you change your mind. I think you will have lots to talk with me about...";
+					mes "[胡金的追隨者]";
+					mes "好吧，等你改變主意隨時回來。我想你有很多事情想和我談談...";
 					close;
 				case 2:
 					.@map$ = "gl_chyard_";
@@ -51,8 +51,8 @@ glast_01,195,273,3	script	Hugin's follower#1	2_F_MAGICMASTER,{
 					break;
 			}
 			if( Zeny < .@zeny ){
-				mes "[Hugin's Follower]";
-				mes "What? Did you expect this service for free?";
+				mes "[胡金的追隨者]";
+				mes "什麼？你以為這項服務是免費的嗎？";
 				close;
 			}
 			Zeny -= .@zeny;
@@ -60,19 +60,19 @@ glast_01,195,273,3	script	Hugin's follower#1	2_F_MAGICMASTER,{
 			end;
 		}
 	}
-	mes "[Hugin's Follower]";
-	mes "Well, if you are not interested in it, never mind.";
+	mes "[胡金的追隨者]";
+	mes "好吧，如果你不感興趣，那就別介意。";
 	close;
 }
 
 gl_chyard_,148,149,4	script	Hugin's Follower#n_gh1	123,{
-	mes "[Hugin's Follower]";
-	mes "You want to return?";
-	mes "Ok, let's get out of here.";
+	mes "[胡金的追隨者]";
+	mes "你想回去嗎？";
+	mes "好的，我們離開這裡吧。";
 	next;
-	if( select( "I didn't mean to talk to you:Please get me out of here" ) == 1 ){
-		mes "[Hugin's Follower]";
-		mes "Alright, just tell me whenever you want to leave.";
+	if( select( "我不是故意要跟你說話的:請帶我離開這裡" ) == 1 ){
+		mes "[胡金的追隨者]";
+		mes "好的，想離開的時候告訴我一聲就好。";
 		close;
 	}
 	warp "glast_01", 210, 269;

@@ -20,27 +20,27 @@ bat_room,164,178,5	script	KVM Mercenary Officer#1	418,{
 	/*
 	set .@kvm,checkquest(6026,PLAYTIME);
 	if ((.@kvm == 0) || (.@kvm == 1)) {
-		mes "[Croix Mercenary Officer]";
-		mes "I know that you've already signed with the Croix. Go back and join their team. We will not accept traitors to fight for us.";
+		mes "[克羅伊傭兵隊軍官]";
+		mes "我知道你已經和克羅伊簽約了。回去加入他們的隊伍。我們不會接受叛徒為我們而戰。";
 		close;
 	}
 	else if (.@kvm == 2) erasequest 6026;
 	*/
 	set .@permit,checkquest(6025,PLAYTIME);
 	if ((.@permit == 0) || (.@permit == 1)) {
-		mes "[Guillaume Mercenary Officer]";
-		mes "It seems you have recently participated in a KVM battle. You must wait 5 minutes before signing up again.";
+		mes "[紀堯姆傭兵隊軍官]";
+		mes "看來你最近參加了一場 KVM 戰鬥。你必須等待 5 分鐘才能再次報名。";
 		close;
 	}
 	else if (.@permit == 2) erasequest 6025;
-	mes "[Guillaume Mercenary Officer]";
-	mes "Let them know the real might of Guillaume!";
+	mes "[紀堯姆傭兵隊軍官]";
+	mes "讓他們知道紀堯姆真正的力量！";
 	next;
-	switch(select("I will fight with you.:End Conversation.")) {
+	switch(select("我將與你並肩作戰。:結束對話。")) {
 	case 1:
-		mes "[Guillaume Mercenary Officer]";
-		mes "Show them how strong we are.";
-		mes "Today, everyone will hear the shout of triumph from Guillaume!";
+		mes "[紀堯姆傭兵隊軍官]";
+		mes "讓他們看看我們有多強大。";
+		mes "今天，每個人都會聽到來自紀堯姆的勝利歡呼！";
 		close2;
 		//setquest 6025;
 		if (BaseLevel > 79)  warp "bat_room",169,223;
@@ -48,8 +48,8 @@ bat_room,164,178,5	script	KVM Mercenary Officer#1	418,{
 		else warp "bat_room",225,223;
 		end;
 	case 2:
-		mes "[Guillaume Mercenary Officer]";
-		mes "We will win!";
+		mes "[紀堯姆傭兵隊軍官]";
+		mes "我們一定會贏！";
 		close;
 	}
 }
@@ -57,75 +57,75 @@ bat_room,164,178,5	script	KVM Mercenary Officer#1	418,{
 // Guillaume Knight - KvM
 //============================================================
 bat_room,167,178,5	script	Guillaume Knight#kvm	417,{
-	mes "[Guillaume Knight]";
-	mes "Hello.";
-	mes "What do you want to know?";
+	mes "[紀堯姆騎士]";
+	mes "你好。";
+	mes "你想知道什麼？";
 	next;
-	switch(select("Apply for KVM.:What is KVM?:How do I participate in KVM?:I want to know my Kreiger Points.")) {
+	switch(select("申請 KVM。:什麼是 KVM？:我該如何參與 KVM？:我想知道我的克雷格點數。")) {
 	case 1:
-		mes "[Guillaume Knight]";
+		mes "[紀堯姆騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "If you are ready for battle, click the ^0000FFbattle button from the interface^000000 to apply for KVM battle!";
+			mes "如果你準備好戰鬥了，點擊介面上的 ^0000FF戰鬥按鈕^000000 來申請 KVM 戰鬥！";
 		else {
-			mes "Applications are not available yet.";
-			mes "To apply, you need to go to a KVM Mercenary Officer.";
+			mes "目前無法申請。";
+			mes "要申請，你需要去找 KVM 傭兵隊軍官。";
 		}
 		close;
 	case 2:
-		mes "[Guillaume Knight]";
-		mes "KVM is the abbreviation of Kreiger Von Midgard.";
-		mes "Adventurer, are you aware that the way to the new world has been opened?";
+		mes "[紀堯姆騎士]";
+		mes "KVM 是 Kreiger Von Midgard 的縮寫。";
+		mes "冒險者，你是否知道通往新世界的道路已經開啟？";
 		next;
-		mes "[Guillaume Knight]";
-		mes "We, the Guillaume Administration, have several plans to advance to the new world.";
-		mes "And KVM is one of them.";
+		mes "[紀堯姆騎士]";
+		mes "我們，紀堯姆政府，有好幾個進軍新世界的計畫。";
+		mes "而 KVM 只是其中之一。";
 		next;
-		mes "[Guillaume Knight]";
-		mes "It means that we, one of many countries in the Midgard continent,";
-		mes "have decided to employ many adventurers for the immediate advance to the new world.";
+		mes "[紀堯姆騎士]";
+		mes "這意味著我們，米德加爾特大陸上的眾多國家之一，";
+		mes "決定雇用許多冒險者來立即進軍新世界。";
 		next;
-		mes "[Guillaume Knight]";
-		mes "Therefore, to select the best adventurers, we are holding the KVM.";
-		mes "We exspect responses from many adventurers.";
+		mes "[紀堯姆騎士]";
+		mes "因此，為了選出最優秀的冒險者，我們正在舉辦 KVM。";
+		mes "我們期待許多冒險者的回應。";
 		next;
-		mes "[Guillaume Knight]";
-		mes "And we will give them rewards for their participation!";
-		mes "As for the rewards, please contact a KVM Logistic Officer.";
+		mes "[紀堯姆騎士]";
+		mes "我們將給予他們參與獎勵！";
+		mes "至於獎勵，請聯絡 KVM 後勤官。";
 		close;
 	case 3:
-		mes "[Guillaume Knight]";
+		mes "[紀堯姆騎士]";
 		if (getbattleflag("feature.bgqueue")) {
-			mes "Basically, KVM is a 3 on 3 battle.";
-			mes "Apply by clicking on the ^0000FFbattle button from the interface^000000, as a group or individually.";
+			mes "基本上，KVM 是一個 3 對 3 的戰鬥。";
+			mes "透過點擊介面上的 ^0000FF戰鬥按鈕^000000 申請，可以組隊或單獨申請。";
 		} else {
-			mes "Basically, KVM is a 5 on 5 battle.";
-			mes "First, you apply with a KVM receptionist, in a group or individually.";
+			mes "基本上，KVM 是一個 5 對 5 的戰鬥。";
+			mes "首先，你要在 KVM 接待員那裡申請，可以組隊或單獨申請。";
 		}
 		next;
-		mes "[Guillaume Knight]";
+		mes "[紀堯姆騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "Group applications are for when you intend to enter the KVM with your party or guild members,";
+			mes "組隊申請適用於當你打算與你的隊伍或公會成員一起進入 KVM 的情況，";
 		else
-			mes "Group applications are for when you intend to enter the KVM with your party members,";
-		mes "and a personal application is for when you intend to enter the KVM individually.";
+			mes "組隊申請適用於當你打算與你的隊伍成員一起進入 KVM 的情況，";
+		mes "而個人申請適用於當你打算單獨進入 KVM 的情況。";
 		next;
-		mes "[Guillaume Knight]";
+		mes "[紀堯姆騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "Please be noted, once you cancel you ^0000FFcannot apply again for 1 minute^000000.";
+			mes "請注意，一旦你取消，你在 ^0000FF1 分鐘內無法再次申請^000000。";
 		else {
-			mes "Please apply with a KVM officer, and he will contact you later when you are in Prontera.";
+			mes "請向 KVM 軍官申請，當你在普隆德拉時，他稍後會與你聯絡。";
 			next;
-			mes "[Guillaume Knight]";
-			mes "Then you enter and follow the instructions in the battlefield.";
+			mes "[紀堯姆騎士]";
+			mes "然後你進入並遵循戰場上的指示。";
 			next;
-			mes "[Guillaume Knight]";
-			mes "However, please be advised that unless you are in the KVM office, he cannot contact you.";
+			mes "[紀堯姆騎士]";
+			mes "但是，請注意，除非你在 KVM 辦公室，否則他無法與你聯絡。";
 		}
 		close;
 	case 4:
-		mes "[Guillaume Knight]";
-		mes "Your Kreiger Points are:";
-		mes ""+kvm_point+".";
+		mes "[紀堯姆騎士]";
+		mes "你的克雷格點數是：";
+		mes ""+kvm_point+"。";
 		close;
 	}
 }
@@ -138,27 +138,27 @@ bat_room,164,121,1	script	KVM Mercenary Officer#2	414,{
 	/*
 	set .@kvm,checkquest(6025,PLAYTIME);
 	if ((.@kvm == 0) || (.@kvm == 1)) {
-		mes "[Croix Mercenary Officer]";
-		mes "I know that you've already signed with the Guillaume. Go back and join their team. We will not accept traitors to fight for us.";
+		mes "[克羅斯傭兵隊軍官]";
+		mes "我知道你已經和紀堯姆簽約了。回去加入他們的隊伍吧。我們不會接受叛徒為我們而戰。";
 		close;
 	}
 	else if (.@kvm == 2) erasequest 6025;
 	*/
 	set .@permit,checkquest(6025,PLAYTIME);
 	if ((.@permit == 0) || (.@permit == 1)) {
-		mes "[Croix Mercenary Officer]";
-		mes "It seems you have recently participated in a KVM battle. You must wait 5 minutes before signing up again.";
+		mes "[克羅斯傭兵隊軍官]";
+		mes "你似乎最近參加了一場 KVM 戰鬥。你必須等待 5 分鐘才能再次報名。";
 		close;
 	}
 	else if (.@permit == 2) erasequest 6025;
-	mes "[Croix Mercenary Officer]";
-	mes "Let them know the real might of Croix!";
+	mes "[克羅斯傭兵隊軍官]";
+	mes "讓他們知道克羅斯的真正力量！";
 	next;
-	switch(select("I will fight with you.:End Conversation.")) {
+	switch(select("我要與你們並肩作戰。:結束對話。")) {
 	case 1:
-		mes "[Croix Mercenary Officer]";
-		mes "Show them how strong we are.";
-		mes "Today, everyone will hear the shout of triumph from Croix!";
+		mes "[克羅斯傭兵隊軍官]";
+		mes "讓他們看看我們有多強大。";
+		mes "今天，每個人都會聽到來自克羅斯的勝利歡呼！";
 		close2;
 		//setquest 6026;
 		if (BaseLevel > 79) warp "bat_room",169,207;
@@ -166,8 +166,8 @@ bat_room,164,121,1	script	KVM Mercenary Officer#2	414,{
 		else warp "bat_room",225,207;
 		end;
 	case 2:
-		mes "[Croix Mercenary Officer]";
-		mes "We will win!";
+		mes "[克羅斯傭兵隊軍官]";
+		mes "我們將會獲勝！";
 		close;
 	}
 }
@@ -175,75 +175,75 @@ bat_room,164,121,1	script	KVM Mercenary Officer#2	414,{
 // Croix Knight - KvM
 //============================================================
 bat_room,167,121,1	script	Croix Knight#kvm	413,{
-	mes "[Croix Knight]";
-	mes "Hello.";
-	mes "What do you want to know?";
+	mes "[克羅斯騎士]";
+	mes "你好。";
+	mes "你想知道些什麼？";
 	next;
-	switch(select("Apply for KVM.:What is KVM?:How do I participate in KVM?:I want to know my Kreiger Points.")) {
+	switch(select("申請 KVM。:什麼是 KVM？:我如何參與 KVM？:我想知道我的克雷格點數。")) {
 	case 1:
-		mes "[Croix Knight]";
+		mes "[克羅斯騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "If you are ready for battle, click the ^0000FFbattle button from the interface^000000 to apply for KVM battle!";
+			mes "如果你已準備好戰鬥，點擊介面上的 ^0000FF戰鬥按鈕^000000 來申請 KVM 戰鬥！";
 		else {
-			mes "Applications are not available yet.";
-			mes "To apply, you need to go to a KVM Mercenary Officer.";
+			mes "目前尚未開放申請。";
+			mes "若要申請，你需要前往 KVM 傭兵隊軍官處。";
 		}
 		close;
 	case 2:
-		mes "[Croix Knight]";
-		mes "KVM is the abbreviation of Kreiger Von Midgard.";
-		mes "Adventurer, are you aware that the way to the new world has been opened?";
+		mes "[克羅斯騎士]";
+		mes "KVM 是 Kreiger Von Midgard 的縮寫。";
+		mes "冒險者，你是否知道通往新世界的道路已經開啟？";
 		next;
-		mes "[Croix Knight]";
-		mes "We, the Croix Administration, have several plans to advance to the new world.";
-		mes "And KVM is one of them.";
+		mes "[克羅斯騎士]";
+		mes "我們，克羅斯管理局，有幾個前進到新世界的計畫。";
+		mes "而 KVM 就是其中之一。";
 		next;
-		mes "[Croix Knight]";
-		mes "It means that we, one of many countries in the Midgard continent,";
-		mes "have decided to employ many adventurers for the immediate advance to the new world.";
+		mes "[克羅斯騎士]";
+		mes "這意味著我們，米德加爾特大陸的眾多國家之一，";
+		mes "已決定雇用許多冒險者立即前往新世界。";
 		next;
-		mes "[Croix Knight]";
-		mes "Therefore, to select the best adventurers, we are holding the KVM.";
-		mes "We exspect responses from many adventurers.";
+		mes "[克羅斯騎士]";
+		mes "因此，為了選出最優秀的冒險者，我們正在舉辦 KVM。";
+		mes "我們期待收到許多冒險者的回應。";
 		next;
-		mes "[Croix Knight]";
-		mes "And we will give them rewards for their participation!";
-		mes "As for the rewards, please contact a KVM Logistic Officer.";
+		mes "[克羅斯騎士]";
+		mes "並且我們會給予他們參與的獎勵！";
+		mes "至於獎勵，請洽詢 KVM 物流軍官。";
 		close;
 	case 3:
-		mes "[Croix Knight]";
+		mes "[克羅斯騎士]";
 		if (getbattleflag("feature.bgqueue")) {
-			mes "Basically, KVM is a 3 on 3 battle.";
-			mes "Apply by clicking on the ^0000FFbattle button from the interface^000000, as a group or individually.";
+			mes "基本上，KVM 是一場 3 對 3 的戰鬥。";
+			mes "透過點擊 ^0000FF介面上的戰鬥按鈕^000000 來申請，可以組隊或單獨申請。";
 		} else {
-			mes "Basically, KVM is a 5 on 5 battle.";
-			mes "First, you apply with a KVM receptionist, in a group or individually.";
+			mes "基本上，KVM 是一場 5 對 5 的戰鬥。";
+			mes "首先，你要向 KVM 接待員申請，可以組隊或單獨申請。";
 		}
 		next;
-		mes "[Croix Knight]";
+		mes "[克羅斯騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "Group applications are for when you intend to enter the KVM with your party or guild members,";
+			mes "組隊申請適用於當你打算與你的隊伍或公會成員一起進入 KVM 時，";
 		else
-			mes "Group applications are for when you intend to enter the KVM with your party members,";
-		mes "and a personal application is for when you intend to enter the KVM individually.";
+			mes "組隊申請適用於當你打算與你的隊伍成員一起進入 KVM 時，";
+		mes "而個人申請適用於當你打算單獨進入 KVM 時。";
 		next;
-		mes "[Croix Knight]";
+		mes "[克羅斯騎士]";
 		if (getbattleflag("feature.bgqueue"))
-			mes "Please be noted, once you cancel you ^0000FFcannot apply again for 1 minute^000000.";
+			mes "請注意，一旦你取消，你 ^0000FF將無法在 1 分鐘內再次申請^000000。";
 		else {
-			mes "Please apply with a KVM officer, and he will contact you later when you are in Prontera.";
+			mes "請向 KVM 軍官申請，當你在普隆德拉時，他稍後會與你聯繫。";
 			next;
-			mes "[Croix Knight]";
-			mes "Then you enter and follow the instructions in the battlefield.";
+			mes "[克羅斯騎士]";
+			mes "然後你進入戰場並按照指示進行。";
 			next;
-			mes "[Croix Knight]";
-			mes "However, please be advised that unless you are in the KVM office, he cannot contact you.";
+			mes "[克羅斯騎士]";
+			mes "但是，請注意，除非你在 KVM 辦公室，否則他無法與你聯繫。";
 		}
 		close;
 	case 4:
-		mes "[Croix Knight]";
-		mes "Your Kreiger Points are:";
-		mes ""+kvm_point+".";
+		mes "[克羅斯騎士]";
+		mes "你的克雷格點數是：";
+		mes ""+kvm_point+"。";
 		close;
 	}
 }

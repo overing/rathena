@@ -11,90 +11,90 @@ moro_cav,41,73,4	script	Guardian Nidhogg#epeom01	4_F_NYDHOG,{
 	if (checkquest(7605,PLAYTIME) == 2)
 		erasequest 7605;
 	if (getcharid(1) < 1) {
-		mes "[Nidhogg]";
-		mes "This place is too dangerous for you to explore alone.";
-		mes "Please form a party and come with your comrades.";
+		mes "[妮德霍格]";
+		mes "這個地方太危險了，你無法獨自探索。";
+		mes "請組隊並與你的夥伴們一同前來。";
 		cutin "ep14_nyd01.bmp",2;
 		close3;
 	}
 	if (is_party_leader() == false) {
-		mes "[Nidhogg]";
-		mes "Only party leaders can control access to the Temple of the Demon God.";
-		mes "It's to ensure the safety of the entire Expedition. Please let your leader talk to me instead.";
+		mes "[妮德霍格]";
+		mes "只有隊長才能控制進入魔神殿的權限。";
+		mes "這是為了確保整個探險隊的安全。請讓你的隊長來跟我談。";
 		cutin "ep14_nyd01.bmp",2;
 		close3;
 	}
 	switch( checkquest(7593,HUNTING) ) {
 	case -1:
-		mes "[Nidhogg]";
-		mes "I'm sorry, but you can't enter this place without approval from the Commander.";
-		mes "You must be on the quest to subjugate the Demon God to enter this place.";
+		mes "[妮德霍格]";
+		mes "我很抱歉，沒有指揮官的批准你不能進入這個地方。";
+		mes "你必須接下討伐魔神的任務才能進入。";
 		cutin "ep14_nyd01.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "Please go to Commander Hiva Agip and receive the Demon God Subjugation quest.";
+		mes "[妮德霍格]";
+		mes "請去找指揮官希瓦·艾吉普，並接下魔神討伐任務。";
 		close3;
 	case 0:
 	case 1:
-		mes "[Nidhogg]";
-		mes "I've been waiting for you, hero-in-waiting. ";
-		mes "Let me guide you to the depth of the temple where Morroc lies in wait.";
+		mes "[妮德霍格]";
+		mes "我一直在等你，準英雄。";
+		mes "讓我引導你到摩洛斯等待的聖殿深處。";
 		cutin "ep14_nyd03.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "This tree is the spitting image of Yggdrasil.";
-		mes "I just hope Morroc is not intent on what I fear most.";
-		mes "Through this tree the door is opened.";
+		mes "[妮德霍格]";
+		mes "這棵樹是世界樹的翻版。";
+		mes "我只希望摩洛斯沒有打我最害怕的主意。";
+		mes "通過這棵樹，大門將會開啟。";
 		next;
-		mes "[Nidhogg]";
-		mes "I can sense that";
-		mes "this tree is generating mana at certain intervals as if it's breathing.";
-		mes "I'm going to catch a moment between its breaths to open up a path for you. Are you ready?";
+		mes "[妮德霍格]";
+		mes "我可以感覺到";
+		mes "這棵樹正在以一定的間隔產生魔力，彷彿它正在呼吸。";
+		mes "我將抓住它呼吸的間隙，為你開闢一條道路。你準備好了嗎？";
 		cutin "ep14_nyd04.bmp",2;
 		next;
-		if (select( "Enter now.", "Do not enter." ) == 2) {
-			mes "[Nidhogg]";
-			mes "Okay.";
-			mes "I understand if you need time.";
-			mes "Take your time. I can wait as long as you want me to.";
+		if (select( "現在進入。", "不要進入。" ) == 2) {
+			mes "[妮德霍格]";
+			mes "好的。";
+			mes "如果你需要時間，我理解。";
+			mes "慢慢來。我可以等你，只要你需要我等。";
 			cutin "ep14_nyd04.bmp",2;
 			close3;
 		}
 		if (instance_create("Temple of the Demon God") < 1) {	// todo, custom text
-			mes "Party Name: " + getpartyname(.@party_id);
-			mes "Party Leader: " + strcharinfo(0);
-			mes "^0000ff" + .@md_name$ + " ^000000 - Reservation Failed.";
+			mes "隊伍名稱： " + getpartyname(.@party_id);
+			mes "隊長： " + strcharinfo(0);
+			mes "^0000ff" + .@md_name$ + " ^000000 - 預約失敗。";
 			close;
 		}
 		if (isbegin_quest(7596) == 1)
 			erasequest 7596;
-		mes "[Nidhogg]";
-		mes "Just wait a while, and the entrance will open.";
-		mes "Enter through the tree.";
-		mes "Don't be scared, even though it's not an ordinary tree.";
+		mes "[妮德霍格]";
+		mes "稍等片刻，入口就會打開。";
+		mes "通過這棵樹進入。";
+		mes "別害怕，即使它不是一棵普通的樹。";
 		cutin "ep14_nyd04.bmp",2;
 		close3;
 	case 2:	// todo, custom text
-		mes "[Nidhogg]";
-		mes "You have eliminated the God of Despair!?";
-		mes "I can only say that his ambition was too big...";
-		mes "Always talk about creating a new world and becoming a god...";
+		mes "[妮德霍格]";
+		mes "你消滅了絕望之神！？";
+		mes "我只能說他的野心太大了...";
+		mes "總是談論創造一個新的世界，成為一個神...";
 		cutin "ep14_nyd03.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "But seriously, he didn't create anything at all!";
-		mes "Abandon the body that used to be a demon, and the appearance after rebirth is just imitating the god...";
+		mes "[妮德霍格]";
+		mes "但說真的，他什麼也沒創造！";
+		mes "拋棄了曾經是惡魔的軀體，重生後的樣子只是在模仿神...";
 		next;
-		mes "[Nidhogg]";
-		mes "The result is just what a human looks like,";
-		mes "He can't escape the so-called god frame,";
-		mes "...you can only say that you are eating bad luck!";
+		mes "[妮德霍格]";
+		mes "結果只是一個人類的樣子，";
+		mes "他逃脫不了所謂的神的框架，";
+		mes "...你只能說你是在自討苦吃！";
 		cutin "ep14_nyd02.bmp",2;
 		next;
 		cutin "ep14_nyd04.bmp",2;
-		mes "[Nidhogg]";
-		mes "I will give you approval for the quest, and you can report to the commander.";
-		mes "Thank you!";
+		mes "[妮德霍格]";
+		mes "我會給你任務的批准，你可以向指揮官報告。";
+		mes "謝謝！";
 		setquest 7597;
 		erasequest 7593;
 		for ( .@quest = 7601; .@quest < 7605; .@quest++ ) {
@@ -110,49 +110,49 @@ moro_cav,41,73,4	script	Guardian Nidhogg#epeom01	4_F_NYDHOG,{
 moro_cav,45,75,0	script	Yggdrasil Lookalike#eom_gate	CLEAR_NPC,{
 	switch( checkquest(7593,HUNTING) ) {
 	case -1:
-		mes "[Nidhogg]";
-		mes "I'm sorry, but you can't enter this place without approval from the Commander.";
-		mes "You must be on the quest to subjugate the Demon God to enter this place.";
+		mes "[妮德霍格]";
+		mes "我很抱歉，沒有指揮官的批准你不能進入這個地方。";
+		mes "你必須接下討伐魔神的任務才能進入。";
 		cutin "ep14_nyd01.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "Please go to Commander Hiva Agip and receive the 'Demon God Subjugation' quest.";
+		mes "[妮德霍格]";
+		mes "請去找指揮官希瓦·艾吉普，並接下「魔神討伐」任務。";
 		close3;
 	case 0:
 	case 1:
-		mes "You touched the tree and felt a strange flow of mana.";
-		mes "Perhaps the flow of mana will guide you to the depth of the temple.";
+		mes "你觸摸了這棵樹，感覺到一股奇怪的魔力流動。";
+		mes "也許魔力的流動會引導你到神殿的深處。";
 		next;
-		if (select( "Enter.", "Quit." ) == 2) {
-			mes "[Nidhogg]";
-			mes "Okay.";
-			mes "I understand if you need time.";
-			mes "Take your time. I can wait as long as you want me to.";
+		if (select( "進入。", "離開。" ) == 2) {
+			mes "[妮德霍格]";
+			mes "好的。";
+			mes "如果你需要時間，我理解。";
+			mes "慢慢來。我可以等你，只要你需要我等。";
 			cutin "ep14_nyd04.bmp",2;
 			close3;
 		}
 		switch( instance_enter("Temple of the Demon God") ) {
 		case IE_NOMEMBER:
-			mes "[Nidhogg]";
-			mes "This place is too dangerous for you to explore alone.";
-			mes "Please form a party and come with your comrades.";
+			mes "[妮德霍格]";
+			mes "這個地方太危險了，你無法獨自探索。";
+			mes "請組隊並與你的夥伴們一同前來。";
 			cutin "ep14_nyd01.bmp",2;
 			close3;
 		case IE_NOINSTANCE:
-			mes "[Nidhogg]";
-			mes "No entry permission has been issued under the name of your party.";
-			mes "Please let your party leader submit an entry request, and I'll open the gate to the temple.";
+			mes "[妮德霍格]";
+			mes "沒有以你的隊伍名義發布進入許可。";
+			mes "請讓你的隊長提交進入請求，我會打開通往神殿的大門。";
 			cutin "ep14_nyd01.bmp",2;
 			next;
-			mes "[Nidhogg]";
-			mes "You are to comply with the rules set by the Expedition.";
-			mes "It's for everyone's safety.";
+			mes "[妮德霍格]";
+			mes "你必須遵守探險隊制定的規則。";
+			mes "這是為了每個人的安全。";
 			close3;
 		case IE_OTHER:	// todo, custom text
-			mes "[Nidhogg]";
-			mes "Um...how could this happen... the flow of magic power becomes unstable,";
-			mes "It hurts my brain, this is the gap I finally made...";
-			mes "may not be able to enter at the moment...";
+			mes "[妮德霍格]";
+			mes "嗯... 怎麼會這樣... 魔力的流動變得不穩定，";
+			mes "傷了我的腦袋，這是我好不容易製造的間隙...";
+			mes "可能暫時無法進入...";
 			cutin "ep14_nyd01.bmp",2;
 			close3;
 		case IE_OK:
@@ -161,27 +161,27 @@ moro_cav,45,75,0	script	Yggdrasil Lookalike#eom_gate	CLEAR_NPC,{
 			end;
 		}
 	case 2:	// todo, custom text
-		mes "[Nidhogg]";
-		mes "You have eliminated the God of Despair!?";
-		mes "I can only say that his ambition was too big...";
-		mes "Always talk about creating a new world and becoming a god...";
+		mes "[妮德霍格]";
+		mes "你消滅了絕望之神！？";
+		mes "我只能說他的野心太大了...";
+		mes "總是談論創造一個新的世界，成為一個神...";
 		cutin "ep14_nyd01.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "But seriously, he didn't create anything at all!";
-		mes "Abandon the body that used to be a demon, and the appearance after rebirth is just imitating the god...";
+		mes "[妮德霍格]";
+		mes "但說真的，他什麼也沒創造！";
+		mes "拋棄了曾經是惡魔的軀體，重生後的樣子只是在模仿神...";
 		cutin "ep14_nyd02.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "The result is just what a human looks like,";
-		mes "He can't escape the so-called god frame,";
-		mes "...you can only say that you are eating bad luck!";
+		mes "[妮德霍格]";
+		mes "結果只是一個人類的樣子，";
+		mes "他逃脫不了所謂的神的框架，";
+		mes "...你只能說你是在自討苦吃！";
 		cutin "ep14_nyd03.bmp",2;
 		next;
 		cutin "ep14_nyd04.bmp",2;
-		mes "[Nidhogg]";
-		mes "I will give you approval for the quest, and you can report to the commander.";
-		mes "Thank you!";
+		mes "[妮德霍格]";
+		mes "我會給你任務的批准，你可以向指揮官報告。";
+		mes "謝謝！";
 		setquest 7597;
 		erasequest 7593;
 		for ( .@quest = 7601; .@quest < 7605; .@quest++ ) {
@@ -280,43 +280,43 @@ OnInstanceInit:
 	cutin "ep13_ahat_" + (Sex ? "f" : "m") + ".bmp",2;	// note: cutin f for male, m for female
 	// if (is_party_leader() == false || checkquest(7593,HUNTING) != 1 || isbegin_quest(7596) != 0) {	// quest to 'var for reload
 	if (is_party_leader() == false || checkquest(7593,HUNTING) != 1 || 'step != 0) {
-		mes "[Ahat]";
-		mes "Welcome";
-		mes "to the Temple of the Demon God.";
-		mes "It's my honor to be your host today.";
+		mes "[阿哈特]";
+		mes "歡迎";
+		mes "來到魔神殿。";
+		mes "我很榮幸今天能成為你們的主人。";
 		close3;
 	}
 	.@ahat$ = instance_npcname("Demon God's Apostle Aha#ahat");
-	mes "[Ahat]";
-	mes "So, you've come.";
-	mes "Gosh, you're so persistent.";
-	mes "Hah hah, are you surprised to see me here?";
+	mes "[阿哈特]";
+	mes "所以，你們來了。";
+	mes "哎呀，你們真是太執著了。";
+	mes "哈哈，看到我在這裡很驚訝嗎？";
 	npctalk "Ahat: So, you've come.", .@ahat$;
 	next;
-	mes "[Ahat]";
-	mes "Didn't you expect this at all?";
-	mes "Why don't I introduce myself officially?";
-	mes "I'm Ahat, the first servant of the Demon God.";
+	mes "[阿哈特]";
+	mes "你們一點也沒想到嗎？";
+	mes "我為什麼不正式自我介紹一下呢？";
+	mes "我是阿哈特，魔神的第一個僕人。";
 	npctalk "Ahat: Why don't I introduce myself officially? I'm Ahat, the first servant of the Demon God.", .@ahat$;
 	next;
-	mes "[Ahat]";
-	mes "Well, well, maybe I forfeit my life today.";
-	mes "Don't look at me like that. Everything is as planned.";
+	mes "[阿哈特]";
+	mes "好吧，好吧，也許我今天會放棄我的生命。";
+	mes "別那樣看著我。一切都在計劃之中。";
 	npctalk "Ahat: Well, well, maybe I forfeit my life today. Don't look at me like that. Everything is as planned.", .@ahat$;
 	next;
-	mes "[Ahat]";
-	mes "My master wishes for Shnaim and I to put you to the test.";
-	mes "To see if you deserve to be our guests.";
+	mes "[阿哈特]";
+	mes "我的主人希望夏奈伊和我來考驗你們。";
+	mes "看看你們是否值得成為我們的客人。";
 	npctalk "Ahat: My master wishes for Shnaim and I to put you to the test. To see if you deserve to be our guests.", .@ahat$;
 	next;
-	mes "[Ahat]";
-	mes "If you think you've come this far on your own,";
-	mes "you're mistaken.";
+	mes "[阿哈特]";
+	mes "如果你們認為你們靠自己走到這一步，";
+	mes "那就錯了。";
 	npctalk "Ahat: If you think you've come this far on your own, you're mistaken.", .@ahat$;
 	next;
-	mes "[Ahat]";
-	mes "Everything is as the Master has planned.";
-	mes "For now, let's see if you can open this door.";
+	mes "[阿哈特]";
+	mes "一切都如主人計劃的那樣。";
+	mes "現在，讓我們看看你們是否能打開這扇門。";
 	npctalk "Ahat: Everything is as the Master has planned. For now, let's see if you can open this door.", .@ahat$;
 	if (isbegin_quest(7596) == 0)
 		setquest 7596;
@@ -385,14 +385,14 @@ S_Globe:
 
 	disable_items;
 	if (is_party_leader() == false || isbegin_quest(7596) != 1 || 'step != 2) {
-		mes "Only party leaders can perform this event.";
+		mes "只有隊長才能執行此事件。";
 		close;
 	}
 	if (countitem(.@item_id) < 1) {
-		mes "If you want to activate the soul globes, you need Shnaim's soul.";
+		mes "如果你想啟動靈魂球，你需要夏奈伊的靈魂。";
 		close;
 	}
-	mes "Inject " + .@visible_npc_name$ + "'s soul into the empty soul globe.";
+	mes "將 " + .@visible_npc_name$ + " 的靈魂注入到空的靈魂球中。";
 	next;
 	specialeffect EF_SPHERE;
 	progressbar "000000",10;
@@ -404,7 +404,7 @@ S_Globe:
 		enablenpc instance_npcname("Filled Soul Globe#" + .@hidden_npc_name$);
 		specialeffect EF_ENTRY,AREA, instance_npcname("Filled Soul Globe#" + .@hidden_npc_name$);
 		specialeffect EF_LEVEL99_3,AREA, instance_npcname("Filled Soul Globe#" + .@hidden_npc_name$);
-		mes "Successfully activated " + .@visible_npc_name$ + "'s soul globe.";
+		mes "成功啟動了 " + .@visible_npc_name$ + " 的靈魂球。";
 		if ('inject_soul == 3 && 'step == 2) {
 			'step = 3;
 			if (isbegin_quest(7596) == 1)
@@ -435,57 +435,57 @@ OnTouch_:
 	if ('step != 3)
 		end;
 	if (is_party_leader() == false || checkquest(7593,HUNTING) != 1) {
-		mes "[Boy]";
-		mes "You insignificant creature.";
-		mes "How dare you lay a hand on a god-in-waiting?!";
+		mes "[男孩]";
+		mes "你這微不足道的生物。";
+		mes "竟敢染指一位準神祇？！";
 		close;
 	}
 	cutin "morocc_kid.bmp",2;
-	mes "[Boy]";
-	mes "First, let me applaud you for coming this far.";
-	mes "You've been a good pawn.";
+	mes "[男孩]";
+	mes "首先，讓我為你走到這一步鼓掌。";
+	mes "你一直都是個好棋子。";
 	next;
-	select("What are you talking about?");
-	unittalk getcharid(3), "" + strcharinfo(0) + " : What are you talking about?";
-	mes "[Boy]";
-	mes "I've been waiting for this day.";
-	mes "To get out of that corner of the demon world and rule the entire universe.";
-	npctalk "Boy: I've been waiting for this day. To get out of that corner of the demon world and rule the entire universe.";
+	select("你在說什麼？");
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 你在說什麼？";
+	mes "[男孩]";
+	mes "我一直在等待這一天。";
+	mes "離開惡魔世界的角落並統治整個宇宙。";
+	npctalk "Boy: 我一直在等待這一天。離開惡魔世界的角落並統治整個宇宙。";
 	sleep2 2000;
 	next;
-	mes "[Boy]";
-	mes "To achieve that, I realized I must abandon my old body.";
-	mes "So I died--well, I let you kill me.";
-	npctalk "Boy: To achieve that, I realized I must abandon my old body. So I died--well, I let you kill me.";
+	mes "[男孩]";
+	mes "為了實現這一點，我意識到我必須拋棄我舊的身體。";
+	mes "所以我死了--嗯，我讓你殺了我。";
+	npctalk "Boy: 為了實現這一點，我意識到我必須拋棄我舊的身體。所以我死了--嗯，我讓你殺了我。";
 	sleep2 2000;
 	next;
-	mes "[Boy]";
-	mes "Death is an inevitable step to take before rebirth.";
-	mes "So I'm reborn--again, you brought me back.";
-	npctalk "Boy: Death is an inevitable step to take before rebirth. So I've been reborn--again, you've brought me back.";
+	mes "[男孩]";
+	mes "死亡是在重生之前必須採取的一個不可避免的步驟。";
+	mes "所以我重生了--再次，是你讓我復活了。";
+	npctalk "Boy: 死亡是在重生之前必須採取的一個不可避免的步驟。所以我重生了--再次，是你讓我復活了。";
 	sleep2 2000;
 	next;
-	mes "[Boy]";
-	mes "All this has been arranged so that I could be reborn as God.";
-	npctalk "Boy: All this has been arranged so that I could be reborn as God.";
+	mes "[男孩]";
+	mes "這一切都是安排好的，這樣我才能重生為神。";
+	npctalk "Boy: 這一切都是安排好的，這樣我才能重生為神。";
 	sleep2 2000;
 	next;
-	mes "[Morroc]";
-	mes "That's right, you foolish humans!";
-	mes "I died once, so that I could circle around the world and embrace it in my arms.";
-	mes "I've been reborn to engulf this world.";
-	npctalk "Morocc: I died once, so that I could circle around the world and embrace it in my arms. I've been reborn to engulf this world.";
+	mes "[魔王莫洛克]";
+	mes "沒錯，你們這些愚蠢的人類！";
+	mes "我死過一次，這樣我就可以繞世界一圈，並在我的懷抱中擁抱它。";
+	mes "我已經重生來吞噬這個世界。";
+	npctalk "Morocc: 我死過一次，這樣我就可以繞世界一圈，並在我的懷抱中擁抱它。我已經重生來吞噬這個世界。";
 	sleep2 2000;
 	next;
-	mes "[Morroc]";
-	mes "I'll create a new world and become its Creator.";
-	mes "Let me ask you, the first creatures that have stepped into my newborn land.";
-	npctalk "Morocc: I'll create a new world and become its Creator. Let me ask you, the first creatures that have stepped into my newborn land.";
+	mes "[魔王莫洛克]";
+	mes "我將創造一個新世界，並成為它的創造者。";
+	mes "讓我問問你，第一批踏入我新生土地的生物。";
+	npctalk "Morocc: 我將創造一個新世界，並成為它的創造者。讓我問問你，第一批踏入我新生土地的生物。";
 	sleep2 2000;
 	next;
-	mes "[Morroc]";
-	mes "How'd you like to follow me and watch the birth of a new world?";
-	npctalk "Morocc: How'd you like to follow me and watch the birth of a new world?";
+	mes "[魔王莫洛克]";
+	mes "你想跟隨我並觀看一個新世界的誕生嗎？";
+	npctalk "Morocc: 你想跟隨我並觀看一個新世界的誕生嗎？";
 	close2;
 	setpcblock PCBLOCK_NPC, true;
 	cutin "",255;
@@ -494,33 +494,33 @@ OnTouch_:
 	.@nidhogg$ = instance_npcname("Nidhogg#eomnyd01");
 	enablenpc .@loki$;
 	enablenpc .@nidhogg$;
-	npctalk "Loki: Enough with your nonsense. Just say you like destroying things.", .@loki$;
+	npctalk "Loki: 夠了，別再胡說八道了。直接說你喜歡破壞東西就好。", .@loki$;
 	sleep2 5000;
-	npctalk "Loki: Create a new world and become its Creator? If this is the new world you're talking about, then I'm disappointed.", .@loki$;
+	npctalk "Loki: 創造一個新世界，並成為它的創造者？如果你說的新世界是這樣的話，那我感到很失望。", .@loki$;
 	sleep2 5000;
-	npctalk "Loki: Even if you burn your body, your power is not as potent as that of Ymir of the Genesis.", .@loki$;
+	npctalk "Loki: 即使你燃燒你的身體，你的力量也不如創世紀的尤彌爾強大。", .@loki$;
 	sleep2 5000;
-	npctalk "Loki: Just the fact that you had to steal Yggdrasil shows your lack of creativity.", .@loki$;
+	npctalk "Loki: 你不得不偷取世界樹這一點，就顯示了你缺乏創造力。", .@loki$;
 	sleep2 5000;
-	npctalk "Loki: Take a good look at yourself. You're delusional if you think you look like a creator of any kind.", .@loki$;
+	npctalk "Loki: 好好看看你自己。如果你認為你看起來像任何一種創造者，那你就是妄想。", .@loki$;
 	sleep2 5000;
-	npctalk "Nidhogg: I second that. You're unnecessary to this world. You don't belong here.", .@nidhogg$;
+	npctalk "Nidhogg: 我同意。你對這個世界來說是不必要的。你不屬於這裡。", .@nidhogg$;
 	sleep2 4000;
-	npctalk "Nidhogg: Even Yggdrasil denies your existence!", .@nidhogg$;
+	npctalk "Nidhogg: 即使是世界樹也否認你的存在！", .@nidhogg$;
 	sleep2 4000;
-	npctalk "Nidhogg: As the Guardian of Yggdrasil, I have to remove you from this world.", .@nidhogg$;
+	npctalk "Nidhogg: 作為世界樹的守護者，我必須將你從這個世界移除。", .@nidhogg$;
 	sleep2 2000;
-	npctalk "Morroc: Pah!";
+	npctalk "Morroc: 呸！";
 	sleep2 2000;
-	npctalk "Morroc: Mortal, you must have a death wish to come at me like this.";
+	npctalk "Morroc: 凡人，你一定是活膩了，竟敢這樣對我。";
 	sleep2 3000;
-	npctalk "Morroc: I'll take your flesh and blood as housewarming gifts for my new world.";
+	npctalk "Morroc: 我將奪走你的血肉，作為我新世界的喬遷禮物。";
 	sleep2 3000;
-	npctalk "Morroc: Have you beheld the darkness of the Genesis?";
+	npctalk "Morroc: 你見過創世紀的黑暗嗎？";
 	sleep2 3000;
-	npctalk "Morroc: Have you beheld frost, the beginning of life?";
+	npctalk "Morroc: 你見過霜凍，生命的開始嗎？";
 	sleep2 6000;
-	npctalk "Morroc: Behold the Frost of Audhumla I brought back to life, into this world.";
+	npctalk "Morroc: 看著我帶回這個世界，並復活的奧德姆布拉的霜凍。";
 	sleep2 3000;
 	specialeffect EF_ENTRY;
 	if ('step == 3) {
@@ -529,7 +529,7 @@ OnTouch_:
 		donpcevent instance_npcname("#gate_to_ice") + "::OnEnable";
 		enablenpc instance_npcname("Nidhogg#eomnyd01");
 		enablenpc instance_npcname("Brinaranea#brinpc01");
-		npctalk "Loki: Are you running?", .@loki$;
+		npctalk "Loki: 你在逃跑嗎？", .@loki$;
 		sleep2 2000;
 		disablenpc .@loki$;
 	}
@@ -554,9 +554,9 @@ OnTouch_:
 }
 
 1@eom,95,122,5	script	Loki#eomloki01	4_M_ROKI2,{
-	mes "[Loki]";
-	mes "You're helpless.";
-	mes "And disgusting.";
+	mes "[洛基]";
+	mes "你很無助。";
+	mes "而且令人厭惡。";
 	close;
 }
 
@@ -564,9 +564,9 @@ OnTouch_:
 	if ('step < 4 || is_party_leader() == false)
 		end;
 	if (getmercinfo(0) > 0) {
-		mes "[Nidhogg]";
-		mes "You're with a mercenary.";
-		mes "Could you dismiss your current mercenary and hire me instead?";
+		mes "[尼德霍格]";
+		mes "你和一個傭兵在一起。";
+		mes "你能解僱你目前的傭兵，然後僱用我嗎？";
 		close;
 	}
 	switch( checkquest(7605,PLAYTIME) ) {
@@ -574,34 +574,34 @@ OnTouch_:
 		break;
 	case 0:
 	case 1:
-		mes "[Nidhogg]";
-		mes "I already assisted you once.";
-		mes "Please be careful!";
+		mes "[尼德霍格]";
+		mes "我已經協助過你一次了。";
+		mes "請小心！";
 		close;
 	case 2:
 		erasequest 7605;
 		break;
 	}
 	setnpcdisplay instance_npcname("Nidhogg#eomnyd01"), 3087;
-	mes "[Nidhogg]";
-	mes "" + strcharinfo(0) + ",";
-	mes "allow me to aid you in this battle.";
-	npctalk "Nidhogg: Allow me to aid you in this battle.";
+	mes "[尼德霍格]";
+	mes "" + strcharinfo(0) + "，";
+	mes "請允許我幫助你參與這場戰鬥。";
+	npctalk "Nidhogg: 請允許我幫助你參與這場戰鬥。";
 	specialeffect EF_SPHERE;
 	next;
-	mes "[Nidhogg]";
-	mes "My duty as the guardian isn't over yet.";
-	npctalk "Nidhogg: My duty as the guardian isn't over yet.";
+	mes "[尼德霍格]";
+	mes "我作為守護者的職責還沒有結束。";
+	npctalk "Nidhogg: 我作為守護者的職責還沒有結束。";
 	next;
 	mercenary_create 3087,1800000;// M_NYDHOG
-	mes "^4d4dffGuardian Nidhogg has joined your party.^000000";
+	mes "^4d4dff守護者 尼德霍格 加入你的隊伍了。^000000";
 	setquest 7605;// Guardian's Blessing
 	disablenpc instance_npcname("Nidhogg#eomnyd01");
 	close;
 
 OnTouch:
 	if ('step >= 4 && is_party_leader())
-		npctalk "Nidhogg: Wait!";
+		npctalk "Nidhogg: 等等！";
 	end;
 }
 
@@ -657,12 +657,12 @@ OnTouch_:
 OnTouch_:
 	if ('step == 4) {
 		'step = 5;
-		npctalk "Brinaranea: Ooh, food walks into my lair.";
+		npctalk "Brinaranea: 喔，食物走進我的巢穴了。";
 		initnpctimer;
 	}
 	end;
 OnTimer3000:
-	npctalk "Brinaranea: My children will have a feast tonight. Ho ho ho!";
+	npctalk "Brinaranea: 今晚我的孩子們可以大飽口福了。呵呵呵！";
 	disablenpc instance_npcname("Brinaranea#brinpc01");
 	donpcevent instance_npcname("#ice_hpcheck") + "::OnSpawn";
 	end;
@@ -736,7 +736,7 @@ OnMyMobDead:
 	enablenpc instance_npcname("Nidhogg#eomnyd02");
 	enablenpc instance_npcname("#ice_to_center");
 	enablenpc instance_npcname("Morroc#mockid02");
-	mapannounce 'map_eom$, "Nidhogg: Brinaranea's influence has dissipated, and a new warp gate has appeared.", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "Nidhogg: 布里納雷亞的影響消散了，一個新的傳送門已經出現了。", bc_map, 0x00ff00;
 	'step = 6;
 
 	donpcevent instance_npcname("#demon_god_variables") + "::OnVariableReset";
@@ -880,7 +880,7 @@ S_Skill:
 	end;
 OnStart:
 	initnpctimer;
-	unittalk 'boss_id, "Hah hah...";
+	unittalk 'boss_id, "哈 哈哈哈...";
 	end;
 OnTimer1000:
 	unitskilluseid 'boss_id,"AL_HEAL",11;
@@ -901,14 +901,14 @@ OnTimer3000:
 	end;
 OnStart:
 	initnpctimer;
-	unittalk 'boss_id, "You're annoying! Don't mess with the Frost of Audhumla!";
+	unittalk 'boss_id, "你們真煩人！別打擾奧德姆布拉的冰霜！";
 	unitskilluseid 'boss_id, "NPC_ALLHEAL",1;
 	getunitdata 'boss_id, .@data;
 	'boss_hp = .@data[UMOB_HP];
 	end;
 OnTimer2000:
 	stopnpctimer;
-	mapannounce 'map_eom$, "Nidhogg: No... She's regenerated herself perfectly.", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "尼德霍格: 不... 她已經完美地再生了。", bc_map, 0x00ff00;
 	end;
 }
 
@@ -917,7 +917,7 @@ OnTimer2000:
 OnStart:
 	'icestunami = true;
 	initnpctimer;
-	unittalk 'boss_id, "You hellhounds, can you take this too?";
+	unittalk 'boss_id, "你們這些地獄犬，也能承受這個嗎？";
 	getunitdata 'boss_id, .@data;
 	'x_icemine = .@data[UMOB_X];
 	'y_icemine = .@data[UMOB_Y];
@@ -952,20 +952,20 @@ OnMobDead:
 	if ('step < 6)
 		end;
 	if (isbegin_quest(7602) == 0 && checkquest(7601,HUNTING) == 2) {
-		mes "[Nidhogg]";
-		mes "That was a tough battle.";
-		mes "This may not be good enough, but I hope it'll help your growth.";
+		mes "[尼德霍格]";
+		mes "那是一場艱苦的戰鬥。";
+		mes "這可能還不夠好，但我希望它能幫助你成長。";
 		next;
-		mes "^4d4dffGuardian Nidhogg has rewarded you with a large amount of EXP for defeating Brinaranea.^000000";
+		mes "^4d4dff守護者尼德霍格為了你擊敗布里納蘭尼亞，給予了你大量的經驗值。^000000";
 		erasequest 7601;// Temple of the Demon God Phase 1
 		setquest 7602;// Temple of the Demon God Phase 1 Completed
 		getexp 1000000,500000;
 		close;
 	}
-	mes "[Nidhogg]";
-	mes "Can this dreadful place compete with the Frost of the Genesis?";
-	mes "I can't say.";
-	mes "He's created nothing on his own. How did he convince himself to think that he could be a creator?";
+	mes "[尼德霍格]";
+	mes "這個可怕的地方能與創世紀的冰霜相抗衡嗎？";
+	mes "我說不準。";
+	mes "他沒有自己創造任何東西。他怎麼說服自己認為他可以成為一個創造者？";
 	close;
 }
 
@@ -973,11 +973,11 @@ OnMobDead:
 	end;
 OnTouch_:
 	if (isbegin_quest(7602) == 0 && checkquest(7601,HUNTING) == 2) {
-		mes "[Nidhogg]";
-		mes "That was a tough battle.";
-		mes "This may not be good enough, but I hope it'll help your growth.";
+		mes "[尼德霍格]";
+		mes "那是一場艱苦的戰鬥。";
+		mes "這可能還不夠好，但我希望它能幫助你成長。";
 		next;
-		mes "^4d4dffGuardian Nidhogg has rewarded you with a large amount of EXP for defeating Brinaranea.^000000";
+		mes "^4d4dff守護者尼德霍格為了你擊敗布里納蘭尼亞，給予了你大量的經驗值。^000000";
 		setquest 7602;
 		erasequest 7601;
 		getexp 1000000,500000;
@@ -992,18 +992,18 @@ OnTouch_:
 	if ('step != 6 || is_party_leader() == false || checkquest(7593,HUNTING) != 1)
 		end;
 	cutin "morocc_kid.bmp",2;
-	mes "[Morroc]";
-	mes "You're good.";
-	mes "Can you take on the wolf that swallowed the sun?";
-	npctalk "Morroc: You're good. Can you taken on the wolf that swallowed the sun?";
+	mes "[夢羅克]";
+	mes "你很棒。";
+	mes "你能對付吞噬太陽的狼嗎？";
+	npctalk "夢羅克: 你很棒。你能對付吞噬太陽的狼嗎？";
 	next;
-	mes "[Morroc]";
-	mes "If you can't handle him, then you can't handle a god now, can you?";
-	npctalk "Morroc: If you can't handle him, then you can't handle a god now, can you?";
+	mes "[夢羅克]";
+	mes "如果你連他都對付不了，那你現在也對付不了神，不是嗎？";
+	npctalk "夢羅克: 如果你連他都對付不了，那你現在也對付不了神，不是嗎？";
 	next;
-	mes "[Morroc]";
-	mes "I'll watch you. Mwa hah hah!";
-	npctalk "Morroc: I'll watch you. Mwa hah hah!";
+	mes "[夢羅克]";
+	mes "我會看著你的。哇哈哈哈！";
+	npctalk "夢羅克: 我會看著你的。哇哈哈哈！";
 	close2;
 	cutin "",255;
 	if ('step == 6) {
@@ -1041,7 +1041,7 @@ OnTouch_:
 	sleep 1000;
 	mapannounce 'map_eom$, "Grr...", bc_map, 0xff0000;
 	sleep 3000;
-	mapannounce 'map_eom$, "I smell human... Grr...", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "我聞到了人類的味道... Grr...", bc_map, 0xff0000;
 	monster 'map_eom$,139,101, "Frenzied Kasa",3089,1;	// MM_LOCO_KASA
 	sleep 1000;
 	monster 'map_eom$,142, 98, "Frenzied Kasa",3089,1;
@@ -1059,7 +1059,7 @@ OnTouch_:
 	monster 'map_eom$,153,100, "Frenzied Kasa",3089,1;
 	sleep 1000;
 	monster 'map_eom$,156, 95, "Frenzied Kasa",3089,1;
-	mapannounce 'map_eom$, "...BURN!", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "...燃燒吧!", bc_map, 0xff0000;
 	donpcevent instance_npcname("#skollmaster") + "::OnStart";
 	end;
 }
@@ -1082,7 +1082,7 @@ OnStart:
 	'boss_hp = .@data[UMOB_MAXHP];
 	sleep 1000;
 	if ('boss_id)
-		unittalk 'boss_id, "You're the ones... Grr... Good, I'll crush your bones! Grr...";
+		unittalk 'boss_id, "就是你們... Grr... 好，我會粉碎你們的骨頭！Grr...";
 	sleep 4000;
 	if ('boss_id)
 		donpcevent instance_npcname("#skollmaster") + "::OnLava_heal";
@@ -1101,7 +1101,7 @@ OnTimer2000:
 OnTimer4000:
 	callsub S_ReSpawn, 168,121;
 	unitskilluseid 'boss_id, "CR_REFLECTSHIELD",1;
-	unittalk 'boss_id, "Let's do this again. Come on!";
+	unittalk 'boss_id, "再來一次吧。來啊！";
 	donpcevent instance_npcname("#loco_call") + "::OnSpawn";
 	end;
 OnTimer6000:
@@ -1129,7 +1129,7 @@ S_Event:
 		}
 		unitskilluseid 'boss_id, "AL_HEAL",11;
 	}
-	mapannounce 'map_eom$, "Nidhogg: Muspellskoll is trying to regenerate itself using the lava!", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "尼德霍格: 穆斯貝爾斯科爾正試圖利用熔岩來再生自己！", bc_map, 0x00ff00;
 	getunitdata 'boss_id, .@data;
 	'boss_hp = .@data[UMOB_HP];
 	donpcevent instance_npcname("#loco_call") + "::OnSpawn";
@@ -1144,7 +1144,7 @@ OnMobDead:
 	donpcevent instance_npcname("#loco_call") + "::OnEnd";
 
 	killmonster 'map_eom$, instance_npcname("#skollmaster") + "::OnMobDead";
-	mapannounce 'map_eom$, "Nidhogg: Muspellskoll's influence has dissipated, and a new warp gate has appeared.", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "尼德霍格: 穆斯貝爾斯科爾的影響已經消散，一個新的傳送門已經出現。", bc_map, 0x00ff00;
 
 	enablenpc instance_npcname("Nidhogg#eomnyd03");
 	enablenpc instance_npcname("#fire_to_center");
@@ -1182,7 +1182,7 @@ OnTimer3000:
 
 	if ('lava_heal == false) {
 		if (.@hp > 29500000 && .@hp < 30000000 || .@hp > 35500000 && .@hp < 36000000 || .@hp > 39500000 && .@hp < 40000000 || .@hp > 44500000 && .@hp < 45000000) {
-			unittalk 'boss_id, "I'm not going down without a fight!";
+			unittalk 'boss_id, "我不會不戰而降！";
 			donpcevent instance_npcname("#skollmaster") + "::OnLava_heal";
 		}
 	}
@@ -1192,7 +1192,7 @@ OnTimer3000:
 OnHeal:
 	if ('fire_combo)
 		donpcevent instance_npcname("#fire_combo") + "::OnEnd";
-	unittalk 'boss_id, "Do I look easy to you? I'll burn you to ashes!";
+	unittalk 'boss_id, "你看起來覺得我很好對付嗎？我會把你燒成灰燼！";
 	sleep 2000;
 	if ('boss_id == 0)
 		end;
@@ -1252,7 +1252,7 @@ OnEnd:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "Crash and burn!";
+	unittalk 'boss_id, "崩潰並燃燒吧！";
 	end;
 OnTimer1000:
 	unitskilluseid 'boss_id, "NPC_FIRESTORM",3;
@@ -1300,7 +1300,7 @@ OnTimer19000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "My fire will swallow you whole!";
+	unittalk 'boss_id, "我的火焰會將你完全吞噬！";
 	end;
 OnTimer1000:
 	unitskilluseid 'boss_id, "NPC_FIRESTORM",3;
@@ -1401,9 +1401,9 @@ OnMobDead:
 1@eom,154,119,0	script	Flowing Lava#lavapond01	CLEAR_NPC,{	// todo, custom text
 	if (countitem(22566) < 1)
 		end;
-	mes "It can be used to block the flow of lava using a Frost Crystal.";
+	mes "它可以用來使用冰霜水晶阻擋熔岩的流動。";
 	next;
-	if (select( "Use a Frost Crystal", "Do not use a Frost Crystal" ) == 2)
+	if (select( "使用冰霜水晶", "不使用冰霜水晶" ) == 2)
 		end;
 	if ('flowing_lava_deactivate[0] == true)
 		end;
@@ -1420,7 +1420,7 @@ OnTimer120000:
 	'flowing_lava_deactivate[0] = false;
 	donpcevent instance_npcname("Hardened Lava#lavaseal01") + "::OnDisable";
 	enablenpc instance_npcname("Flowing Lava#lavapond01");
-	mapannounce 'map_eom$, "Nidhogg: The Frost has melted. The lava is flowing again!", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "尼德霍格: 冰霜融化了。熔岩再次流動！", bc_map, 0x00ff00;
 	stopnpctimer;
 	end;
 }
@@ -1428,9 +1428,9 @@ OnTimer120000:
 1@eom,182,129,0	script	Flowing Lava#lavapond02	CLEAR_NPC,{	// todo, custom text
 	if (countitem(22566) < 1)
 		end;
-	mes "It can be used to block the flow of lava using a Frost Crystal.";
+	mes "它可以用來使用冰霜水晶阻擋熔岩的流動。";
 	next;
-	if (select( "Use a Frost Crystal", "Do not use a Frost Crystal" ) == 2)
+	if (select( "使用冰霜水晶", "不使用冰霜水晶" ) == 2)
 		end;
 	if ('flowing_lava_deactivate[1] == true)
 		end;
@@ -1447,7 +1447,7 @@ OnTimer120000:
 	'flowing_lava_deactivate[1] = false;
 	donpcevent instance_npcname("Hardened Lava#lavaseal02") + "::OnDisable";
 	enablenpc instance_npcname("Flowing Lava#lavapond02");
-	mapannounce 'map_eom$, "Nidhogg: The Frost has melted. The lava is flowing again!", bc_map, 0x00ff00;
+	mapannounce 'map_eom$, "尼德霍格: 冰霜融化了。熔岩再次流動！", bc_map, 0x00ff00;
 	stopnpctimer;
 	end;
 }
@@ -1509,20 +1509,20 @@ OnTouch:
 
 1@eom,151,155,3	script	Nidhogg#eomnyd03	4_F_NYDHOG,{
 	if (checkquest(7603,HUNTING) == 2 && isbegin_quest(7604) == 0) {
-		mes "[Nidhogg]";
-		mes "Good job, again.";
-		mes "This may not be good enough, but I hope it'll help your growth.";
+		mes "[尼德霍格]";
+		mes "再次做得好。";
+		mes "這可能還不夠好，但我希望它能幫助你成長。";
 		next;
-		mes "^4d4dffGuardian Nidhogg has rewarded you with a large amount of EXP for defeating Muspellskoll.^000000";
+		mes "^4d4dff守護者尼德霍格為了你擊敗穆斯貝爾斯科爾，給予了你大量的經驗值。^000000";
 		erasequest 7603;// Temple of the Demon God Phase 2
 		setquest 7604;// Temple of the Demon God Phase 2 Completed
 		getexp 1000000,500000;
 		close;
 	}
-	mes "[Nidhogg]";
-	mes "Skoll... Skoll and Haati...";
-	mes "Everything in here is a mere copy of that in the outside world.";
-	mes "He's not a creator.";
+	mes "[尼德霍格]";
+	mes "斯科爾... 斯科爾和哈提...";
+	mes "這裡的一切都只是外面世界的複製品。";
+	mes "他不是一個創造者。";
 	close;
 }
 
@@ -1530,11 +1530,11 @@ OnTouch:
 	end;
 OnTouch_:
 	if (checkquest(7603,HUNTING) == 2 && isbegin_quest(7604) == 0) {
-		mes "[Nidhogg]";
-		mes "Good job, again.";
-		mes "This may not be good enough, but I hope it'll help your growth.";
+		mes "[尼德霍格]";
+		mes "再次做得好。";
+		mes "這可能還不夠好，但我希望它能幫助你成長。";
 		next;
-		mes "^4d4dffGuardian Nidhogg has rewarded you with a large amount of EXP for defeating Muspellskoll.^000000";
+		mes "^4d4dff守護者尼德霍格為了你擊敗穆斯貝爾斯科爾，給予了你大量的經驗值。^000000";
 		setquest 7604;
 		erasequest 7603;
 		getexp 1000000,500000;
@@ -1554,13 +1554,13 @@ OnTouch_:
 	}
 	end;
 OnTimer1000:
-	npctalk "You exceed my expectations.";
+	npctalk "你超出了我的預期。";
 	end;
 OnTimer4000:
-	npctalk "I'll accept your challenge.";
+	npctalk "我接受你的挑戰。";
 	end;
 OnTimer7000:
-	npctalk "I shall drench the land with your flowing blood and nourish it with your torn flesh.";
+	npctalk "我會用你流淌的鮮血浸濕這片土地，並用你撕裂的血肉滋養它。";
 	end;
 OnTimer8000:
 	specialeffect EF_BEGINSPELL5;
@@ -1569,7 +1569,7 @@ OnTimer8000:
 	specialeffect EF_READYPORTAL2,AREA, instance_npcname("#gate_to_last");
 	end;
 OnTimer10000:
-	npctalk "I'll show you the true depths of despair.";
+	npctalk "我會讓你看到絕望的真正深度。";
 	end;
 OnTimer12000:
 	stopnpctimer;
@@ -1586,12 +1586,12 @@ OnTouch_:
 	if ('step != 9)
 		end;
 	'step = 10;
-	npctalk "Morroc: You're already here, so let's not waste our time on talking.";
+	npctalk "夢羅克: 你們已經在這裡了，所以讓我們不要浪費時間在談話上。";
 	initnpctimer;
 	end;
 OnTimer2000:
 	stopnpctimer;
-	npctalk "Morroc: Come on, mortals!";
+	npctalk "夢羅克: 來吧，凡人們！";
 	disablenpc instance_npcname("#moc_master");
 	donpcevent instance_npcname("#despair_god_main") + "::OnStart";
 	end;
@@ -1624,7 +1624,7 @@ OnPhase02:
 	stopnpctimer instance_npcname("#demigod_event_3");
 	stopnpctimer instance_npcname("#mk_hpcheck");
 	stopnpctimer instance_npcname("#mk_combo");
-	unittalk 'boss_id, "You'll have to do better than this!";
+	unittalk 'boss_id, "你們必須做得更好才行！";
 	sleep 2000;
 	if ('boss_id == 0)
 		end;
@@ -1652,7 +1652,7 @@ OnPhase03:
 	monster 'map_eom$,101,194, "Demigod",3096,1, instance_npcname("#despair_god_main") + "::OnMobDead";	// MM_MOROCC_KID
 	'boss_id = $@mobid[0];
 	setunitdata 'boss_id, UMOB_HP, 'boss_hp;
-	unittalk 'boss_id, "Stop being so persistent!";
+	unittalk 'boss_id, "別這麼固執！";
 	sleep 2000;
 	if ('boss_id == 0)
 		end;
@@ -1727,7 +1727,7 @@ OnTimer6000:
 			.@hp_b = .@hp + (.@hp_a - 200000) * 3;
 			.@hp_b = min(80000000, .@hp_b);
 			setunitdata 'boss_id, UMOB_HP, .@hp_b;
-			mapannounce 'map_eom$, "Nidhogg: Wow, his regenerative power is unheard of! Don't let him regenerate again!", bc_map, 0x00ff00;
+			mapannounce 'map_eom$, "Nidhogg: 哇，他的再生能力真是聞所未聞！別讓他再次再生了！", bc_map, 0x00ff00;
 		}
 		unitskilluseid 'boss_id, "AL_HEAL",11;
 		getunitdata 'boss_id, .@data;
@@ -1757,7 +1757,7 @@ OnTimer6000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "Mwah hah, dodge this if you can!";
+	unittalk 'boss_id, "哇哈哈，躲得過再說！";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -1781,7 +1781,7 @@ OnTimer7000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "A rhapsody for weak souls...";
+	unittalk 'boss_id, "一首獻給脆弱靈魂的狂想曲...";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -1836,7 +1836,7 @@ OnTimer7000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "For whom the fugue is played? For whom the requiem is played?";
+	unittalk 'boss_id, "賦格曲為誰而奏？安魂曲又為誰而奏？";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -1852,7 +1852,7 @@ OnTimer5000:
 	unitskillusepos 'boss_id,"WZ_METEOR",5,.@data[UMOB_X],(.@data[UMOB_Y]-5),-50;
 	end;
 OnTimer9000:
-	unittalk 'boss_id, "Burn to ashes!";
+	unittalk 'boss_id, "燒成灰燼吧！";
 	end;
 OnTimer11000:
 	getunitdata 'boss_id, .@data;
@@ -1917,7 +1917,7 @@ S_Dead:
 		donpcevent instance_npcname("#despair_god_main") + "::OnPhase03";
 	}
 	else {
-		unittalk 'miniboss_id[1], "I'll put you to rest. It's my mercy!!!"; // todo, custom text
+		unittalk 'miniboss_id[1], "我會讓你們安息。這是我的慈悲!!!"; // todo, custom text
 		setunitdata 'miniboss_id[1], UMOB_HP, 1000000;
 		donpcevent instance_npcname("#moc_meddling") + "::OnStart";
 	}
@@ -1967,10 +1967,10 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer2000:
-	mapannounce 'map_eom$, "This is getting more interesting. *Snicker*", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "這變得越來越有趣了。 *竊笑*", bc_map, 0xff0000;
 	end;
 OnTimer6000:
-	mapannounce 'map_eom$, "Hey, you don't think this is over already, do you?", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "嘿，你們不會覺得這樣就結束了吧？", bc_map, 0xff0000;
 	end;
 OnTimer10000:
 	disablenpc instance_npcname("#morocc_god");
@@ -1979,13 +1979,13 @@ OnTimer12000:
 	donpcevent instance_npcname("#despair_main") + "::OnStart";
 	end;
 OnTimer13000:
-	unittalk 'boss_id, "What are you waiting for?!";
+	unittalk 'boss_id, "你們還在等什麼？！";
 	end;
 OnTimer14000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
 	end;
 OnTimer16000:
-	mapannounce 'map_eom$, "I'll take your blood!", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "我會取走你們的血！", bc_map, 0xff0000;
 	end;
 OnTimer17000:
 	stopnpctimer;
@@ -2012,7 +2012,7 @@ OnMobDead:
 	stopnpctimer instance_npcname("#despair_event_3");
 	stopnpctimer instance_npcname("#despair_event_4");
 	stopnpctimer instance_npcname("#despair_event_5");
-	mapannounce 'map_eom$, "D-don't think... th-this... is over.. You're... already... time...", bc_map, 0xff0000;
+	mapannounce 'map_eom$, "別...以為...這...就結束了... 你的...時間...已經...", bc_map, 0xff0000;
 	initnpctimer;
 
 	'step = 11;
@@ -2044,7 +2044,7 @@ OnTimer10000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "I'll burn you slowly and painfully.";
+	unittalk 'boss_id, "我會慢慢地、痛苦地灼燒你們。";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -2064,7 +2064,7 @@ OnTimer5000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "Can you hear the rhapsody? It's the sound of your soul writhing and screaming in pain!";
+	unittalk 'boss_id, "聽得到狂想曲嗎？那是你們的靈魂在痛苦中扭動和尖叫的聲音！";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -2118,7 +2118,7 @@ OnTimer7000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "This is the thunderbolt of death!";
+	unittalk 'boss_id, "這就是死亡的霹靂！";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_WIDEWEB",1;
@@ -2134,7 +2134,7 @@ OnTimer6000:
 	unitskillusepos 'boss_id,"WZ_VERMILION",5,.@data[UMOB_X],(.@data[UMOB_Y]-7),-50;
 	end;
 OnTimer10000:
-	unittalk 'boss_id, "Burn and make beautiful flames!";
+	unittalk 'boss_id, "燃燒吧，化為美麗的火焰！";
 	end;
 OnTimer12000:
 	getunitdata 'boss_id, .@data;
@@ -2150,7 +2150,7 @@ OnTimer14000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "I'll take your life.";
+	unittalk 'boss_id, "我會奪走你們的生命。";
 	unitskilluseid 'boss_id, "NPC_FLAMECROSS",1;
 	end;
 OnTimer1000:
@@ -2167,7 +2167,7 @@ OnTimer5000:
 	end;
 OnEvent:
 	initnpctimer;
-	unittalk 'boss_id, "*Chuckle*";
+	unittalk 'boss_id, "*輕笑*";
 	end;
 OnTimer2000:
 	unitskilluseid 'boss_id, "NPC_FIRESTORM",3;
@@ -2186,51 +2186,51 @@ OnTimer8000:
 	if ('step < 11)
 		end;
 	if (isbegin_quest(7597) == 0 && checkquest(7593,HUNTING) == 2) {
-		mes "[Nidhogg]";
-		mes "I don't know what to say.";
-		mes "We stopped the god-in-waiting.";
-		mes "We accomplished our goal.";
-		mes "But I'm still unnerved.";
+		mes "[尼德霍格]";
+		mes "我不知道該說什麼。";
+		mes "我們阻止了預備神。";
+		mes "我們完成了我們的目標。";
+		mes "但我仍然感到不安。";
 		cutin "ep14_nyd03.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "This world is created in the mind of Morroc's.";
-		mes "He'll live forever in this garden he couldn't finish.";
+		mes "[尼德霍格]";
+		mes "這個世界是在魔王莫洛克的腦海中創造的。";
+		mes "他將永遠活在他無法完成的花園裡。";
 		cutin "ep14_nyd02.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "He probably doesn't know his body is destroyed forever.";
-		mes "He was far too ambitious, even for him.";
-		mes "He wanted to create a new world and become its creator,";
+		mes "[尼德霍格]";
+		mes "他可能不知道他的身體永遠被摧毀了。";
+		mes "他太過雄心勃勃，即使對他來說也是如此。";
+		mes "他想創造一個新的世界，並成為它的創造者，";
 		next;
-		mes "[Nidhogg]";
-		mes "but he couldn't create anything on his own.";
-		mes "He abandoned his Demon body, just to become a mere facsimile of an existing god.";
+		mes "[尼德霍格]";
+		mes "但他無法靠自己創造任何東西。";
+		mes "他拋棄了他的惡魔之軀，只是為了成為一個現有神的複製品。";
 		cutin "ep14_nyd03.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "He took the shape of a man.";
-		mes "He wasn't creative enough to reinvent the concept of God.";
-		mes "He was a paradox.";
+		mes "[尼德霍格]";
+		mes "他變成了人的形狀。";
+		mes "他沒有足夠的創造力來重新創造神的概念。";
+		mes "他是一個悖論。";
 		next;
-		mes "[Nidhogg]";
-		mes "Now we need to get out of this trap in time and end; to reality.";
-		mes "This world only exists in the Demon God's mind. The same day repeats forever.";
+		mes "[尼德霍格]";
+		mes "現在我們需要及時逃離這個陷阱，回到現實。";
+		mes "這個世界只存在於魔神的大腦中。 同一天永遠重複著。";
 		next;
-		mes "[Nidhogg]";
-		mes "Everyone who enters this world will be dragged into the same loop.";
-		mes "In that sense, he succeeded in making his own world.";
+		mes "[尼德霍格]";
+		mes "每個進入這個世界的人都會被拖入同一個循環。";
+		mes "從這個意義上說，他成功地創造了自己的世界。";
 		cutin "ep14_nyd02.bmp",2;
 		next;
-		mes "[Nidhogg]";
-		mes "Today's despair will repeat day after day.";
-		mes "Even though we know this, we'll come back to walk the same path again. I hope I'll be able to fight by you every time...";
+		mes "[尼德霍格]";
+		mes "今天的絕望將日復一日地重複。";
+		mes "即使我們知道這一點，我們還是會回來再次走同樣的路。 我希望每次都能在你身邊戰鬥...";
 		cutin "ep14_nyd03.bmp",2;
 		next;
 		cutin "ep14_nyd04.bmp",2;
-		mes "[Nidhogg]";
-		mes "I've talked too much. The Commander must be waiting. Let me validate your feat, so you can report to him.";
-		mes "You did great today.";
+		mes "[尼德霍格]";
+		mes "我說得太多了。 指揮官一定在等著。 讓我驗證你的功績，以便你可以向他報告。";
+		mes "你今天做得很好。";
 		if (isbegin_quest(7593) == 1) {
 			erasequest 7593;// Demon God Subjugation
 			setquest 7597;// Fall of the False God
@@ -2247,48 +2247,48 @@ OnTimer8000:
 			erasequest 7596;
 	}
 	else {	// todo, custom text
-		mes "[Nidhogg]";
-		mes "...It feels like things are not over yet,";
-		mes "This is very close to Morroc's spiritual world,";
-		mes "He should be here to keep thinking about the past!";
+		mes "[尼德霍格]";
+		mes "...感覺事情還沒有結束，";
+		mes "這裡非常接近莫洛克的精神世界，";
+		mes "他應該在這裡繼續思考過去！";
 		cutin "ep14_nyd03.bmp",2;
 	}
 	next;
-	select("Exit.");
-	mes "[Nidhogg]";
-	mes "Of course. You must be exhausted.";
-	mes "Let me send you to the other members of your Expedition, free of charge.";
+	select("離開。");
+	mes "[尼德霍格]";
+	mes "當然。 你一定很累了。";
+	mes "讓我免費送你到你探險隊的其他成員那裡。";
 	close2;
 	warp "moro_vol",91,87;
 	end;
 }
 
 1@eom,5,1,0	script	Little Helper#eomtest	4_ENERGY_BLUE,{
-	mes "What?";
+	mes "什麼？";
 	next;
 	if (callfunc("F_GM_NPC",1854,0) < 1) {
-		mes "Wrong.";
+		mes "錯了。";
 		close;
 	}
-	mes "What Boss?";
+	mes "什麼 Boss？";
 	next;
-	switch( select( "Brinaranea", "Muspellskoll", "Demigod", "Despair God" ) ) {
+	switch( select( "布里納雷亞", "穆斯佩爾斯科爾", "半神", "絕望之神" ) ) {
 	case 1:
-		mes "Brinaranea health was set to 2.000.000.";
+		mes "布里納雷亞的血量設定為 2.000.000。";
 		donpcevent instance_npcname("Brinaranea#brinpc01") + "::OnTest_hp";
 		close;
 	case 2:
-		mes "Muspellskoll health was set to 2.000.000.";
+		mes "穆斯佩爾斯科爾的血量設定為 2.000.000。";
 		donpcevent instance_npcname("#skollmaster") + "::OnTest_hp";
 		close;
 
 	case 3:
-		mes "Demigod health was set to 2.000.000.";
+		mes "半神的血量設定為 2.000.000。";
 		donpcevent instance_npcname("#despair_god_main") + "::OnTest_hp";
 		close;
 
 	case 4:
-		mes "Despair God health was set to 2.000.000.";
+		mes "絕望之神的血量設定為 2.000.000。";
 		donpcevent instance_npcname("#despair_main") + "::OnTest_hp";
 		close;
 	}

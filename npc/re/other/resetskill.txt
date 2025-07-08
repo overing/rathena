@@ -17,135 +17,131 @@
 
 // Main NPC :: resetskill_novice
 //============================================================
-izlude,127,175,3	script	Hypnotist#novice	124,{
-	mes "[Hypnotist]";
-	mes "Greetings, adventurer.";
-	mes "I'm a member of the Hypnotist";
-	mes "Academy sent here to Izlude";
-	mes "to provide Skill Reset services";
-	mes "to certain First Class characters for a really good price: free!";
+izlude,127,175,3	script	催眠師#novice	124,{
+	mes "[催眠師]";
+	mes "您好，冒險者。";
+	mes "我是催眠師學院的一員";
+	mes "被派到艾音布羅克";
+	mes "以非常優惠的價格：免費！為特定的初心者角色提供技能重置服務。";
 	next;
-	mes "[Hypnotist]";
-	mes "Although I offer unlimited";
-	mes "stat/skill resets for now, I have";
-	mes "two conditions that must be";
-	mes "fulfilled. First, you must be";
-	mes "lower than ^FF0000Base Level 50^000000.";
+	mes "[催眠師]";
+	mes "雖然我現在提供無限的";
+	mes "屬性/技能重置，但我有";
+	mes "兩個條件必須";
+	mes "滿足。首先，你必須";
+	mes "低於 ^FF0000Base 等級 50^000000。";
 	next;
-	mes "[Hypnotist]";
-	mes "Second, you must be a";
-	mes "^FF0000Swordman, Acolyte, Mage,";
-	mes "Thief, Archer, Merchant,";
-	mes "Taekwon Boy, or Taekwon Girl,";
-	mes "Gunslinger and Ninja^000000";
-	mes "Job character to qualify.";
-	mes "Now, do you have any questions?";
+	mes "[催眠師]";
+	mes "第二，你必須是";
+	mes "^FF0000劍士、服事、法師、";
+	mes "盜賊、弓箭手、商人、";
+	mes "跆拳道男孩或跆拳道女孩、";
+	mes "槍手和忍者^000000";
+	mes "才能符合資格。";
+	mes "現在，您有任何問題嗎？";
 	next;
-	switch(select("^FF0000Stat/Skill Reset?:Reset stats:Reset skills^000000:Cancel")) {
+	switch(select("^FF0000屬性/技能重置？:重置屬性:重置技能^000000:取消")) {
 	case 1:
-		mes "[Hypnotist]";
-		mes "Stat/Skill Resets allow adventuers";
-		mes "to redistribute their Skill";
-		mes "Points if they are unhappy";
-		mes "with their current skills.";
+		mes "[催眠師]";
+		mes "屬性/技能重置允許冒險者";
+		mes "如果他們對目前的技能";
+		mes "不滿意，可以重新分配他們的技能";
+		mes "點數。";
 		next;
-		mes "[Hypnotist]";
-		mes "Before proceeding with";
-		mes "a Stat/Skill Reset, you must";
-		mes "reduce all of the weight";
-		mes "of all carried items on your";
-		mes "character to 0. You can put";
-		mes "extra items in Kafra Storage.";
+		mes "[催眠師]";
+		mes "在進行";
+		mes "屬性/技能重置之前，您必須";
+		mes "減少所有";
+		mes "角色所攜帶物品的重量";
+		mes "到 0。您可以將";
+		mes "多餘的物品放入卡普拉倉庫。";
 		next;
-		mes "[Hypnotist]";
-		mes "Ah, it's also important";
-		mes "to remove your ^FF0000Pushcart^000000";
-		mes "if you have one equipped.";
-		mes "Otherwise, hypnosis won't";
-		mes "work, or will backfire...";
+		mes "[催眠師]";
+		mes "啊，還有重要的是";
+		mes "移除您的 ^FF0000手推車^000000";
+		mes "如果你裝備了手推車的話。";
+		mes "否則，催眠術將無法";
+		mes "工作，或會適得其反...";
 		close;
 	case 2:
 		set .@str$,"Stat";
 	case 3:
 		if (.@str$ == "")
 			set .@str$,"Skill";
-		mes "[Hypnotist]";
-		mes "Are you sure that you";
-		mes "want to proceed with";
-		mes "my ^FF0000"+.@str$+" Reset^000000 service?";
+		mes "[催眠師]";
+		mes "您確定您";
+		mes "想要繼續進行";
+		mes "我的 ^FF0000"+.@str$+" 重置^000000 服務嗎？";
 		next;
-		if(select("Yes:Cancel") == 1)
+		if(select("是:取消") == 1)
 			break;
 	case 4:
-		mes "[Hypnotist]";
-		mes "Thank you, and good";
-		mes "luck on your adventures.";
-		mes "Please travel in safety~";
+		mes "[催眠師]";
+		mes "謝謝您，祝您";
+		mes "在冒險中好運。";
+		mes "請安全旅行～";
 		close;
 	}
 	if ((Class >= Job_Swordman && Class <= Job_Thief) || Class == Job_Taekwon || Class == Job_Gunslinger || Class == Job_Ninja) {
 		if (checkcart()) {
-			mes "[Hypnotist]";
-			mes "Oh! Please remove your";
-			mes "Pushcart before proceeding";
-			mes "with the "+.@str$+" Reset service.";
-			mes "Thanks for cooperating~";
+			mes "[催眠師]";
+			mes "噢！請在繼續進行";
+			mes ""+.@str$+"重置服務前移除您的手推車。";
+			mes "感謝您的合作～";
 			close;
 		}
 		if (Weight != 0) {
-			mes "[Hypnotist]";
-			mes "If you're here for my "+.@str$;
-			mes "Reset service, please";
-			mes "remember that you can't";
-			mes "reset your "+.@str$+"s until the";
-			mes "^FF0000weight of your carried items in";
-			mes "your Inventory is reduced to 0^000000.";
+			mes "[催眠師]";
+			mes "如果您來這裡是為了我的 "+.@str$;
+			mes "重置服務，請";
+			mes "記住您無法";
+			mes "重置您的 "+.@str$+"s，直到";
+			mes "^FF0000您的物品欄中攜帶的物品重量減少到 0^000000。";
 			next;
-			mes "[Hypnotist]";
-			mes "Why don't you place your";
-			mes "things into the Kafra Storage";
-			mes "for now? That way, you can";
-			mes "safely keep all of your goods.";
+			mes "[催眠師]";
+			mes "您為什麼不把您的";
+			mes "東西放到卡普拉倉庫";
+			mes "暫時？這樣，您就可以";
+			mes "安全地保存您的所有物品。";
 			close;
 		}
 		if (BaseLevel >= 50 && (Class == Job_Taekwon || Class == Job_Gunslinger || Class == Job_Ninja)) {
-			mes "[Hypnotist]";
-			mes "I'm sorry, but characters";
-			mes "with Base Levels higher";
-			mes "than 50 are ineligible for the";
-			mes .@str$+" Reset service I provide.";
+			mes "[催眠師]";
+			mes "很抱歉，但是基礎等級";
+			mes "高於 50 的角色不符合我提供的";
+			mes .@str$+" 重置服務的資格。";
 			close;
 		}
-		mes "[Hypnotist]";
-		mes "Thank you for using";
-		mes "my "+.@str$+" Redistribution";
-		mes "services. Oh, and best";
-		mes "of luck to you on your";
-		mes "travels, adventurer.";
+		mes "[催眠師]";
+		mes "感謝您使用";
+		mes "我的 "+.@str$+" 重新分配";
+		mes "服務。噢，祝您";
+		mes "旅途愉快，";
+		mes "冒險者。";
 		if (.@str$ == "Stat")
 			resetstatus;
 		else
 			resetskill;
 		close;
 	} else {
-		mes "[Hypnotist]";
-		mes "I'm sorry, but your";
-		mes "Job Class doesn't qualify";
-		mes "for the "+.@str$+" Reset service";
-		mes "that I provide. I can only";
-		mes "offer "+.@str$+" Resets to the";
-		mes "following Jobs...";
+		mes "[催眠師]";
+		mes "很抱歉，但是您的";
+		mes "職業不符合";
+		mes "我提供的 "+.@str$+" 重置服務";
+		mes "的資格。我只能";
+		mes "提供 "+.@str$+" 重置給";
+		mes "以下職業...";
 		next;
-		mes "[Hypnotist]";
-		mes "^FF0000Swordman, Acolyte,";
-		mes "Mage, Thief, Archer,";
-		mes "Merchant, Taekwon";
-		mes "Boy, Taekwon Girl,";
-		mes "Gunslinder and Ninja^000000.";
+		mes "[催眠師]";
+		mes "^FF0000劍士、服事、";
+		mes "法師、盜賊、弓箭手、";
+		mes "商人、跆拳道";
+		mes "男孩、跆拳道女孩、";
+		mes "槍手和忍者^000000。";
 		close;
 	}
 }
-izlude_a,127,175,3	duplicate(Hypnotist#novice)	Hypnotist#novice_a	124
-izlude_b,127,175,3	duplicate(Hypnotist#novice)	Hypnotist#novice_b	124
-izlude_c,127,175,3	duplicate(Hypnotist#novice)	Hypnotist#novice_c	124
-izlude_d,127,175,3	duplicate(Hypnotist#novice)	Hypnotist#novice_d	124
+izlude_a,127,175,3	duplicate(催眠師#novice)	催眠師#novice_a	124
+izlude_b,127,175,3	duplicate(催眠師#novice)	催眠師#novice_b	124
+izlude_c,127,175,3	duplicate(催眠師#novice)	催眠師#novice_c	124
+izlude_d,127,175,3	duplicate(催眠師#novice)	催眠師#novice_d	124

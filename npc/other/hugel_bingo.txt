@@ -85,10 +85,10 @@ OnTouch:
 L_Fill:
 	set @bingo_fill,callfunc("Func_Bingo",@bingo_case);
 	if (!@bingo_fill) {
-		mes "The numbers you have entered";
-  		mes "exceed the limit, or you have";
-		mes "already entered these numbers.";
-		mes "Please enter your numbers again.";
+		mes "您輸入的數字";
+  		mes "超過了限制，或者您";
+		mes "已經輸入過這些數字了。";
+		mes "請重新輸入您的數字。";
 		next;
 	} else if (@bingo_fill) {
 		if(@bingoplate[25] < 10) set @bingo_e5$,"0"+@bingoplate[25]+""; else set @bingo_e5$,@bingoplate[25];
@@ -126,23 +126,23 @@ OnEnter:
 	end;
 
 OnTimer1000:
-	mapannounce "que_bingo","Eukran: Hello, everyone! I'm Eukran, your Bingo Guide~",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：大家好！我是尤克蘭，您的賓果遊戲嚮導～",1,0xFFAB54;
 	end;
 
 OnTimer6000:
-	mapannounce "que_bingo","Eukran: Game participants, please enter the Warp Portal at the bottom of your screen and choose a Bingo Plate by entering a number.",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：遊戲參與者，請進入螢幕底部的傳送門，並透過輸入數字來選擇賓果盤。",1,0xFFAB54;
 	end;
 
 OnTimer11000:
-	mapannounce "que_bingo","Eukran: All participants must choose their Bingo Plates within 3 minutes, or the game will be canceled.",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：所有參與者必須在 3 分鐘內選擇他們的賓果盤，否則遊戲將會取消。",1,0xFFAB54;
 	end;
 
 OnTimer192000:
-	mapannounce "que_bingo","Eukran: Please enter a number in 5 seconds, or the game will be canceled.",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：請在 5 秒內輸入一個數字，否則遊戲將會取消。",1,0xFFAB54;
 	end;
 
 OnTimer200000:
-	mapannounce "que_bingo","Eukran: I'm sorry, but the game has been canceled. Please come again and enjoy a game of Bingo with us!",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：很抱歉，但遊戲已經取消。請再來和我們一起享受賓果遊戲的樂趣！",1,0xFFAB54;
 	end;
 
 OnTimer202000:
@@ -178,7 +178,7 @@ OnStart:
 	end;
 
 OnTimer2000:
-	mapannounce "que_bingo","Eukran: Great, everyone seems to be ready~",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：太好了，大家似乎都準備好了～",1,0xFFAB54;
 	disablenpc "plate1#bingo";
 	disablenpc "plate2#bingo";
 	disablenpc "plate3#bingo";
@@ -187,7 +187,7 @@ OnTimer2000:
 	end;
 
 OnTimer5000:
-	mapannounce "que_bingo","Eukran: Now, let the game begin!",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：現在，讓遊戲開始吧！",1,0xFFAB54;
 	setarray $@bingoarray[0],1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25;
 	set .@max_index, 24;
 	for(set .@i,0; .@i < 25; set .@i,.@i +1) {
@@ -199,7 +199,7 @@ OnTimer5000:
 	end;
 
 OnTimer8000:
-	mapannounce "que_bingo","Eukran: I'll announce the Bingo Numbers. If you get 5 lines by matching 5 Bingo Numbers in a straight line on your Bingo Plate, yell out ''Bingo'' to win~",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：我將宣布賓果號碼。 如果您在賓果盤上以直線方式匹配 5 個賓果號碼，連成 5 條線，請大喊“賓果”以獲勝～",1,0xFFAB54;
 	end;
 
 OnTimer10000:
@@ -262,15 +262,15 @@ OnTimer340000:
 	end;
 
 OnTimer440000:
-	mapannounce "que_bingo","Eukran: I've announced all of the selected numbers, but I haven't heard anyone yell ''Bingo.''",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：我已經宣布了所有選定的號碼，但我沒有聽到任何人喊“賓果”。",1,0xFFAB54;
 	end;
 
 OnTimer445000:
-	mapannounce "que_bingo","Eukran: I'll give you all 10 seconds to check if any of you have won. If no one can yell ''Bingo'' in 10 seconds, this game will end without a winner.",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：我會給你們 10 秒鐘的時間來檢查是否有人贏了。 如果 10 秒內沒有人喊“賓果”，則該遊戲將在沒有獲勝者的情況下結束。",1,0xFFAB54;
 	end;
 
 OnTimer460000:
-	mapannounce "que_bingo","Eukran: I'm sorry, but this game has ended without a winner. Thanks for playing, everyone~",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：很抱歉，但這場比賽已經結束，沒有獲勝者。 感謝大家的參與～",1,0xFFAB54;
 	donpcevent "1a#bingo::OnInit";
 	areawarp "que_bingo",44,115,54,126,"que_bingo",40,121;
 	set $@hu_bingoa,0;
@@ -457,17 +457,17 @@ OnTouch:
 	mes "["+@bingo_c1$+"] ["+@bingo_c2$+"] ["+@bingo_c3$+"] ["+@bingo_c4$+"] ["+@bingo_c5$+"]";
 	mes "["+@bingo_d1$+"] ["+@bingo_d2$+"] ["+@bingo_d3$+"] ["+@bingo_d4$+"] ["+@bingo_d5$+"]";
 	mes "["+@bingo_e1$+"] ["+@bingo_e2$+"] ["+@bingo_e3$+"] ["+@bingo_e4$+"] ["+@bingo_e5$+"]";
-	mes "[Currently Finished Lines - "+@bingowin+" ]";
+	mes "[目前完成線數 - "+@bingowin+" ]";
 	if ($@bingoresult > 15) {
 		if (@bingowin > 4) {
 			next;
-			mes "We just have made 5 lines!";
-			mes "Say ^ff0000Bingo^000000!";
-			mes "W-we just matched";
-			mes "5 numbers in a row!";
-			mes "Quickly, say ''^FF0000Bingo^000000!''";
-			mes "Remember, you'll only";
-			mes "have one chance to say it!";
+			mes "我們剛完成了 5 條線！";
+			mes "喊 ^ff0000賓果^000000！";
+			mes "我-我們剛好配對";
+			mes "連續 5 個號碼！";
+			mes "快點，說''^FF0000賓果^000000！''";
+			mes "請記住，您只有";
+			mes "一次機會說出來！";
 			input @bingoyell$;
 			if (@bingoyell$ == "Bingo") {
 				if ($@hu_bingoa == 5) {
@@ -479,20 +479,20 @@ OnTouch:
 
 				} else if ($@hu_bingoa == 6) {
 					next;
-					mes "Oh no! I'm sorry, but";
-					mes "someone already yelled";
-					mes "''bingo'' before you did.";
-					mes "I'm sorry, but you missed";
-					mes "your chance! Better luck,";
-					mes "next time, alright?";
+					mes "喔不！我很抱歉，但是";
+					mes "有人已經比你早喊了";
+					mes "''賓果''。";
+					mes "我很抱歉，但是你錯過了";
+					mes "您的機會！祝您下次";
+					mes "好運，好嗎？";
 					close;
 				}
 			} else {
 				next;
-				mes "I'm sorry, but you";
-				mes "said it wrong. Next time,";
-				mes "make sure that you yell";
-				mes "out the word, ''^FF0000Bingo^000000,'' okay?";
+				mes "我很抱歉，但是您";
+				mes "說錯了。 下次，";
+				mes "請確保您大聲喊出";
+				mes "這個詞，''^FF0000賓果^000000，''好嗎？";
 				close;
 			}
 		}
@@ -664,22 +664,22 @@ OnTouch:
 	end;
 
 OnTimer1000:
-	mapannounce "que_bingo","Eukran: Wow, Bingo! It's Bingo!",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：哇，賓果！是賓果！",1,0xFFAB54;
 	end;
 
 OnTimer5000:
-	mapannounce "que_bingo","Eukran: "+$@bingowinner$+" has said Bingo!",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭："+$@bingowinner$+" 說了賓果！",1,0xFFAB54;
 	end;
 
 OnTimer10000:
 	if ($@bingoresult == 16)
-		mapannounce "que_bingo","Eukran: Congratulations, "+$@bingowinner$+"! You will be rewarded with 50 Marvelous Medals.",1,0xFFAB54;
+		mapannounce "que_bingo","尤克蘭：恭喜，"+$@bingowinner$+"！您將獲得 50 枚精美勳章。",1,0xFFAB54;
 	else
-		mapannounce "que_bingo","Eukran: Congratulations, "+$@bingowinner$+"! You will be rewarded with 1 Marvelous Medal.",1,0xFFAB54;
+		mapannounce "que_bingo","尤克蘭：恭喜，"+$@bingowinner$+"！您將獲得 1 枚精美勳章。",1,0xFFAB54;
 	end;
 
 OnTimer15000:
-	mapannounce "que_bingo","Eukran: Thank you all for participating in the game. See you next time!",1,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：感謝大家參與遊戲。 下次見！",1,0xFFAB54;
 	end;
 
 OnTimer20000:
@@ -861,7 +861,7 @@ function	script	Func_Bingo	{
 
 function	script	Func_BingoResult	{
 	.@num = getarg(0);
-	mapannounce "que_bingo","Eukran: The "+ callfunc("F_GetNumSuffix",.@num) +" number is "+ $bingo[.@num - 1] +". Please check your Bingo Plate.",4,0xFFAB54;
+	mapannounce "que_bingo","尤克蘭：第 "+ callfunc("F_GetNumSuffix",.@num) +" 個號碼是 "+ $bingo[.@num - 1] +"。 請檢查您的賓果盤。",4,0xFFAB54;
 	enablenpc .@num +"a#bingo";
 	enablenpc .@num +"b#bingo";
 	enablenpc .@num +"c#bingo";
@@ -872,99 +872,97 @@ function	script	Func_BingoResult	{
 }
 
 que_bingo,49,31,4	script	Arcade Helper#1	47,{
-	mes "[Helper]";
-	mes "If you'd like to play";
-	mes "a game of bingo, then";
-	mes "please proceed this way.";
+	mes "[助手]";
+	mes "如果您想玩";
+	mes "賓果遊戲，那麼";
+	mes "請往這邊走。";
 	close;
 }
 que_bingo,42,31,4	duplicate(Arcade Helper#1)	Arcade Helper#2	66
 
 que_bingo,54,17,5	script	Arcade Owner	712,{
-	mes "[Arcade Owner]";
-	mes "Welcome to the";
-	mes "Bingo Game Arcade.";
-	mes "Care to play a game of";
-	mes "bingo? If you have any";
-	mes "questions, feel free to ask.";
+	mes "[遊樂場老闆]";
+	mes "歡迎來到";
+	mes "賓果遊戲遊樂場。";
+	mes "想玩一場";
+	mes "賓果遊戲嗎？如果您有任何";
+	mes "問題，請隨時提出。";
 	next;
-	switch(select("Rules for Bingo:Bingo Room:Marvelous Medals")) {
+	switch(select("賓果遊戲規則:賓果室:精美勳章")) {
 	case 1:
-		mes "[Arcade Owner]";
-		mes "The rules for playing bingo";
-		mes "are simple. First, take a board";
-		mes "with 25 boxes organized so that";
-		mes "there are five rows and five";
-		mes "columns. Then, number the";
-		mes "boxes in any order you like.";
+		mes "[遊樂場老闆]";
+		mes "玩賓果遊戲的規則";
+		mes "很簡單。 首先，拿一塊板子";
+		mes "有 25 個盒子，排列成";
+		mes "有五行和五列。";
+		mes "然後，以您喜歡的任何順序";
+		mes "為方格編號。";
 		next;
-		mes "[Arcade Owner]";
-		mes "Of course, you must use";
-		mes "the numbers 1 through 25.";
-		mes "When everyone's bingo board";
-		mes "is ready, the game will begin.";
-		mes "Our game coordinator will call out a number from 1 to 25 at random.";
+		mes "[遊樂場老闆]";
+		mes "當然，您必須使用";
+		mes "數字 1 到 25。";
+		mes "當每個人的賓果盤";
+		mes "準備好後，遊戲將開始。";
+		mes "我們的遊戲協調員會隨機喊出 1 到 25 之間的一個數字。";
 		next;
-		mes "[Arcade Owner]";
-		mes "Each time the coordinator";
-		mes "calls out a number, make sure";
-		mes "that you mark the corresponding";
-		mes "numbered square on your bingo";
-		mes "board. Now, these are the";
-		mes "conditions for winning...";
+		mes "[遊樂場老闆]";
+		mes "每次協調員";
+		mes "喊出一個數字時，請確保";
+		mes "您在賓果盤上標記相應的";
+		mes "編號方格。";
+		mes "現在，這些是";
+		mes "獲勝的條件...";
 		next;
-		mes "[Arcade Owner]";
-		mes "If you can make a line of";
-		mes "5 squares in a row, horizontally, vertically, or diagonally, using";
-		mes "the numbers called out by the";
-		mes "coordinator, you quickly yell";
-		mes "the word, ''Bingo.''";
+		mes "[遊樂場老闆]";
+		mes "如果您可以連成一條線";
+		mes "連續 5 個方格，水平、垂直或對角線，使用";
+		mes "協調員喊出的數字，您迅速喊";
+		mes "這個詞，''賓果''。";
 		next;
-		mes "[Arcade Owner]";
-		mes "If you are the first to yell";
-		mes "the word, ''Bingo,'' you'll";
-		mes "win! But if someone beats you";
-		mes "to it, then it can't be helped.";
-		mes "Anyway, it costs 1,000 zeny";
-		mes "to play each bingo game~";
+		mes "[遊樂場老闆]";
+		mes "如果您是第一個喊";
+		mes "這個詞，''賓果，''您會";
+		mes "贏！ 但如果有人擊敗您";
+		mes "沒辦法。";
+		mes "無論如何，玩每一場賓果遊戲";
+		mes "需要花費 1,000 Zeny~";
 		close;
 	case 2:
-		mes "[Arcade Owner]";
-		mes "Ah, if you want to join a";
-		mes "bingo game, enter the right";
-		mes "door. There must be at least";
-		mes "5 people to play a game, so";
-		mes "you may need to wait until";
-		mes "that requirement is fulfilled.";
+		mes "[遊樂場老闆]";
+		mes "啊，如果您想加入";
+		mes "賓果遊戲，請進入右邊";
+		mes "的門。 必須至少有";
+		mes "5 人才能玩遊戲，所以";
+		mes "您可能需要等到";
+		mes "滿足該要求為止。";
 		next;
-		mes "[Arcade Owner]";
-		mes "If you just want to";
-		mes "watch the bingo game,";
-		mes "then you may enter the";
-		mes "left door as a spectator";
-		mes "in the Bingo Room.";
+		mes "[遊樂場老闆]";
+		mes "如果您只是想";
+		mes "觀看賓果遊戲，";
+		mes "那麼您可以進入";
+		mes "左側的門作為賓果室中的";
+		mes "觀眾。";
 		close;
 	case 3:
-		mes "[Arcade Owner]";
-		mes "When you win a bingo";
-		mes "game, you will be rewarded";
-		mes "with ''Marvelous Medals,''";
-		mes "which can only be used within";
-		mes "this arcade. You also can't trade medals with other players.";
+		mes "[遊樂場老闆]";
+		mes "當您贏得賓果遊戲";
+		mes "時，您將獲得";
+		mes "“精美勳章”作為獎勵，";
+		mes "只能在";
+		mes "這個遊樂場內使用。您也不能與其他玩家交易勳章。";
 		next;
-		mes "[Arcade Owner]";
-		mes "You usually get 1 Marvelous";
-		mes "Medal for winning a bingo game,";
-		mes "but you can win 50 at one time";
-		mes "under special conditions. You";
-		mes "can also play Monster Racing";
-		mes "games to win more medals.";
+		mes "[遊樂場老闆]";
+		mes "您通常會獲得 1 個精美";
+		mes "勳章以換取贏得賓果遊戲，";
+		mes "但在特殊情況下，您可以一次贏得 50 個";
+		mes "。";
+		mes "您也可以玩魔物賽跑";
+		mes "遊戲以贏得更多勳章。";
 		next;
-		mes "[Arcade Owner]";
-		mes "Collect as many Marvelous";
-		mes "Medals as you can, and trade";
-		mes "them for products in the Monster Racing Arena. I hear there's also";
-		mes "a place in Einbroch where you can use them, but I wouldn't know.";
+		mes "[遊樂場老闆]";
+		mes "收集盡可能多的精美";
+		mes "勳章，並在魔物賽跑競技場";
+		mes "中將它們換成產品。 我聽說在艾音布羅克也有一個地方可以使用它們，但我不知道。";
 		close;
 	}
 }

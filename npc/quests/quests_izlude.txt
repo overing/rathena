@@ -20,79 +20,79 @@
 //============================================================
 -	script	::Edgar_izlude	-1,{
 	if (MISC_QUEST & 16) {
-		mes "[Edgar]";
-		mes "So are you heading to Alberta again? Let me give you the same discount and only charge 250 Zeny, just like the last time.";
-		mes "How's that sound?";
+		mes "[埃德加]";
+		mes "所以你又要前往艾爾貝塔了嗎？讓我給你一樣的折扣，只收 250 Zeny，就像上次一樣。";
+		mes "聽起來如何？";
 		next;
-		if (select("Alrighty~!:Why are you being so nice to me?!") == 1) {
+		if (select("好喔～！:你為什麼對我這麼好？！") == 1) {
 			if (Zeny < 250) {
-				mes "[Edgar]";
-				mes "Um...";
-				mes "This isn't";
-				mes "enough money.";
-				mes "Why don't you go";
-				mes "get some more cash?";
+				mes "[埃德加]";
+				mes "嗯...";
+				mes "這";
+				mes "錢不夠。";
+				mes "你何不去";
+				mes "賺更多錢？";
 				close ;
 			}
 			set Zeny, Zeny-250;
 			warp "alberta",195,164;
 			end;
 		}
-		mes "[Edgar]";
-		mes "It's just the way I am. That, and your devilish smile reminds me of my beloved blond haired son who left home years ago to become a Sailor on his own ship. Bless his soul, wherever he is.";
+		mes "[埃德加]";
+		mes "這就是我的為人。還有，你那迷人的微笑讓我想起我那親愛的金髮兒子，他多年前離家出走，成為自己船上的水手。願他安息，無論他在哪裡。";
 		close;
 	}
-	mes "[Edgar]";
-	mes "My town, Izlude, is connected to Alberta by the harbor in the West. There is so much traffic between us, I almost become an Albertian.  Hehehe~";
+	mes "[埃德加]";
+	mes "我的城鎮，伊茲魯德，透過西邊的港口與艾爾貝塔相連。我們之間的交通非常繁忙，我幾乎要變成艾爾貝塔人了。呵呵呵～";
 	next;
-	mes "[Edgar]";
-	mes "There's this guy I know pretty well, Phelix, who lives in Alberta. That guy is really stingy... He charges for everything!";
+	mes "[埃德加]";
+	mes "我認識一個人，菲力克斯，他住在艾爾貝塔。那傢伙真的很吝嗇... 他什麼都要收費！";
 	next;
-	mes "[Edgar]";
-	mes "But he's really a nice guy and likes helping other people. He has a good heart and will give you his support if you meet his price.";
+	mes "[埃德加]";
+	mes "但他真的是個好人，喜歡幫助其他人。他心地善良，如果你滿足他的價格，他會給你支持。";
 	next;
-	mes "[Edgar]";
-	mes "Lately, people in Alberta say that he is really trying to help folks and that his demand for Jellopies is just a coverup.  Well, you should take a look at what he has to offer.";
+	mes "[埃德加]";
+	mes "最近，艾爾貝塔的人們說他真的很努力地幫助人們，而且他對果凍的需求只是一個掩飾。嗯，你應該看看他能提供什麼。";
 	next;
-	if (select("Can you tell me how to get to Alberta?:End Conversation") == 1) {
-		mes "[Edgar]";
-		mes "Huh? Well, you can use your feet and just walk.  But if you have money, I'd like to suggest that you take a ship.";
+	if (select("你可以告訴我如何前往艾爾貝塔嗎？:結束對話") == 1) {
+		mes "[埃德加]";
+		mes "蛤？嗯，你可以用你的雙腳走過去。但如果你有錢，我建議你搭船。";
 		next;
-		if (select("Okay, gotcha.:But I'm sick of walking and I'm broke!") == 1) {
-			mes "[Edgar]";
-			mes "Alrighty, take care~";
+		if (select("好的，知道了。:但是我厭倦走路而且我身無分文！") == 1) {
+			mes "[埃德加]";
+			mes "好喔，再見～";
 			close;
 		}
-		mes "[Edgar]";
-		mes "Okay...";
-		mes "You don't want to walk AND you've got no cash, but you still want to go there? Oh geez...";
+		mes "[埃德加]";
+		mes "好吧...";
+		mes "你不想走路而且你身無分文，但你還是想去那裡？喔，老天...";
 		next;
-		mes "[Edgar]";
-		mes "Fine fine. Me, being the captain of a ship, can afford to bring you there at a lower price. How does 250 Zeny sound?";
+		mes "[埃德加]";
+		mes "好吧好吧。我身為一艘船的船長，可以給你一個較低的價格。250 Zeny 怎麼樣？";
 		next;
-		if (select("Alrighty~!:Bah, what a rip off!!") == 1) {
+		if (select("好喔～！:呸，真是敲竹槓！！") == 1) {
 			set MISC_QUEST,MISC_QUEST | 16;
 			if (Zeny < 250) {
-				mes "[Edgar]";
-				mes "Um...";
-				mes "This isn't";
-				mes "enough money.";
-				mes "Go and get";
-				mes "some more.";
+				mes "[埃德加]";
+				mes "嗯...";
+				mes "這";
+				mes "錢不夠。";
+				mes "去";
+				mes "賺更多錢。";
 				close;
 			}
 			set Zeny, Zeny-250;
 			warp "alberta",195,164;
 			end;
 		}
-		mes "[Edgar]";
-		mes "Boy oh boy,";
-		mes "if you think";
-		mes "that's a rip off...";
+		mes "[埃德加]";
+		mes "我的老天，";
+		mes "如果你認為";
+		mes "那是敲竹槓...";
 		close;
 	}
-	mes "[Edgar]";
-	mes "Yeah, alright.";
-	mes "See you later~";
+	mes "[埃德加]";
+	mes "好，好吧。";
+	mes "再見～";
 	close;
 }

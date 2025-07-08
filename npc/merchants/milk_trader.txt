@@ -19,56 +19,57 @@
 //= 1.5 Fixed missed variable. (bugreport:1523) [L0ne_W0lf]
 //============================================================
 
-prontera,73,140,0	script	Milk Vendor	86,{
+prontera,73,140,0	script	牛奶販賣員	86,{
 	if (checkweight(1201,1) == 0) {
-		mes "^3355FFJust a minute!";
-		mes "I can't offer any of my";
-		mes "services to you because";
-		mes "you're carrying too much";
-		mes "stuff. Put your extra items in";
-		mes "Kafra Storage and come again~";
+		mes "^3355FF請稍等一下!";
+		mes "我無法為您提供任何";
+		mes "服務，因為您";
+		mes "攜帶了太多的";
+		mes "東西。請將多餘的物品放入";
+		mes "卡普拉倉庫再回來吧~";
 		close;
 	}
-	mes "[Milk Vendor]";
-	mes "Hey, hey...";
-	mes "If you bring me";
-	mes "1 Empty Bottle and";
-	mes "15 Zeny, I'll exchange";
-	mes "them for 1 Milk. How";
-	mes "does that sound?";
+	mes "[牛奶販賣員]";
+	mes "嘿，嘿...";
+	mes "如果你帶給我";
+	mes "1 個空瓶和";
+	mes "15 Zeny，我會把它們";
+	mes "換成 1 個牛奶。 聽起來";
+	mes "如何?";
 	next;
-	if (select("Exchange all empty bottles.:Cancel") == 1) {
+	if (select("兌換所有空瓶。:取消") == 1) {
 		if (countitem(713) <= 0) {
-			mes "[Milk Vendor]";
-			mes "Hey...";
-			mes "You don't have";
-			mes "any Empty Bottles.";
-			mes "I can't really give you";
-			mes "this milk any other";
-			mes "way, you know...";
+			mes "[牛奶販賣員]";
+			mes "嘿...";
+			mes "你沒有";
+			mes "任何空瓶。";
+			mes "我沒辦法";
+			mes "用其他方式給你";
+			mes "這牛奶，你知道...";
 			close;
 		}
 		set .@bottles,countitem(713);
 		set .@total_weight,.@bottles * 50;
 		set .@total_cost,.@bottles * 15;
 		if (Zeny < .@Total_cost) {
-			mes "[Milk Vendor]";
-			mes "Oh, whoa~!";
-			mes "You don't have enough";
-			mes "zeny to exchange all";
-			mes "these Empty Bottles for";
-			mes "Milk. You need to have";
-			mes "at least " + .@total_cost + " zeny.";
+			mes "[牛奶販賣員]";
+			mes "哦，哇~!";
+			mes "你沒有足夠的";
+			mes "zeny 來兌換所有";
+			mes "這些空瓶換";
+			mes "牛奶。你需要至少有";
+			mes "至少 " + .@total_cost + " zeny。";
 			close;
 		}
 		if (MaxWeight - Weight < .@total_weight) {
-			mes "[Milk Vendor]";
-			mes "Hmm...";
-			mes "Would you make";
-			mes "a little more room";
-			mes "in your inventory";
-			mes "before I give you";
-			mes "all of this milk?";
+			mes "[牛奶販賣員]";
+			mes "嗯...";
+			mes "在你給我";
+			mes "所有這些牛奶之前";
+			mes "你可以在你的";
+			mes "物品欄裡";
+			mes "多騰出一些空間";
+			mes "嗎？";
 			close;
 		}
 		set Zeny, Zeny-.@total_cost;

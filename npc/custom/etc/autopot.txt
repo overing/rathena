@@ -125,9 +125,9 @@ OnCommand:
 				}
 			}
 			if(.@count){
-				mes "[ Auto-Potion ]";
-				mes "Select a " + strtoupper(.@command$[0]) + " item.";
-				.@select = select(.@menu$ + "   ^777777Cancel^000000") - 1;
+				mes "[ 自動藥水 ]";
+				mes "選擇一個 " + strtoupper(.@command$[0]) + " 物品。";
+				.@select = select(.@menu$ + "   ^777777取消^000000") - 1;
 				if (.@select != .@count)
 					callsub L_Start,.@command$[0],.@items[.@select];
 				close2;

@@ -12,38 +12,38 @@
 //= 1.1 Replaced effect numerics with constants. [Samuray22]
 //============================================================
 
-prontera,146,92,3	script	Cellerb	58,{
-	mes "[Staff Idul Fitri]";
+prontera,146,92,3	script	塞勒布	58,{
+	mes "[齋戒月職員]";
 	if((gettime(DT_MONTH)==OCTOBER && (gettime(DT_DAYOFMONTH)==24 || gettime(DT_DAYOFMONTH)==25))==0) {
-		mes "Congratulation! Celebrate Feast Day Of Ramadan Idul Fitri 1427 H.";
+		mes "恭喜! 慶祝齋戒月開齋節1427 H.";
 		specialeffect EF_SANDMAN;
 		close;
 	}
-	mes "Haii......^FF8800"+strcharinfo(0)+"^000000!!";
-	mes "First day of Idul Fitri has arrived.";
-	mes "Congratulation celebrate him.";
-	mes "There is event special today.";
+	mes "嗨......^FF8800"+strcharinfo(0)+"^000000!!";
+	mes "開齋節的第一天到了。";
+	mes "恭喜慶祝。";
+	mes "今天有特別的活動。";
 	next;
-	mes "[Staff Idul Fitri]";
-	mes "Event today.....^009500Idul Fitri Quest!^000000";
+	mes "[齋戒月職員]";
+	mes "今天的活動.....^009500開齋節任務!^000000";
 	next;
-	mes "[Staff Idul Fitri]";
-	mes "If you interest to follow this event, I will cook it to you.";
+	mes "[齋戒月職員]";
+	mes "如果您有興趣參與這個活動，我會告訴您。";
 	next;
-	switch(select("Allright. I like that!!","Next time.... Thanks.")){
+	switch(select("好的。我喜歡!!","下次吧.... 謝謝。")){
 	case 1:
-		mes "[Staff Idul Fitri]";
-		mes "I have something that might interest you.";
-		mes "I need all of the following items:";
-		mes "^D5A500Ketupat Sayur Ingredient :^000000";
-		mes "^00B6FF~5 Ketupat, 5 Carrot~,^000000";
-		mes "^CC6633~5 Sweet Potato, 10 Meat~,^000000";
-		mes "^000088~2 Green Herb, 5 Stem~.^000000";
+		mes "[齋戒月職員]";
+		mes "我有些東西可能會讓您感興趣。";
+		mes "我需要以下所有物品：";
+		mes "^D5A500Ketupat Sayur 食材 :^000000";
+		mes "^00B6FF~5 Ketupat, 5 紅蘿蔔~,^000000";
+		mes "^CC6633~5 地瓜, 10 肉~,^000000";
+		mes "^000088~2 綠色藥草, 5 莖~.^000000";
 		next;
-		mes "[Staff Idul Fitri]";
+		mes "[齋戒月職員]";
 		if ( (countitem(552)<5 || countitem(515)<5 ||countitem(516)<5 || countitem(517)<10 || countitem(511)<2 || countitem(905)<5) ) { 
-			mes "You don't have enough items.";
-			mes "Come back when you have them all.";
+			mes "您的物品不足。";
+			mes "當您擁有所有物品時再回來。";
 			close;
 		}
 		delitem 552,5;
@@ -52,21 +52,21 @@ prontera,146,92,3	script	Cellerb	58,{
 		delitem 517,10;
 		delitem 511,2;
 		delitem 905,5;
-		mes "I see you already have all the items you need.";
-		mes "Just a moment, please!!";
+		mes "我看到您已經擁有您需要的所有物品。";
+		mes "請稍等片刻!!";
 		next;
-		mes "^009500-Plupping snapping bubbling~^000000";
-		mes "^009500-Clinking clingking~^000000";
-		mes "^009500-Clang clang~^000000";
+		mes "^009500-噗通啪啪起泡~^000000";
+		mes "^009500-叮噹噹噹~^000000";
+		mes "^009500-鏘鏘~^000000";
 		getitem 583,1;
 		next;
-		mes "[Staff Idul Fitri]";
-		mes "We appreciate your participation in this special event.";
+		mes "[齋戒月職員]";
+		mes "我們感謝您參與這個特別活動。";
 		emotion ET_THANKS;
 		close;
 	case 2:
-		mes "[Staff Idul Fitri]";
-		mes "Oh well, maybe you will participate in tommorow's quest.";
+		mes "[齋戒月職員]";
+		mes "喔，好吧，也許您會參與明天的任務。";
 		emotion ET_SCRATCH;
 		close;
 	}

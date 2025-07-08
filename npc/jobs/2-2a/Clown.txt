@@ -21,63 +21,63 @@ valkyrie,53,54,3	script	Minstrel#Valkyrie	741,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[Minstrel]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[吟遊詩人]";
+			mes "恭喜你。";
+			mes "向戰士們致敬！";
 			close;
 		}
-		mes "[Minstrel]";
-		mes "Do you want to";
-		mes "sing a song with me?";
+		mes "[吟遊詩人]";
+		mes "你想";
+		mes "跟我一起唱歌嗎？";
 		mes "Sha la la la la~";
 		close;
 	}
 	else if (ADVJOB == Job_Clown && Class == Job_Archer_High && JobLevel > 39) {
-		mes "[Minstrel]";
-		mes "The dreary world";
-		mes "of mortals is in need";
-		mes "of more cheerful song.";
-		mes "Will you bring it to them";
-		mes "and turn the tide in the";
-		mes "battle against evil?";
+		mes "[吟遊詩人]";
+		mes "凡人的";
+		mes "沉悶世界需要";
+		mes "更多歡快的歌曲。";
+		mes "你會把它們帶給他們";
+		mes "並扭轉";
+		mes "對抗邪惡的戰鬥嗎？";
 		next;
-		mes "[Minstrel]";
-		mes "Will you do this";
-		mes "for Midgard...";
-		mes "As a Minstrel?";
+		mes "[吟遊詩人]";
+		mes "你願意為了";
+		mes "米德加爾特...";
+		mes "成為一名吟遊詩人嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[Minstrel]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不要。:是的。") == 1) {
+			mes "[吟遊詩人]";
+			mes "當你準備好的時候，";
+			mes "隨時回來。";
+			mes "向戰士們致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[Minstrel]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[吟遊詩人]";
+			mes "你仍然可以學習更多技能。請在使用";
+			mes "返回我之前，用完你所有剩餘的技能點。";
 			close;
 		}
 		jobchange Job_Clown;
 		set ADVJOB,0;
-		mes "[Minstrel]";
-		mes "Congratulations!";
-		mes "As a Minstrel, your";
-		mes "your songs will bring";
-		mes "hope to your allies, and";
-		mes "desperation to your foes.";
+		mes "[吟遊詩人]";
+		mes "恭喜你！";
+		mes "身為一名吟遊詩人，你的";
+		mes "歌曲將會為你的盟友帶來";
+		mes "希望，以及為你的敵人帶來";
+		mes "絕望。";
 		close;
 	}
-	mes "[Minstrel]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[吟遊詩人]";
+	mes "歡迎";
+	mes "來到英靈殿，";
+	mes "榮譽大廳。";
 	next;
-	mes "[Minstrel]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[吟遊詩人]";
+	mes "請在這裡";
+	mes "好好放鬆";
+	mes "享受。";
+	mes "向戰士們致敬！";
 	close;
 }

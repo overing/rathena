@@ -10,17 +10,17 @@
 
 dali02,43,129,5	script	Unpleasant Royal Guard#	4_M_SAKRAYROYAL,{
 	if (BaseLevel < 120) {
-		mes "[Unpleasant Royal Guard]";
-		mes "Although I need help with a task, you are not strong enough to assist me, noob~!";
+		mes "[令人不快的皇家守衛]";
+		mes "雖然我需要幫助執行任務，但你還不夠強大來協助我，菜鳥～！";
 		next;
-		mes "[Unpleasant Royal Guard]";
-		mes "Come back later when you have done some training and are at least level 120!";
+		mes "[令人不快的皇家守衛]";
+		mes "等你完成一些訓練並且至少達到 120 級後再回來！";
 		close;
 	}
 	.@party_id = getcharid(1);
 	if (is_party_leader() == false || .@party_id < 1) {
-		mes "[Unpleasant Royal Guard]";
-		mes "I can only open the secret passage for party leaders. Please have your party leader talk to me.";
+		mes "[令人不快的皇家守衛]";
+		mes "我只能為隊長開啟秘密通道。請讓你的隊長與我交談。";
 		close;
 	}
 	switch( checkquest(1261,PLAYTIME) ) {
@@ -28,58 +28,58 @@ dali02,43,129,5	script	Unpleasant Royal Guard#	4_M_SAKRAYROYAL,{
 		break;
 	case 0:
 	case 1:
-		mes "[Unpleasant Royal Guard]";
-		mes "Have you found the princess yet?! Is she safe?";
+		mes "[令人不快的皇家守衛]";
+		mes "你找到公主了嗎？！她安全嗎？";
 		close;
 	case 2:
-		mes "[Unpleasant Royal Guard]";
-		mes "The monsters around the secret passage have disappeared. Now is our chance to save the princess!";
+		mes "[令人不快的皇家守衛]";
+		mes "秘密通道周圍的怪物已經消失了。現在是我們拯救公主的機會！";
 		erasequest 1261;// Cursed Swordman
 		close;
 	}
-	mes "[Unpleasant Royal Guard]";
-	mes "I need help, even from the likes of you.";
+	mes "[令人不快的皇家守衛]";
+	mes "我需要幫助，即使是像你這樣的人。";
 	next;
-	mes "[Unpleasant Royal Guard]";
-	mes "In the middle of battle the princess disappeared while I was guarding the palace.";
+	mes "[令人不快的皇家守衛]";
+	mes "在戰鬥中，當我在守衛宮殿時，公主消失了。";
 	next;
-	mes "[Unpleasant Royal Guard]";
-	mes "You run ahead and I will catch up. We must save her.";
+	mes "[令人不快的皇家守衛]";
+	mes "你先跑，我會趕上的。我們必須拯救她。";
 	next;
-	if (select( "I will help.", "This is not a good time." ) == 2) {
-		mes "[Unpleasant Royal Guard]";
-		mes "Even now all the royal guards are fighting and dying from the monsters.";
+	if (select( "我會幫忙。", "現在不是好時機。" ) == 2) {
+		mes "[令人不快的皇家守衛]";
+		mes "即使現在，所有的皇家守衛都在與怪物戰鬥並死去。";
 		next;
-		mes "[Unpleasant Royal Guard]";
-		mes "We must, no matter how much fear grips our hearts, save the princess!";
+		mes "[令人不快的皇家守衛]";
+		mes "我們必須，無論恐懼如何抓住我們的心，拯救公主！";
 		close;
 	}
 	instance_create("Ghost Palace");
-	mes "[Unpleasant Royal Guard]";
-	mes "Thank you..";
-	mes "I will open the secret passage to the ^0000ffGhost Palace^000000.";
-	mes "Please be ready!";
+	mes "[令人不快的皇家守衛]";
+	mes "謝謝你..";
+	mes "我將打開通往 ^0000ff幽靈宮殿^000000 的秘密通道。";
+	mes "請準備好！";
 	close;
 }
 
 dali02,40,134,5	script	Interdimensional Device#dk	PORTAL,{
 	if (BaseLevel < 120) {
-		mes "[Unpleasant Royal Guard]";
-		mes "Althought I need help with a task, you are not strong enough to assist me, noob~!";
+		mes "[令人不快的皇家守衛]";
+		mes "雖然我需要幫助執行任務，但你還不夠強大來協助我，菜鳥～！";
 		next;
-		mes "[Unpleasant Royal Guard]";
-		mes "Come back later when you have done some training and are at least level 120!";
+		mes "[令人不快的皇家守衛]";
+		mes "等你完成一些訓練並且至少達到 120 級後再回來！";
 		close;
 	}
-	mes "[Unpleasant Royal Guard]";
-	mes "I can see the secret passage into the palace. Are you ready to save the princess?!";
+	mes "[令人不快的皇家守衛]";
+	mes "我可以看到通往宮殿的秘密通道。你準備好拯救公主了嗎？！";
 	next;
-	if (select( "Enter", "Stop" ) == 2) {
-		mes "[Unpleasant Royal Guard]";
-		mes "Even now all the royal guards are fighting and dying from the monsters.";
+	if (select( "進入", "停止" ) == 2) {
+		mes "[令人不快的皇家守衛]";
+		mes "即使現在，所有的皇家守衛都在與怪物戰鬥並死去。";
 		next;
-		mes "[Unpleasant Royal Guard]";
-		mes "We must, no matter how much fear grips our hearts, save the princess!";
+		mes "[令人不快的皇家守衛]";
+		mes "我們必須，無論恐懼如何抓住我們的心，拯救公主！";
 		close;
 	}
 	switch( checkquest(1261,PLAYTIME) ) {
@@ -87,34 +87,34 @@ dali02,40,134,5	script	Interdimensional Device#dk	PORTAL,{
 		break;
 	case 0:
 	case 1:
-		mes "[Unpleasant Royal Guard]";
-		mes "The monsters that attacked the palace are wandering around the secret entrance. It would be very bad if they spotted us... Please wait.";
+		mes "[令人不快的皇家守衛]";
+		mes "攻擊宮殿的怪物在秘密入口附近徘徊。如果他們發現我們，那將非常糟糕……請稍等。";
 		next;
-		mes "When the time limit for the entrance is up";
-		mes "let's try to re-enter.";
+		mes "當入口的時間限制結束時";
+		mes "讓我們嘗試重新進入。";
 		close;
 	case 2:
-		mes "^0000ffThe time limit for entering to the Curse of the Swordsman is finished. Please try to talk to the Unpleasent Royal Guard again..^000000";
+		mes "^0000ff進入劍士詛咒的時間限制已結束。請嘗試再次與令人不快的皇家守衛交談..^000000";
 		erasequest 1261;// Cursed Swordman
 		close;
 	}
 	.@party_id = getcharid(1);
 	if (is_party_leader() == false || .@party_id < 1) {
-		mes "[Unpleasant Royal Guard]";
-		mes "I can only open the secret passage for party leaders. Please have your party leader talk to me.";
+		mes "[令人不快的皇家守衛]";
+		mes "我只能為隊長開啟秘密通道。請讓你的隊長與我交談。";
 		close;
 	}
 
 	.@md_name$ = "Ghost Palace";
 	switch( instance_enter(.@md_name$) ) {
 	case IE_OTHER:
-		mes "An unknown error occurred.";
+		mes "發生了未知的錯誤。";
 		close;
 	case IE_NOINSTANCE:
-		mes "^ff0000Inside the devices you see a dark hole. If you wish to enter you must to talk to the Unpleasent Royal Guard first.^000000";
+		mes "^ff0000在這些裝置裡面，你看到一個黑暗的洞穴。如果你想進入，你必須先與令人不快的皇家守衛交談。^000000";
 		close;
 	case IE_NOMEMBER:
-		mes "Only registered members can enter the " + .@md_name$ + " instance.";
+		mes "只有註冊會員才能進入 " + .@md_name$ + " 副本。";
 		close;
 	case IE_OK:
 		mapannounce "dali", "" + strcharinfo(0) + " of the party, " + getpartyname(.@party_id) + ", is entering the Ghost Palace.", bc_map, 0x00ff99;
@@ -126,24 +126,24 @@ dali02,40,134,5	script	Interdimensional Device#dk	PORTAL,{
 
 // 1st floor
 1@spa,41,204,5	script	King#dk	4_M_RUSKING,{
-	mes "[King]";
-	mes "You are hereby appointed as the personal guard to Princess Tiara. I trust your loyalty above all else.";
+	mes "[國王]";
+	mes "我在此任命你為提亞拉公主的私人護衛。我對你的忠誠高於一切。";
 	npctalk "King: You are hereby appointed as the personal guard to Princess Tiara. I trust your loyalty above all else.";
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "I will protect the princess with my life.";
+	mes "[可怕的皇家守衛]";
+	mes "我將用我的生命保護公主。";
 	npctalk "Lurid Royal Guard: I will protect the princess with my life.", instance_npcname("Lurid Royal Guard#dk");
 	next;
-	mes "[King]";
-	mes "The marriage arrangements are going as planned. The prince is here to meet with the princess.";
+	mes "[國王]";
+	mes "婚姻安排正在按計畫進行。王子來此與公主會面。";
 	npctalk "King: The marriage arrangements are going as planned. The prince is here to meet with the princess.";
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "...Yes, Your Majesty.";
+	mes "[可怕的皇家守衛]";
+	mes "……是的，陛下。";
 	npctalk "Lurid Royal Guard: ...Yes, Your Majesty.", instance_npcname("Lurid Royal Guard#dk");
 	next;
-	mes "[King]";
-	mes "My gods, there are monsters in the castle! Get rid of them now!";
+	mes "[國王]";
+	mes "我的天啊，城堡裡有怪物！現在就消滅它們！";
 	npctalk "King: My gods, there are monsters in the castle! Get rid of them now!";
 	close2;
 	donpcevent instance_npcname("#gp_control_1") + "::OnStart";
@@ -264,41 +264,41 @@ OnMyMobDead3:
 1@spa,132,122,7	script	Lurid Royal Guard#dk1	4_M_SAKRAYROYAL,{
 	.@tiara$ = instance_npcname("Princess Tiara#dk");
 	cutin "npc-tiara.bmp",3;
-	mes "[Lurid Royal Guard]";
-	mes "Your Highness, the King has invited a prince from a neighboring country to be your betrothed. Be ready to meet him...";
+	mes "[可怕的皇家守衛]";
+	mes "殿下，國王邀請了鄰國的一位王子成為您的未婚夫。準備好與他見面吧...";
 	npctalk "Lurid Royal Guard: Your Highness, the King has invited a prince from a neighboring country to be your betrothed. Be ready to meet him...";
 	next;
-	mes "[Princess Tiara]";
-	mes "If...If a marriage is arranged what should I do?";
+	mes "[提亞拉公主]";
+	mes "如果...如果安排了婚姻，我該怎麼辦？";
 	npctalk "Princess Tiara: If...If a marriage is arranged what should I do?", .@tiara$;
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "The only thing I can do is protect you from physical harm.";
+	mes "[可怕的皇家守衛]";
+	mes "我唯一能做的就是保護您免受身體傷害。";
 	npctalk "Lurid Royal Guard: The only thing I can do is protect you from physical harm.";
 	next;
-	mes "[Princess Tiara]";
-	mes "Then, what can I do?";
+	mes "[提亞拉公主]";
+	mes "那麼，我能做什麼？";
 	npctalk "Princess Tiara: Then, what can I do?", .@tiara$;
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "You must decide that for yourself Your Highness...";
+	mes "[可怕的皇家守衛]";
+	mes "您必須自己決定，殿下……";
 	npctalk "Lurid Royal Guard: You must decide that for yourself Your Highness...";
 	next;
-	mes "[Princess Tiara]";
-	mes "Would it be easier for you if I were married and sent off to another country?";
+	mes "[提亞拉公主]";
+	mes "如果我結婚並被送到另一個國家，對您來說會更容易嗎？";
 	npctalk "Princess Tiara: Would it be easier for you if I were married and sent off to another country?", .@tiara$;
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "I will always stand by you and protect you forever.";
+	mes "[可怕的皇家守衛]";
+	mes "我將永遠站在您身邊，永遠保護您。";
 	npctalk "Lurid Royal Guard: I will always stand by you and protect you forever.";
 	cutin "npc-tiara.bmp",255;
 	next;
-	mes "[Princess Tiara]";
-	mes "Monsters have gotten inside the castle? Please, protect me!";
+	mes "[提亞拉公主]";
+	mes "怪物進入了城堡？請保護我！";
 	npctalk "Princess Tiara: Monsters have gotten inside the castle? Please, protect me!", .@tiara$;
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "Stay behind me. Let's go!";
+	mes "[可怕的皇家守衛]";
+	mes "待在我身後。我們走吧！";
 	npctalk "Lurid Royal Guard: Stay behind me. Let's go!";
 	close2;
 	donpcevent instance_npcname("#gp_control_2") + "::OnStart";
@@ -364,20 +364,20 @@ OnMyMobDead3:
 
 // 3rd floor
 1@spa,32,54,1	script	King#dk1	4_M_RUSKING,{
-	mes "[King]";
-	mes "It was you who brought the monsters here! You want to get rid of me and have the princess for yourself?";
+	mes "[國王]";
+	mes "是你把怪物帶到這裡的！你想擺脫我，自己擁有公主嗎？";
 	npctalk "King: It was you who brought the monsters here! You want to get rid of me and have the princess for yourself?";
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "It is a trap Your Majesty! You must trust me!";
+	mes "[可怕的皇家守衛]";
+	mes "這是一個陷阱，陛下！您必須相信我！";
 	npctalk "Lurid Royal Guard: It is a trap Your Majesty! You must trust me!", instance_npcname("Lurid Royal Guard#dk2");
 	next;
-	mes "[King]";
-	mes "Shut up! You've betrayed me! I trusted you... you must pay for your disgrace.";
+	mes "[國王]";
+	mes "閉嘴！你背叛了我！我信任你……你必須為你的恥辱付出代價。";
 	npctalk "King: Shut up! You've betrayed me! I trusted you... you must pay for your disgrace.";
 	next;
-	mes "[King]";
-	mes "You will suffer for the rest of your life.";
+	mes "[國王]";
+	mes "你將在餘生中受苦。";
 	npctalk "King: You will suffer for the rest of your life.";
 	close2;
 	disablenpc instance_npcname("3rd floor in the palace");
@@ -417,10 +417,10 @@ OnTimer23000:
 	npctalk "Ominous Voice: I can give you unlimited power. If you make a pact with me.";
 	end;
 OnTimer28000:
-	npctalk "Lurid Royal Guard: I..I...", instance_npcname("Lurid Royal Guard#dk3");
+	npctalk "黯淡的皇家守衛: 我..我...", instance_npcname("Lurid Royal Guard#dk3");
 	end;
 OnTimer33000:
-	npctalk "Magic Sword Tartanos: Kukuku... What do you want boy?";
+	npctalk "魔劍 塔諾斯: 呼呼呼... 小子，你想要什麼？";
 	end;
 OnTimer34000:
 	stopnpctimer;
@@ -469,7 +469,7 @@ OnMyMobDead2:
 	}
 	end;
 OnAnnounce:
-	mapannounce 'map_spa$, "The passage on the 4th floor of the palace is open.", bc_map,0xFFFF00;
+	mapannounce 'map_spa$, "皇宮4樓的通道已開啟。", bc_map,0xFFFF00;
 	enablenpc instance_npcname("4th floor in the palace");
 	deltimer instance_npcname("#gp_control_3") + "::OnSpawn2";	// stop double spawn if timer is running
 	addtimer 2000, instance_npcname("#gp_control_3") + "::OnSpawn2";
@@ -479,67 +479,67 @@ OnSpawn2:
 	// 35 mobs
 	.@label$ = instance_npcname("#gp_control_3") + "::OnMyMobDead3";
 	monster 'map_spa$,67,46, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,62,48, "Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,57,46, "Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,51,48, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "Faithful royal guard...";
+	unittalk $@mobid[0], "忠心的皇家守衛...";
 	monster 'map_spa$,56,55, "Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,62,56, "Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,66,58, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You put your princess in grave danger...";
+	unittalk $@mobid[0], "你將你的公主置於極大的危險之中...";
 	monster 'map_spa$,66,64, "Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Faithful royal guard...";
+	unittalk $@mobid[0], "忠心的皇家守衛...";
 	monster 'map_spa$,62,65, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,57,67, "Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,49,66, "Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,44,66, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,45,20, "Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,38,20, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,32,20, "Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,51,22, "Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,26,34,"Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,21,37,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Faithful royal guard...";
+	unittalk $@mobid[0], "忠心的皇家守衛...";
 	monster 'map_spa$,18,39,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,21,45,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,23,49,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,25,54,"Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,29,54,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "You put your princess in grave danger...";
+	unittalk $@mobid[0], "你將你的公主置於極大的危險之中...";
 	monster 'map_spa$,56,39,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,61,36,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Faithful royal guard...";
+	unittalk $@mobid[0], "忠心的皇家守衛...";
 	monster 'map_spa$,66,38,"Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away quickly!";
+	unittalk $@mobid[0], "趕快逃離!";
 	monster 'map_spa$,42,54,"Wasted Friendship",2955,1, .@label$;	// OLD_FRIENDSHIP
-	unittalk $@mobid[0], "Run away!";
+	unittalk $@mobid[0], "快逃!";
 	monster 'map_spa$,35,54,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,43,60,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "Faithful royal guard...";
+	unittalk $@mobid[0], "忠心的皇家守衛...";
 	monster 'map_spa$,30,25,"Tarnished Oath",2954,1, .@label$;		// COLORLESS_VOW
-	unittalk $@mobid[0], "You put your princess in grave danger...";
+	unittalk $@mobid[0], "你將你的公主置於極大的危險之中...";
 	monster 'map_spa$,30,31,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
-	unittalk $@mobid[0], "You are trapped...";
+	unittalk $@mobid[0], "你被困住了...";
 	monster 'map_spa$,65,64, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
 	monster 'map_spa$,65,67, "Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
 	monster 'map_spa$,18,43,"Regretful Memory",2953,1, .@label$;	// CURSED_MEMORY
@@ -590,26 +590,26 @@ OnMyMobDead2:
 
 1@spa,199,214,1	script	Lurid Royal Guard#dk4	4_M_SAKRAYROYAL,{
 	.@prince$ = instance_npcname("Visiting Prince#dk");
-	mes "[Lurid Royal Guard]";
-	mes "Where is Princess Tiara?";
-	npctalk "Lurid Royal Guard: Where is Princess Tiara?";
+	mes "[黯淡的皇家守衛]";
+	mes "提亞拉公主在哪裡？";
+	npctalk "黯淡的皇家守衛: 提亞拉公主在哪裡？";
 	next;
-	mes "[Visiting Prince]";
-	mes "You are too late... but you brought what I was looking for. Thanks for your help.";
-	npctalk "Visiting Prince: You are too late... but you brought what I was looking for. Thanks for your help.", .@prince$;
+	mes "[來訪的王子]";
+	mes "太遲了...但你帶來了我一直在尋找的東西。感謝你的幫助。";
+	npctalk "來訪的王子: 太遲了...但你帶來了我一直在尋找的東西。感謝你的幫助。", .@prince$;
 	next;
-	mes "[Visiting Prince]";
-	mes "Cursed Magic Sword Tartanos! Are you ready to have a new master?";
-	npctalk "Visiting Prince: Cursed Magic Sword Tartanos! Are you ready to have a new master?", .@prince$;
+	mes "[來訪的王子]";
+	mes "被詛咒的魔劍塔諾斯！你準備好迎接新的主人了嗎？";
+	npctalk "來訪的王子: 被詛咒的魔劍塔諾斯！你準備好迎接新的主人了嗎？", .@prince$;
 	next;
 	cutin "tartanos.bmp",3;
-	mes "[Magic Sword Tartanos]";
-	mes "How dare you!";
-	npctalk "Magic Sword Tartanos: How dare you!", instance_npcname("Magic Sword Tartanos#dk2");
+	mes "[魔劍 塔諾斯]";
+	mes "你竟敢!";
+	npctalk "魔劍 塔諾斯: 你竟敢!", instance_npcname("Magic Sword Tartanos#dk2");
 	next;
-	mes "[Visiting Prince]";
-	mes "aah, aah !!!";
-	npctalk "Visiting Prince: Aah, aah!!!", .@prince$;
+	mes "[來訪的王子]";
+	mes "啊啊，啊啊 ！！!";
+	npctalk "來訪的王子: 啊啊，啊啊！！！", .@prince$;
 	donpcevent instance_npcname("#gp_control_5") + "::OnStart";
 	close2;
 	cutin "",255;
@@ -647,7 +647,7 @@ OnStart:
 OnMyMobDead:
 	if (mobcount('map_spa$, instance_npcname("#gp_control_5") + "::OnMyMobDead") < 1) {
 		deltimer instance_npcname("#gp_control_4") + "::OnSpawn1";	// stop double spawn if timer is running
-		mapannounce 'map_spa$, "The passage on the 5th floor of the palace is open.", bc_map,0xFFFF00;
+		mapannounce 'map_spa$, "皇宮5樓的通道已開啟。", bc_map,0xFFFF00;
 		disablenpc instance_npcname("4th floor in the palace");
 		enablenpc instance_npcname("5th floor of Palace");
 		enablenpc instance_npcname("Princess Tiara#dk1");
@@ -663,35 +663,35 @@ OnMyMobDead:
 // 5th floor
 1@spa,216,43,3	script	Princess Tiara#dk1	4_F_MAYSEL,{
 	.@guard$ = instance_npcname("Lurid Royal Guard#dk5");
-	mes "[Princess Tiara]";
-	mes "You kept your promise.";
-	npctalk "Princess Tiara: You kept your promise.";
+	mes "[提亞拉公主]";
+	mes "你遵守了你的承諾。";
+	npctalk "提亞拉公主: 你遵守了你的承諾。";
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "princess!";
-	npctalk "Lurid Royal Guard: Princess!", .@guard$;
+	mes "[黯淡的皇家守衛]";
+	mes "公主!";
+	npctalk "黯淡的皇家守衛: 公主!", .@guard$;
 	next;
 	cutin "npc-tiara.bmp",3;
-	mes "[Princess Tiara]";
-	mes "Thank you... now I can rest beside you...";
-	npctalk "Princess Tiara: Thank you... now I can rest beside you...";
+	mes "[提亞拉公主]";
+	mes "謝謝你...現在我可以在你身旁安息了...";
+	npctalk "提亞拉公主: 謝謝你...現在我可以在你身旁安息了...";
 	next;
-	mes "[Lurid Royal Guard]";
-	mes "No..No!!!!!";
-	npctalk "Lurid Royal Guard: No..No!!!!!", .@guard$;
+	mes "[黯淡的皇家守衛]";
+	mes "不..不!!!!!";
+	npctalk "黯淡的皇家守衛: 不..不!!!!!", .@guard$;
 	next;
-	mes "[The voice of Princess Tiara]";
-	mes "I want to be with you forever in peace...forever...";
-	npctalk "Princess Tiara: I want to be with you forever in peace...forever...";
+	mes "[提亞拉公主的聲音]";
+	mes "我想永遠與你和平地在一起...永遠...";
+	npctalk "提亞拉公主: 我想永遠與你和平地在一起...永遠...";
 	next;
 	cutin "b-tiara.BMP",3;
-	mes "[Lurid Royal Guard]";
-	mes "no.....Ahh ahh ahh!!!!~!";
-	npctalk "Lurid Royal Guard: no.....Ahh ahh ahh!!!!~!", .@guard$;
+	mes "[黯淡的皇家守衛]";
+	mes "不.....啊啊啊啊!!!!~! ";
+	npctalk "黯淡的皇家守衛: 不.....啊啊啊啊!!!!~! ", .@guard$;
 	next;
-	mes "[The voice of Princess Tiara]";
-	mes "I love you...";
-	npctalk "Princess Tiara: I love you...";
+	mes "[提亞拉公主的聲音]";
+	mes "我愛你...";
+	npctalk "提亞拉公主: 我愛你...";
 	cutin "",255;
 	close2;
 	donpcevent instance_npcname("#gp_control_6") + "::OnStart";
@@ -716,26 +716,26 @@ OnStart:
 	sleep 2000;
 	.@label$ = instance_npcname("#gp_control_6") + "::OnMyMobDead1";
 	monster 'map_spa$,217,52, "Forgotten Name" ,2957,1, .@label$;	// FORGOTTEN_NAME
-	unittalk $@mobid[0], "Wake up! look at us... We are monsters?";
+	unittalk $@mobid[0], "醒醒！看看我們... 我們是怪物嗎？";
 	monster 'map_spa$,190,21, "Tarnished Oath" ,2954,1, .@label$;	// COLORLESS_VOW
-	unittalk $@mobid[0], "Sakray killed the King and tried to kill us!";
+	unittalk $@mobid[0], "薩克萊殺了國王，並試圖殺了我們！";
 	monster 'map_spa$,198,49, "Tarnished Oath" ,2954,1, .@label$;	// COLORLESS_VOW
-	unittalk $@mobid[0], "What is this..??";
+	unittalk $@mobid[0], "這是什麼..??";
 	monster 'map_spa$,212,28, "Fatal Days" ,2958,1, .@label$;		// FATAL_DAYS
-	unittalk $@mobid[0], "Sakray killed a princess!";
+	unittalk $@mobid[0], "薩克雷殺了公主！";
 	end;
 OnMyMobDead1:
 	if (mobcount('map_spa$, instance_npcname("#gp_control_6") + "::OnMyMobDead1") < 1) {
 		sleep 2000;
 		.@label$ = instance_npcname("#gp_control_6") + "::OnMyMobDead2";
 		monster 'map_spa$,217,43, "Forgotten Name" ,2957,1, .@label$;	// FORGOTTEN_NAME
-		unittalk $@mobid[0], "Wake up! look at us... We are monsters?";
+		unittalk $@mobid[0], "醒醒！看看我們... 我們是怪物？";
 		monster 'map_spa$,193,24, "Forgotten Name" ,2957,1, .@label$;	// FORGOTTEN_NAME
-		unittalk $@mobid[0], "Sakray..?? why.....Sakray!";
+		unittalk $@mobid[0], "薩克雷...?? 為什麼.....薩克雷！";
 		monster 'map_spa$,216,59, "Tarnished Oath" ,2954,1, .@label$;	// COLORLESS_VOW
-		unittalk $@mobid[0], "Sakray killed the King and tried to kill us!";
+		unittalk $@mobid[0], "薩克雷殺了國王，還想殺了我們！";
 		monster 'map_spa$,197,57, "Fatal Days" ,2958,1, .@label$;		// FATAL_DAYS
-		unittalk $@mobid[0], "Sakray killed a princess!";
+		unittalk $@mobid[0], "薩克雷殺了公主！";
 	}
 	end;
 OnMyMobDead2:
@@ -743,20 +743,20 @@ OnMyMobDead2:
 		sleep 2000;
 		.@label$ = instance_npcname("#gp_control_6") + "::OnMyMobDead3";
 		monster 'map_spa$,193,39, "Forgotten Name" ,2957,1, .@label$;	// FORGOTTEN_NAME
-		unittalk $@mobid[0], "Wake up! look at us... We are monsters?";
+		unittalk $@mobid[0], "醒醒！看看我們... 我們是怪物？";
 		monster 'map_spa$,212,34, "Forgotten Name" ,2957,1, .@label$;	// FORGOTTEN_NAME
-		unittalk $@mobid[0], "Sakray..?? why.....Sakray!";
+		unittalk $@mobid[0], "薩克雷...?? 為什麼.....薩克雷！";
 		monster 'map_spa$,201,64, "Tarnished Oath" ,2954,1, .@label$;	// COLORLESS_VOW
-		unittalk $@mobid[0], "Sakray killed the King and tried to kill us!";
+		unittalk $@mobid[0], "薩克雷殺了國王，還想殺了我們！";
 		monster 'map_spa$,175,44, "Fatal Days" ,2958,1, .@label$;		// FATAL_DAYS
-		unittalk $@mobid[0], "Sakray killed a princess!";
+		unittalk $@mobid[0], "薩克雷殺了公主！";
 	}
 	end;
 OnMyMobDead3:
 	if (mobcount('map_spa$, instance_npcname("#gp_control_6") + "::OnMyMobDead3") < 1) {
 		sleep 2000;
 		monster 'map_spa$,200,45, "Torturous Redeemer" ,2961,1, instance_npcname("#gp_control_6") + "::OnMyMobDead4";	// E_TORTUROUS_REDEEMER
-		unittalk $@mobid[0], "Magic Sword Tartanos! I will destroy you if I can't have you... Oh no! How could this be?";
+		unittalk $@mobid[0], "魔劍塔諾斯！如果我得不到你，我就毀了你... 不！這怎麼可能？";
 		sleep 5000;
 		killmonster 'map_spa$, instance_npcname("#gp_control_6") + "::OnMyMobDead4";
 		enablenpc instance_npcname("Sakray#dk");
@@ -769,67 +769,67 @@ OnMyMobDead4:
 }
 
 1@spa,196,44,5	script	Sakray#dk	4_M_SAKRAY,{
-	mes "[Lurid Royal Guard]";
-	mes "Are you satisfied..? Magic Sword Tartanos?";
-	npctalk "Lurid Royal Guard: Are you satisfied..? Magic Sword Tartanos?";
+	mes "[路里德皇家衛隊]";
+	mes "你滿意了嗎..? 魔劍塔諾斯？";
+	npctalk "路里德皇家衛隊: 你滿意了嗎..? 魔劍塔諾斯？";
 	next;
-	mes "[Magic Sword Tartanos]";
-	mes "I need more blood..Sakray, offer me his blood.";
-	npctalk "Magic Sword Tartanos: I need more blood..Sakray, offer me his blood.", instance_npcname("Magic Sword Tartanos#dk3");
+	mes "[魔劍塔諾斯]";
+	mes "我需要更多的血..薩克雷，獻上他的血給我。";
+	npctalk "魔劍塔諾斯: 我需要更多的血..薩克雷，獻上他的血給我。", instance_npcname("Magic Sword Tartanos#dk3");
 	next;
-	mes "[Sakray]";
-	mes "Okay, that is good. A traveller. Did you see?";
-	npctalk "Sakray: Okay, that is good. A traveller. Did you see?";
-	next;
-	mes "[" + strcharinfo(0) + "]";
-	mes "Sakray, what do you want? Sympathy? Or is it a trap?";
-	unittalk getcharid(3), "" + strcharinfo(0) + " : Sakray, what do you want? Sympathy? Or is it a trap?";
-	next;
-	mes "[Sakray]";
-	mes "No... I do not need to make any effort to catch a novice.";
-	npctalk "Sakray: No... I do not need to make any effort to catch a novice.";
+	mes "[薩克雷]";
+	mes "好吧，很好。一個旅人。你看到了嗎？";
+	npctalk "薩克雷: 好吧，很好。一個旅人。你看到了嗎？";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "If so... then why...?";
-	unittalk getcharid(3), "" + strcharinfo(0) + " : If so... then why...?";
+	mes "薩克雷，你想要什麼？同情嗎？還是個陷阱？";
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 薩克雷，你想要什麼？同情嗎？還是個陷阱？";
+	next;
+	mes "[薩克雷]";
+	mes "不... 我不需要費任何力氣來抓住一個新手。";
+	npctalk "薩克雷: 不... 我不需要費任何力氣來抓住一個新手。";
+	next;
+	mes "[" + strcharinfo(0) + "]";
+	mes "如果是這樣... 那麼為什麼...?";
+	unittalk getcharid(3), "" + strcharinfo(0) + " : 如果是這樣... 那麼為什麼...?";
 	next;
 	cutin "cry-b.bmp",2;
-	mes "[Sakray]";
-	mes "I wanted to get rid of a piece of humanity inside of me through you.";
-	npctalk "Sakray: I wanted to get rid of a piece of humanity inside of me through you.";
+	mes "[薩克雷]";
+	mes "我想透過你擺脫我內心的一塊人性。";
+	npctalk "薩克雷: 我想透過你擺脫我內心的一塊人性。";
 	next;
-	mes "[Sakray]";
-	mes "I am quite satisfied with the result.";
-	npctalk "Sakray: I am quite satisfied with the result.";
+	mes "[薩克雷]";
+	mes "我對結果非常滿意。";
+	npctalk "薩克雷: 我對結果非常滿意。";
 	next;
-	mes "[Magic Sword Tartanos]";
-	mes "Sakray, offer the blood to me now!";
-	npctalk "Magic Sword Tartanos: Sakray, offer the blood to me now!", instance_npcname("Magic Sword Tartanos#dk3");
+	mes "[魔劍塔諾斯]";
+	mes "薩克雷，現在就把血獻給我！";
+	npctalk "魔劍塔諾斯: 薩克雷，現在就把血獻給我！", instance_npcname("Magic Sword Tartanos#dk3");
 	next;
-	mes "[Sakray]";
-	mes "If you were me, what would you do?";
-	npctalk "Sakray: If you were me, what would you do?";
+	mes "[薩克雷]";
+	mes "如果你是我，你會怎麼做？";
+	npctalk "薩克雷: 如果你是我，你會怎麼做？";
 	next;
-	mes "[Sakray]";
-	mes "Can you set yourself free from this curse?";
-	npctalk "Sakray: Can you set yourself free from this curse?";
+	mes "[薩克雷]";
+	mes "你能讓自己擺脫這個詛咒嗎？";
+	npctalk "薩克雷: 你能讓自己擺脫這個詛咒嗎？";
 	next;
 	mes "[" + strcharinfo(0) + "]";
 	mes "...";
 	unittalk getcharid(3), "" + strcharinfo(0) + " : ...";
 	next;
-	mes "[Sakray]";
-	mes "Heh heh... I will keep watching you until the day comes when you are old enough.";
-	npctalk "Sakray: Heh heh... I will keep watching you until the day comes when you are old enough.";
+	mes "[薩克雷]";
+	mes "呵呵... 我會一直看著你，直到你長大成人。";
+	npctalk "薩克雷: 呵呵... 我會一直看著你，直到你長大成人。";
 	next;
-	mes "[Sakray]";
-	mes "I am willing to hunt you later for Tartanos.";
-	npctalk "Sakray: I am willing to hunt you later for Tartanos.";
+	mes "[薩克雷]";
+	mes "我願意為了塔諾斯而獵殺你。";
+	npctalk "薩克雷: 我願意為了塔諾斯而獵殺你。";
 	cutin "",255;
 	next;
-	mes "[Sakray]";
-	mes "Farewell then.";
-	npctalk "Sakray: Farewell then.";
+	mes "[薩克雷]";
+	mes "那麼，再見了。";
+	npctalk "薩克雷: 那麼，再見了。";
 	close2;
 	donpcevent instance_npcname("#tb") + "::OnStart";
 	end;
@@ -846,28 +846,28 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	npctalk "Voice of Princess Tiara : What can I do for you?";
+	npctalk "蒂雅拉公主的聲音 : 我能為您做什麼？";
 	end;
 OnTimer8000:
-	npctalk "Voice of Sakray : I will always stand by you. Please rest beside me.", instance_npcname("#sv");
+	npctalk "薩克雷的聲音 : 我會永遠支持你。請在我身邊安息。", instance_npcname("#sv");
 	end;
 OnTimer13000:
-	npctalk "Magic Sword Tartanos: Sakray, do not forget the covenant of blood between us.", instance_npcname("#tv");
+	npctalk "魔劍塔諾斯: 薩克雷，別忘了我們之間的血之盟約。", instance_npcname("#tv");
 	end;
 OnTimer17000:
-	npctalk "Magic Sword Tartanos: Your soul is mine until you find the blood that satisfies me...", instance_npcname("#tv");
+	npctalk "魔劍塔諾斯: 在你找到讓我滿意的血之前，你的靈魂是我的...", instance_npcname("#tv");
 	end;
 OnTimer22000:
-	npctalk "Voice of Sakray : Rest in the shadow with me.", instance_npcname("#sv");
+	npctalk "薩克雷的聲音 : 在陰影中與我一同安息。", instance_npcname("#sv");
 	end;
 OnTimer25000:
-	npctalk "Voice of Sakray : In the dark forever...", instance_npcname("#sv");
+	npctalk "薩克雷的聲音 : 永遠在黑暗中...", instance_npcname("#sv");
 	end;
 OnTimer28500:
 	disablenpc instance_npcname("#tb");
 	disablenpc instance_npcname("#sv");
 	disablenpc instance_npcname("#tv");
-	mapannounce 'map_spa$, "It is time to leave the Ghost Palace.", bc_map,0xFFFF00;
+	mapannounce 'map_spa$, "是時候離開幽靈皇宮了。", bc_map,0xFFFF00;
 	enablenpc instance_npcname("Way out of Palace");
 	enablenpc instance_npcname("King#dk11");
 	end;
@@ -879,32 +879,32 @@ OnTimer28500:
 
 1@spa,204,29,1	script	King#dk11	4_M_RUSKING,{
 	disable_items;
-	mes "[King]";
-	mes "Hey there, are you alive?";
-	mes "I did not expect to meet someone who is still alive.";
+	mes "[國王]";
+	mes "嘿，你還活著嗎？";
+	mes "我沒想到會遇到還活著的人。";
 	next;
 	.@item_name_req$ = getitemname(6672);// Gray_Shard
-	mes "[King]";
-	mes "Do you possibly have the ^006400" + .@item_name_req$ + "^000000?";
-	mes "Can you give it to me?";
-	mes "The memories of the faithful royal guard";
-	mes "and the memories of everyone he loved";
-	mes "are contained inside of these shards.";
+	mes "[國王]";
+	mes "你身上是否有 ^006400" + .@item_name_req$ + "^000000 呢？";
+	mes "你能給我嗎？";
+	mes "忠誠皇家衛隊的記憶";
+	mes "以及他所愛之人的記憶";
+	mes "都包含在這些碎片中。";
 	next;
-	mes "[King]";
-	mes "Will you give the ^006400" + .@item_name_req$ + "^000000 to me?";
-	mes "The guilt is eating my soul.";
-	mes "My soul is trapped inside the Ghost Palace.";
+	mes "[國王]";
+	mes "你願意把 ^006400" + .@item_name_req$ + "^000000 給我嗎？";
+	mes "罪惡感正在吞噬我的靈魂。";
+	mes "我的靈魂被困在幽靈皇宮裡。";
 	next;
-	mes "[King]";
-	mes "I am collecting Sakray's abandoned memories from these shards.";
+	mes "[國王]";
+	mes "我正在從這些碎片中收集薩克雷遺棄的記憶。";
 	next;
-	mes "[King]";
-	mes "If you give any ^006400" + .@item_name_req$ + "^000000s to me, I can make equipment for you.";
+	mes "[國王]";
+	mes "如果你給我任何 ^006400" + .@item_name_req$ + "^000000，我可以為你製作裝備。";
 	next;
-	mes "[King]";
-	mes "The cursed knight...";
-	mes "Please help me save the soul of Sakray.";
+	mes "[國王]";
+	mes "被詛咒的騎士...";
+	mes "請幫我拯救薩克雷的靈魂。";
 	next;
 	setarray .@item_name$[0],
 		"Thanos Sword", "Thanos Broadsword", "Thanos Spear", "Thanos Two-Handed Spear", "Thanos Staff",
@@ -920,48 +920,48 @@ OnTimer28500:
 	while(true) {
 		.@s = select(.@menu$) - 1;
 		if (.@s == 20) {
-			mes "[King]";
-			mes "Someday, Sakray will";
-			mes "get out of this curse for sure.";
-			mes "I believe";
-			mes "^006400" + .@item_name_req$ + "^000000s are the only method";
-			mes "to save him....";
+			mes "[國王]";
+			mes "總有一天，薩克雷會";
+			mes "一定能擺脫這個詛咒。";
+			mes "我相信";
+			mes "^006400" + .@item_name_req$ + "^000000 是唯一的辦法";
+			mes "來拯救他....";
 			close;
 		}
 		.@cost = ( .@s > 13 ? 100 : 200 );
-		mes "[King]";
-		mes "To make a ^FF0000" + .@item_name$[.@s] + "^000000";
-		mes "I need " + .@cost + " ^006400" + .@item_name_req$ + "^000000.";
+		mes "[國王]";
+		mes "要製作 ^FF0000" + .@item_name$[.@s] + "^000000";
+		mes "我需要 " + .@cost + " ^006400" + .@item_name_req$ + "^000000。";
 		next;
-		if (select( "Cancel", "Hand over " + .@cost + " " + .@item_name_req$ + "." ) == 1) {
-			mes "[King]";
-			mes "Someday, Sakray will";
-			mes "get out of this curse for sure.";
+		if (select( "取消", "交出 " + .@cost + " " + .@item_name_req$ + "。" ) == 1) {
+			mes "[國王]";
+			mes "總有一天，薩克雷會";
+			mes "一定能擺脫這個詛咒。";
 			next;
 			continue;
 		}
 		if (countitem(6672) < .@cost) {
-			mes "[King]";
-			mes "You do not have enough ^006400" + .@item_name_req$ + "^000000";
-			mes "to make a ^FF0000" + .@item_name$[.@s] + "^000000.";
-			mes "I need " + .@cost + " ^006400" + .@item_name_req$ + "^000000.";
+			mes "[國王]";
+			mes "你沒有足夠的 ^006400" + .@item_name_req$ + "^000000";
+			mes "來製作 ^FF0000" + .@item_name$[.@s] + "^000000。";
+			mes "我需要 " + .@cost + " ^006400" + .@item_name_req$ + "^000000。";
 			next;
 			continue;
 		}
-		mes "[King]";
-		mes "I will make a ^FF0000" + .@item_name$[.@s] + "^000000";
-		mes "with " + .@cost + " ^006400" + .@item_name_req$ + "^000000.";
+		mes "[國王]";
+		mes "我將用 " + .@cost + " ^006400" + .@item_name_req$ + "^000000";
+		mes "製作一個 ^FF0000" + .@item_name$[.@s] + "^000000。";
 		next;
-		mes "You see a light through the folded hands of the king and it gradually takes on a shape.";
+		mes "你看到一道光穿過國王合攏的雙手，並逐漸呈現出形狀。";
 		next;
-		mes "[King]";
-		mes "All right, it is done.";
-		mes "Take this ^FF0000" + .@item_name$[.@s] + "^000000";
-		mes "to confront Sakray and Tartanos.";
+		mes "[國王]";
+		mes "好了，完成了。";
+		mes "拿著這個 ^FF0000" + .@item_name$[.@s] + "^000000";
+		mes "去對抗薩克雷和塔諾斯。";
 		next;
-		mes "[King]";
-		mes "The power requires a sacrifice.";
-		mes "Please be careful...";
+		mes "[國王]";
+		mes "力量需要犧牲。";
+		mes "請小心...";
 		delitem 6672,.@cost;// Gray Shard
 		getitem .@items_list[.@s],1;
 		close;
@@ -971,9 +971,9 @@ OnTimer28500:
 1@spa,210,28,0	script	Way out of Palace	WARPNPC,2,2,{
 	end;
 OnTouch_:
-	mes "It is time to leave the Ghost Palace.";
-	mes "Everything is now complete";
-	mes "and will vanish..";
+	mes "是時候離開幽靈皇宮了。";
+	mes "一切都已完成";
+	mes "並將消失..";
 	close2;
 	if (isbegin_quest(1263) == 2)
 		getitem 6672,1;// Gray Shard

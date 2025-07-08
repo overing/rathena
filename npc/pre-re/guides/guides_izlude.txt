@@ -19,94 +19,93 @@
 //	-Thanks to $ephiroth.
 //============================================================
 
-izlude,121,87,6	script	Guide#iz	105,{
+izlude,121,87,6	script	嚮導#iz	105,{
 	cutin "prt_soldier",2;
-	mes "[Izlude Guide]";
-	mes "Welcome to Izlude,";
-	mes "Prontera's satellite city.";
-	mes "If you need any guidance";
-	mes "around Izlude, feel free";
-	mes "to ask me at anytime.";
+	mes "[伊茲魯德嚮導]";
+	mes "歡迎來到伊茲魯德，";
+	mes "普隆德拉的衛星城市。";
+	mes "如果您需要任何關於";
+	mes "伊茲魯德的指引，請隨時";
+	mes "向我詢問。";
 	set .@loop1,1;
 	while(.@loop1) {
 		next;
-		switch(select("City Guide:Remove Marks from Mini-Map:Notice.:Cancel")) {
+		switch(select("城市導覽:從迷你地圖移除標記:公告.:取消")) {
 		case 1:
-			mes "[Izlude Guide]";
-			mes "Please select";
-			mes "a location from";
-			mes "the following menu.";
+			mes "[伊茲魯德嚮導]";
+			mes "請從以下";
+			mes "選單中選擇";
+			mes "一個地點。";
 			if (.@compass_check == 0) {
-				mes "Would you like me";
-				mes "to mark locations";
-				mes "on your Mini-Map?";
+				mes "您想要我";
+				mes "在地圖上標記";
+				mes "地點嗎？";
 				next;
-				if (select("Yes:No") == 1) set .@compass_check,1;
+				if (select("是:否") == 1) set .@compass_check,1;
 			}
 			set .@loop2,1;
 			while(.@loop2) {
 				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
 				else next;
 				
-				switch(select("^FF0000Swordman Association^000000:Swordman Hall:Arena:Izlude Marina:Weapon Shop:Tool Shop:Cancel")) {
+				switch(select("^FF0000劍士協會^000000:劍士公會:競技場:伊茲魯德碼頭:武器店:道具店:取消")) {
 				case 1:
-					mes "[Izlude Guide]";
-					mes "The Swordman Association";
-					mes "is located on an island that is";
-					mes "in west Izlude. If you're thinking of changing jobs to Swordman,";
-					mes "you should check it out.";
+					mes "[伊茲魯德嚮導]";
+					mes "劍士協會";
+					mes "位於伊茲魯德";
+					mes "西邊的一個島嶼上。如果您正考慮轉職成劍士，";
+					mes "您應該去看看。";
 					if (.@compass_check)
 						viewpoint 1,52,140,0,0xFF0000;
 					break;
 				case 2:
-					mes "[Izlude Guide]";
-					mes "The Swordman Hall";
-					mes "is located in the eastern";
-					mes "island connected to Izlude.";
+					mes "[伊茲魯德嚮導]";
+					mes "劍士公會";
+					mes "位於伊茲魯德連接的";
+					mes "東部島嶼。";
 					if (.@compass_check)
 						viewpoint 1,214,130,1,0x00FF00;
 					break;
 				case 3:
-					mes "[Izlude Guide]";
-					mes "Izlude's famous";
-					mes "Arena is located at the";
-					mes "northern end of Izlude.";
+					mes "[伊茲魯德嚮導]";
+					mes "伊茲魯德著名的";
+					mes "競技場位於";
+					mes "伊茲魯德的北端。";
 					if (.@compass_check)
 						viewpoint 1,128,225,2,0x00FF00;
 					break;
 				case 4:
-					mes "[Izlude Guide]";
-					mes "You can find the";
-					mes "Marina in the northeast";
-					mes "part of Izlude. There, you can";
-					mes "ride a ship which will take you";
-					mes "to Alberta or Byalan Island.";
+					mes "[伊茲魯德嚮導]";
+					mes "您可以在";
+					mes "伊茲魯德東北方";
+					mes "找到碼頭。在那裡，您可以";
+					mes "搭船前往";
+					mes "艾爾貝塔或斐揚島。";
 					if (.@compass_check)
 						viewpoint 1,200,180,3,0xFF0000;
 					break;
 				case 5:
-					mes "[Izlude Guide]";
-					mes "You can easily";
-					mes "find the Weapon Shop";
-					mes "in northwest Izlude.";
+					mes "[伊茲魯德嚮導]";
+					mes "您可以輕易地";
+					mes "在伊茲魯德西北方";
+					mes "找到武器店。";
 					if (.@compass_check)
 						viewpoint 1,111,149,4,0xFF00FF;
 					break;
 				case 6:
-					mes "[Izlude Guide]";
-					mes "The Tool Shop shouldn't";
-					mes "be too hard to find in the";
-					mes "northeast part of Izlude.";
+					mes "[伊茲魯德嚮導]";
+					mes "在伊茲魯德";
+					mes "東北方找到道具店";
+					mes "應該不會太難。";
 					if (.@compass_check)
 						viewpoint 1,148,148,5,0xFF00FF;
 					break;
 				case 7:
-					mes "[Izlude Guide]";
-					mes "Please ask me to ''Remove";
-					mes "Marks from Mini-Map'' if you";
-					mes "no longer wish to have the";
-					mes "location marks displayed";
-					mes "on your Mini-Map.";
+					mes "[伊茲魯德嚮導]";
+					mes "如果您不希望";
+					mes "在地圖上顯示";
+					mes "地點標記，請要求我";
+					mes "''從迷你地圖移除標記''。";
 					set .@loop2,0;
 					break;
 				}
@@ -122,35 +121,34 @@ izlude,121,87,6	script	Guide#iz	105,{
 			set .@compass_check,0;
 			break;
 		case 3:
-			mes "[Izlude Guide]";
-			mes "Advances in sorcery and";
-			mes "technology have allowed";
-			mes "us to update our information";
-			mes "system, enabling up to mark";
-			mes "locations on your Mini-Map";
-			mes "for easier navigation.";
+			mes "[伊茲魯德嚮導]";
+			mes "巫術和";
+			mes "科技的進步使";
+			mes "我們能夠更新我們的";
+			mes "資訊系統，可以在您的";
+			mes "迷你地圖上標記";
+			mes "地點，以便更容易導航。";
 			next;
-			mes "[Izlude Guide]";
-			mes "Your Mini-Map is located";
-			mes "in the upper right corner";
-			mes "of the screen. If you can't";
-			mes "see it, press the Ctrl + Tab";
-			mes "keys or click the ''Map'' button in your Basic Info Window.";
+			mes "[伊茲魯德嚮導]";
+			mes "您的迷你地圖位於";
+			mes "螢幕的右上角。如果您";
+			mes "看不到它，請按 Ctrl + Tab";
+			mes "鍵或點擊您的基本資訊視窗中的 ''地圖'' 按鈕。";
 			next;
-			mes "[Izlude Guide]";
-			mes "On your Mini-Map,";
-			mes "click on the ''+'' and ''-''";
-			mes "symbols to zoom in and";
-			mes "our of your Mini-Map. We";
-			mes "hope you enjoy your travels";
-			mes "here in the city of Izlude.";
+			mes "[伊茲魯德嚮導]";
+			mes "在您的迷你地圖上，";
+			mes "點擊 ''+'' 和 ''-''";
+			mes "符號來放大和";
+			mes "縮小您的迷你地圖。我們";
+			mes "希望您在伊茲魯德";
+			mes "這裡的旅途愉快。";
 			break;
 		case 4:
-			mes "[Izlude Guide]";
-			mes "Okay then, feel";
-			mes "free to come to me";
-			mes "if you ever feel lost";
-			mes "around Izlude, alright?";
+			mes "[伊茲魯德嚮導]";
+			mes "好的，如果您";
+			mes "在伊茲魯德感到";
+			mes "迷路，請隨時來找我，";
+			mes "好嗎？";
 			close2;
 			set .@loop1,0;
 			break;

@@ -16,23 +16,23 @@
 //============================================================ 
 
 gonryun,163,60,4	script	Kunlun Guide#01gonryun	780,{
-	mes "[He Yuen Zhe]";
-	mes "Ni Hao!";
-	mes "Welcome to ^8B4513Kunlun^000000~";
-	mes "Take a walk around and experience";
-	mes "the ancient history and tradition";
-	mes "of our breath taking city.";
+	mes "[何元哲]";
+	mes "你好！";
+	mes "歡迎來到 ^8B4513崑崙^000000~";
+	mes "四處走走，體驗一下";
+	mes "我們這座令人屏息的城市的";
+	mes "古老歷史和傳統。";
 	next;
-	mes "[He Yuen Zhe]";
-	mes "I am responsible for helping you";
-	mes "with any questions you may have.";
-	mes "Please feel free to ask me anything.";
+	mes "[何元哲]";
+	mes "我負責協助你";
+	mes "處理你可能有的任何疑問。";
+	mes "請隨時向我提問。";
 	F_Navi("[He Yuen Zhe]");
 	while (1) {
 		next;
-		switch(select("[ Kafra Employee ]:[ Chief's Residence ]:[ Tool Dealer ]:[ Weapon Dealer ]:[ Armor Dealer ]:[ Wine Maker ]:[ Kunlun Envoy ]:Remove Marks from Mini-Map:Cancel")) {
+		switch(select("[ 卡普拉職員 ]:[ 酋長宅邸 ]:[ 工具商人 ]:[ 武器商人 ]:[ 盔甲商人 ]:[ 釀酒師 ]:[ 崑崙使者 ]:從小型地圖移除標記:取消")) {
 		case 1:
-			callsub L_Mark, "^0000FFKafra Employee^000000";
+			callsub L_Mark, "^0000FF卡普拉職員^000000";
 			viewpoint 1,159,122,0,0x0A82FF;
 			break;
 		case 2:
@@ -56,13 +56,13 @@ gonryun,163,60,4	script	Kunlun Guide#01gonryun	780,{
 			viewpoint 1,213,115,5,0x9400D3;
 			break;
 		case 7:
-			callsub L_Mark, F_Navi("Kunlun Envoy","gonryun,161,11","^00BFFF");
+			callsub L_Mark, F_Navi("崑崙宣傳使臣","gonryun,161,11","^00BFFF");
 			viewpoint 1,161,11,6,0x00BFFF;
 			break;
 		case 8:
-			mes "[He Yuen Zhe]";
-			mes "I'll remove all marks from your mini-map.";
-			mes "Is there anything else I can do for you?";
+			mes "[何元哲]";
+			mes "我會從你的小型地圖上移除所有標記。";
+			mes "還有什麼我能為你做的嗎？";
 			viewpoint 2,1,1,0,0xFFFFFF;
 			viewpoint 2,1,1,1,0xFFFFFF;
 			viewpoint 2,1,1,2,0xFFFFFF;
@@ -72,17 +72,17 @@ gonryun,163,60,4	script	Kunlun Guide#01gonryun	780,{
 			viewpoint 2,1,1,6,0xFFFFFF;
 			break;
 		case 9:
-			mes "[He Yuen Zhe]";
-			mes "Bon voyage!";
+			mes "[何元哲]";
+			mes "一路順風！";
 			close;
 		}
 	}
 	end;
 L_Mark:
-	mes "[He Yuen Zhe]";
-	mes "The "+getarg(0)+" is";
-	mes "marked on your mini-map.";
-	mes "Check your mini-map.";
-	mes "Is there anything else I can do for you?";
+	mes "[何元哲]";
+	mes "在你的小型地圖上";
+	mes "已標記 "+getarg(0)+"。";
+	mes "查看你的小型地圖。";
+	mes "還有什麼我能為你做的嗎？";
 	return;
 }

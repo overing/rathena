@@ -17,71 +17,70 @@ bat_room,151,144,3	script	KVM Logistic Officer#a	734,{
 		set .@pointstoadd,countitem(6376);
 		delitem 6376,.@pointstoadd;
 		set kvm_point,kvm_point+.@pointstoadd;
-		mes "[Logistics]";
-		mes "Are those "+getitemname(6376)+"s I see?";
-		mes "We no longer accept that currency,";
-		mes "but I can exchange those for you,";
-		mes "So you have "+.@pointstoadd+" "+getitemname(6376)+"s?";
-		mes "Alright, all set, you now have ^580080"+ kvm_point +"^000000 KVM Points.";
+		mes "[後勤人員]";
+		mes "那些是我看到的 "+getitemname(6376)+"s 嗎？";
+		mes "我們不再接受那種貨幣了，";
+		mes "但我可以幫你兌換，";
+		mes "所以你有 "+.@pointstoadd+" 個 "+getitemname(6376)+"s 嗎？";
+		mes "好的，一切就緒，你現在有 ^580080"+ kvm_point +"^000000 KVM 點數了。";
 		next;
 	}
 	if (checkweight(1201,1) == 0) {
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- 等一下！！ -";
+		mes "- 目前你身上攜帶 -";
+		mes "- 太多物品了。 -";
+		mes "- 請稍後再試 -";
+		mes "- 在你減輕一些重量之後。 -";
 		close;
 	}
-	mes "[Logistics]";
-	mes "Hello?";
-	mes "I am in charge of distributing";
-	mes "reward items for KVM points. Any";
-	mes "wrong selection of items will not";
-	mes "be reversed. Please be carefull.";
-	mes "Select the next step please.";
+	mes "[後勤人員]";
+	mes "哈囉？";
+	mes "我負責分發";
+	mes "KVM 點數的獎勵物品。任何";
+	mes "錯誤的物品選擇將不會";
+	mes "被逆轉。請小心。";
+	mes "請選擇下一步。";
 	next;
 	set .@name$,strcharinfo(0);
-	switch(select("Read the KVM Catalogue.:Purchase KVM Items.:Confirm KVM Points.:Explanation of KVM Rewards.:Explanation of KVM Points.")) {
+	switch(select("閱讀 KVM 目錄。:購買 KVM 物品。:確認 KVM 點數。:KVM 獎勵說明。:KVM 點數說明。")) {
 	case 1:
-		mes "[Logistics]";
-		mes "Here is the catalogue of KVM items.";
-		mes "Each weapon requires 2,000 points";
-		mes "and each armor from 10 to 1,200";
-		mes "points. So, be carefull when";
-		mes "selecting a reward.";
+		mes "[後勤人員]";
+		mes "這是 KVM 物品的目錄。";
+		mes "每件武器需要 2,000 點數";
+		mes "而每件盔甲則從 10 到 1,200";
+		mes "點數。所以，請小心";
+		mes "選擇獎勵。";
 		close2;
 		readbook 11017,1;
 		end;
 	case 2:
-		mes "[Logistics]";
-		mes "Wich items do you want to see? As";
-		mes "for the detailed specification of";
-		mes "the items, please refer to the";
-		mes "^3131FFCatalogue^000000.";
+		mes "[後勤人員]";
+		mes "你想看哪些物品？至於";
+		mes "物品的詳細規格，請參考";
+		mes "^3131FF目錄^000000。";
 		next;
-		switch(select("Weapon:Armor/Accessory:Mass-Production Armor/Accessory:Popularized Armor/Accessory")) {
+		switch(select("武器:盔甲/飾品:量產型盔甲/飾品:大眾化盔甲/飾品")) {
 		case 1:
-			mes "[Logistics]";
-			mes "You have selected the Weapon Category.";
-			mes "Please select a sub-category.";
+			mes "[後勤人員]";
+			mes "你選擇了武器類別。";
+			mes "請選擇一個子類別。";
 			next;
-			switch(select("Dagger/Sword/Spear:Staff/Mace/Axe/Shuriken:Bow/Katar/Instrument/Whip:Book/Knuckle:Revolver/Rifle/Gun/Grenade Launcher")) {
+			switch(select("匕首/劍/矛:手杖/鎚/斧/手裏劍:弓/卡塔爾/樂器/鞭子:書/拳套:左輪手槍/步槍/槍/手榴彈發射器")) {
 			case 1:
-				mes "[Logistics]";
-				mes "You have selected the Dagger/Sword/Spear category.";
-				mes "Please select a sub-category.";
+				mes "[後勤人員]";
+				mes "你選擇了匕首/劍/矛類別。";
+				mes "請選擇一個子類別。";
 				next;
-				switch(select("Dagger:One-handed Sword:Two-handed Sword:One-handed Spear:Two-handed Spear")) {
+				switch(select("匕首:單手劍:雙手劍:單手矛:雙手矛")) {
 				case 1: callsub PurchaseItem,13042,0,1; //Krieger_Dagger1 
 				case 2:
-					mes "[Logistics]";
-					mes "You have selected the 'One-handed Sword' category.";
-					mes "There are 3 One-handed Swords: Glorious Flamberge, Glorious Rapier and Glorious Holy Avenger.";
-					mes "If you want their details, please refer to the KVM Catalogue.";
-					mes "Please select one of them.";
+					mes "[後勤人員]";
+					mes "你選擇了 '單手劍' 類別。";
+					mes "共有 3 把單手劍：榮耀火焰劍、榮耀銳利劍和榮耀聖劍復仇者。";
+					mes "如果你想要它們的詳細資訊，請參考 KVM 目錄。";
+					mes "請選擇其中一把。";
 					next;
-					switch(select("Glorious Flamberge:Glorious Rapier:Glorious Holy Avenger")) {
+					switch(select("榮耀火焰劍:榮耀銳利劍:榮耀聖劍復仇者")) {
 					case 1: callsub PurchaseItem,13416,0,0; //Krieger_Onehand_Sword1
 					case 2: callsub PurchaseItem,13417,0,0; //Krieger_Onehand_Sword2
 					case 3: callsub PurchaseItem,13418,0,0; //Krieger_Onehand_Sword3
@@ -91,19 +90,19 @@ bat_room,151,144,3	script	KVM Logistic Officer#a	734,{
 				case 5: callsub PurchaseItem,1486,0,1; //Krieger_Twohand_Spear1
 				}
 			case 2:
-				mes "[Logistics]";
-				mes "You have selected the 'Staff/Mace/Axe/Shuriken' category.";
-				mes "Please select a sub-category.";
+				mes "[後勤人員]";
+				mes "你選擇了 '手杖/鎚/斧/手裏劍' 類別。";
+				mes "請選擇一個子類別。";
 				next;
-				switch(select("Staff:Mace:One-handed Axe:Two-handed Axe:Shuriken")) {
+				switch(select("手杖:鎚:單手斧:雙手斧:手裏劍")) {
 				case 1:
-					mes "[Logistics]";
-					mes "You have selected the 'Staff' category.";
-					mes "There are 3 Staffs: a Two-handed Weapon Glorious Destruction Staff, a One-handed Glorious Arc Wand and a Glorious Healing Staff.";
-					mes "If you want their details, please refer to the KVM Catalogue.";
-					mes "Please select one of them.";
+					mes "[後勤人員]";
+					mes "你選擇了 '手杖' 類別。";
+					mes "共有 3 根手杖：一把雙手武器榮耀毀滅魔杖、一把單手榮耀奧術魔杖和一把榮耀治療魔杖。";
+					mes "如果你想要它們的詳細資訊，請參考 KVM 目錄。";
+					mes "請選擇其中一把。";
 					next;
-					switch(select("Glorious Destruction Staff:Glorious Arc Wand:Glorious Healing Staff")) {
+					switch(select("榮耀毀滅魔杖:榮耀奧術魔杖:榮耀治療魔杖")) {
 					case 1: callsub PurchaseItem,2002,0,0; //Krieger_Twohand_Staff1
 					case 2: callsub PurchaseItem,1640,0,0; //Krieger_Onehand_Staff1
 					case 3: callsub PurchaseItem,1641,0,0; //Krieger_Onehand_Staff2
@@ -114,20 +113,20 @@ bat_room,151,144,3	script	KVM Logistic Officer#a	734,{
 				case 5: callsub PurchaseItem,13307,0,1; //Krieger_Huuma_Shuriken1
 				}
 			case 3:
-				mes "[Logistics]";
-				mes "You have selected the Bow/Katar/Instrument/Whip category.";
-				mes "Please select a sub-category.";
+				mes "[後勤人員]";
+				mes "你選擇了弓/卡塔爾/樂器/鞭子類別。";
+				mes "請選擇一個子類別。";
 				next;
-				switch(select("Bow:Katar:Instrument:Whip")) {
+				switch(select("弓:卡塔爾:樂器:鞭子")) {
 				case 1: callsub PurchaseItem,1743,0,1; //Krieger_Bow1
 				case 2:
-					mes "[Logistics]";
-					mes "You have selected the 'Katar' category.";
-					mes "There are 2 Katars: Glorious Bloody Roar and Glorious Jamadhar.";
-					mes "If you want their details, please refer to the KVM Catalogue.";
-					mes "Please select one of them.";
+					mes "[後勤人員]";
+					mes "你選擇了 '卡塔爾' 類別。";
+					mes "共有 2 把卡塔爾：榮耀血腥咆哮和榮耀賈馬達哈。";
+					mes "如果你想要它們的詳細資訊，請參考 KVM 目錄。";
+					mes "請選擇其中一把。";
 					next;
-					switch(select("Glorious Bloody Roar:Glorious Jamadhar")) {
+					switch(select("榮耀血腥咆哮:榮耀賈馬達哈")) {
 					case 1: callsub PurchaseItem,1281,0,0; //Krieger_Katar1
 					case 2: callsub PurchaseItem,1282,0,0; //Krieger_Katar2
 					}
@@ -135,40 +134,40 @@ bat_room,151,144,3	script	KVM Logistic Officer#a	734,{
 				case 4: callsub PurchaseItem,1981,0,1; //Krieger_Whip1
 				}
 			case 4:
-				mes "[Logistics]";
-				mes "You have selected the Book/Knuckle category.";
-				mes "Please select a sub-category.";
+				mes "[後勤人員]";
+				mes "你選擇了書/拳套類別。";
+				mes "請選擇一個子類別。";
 				next;
-				switch(select("Book:Knuckle")) {
+				switch(select("書:拳套")) {
 				case 1:
-					mes "[Logistics]";
-					mes "You have selected 'Book'.";
-					mes "There are 2 Books: Glorious Tablet and Glorious Apocalypse.";
-					mes "If you want their details, please refer to the KVM Catalogue.";
-					mes "Please select one of them.";
+					mes "[後勤人員]";
+					mes "你選擇了 '書'。";
+					mes "共有 2 本書：榮耀石碑和榮耀末日。";
+					mes "如果你想要它們的詳細資訊，請參考 KVM 目錄。";
+					mes "請選擇其中一本。";
 					next;
-					switch(select("Glorious Tablet:Glorious Apocalypse")) {
+					switch(select("榮耀石碑:榮耀末日")) {
 					case 1: callsub PurchaseItem,1576,0,0; //Krieger_Book1
 					case 2: callsub PurchaseItem,1577,0,0; //Krieger_Book2
 					}
 				case 2:
-					mes "[Logistics]";
-					mes "You have selected the 'Knuckle' category.";
-					mes "There are 2 Knuckles: Glorious Claw and Glorious Fist.";
-					mes "If you want their details, please refer to the KVM Catalogue.";
-					mes "Please select one of them.";
+					mes "[後勤人員]";
+					mes "你選擇了 '拳套' 類別。";
+					mes "共有 2 個拳套：榮耀爪和榮耀拳。";
+					mes "如果你想要它們的詳細資訊，請參考 KVM 目錄。";
+					mes "請選擇其中一個。";
 					next;
-					switch(select("Glorious Claw:Glorious Fist")) {
+					switch(select("榮耀爪:榮耀拳")) {
 					case 1: callsub PurchaseItem,1826,0,0; //Krieger_Knuckle1
 					case 2: callsub PurchaseItem,1827,0,0; //Krieger_Knuckle2
 					}
 				}
 			case 5:
-				mes "[Logistics]";
-				mes "You have selected the 'Revolver/Rifle/Gun/Grenade Launcher' category.";
-				mes "Please select a sub-category.";
+				mes "[後勤人員]";
+				mes "你選擇了 '左輪手槍/步槍/槍/手榴彈發射器' 類別。";
+				mes "請選擇一個子類別。";
 				next;
-				switch(select("Revolver:Rifle:Gatling Gun:Shotgun:Grenade Launcher")) {
+				switch(select("左輪手槍:步槍:格林機槍:霰彈槍:手榴彈發射器")) {
 				case 1: callsub PurchaseItem,13110,0,1; //Krieger_Pistol1
 				case 2: callsub PurchaseItem,13176,0,1; //Krieger_Rifle1
 				case 3: callsub PurchaseItem,13177,0,1; //Krieger_Gatling1
@@ -177,65 +176,65 @@ bat_room,151,144,3	script	KVM Logistic Officer#a	734,{
 				}
 			}
 		case 2:
-			mes "[Logistics]";
-			mes "You have selected the 'Armor/Accessory' category.";
-			mes "Please select a sub-category.";
+			mes "[後勤人員]";
+			mes "你選擇了 '盔甲/飾品' 類別。";
+			mes "請選擇一個子類別。";
 			next;
-			switch(select("Armor:Cloak:Shoes:Accessory")) {
+			switch(select("盔甲:披風:鞋子:飾品")) {
 			case 1: callsub PurchaseItem,2394,1,2; //Krieger_Suit1
 			case 2: callsub PurchaseItem,2549,2,2; //Krieger_Muffler1
 			case 3: callsub PurchaseItem,2444,3,2; //Krieger_Shoes1
 			case 4: callsub PurchaseItem,2772,4,2; //Krieger_Ring1
 			}
 		case 3:
-			mes "[Logistics]";
-			mes "You have selected the 'Mass-Production Armor/Accessory' category.";
-			mes "Please select a sub-category.";
+			mes "[後勤]";
+			mes "您已選擇了 '量產型盔甲/飾品' 類別。";
+			mes "請選擇一個子類別。";
 			next;
-			switch(select("Mass-Production Armor:Mass-Production Shoes:Mass-Production Accessory")) {
+			switch(select("量產型盔甲:量產型鞋子:量產型飾品")) {
 			case 1: callsub PurchaseItem,2395,5,3; //Krieger_Suit2
 			case 2: callsub PurchaseItem,2445,6,3; //Krieger_Shoes2
 			case 3: callsub PurchaseItem,2773,7,3; //Krieger_Ring2
 			}
 		case 4:
-			mes "[Logistics]";
-			mes "You have selected the 'Popularized Armor/Accessory' category.";
-			mes "Please select a sub-category.";
+			mes "[後勤]";
+			mes "您已選擇了 '普及型盔甲/飾品' 類別。";
+			mes "請選擇一個子類別。";
 			next;
-			switch(select("Popularized Armor:Popularized Shoes:Popularized Accessory")) {
+			switch(select("普及型盔甲:普及型鞋子:普及型飾品")) {
 			case 1: callsub PurchaseItem,2396,8,4; //Krieger_Suit3
 			case 2: callsub PurchaseItem,2446,9,4; //Krieger_Shoes3
 			case 3: callsub PurchaseItem,2774,10,4; //Krieger_Ring3
 			}
 		}
 	case 3:
-		mes "[Logistics]";
-		mes ""+ .@name$ +", your current points are ^580080"+ kvm_point +"^000000 KVM Points.";
+		mes "[後勤]";
+		mes ""+ .@name$ +", 您目前的點數為 ^580080"+ kvm_point +"^000000 KVM 點數。";
 		close;
 	case 4:
-		mes "[Logistics]";
-		mes "There are 3 categories in KVM Rewards: Weapon/Armor.Accessory.";
+		mes "[後勤]";
+		mes "KVM 獎勵有 3 個類別：武器/盔甲。飾品。";
 		next;
-		mes "[Logistics]";
-		mes "Weapon rewards require 2,000 KVM points for each.";
-		mes "There are 3 types of Armor rewards and they require 840/630/580 KVM points fo each.";
-		mes "Accessory rewards require 1,200 KVM points for each.";
+		mes "[後勤]";
+		mes "武器獎勵每件需要 2,000 KVM 點數。";
+		mes "盔甲獎勵有 3 種，每件需要 840/630/580 KVM 點數。";
+		mes "飾品獎勵每件需要 1,200 KVM 點數。";
 		next;
-		mes "[Logistics]";
-		mes "Kreiger Weapons are LV 4 Weapons, they can be upgraded and will have special effects: Slaughter, Destruction and Blessing.";
+		mes "[後勤]";
+		mes "克雷格武器是 LV 4 武器，可以升級，並具有特殊效果：屠殺、毀滅和祝福。";
 		next;
-		mes "[Logistics]";
-		mes "When you can wear all 3 armors, you can have a special set of options.";
-		mes "Also, when Kreiger Accessory rewards are worn with medalsm it will bring you special set rewards.";
+		mes "[後勤]";
+		mes "當您可以穿戴所有 3 件盔甲時，您將擁有一組特殊的選項。";
+		mes "此外，當克雷格飾品獎勵與勳章一起佩戴時，它將為您帶來特殊的套裝獎勵。";
 		next;
-		mes "[Logistics]";
-		mes "Finally, there are Mass-Production Armor and Accessory rewards.";
-		mes "Players whose Lvl is higher than 60 can equip Mass-Production Armors and there is a Lvl limit for Popularized Armor as well.";
+		mes "[後勤]";
+		mes "最後，還有量產型盔甲和飾品獎勵。";
+		mes "等級高於 60 級的玩家可以裝備量產型盔甲，並且普及型盔甲也有等級限制。";
 		close;
 	case 5:
-		mes "[Logistics]";
-		mes "KVM Points are rewarded when you win, lose or draw in Kreiger Von Midgard (KVM).";
-		mes "You can have special Rewards by using these points.";
+		mes "[後勤]";
+		mes "當您在克雷格·馮·米德加爾特 (KVM) 中獲勝、失敗或平局時，會獎勵 KVM 點數。";
+		mes "您可以使用這些點數獲得特殊獎勵。";
 		close;
 	}
 
@@ -247,64 +246,64 @@ PurchaseItem:
 	.@req_setting = getarg(1);
 	.@item_type = getarg(2);
 
-	mes "[Logistics]";
+	mes "[後勤]";
 
 	if (!.@item_type)
-		mes "You have selected ^ff0000"+ getitemname(.@item_id) +"^000000.";
+		mes "您已選擇 ^ff0000"+ getitemname(.@item_id) +"^000000。";
 	else if (.@item_type == 1)
-		mes "There is only one "+ callfunc("F_GetWeaponType",.@item_id) +": "+ getitemname(.@item_id) +".";
+		mes "只有一種 "+ callfunc("F_GetWeaponType",.@item_id) +"："+ getitemname(.@item_id) +"。";
 	else if (.@item_type == 2) {
-		mes "You have selected '"+ callfunc("F_GetArmorType",.@item_id) +"'.";
-		mes "The armor for one whose Lvl is more than 80 is: ^ff0000"+ getitemname(.@item_id) +"^000000.";
+		mes "您已選擇 '"+ callfunc("F_GetArmorType",.@item_id) +"'。";
+		mes "等級超過 80 級的人的盔甲是：^ff0000"+ getitemname(.@item_id) +"^000000。";
 	}
 	else if (.@item_type == 3) {
-		mes "You have selected 'Mass-Production "+ callfunc("F_GetArmorType",.@item_id) +"'.";
-		mes "There is only one Mass-Production "+ callfunc("F_GetArmorType",.@item_id) +": ^ff0000"+ getitemname(.@item_id) +"^000000.";
+		mes "您已選擇 '量產型 "+ callfunc("F_GetArmorType",.@item_id) +"'。";
+		mes "只有一種量產型 "+ callfunc("F_GetArmorType",.@item_id) +"：^ff0000"+ getitemname(.@item_id) +"^000000。";
 	}
 	else if (.@item_type == 4) {
-		mes "You have selected 'Popularized "+ callfunc("F_GetArmorType",.@item_id) +"'.";
-		mes "There is only one Popularized "+ callfunc("F_GetArmorType",.@item_id) +": ^ff0000"+ getitemname(.@item_id) +"^000000.";
+		mes "您已選擇 '普及型 "+ callfunc("F_GetArmorType",.@item_id) +"'。";
+		mes "只有一種普及型 "+ callfunc("F_GetArmorType",.@item_id) +"：^ff0000"+ getitemname(.@item_id) +"^000000。";
 	}
 
 	if (!.@req_setting)
-		mes "It requires ^0000ff2,000^000000 KVM Points, and "+ .@name$ +", your points are: ^580080"+ kvm_point +"^000000.";
+		mes "需要 ^0000ff2,000^000000 KVM 點數，"+ .@name$ +"，您的點數是：^580080"+ kvm_point +"^000000。";
 	else if (.@req_setting == 4)
-		mes "It requires ^0000ff1,200^000000 KVM Points, and "+ .@name$ +", your points are: ^580080"+ kvm_point +"^000000.";
+		mes "需要 ^0000ff1,200^000000 KVM 點數，"+ .@name$ +"，您的點數是：^580080"+ kvm_point +"^000000。";
 	else
-		mes "It requires ^0000ff"+ .@prices[.@req_setting] +"^000000 KVM Points, and "+ .@name$ +", your points are: ^580080"+ kvm_point +"^000000.";
+		mes "需要 ^0000ff"+ .@prices[.@req_setting] +"^000000 KVM 點數，"+ .@name$ +"，您的點數是：^580080"+ kvm_point +"^000000。";
 
-	mes "Are you sure you want this item?";
+	mes "您確定要購買這件物品嗎？";
 	next;
-	switch(select("No, I won't purchase it.:Yes, I will purchase it.")) {
+	switch(select("不，我不購買。:是的，我要購買。")) {
 	case 1:
-		mes "[Logistics]";
-		mes "You have selected 'I won't purchase it'.";
-		mes "When purchasing an item, please be careful there are no refunds.";
+		mes "[後勤]";
+		mes "您已選擇 '我不購買'。";
+		mes "購買物品時請小心，恕不退款。";
 		break;
 	case 2:
 		if (kvm_point >= .@prices[.@req_setting]) {
 			kvm_point = kvm_point -.@prices[.@req_setting];
 			getitem .@item_id,1;
-			mes "[Logistics]";
-			mes "You have purchased a "+ getitemname(.@item_id) +".";
+			mes "[後勤]";
+			mes "您已購買了一件 "+ getitemname(.@item_id) +"。";
 			if (!.@req_setting)
-				mes "Your KVM Points are reduced by ^0000ff"+ .@req_setting +"^000000 points, your KVM Points are now ^580080"+kvm_point+"^000000.";
+				mes "您的 KVM 點數減少了 ^0000ff"+ .@req_setting +"^000000 點，您現在的 KVM 點數是 ^580080"+kvm_point+"^000000。";
 			if (.@req_setting == 4)
-				mes "Your KVM Points are reduced by ^0000ff1,200^000000 points, your KVM Points are now ^580080"+kvm_point+"^000000.";
+				mes "您的 KVM 點數減少了 ^0000ff1,200^000000 點，您現在的 KVM 點數是 ^580080"+kvm_point+"^000000。";
 			else
-				mes "Your KVM Points are reduced by ^0000ff"+ .@prices[.@req_setting] +"^000000 points, your KVM Points are now ^580080"+kvm_point+"^000000.";
+				mes "您的 KVM 點數減少了 ^0000ff"+ .@prices[.@req_setting] +"^000000 點，您現在的 KVM 點數是 ^580080"+kvm_point+"^000000。";
 		}
 		else {
-			mes "[Logistics]";
+			mes "[後勤]";
 			if (!.@req_setting)
-				mes "You need ^0000ff2,000^000000 KVM Points to purchase this item.";
+				mes "您需要 ^0000ff2,000^000000 KVM 點數才能購買此物品。";
 			else if (.@req_setting == 4)
-				mes "You need ^0000ff1,200^000000 KVM Points to purchase this item.";
+				mes "您需要 ^0000ff1,200^000000 KVM 點數才能購買此物品。";
 			else
-				mes "You need ^0000ff"+ .@prices[.@req_setting] +"^000000 KVM Points to purchase this item.";
-			mes "However, your KVM Points are now ^580080"+ kvm_point +"^000000.";
-			mes "Which are not enough to buy it.";
-			mes "When you get enough points, please come back again.";
+				mes "您需要 ^0000ff"+ .@prices[.@req_setting] +"^000000 KVM 點數才能購買此物品。";
+			mes "但是，您現在的 KVM 點數是 ^580080"+ kvm_point +"^000000。";
+			mes "不足以購買它。";
+			mes "當您獲得足夠的點數時，請再次光臨。";
 		}
 	}
 	close;

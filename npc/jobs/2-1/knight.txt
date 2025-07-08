@@ -43,536 +43,515 @@
 //============================================================ 
 
 prt_in,88,101,4	script	Chivalry Captain#knt	56,{
-	mes "[Captain Herman]";
+	mes "[赫爾曼隊長]";
 	if (Upper == 1) {
-		mes "Hm? You're... What is it about you? I've been an honorable Knight for a long time, but I cannot understand this feeling I'm getting from you...";
+		mes "嗯？你是... 你有什麼特別的地方？我當榮譽騎士很久了，但我無法理解我從你身上感受到的這種感覺...";
 		next;
-		mes "[Captain Herman]";
-		mes "May god bless your body and soul, warrior. I hope you will show your courage and protect those who are weaker than you.";
+		mes "[赫爾曼隊長]";
+		mes "願神保佑你的身心，戰士。我希望你能展現你的勇氣，保護那些比你弱小的人。";
 		close;
 	}
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "Ah, a member of our Chivalry.";
-			mes "I hope you are living up to my expectations. We have vowed to be strong for our kingdom, even if death is upon us...";
+			mes "啊，我們騎士團的成員。";
+			mes "我希望你沒有辜負我的期望。我們發誓要為了我們的王國變得強大，即使死亡降臨在我們身上...";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Welcome,";
-			mes "this is the";
-			mes "Prontera Chivalry.";
-			mes "What brings you here?";
+			mes "歡迎，";
+			mes "這裡是";
+			mes "普隆德拉騎士團。";
+			mes "你來這裡有什麼事嗎？";
 			next;
-			switch(select("I want to change my job to Swordman.:I want to change my job to a Knight.:Just visiting.")) {
+			switch(select("我想轉職成劍士。:我想轉職成騎士。:只是來拜訪。")) {
 			case 1:
-				mes "[Captain Herman]";
-				mes "A-ha~";
-				mes "A Swordman, you say?";
-				mes "I'm sorry, "+((Sex==SEX_MALE)?"lad":"lass")+", but you've";
-				mes "come to the wrong place!";
+				mes "[赫爾曼隊長]";
+				mes "啊哈～";
+				mes "你想成為劍士？";
+				mes "我很抱歉，"+((Sex==SEX_MALE)?"小伙子":"小姑娘")+"，但你";
+				mes "來錯地方了！";
 				next;
-				mes "[Captain Herman]";
-				mes "This isn't the Swordsman guild, it's the Prontera Chivalry! If you wish to become a Swordman, visit the Swordman Guild located in Izlude.";
+				mes "[赫爾曼隊長]";
+				mes "這裡不是劍士公會，而是普隆德拉騎士團！如果你想成為劍士，請去位於伊茲魯德的劍士公會。";
 				close;
 			case 2:
-				mes "[Captain Herman]";
-				mes "Ah, I see that you have great ambition. But you must first become a Swordman before becoming";
-				mes "a Knight. One step at a time...";
+				mes "[赫爾曼隊長]";
+				mes "啊，我看你有很大的志向。但在成為騎士之前，你必須先成為劍士。一步一步來...";
 				next;
-				mes "[Captain Herman]";
-				mes "First, visit the Swordman guild in Izlude. Then, come visit us again once you have become a well experienced Swordman.";
+				mes "[赫爾曼隊長]";
+				mes "首先，去伊茲魯德的劍士公會。然後，等你成為經驗豐富的劍士後，再來拜訪我們。";
 				close;
 			case 3:
-				mes "[Captain Herman]";
-				mes "Aha~";
-				mes "You must have lots of free time. Why don't you go hunt some monsters instead of wandering about aimlessly?";
+				mes "[赫爾曼隊長]";
+				mes "啊哈～";
+				mes "你一定有很多空閒時間。為什麼不去獵殺一些怪物，而不是漫無目的地閒逛呢？";
 				close;
 			}
 		}
 		else {
-			mes "Welcome. We, the proud Knights of the Prontera Chivalry, will give our lives for king and country! Please enjoy your stay.";
+			mes "歡迎。我們，驕傲的普隆德拉騎士團，將為國王和國家獻出我們的生命！請您好好享受在這裡的時光。";
 			close;
 		}
 	}
 	if (KNIGHT_Q == 0) {
-		mes "Welcome, this is";
-		mes "the Prontera Chivalry.";
-		mes "What brings you here?";
+		mes "歡迎，這裡是";
+		mes "普隆德拉騎士團。";
+		mes "你來這裡有什麼事嗎？";
 		next;
-		if (select("I want to change my job to a Knight.:Just visiting.") == 1) {
-			mes "[Captain Herman]";
-			mes "Ohh...";
-			mes "A young "+((Sex==SEX_MALE)?"man":"lady")+" who wishes";
-			mes "to become a Knight!";
-			mes "Our Prontera Chivalry";
-			mes "will assist you.";
+		if (select("我想轉職成騎士。:只是來拜訪。") == 1) {
+			mes "[赫爾曼隊長]";
+			mes "噢...";
+			mes "一位年輕的"+((Sex==SEX_MALE)?"年輕人":"女士")+"想要";
+			mes "成為騎士！";
+			mes "我們的普隆德拉騎士團";
+			mes "將會協助你。";
 			next;
-			mes "[Captain Herman]";
-			mes "First of all, I am the captain of the Prontera Chivalry, Herman Phon Efesirsus. I'm pleased to meet young people eager to join the Prontera Chivalry.";
+			mes "[赫爾曼隊長]";
+			mes "首先，我是普隆德拉騎士團的隊長，赫爾曼·馮·埃菲瑟蘇斯。我很高興見到渴望加入普隆德拉騎士團的年輕人。";
 			next;
-			mes "[Captain Herman]";
-			mes "We only accept Swordmen";
-			mes "who are at least Job Level 40.";
-			mes "We cannot consider applicants that are not yet experienced enough to become Knights.";
+			mes "[赫爾曼隊長]";
+			mes "我們只接受至少Job Level 40的劍士。我們不能考慮那些還沒有足夠經驗成為騎士的申請者。";
 			next;
-			mes "[Captain Herman]";
-			mes "Once you apply, and we find";
-			mes "you eligible, we will begin the job change procedure. Would you";
-			mes "like to apply now?";
+			mes "[赫爾曼隊長]";
+			mes "一旦你申請，並且我們認為你符合資格，我們將開始轉職程序。你現在想申請嗎？";
 			next;
-			if (select("Yes, I would like to apply.:I'd like to think about it please.") == 1) {
-				mes "[Captain Herman]";
+			if (select("是的，我想申請。:我想考慮一下。") == 1) {
+				mes "[赫爾曼隊長]";
 				if (JobLevel < 40) {
-					mes "Ah, you are not yet ready to become a Knight! Didn't I specifically mention the Job Level 40 requirement?";
+					mes "啊，你還沒準備好成為騎士！我不是特別提到了Job Level 40的要求嗎？";
 					next;
-					mes "[Captain Herman]";
-					mes "Of course I understand your strong desire to join us, but now is not the time. Go out and fight some more monsters. We will be here waiting.";
+					mes "[赫爾曼隊長]";
+					mes "我當然理解你加入我們的強烈願望，但現在還不是時候。出去多打一些怪物。我們將在這裡等待。";
 					close;
 				}
 				if (SkillPoint) {
-					mes "Ah...!";
-					mes "You cannot change jobs if you have unused skill points remaining. Return when you have used";
-					mes "all of your skill points.";
+					mes "啊...！";
+					mes "如果你還有未使用的技能點，你不能轉職。當你已經使用了你所有的技能點後再回來。";
 					close;
 				}
 				set KNIGHT_Q,1;
 				setquest 9000;
-				mes "Let me see...";
-				mes "Your name is";
+				mes "讓我想想...";
+				mes "你的名字是";
 				mes strcharinfo(0) + "...";
-				mes "Is that right?";
+				mes "是這樣嗎？";
 				next;
-				mes "[Captain Herman]";
-				mes "Let me explain the job change procedure. You must visit a series of Knights and pass each";
-				mes "of their tests.";
+				mes "[赫爾曼隊長]";
+				mes "讓我解釋一下轉職程序。你必須拜訪一系列的騎士，並通過他們的每一項測試。";
 				next;
-				mes "[Captain Herman]";
-				mes "Once all the tests are completed, every Knight involved in your testing will gather and discuss your performance.";
+				mes "[赫爾曼隊長]";
+				mes "一旦所有的測試完成，每一位參與你測試的騎士將會聚集在一起，討論你的表現。";
 				next;
-				mes "[Captain Herman]";
-				mes "The Knights must unanimously approve of you before you can join the Prontera Chivalry. If only one person objects, you must";
-				mes "start over.";
+				mes "[赫爾曼隊長]";
+				mes "在你可以加入普隆德拉騎士團之前，騎士們必須一致同意你。如果只有一個人反對，你必須重新開始。";
 				next;
-				mes "[Captain Herman]";
-				mes "But I believe if you persist with an earnest heart, you shall be acknowledged by the Knights and ultimately recognized as a member of our Chivalry.";
+				mes "[赫爾曼隊長]";
+				mes "但我相信，如果你堅持以一顆真誠的心，你將會被騎士們認可，並最終被認可為我們騎士團的一員。";
 				next;
-				mes "[Captain Herman]";
-				mes "So, let's not waste any more time talking! Go and meet these Knights and begin their tests. Once you have completed all of the tests, come back to me.";
+				mes "[赫爾曼隊長]";
+				mes "所以，讓我們不要再浪費時間談話了！去見這些騎士，開始他們的測試。一旦你完成了所有的測試，就回來找我。";
 				close;
 			}
-			mes "[Captain Herman]";
-			mes "Oh...!";
-			mes "Well, I don't want to pressure you. Take your time and think it over. Return when you are ready to";
-			mes "change jobs, for we will be waiting.";
+			mes "[赫爾曼隊長]";
+			mes "噢...！";
+			mes "嗯，我不想給你壓力。慢慢來，好好考慮一下。當你準備好轉職的時候再回來，因為我們將會等待。";
 			close;
 		}
-		mes "[Captain Herman]";
-		mes "Come to think of it, aren't you a Swordman? It looks like you've encountered many foes in battle.";
+		mes "[赫爾曼隊長]";
+		mes "說起來，你不就是劍士嗎？看來你在戰鬥中遇到了許多敵人。";
 		next;
-		mes "[Captain Herman]";
-		mes "You should consider changing jobs to a Knight. Come and talk to me if you are interested.";
+		mes "[赫爾曼隊長]";
+		mes "你可以考慮轉職成騎士。如果你有興趣，就過來和我談談。";
 		next;
-		mes "[Captain Herman]";
-		mes "Please take";
-		mes "your time in";
-		mes "looking around.";
-		mes "Good day.";
+		mes "[赫爾曼隊長]";
+		mes "請慢慢";
+		mes "四處看看。";
+		mes "祝你有美好的一天。";
 		close;
 	}
 	else if (KNIGHT_Q == 1) {
-		mes "Mmm?";
-		mes strcharinfo(0) + ",";
-		mes "what can I do for you?";
-		mes "Ah, you don't know";
-		mes "who to visit?";
+		mes "嗯？";
+		mes strcharinfo(0) + "，";
+		mes "我可以為你做些什麼？";
+		mes "啊，你不知道";
+		mes "該拜訪誰？";
 		next;
-		mes "[Captain Herman]";
-		mes "I believe the Knights in charge of testing have set an order in which you must visit them. I suppose it helps the testing process.";
+		mes "[赫爾曼隊長]";
+		mes "我相信負責測試的騎士們已經設定了你必須拜訪他們的順序。我想這有助於測試過程。";
 		next;
-		mes "[Captain Herman]";
-		mes "First, go and visit";
-		mes "Sir Andrew for your first test. Don't be too nervous, he'll explain everything once you talk to him.";
+		mes "[赫爾曼隊長]";
+		mes "首先，去拜訪安德魯爵士，進行你的第一次測試。不要太緊張，一旦你和他談談，他會解釋一切。";
 		close;
 	}
 	else if (KNIGHT_Q == 2) callsub L_Mission,0;
 	else if (KNIGHT_Q == 3) callsub L_Mission,0;
 	else if (KNIGHT_Q == 4) {
 		callsub L_Mission,1;
-		mes "It appears that you have finished one test. Let's see. Sir Andrew, who must this Swordman visit next?";
+		mes "看來你已經完成了一個測試。讓我想想。安德魯爵士，這位劍士接下來必須拜訪誰？";
 		next;
-		mes "[Sir Andrew]";
-		mes "I said to";
-		mes "visit Sir Siracuse.";
-		mes "Funny, I thought I told";
-		mes "you. Did I forget...?";
+		mes "[安德魯爵士]";
+		mes "我說過";
+		mes "去拜訪希拉古斯爵士。";
+		mes "奇怪，我以為我告訴過";
+		mes "你了。我忘記了嗎...？";
 		next;
-		mes "[Captain Herman]";
-		mes "Did you hear?";
-		mes "Go to Sir Siracuse and take his test. Once you complete his test, do not forget who you're supposed to visit next as well.";
+		mes "[赫爾曼隊長]";
+		mes "你聽到了嗎？";
+		mes "去希拉古斯爵士那裡，參加他的測試。一旦你完成了他的測試，也不要忘記你接下來應該拜訪誰。";
 		close;
 	}
 	else if (KNIGHT_Q == 5) callsub L_Mission,0;
 	else if (KNIGHT_Q == 6) {
 		callsub L_Mission,1;
-		mes "Let's see...";
-		mes "You've completed two tests.";
-		mes "Sir Siracuse, who must this Swordman visit next?";
+		mes "讓我想想...";
+		mes "你已經完成了兩項測試。";
+		mes "希拉古斯爵士，這位劍士接下來必須拜訪誰？";
 		next;
-		mes "[Sir Siracuse]";
-		mes "Oh...!";
-		mes "Um, who was next...?";
-		mes "Right! Sir Windsor!";
+		mes "[希拉古斯爵士]";
+		mes "噢...！";
+		mes "嗯，下一個是誰...？";
+		mes "對了！溫莎爵士！";
 		next;
-		mes "[Captain Herman]";
-		mes "Head over to";
-		mes "Sir Windsor Benedict for your next test. Listen carefully to the Knights in charge of testing so that you don't feel lost, alright?";
+		mes "[赫爾曼隊長]";
+		mes "前往溫莎·班尼迪克特爵士那裡進行你的下一個測試。仔細聽取負責測試的騎士的意見，這樣你才不會感到迷茫，好嗎？";
 		close;
 	}
 	else if (KNIGHT_Q == 7) callsub L_Mission,0;
 	else if (KNIGHT_Q == 8) {
 		callsub L_Mission,1;
-		mes "Sir Windor...?";
-		mes "Who must this";
-		mes "Swordman visit";
-		mes "next?";
+		mes "溫莎爵士...？";
+		mes "這位";
+		mes "劍士必須";
+		mes "拜訪誰？";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		mes "......";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Amy Beatrice.";
+		mes "[溫莎爵士]";
+		mes "...艾米·碧翠絲。";
 		next;
-		mes "[Captain Herman]";
-		mes "Ah, go and visit";
-		mes "Lady Amy and take her test. Make sure you pay attention to who you must go to for your next test.";
+		mes "[赫爾曼隊長]";
+		mes "啊，去拜訪艾米女士，參加她的測試。確保你注意你必須去進行下一次測試的人。";
 		close;
 	}
 	else if (KNIGHT_Q == 9) callsub L_Mission,0;
 	else if (KNIGHT_Q == 10) {
 		callsub L_Mission,1;
-		mes "Let's see...";
-		mes "Lady Amy, who";
-		mes "must this Swordman";
-		mes "visit next?";
+		mes "讓我想想...";
+		mes "艾米女士，這位";
+		mes "劍士必須";
+		mes "拜訪誰？";
 		next;
-		mes "[Lady Amy]";
-		mes "Oh...";
-		mes "I said to visit";
-		mes "Sir Edmond!";
-		mes "Tee hee~";
+		mes "[艾米女士]";
+		mes "噢...";
+		mes "我說過拜訪";
+		mes "埃德蒙爵士！";
+		mes "嘻嘻～";
 		next;
-		mes "[Captain Herman]";
-		mes "Now, go and speak";
-		mes "to Sir Edmond. He will";
-		mes "be in charge of your";
-		mes "next test.";
+		mes "[赫爾曼隊長]";
+		mes "現在，去和埃德蒙";
+		mes "爵士談談。他將負責";
+		mes "你的下一個測試。";
 		close;
 	}
 	else if (KNIGHT_Q == 11) callsub L_Mission,0;
 	else if (KNIGHT_Q == 12) {
 		callsub L_Mission,1;
-		mes "Don't you only have to visit one more person? The Knight in";
-		mes "charge of the final test";
-		mes "is Sir Gray Prospheiro.";
+		mes "你不是只需要拜訪最後一個人了嗎？負責最後測試的騎士是格雷·普羅斯佩羅爵士。";
 		next;
-		mes "[Sir Edmond]";
-		mes "This world operates according";
-		mes "to the law of cause and effect.";
-		mes "All will be revealed in the end.";
+		mes "[艾德蒙爵士]";
+		mes "這個世界依照";
+		mes "因果律運作。";
+		mes "一切終將水落石出。";
 		next;
-		mes "[Captain Herman]";
-		mes "Be alert and do";
-		mes "your best, as this";
-		mes "is the last test.";
+		mes "[赫爾曼隊長]";
+		mes "保持警惕並盡你";
+		mes "所能，因為這";
+		mes "是最後的測試。";
 		next;
-		mes "[Captain Herman]";
-		mes "Return to me";
-		mes "after you have";
-		mes "completed the";
-		mes "final test.";
+		mes "[赫爾曼隊長]";
+		mes "完成";
+		mes "最後的測試後";
+		mes "回到我這裡。";
 		close;
 	}
 	else if (KNIGHT_Q == 13) {
-		mes "Finish the last test.";
-		mes "Once that is complete, all the Knights involved in your testing shall gather, and we will evaluate your performance.";
+		mes "完成最後的測試。";
+		mes "一旦完成，所有參與你測試的騎士都會聚集，我們將評估你的表現。";
 		close;
 	}
 	else if (KNIGHT_Q == 14) {
 		if (SkillPoint) {
-			mes "Oh...!";
-			mes "You cannot change jobs if you have unused skill points remaining. Return once you have distributed all your skill points.";
+			mes "喔...！";
+			mes "如果你還有未使用的技能點數，就不能轉職。請將所有技能點數分配完畢後再來。";
 			close;
 		}
-		mes "Oh, have you completed all the tests? But not everyone who completes the tests can";
-		mes "become a Knight.";
+		mes "喔，你完成所有測試了嗎？但並非所有完成測試的人都能";
+		mes "成為騎士。";
 		next;
-		mes "[Captain Herman]";
-		mes "During the test we see how loyal, honorable and strong you are. We also see if you were courteous and if you know the value of modesty and reverence.";
+		mes "[赫爾曼隊長]";
+		mes "在測試中，我們會觀察你的忠誠、榮譽和力量。我們也會觀察你是否謙恭有禮，以及你是否了解謙遜和虔誠的價值。";
 		next;
-		mes "[Captain Herman]";
-		mes "Through this process, I have also observed your actions. All seven of our opinions will be reflected in the decision of your job change.";
+		mes "[赫爾曼隊長]";
+		mes "透過這個過程，我也觀察了你的行為。我們七個人的意見都會反映在你的轉職決定中。";
 		next;
-		mes "[Captain Herman]";
-		mes "Then...";
-		mes "We shall listen";
-		mes "to everyone's thoughts!";
-		mes "Andrew, what do you think?";
+		mes "[赫爾曼隊長]";
+		mes "那麼...";
+		mes "我們將聽取";
+		mes "每個人的想法！";
+		mes "安德魯，你怎麼看？";
 		next;
-		mes "[Sir Andrew]";
+		mes "[安德魯爵士]";
 		if (JobLevel == 50) {
-			mes "What can I say?";
-			mes "I approve!";
-			mes "Having lived as";
-			mes "a Swordsman up";
-			mes "until now";
-			mes "is enough.";
+			mes "我還能說什麼？";
+			mes "我贊成！";
+			mes "到目前為止";
+			mes "一直以劍士";
+			mes "的身分活著";
+			mes "就足夠了。";
 		}
 		else {
-			mes "This one has";
-			mes "gathered items";
-			mes "that are troublesome";
-			mes "to obtain. I approve!";
-			mes "I believe "+((Sex==SEX_MALE)?"":"s")+"he will continue to be loyal after becoming a Knight.";
+			mes "這個人已經";
+			mes "收集了";
+			mes "難以獲得的";
+			mes "物品。我贊成！";
+			mes "我相信"+((Sex==SEX_MALE)?"":"s")+"他/她 在成為騎士後會繼續保持忠誠。";
 		}
 		next;
-		mes "[Captain Herman]";
-		mes "Hmm.";
-		mes "What a nice review.";
-		mes "Siracuse, what are your thoughts?";
+		mes "[赫爾曼隊長]";
+		mes "嗯。";
+		mes "多麼好的評價。";
+		mes "希拉古斯，你的想法是什麼？";
 		next;
-		mes "[Sir Siracuse]";
-		mes "Heh, very well. Not quite what";
-		mes "I would want, but hopefully will become better in the future.";
+		mes "[希拉古斯爵士]";
+		mes "嘿，很好。不太符合";
+		mes "我想要的，但希望未來會變得更好。";
 		next;
-		mes "[Sir Siracuse]";
-		mes "After becoming a Knight, you must build a good reputation through honor. Ehh... I approve.";
+		mes "[希拉古斯爵士]";
+		mes "成為騎士後，你必須透過榮譽建立良好的聲譽。呃...我贊成。";
 		next;
-		mes "[Captain Herman]";
-		mes "Okay...";
-		mes "Windsor,";
-		mes "what about you?";
+		mes "[赫爾曼隊長]";
+		mes "好吧...";
+		mes "溫莎，";
+		mes "你覺得呢？";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		mes "......";
 		next;
-		mes "[Sir Windsor]";
-		mes "....Approved.";
+		mes "[溫莎爵士]";
+		mes "....贊成。";
 		next;
-		mes "[Captain Herman]";
-		mes "I don't think";
-		mes "he disapproves.";
-		mes "Then, let's listen";
-		mes "to Amy's opinion.";
+		mes "[赫爾曼隊長]";
+		mes "我不認為";
+		mes "他反對。";
+		mes "那麼，讓我們聽聽";
+		mes "艾咪的意見。";
 		next;
-		mes "[Lady Amy]";
+		mes "[艾咪女士]";
 		if (Sex == SEX_MALE) {
-			mes "Mmm~ He's so polite!";
-			mes "He'll grow to be a wonderful Knight. And he's got such cute widdle cheeeeks~ Hee hee!";
+			mes "嗯~ 他真有禮貌！";
+			mes "他會成長為一個出色的騎士。而且他還有這麼可愛的小臉頰~ 嘻嘻！";
 		}
 		else {
-			mes "Mmm~ She should be great!";
-			mes "She's very courteous and also very cute, so a few more points! Heh~";
-			mes "I shouldn't be saying things like this!";
+			mes "嗯~ 她應該很棒！";
+			mes "她非常謙恭有禮，而且非常可愛，所以多加幾分！呵呵~";
+			mes "我不應該說這種話的！";
 		}
 		next;
-		mes "[Captain Herman]";
-		mes "Well...";
-		mes "A strange review,";
-		mes "but I believe";
-		mes "she approves.";
-		mes "Edmond, speak";
-		mes "your mind.";
+		mes "[赫爾曼隊長]";
+		mes "嗯...";
+		mes "一個奇怪的評價，";
+		mes "但我相信";
+		mes "她贊成。";
+		mes "艾德蒙，說出";
+		mes "你的想法。";
 		next;
-		mes "[Sir Edmond]";
+		mes "[艾德蒙爵士]";
 		if (Sex == SEX_MALE) {
-			mes "He seems a little rough, but something bright shines within him. With polish and refinement, his true value will shine forth";
-			mes "as the sun.";
+			mes "他看起來有點粗獷，但內心閃耀著光芒。經過磨練和提煉，他真正的價值將像";
+			mes "太陽一樣綻放光芒。";
 		}
 		else {
-			mes "It's difficult to see, but there is a spiritual beauty within her. With polish and refinement, her true value will glow as resplendently";
-			mes "as the moon.";
+			mes "很難看出來，但在她內心有種精神上的美麗。經過磨練和提煉，她真正的價值將像";
+			mes "月亮一樣燦爛地發光。";
 		}
 		next;
-		mes "[Captain Herman]";
-		mes "Lastly...";
-		mes "Gray. I would like";
-		mes "to hear your thoughts.";
+		mes "[赫爾曼隊長]";
+		mes "最後...";
+		mes "格雷。我想";
+		mes "聽聽你的想法。";
 		next;
-		mes "[Gray]";
-		mes "A young "+((Sex==SEX_MALE)?"gentleman":"lady")+" coming here with the determination to become a Knight is enough...";
+		mes "[格雷]";
+		mes "一位年輕的"+((Sex==SEX_MALE)?"紳士":"女士")+"帶著成為騎士的決心來到這裡就足夠了...";
 		next;
-		mes "[Captain Herman]";
-		mes "Everyone";
-		mes "has approved.";
-		mes "No one has opposed.";
-		mes "Then I shall tell";
-		mes "you my opinion.";
+		mes "[赫爾曼隊長]";
+		mes "每個人";
+		mes "都贊成了。";
+		mes "沒有人反對。";
+		mes "那麼我就要告訴";
+		mes "你我的意見。";
 		next;
-		mes "[Captain Herman]";
-		mes "My decision is...";
+		mes "[赫爾曼隊長]";
+		mes "我的決定是...";
 		next;
-		mes "[Captain Herman]";
-		mes "I approve.";
+		mes "[赫爾曼隊長]";
+		mes "我贊成。";
 		next;
-		mes "[Captain Herman]";
-		mes "You may not have finished all the tests perfectly, but you have all the necessary qualities to become";
-		mes "a Knight.";
+		mes "[赫爾曼隊長]";
+		mes "你可能沒有完美地完成所有測試，但你具備成為";
+		mes "騎士的所有必要品質。";
 		next;
 		completequest 9012;
 		callfunc "Job_Change",Job_Knight;
 		callfunc "F_ClearJobVar"; // Clears all job variables for the current player
-		mes "[Captain Herman]";
-		mes "I hereby declare";
-		mes "you a member of";
-		mes "the Prontera Chivalry.";
-		mes "Protect the weak and";
-		mes "live with honor.";
+		mes "[赫爾曼隊長]";
+		mes "我在此宣布";
+		mes "你為";
+		mes "普隆德拉騎士團的一員。";
+		mes "保護弱者並";
+		mes "以榮譽為生。";
 		next;
 		getitem 656,7; //Awakening_Potion
-		mes "[Captain Herman]";
-		mes "Oh...";
-		mes "We have prepared a small gift to congratulate you on your job change. Please use it when you are in battle as you honorably protect others.";
+		mes "[赫爾曼隊長]";
+		mes "喔...";
+		mes "我們準備了一份小禮物來祝賀你轉職。當你光榮地保護他人時，請在戰鬥中使用它。";
 		next;
-		mes "[Captain Herman]";
-		mes "Go forth!";
-		mes "The future of";
-		mes "Rune-Midgarts";
-		mes "rests on your";
-		mes "shoulders!";
+		mes "[赫爾曼隊長]";
+		mes "前進吧！";
+		mes "盧恩-米德加茲的";
+		mes "未來";
+		mes "掌握在你的";
+		mes "肩膀上！";
 		close;
 	}
 L_Mission:
-	mes "Mmm?";
-	mes "Swordman " + strcharinfo(0) + ".";
-	mes "How are the tests?";
+	mes "嗯？";
+	mes "劍士 " + strcharinfo(0) + "。";
+	mes "測試進行得如何？";
 	if (getarg(0)) {
-		mes "Ah~ You do not know";
-		mes "who to visit next?";
+		mes "啊~ 你不知道";
+		mes "接下來該拜訪誰了嗎？";
 		next;
-		mes "[Captain Herman]";
+		mes "[赫爾曼隊長]";
 		return;
 	} else {
-		mes "It may be difficult,";
-		mes "but do your best.";
+		mes "可能很困難，";
+		mes "但盡你所能。";
 		close;
 	}
 }
 
 prt_in,75,107,4	script	Sir Andrew#knt	65,{
-	mes "[Sir Andrew]";
+	mes "[安德魯爵士]";
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "You must be";
-			mes "a member of";
-			mes "the Chivalry.";
-			mes "How are you doing?";
+			mes "你一定是";
+			mes "騎士團的";
+			mes "成員。";
+			mes "你過得怎麼樣？";
 			next;
-			mes "[Sir Andrew]";
-			mes "You must work diligently to gather food as well as save zeny to buy equipment. Save everything you";
-			mes "find in battle, even the smallest Jellopy.";
+			mes "[安德魯爵士]";
+			mes "你必須努力收集食物，並存錢購買裝備。保存你在戰鬥中找到的一切，即使是最小的果凍。";
 			next;
-			mes "[Sir Andrew]";
-			mes "But it's not good";
-			mes "to be too greedy.";
-			mes "After all, we are Knights.";
+			mes "[安德魯爵士]";
+			mes "但太過貪婪";
+			mes "並不好。";
+			mes "畢竟，我們是騎士。";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Hey there,";
-			mes "little Novice.";
-			mes "Welcome to the";
-			mes "Prontera Chivalry.";
+			mes "嘿，";
+			mes "小初心者。";
+			mes "歡迎來到";
+			mes "普隆德拉騎士團。";
 			next;
-			mes "[Sir Andrew]";
-			mes "You might that you're";
-			mes "weak right now, but someday";
-			mes "you'll become stronger.";
+			mes "[安德魯爵士]";
+			mes "你可能覺得你現在";
+			mes "很弱，但總有一天";
+			mes "你會變得更強大。";
 			next;
-			mes "[Sir Andrew]";
-			mes "Dream of a bright future, and go look forward on the path that you choose to take.";
+			mes "[安德魯爵士]";
+			mes "夢想著光明的未來，並期待著你選擇的道路。";
 			close;
 		}
 		else {
-			mes "We, the members of the";
-			mes "Prontera Chivalry, are putting our best effort in protecting peace in this world.";
+			mes "我們，";
+			mes "普隆德拉騎士團的成員，正在盡我們最大的努力保護這個世界的和平。";
 			next;
-			mes "[Sir Andrew]";
-			mes "Even during the battles we face each and every day, we dream of";
-			mes "a bright future that is to come.";
+			mes "[安德魯爵士]";
+			mes "即使在我們每天面臨的戰鬥中，我們也夢想著";
+			mes "一個光明的未來即將到來。";
 			close;
 		}
 	}
 	if (KNIGHT_Q == 0) {
-		mes "We, the members of the";
-		mes "Prontera Chivalry, are putting our best effort in protecting peace in this world.";
+		mes "我們，普隆德拉騎士團的成員，正在盡最大努力保護世界的和平。";
 		next;
-		mes "[Sir Andrew]";
-		mes "Even during the battles we face each and every day, we dream of";
-		mes "a bright future that is to come.";
+		mes "[安德魯爵士]";
+		mes "即使在我們每天面臨的戰鬥中，我們仍然夢想著";
+		mes "即將到來的光明未來。";
 		close;
 	}
 	else if (KNIGHT_Q == 1) {
-		mes "Good day.";
-		mes "May I help you";
-		mes "with something?";
+		mes "您好。";
+		mes "我可以幫你";
+		mes "做些什麼嗎？";
 		next;
-		if (select("I would like to take the test.:Oh, nothing.") == 1) {
-			mes "[Sir Andrew]";
-			mes "Ah...";
-			mes "You wish";
-			mes "to become a Knight.";
-			mes "Your name is";
-			mes strcharinfo(0) + ",";
-			mes "correct?";
+		if (select("我想參加測試。:喔，沒什麼。") == 1) {
+			mes "[安德魯爵士]";
+			mes "啊...";
+			mes "你希望";
+			mes "成為一名騎士。";
+			mes "你的名字是";
+			mes strcharinfo(0) + "，";
+			mes "對吧？";
 			next;
-			mes "[Sir Andrew]";
-			mes "I am a Knight of";
-			mes "the Prontera Chivalry,";
-			mes "Andrew Shylock.";
-			mes "I am in charge of";
-			mes "your first test.";
+			mes "[安德魯爵士]";
+			mes "我是普隆德拉騎士團的騎士，";
+			mes "安德魯·夏洛克。";
+			mes "我負責";
+			mes "你的第一次測試。";
 			next;
-			mes "[Sir Andrew]";
-			mes "I will be testing your sense of loyalty. Every Knight must possess this virtue. For this exam, you will be gathering prizes from";
-			mes "the battlefield.";
+			mes "[安德魯爵士]";
+			mes "我將測試你的忠誠感。每位騎士都必須具備這種美德。對於這次考試，你將從";
+			mes "戰場上收集獎品。";
 			next;
 			if (JobLevel == 50) {
-				mes "[Sir Andrew]";
-				mes "Mmm...?";
-				mes "Hold on there.";
-				mes "You look like you've";
-				mes "mastered being";
-				mes "a Swordsman.";
+				mes "[安德魯爵士]";
+				mes "嗯...？";
+				mes "等一下。";
+				mes "你看起來已經";
+				mes "精通了";
+				mes "劍士的職業。";
 				next;
-				mes "[Sir Andrew]";
-				mes "Impressive...!";
-				mes "On second thought,";
-				mes "I don't think your";
-				mes "loyalty needs to";
-				mes "be tested.";
+				mes "[安德魯爵士]";
+				mes "令人印象深刻...！";
+				mes "仔細想想，";
+				mes "我不認為你的";
+				mes "忠誠需要";
+				mes "被測試。";
 				next;
-				mes "[Sir Andrew]";
-				mes "Please go to my fellow Knight, Sir Siracuse, as he will give you your next test. Well done in mastering the Swordman job.";
+				mes "[安德魯爵士]";
+				mes "請去我的騎士同伴，西拉庫斯爵士那裡，他會給你下一個測試。做得好，掌握了劍士的職業。";
 				set KNIGHT_Q,4;
 				changequest 9000,9003;
 				close;
 			}
-			mes "[Sir Andrew]";
-			mes "Without";
-			mes "further ado,";
-			mes "let's begin!";
-			mes "Go and gather the";
-			mes "following items...";
+			mes "[安德魯爵士]";
+			mes "事不宜遲，";
+			mes "讓我們開始吧！";
+			mes "去收集";
+			mes "以下物品...";
 			next;
-			mes "[Sir Andrew]";
+			mes "[安德魯爵士]";
 			switch(rand(1,2)) {
 			//Elder_Pixie's_Beard, Wing_Of_Red_Bat, Orcish_Voucher, Moth_Dust, Reptile_Tongue, Wild_Boar's_Mane
 			case 1: setarray .@items[0], 1040,5, 7006,5, 931,5, 1057,5, 903,5, 1028,5, 2; break;
@@ -589,26 +568,26 @@ prt_in,75,107,4	script	Sir Andrew#knt	65,{
 			mes "^236B8E"+.@items[9]+" "+getitemname(.@items[8])+"^000000 and";
 			mes "^236B8E"+.@items[11]+" "+getitemname(.@items[10])+"^000000,";
 			next;
-			mes "[Sir Andrew]";
-			mes "I shall be";
-			mes "waiting here for";
-			mes "you to bring the";
-			mes "items I've listed.";
-			mes "See you soon~";
+			mes "[安德魯爵士]";
+			mes "我將會";
+			mes "在這裡等待";
+			mes "你帶來";
+			mes "我列出的物品。";
+			mes "再見~";
 			close;
 		}
 		else {
-			mes "[Sir Andrew]";
-			mes "Well, then...";
-			mes "Good day.";
+			mes "[安德魯爵士]";
+			mes "那麼...";
+			mes "祝您愉快。";
 			close;
 		}
 	}
 	else if (KNIGHT_Q == 2 || KNIGHT_Q == 3) {
-		mes "Welcome back~";
-		mes "Did you gather";
-		mes "all the items?";
-		mes "Let's check and see...";
+		mes "歡迎回來~";
+		mes "你收集了";
+		mes "所有的物品嗎？";
+		mes "讓我們檢查一下...";
 		next;
 		switch(KNIGHT_Q) {
 		//Elder_Pixie's_Beard, Wing_Of_Red_Bat, Orcish_Voucher, Moth_Dust, Reptile_Tongue, Wild_Boar's_Mane
@@ -617,8 +596,8 @@ prt_in,75,107,4	script	Sir Andrew#knt	65,{
 		case 3: setarray .@items[0], 1042,5, 950,5, 1032,5, 966,5, 7031,5, 946,5, 0; break;
 		}
 		if (countitem(.@items[0]) >= .@items[1] && countitem(.@items[2]) >= .@items[3] && countitem(.@items[4]) >= .@items[5] && countitem(.@items[6]) >= .@items[7] && countitem(.@items[8]) >= .@items[9] && countitem(.@items[10]) >= .@items[11]) {
-			mes "[Sir Andrew]";
-			mes "Perfect! We appreciate your effort in gathering these items. Thesee will be used to support the Chivalry's finances.";
+			mes "[安德魯爵士]";
+			mes "完美！我們感謝您在收集這些物品方面的努力。這些將用於支持騎士團的財務。";
 			next;
 			delitem .@items[0],.@items[1];
 			delitem .@items[2],.@items[3];
@@ -629,19 +608,19 @@ prt_in,75,107,4	script	Sir Andrew#knt	65,{
 			if (KNIGHT_Q == 2) changequest 9001,9003;
 			else changequest 9002,9003;
 			set KNIGHT_Q,4;
-			mes "[Sir Andrew]";
-			mes "Please visit my fellow Knight, Sir Siracuse, and continue the tests with the dedication and loyalty you've shown to me this day.";
+			mes "[安德魯爵士]";
+			mes "請拜訪我的騎士同伴，西拉庫斯爵士，並以您今天向我展示的奉獻精神和忠誠繼續測試。";
 			close;
 		}
-		mes "[Sir Andrew]";
-		mes "Wait, wait...";
-		mes "I think you're";
-		mes "still missing some";
-		mes "items. In case you";
-		mes "forgot, let me";
-		mes "remind you...";
+		mes "[安德魯爵士]";
+		mes "等等，等等...";
+		mes "我想你還";
+		mes "缺少一些";
+		mes "物品。萬一你";
+		mes "忘記了，讓我";
+		mes "提醒你...";
 		next;
-		mes "[Sir Andrew]";
+		mes "[安德魯爵士]";
 		mes "^236B8E"+.@items[1]+" "+getitemname(.@items[0])+"^000000,";
 		mes "^236B8E"+.@items[3]+" "+getitemname(.@items[2])+"^000000,";
 		mes "^236B8E"+.@items[5]+" "+getitemname(.@items[4])+"^000000,";
@@ -649,457 +628,455 @@ prt_in,75,107,4	script	Sir Andrew#knt	65,{
 		mes "^236B8E"+.@items[9]+" "+getitemname(.@items[8])+"^000000 and";
 		mes "^236B8E"+.@items[11]+" "+getitemname(.@items[10])+"^000000,";
 		next;
-		mes "[Sir Andrew]";
-		mes "Now, please take this test seriously and with sincerity.";
-		mes "Now, I'll be waiting for you";
-		mes "to complete this task.";
+		mes "[安德魯爵士]";
+		mes "現在，請認真而真誠地參加這次測試。";
+		mes "現在，我會等你";
+		mes "完成這項任務。";
 		close;
 	}
 	else if (KNIGHT_Q == 4) {
-		mes "Did you have something you needed to ask me? You should go and take the next test. Hurry, Sir Siracuse is waiting for you~";
+		mes "你有什麼需要問我的嗎？您應該去參加下一個測試。快點，西拉庫斯爵士正在等你~";
 		close;
 	}
 	else if (KNIGHT_Q == 14) {
-		mes "You must have finished all the tests. Good job! You should go see our Captain so that we can all give our evaluation.";
+		mes "你一定是完成了所有的測試。做得好！您應該去拜訪我們的隊長，以便我們都能給出我們的評價。";
 		close;
 	}
 	else {
-		mes "Did you have something you needed to ask me? You should go and take your next test. Do your best.";
-		mes "I know you can do it!";
+		mes "你有什麼需要問我的嗎？您應該去參加下一個測試。盡力而為。";
+		mes "我知道你能做到！";
 		close;
 	}
 }
 
 prt_in,71,91,0	script	Sir Siracuse#knt	65,{
-	mes "[Sir Siracuse]";
+	mes "[西拉庫斯爵士]";
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "Hey there!";
-			mes "How are you doing?";
-			mes "The Chivalry's been";
-			mes "doing pretty well.";
+			mes "嘿！";
+			mes "你好嗎？";
+			mes "騎士團";
+			mes "做得很好。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "We've been";
-			mes "testing new members,";
-			mes "but not all of them";
-			mes "show as much promise";
-			mes "as you.";
+			mes "[西拉庫斯爵士]";
+			mes "我們一直在";
+			mes "測試新成員，";
+			mes "但並非所有人";
+			mes "都像你一樣";
+			mes "有前途。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "I hope these new recruits all behave themselves, and don't";
-			mes "bring shame to the Chivalry.";
+			mes "[西拉庫斯爵士]";
+			mes "我希望這些新兵都能好好表現，不要";
+			mes "給騎士團帶來恥辱。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "If you catch any of the new guys acting in a way unbecoming of a Knight, scold them for me please?";
+			mes "[西拉庫斯爵士]";
+			mes "如果你發現任何新來的傢伙的行為不像騎士，請替我斥責他們？";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Oh?";
-			mes "What is a Novice";
-			mes "doing here?";
+			mes "哦？";
+			mes "一個新手";
+			mes "在這裡做什麼？";
 			next;
-			mes "[Sir Siracuse]";
-			mes "Are you interested in becoming a Knight? You just can't change into a Knight from a Novice, you know.";
+			mes "[西拉庫斯爵士]";
+			mes "你有興趣成為一名騎士嗎？你知道，你不能直接從新手轉職成騎士。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "First, you have";
-			mes "to become a well";
-			mes "experienced Swordman";
-			mes "before you can consider";
-			mes "becoming a Knight.";
+			mes "[西拉庫斯爵士]";
+			mes "首先，你必須";
+			mes "成為一個有經驗的";
+			mes "劍士，才能考慮";
+			mes "成為一名騎士。";
 			close;
 		}
 		else {
-			mes "Offense and defense.";
-			mes "Is there a way to have both without compromising one or the other?";
+			mes "進攻和防禦。";
+			mes "有沒有一種方法可以在不犧牲一方的情況下同時擁有兩者？";
 			next;
-			mes "[Sir Siracuse]";
-			mes "Two-handed weapons greatly";
-			mes "improve your offense but decrease your defenses. Is there something that can overcome this weakness?";
+			mes "[西拉庫斯爵士]";
+			mes "雙手武器可以大大";
+			mes "提高你的進攻能力，但會降低你的防禦能力。有沒有什麼可以克服這個弱點？";
 			next;
-			mes "[Sir Siracuse]";
-			mes "A weapon or some sort";
-			mes "of technique like that";
-			mes "would help Knights greatly...";
+			mes "[西拉庫斯爵士]";
+			mes "像那樣的武器或某種";
+			mes "技術將極大地";
+			mes "幫助騎士們......";
 			close;
 		}
 	}
 	if (KNIGHT_Q == 0) {
-		mes "Offense and defense.";
-		mes "Is there a way to have both without compromising one or the other?";
+		mes "進攻和防禦。";
+		mes "有沒有一種方法可以在不犧牲一方的情況下同時擁有兩者？";
 		next;
-		mes "[Sir Siracuse]";
-		mes "Two-handed weapons greatly";
-		mes "improve your offense but decrease your defenses. Is there something that can overcome this weakness?";
+		mes "[西拉庫斯爵士]";
+		mes "雙手武器可以大大";
+		mes "提高你的進攻能力，但會降低你的防禦能力。有沒有什麼可以克服這個弱點？";
 		next;
-		mes "[Sir Siracuse]";
-		mes "A weapon or some sort";
-		mes "of technique like that";
-		mes "would help Knights greatly...";
+		mes "[西拉庫斯爵士]";
+		mes "像那樣的武器或某種";
+		mes "技術將極大地";
+		mes "幫助騎士們......";
 		close;
 	}
 	else if (KNIGHT_Q == 1) {
-		mes "Eh?";
-		mes "Do you have";
-		mes "something to";
-		mes "ask me?";
+		mes "欸？";
+		mes "你有";
+		mes "什麼事要";
+		mes "問我嗎？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Siracuse]";
-			mes "Oh, to become";
-			mes "a Knight? Come to";
-			mes "think of it, aren't";
-			mes "you the "+((Sex==SEX_MALE)?"guy":"girl")+" that";
-			mes "just applied?";
+		if (select("我想參加轉職測試。:喔，沒什麼。") == 1) {
+			mes "[西拉庫斯爵士]";
+			mes "哦，要成為";
+			mes "一名騎士？想想看，你是不是";
+			mes "剛申請的"+((Sex==SEX_MALE)?"傢伙":"女孩")+"？";
 			next;
-			mes "[Sir Siracuse]";
-			mes "Let's see...";
-			mes "Your name was";
-			mes strcharinfo(0) + ".";
+			mes "[西拉庫斯爵士]";
+			mes "讓我想想...";
+			mes "你的名字是";
+			mes strcharinfo(0) + "。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "But, before you come to me, you must visit the others. The way";
-			mes "I see it, you haven't proven that you know the basics. But I'll";
-			mes "reconsider once you";
-			mes "pass the first test.";
+			mes "[西拉庫斯爵士]";
+			mes "但是，在你來找我之前，你必須先去拜訪其他人。在我看來，你還沒有證明你了解基礎知識。但是一旦你";
+			mes "通過了第一次測試，我會";
+			mes "重新考慮。";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Hmmm...?";
-		mes "Alright.";
-		mes "It's just that";
-		mes "you had that";
-		mes "look on your";
-		mes "face.";
+		mes "[西拉庫斯爵士]";
+		mes "嗯...？";
+		mes "好吧。";
+		mes "只是因為";
+		mes "你的臉上";
+		mes "看起來";
+		mes "是那樣。";
 		close;
 	}
 	else if (KNIGHT_Q == 2 || KNIGHT_Q == 3) {
-		mes "Eh?";
-		mes "Do you have";
-		mes "something to";
-		mes "ask me?";
+		mes "欸？";
+		mes "你有";
+		mes "什麼事要";
+		mes "問我嗎？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Siracuse]";
-			mes "Hahaha~!";
-			mes "Aren't you supposed to be taking Andrew's test? You can't just skip that, you know! All of our tests are important.";
+		if (select("我想參加轉職測試。:喔，沒什麼。") == 1) {
+			mes "[西拉庫斯爵士]";
+			mes "哈哈哈~！";
+			mes "你不應該正在參加安德魯的測試嗎？你不能跳過那個，你知道的！我們所有的測試都很重要。";
 			next;
-			mes "[Sir Siracuse]";
-			mes "Speak to Sir Andrew first.";
-			mes "My test for you will come after you've finished his test.";
+			mes "[西拉庫斯爵士]";
+			mes "先和安德魯爵士談談。";
+			mes "我的測試會在你的測試完成後進行。";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Hmmm...?";
-		mes "Alright.";
-		mes "It's just that";
-		mes "you had that";
-		mes "look on your";
-		mes "face.";
+		mes "[西拉庫斯爵士]";
+		mes "嗯...？";
+		mes "好吧。";
+		mes "只是因為";
+		mes "你的臉上";
+		mes "看起來";
+		mes "是那樣。";
 		close;
 	}
 	else if (KNIGHT_Q == 4 || KNIGHT_Q == 5) {
 		if (KNIGHT_Q == 4) {
-			mes "Oh?";
-			mes "Do you have";
-			mes "something to";
-			mes "ask me?";
+			mes "哦？";
+			mes "你有";
+			mes "什麼事要";
+			mes "問我嗎？";
 			next;
-			if (select("Sir Andrew sent me to take your test.:Oh, nothing.") == 1) {
-				mes "[Sir Siracuse]";
-				mes "I see, you've passed the first test. Very well, I'll make some time for you. Let me introduce myself. My name is James Siracuse.";
+			if (select("安德魯爵士派我來參加你的測試。:喔，沒什麼。") == 1) {
+				mes "[西拉庫斯爵士]";
+				mes "我明白了，你通過了第一個測試。很好，我會為你抽出一些時間。讓我自我介紹一下。我的名字是詹姆斯·西拉庫斯。";
 				next;
-				mes "[Sir Siracuse]";
-				mes "This test will measure how much you know about Knighthood. More importantly, I want to know your thoughts about honor.";
+				mes "[西拉庫斯爵士]";
+				mes "這次測試將衡量你對騎士精神的了解程度。更重要的是，我想知道你對榮譽的想法。";
 				next;
-				mes "[Sir Siracuse]";
-				mes "Don't be nervous, I won't keep you too long. These will be quick questions. Plus, you still have to see the others, right?";
+				mes "[西拉古斯爵士]";
+				mes "別緊張，我不會佔用你太多時間。這些都會是很快的問題。而且，你還得去見其他人，對吧？";
 				next;
-				mes "[Sir Siracuse]";
-				mes "Well then,";
-				mes "let's begin.";
-				mes "Please answer";
-				mes "promptly.";
+				mes "[西拉古斯爵士]";
+				mes "那麼，";
+				mes "我們開始吧。";
+				mes "請";
+				mes "迅速回答。";
 				next;
 			}
 			else {
-				mes "[Sir Siracuse]";
-				mes "Hmmm...?";
-				mes "Alright.";
-				mes "It's just that";
-				mes "you had that";
-				mes "look on your";
-				mes "face.";
+				mes "[西拉古斯爵士]";
+				mes "嗯...？";
+				mes "好吧。";
+				mes "只是";
+				mes "你臉上";
+				mes "帶著那種";
+				mes "表情。";
 				close;
 			}
 		}
 		else if (KNIGHT_Q == 5) {
-			mes "What...";
-			mes "You again?";
+			mes "什麼...";
+			mes "又是你？";
 			next;
-			if (select("I wish to take the test again.:Oh, nothing.") == 1) {
-				mes "[Sir Siracuse]";
-				mes "Is that right?";
-				mes "Are you sure you're";
-				mes "prepared this time?";
+			if (select("我想要再次參加測試。:喔，沒事。") == 1) {
+				mes "[西拉古斯爵士]";
+				mes "是嗎？";
+				mes "這次你確定";
+				mes "準備好了嗎？";
 				next;
-				mes "[Sir Siracuse]";
-				mes "Alright then,";
-				mes "here we go again...";
+				mes "[西拉古斯爵士]";
+				mes "好吧，";
+				mes "我們再開始一次...";
 				next;
 			}
 			else {
-				mes "[Sir Siracuse]";
-				mes "Hmmm...?";
-				mes "Alright.";
-				mes "It's just that";
-				mes "you had that";
-				mes "look on your";
-				mes "face.";
+				mes "[西拉古斯爵士]";
+				mes "嗯...？";
+				mes "好吧。";
+				mes "只是";
+				mes "你臉上";
+				mes "帶著那種";
+				mes "表情。";
 				close;
 			}
 		}
-		mes "[Sir Siracuse]";
-		mes "A Knight must possess great strength, defense, speed, and the skill to wield a Two-Handed Sword. Which of the following weapons are not affected by the Two Hand Quicken skill?";
+		mes "[西拉古斯爵士]";
+		mes "騎士必須擁有強大的力量、防禦、速度，以及使用雙手劍的技巧。下列哪種武器不受雙手劍加速術影響？";
 		next;
-		if (select("Katana:Slayer:Broadsword:Flamberge") != 4) {
+		if (select("武士刀:斬魔劍:闊劍:火焰之劍") != 4) {
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Wrong!";
-			mes "That's a Two-Handed Sword!";
-			mes "Are you sure you want to be a Knight? You don't even know the basics...";
+			mes "[西拉古斯爵士]";
+			mes "錯了！";
+			mes "那是雙手劍！";
+			mes "你確定你要成為騎士嗎？你甚至不知道基本知識...";
 			next;
-			mes "[Sir Siracuse]";
-			mes "If you're not sure about anything, go into town and ask any Knight. You need to learn more about Knights before applying for the job!";
+			mes "[西拉古斯爵士]";
+			mes "如果你對任何事情都不確定，就去城鎮裡問任何騎士。在申請這份工作之前，你需要多了解騎士！";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Good, now let me ask about some skills. Which of the following is not necessary to learn Bowling Bash?";
+		mes "[西拉古斯爵士]";
+		mes "很好，現在讓我問一些關於技能的問題。下列哪項不是學習保齡球撞擊的必要條件？";
 		next;
-		if (select("Two Handed Sword Mastery Lv.5:Magnum Break Lv.3:Provoke Lv.10:Bash Lv.10") != 3) {
+		if (select("雙手劍使用熟練度Lv.5:強力攻擊Lv.3:挑釁Lv.10:狂擊Lv.10") != 3) {
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Wrong!";
-			mes "You need that to learn Bowling Bash! You should learn more about the Knight class before applying for the job!";
+			mes "[西拉古斯爵士]";
+			mes "錯了！";
+			mes "你需要那個才能學習保齡球撞擊！在申請這份工作之前，你應該多了解騎士這個職業！";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Knights can also use Spears, unlike other jobs, and have skills related to Spears as well. What skills are not necessary to learn the skill Brandish Spear?";
+		mes "[西拉古斯爵士]";
+		mes "騎士也可以使用長矛，不像其他職業，並且擁有與長矛相關的技能。哪些技能不是學習技能投擲長矛的必要條件？";
 		next;
-		if (select("Pierce Lv.5:Spear Stab Lv.3:Spear Boomerang Lv.3:Peco Peco Ride Lv.1") != 3) {
+		if (select("刺擊Lv.5:長矛刺擊Lv.3:長矛迴旋Lv.3:騎鳥Lv.1") != 3) {
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Wrong! You need to learn that to learn Brandish Spear! How can you not know about Knights if you want to become one?";
+			mes "[西拉古斯爵士]";
+			mes "錯了！你需要學習那個才能學習投擲長矛！如果你想成為騎士，怎麼會不了解騎士呢？";
 			next;
-			mes "[Sir Siracuse]";
-			mes "If you aren't sure about anything, go into town and ask any Knight";
-			mes "for help. Come back after you've learned more about Knights.";
+			mes "[西拉古斯爵士]";
+			mes "如果你對任何事情都不確定，就去城鎮裡問任何騎士";
+			mes "尋求幫助。在你多了解騎士之後再回來。";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Some Spears also have magical attributes, just like spells. Of the following, which can attack a Nightmare, which has the Ghost attribute?";
+		mes "[西拉古斯爵士]";
+		mes "有些長矛也具有魔法屬性，就像法術一樣。在下列選項中，哪一個可以攻擊具有幽靈屬性的夢魘？";
 		next;
-		if (select("Zephyrus:Lance:Bill Guisarme:Crescent Scythe") != 1) {
+		if (select("狂風之矛:長矛:比爾長刀:彎月鐮刀") != 1) {
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Wrong! You'll be doing absolutely no damage with that type of Spear! Come back after you've learned more about Knights!";
+			mes "[西拉古斯爵士]";
+			mes "錯了！用那種長矛你根本無法造成任何傷害！在你多了解騎士之後再回來！";
 			next;
-			mes "[Sir Siracuse]";
-			mes "If you have a question, just ask any Knight in town. This is basic knowledge for us!";
+			mes "[西拉古斯爵士]";
+			mes "如果你有問題，就去問鎮上的任何騎士。這對我們來說是基本常識！";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "When you become a Knight you can ride a Peco Peco. However, your attack speed decreases once you're mounted on a Peco Peco.";
+		mes "[西拉古斯爵士]";
+		mes "當你成為騎士時，你可以騎著大嘴鳥。但是，一旦你騎上大嘴鳥，你的攻擊速度就會降低。";
 		next;
-		mes "[Sir Siracuse]";
-		mes "But, you can counter this speed decrease as you learn the Cavalier Mastery skill. What percentage of your normal attack speed will you have after learning Level 3 Cavalier Mastery?";
+		mes "[西拉古斯爵士]";
+		mes "但是，當你學習騎乘術技能時，你可以抵消這種速度下降。在學習3級騎乘術後，你將擁有正常攻擊速度的百分之多少？";
 		next;
-		if (select("70 % of normal attack speed:80 % of normal attack speed:90 % of normal attack speed:100 % of normal attack speed") != 2) {
+		if (select("正常攻擊速度的 70%:正常攻擊速度的 80%:正常攻擊速度的 90%:正常攻擊速度的 100%") != 2) {
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Wrong!";
-			mes "Don't bother riding a Peco Peco if you don't know about Cavalier Mastery!";
+			mes "[西拉古斯爵士]";
+			mes "錯了！";
+			mes "如果你不了解騎乘術，就別費心騎大嘴鳥了！";
 			next;
-			mes "[Sir Siracuse]";
-			mes "You better come back after you've learned a little more about Knights!";
+			mes "[西拉古斯爵士]";
+			mes "在你多了解一些騎士之後最好再回來！";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Good, good...";
-		mes "I'm pretty sure you know a decent amount about Knights. Now, let me ask you some personal questions about Knights.";
+		mes "[西拉古斯爵士]";
+		mes "很好，很好...";
+		mes "我很確定你對騎士有相當的了解。現在，讓我問你一些關於騎士的個人問題。";
 		next;
-		mes "[Sir Siracuse]";
-		mes "What should you do when you run into a Novice asking for help in town?";
+		mes "[西拉古斯爵士]";
+		mes "當你在城鎮裡遇到一個新手尋求幫助時，你應該怎麼做？";
 		next;
-		switch(select("Tell the Novice of a reasonable hunting area.:Let the Novice fight while you take the damage.:Give the Novice a bunch of Zeny and items.")) {
+		switch(select("告訴新手一個合理的狩獵區域。:讓你承受傷害，讓新手戰鬥。:給新手一堆 Zeny 和物品。")) {
 		case 1:
-			mes "[Sir Siracuse]";
-			mes "Of course, even a Novice needs to learn how to be independent. Giving good guidance to Novices is one of the best things we can do.";
+			mes "[西拉古斯爵士]";
+			mes "當然，即使是新手也需要學習如何獨立。為新手提供良好的指導是我們能做的最好的事情之一。";
 			next;
 			break;
 		case 2:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "You have the wrong idea. Do you really believe that is helping the Novice? Give a man a fish, he will eat for a day. Teach him to fish, he will eat for a lifetime!";
+			mes "[西拉古斯爵士]";
+			mes "你的想法是錯誤的。你真的相信這樣做是在幫助新手嗎？授人以魚不如授人以漁！";
 			close;
 		case 3:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Do you really believe that this will truly help the poor Novice? It's generous but, they will not know the true value of zeny and items until they earn it themselves.";
+			mes "[西拉古斯爵士]";
+			mes "你真的相信這真的會幫助可憐的新手嗎？這很慷慨，但是，他們在自己賺到之前不會知道 Zeny 和物品的真正價值。";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Alright...";
-		mes "Now, how should";
-		mes "you act within";
-		mes "a party?";
+		mes "[西拉古斯爵士]";
+		mes "好吧...";
+		mes "現在，";
+		mes "你在隊伍中";
+		mes "應該如何";
+		mes "表現？";
 		next;
-		switch(select("Protect everyone in the front of the battle.:Gather monsters and destroy them at once.:Get as many items possible, at all cost.")) {
+		switch(select("在戰鬥前線保護所有人。:聚集怪物並一次摧毀它們。:不惜一切代價獲得盡可能多的物品。")) {
 		case 1:
-			mes "[Sir Siracuse]";
-			mes "That's it! Our strength and attacks are very important in a party. All Knights should engage in a battle with that mindset.";
+			mes "[西拉古斯爵士]";
+			mes "就是這樣！我們的力量和攻擊在隊伍中非常重要。所有騎士都應該以這種心態參與戰鬥。";
 			next;
 			break;
 		case 2:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "Are you crazy? Don't you realize the flaw in that kind of thinking? You can't control large mobs. What if they kill you? Who will protect the innocent?";
+			mes "[西拉古斯爵士]";
+			mes "你瘋了嗎？你沒意識到這種想法的缺陷嗎？你無法控制大量的怪物。如果他們殺了你怎麼辦？誰來保護無辜的人？";
 			close;
 		case 3:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "I see your greed and we will have none of it here! It seems you do not truly care for others!";
-			mes "Get lost!";
+			mes "[西拉古斯爵士]";
+			mes "我看到了你的貪婪，我們這裡不需要！看來你並不真正關心他人！";
+			mes "滾開！";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Lastly...";
-		mes "what's the most";
-		mes "important value";
-		mes "a Knight must have?";
+		mes "[西拉古斯爵士]";
+		mes "最後...";
+		mes "騎士";
+		mes "必須擁有的";
+		mes "最重要的";
+		mes "價值是什麼？";
 		next;
-		switch(select("Honor:Wealth:Status")) {
+		switch(select("榮譽:財富:地位")) {
 		case 1:
-			mes "[Sir Siracuse]";
-			mes "Right, above all else, Knights must be honorable! We live and die for honor! Always keep that in mind.";
+			mes "[西拉古斯爵士]";
+			mes "沒錯，最重要的是，騎士必須是光榮的！我們為榮譽而生，為榮譽而死！永遠記住這一點。";
 			next;
 			break;
 		case 2:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "You're scum! You strive to become a Knight for personal wealth? Get lost! We will not accept someone like you in our Chivalry!";
+			mes "[西拉古斯爵士]";
+			mes "你是人渣！你為了個人財富而努力成為騎士？滾開！我們不會在我們的騎士團中接受像你這樣的人！";
 			close;
 		case 3:
 			set KNIGHT_Q,5;
-			mes "[Sir Siracuse]";
-			mes "So you're trying to become famous through the Chivalry? That's pathetic. We won't accept someone like you in our Chivalry!";
+			mes "[西拉古斯爵士]";
+			mes "所以你想透過騎士團成名？真可悲。我們不會在我們的騎士團中接受像你這樣的人！";
 			close;
 		}
 		set KNIGHT_Q,6;
 		changequest 9003,9004;
-		mes "[Sir Siracuse]";
-		mes "Well then,";
-		mes "this is the";
-		mes "end of my test.";
+		mes "[西拉古斯爵士]";
+		mes "那麼，";
+		mes "這是我的測試";
+		mes "的結束。";
 		next;
-		mes "[Sir Siracuse]";
-		mes "For your next";
-		mes "test, please go";
-		mes "see Sir Windsor.";
-		mes "He's very quiet,";
-		mes "but don't let that";
-		mes "get to you.";
+		mes "[西拉古斯爵士]";
+		mes "對於你的下一個";
+		mes "測試，請去";
+		mes "見溫莎爵士。";
+		mes "他非常安靜，";
+		mes "但不要讓這";
+		mes "影響到你。";
 		close;
 	}
 	else if (KNIGHT_Q == 6) {
-		mes "Oh?";
-		mes "Do you have";
-		mes "something to";
-		mes "ask me?";
+		mes "喔？";
+		mes "你有";
+		mes "什麼要";
+		mes "問我的嗎？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Siracuse]";
-			mes "Hey...";
-			mes "You already took my test, didn't you? You're done here. You should go visit Sir Windsor now...";
+		if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+			mes "[西拉古斯爵士]";
+			mes "嘿...";
+			mes "你已經參加過我的測試了，不是嗎？你已經完成了。你現在應該去拜訪溫莎爵士...";
 			close;
 		}
-		mes "[Sir Siracuse]";
-		mes "Hmmm...?";
-		mes "Alright.";
-		mes "It's just that";
-		mes "you had that";
-		mes "look on your";
-		mes "face.";
+		mes "[西拉古斯爵士]";
+		mes "嗯...？";
+		mes "好吧。";
+		mes "只是";
+		mes "你臉上";
+		mes "帶著那種";
+		mes "表情。";
 		close;
 	}
 	else if (KNIGHT_Q == 14) {
-		mes "Mmm...?";
-		mes "You finished";
-		mes "everyone else's";
-		mes "tests as well?";
+		mes "嗯...？";
+		mes "你完成";
+		mes "了其他人的";
+		mes "測試了嗎？";
 		next;
-		mes "[Sir Siracuse]";
-		mes "Well then,";
-		mes "go and see the";
-		mes "captain. We'll all";
-		mes "be there to evaluate";
-		mes "your performance.";
+		mes "[西拉丘茲爵士]";
+		mes "那麼，";
+		mes "去見";
+		mes "船長吧。我們都會";
+		mes "在那裡評估";
+		mes "你的表現。";
 		close;
 	}
 	else {
-		mes "Hey again.";
-		mes "Did you need something?";
-		mes "Sorry, but I'm busy at the moment. You should go and finish the rest of your tests.";
+		mes "嘿，你好啊。";
+		mes "你需要什麼嗎？";
+		mes "抱歉，但我現在很忙。你應該去完成剩下的測試。";
 		close;
 	}
 }
 
 prt_in,79,94,4	script	Sir Windsor#knt	733,{
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	mes "...";
 	next;
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	mes "...";
 	mes "......";
 	next;
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	if (BaseJob != Job_Swordman) {
-		if (BaseJob == Job_Knight) mes "Protect.";
+		if (BaseJob == Job_Knight) mes "保護。";
 		else if (BaseClass == Job_Novice) {
-			mes "...Go play";
-			mes "outside.";
+			mes "...去";
+			mes "外面玩。";
 		}
-		else mes "...Hmpf.";
+		else mes "...哼。";
 		close;
 	}
 	if (KNIGHT_Q == 0) {
-		mes "...What?";
+		mes "...什麼？";
 		close;
 	}
 	else if (KNIGHT_Q >= 1 && KNIGHT_Q <= 5) {
-		mes "...What?";
+		mes "...什麼？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Windsor]";
+		if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+			mes "[溫莎爵士]";
 			mes "...";
 			next;
-			mes "[Sir Windsor]";
+			mes "[溫莎爵士]";
 			mes "...";
 			mes "......";
 			next;
-			mes "[Sir Windsor]";
-			mes "...It's not my turn.";
+			mes "[溫莎爵士]";
+			mes "...現在不是我。";
 			close;
 		}
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		close;
 	}
 	else if (KNIGHT_Q == 6 || KNIGHT_Q == 7) {
 		if (KNIGHT_Q == 6) {
 			set .@mes$,"Sir Siracuse sent me to you.:Oh, nothing.";
-			mes ".....What?";
+			mes ".....做什麼？";
 			next;
 		}
 		else {
@@ -1107,43 +1084,43 @@ prt_in,79,94,4	script	Sir Windsor#knt	733,{
 			next;
 		}
 		if (select(.@mes$) == 1) {
-			mes "[Sir Windsor]";
+			mes "[溫莎爵士]";
 			mes "...";
 			next;
 			set KNIGHT_Q,7;
 			if (checkquest(9004) != -1) {
 				changequest 9004,9005;
 			}
-			mes "[Sir Windsor]";
+			mes "[溫莎爵士]";
 			mes "...";
 			mes "......";
 			next;
-			mes "[Sir Windsor]";
+			mes "[溫莎爵士]";
 			if (KNIGHT_Q == 6) 
-				mes "...Follow me.";
+				mes "...跟我來。";
 			else {
-				mes "...Fine.";
+				mes "...好吧。";
 				next;
-				mes "[Sir Windsor]";
-				mes "...This way.";
+				mes "[溫莎爵士]";
+				mes "...這邊走。";
 			}
 			close2;
 			if(checkquest(9006) == -1) changequest 9005,9006;
 			warp "job_knt",89,101;
 			end;
 		}
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		close;
 	}
 	else if (KNIGHT_Q == 14) {
-		mes "...Talk to";
-		mes "the captain.";
+		mes "...跟";
+		mes "船長說話。";
 		close;
 	}
 	else {
-		mes "...You're";
-		mes "done here.";
+		mes "...你";
+		mes "在這裡結束了。";
 		close;
 	}
 }
@@ -1151,69 +1128,69 @@ prt_in,79,94,4	script	Sir Windsor#knt	733,{
 // Test 2 part 1
 //==========================================================
 job_knt,89,106,4	script	Knight Windsor#knt	733,{
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	mes "...";
 	next;
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	mes "...";
 	mes "......";
 	next;
-	mes "[Sir Windsor]";
-	mes "...Question?";
+	mes "[溫莎爵士]";
+	mes "...問題？";
 	next;
-	set .@i, select("What kind of test is this?:How do I take the test?:I'd like to leave.:No.");
-	mes "[Sir Windsor]";
+	set .@i, select("這是什麼樣的測試？:我該如何參加測試？:我想離開。:不用了。");
+	mes "[溫莎爵士]";
 	mes "...";
 	if (.@i == 4) close;
 	next;
-	mes "[Sir Windsor]";
+	mes "[溫莎爵士]";
 	mes "...";
 	mes "......";
 	switch(.@i) {
 	case 1:
 		next;
-		mes "[Sir Windsor]";
-		mes "...You fight monsters.";
+		mes "[溫莎爵士]";
+		mes "...你打怪物。";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Kill them all.";
+		mes "[溫莎爵士]";
+		mes "...把牠們全殺光。";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Three stages.";
-		mes "Beat them all.";
+		mes "[溫莎爵士]";
+		mes "...三個階段。";
+		mes "全部擊敗它們。";
 		next;
-		mes "[Sir Windsor]";
-		mes "......3 minutes";
-		mes "for each stage.";
+		mes "[溫莎爵士]";
+		mes "......每個階段";
+		mes "3分鐘。";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "..........";
 		close;
 	case 2:
 		next;
-		mes "[Sir Windsor]";
-		mes "...Go in the";
-		mes "waiting room.";
+		mes "[溫莎爵士]";
+		mes "...進入";
+		mes "等候室。";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Then it";
-		mes "will begin.";
+		mes "[溫莎爵士]";
+		mes "...然後它";
+		mes "將會開始。";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
-		mes "...You have to wait";
-		mes "if someone is testing.";
+		mes "[溫莎爵士]";
+		mes "...如果有人在測試，";
+		mes "你必須等待。";
 		next;
-		mes "[Sir Windsor]";
-		mes "...You can go in";
-		mes "after that person.";
+		mes "[溫莎爵士]";
+		mes "...在那個人之後";
+		mes "你可以進去。";
 		next;
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		close;
 	case 3:
@@ -1282,12 +1259,12 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
-		mes "...On to";
-		mes "the next level.";
+		mes "[溫莎爵士]";
+		mes "...前往";
+		mes "下一個級別。";
 		close2;
 		warp "job_knt",43,52;
 		donpcevent "Knight1::OnDisable";
@@ -1348,11 +1325,11 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mes "[Sir Windsor]";
-		mes "...Hmm.";
+		mes "[溫莎爵士]";
+		mes "...嗯。";
 		next;
-		mes "[Sir Windsor]";
-		mes "...One stage left.";
+		mes "[溫莎爵士]";
+		mes "...剩下最後一個階段。";
 		close2;
 		warp "job_knt",143,152;
 		donpcevent "Knight2::OnDisable";
@@ -1408,15 +1385,15 @@ OnDisable:
 OnMyMobDead:
 	set .MyMobs,.MyMobs-1;
 	if (.MyMobs < 1) {
-		mes "[Sir Windsor]";
+		mes "[溫莎爵士]";
 		mes "...";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Very good.";
+		mes "[溫莎爵士]";
+		mes "...非常好。";
 		next;
-		mes "[Sir Windsor]";
-		mes "...Go talk to";
-		mes "Amy Beatrice now.";
+		mes "[溫莎爵士]";
+		mes "...現在去跟";
+		mes "愛咪·碧雅翠絲說話。";
 		close2;
 		set KNIGHT_Q,8;
 		if(checkquest(9007) == -1) {
@@ -1447,341 +1424,340 @@ OnTimer182000:
 // Test 3 (Manners)
 //==========================================================
 prt_in,69,107,6	script	Lady Amy#knt	728,{
-	mes "[Lady Amy]";
+	mes "[愛咪女士]";
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "Oh...!";
-			mes "I wonder, why";
-			mes "have you come";
-			mes "to visit me?";
+			mes "喔...!";
+			mes "我想知道，為什麼";
+			mes "你會來";
+			mes "拜訪我呢?";
 			next;
-			mes "[Lady Amy]";
-			mes "You're not having";
-			mes "trouble as a Knight,";
-			mes "are you? Well, I think";
-			mes "you're doing well~";
+			mes "[艾咪女士]";
+			mes "你身為騎士";
+			mes "沒有遇到什麼";
+			mes "麻煩吧？嗯，我覺得";
+			mes "你做得很好喔～";
 			next;
-			mes "[Lady Amy]";
-			mes "Of course~";
-			mes "You're a member of";
-			mes "the Prontera Chivalry~";
+			mes "[艾咪女士]";
+			mes "當然囉～";
+			mes "你是";
+			mes "普隆德拉騎士團的成員嘛～";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Aww~";
-			mes "What a cute";
-			mes "little Novice!";
-			mes "Soooooo cute!";
+			mes "哇～";
+			mes "多麼可愛的";
+			mes "小初心者啊!";
+			mes "真是太可愛了!";
 			next;
-			mes "[Lady Amy]";
-			mes "Heh heh...";
-			mes "Are you interested";
-			mes "in becoming a Knight";
-			mes "later on? You'd be";
-			mes "a great Knight~";
+			mes "[艾咪女士]";
+			mes "呵呵...";
+			mes "你有沒有興趣";
+			mes "以後成為一名騎士";
+			mes "呢？你一定會";
+			mes "成為很棒的騎士的～";
 			next;
-			mes "[Lady Amy]";
-			mes "Remember, you're";
-			mes "going to be a Knight,";
-			mes "alright? Promise?";
+			mes "[艾咪女士]";
+			mes "記住喔，你";
+			mes "要成為一名騎士喔，";
+			mes "好嗎？說好了喔？";
 			close;
 		}
 		else {
-			mes "Welcome to";
-			mes "the Prontera Chivalry~";
+			mes "歡迎來到";
+			mes "普隆德拉騎士團～";
 			next;
-			mes "[Lady Amy]";
-			mes "We're only Knights,";
-			mes "but hope you enjoy";
-			mes "your stay here.";
-			mes "Heh heh~";
+			mes "[艾咪女士]";
+			mes "我們只是一群騎士，";
+			mes "希望你在這裡";
+			mes "住得愉快。";
+			mes "呵呵～";
 			close;
 		}
 	}
 	if (KNIGHT_Q == 0) {
-		mes "Ooh, you're";
-		mes "a Swordsman...?";
-		mes "Did you come to";
-		mes "change jobs to";
-		mes "a Knight?";
+		mes "喔，你是";
+		mes "劍士...？";
+		mes "你是來";
+		mes "轉職成";
+		mes "騎士的嗎？";
 		next;
-		mes "[Lady Amy]";
-		mes "To apply, talk";
-		mes "to the captain";
-		mes "all the way over";
-		mes "there. Hee hee~";
+		mes "[艾咪女士]";
+		mes "要申請的話，去跟";
+		mes "那邊";
+		mes "最裡面的隊長";
+		mes "談談。嘻嘻～";
 		close;
 	}
 	else if (KNIGHT_Q >= 1 && KNIGHT_Q <= 7) {
-		mes "Hmmm?";
-		mes "Why did you";
-		mes "come to Amy?";
+		mes "嗯...？";
+		mes "你為什麼";
+		mes "來找艾咪?";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Lady Amy]";
-			mes "Mmm~";
-			mes "You applied to change jobs! Okay! You'll soon be a Knight with that kind of determination!";
+		if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+			mes "[艾咪女士]";
+			mes "嗯～";
+			mes "你申請轉職！好！憑藉那種決心，你很快就會成為騎士了！";
 			next;
-			mes "[Lady Amy]";
-			mes "But...";
-			mes "You have to go";
-			mes "to the other Knights";
-			mes "before talking to Amy.";
+			mes "[艾咪女士]";
+			mes "但是...";
+			mes "你必須先去";
+			mes "找其他的騎士";
+			mes "才能來找艾咪。";
 			next;
-			mes "[Lady Amy]";
-			mes "I'd love to test";
-			mes "you from the beginning,";
-			mes "but I'm not allowed to.";
-			mes "Hee hee~";
+			mes "[艾咪女士]";
+			mes "我很樂意從頭開始";
+			mes "測試你，";
+			mes "但我不被允許這麼做。";
+			mes "嘻嘻～";
 			close;
 		}
-		mes "[Lady Amy]";
-		mes "Aww~";
-		mes "Alright...";
+		mes "[艾咪女士]";
+		mes "哇～";
+		mes "好吧...";
 		close;
 	}
 	else if ((KNIGHT_Q == 8) || (KNIGHT_Q == 9)){
 		if (KNIGHT_Q == 8) {
-			mes "Hmmm?";
-			mes "Why did you";
-			mes "come to Amy?";
+			mes "嗯...？";
+			mes "你為什麼";
+			mes "來找艾咪?";
 			next;
-			if (select("Sir Windsor told me to--:Oh, nothing.") == 1) {
+			if (select("溫瑟爵士叫我來的--:喔，沒事。") == 1) {
 				if(checkquest(9008) == -1) changequest 9007,9008;
-				mes "[Lady Amy]";
-				mes "Oh!";
-				mes "No need to say";
-				mes "anything more.";
-				mes "Welcome! It's time";
-				mes "to take Amy's test!";
+				mes "[艾咪女士]";
+				mes "喔!";
+				mes "不需要再";
+				mes "多說什麼了。";
+				mes "歡迎！是時候";
+				mes "接受艾咪的測試了!";
 				next;
-				mes "[Lady Amy]";
-				mes "My name is Amy Beatrice,";
-				mes "a proud Lady Knight of the Prontera Chivalry. Amy's test will test your etiquette as a Knight~";
+				mes "[艾咪女士]";
+				mes "我叫艾咪·碧雅翠絲，";
+				mes "是普隆德拉騎士團中一位自豪的淑女騎士。艾咪的測試將會測試你作為一名騎士的禮儀～";
 				next;
-				mes "[Lady Amy]";
-				mes "I'll tell you a story and you choose an answer whenever";
-				mes "I ask a question. Your etiquette will be judged on your answers.";
+				mes "[艾咪女士]";
+				mes "我會告訴你一個故事，每當";
+				mes "我問問題時，你就要選擇一個答案。你的禮儀將根據你的答案來判斷。";
 				next;
-				mes "[Lady Amy]";
-				mes "So listen carefully";
-				mes "and answer as if you're";
-				mes "already a Knight, okay?";
+				mes "[艾咪女士]";
+				mes "所以仔細聽好";
+				mes "並像你已經";
+				mes "是一名騎士那樣回答，好嗎？";
 				next;
-				mes "[Lady Amy]";
-				mes "Then,";
-				mes "let's begin!";
+				mes "[艾咪女士]";
+				mes "那麼，";
+				mes "開始吧!";
 				next;
 			}
 			else {
-				mes "[Lady Amy]";
-				mes "Aww...";
-				mes "Alright~";
+				mes "[艾咪女士]";
+				mes "哇...";
+				mes "好吧～";
 				close;
 			}
 		}
 		else if (KNIGHT_Q == 9) {
-			mes "Hmmm?";
-			mes "Why did you";
-			mes "come to Amy?";
+			mes "嗯...？";
+			mes "你為什麼";
+			mes "來找艾咪?";
 			next;
-			if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-				mes "[Lady Amy]";
-				mes "Mmm~?";
-				mes "Have you learned";
-				mes "what you did wrong";
-				mes "last time? If you";
-				mes "fail again, I'm going";
-				mes "to be mad!";
+			if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+				mes "[艾咪女士]";
+				mes "嗯～？";
+				mes "你有?有";
+				mes "從上次的";
+				mes "錯誤中學習到教訓呢？如果你";
+				mes "再次失敗，我會";
+				mes "生氣的喔!";
 				next;
-				mes "[Lady Amy]";
-				mes "So listen carefully";
-				mes "and answer as if you";
-				mes "are a Knight.";
-				mes "Well then,";
-				mes "let's begin!";
+				mes "[艾咪女士]";
+				mes "所以仔細聽好";
+				mes "並像你";
+				mes "是一名騎士那樣回答。";
+				mes "那麼，";
+				mes "開始吧!";
 				next;
-				mes "[Lady Amy]";
-				mes "You are a Knight and you are looking for a party in Morocc.";
-				mes "How would you go about doing so?";
+				mes "[艾咪女士]";
+				mes "你是一名騎士，你正在夢羅克尋找隊伍。";
+				mes "你會怎麼做呢？";
 				next;
 			}
 			else {
-				mes "[Lady Amy]";
-				mes "Aww...";
-				mes "Alright~";
+				mes "[艾咪女士]";
+				mes "哇...";
+				mes "好吧～";
 				close;
 			}
 		}
-		mes "You are a Knight and you are looking for a party in Morocc.";
-		mes "How would you go about doing so?";
+		mes "你是一名騎士，你正在夢羅克尋找隊伍。";
+		mes "你會怎麼做呢？";
 		next;
-		if (select("Shout out that you are looking for a party.:Open a chat room and wait.:Look for people seeking Knights.") != 1)
+		if (select("大喊說你在找隊伍。:開啟一個聊天室並等待。:尋找正在尋求騎士的人。") != 1)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "You have formed a party with equal leveled players. There's a Priest, a Wizard, a Hunter, an Assassin, and a Blacksmith...";
+		mes "[艾咪女士]";
+		mes "你和等級相當的玩家組成了一個隊伍。有牧師、巫師、獵人、刺客和鐵匠...";
 		next;
-		mes "[Lady Amy]";
-		mes "The six of you decide to go hunt and have decided to go to the Pyramids.";
+		mes "[艾咪女士]";
+		mes "你們六個人決定去打獵，並決定去金字塔。";
 		next;
-		mes "[Lady Amy]";
-		mes "You reach Level 4";
-		mes "of the Pyramids";
-		mes "with your party.";
-		mes "What should you do?";
+		mes "[艾咪女士]";
+		mes "你和你的隊伍到達了金字塔";
+		mes "的四樓。";
+		mes "你應該怎麼做？";
 		next;
-		if (select("Check out the area and plan ahead.:Gather monsters for your party members.:Lead the party slowly at the front.") != 2)
+		if (select("查看該區域並提前計畫。:聚集怪物給你的隊友。:在前方慢慢地帶領隊伍。") != 2)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "But some rude players came with a group of monsters and disappeared! What should you do?";
+		mes "[艾咪女士]";
+		mes "但是一些粗魯的玩家帶著一群怪物來了然後消失了！你應該怎麼做？";
 		next;
-		if (select("Keep the monsters from reaching the party.:Defend while the party retreats.:Run away on your Peco Peco.") != 3)
+		if (select("阻止怪物接近隊伍。:在隊伍撤退時進行防禦。:騎著你的 Peco Peco 逃跑。") != 3)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "Luckily, you all lived through the crisis. But as you walk, you find a person, who is not in your party, collapsed on the ground.";
+		mes "[艾咪女士]";
+		mes "幸運的是，你們都度過了這次危機。但是當你走著走著，你發現一個人，不是你隊伍裡的人，倒在地上。";
 		next;
-		mes "[Lady Amy]";
-		mes "The person is asking politely for help. What should you do?";
+		mes "[艾咪女士]";
+		mes "這個人很有禮貌地請求幫助。你應該怎麼做？";
 		next;
-		if (select("Ask your party's Priest to help.:Say you will help for Zeny.:Ignore and move on.") == 1)
+		if (select("請你隊伍裡的牧師幫忙。:說你會用 Zeny 幫忙。:忽略並繼續前進。") == 1)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "You must bid farewell to your party members because you must go somewhere else.";
+		mes "[艾咪女士]";
+		mes "你必須告別你的隊友，因為你必須去別的地方。";
 		next;
-		mes "[Lady Amy]";
-		mes "But you find";
-		mes "a rare item during";
-		mes "the battle. What";
-		mes "should you do?";
+		mes "[艾咪女士]";
+		mes "但是你在";
+		mes "戰鬥中發現了";
+		mes "一個稀有物品。";
+		mes "你應該怎麼做？";
 		next;
-		if(select("Give it to who deserves it the most.:Pretend like nothing happened and keep it.:Decide with party who gets it.") != 2)
+		if(select("給最值得的人。:假裝什麼都沒發生並保留它。:與隊伍決定誰得到它。") != 2)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "You end up with the item and you go to Prontera to sell it. There are many people with shops and chat rooms opened selling items.";
+		mes "[艾咪女士]";
+		mes "你最終得到了這個物品，然後你去了普隆德拉出售它。有很多人開設商店和聊天室出售物品。";
 		next;
-		mes "[Lady Amy]";
-		mes "What should you";
-		mes "do to sell your item?";
+		mes "[艾咪女士]";
+		mes "你應該";
+		mes "怎麼做來賣你的物品？";
 		next;
-		if (select("Shout out loud to everyone.:Open a chat room and wait.:Inquire if there is anyone that is interested.") != 1)
+		if (select("大聲地向所有人喊叫。:開啟一個聊天室並等待。:詢問是否有人有興趣。") != 1)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "While you are waiting,";
-		mes "someone comes and begs";
-		mes "for items and zeny.";
-		mes "What do you do?";
+		mes "[艾咪女士]";
+		mes "當你正在等待時，";
+		mes "有人過來乞求";
+		mes "物品和 zeny。";
+		mes "你會怎麼做？";
 		next;
-		if (select("Give them some Zeny and items.:Simply ignore them.:Give suggestions for a place to hunt.") == 3)
+		if (select("給他們一些 Zeny 和物品。:直接忽略他們。:建議他們去哪裡打獵。") == 3)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "Now you decide to go to the Hidden Temple by yourself. You happily ride on your Peco Peco.";
+		mes "[艾咪女士]";
+		mes "現在你決定自己去隱藏神殿。你快樂地騎著你的 Peco Peco。";
 		next;
-		mes "[Lady Amy]";
-		mes "But you run into";
-		mes "someone that is lost.";
-		mes "What should you do?";
+		mes "[艾咪女士]";
+		mes "但是你遇到";
+		mes "一個迷路的人。";
+		mes "你應該怎麼做？";
 		next;
-		if(select("Tell the person how to reach the exit.:Lead the person to the exit.:Give a Butterfly Wing.") != 3)
+		if(select("告訴那個人如何到達出口.:引導那個人到出口.:給予蝴蝶翅膀。") != 3)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "You've been hunting for a while, and now you're low on HP!";
-		mes "It's red now, which is very dangerous.";
+		mes "[艾咪女士]";
+		mes "你已經狩獵了一段時間，現在你的 HP 快沒了！";
+		mes "現在是紅色的，非常危險。";
 		next;
-		mes "[Lady Amy]";
-		mes "Ah, then a Priest";
-		mes "happens to walk by.";
-		mes "How would you ask";
-		mes "the Priest for a Heal?";
+		mes "[艾咪女士]";
+		mes "啊，然後一位牧師";
+		mes "剛好路過。";
+		mes "你會如何要求";
+		mes "牧師給你治療？";
 		next;
-		if (select("Would it be possible to get a heal please?:Can I have a heal?:Heal plz!!") == 1)
+		if (select("請問可以幫我治療一下嗎？:可以給我治療嗎？:治療一下！！") == 1)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "You are now very";
-		mes "exhausted and it's time";
-		mes "to go back to town.";
+		mes "[艾咪女士]";
+		mes "你現在非常";
+		mes "疲憊，該是時候";
+		mes "回到城鎮了。";
 		next;
-		mes "[Lady Amy]";
-		mes "You then find";
-		mes "a rare item on";
-		mes "the street.";
-		mes "What should";
-		mes "you do?";
+		mes "[艾咪女士]";
+		mes "然後你在";
+		mes "街上發現了";
+		mes "一件稀有物品。";
+		mes "你應該";
+		mes "怎麼做？";
 		next;
-		if (select("Pick it up and keep it.:Ask around to find the owner.:Simply walk by.") != 1)
+		if (select("撿起來並保留它。:四處詢問以找到主人。:直接走過去。") != 1)
 			set .@knight_t,.@knight_t+10;
-		mes "[Lady Amy]";
-		mes "Okay,";
-		mes "that was the";
-		mes "end of my test!";
+		mes "[艾咪女士]";
+		mes "好的，";
+		mes "我的測試";
+		mes "結束了！";
 		next;
-		mes "[Lady Amy]";
+		mes "[艾咪女士]";
 		if (.@knight_t == 100) {
 			set KNIGHT_Q,10;
 			changequest 9008,9009;
-			mes "Well done, that kind of mentality is needed for a Knight! For your next test, visit Sir Edmond, please~";
+			mes "做得好，騎士需要這種心態！對於你的下一個測試，請去拜訪艾德蒙爵士～";
 			next;
-			mes "[Lady Amy]";
-			mes "I'll have nice comments about you for the captain. Do well on the tests you have left, okay?";
+			mes "[艾咪女士]";
+			mes "我會為你向隊長說些好話的。好好完成你剩下的測試，好嗎？";
 			close;
 		}
 		else if (.@knight_t == 90) {
 			set KNIGHT_Q,10;
 			changequest 9008,9009;
-			mes "Well, it wasn't perfect,";
-			mes "but I think you know enough";
-			mes "about etiquette to be";
-			mes "a fine Knight.";
+			mes "嗯，雖然不完美，";
+			mes "但我認為你已經了解足夠的";
+			mes "禮儀，足以成為";
+			mes "一位優秀的騎士。";
 			next;
-			mes "[Lady Amy]";
-			mes "Now, it's time for you to go to Sir Edmond for your next test. Do well on the rest of your tests. You better promise~";
+			mes "[艾咪女士]";
+			mes "現在，是時候去艾德蒙爵士那裡進行你的下一個測試了。好好完成你剩下的測試。你最好保證～";
 			close;
 		}
 		set KNIGHT_Q,9;
-		mes "Mmm...";
-		mes "To be honest, I don't think your attitude is good enough to be a Knight quite yet.";
+		mes "嗯...";
+		mes "老實說，我認為你的態度還不夠好，還不能成為一名騎士。";
 		next;
-		mes "[Lady Amy]";
-		mes "If you really act like that, everyone will think Knights are rude! Think about how you answered my questions and come again later.";
+		mes "[艾咪女士]";
+		mes "如果你真的那樣做，每個人都會認為騎士很粗魯！想想你是如何回答我的問題的，稍後再來。";
 		next;
-		mes "[Lady Amy]";
-		mes "If you want,";
-		mes "I'll let you";
-		mes "retake the test, okay?";
+		mes "[艾咪女士]";
+		mes "如果你願意，";
+		mes "我可以讓你";
+		mes "重考，好嗎？";
 		close;
 	}
 	else if (KNIGHT_Q == 10) {
-		mes "Hmmm?";
-		mes "Why did you";
-		mes "come to Amy?";
+		mes "嗯？";
+		mes "你為什麼";
+		mes "來找艾咪？";
 		next;
-		mes "[Lady Amy]";
-		mes "You have to go to";
-		mes "Sir Edmond for your";
-		mes "next test, okay?";
+		mes "[艾咪女士]";
+		mes "你必須去";
+		mes "艾德蒙爵士那裡進行你的";
+		mes "下一個測試，好嗎？";
 		close;
 	}
 	else if (KNIGHT_Q == 14) {
-		mes "Wow~";
-		mes "Now it's time for";
-		mes "everyone to decide";
-		mes "on your job change!";
+		mes "哇～";
+		mes "現在是時候讓";
+		mes "大家來決定";
+		mes "你的轉職了！";
 		next;
-		mes "[Lady Amy]";
-		mes "Let's go talk to our";
-		mes "captain. Don't worry";
-		mes "too much. It should";
-		mes "be okay.";
+		mes "[艾咪女士]";
+		mes "我們去和我們的";
+		mes "隊長談談吧。不要太";
+		mes "擔心。應該";
+		mes "沒問題的。";
 		close;
 	}
 	else {
-		mes "Hmmm?";
-		mes "Why did you";
-		mes "come to Amy?";
+		mes "嗯？";
+		mes "你為什麼";
+		mes "來找艾咪？";
 		next;
-		mes "[Lady Amy]";
-		mes "You still have";
-		mes "other tests to take.";
-		mes "Hurry and finish~";
+		mes "[艾咪女士]";
+		mes "你還有";
+		mes "其他的測試要考。";
+		mes "快點完成～";
 		close;
 	}
 }
@@ -1789,154 +1765,152 @@ prt_in,69,107,6	script	Lady Amy#knt	728,{
 // Test 4 (patience)
 //==========================================================
 prt_in,70,99,6	script	Sir Edmond#knt	734,{
-	mes "[Sir Edmond]";
+	mes "[艾德蒙爵士]";
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "Think of your";
-			mes "mind as if it were";
-			mes "flowing water.";
+			mes "將你的";
+			mes "思想想像成";
+			mes "流動的水。";
 			next;
-			mes "[Sir Edmond]";
-			mes "Flowing water";
-			mes "avoids obstacles,";
-			mes "going on its way...";
+			mes "[艾德蒙爵士]";
+			mes "流動的水";
+			mes "避開障礙物，";
+			mes "繼續前進...";
 			next;
-			mes "[Sir Edmond]";
-			mes "Knights must be";
-			mes "able to pass things,";
-			mes "like calm water, in";
-			mes "any situation.";
+			mes "[艾德蒙爵士]";
+			mes "騎士必須能夠";
+			mes "像平靜的水一樣，";
+			mes "在任何情況下";
+			mes "通過事物。";
 			close;
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Trees with deep roots don't sway with the wind. The fact that powerful skills must be built on strong basics is immutable...";
+			mes "根深蒂固的樹木不會隨風搖曳。強大的技能必須建立在堅實的基礎之上，這是不可改變的事實...";
 			next;
-			mes "[Sir Edmond]";
-			mes "Your future";
-			mes "can even be";
-			mes "decided now...";
+			mes "[艾德蒙爵士]";
+			mes "你的未來";
+			mes "甚至可以";
+			mes "現在決定...";
 			close;
 		}
 		else {
-			mes "Everything in this world exists in harmony. Living without disrupting this harmony is the right way to live...";
+			mes "這個世界的一切都存在於和諧之中。生活而不擾亂這種和諧是正確的生活方式...";
 			close;
 		}
 	}
 	if (KNIGHT_Q == 0) {
-		mes "Those with ominous thoughts will only dream such dreams. It's better to have no dreams at all than to have dreams of sadness and despair.";
+		mes "那些有不祥想法的人只會做這樣的夢。與其做悲傷和絕望的夢，不如不做夢。";
 		close;
 	}
 	else if (KNIGHT_Q >= 1 && KNIGHT_Q <= 9) {
-		mes "What is it...";
-		mes "Wandering Swordman?";
+		mes "什麼事...";
+		mes "流浪劍士？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Edmond]";
-			mes "A seed must first be nestled";
-			mes "in the earth before the seed may sprout. Then, the sprout must grow leaves before its buds blossom into flowers...";
+		if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+			mes "[艾德蒙爵士]";
+			mes "種子必須先埋在";
+			mes "土裡才能發芽。然後，幼苗必須先長出葉子，然後花蕾才能綻放成花...";
 			next;
-			mes "[Sir Edmond]";
-			mes "If not...";
-			mes "The flower will";
-			mes "be incomplete.";
+			mes "[艾德蒙爵士]";
+			mes "如果不是...";
+			mes "花朵將會";
+			mes "不完整。";
 			next;
-			mes "[Sir Edmond]";
-			mes "Go to the others";
-			mes "first, so that you";
-			mes "may find your path...";
+			mes "[艾德蒙爵士]";
+			mes "先去其他人那裡，";
+			mes "這樣你才能";
+			mes "找到你的道路...";
 			close;
 		}
-		mes "[Sir Edmond]";
-		mes "The life that you";
-		mes "want will soon be";
-		mes "before your eyes.";
-		mes "Everything will";
-		mes "come in perfect";
-		mes "order.";
+		mes "[艾德蒙爵士]";
+		mes "你想要的生活";
+		mes "很快就會";
+		mes "在你眼前。";
+		mes "一切都會";
+		mes "以完美的";
+		mes "秩序到來。";
 		close;
 	}
 	else if (KNIGHT_Q == 10) {
-		mes "What is it...";
-		mes "Wandering Swordman.";
+		mes "什麼事...";
+		mes "流浪劍士。";
 		next;
-		if (select("Lady Amy sent me.:Oh, nothing.") == 1) {
-			mes "[Sir Edmond]";
-			mes "It is now time to take my test. Please do your best, as you have done on the other tests.";
+		if (select("艾咪女士派我來的。:喔，沒事。") == 1) {
+			mes "[艾德蒙爵士]";
+			mes "現在是時候參加我的測試了。請盡你所能，就像你在其他測試中所做的那樣。";
 			next;
-			mes "[Sir Edmond]";
-			mes "My name is";
-			mes "Edmond Groster.";
-			mes "I am a member of";
-			mes "the Prontera Chivalry.";
+			mes "[艾德蒙爵士]";
+			mes "我的名字是";
+			mes "艾德蒙·葛羅斯特。";
+			mes "我是普隆德拉騎士團的";
+			mes "一員。";
 			next;
-			mes "[Sir Edmond]";
-			mes "Knights are in the position for others to follow. Therefore, you must modestly think about the world's order and have the personality to fit the role you will play.";
+			mes "[艾德蒙爵士]";
+			mes "騎士處於被他人追隨的位置。因此，你必須謙虛地思考世界的秩序，並具有適合你將扮演的角色的人格。";
 			next;
-			mes "[Sir Edmond]";
-			mes "You must not make careless decisions. Your will should bend as the reeds or be as firm as stone when the situation calls for it.";
+			mes "[艾德蒙爵士]";
+			mes "你不能做出草率的決定。你的意志應該像蘆葦一樣彎曲，或者在情況需要時像石頭一樣堅定。";
 			next;
-			mes "[Sir Edmond]";
-			mes "You must not kill monsters without reason and not take joy in doing so. Take this time to quietly think about this on your own...";
+			mes "[艾德蒙爵士]";
+			mes "你不能無緣無故地殺死怪物，也不能樂在其中。花時間獨自靜靜地思考這個問題...";
 			next;
-			mes "[Sir Edmond]";
-			mes "Then, we shall";
-			mes "begin the test.";
-			mes "Keep in mind";
-			mes "the quality of";
-			mes "reverence.";
+			mes "[艾德蒙爵士]";
+			mes "然後，我們將";
+			mes "開始測試。";
+			mes "請記住";
+			mes "敬畏的";
+			mes "品質。";
 			close2;
 			set KNIGHT_Q,11;
 			changequest 9009,9010;
 			warp "job_knt",143,57;
 			end;
 		}
-		mes "[Sir Edmond]";
-		mes "The life you want";
-		mes "will soon be before";
-		mes "your eyes.";
+		mes "[艾德蒙爵士]";
+		mes "你想要的生活";
+		mes "很快就會";
+		mes "在你眼前。";
 		close;
 	}
 	else if (KNIGHT_Q == 11) {
-		mes "What is it...";
-		mes "Wandering Swordman?";
+		mes "什麼事...";
+		mes "流浪劍士？";
 		next;
-		if (select("I'm sorry, I didn't mean to...:Oh, nothing.") == 1) {
-			mes "[Sir Edmond]";
-			mes "You were too careless in the last test. A Knight's sword exists to protect others, not to torment weaker monsters.";
+		if (select("對不起，我不是故意的...:喔，沒事。") == 1) {
+			mes "[艾德蒙爵士]";
+			mes "你在上次的測試中太粗心了。騎士的劍是用來保護他人，而不是用來折磨較弱的怪物的。";
 			next;
-			mes "[Sir Edmond]";
-			mes "In a world where everything exists in harmony, you can't have humans continuously destroying without purpose. This principle applies to the real world, not to this test alone.";
+			mes "[艾德蒙爵士]";
+			mes "在一個一切都存在於和諧之中的世界裡，你不能讓人類不斷地毫無目的地進行破壞。這個原則適用於現實世界，而不僅僅是這個測試。";
 			next;
-			mes "[Sir Edmond]";
-			mes "The test";
-			mes "shall begin.";
-			mes "Show me your";
-			mes "patience...";
+			mes "[艾德蒙爵士]";
+			mes "測試";
+			mes "將開始。";
+			mes "向我展示你的";
+			mes "耐心...";
 			close2;
 			warp "job_knt",143,57;
 			end;
 		}
-		mes "[Sir Edmond]";
-		mes "The life that you";
-		mes "want will soon be";
-		mes "before your eyes.";
-		mes "Everything will";
-		mes "come in perfect";
-		mes "order.";
+		mes "[艾德蒙爵士]";
+		mes "你想要的生活";
+		mes "很快就會";
+		mes "在你眼前。";
+		mes "一切都會";
+		mes "以完美的";
+		mes "秩序到來。";
 		close;
 	}
 	else if (KNIGHT_Q == 12 || KNIGHT_Q == 13) {
-		mes "I have seen your character for myself. It is now time for you to take the last test. Go and speak";
-		mes "to Sir Gray...";
+		mes "我已經親自見識了你的品格。現在是時候讓你參加最後的測試了。去和格雷爵士談談...";
 		close;
 	}
 	else {
-		mes "Go and speak";
-		mes "to our captain.";
-		mes "The time has come";
-		mes "for all of us to";
-		mes "evaluate your";
-		mes "performance.";
+		mes "去跟我們的隊長說話。";
+		mes "是時候";
+		mes "讓我們所有人都";
+		mes "評估你的";
+		mes "表現了。";
 		close;
 	}
 }
@@ -2004,504 +1978,502 @@ OnTouch_:
 // Test 5, and creates Claymores for knights
 //==========================================================
 prt_in,87,92,4	script	Sir Gray#knt	119,{
-	mes "[Sir Gray]";
+	mes "[格雷爵士]";
 	if (BaseJob != Job_Swordman) {
 		if (BaseJob == Job_Knight) {
-			mes "The glint of light";
-			mes "that shines off this blade cannot be put into words. This is the weapon every Knight must have.";
+			mes "這把劍所閃耀出的光芒，難以用言語形容。這是每個騎士都必須擁有的武器。";
 			next;
-			mes "[Sir Gray]";
-			mes "Yes...";
-			mes "^3355FFClaymore^000000!";
-			mes "Every Knight";
-			mes "would want one!";
+			mes "[格雷爵士]";
+			mes "沒錯...";
+			mes "^3355FF雙手劍^000000!";
+			mes "每個騎士";
+			mes "都會想要一把!";
 			next;
-			switch(select("About ^3355FFClaymore^000000:Buy Claymore:End Conversation")) {
+			switch(select("關於 ^3355FF雙手劍^000000:購買雙手劍:結束對話")) {
 			case 1:
-				mes "[Sir Gray]";
-				mes "Claymore, one of the best among the famous swords you can attain in Rune-Midgarts' Prontera!! Its value is priceless when considered by a Knight.";
+				mes "[格雷爵士]";
+				mes "雙手劍，是盧恩-米德加茲王國普隆德拉中最著名的劍之一！對於騎士來說，它的價值是無價的。";
 				next;
-				mes "[Sir Gray]";
-				mes "Now, the Prontera Chivalry is making these fabulous Claymores. For Knights, they are only ^3355FF74,000^000000 Zeny.";
+				mes "[格雷爵士]";
+				mes "現在，普隆德拉騎士團正在製作這些精美的雙手劍。對於騎士來說，它們只要 ^3355FF74,000^000000 Zeny。";
 				next;
-				mes "[Sir Gray]";
-				mes "But not only that, you need";
-				mes "1 ^3355FFSteel^000000 because of the Claymore's characteristics. If you like, I can create one for you. For the honor of the Prontera Chivalry!";
+				mes "[格雷爵士]";
+				mes "但不僅如此，由於雙手劍的特性，你還需要";
+				mes "1 個 ^3355FF鋼鐵^000000。如果你願意，我可以為你製作一把。為了普隆德拉騎士團的榮譽！";
 				close;
 			case 2:
 				if (MaxWeight - Weight < 1800) {
-					mes "[Sir Gray]";
-					mes "Oh no...";
-					mes "It seems that you are carrying too many things. You don't have enough space for a heavy Claymore in your inventory.";
+					mes "[格雷爵士]";
+					mes "喔不...";
+					mes "看來你攜帶的東西太多了。你的背包裡沒有足夠的空間來放置一把沉重的雙手劍。";
 					next;
-					mes "[Sir Gray]";
-					mes "Why don't you";
-					mes "go and organize";
-					mes "your items first.";
+					mes "[格雷爵士]";
+					mes "你為什麼不";
+					mes "先去整理";
+					mes "你的物品呢。";
 					close;
 				}
 				else {
 					if ((Zeny > 73999) && (countitem(999) > 0) && (BaseJob == Job_Knight)) {
-						mes "[Sir Gray]";
-						mes "You are ready!";
-						mes "You must know the";
-						mes "true value of";
-						mes "a Claymore!";
-						mes "I shall make";
-						mes "it right now!!";
+						mes "[格雷爵士]";
+						mes "你準備好了!";
+						mes "你必須了解";
+						mes "雙手劍的";
+						mes "真正價值!";
+						mes "我現在就";
+						mes "製作!!";
 						next;
-						mes "[Sir Gray]";
-						mes "The basics of";
-						mes "making the Claymore";
-						mes "is easy. Watch~!";
+						mes "[格雷爵士]";
+						mes "製作雙手劍的";
+						mes "基本原理";
+						mes "很簡單。看好~!";
 						next;
-						mes "^3355FF*Stir Stir*^000000";
-						mes "^3355FF*Ooncha Ooncha*^000000";
+						mes "^3355FF*攪拌 攪拌*^000000";
+						mes "^3355FF*喔恩恰 喔恩恰*^000000";
 						next;
-						mes "[Sir Gray]";
-						mes "Okay, it's ready!";
-						mes "Every Knight's pride:";
-						mes "a fine ^3355FFClaymore^000000.";
-						mes "You attained a reliable item.";
-						mes "It'll be a good companion on your adventures.";
+						mes "[格雷爵士]";
+						mes "好了，準備好了!";
+						mes "每個騎士的驕傲:";
+						mes "一把精良的 ^3355FF雙手劍^000000。";
+						mes "你獲得了一個可靠的物品。";
+						mes "它將會是你冒險旅程上的好夥伴。";
 						delitem 999,1; //Steel
 						set Zeny, Zeny - 74000;
 						getitem 1163,1; //Claymore
 						close;
 					}
-					mes "[Sir Gray]";
-					mes "I realize you may really want a Claymore, but I can't make it without the materials.";
-					mes "^3355FF74,000 zeny^000000 and ^3355FF1 Steel!^000000.";
+					mes "[格雷爵士]";
+					mes "我知道你可能真的很想要一把雙手劍，但我沒有材料就無法製作它。";
+					mes "^3355FF74,000 Zeny^000000 和 ^3355FF1 個鋼鐵!^000000。";
 					next;
-					mes "[Sir Gray]";
-					mes "Come back when";
-					mes "you have everything";
-					mes "ready. I shall be";
-					mes "waiting...";
+					mes "[格雷爵士]";
+					mes "當你準備好";
+					mes "一切時，再回來。";
+					mes "我會";
+					mes "等待...";
 					close;
 				}
 			case 3:
-				mes "[Sir Gray]";
-				mes "Any Knight should be able to wield a Claymore as if it were an extension of their body. I used to look forward to brandishing my Claymore in battle...";
+				mes "[格雷爵士]";
+				mes "任何騎士都應該能夠揮舞雙手劍，彷彿它是他們身體的延伸。我曾經期待在戰鬥中揮舞我的雙手劍...";
 				close;
 			}
 		}
 		else if (BaseClass == Job_Novice) {
-			mes "Believe it";
-			mes "or not, I was";
-			mes "once a Novice";
-			mes "as well.";
+			mes "信不信由你，";
+			mes "我也曾經是";
+			mes "一個初心者。";
 			next;
-			mes "[Sir Gray]";
-			mes "I never really planned to become a Knight, but I did decide to become a strong person. Somehow, along my journeys, I ended up joining the Prontera Chivalry. Ha ha ha!";
+			mes "[格雷爵士]";
+			mes "我從未真正計劃成為一名騎士，但我確實決定成為一個堅強的人。不知何故，在我的旅程中，我最終加入了普隆德拉騎士團。哈哈哈！";
 			close;
 		}
-		mes "Young one,";
-		mes "use your time";
-		mes "wisely.";
+		mes "年輕人，";
+		mes "好好利用你的";
+		mes "時間。";
 		next;
-		mes "[Sir Gray]";
-		mes "No point in";
-		mes "harboring regret";
-		mes "once time has passed.";
+		mes "[格雷爵士]";
+		mes "一旦時間流逝，";
+		mes "後悔就毫無意義。";
 		close;
 	}
 	if (KNIGHT_Q == 0) {
-		mes "Young one,";
-		mes "use your time";
-		mes "wisely.";
+		mes "年輕人，";
+		mes "好好利用你的";
+		mes "時間。";
 		next;
-		mes "[Sir Gray]";
-		mes "No point in";
-		mes "harboring regret";
-		mes "once time has passed.";
+		mes "[格雷爵士]";
+		mes "一旦時間流逝，";
+		mes "後悔就毫無意義。";
 		close;
 	}
 	else if ((KNIGHT_Q == 12) || (KNIGHT_Q == 13)) {
 		if (KNIGHT_Q == 12) {
-			mes "Oh...";
-			mes "A young Swordman.";
-			mes "Yes, what can";
-			mes "I do for you?";
+			mes "哦...";
+			mes "一位年輕的劍士。";
+			mes "是的，我能";
+			mes "為你做些什麼呢？";
 			next;
-			if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-				mes "[Sir Gray]";
-				mes "Hoho, I see.";
-				mes "So you took";
-				mes "everyone else's";
-				mes "test?";
+			if (select("我想參加轉職測試。:喔，沒事。") == 1) {
+				mes "[格雷爵士]";
+				mes "呵呵，我明白了。";
+				mes "所以你參加了";
+				mes "其他所有人的";
+				mes "測試？";
 				next;
-				mes "[Sir Gray]";
-				mes "Then shall";
-				mes "we begin mine?";
-				mes "It's not really";
-				mes "a test though.";
+				mes "[格雷爵士]";
+				mes "那麼";
+				mes "我們開始我的?";
+				mes "不過，這並不是";
+				mes "真正的測試。";
 				next;
-				mes "[Sir Gray]";
-				mes "Let's talk";
-				mes "casually,";
-				mes "shall we?";
+				mes "[格雷爵士]";
+				mes "讓我們";
+				mes "隨意地";
+				mes "聊聊，";
+				mes "好嗎？";
 				next;
-				mes "[Sir Gray]";
-				mes "First...";
-				mes "Why did you";
-				mes "decide to become";
-				mes "a Knight?";
+				mes "[格雷爵士]";
+				mes "首先...";
+				mes "你為什麼";
+				mes "決定成為";
+				mes "一名騎士呢？";
 				next;
 			}
 			else {
-				mes "[Sir Gray]";
-				mes "Take care!";
+				mes "[格雷爵士]";
+				mes "保重!";
 				close;
 			}
 		}
 		else if (KNIGHT_Q == 13) {
-			mes "Ah, you again.";
-			mes "What brings you";
-			mes "to me?";
+			mes "啊，又是你。";
+			mes "是什麼讓你";
+			mes "來找我？";
 			next;
-			if (select("I've been thinking a lot.:Oh, nothing.") == 1) {
-				mes "[Sir Gray]";
-				mes "Is that so...";
-				mes "I wonder if you";
-				mes "truly have...";
+			if (select("我一直在思考。:喔，沒事。") == 1) {
+				mes "[格雷爵士]";
+				mes "是這樣嗎...";
+				mes "我不知道你是否";
+				mes "真的有...";
 				next;
-				mes "[Sir Gray]";
-				mes "Then...";
-				mes "Like last time,";
-				mes "I will ask again...";
+				mes "[格雷爵士]";
+				mes "那麼...";
+				mes "像上次一樣，";
+				mes "我會再次問你...";
 				next;
-				mes "[Sir Gray]";
-				mes "First...";
-				mes "Why did you";
-				mes "decide to become";
-				mes "a Knight?";
+				mes "[格雷爵士]";
+				mes "首先...";
+				mes "你為什麼";
+				mes "決定成為";
+				mes "一名騎士呢？";
 				next;
 			}
 			else {
-				mes "[Sir Gray]";
-				mes "Take care!";
-				mes "Health is";
-				mes "every man's";
-				mes "treasure!";
+				mes "[格雷爵士]";
+				mes "保重!";
+				mes "健康是";
+				mes "每個人的";
+				mes "寶藏!";
 				close;
 			}
 		}
-		switch(select("To become stronger...:To help my guild...:Because I'm unsatisfied with myself right now...")) {
+		switch(select("為了變得更強...:為了幫助我的公會...:因為我對現在的自己不滿意...")) {
 		case 1:
-			mes "[Sir Gray]";
-			mes "To become stronger, you say?";
-			mes "Yes, Knights are indeed strong.";
-			mes "But why gain strength?";
+			mes "[格雷爵士]";
+			mes "你說為了變得更強？";
+			mes "是的，騎士確實很強大。";
+			mes "但為什麼要獲得力量呢？";
 			next;
-			mes "[Sir Gray]";
-			mes "Is it to show off to others? To attain fame? Or do you have a diferent reason? What do you think is so good about gaining strength as a Knight?";
+			mes "[格雷爵士]";
+			mes "是為了向別人炫耀？為了獲得名聲？還是你有其他的原因？你認為作為一名騎士獲得力量有什麼好處？";
 			next;
-			switch(select("Gain wealth and fame.:I can protect myself.:I can protect others.")) {
+			switch(select("獲得財富和名聲。:我可以保護自己。:我可以保護他人。")) {
 			case 1:
 				set .@knight_t,.@knight_t+10;
-				mes "[Sir Gray]";
-				mes "Of course, wealth and fame have their place in the world. But we as Knights must live for higher virtues.";
+				mes "[格雷爵士]";
+				mes "當然，財富和名聲在這個世界上有它們的地位。但我們作為騎士必須為更高的美德而活。";
 				next;
 				break;
 			case 2:
-				mes "[Sir Gray]";
-				mes "Good thinking. You must first be able to protect yourself in order to protect others. To this end, you must constantly train, and never give in to laziness.";
+				mes "[格雷爵士]";
+				mes "好想法。你必須先能夠保護自己，才能保護他人。為此，你必須不斷訓練，永遠不要屈服於懶惰。";
 				next;
 				break;
 			case 3:
-				mes "[Sir Gray]";
-				mes "Ah, a wonderful idea. A Knight's strength must be used to protect the weak and defend righteousness.";
+				mes "[格雷爵士]";
+				mes "啊，一個很棒的想法。騎士的力量必須被用來保護弱者和捍衛正義。";
 				next;
-				mes "[Sir Gray]";
-				mes "Sadly, there are a few Knights who shame us by forgetting the ideals that should be basic to Knighthood...";
+				mes "[格雷爵士]";
+				mes "可悲的是，有一些騎士忘記了騎士精神的基本理想，讓我們感到羞恥...";
 				next;
 				break;
 			}
 			break;
 		case 2:
-			mes "[Sir Gray]";
-			mes "Ah, to help your guild, or maybe even your party. Our wise and benevolent King Tristram the 3rd gave us these golden words...";
+			mes "[格雷爵士]";
+			mes "啊，為了幫助你的公會，甚至你的隊伍。我們睿智而仁慈的崔斯特瑞姆三世國王給了我們這些金玉良言...";
 			next;
-			mes "[Sir Gray]";
-			mes "^8B7500Beyond the calm river, lies a dangerous waterfall. Therefore, you must always be prepared for everything...^000000";
+			mes "[格雷爵士]";
+			mes "^8B7500平靜的河流之外，潛藏著危險的瀑布。因此，你必須永遠為一切做好準備...^000000";
 			next;
-			mes "[Sir Gray]";
-			mes "So how do you";
-			mes "think you can";
-			mes "help your guild?";
+			mes "[格雷爵士]";
+			mes "那麼你";
+			mes "認為你如何";
+			mes "才能幫助你的公會？";
 			next;
-			switch(select("My guild needs me.:I can help gather funds for my guild.:I can protect my guild members.")) {
+			switch(select("我的公會需要我。:我可以幫助公會籌集資金。:我可以保護我的公會成員。")) {
 			case 1:
-				mes "[Sir Gray]";
-				mes "Anyone, anywhere in this world,";
-				mes "has a place where they are needed. Never neglect someone in need, even if he is not a guild member.";
+				mes "[格雷爵士]";
+				mes "這個世界的任何地方，";
+				mes "都有需要他們的地方。永遠不要忽視需要幫助的人，即使他不是公會成員。";
 				next;
 				break;
 			case 2:
 				set .@knight_t,.@knight_t+10;
-				mes "[Sir Gray]";
-				mes "Of course wealth is important.";
-				mes "But we Knights must live for higher virtues.";
+				mes "[格雷爵士]";
+				mes "當然財富很重要。";
+				mes "但我們騎士必須為更高的美德而活。";
 				next;
 				break;
 			case 3:
-				mes "[Sir Gray]";
-				mes "Ah, a wonderful idea. A Knight's strength must be used to protect the weak and defend righteousness.";
+				mes "[格雷爵士]";
+				mes "啊，一個很棒的想法。騎士的力量必須被用來保護弱者和捍衛正義。";
 				next;
-				mes "[Sir Gray]";
-				mes "Sadly, there are a few Knights who shame us by forgetting the ideals that should be basic to Knighthood...";
+				mes "[葛雷爵士]";
+				mes "可悲的是，有些騎士忘記了騎士精神的基本原則，讓大家蒙羞...";
 				next;
 				break;
 			}
 			break;
 		case 3:
 			set .@knight_t,.@knight_t+5;
-			mes "[Sir Gray]";
-			mes "Satisfaction, you say.";
-			mes "It seems like you are";
-			mes "already a fine Swordman.";
-			mes "Is there a particular reason you wish to be a Knight?";
+			mes "[葛雷爵士]";
+			mes "你說滿足感。";
+			mes "看來你已經是";
+			mes "很棒的劍士了。";
+			mes "你想要成為騎士有什麼特別的原因嗎？";
 			next;
-			mes "[Sir Gray]";
-			mes "I don't know about";
-			mes "Swordmen, but Knights do not allow self-indulgence. There are those so obsessed with gaining strength that they cannot control themselves.";
+			mes "[葛雷爵士]";
+			mes "我不知道";
+			mes "劍士怎麼樣，但騎士不允許自我放縱。有些人過於沉迷於獲得力量，以至於無法控制自己。";
 			next;
-			mes "[Sir Gray]";
-			mes "So...";
-			mes "What part of yourself";
-			mes "are you not satisfied";
-			mes "with right now?";
+			mes "[葛雷爵士]";
+			mes "所以...";
+			mes "你對自己";
+			mes "的哪個部分";
+			mes "現在感到不滿意？";
 			next;
-			switch(select("Skills.:Goal.:Appearance.")) {
+			switch(select("技能.:目標.:外貌.")) {
 			case 1:
 				set .@knight_t,.@knight_t+5;
-				mes "[Sir Gray]";
-				mes "Skill is something you gain with experience as a Knight. It cannot be your highest goal. Otherwise, you'll never be satisfied as a Knight.";
+				mes "[葛雷爵士]";
+				mes "技能是身為騎士透過經驗獲得的。它不可能是你最高的目標。否則，你永遠不會對身為騎士感到滿意。";
 				next;
 				break;
 			case 2:
 				set .@knight_t,.@knight_t-5;
-				mes "[Sir Gray]";
-				mes "I see...";
-				mes "Always having a goal is very important. You may be full of ideas upon becoming a Knight, but that may change with time.";
+				mes "[葛雷爵士]";
+				mes "我明白了...";
+				mes "永遠都有目標非常重要。當你成為騎士時，你可能充滿了想法，但隨著時間的推移，這可能會改變。";
 				next;
 				break;
 			case 3:
 				set .@knight_t,.@knight_t+5;
-				mes "[Sir Gray]";
-				mes "Oh no...";
-				mes "What you see isn't what really counts. A Swordman may be stronger than a Knight, and even Knight may grow weak if he becomes lazy.";
+				mes "[葛雷爵士]";
+				mes "喔不...";
+				mes "你所看到的並非真正重要的。劍士可能比騎士更強大，即使是騎士，如果他變得懶惰，也可能會變得虛弱。";
 				next;
 				break;
 			}
 			break;
 		}
-		mes "[Sir Gray]";
-		mes "I understand your thoughts,";
-		mes "but there are those who wish to";
-		mes "become Knights without thinking.";
+		mes "[葛雷爵士]";
+		mes "我了解你的想法，";
+		mes "但有些人希望";
+		mes "不經思考就成為騎士。";
 		next;
-		mes "[Sir Gray]";
-		mes "Those are the ones who instigate problems and shame the honor of Knights, bringing irreversible results.";
+		mes "[葛雷爵士]";
+		mes "他們是那些引起問題並羞辱騎士榮譽的人，帶來無法挽回的後果。";
 		next;
-		mes "[Sir Gray]";
-		mes "The same goes for you as well. Once you become a Knight, you can never become a Swordman again. The duties and responsibilities of a Knight will always be with you.";
+		mes "[葛雷爵士]";
+		mes "你也是一樣。一旦你成為騎士，你永遠無法再成為劍士。騎士的職責和責任將永遠伴隨著你。";
 		next;
-		mes "[Sir Gray]";
-		mes "If you become a Knight right away, what are you going to do first?";
+		mes "[葛雷爵士]";
+		mes "如果你馬上成為騎士，你打算先做什麼？";
 		next;
-		switch(select("I am going to go straight to battle.:There are those waiting for me.:I will learn more about Knights.")) {
+		switch(select("我會直接去戰鬥。:有人在等我。:我會更深入了解騎士。")) {
 		case 1:
-			mes "[Sir Gray]";
-			mes "Battle...?";
-			mes "And then?";
+			mes "[葛雷爵士]";
+			mes "戰鬥...?";
+			mes "然後呢？";
 			next;
-			switch(select("I will grow within a short period of time.:I would like to test my ability as a Knight.:I would like to go to more challenging places.")) {
+			switch(select("我會在短時間內成長。:我想測試我身為騎士的能力。:我想去更多具有挑戰性的地方。")) {
 			case 1:
 				set .@knight_t,.@knight_t+10;
-				mes "[Sir Gray]";
-				mes "Don't be in too much of a hurry to become strong. Even if you become";
-				mes "a Knight, you are still yourself.";
+				mes "[葛雷爵士]";
+				mes "不要太急於變強。即使你成為";
+				mes "騎士，你仍然是你自己。";
 				next;
 				break;
 			case 2:
-				mes "[Sir Gray]";
-				mes "Testing yourself is a good thing. It's okay to be happy about how you change, but don't forget about the true qualities of being a Knight.";
+				mes "[葛雷爵士]";
+				mes "測試自己是件好事。為自己的改變感到高興是可以的，但不要忘記身為騎士的真正品質。";
 				next;
 				break;
 			case 3:
-				mes "[Sir Gray]";
-				mes "Even if you become a Knight, you are not changing your inner self. No need to overwork yourself.";
-				mes "Relax and take things step by step.";
+				mes "[葛雷爵士]";
+				mes "即使你成為騎士，你也不會改變你的內在自我。不需要過度勞累自己。";
+				mes "放鬆一點，一步一步來。";
 				next;
 				break;
 			}
 			break;
 		case 2:
-			mes "[Sir Gray]";
-			mes "Who is";
-			mes "waiting for you?";
+			mes "[葛雷爵士]";
+			mes "誰在";
+			mes "等你？";
 			next;
-			switch(select("My friends.:My Guild members.:My Lover.")) {
+			switch(select("我的朋友們。:我的公會成員。:我的愛人。")) {
 			case 1:
-				mes "[Sir Gray]";
-				mes "I see, they would share in the joy of your achievements. Don't ever lose your kind heart, and always give help to your friends.";
+				mes "[葛雷爵士]";
+				mes "我明白了，他們會分享你成就的喜悅。永遠不要失去你善良的心，永遠幫助你的朋友。";
 				next;
 				break;
 			case 2:
-				mes "[Sir Gray]";
-				mes "Those who would share in your happiness and hardship. As a Knight, you must always protect them.";
+				mes "[葛雷爵士]";
+				mes "那些會與你分享快樂和艱辛的人。身為騎士，你必須永遠保護他們。";
 				next;
 				break;
 			case 3:
-				mes "[Sir Gray]";
-				mes "Oh, youth!";
-				mes "Becoming a Knight";
-				mes "for your beloved!";
-				mes "Always protect "+((Sex==SEX_MALE)?"her":"him")+"...";
-				mes "Even at the sacrifice";
-				mes "of your own life!";
+				mes "[葛雷爵士]";
+				mes "喔，青春！";
+				mes "為了你所愛的人";
+				mes "成為騎士！";
+				mes "永遠保護"+((Sex==SEX_MALE)?"她":"他")+"...";
+				mes "即使犧牲";
+				mes "自己的生命！";
 				next;
-				mes "[Sir Gray]";
-				mes "Also...";
-				mes "Love them forever.";
-				mes "Sincere affection";
-				mes "is hard to find.";
+				mes "[葛雷爵士]";
+				mes "還有...";
+				mes "永遠愛他們。";
+				mes "真誠的感情";
+				mes "很難找到。";
 				next;
 				break;
 			}
 			break;
 		case 3:
-			mes "[Sir Gray]";
-			mes "Good attitude...";
-			mes "What do you plan";
-			mes "on learning?";
+			mes "[葛雷爵士]";
+			mes "好態度...";
+			mes "你打算";
+			mes "學習什麼？";
 			next;
-			switch(select("Comfortable places for Knights to go...:The different paths of a Knight...:Ways to get more money as a Knight...")) {
+			switch(select("騎士適合去的地方...:騎士的不同道路...:騎士如何賺更多錢...")) {
 			case 1:
 				set .@knight_t,.@knight_t+5;
-				mes "[Sir Gray]";
-				mes "There are many places that are comfortable or uncomfortable in this world. However Knights must";
-				mes "be able to survive anywhere.";
+				mes "[葛雷爵士]";
+				mes "這個世界上有很多舒適或不舒適的地方。然而，騎士必須";
+				mes "能夠在任何地方生存。";
 				next;
 				break;
 			case 2:
-				mes "[Sir Gray]";
-				mes "There are many similar Knights outside in the world. Think of them as your seniors and ask many questions.";
+				mes "[葛雷爵士]";
+				mes "在世界上有很多相似的騎士。把他們當作你的前輩，多問問題。";
 				next;
 				break;
 			case 3:
 				set .@knight_t,.@knight_t+15;
-				mes "[Sir Gray]";
-				mes "Oh no. Do you hold wealth as a priority of being a Knight? We're not meant to be that way. Come again when you have thought";
-				mes "more about it...";
+				mes "[葛雷爵士]";
+				mes "喔不。你把財富作為身為騎士的首要任務嗎？我們不應該這樣。當你思考";
+				mes "更多關於它的時候再來吧...";
 				next;
 				break;
 			}
 			break;
 		}
-		mes "[Sir Gray]";
-		mes "Oh no, we've been";
-		mes "talking too much...";
-		mes "I apologize for";
-		mes "keeping you here";
-		mes "for so long.";
+		mes "[葛雷爵士]";
+		mes "喔不，我們已經";
+		mes "說太多了...";
+		mes "我很抱歉";
+		mes "讓你待在這裡";
+		mes "這麼久。";
 		next;
 		if (.@knight_t == 0) {
 			set KNIGHT_Q,14;
 			changequest 9011,9012;
-			mes "[Sir Gray]";
-			mes "I enjoyed talking with you. You remind me of myself as a young recruit. Shall we talk to the captain and decide on your";
-			mes "job change?";
+			mes "[葛雷爵士]";
+			mes "我很享受與你交談。你讓我想起了年輕時的自己。我們是否該與隊長談談，決定你的";
+			mes "轉職？";
 			next;
-			mes "[Sir Gray]";
-			mes "Don't worry too";
-			mes "much, I have a very";
-			mes "high opinion of you.";
-			mes "Now, go~";
+			mes "[葛雷爵士]";
+			mes "別太擔心";
+			mes "我對你有很高的";
+			mes "評價。";
+			mes "現在，去吧~";
 			close;
 		}
 		else if (.@knight_t == 5) {
 			set KNIGHT_Q,14;
 			changequest 9011,9012;
-			mes "[Sir Gray]";
-			mes "I enjoyed speaking with you. You can think about the principles of Knighthood more once you become a Knight.";
+			mes "[葛雷爵士]";
+			mes "我很享受與你交談。一旦你成為騎士，你可以更多地思考騎士精神的原則。";
 			next;
-			mes "[Sir Gray]";
-			mes "Then, shall we go to the captain and decide on your job change? Don't worry too much. You are good enough to be a Knight!";
+			mes "[葛雷爵士]";
+			mes "那麼，我們該去見隊長並決定你的轉職了嗎？別太擔心。你夠資格成為騎士！";
 			close;
 		}
 		else if (.@knight_t == 10) {
 			set KNIGHT_Q,14;
 			changequest 9011,9012;
-			mes "[Sir Gray]";
-			mes "I enjoyed talking with you. Although, there were some";
-			mes "things that bothered me...";
+			mes "[葛雷爵士]";
+			mes "我很享受與你交談。雖然，有些";
+			mes "事情困擾著我...";
 			next;
-			mes "[Sir Gray]";
-			mes "You should go";
-			mes "to the captain";
-			mes "so we can decide";
-			mes "on your job change.";
+			mes "[葛雷爵士]";
+			mes "你應該去";
+			mes "見隊長";
+			mes "這樣我們才能決定";
+			mes "你的轉職。";
 			next;
-			mes "[Sir Gray]";
-			mes "Don't worry too much, coming to take my test means the others have acknowledged you as well.";
-			mes "Go now...!";
+			mes "[葛雷爵士]";
+			mes "別太擔心，來參加我的測試意味著其他人也認可你。";
+			mes "現在去吧...！";
 			close;
 		}
 		else {
 			set KNIGHT_Q,13;
-			mes "[Sir Gray]";
-			mes "Conversing";
-			mes "with young ones";
-			mes "is always enjoyable...";
+			mes "[葛雷爵士]";
+			mes "與年輕人";
+			mes "交談總是";
+			mes "令人愉快的...";
 			next;
-			mes "[Sir Gray]";
-			mes "But it seems as though your dream is elsewhere, or that your focus is hazy. Spend more time as a Swordman, and come back";
-			mes "to me later.";
+			mes "[葛雷爵士]";
+			mes "但似乎你的夢想在別處，或者你的注意力很模糊。花更多時間成為劍士，然後再回來";
+			mes "找我。";
 			next;
-			mes "[Sir Gray]";
-			mes "If you truly wish to become a Knight, you must change your outlook first. Then, we shall see.";
+			mes "[葛雷爵士]";
+			mes "如果你真的想成為騎士，你必須先改變你的觀點。然後，我們再看看。";
 			close;
 		}
 	}
 	else if (KNIGHT_Q == 14) {
-		mes "I told you";
-		mes "to go to";
-		mes "the captain.";
+		mes "我告訴你";
+		mes "去見";
+		mes "隊長。";
 		next;
-		mes "[Sir Gray]";
-		mes "Everyone will";
-		mes "carefully make";
-		mes "their decision,";
-		mes "so go now!";
+		mes "[葛雷爵士]";
+		mes "每個人都會";
+		mes "仔細做出";
+		mes "他們的決定，";
+		mes "所以現在去吧！";
 		close;
 	}
 	else {
-		mes "Oh...";
-		mes "A young Swordman.";
-		mes "What can I do for you?";
+		mes "喔...";
+		mes "一位年輕的劍士。";
+		mes "我能為你做些什麼？";
 		next;
-		if (select("I would like to take the test to change jobs.:Oh, nothing.") == 1) {
-			mes "[Sir Gray]";
-			mes "Hoho~";
-			mes "There are many";
-			mes "other younger";
-			mes "Knights in here.";
+		if (select("我想參加轉職測試。:喔，沒什麼。") == 1) {
+			mes "[葛雷爵士]";
+			mes "呵呵~";
+			mes "這裡還有很多";
+			mes "其他更年輕的";
+			mes "騎士。";
 			next;
-			mes "[Sir Gray]";
-			mes "If you talk";
-			mes "to all of them,";
-			mes "I may review";
-			mes "you as well.";
+			mes "[葛雷爵士]";
+			mes "如果你";
+			mes "與他們所有人";
+			mes "交談，";
+			mes "我也許會";
+			mes "審查你。";
 			close;
 		}
-		mes "[Sir Gray]";
-		mes "Take care!";
-		mes "Health is";
-		mes "every man's";
-		mes "treasure!";
+		mes "[葛雷爵士]";
+		mes "保重！";
+		mes "健康是";
+		mes "每個人的";
+		mes "寶藏！";
 		close;
 	}
 }

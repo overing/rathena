@@ -15,14 +15,14 @@
 //= 2.2 Updated to new bullets. [Aleos]
 //============================================================
 
-que_ng,187,149,3	script	Magazine Dealer Kenny::mdk	4_M_01,{
-	mes "[Kenny]";
-	mes "Bullet bags will help you carry bullets much more easily.";
-	mes "Come take a look~";
+que_ng,187,149,3	script	雜誌商人 肯尼::mdk	4_M_01,{
+	mes "[肯尼]";
+	mes "子彈袋能幫助你更輕鬆地攜帶子彈。";
+	mes "來看看吧～";
 	next;
-	switch(select("Various Bullet Cases:Sphere Exchange:Old Sphere Exchange:Slug Exchange:Cancel")) {
+	switch(select("各種子彈盒:球交換:舊球交換:彈丸交換:取消")) {
 	case 1:
-		switch(select("Bullet Case:Bloody Bullet Case:Silver Bullet Case:Ammo AP Bullet Case:Ammo Blazing Bullet Case:Ammo Freezing Bullet Case:Ammo Lightning Bullet Case:Ammo Magic Stone Bullet Case:Ammo Purifying Bullet Case:Flare Bullet Case:Lightning Bullet Case:Ice Bullet Case:Poison Bullet Case:Blind Bullet Case:Cancel")) {
+		switch(select("子彈盒:血腥子彈盒:銀製子彈盒:穿甲彈子彈盒:火焰彈子彈盒:冰凍彈子彈盒:閃電彈子彈盒:魔法石子彈盒:淨化彈子彈盒:信號彈子彈盒:閃電子彈:冰凍子彈:毒性子彈:致盲子彈:取消")) {
 			case 1: callsub S_Casing,13200,12149;
 			case 2: callsub S_Casing,13222,22737;
 			case 3: callsub S_Casing,13221,22738;
@@ -40,7 +40,7 @@ que_ng,187,149,3	script	Magazine Dealer Kenny::mdk	4_M_01,{
 			case 15: callsub S_Close;
 		}
 	case 2:
-		switch(select("Fire Bullet:Wind Bullet:Freezing Bullet:Poison Bullet:Blind Bullet:Cancel")) {
+		switch(select("火焰子彈:風刃子彈:冰凍子彈:毒性子彈:致盲子彈:取消")) {
 		case 1: callsub S_Sphere_Exchange,13223,13228;
 		case 2: callsub S_Sphere_Exchange,13224,13229;
 		case 3: callsub S_Sphere_Exchange,13227,13230;
@@ -49,7 +49,7 @@ que_ng,187,149,3	script	Magazine Dealer Kenny::mdk	4_M_01,{
 		case 6: callsub S_Close;
 		}
 	case 3:
-		switch(select("Fire Sphere:Wind Sphere:Freezing Sphere:Poison Sphere:Blind Sphere:Cancel")) {
+		switch(select("火焰球:風刃球:冰凍球:毒性球:致盲球:取消")) {
 		case 1: callsub S_Old_Sphere_Exchange,13203,13228;
 		case 2: callsub S_Old_Sphere_Exchange,13204,13229;
 		case 3: callsub S_Old_Sphere_Exchange,13207,13230;
@@ -58,7 +58,7 @@ que_ng,187,149,3	script	Magazine Dealer Kenny::mdk	4_M_01,{
 		case 6: callsub S_Close;
 		}
 	case 4:
-		switch(select("Slug Ammunition L:Slug Ammunition M:Slug Ammunition H:Slug Ammunition SH:Slug Ammunition XH:Cancel")) {
+		switch(select("彈丸L:彈丸M:彈丸H:彈丸SH:彈丸XH:取消")) {
 		case 1: callsub S_Slug_Exchange,13210,24;
 		case 2: callsub S_Slug_Exchange,13211,12;
 		case 3: callsub S_Slug_Exchange,13212,8;
@@ -79,37 +79,37 @@ S_Casing:
 	.@pack_count = .@bullet_count / 500;
 
 	if (.@bullet_count < 500 || getequipid(EQI_AMMO) != -1 || BaseClass != Job_Gunslinger) {
-		mes "[Kenny]";
-		mes "Hey~ You need the exact amount of items to exchange. Go get some more.";
-		mes "You must have 500 or more of ^FF0000" + .@bullet_str$ + "^000000, ok? Also, make sure not to ^FF0000wear^000000 them if you want to exchange.";
+		mes "[肯尼]";
+		mes "嘿～你需要足夠數量的物品才能交換。再去拿一些吧。";
+		mes "你必須擁有 500 個或更多的 ^FF0000" + .@bullet_str$ + "^000000，好嗎？還有，如果你想要交換，請確保不要^FF0000穿戴^000000它們。";
 		close;
 	}
 
-	mes "[Kenny]";
-	mes "You've chosen ^FF0000" + .@pack_str$ + "^000000.";
-	mes "You need 500 ^3131FF" + .@bullet_str$ + "^000000 to make 1 ^3131FF" + .@bullet_str$ + "^000000 item, and it will cost ^3131FF500^000000 zeny.";
-	mes "How many do you want to exchange?";
+	mes "[肯尼]";
+	mes "你選擇了 ^FF0000" + .@pack_str$ + "^000000。";
+	mes "你需要 500 個 ^3131FF" + .@bullet_str$ + "^000000 才能製作 1 個 ^3131FF" + .@bullet_str$ + "^000000 物品，並且需要花費 ^3131FF500^000000 zeny。";
+	mes "你想要交換多少個？";
 	next;
-	switch(select("Exchange all:Make only 1:Cancel")) {
+	switch(select("全部交換:只製作 1 個:取消")) {
 		case 1:
-			mes "[Kenny]";
-			mes "Bullet count: ^3131FF" + .@bullet_count;
-			mes "Combination of bullet bags: ^3131FF" + .@pack_count;
-			mes "Zeny required: ^3131FF" + .@pack_count * 500;
+			mes "[肯尼]";
+			mes "子彈數量: ^3131FF" + .@bullet_count;
+			mes "子彈袋組合: ^3131FF" + .@pack_count;
+			mes "所需 Zeny: ^3131FF" + .@pack_count * 500;
 			next;
-			mes "Do you want to exchange?";
+			mes "你想要交換嗎？";
 			next;
-			switch(select("Exchange:Cancel")) {
+			switch(select("交換:取消")) {
 				case 1:
 					if (Zeny < .@pack_count * 500) {
-						mes "[Kenny]";
-						mes "Hey~ You need the exact amount of Zeny to exchange. Go get some more.";
-						mes "You must have ^FF0000" + .@pack_count * 500 + "^000000, ok?";
+						mes "[肯尼]";
+						mes "嘿～你需要足夠數量的 Zeny 才能交換。再去拿一些吧。";
+						mes "你必須擁有 ^FF0000" + .@pack_count * 500 + "^000000，好嗎？";
 						close;
 					}
-					mes "[Kenny]";
-					mes "All done.";
-					mes "The bag is useless when the weight of inventory gets over 70%. Please be careful.";
+					mes "[肯尼]";
+					mes "完成了。";
+					mes "當物品欄的重量超過 70% 時，袋子將毫無用處。請小心。";
 					Zeny -= .@pack_count * 500;
 					delitem .@bullet_id, .@pack_count * 500;
 					getitem .@pack_id, .@pack_count;
@@ -119,14 +119,14 @@ S_Casing:
 			}
 		case 2:
 			if (Zeny < 500) {
-				mes "[Kenny]";
-				mes "Hey~ You need the exact amount of Zeny to exchange. Go get some more.";
-				mes "You must have ^FF0000500^000000, ok?";
+				mes "[肯尼]";
+				mes "嘿～你需要足夠數量的 Zeny 才能交換。再去拿一些吧。";
+				mes "你必須擁有 ^FF0000500^000000，好嗎？";
 				close;
 			}
-			mes "[Kenny]";
-			mes "All done.";
-			mes "The bag is useless when the weight of inventory gets over 70%. Please be careful.";
+			mes "[肯尼]";
+			mes "完成了。";
+			mes "當物品欄的重量超過 70% 時，袋子將毫無用處。請小心。";
 			Zeny -= 500;
 			delitem .@bullet_id, 500;
 			getitem .@pack_id, 1;
@@ -144,29 +144,29 @@ S_Sphere_Exchange:
 	.@new_count = .@old_count / 10;
 
 	if (.@old_count < 10 || getequipid(EQI_AMMO) != -1 || BaseClass != Job_Gunslinger) {
-		mes "[Kenny]";
-		mes "Hey~ You need the exact amount of items to exchange. Go get some more.";
-		mes "You must have 10 or more of ^FF0000" + .@old_str$ + "^000000, ok? Also, make sure not to ^FF0000wear^000000 them if you want to exchange.";
+		mes "[肯尼]";
+		mes "嘿～你需要足夠數量的物品才能交換。再去拿一些吧。";
+		mes "你必須擁有 10 個或更多的 ^FF0000" + .@old_str$ + "^000000，好嗎？還有，如果你想要交換，請確保不要^FF0000穿戴^000000它們。";
 		close;
 	}
 
-	mes "[Kenny]";
-	mes "You've chosen ^FF0000" + .@old_str$ + "^000000.";
-	mes "You need 10 ^3131FF" + .@old_str$ + "^000000 to make 1 ^3131FF" + .@new_str$ + "^000000 item.";
-	mes "How many do you want to exchange?";
+	mes "[肯尼]";
+	mes "你選擇了 ^FF0000" + .@old_str$ + "^000000。";
+	mes "你需要 10 個 ^3131FF" + .@old_str$ + "^000000 才能製作 1 個 ^3131FF" + .@new_str$ + "^000000 物品。";
+	mes "你想要交換多少個？";
 	next;
-	switch(select("Exchange all:Make only 1:Cancel")) {
+	switch(select("全部交換:只製作 1 個:取消")) {
 		case 1:
-			mes "[Kenny]";
-			mes .@old_str$ + " count: ^3131FF" + .@old_count;
-			mes .@new_str$ + " count: ^3131FF" + .@new_count;
+			mes "[肯尼]";
+			mes .@old_str$ + " 數量: ^3131FF" + .@old_count;
+			mes .@new_str$ + " 數量: ^3131FF" + .@new_count;
 			next;
-			mes "Do you want to exchange?";
+			mes "你想要交換嗎？";
 			next;
-			switch(select("Exchange:Cancel")) {
+			switch(select("交換:取消")) {
 				case 1:
-					mes "[Kenny]";
-					mes "All done.";
+					mes "[肯尼]";
+					mes "完成了。";
 					delitem .@old_id, .@new_count * 10;
 					getitem .@new_id, .@new_count;
 					close;
@@ -174,8 +174,8 @@ S_Sphere_Exchange:
 					close;
 			}
 		case 2:
-			mes "[Kenny]";
-			mes "All done.";
+			mes "[肯尼]";
+			mes "完成了。";
 			delitem .@old_id, 10;
 			getitem .@new_id, 1;
 			close;
@@ -191,29 +191,29 @@ S_Old_Sphere_Exchange:
 	.@old_count = countitem(.@old_id);
 
 	if (.@old_count < 1 || getequipid(EQI_AMMO) != -1 || BaseClass != Job_Gunslinger) {
-		mes "[Kenny]";
-		mes "Hey~ You need the exact amount of items to exchange. Go get some more.";
-		mes "You must have 1 or more of ^FF0000" + .@old_str$ + "^000000, ok? Also, make sure not to ^FF0000wear^000000 them if you want to exchange.";
+		mes "[肯尼]";
+		mes "嘿～你需要足夠數量的物品才能交換。再去拿一些吧。";
+		mes "你必須擁有 1 個或更多的 ^FF0000" + .@old_str$ + "^000000，好嗎？還有，如果你想要交換，請確保不要^FF0000穿戴^000000它們。";
 		close;
 	}
 
-	mes "[Kenny]";
-	mes "You've chosen ^FF0000" + .@old_str$ + "^000000.";
-	mes "You need 1 ^3131FF" + .@old_str$ + "^000000 to make 1 ^3131FF" + .@new_str$ + "^000000 item.";
-	mes "How many do you want to exchange?";
+	mes "[肯尼]";
+	mes "你選擇了 ^FF0000" + .@old_str$ + "^000000。";
+	mes "你需要 1 個 ^3131FF" + .@old_str$ + "^000000 才能製作 1 個 ^3131FF" + .@new_str$ + "^000000 物品。";
+	mes "你想要交換多少個？";
 	next;
-	switch(select("Exchange all:Make only 1:Cancel")) {
+	switch(select("全部交換:只製作 1 個:取消")) {
 		case 1:
-			mes "[Kenny]";
-			mes .@old_str$ + " count: ^3131FF" + .@old_count;
-			mes .@new_str$ + " count: ^3131FF" + .@old_count;
+			mes "[肯尼]";
+			mes .@old_str$ + " 數量: ^3131FF" + .@old_count;
+			mes .@new_str$ + " 數量: ^3131FF" + .@old_count;
 			next;
-			mes "Do you want to exchange?";
+			mes "你想要交換嗎？";
 			next;
-			switch(select("Exchange:Cancel")) {
+			switch(select("交換:取消")) {
 				case 1:
-					mes "[Kenny]";
-					mes "All done.";
+					mes "[肯尼]";
+					mes "完成了。";
 					delitem .@old_id, .@old_count;
 					getitem .@new_id, .@old_count;
 					close;
@@ -221,8 +221,8 @@ S_Old_Sphere_Exchange:
 					close;
 			}
 		case 2:
-			mes "[Kenny]";
-			mes "All done.";
+			mes "[肯尼]";
+			mes "完成了。";
 			delitem .@old_id, 1;
 			getitem .@new_id, 1;
 			close;
@@ -239,29 +239,29 @@ S_Slug_Exchange:
 	.@new_count = .@count / .@req_count;
 
 	if (.@count < .@req_count || getequipid(EQI_AMMO) != -1 || BaseClass != Job_Gunslinger) {
-		mes "[Kenny]";
-		mes "Hey~ You need the exact amount of items to exchange. Go get some more.";
-		mes "You must have " + .@req_count + " or more of ^FF0000" + .@slug_str$ + "^000000, ok? Also, make sure not to ^FF0000wear^000000 them if you want to exchange.";
+		mes "[肯尼]";
+		mes "嘿～你需要足夠數量的物品才能交換。再去拿一些吧。";
+		mes "你必須擁有 " + .@req_count + " 個或更多的 ^FF0000" + .@slug_str$ + "^000000，好嗎？還有，如果你想要交換，請確保不要^FF0000穿戴^000000它們。";
 		close;
 	}
 
-	mes "[Kenny]";
-	mes "You've chosen ^FF0000" + .@slug_str$ + "^000000.";
-	mes "You need " + .@req_count + " ^3131FF" + .@slug_str$ + "^000000 to make 1 ^3131FF" + .@new_slug_str$ + "^000000 item.";
-	mes "How many do you want to exchange?";
+	mes "[肯尼]";
+	mes "你選擇了 ^FF0000" + .@slug_str$ + "^000000。";
+	mes "你需要 " + .@req_count + " 個 ^3131FF" + .@slug_str$ + "^000000 才能製作 1 個 ^3131FF" + .@new_slug_str$ + "^000000 物品。";
+	mes "你想要交換多少個？";
 	next;
-	switch(select("Exchange all:Make only 1:Cancel")) {
+	switch(select("全部交換:只製作 1 個:取消")) {
 		case 1:
-			mes "[Kenny]";
-			mes .@slug_str$ + " count: ^3131FF" + .@count;
-			mes .@new_slug_str$ + " count: ^3131FF" + .@new_count;
+			mes "[肯尼]";
+			mes .@slug_str$ + " 數量: ^3131FF" + .@count;
+			mes .@new_slug_str$ + " 數量: ^3131FF" + .@new_count;
 			next;
-			mes "Do you want to exchange?";
+			mes "你想要交換嗎？";
 			next;
-			switch(select("Exchange:Cancel")) {
+			switch(select("交換:取消")) {
 				case 1:
-					mes "[Kenny]";
-					mes "All done.";
+					mes "[肯尼]";
+					mes "完成了。";
 					delitem .@slug_id, .@new_count * .@req_count;
 					getitem 25187, .@new_count;
 					close;
@@ -269,8 +269,8 @@ S_Slug_Exchange:
 					close;
 			}
 		case 2:
-			mes "[Kenny]";
-			mes "All done.";
+			mes "[肯尼]";
+			mes "完成了。";
 			delitem .@slug_id, .@req_count;
 			getitem 25187, 1;
 			close;
@@ -279,12 +279,12 @@ S_Slug_Exchange:
 	}
 
 S_Close:
-	mes "[Kenny]";
-	mes "Okay.";
-	mes "If you need anything";
-	mes "please come back.";
+	mes "[肯尼]";
+	mes "好的。";
+	mes "如果你需要任何東西";
+	mes "請再來找我。";
 	close;
 }
 
-alberta,118,157,3	duplicate(mdk)	Magazine Dealer Kenny#al	4_M_01
-izlude_in,74,104,5	duplicate(mdk)	Magazine Dealer Kenny#iz	4_M_01
+alberta,118,157,3	duplicate(mdk)	雜誌商人 肯尼#al	4_M_01
+izlude_in,74,104,5	duplicate(mdk)	雜誌商人 肯尼#iz	4_M_01

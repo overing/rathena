@@ -9,18 +9,18 @@
 
 prontera,210,209,5	script	Pet Trader#1	4_M_JPNOJI,{
 	disable_items;
-	mes "[Pet Trader]";
-	mes "Making a living through business ain't easy.";
-	mes "I get real bad motion sickness, yet today I got caught up in a storm on my way here.";
+	mes "[寵物商人]";
+	mes "靠做生意來維持生計真不容易。";
+	mes "我的暈動病很嚴重，但今天我在來的路上遇到了一場暴風雨。";
 	next;
-	mes "[Pet Trader]";
-	mes "It was such a horrible experience. Thanks to that, I don't feel so good. Ughh...";
+	mes "[寵物商人]";
+	mes "那真是一次可怕的經歷。托那的福，我感覺不太好。 嗚...";
 	next;
-	mes "[Pet Trader]";
-	mes "Anyway, did you come here looking for a Cute Pet?";
-	mes "You've brought a ticket with you, right?";
+	mes "[寵物商人]";
+	mes "總之，你是來這裡尋找可愛的寵物嗎？";
+	mes "你有帶票來吧？";
 	next;
-	switch (select("Examine your tickets:Cancel")) {
+	switch (select("檢查你的票券:取消")) {
 	case 1:
 		setarray .@tickets,
 			6116, //Succu_Pet_Coupon
@@ -130,36 +130,36 @@ prontera,210,209,5	script	Pet Trader#1	4_M_JPNOJI,{
 		}
 
 		if (.@count == 0) {
-			mes "[Pet Trader]";
-			mes "I don't think you've got the stuff I want.";
+			mes "[寵物商人]";
+			mes "我想你沒有我想要的東西。";
 			close;
 		}
 
-		mes "[Pet Trader]";
-		mes "Which ticket do you want to exchange?";
+		mes "[寵物商人]";
+		mes "你想要兌換哪張票券？";
 		next;
 		.@index = .@ticketIndices[select(.@menu$) - 1];
 
-		mes "[Pet Trader]";
-		mes "Great!";
+		mes "[寵物商人]";
+		mes "太棒了！";
 		mes "^0000FF"+ getitemname(.@eggs[.@index]) +"^000000";
-		mes "Are you sure you want this pet?";
+		mes "你確定想要這隻寵物嗎？";
 		next;
-		if (select("Yes:No") == 2) close;
+		if (select("是:否") == 2) close;
 		if (!checkweight(.@eggs[.@index], 1)) {
-			mes "You're carrying too much stuff!";
-			mes "Come back when you've made some space.";
+			mes "你攜帶太多東西了！";
+			mes "等你騰出一些空間再回來。";
 			close;
 		}
 
-		mes "[Pet Trader]";
-		mes "Here's your pet~";
+		mes "[寵物商人]";
+		mes "這是你的寵物～";
 		delitem .@tickets[.@index], 1;
 		getitem .@eggs[.@index], 1;
 		close;
 	case 2:
-		mes "[Pet Trader]";
-		mes "So you want hear about the land across the sea, but I ain't feeling so well today.";
+		mes "[寵物商人]";
+		mes "你想聽聽關於海那邊的土地，但我今天感覺不太好。";
 		close;
 	}
 	end;

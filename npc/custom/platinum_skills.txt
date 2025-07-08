@@ -17,18 +17,18 @@
 //= 3.0 Migrate/Integrate to Global Functions. [mazvi]
 //============================================================
 
-prontera,128,200,6	script	Platinum Skill NPC	94,{
-	mes "[Platinum Skill NPC]";
-	mes "I can give you the special skills available to your job.";
-	mes "Would you like these skills now?";
+prontera,128,200,6	script	白金技能 NPC	94,{
+	mes "[白金技能 NPC]";
+	mes "我可以給你你的職業可用的特殊技能。";
+	mes "你現在想要這些技能嗎？";
 	next;
-	if (select("Yes Please:No") == 2) {
-		mes "[Platinum Skill NPC]";
-		mes "Have a nice day... >.>";
+	if (select("好的，麻煩了:不要") == 2) {
+		mes "[白金技能 NPC]";
+		mes "祝你有美好的一天... >.>";
 		close;
 	}
 	callfunc "F_GetPlatinumSkills";
-	mes "[Platinum Skill NPC]";
-	mes "There you go!";
+	mes "[白金技能 NPC]";
+	mes "給你!";
 	close;
 }

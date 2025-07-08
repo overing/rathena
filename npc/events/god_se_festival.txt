@@ -18,28 +18,28 @@
 // Original name: "Festival Manager#god_se_fes00"
 yuno,1,1,0	script	Festival Manager#gq_fes0	891,{
 	callfunc "F_GM_NPC";
-	mes "[Festival Manager]";
-	mes "I am the festival NPC manager for the God SE quest.";
-	mes "Please enter your password.";
+	mes "[慶典管理員]";
+	mes "我是神之 SE 任務的慶典 NPC 管理員。";
+	mes "請輸入您的密碼。";
 	next;
 	if (callfunc("F_GM_NPC","07godsefes",1) == 0) {
-		mes "[Festival Manager]";
-		mes "Password is incorrect.";
+		mes "[慶典管理員]";
+		mes "密碼不正確。";
 		close;
 	}
-	mes "[Festival Manager]";
-	mes "What would you like to do?";
+	mes "[慶典管理員]";
+	mes "您想做什麼？";
 	next;
-	switch(select("Disable festival NPCs:Enable festival NPCs")) {
+	switch(select("停用慶典 NPC:啟用慶典 NPC")) {
 	case 1:
-		mes "[Festival Manager]";
-		mes "Ending festivals and disabling NPCs.";
+		mes "[慶典管理員]";
+		mes "結束慶典並停用 NPC。";
 		donpcevent "Rmimi Ravies#gq_fes01::Onover";
 		donpcevent "Rmimi Ravies#gq_fes01::Onover";
 		close;
 	case 2:
-		mes "[Festival Manager]";
-		mes "Resetting festivals and enabling NPCs.";
+		mes "[慶典管理員]";
+		mes "重置慶典並啟用 NPC。";
 		donpcevent "Rmimi Ravies#gq_fes01::Onover";
 		donpcevent "Rmimi Ravies#gq_fes01::OnEnable";
 		close;
@@ -48,108 +48,108 @@ yuno,1,1,0	script	Festival Manager#gq_fes0	891,{
 
 yuno,118,192,5	script	Rmimi Ravies#gq_fes01	891,{
 	if (countitem(7840) > 0) {
-		mes "[Rmimi Ravies]";
-		mes "This is the flower.";
-		mes "This is just a formality, but let me check your qualifications.";
+		mes "[拉米米·拉維斯]";
+		mes "這是花朵。";
+		mes "這只是一個形式，讓我檢查您的資格。";
 		next;
 		if (is_guild_leader() == true) {
-			mes "[Rmimi Ravies]";
-			mes "Your qualification is verified as a Guild master.";
+			mes "[拉米米·拉維斯]";
+			mes "您的資格已驗證為公會會長。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "I wonder if you know what this flower's use is... Let me explain it to you.";
+			mes "[拉米米·拉維斯]";
+			mes "我想知道您是否知道這朵花的用途...讓我向您解釋一下。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "This is the holy flower given by the Wish Maiden in Valkyrie, it can summon certain monsters by certain summoners.";
+			mes "[拉米米·拉維斯]";
+			mes "這是瓦爾基里女武神所賜予的神聖之花，可以透過特定的召喚者召喚特定的怪物。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "There are only two summoners in this world...";
-			mes "Me and my sister Rhehe...";
+			mes "[拉米米·拉維斯]";
+			mes "這個世界上只有兩個召喚者...";
+			mes "我和我的妹妹瑞赫...";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "We are totllly different, but we can...";
+			mes "[拉米米·拉維斯]";
+			mes "我們完全不同，但我們可以...";
 			next;
-			mes "[Rmimi Ravies]";
+			mes "[拉米米·拉維斯]";
 			mes "...................................";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "Anyway,";
-			mes "Do you want to summon monsters?";
+			mes "[拉米米·拉維斯]";
+			mes "總之，";
+			mes "您想召喚怪物嗎？";
 			next;
-			switch(select("Do not summon:Summon, please")) {
+			switch(select("不要召喚:請召喚")) {
 			case 1:
-				mes "[Rmimi Ravies]";
-				mes "I don't like to be interrupted by others..";
+				mes "[拉米米·拉維斯]";
+				mes "我不喜歡被別人打斷..";
 				next;
-				mes "[Rmimi Ravies]";
-				mes "But it's just business.";
+				mes "[拉米米·拉維斯]";
+				mes "但這只是生意。";
 				close;
 			case 2:
 				break;
 			}
-			mes "[Rmimi Ravies]";
-			mes "I will explain to you how to summon monsters.";
-			mes "This flower can summon the monsters 'Valkyrie's Blessing' and 'Valkyrie's Present' for one hour here in Juno.";
+			mes "[拉米米·拉維斯]";
+			mes "我會向您解釋如何召喚怪物。";
+			mes "這朵花可以在朱諾這裡召喚怪物 'Valkyrie's Blessing' 和 'Valkyrie's Present' 一個小時。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "An announcement will be made stating which monster is summoned.";
-			mes "This festival is given by the Wish maiden for all adventurers to enjoy all over the world.";
+			mes "[拉米米·拉維斯]";
+			mes "將會發布公告說明召喚了哪個怪物。";
+			mes "這個慶典是由女武神賜予的，為了讓世界各地的所有冒險家都能享受。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "Now, are you ready to summon monsters?";
+			mes "[拉米米·拉維斯]";
+			mes "現在，您準備好召喚怪物了嗎？";
 			next;
-			switch(select("No, I'm not ready now.:Yes! I'm ready for that.")) {
+			switch(select("不，我現在還沒準備好。:是的！我準備好了。")) {
 			case 1:
-				mes "[Rmimi Ravies]";
-				mes "If you are not ready, why did you come to me?";
+				mes "[拉米米·拉維斯]";
+				mes "如果您還沒準備好，為什麼要來找我？";
 				next;
-				mes "[Rmimi Ravies]";
-				mes "I'll be waiting until you are ready.";
-				mes "It is just business afterall.";
+				mes "[拉米米·拉維斯]";
+				mes "我會等到您準備好。";
+				mes "畢竟這只是生意。";
 				close;
 			case 2:
 				break;
 			}
-			mes "[Rmimi Ravies]";
-			mes "Now we are ready.";
+			mes "[拉米米·拉維斯]";
+			mes "現在我們準備好了。";
 			next;
 			if ($@gqse_festival == 0) {
-				mes "[Rmimi Ravies]";
-				mes "Ok, we would ge started to summon monsters.";
+				mes "[拉米米·拉維斯]";
+				mes "好的，我們會開始召喚怪物。";
 				delitem 7840,1; //Valkyrie's_Gift
 				next;
-				mes "[Rmimi Ravies]";
-				mes "Have a good time.";
+				mes "[拉米米·拉維斯]";
+				mes "祝您玩得愉快。";
 				donpcevent "Rmimi Ravies#gq_fes01::OnStart";
 				
 				announce "["+ strcharinfo(0) +"] member of ["+ GetGuildName( getcharid(2) ) +"] is summoning a 'Valkyrie's Present' in 'Juno'.",bc_all,"0x70dbdb";
 				close;
 			}
 			else {
-				mes "[Rmimi Ravies]";
-				mes "It seems that a Valkyrie's Blessing summoning ritual is already in progress elsewhere.";
+				mes "[拉米米·拉維斯]";
+				mes "似乎在其他地方已經有一個女武神祝福召喚儀式正在進行中。";
 				next;
-				mes "[Rmimi Ravies]";
-				mes "Please try again later.";
+				mes "[拉米米·拉維斯]";
+				mes "請稍後再試。";
 				close;
 			}
 		}
 		else {
-			mes "[Rmimi Ravies]";
-			mes "It seems you are not worthy.";
+			mes "[拉米米·拉維斯]";
+			mes "看來您不夠資格。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "I don't know how you obtained that flower, but if you're not capable of leading others.. then you cannot continue.";
+			mes "[拉米米·拉維斯]";
+			mes "我不知道您是如何得到那朵花的，但是如果您沒有領導他人的能力...那麼您就不能繼續。";
 			next;
-			mes "[Rmimi Ravies]";
-			mes "Too tough?";
-			mes "Well, what can you do, that's part of the job.";
+			mes "[拉米米·拉維斯]";
+			mes "太難了？";
+			mes "嗯，你能怎麼辦，這是工作的一部分。";
 			close;
 		}
 	}
 	else {
-		mes "[Rmimi Ravies]";
-		mes "Don't you have any voucher?";
+		mes "[拉米米·拉維斯]";
+		mes "您沒有任何憑證嗎？";
 		close;
 	}
 
@@ -226,167 +226,167 @@ OnTimer240000:
 	end;
 
 OnTimer243000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer300000:
-	announce "The first 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第一個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer303000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer308000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer600000:
-	announce "The second 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第二個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::oncall";
 	end;
 
 OnTimer603000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer608000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer900000:
-	announce "The third 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第三個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer903000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer908000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1200000:
-	announce "The fourth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第四個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer1203000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1208000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1500000:
-	announce "The fifth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第五個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer1503000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1508000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1800000:
-	announce "The sixth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第六個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer1803000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer1808000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2100000:
-	announce "The seventh 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第七個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer2103000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2108000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2400000:
-	announce "The eighth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第八個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer2403000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2408000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2700000:
-	announce "The ninth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第九個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer2703000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer2708000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3000000:
-	announce "The first0 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第十個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer3003000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3008000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3300000:
-	announce "The eleventh 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第十一個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer3303000:
-	announce "The summoning ceremony will be performed 12 times at five-minute intervals for about one hour.",bc_all,"0x70dbdb";
+	announce "召喚儀式將會以五分鐘間隔執行 12 次，約持續一小時。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3308000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3600000:
-	announce "The twelfth 'Valkyrie's Present' has been summoned here in Juno by the Wish maiden.",bc_all,"0x70dbdb";
+	announce "第十二個 '女武神的贈禮' 已經被許願少女在朱諾召喚出來了。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Oncall";
 	end;
 
 OnTimer3603000:
-	announce "The final ceremony will be performed for 5 minutes.",bc_all,"0x70dbdb";
+	announce "最後的儀式將會執行 5 分鐘。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3608000:
-	announce "Please come to Juno to encounter the summoning ceremony.",bc_all,"0x70dbdb";
+	announce "請到朱諾來參與召喚儀式。",bc_all,"0x70dbdb";
 	end;
 
 OnTimer3900000:
-	announce "The entire ceremony is over now, I am sure all of you had fun.",bc_all,"0x70dbdb";
+	announce "整個儀式已經結束了，我相信你們大家都玩得很開心。",bc_all,"0x70dbdb";
 	donpcevent "Rmimi Ravies#gq_fes01::Onover";
 	end;
 }
@@ -395,28 +395,28 @@ OnTimer3900000:
 // Original name: "Festival Manager#god_se_fes02"
 rachel,1,1,0	script	Festival Manager#gq_fes2	891,{
 	callfunc "F_GM_NPC";
-	mes "[Festival Manager]";
-	mes "I am the festival NPC manager for the God SE quest.";
-	mes "Please enter your password.";
+	mes "[慶典管理者]";
+	mes "我是諸神黃昏任務的慶典 NPC 管理者。";
+	mes "請輸入您的密碼。";
 	next;
 	if (callfunc("F_GM_NPC","07godsefes",1) == 0) {
-		mes "[Festival Manager]";
-		mes "Password is incorrect.";
+		mes "[慶典管理者]";
+		mes "密碼不正確。";
 		close;
 	}
-	mes "[Festival Manager]";
-	mes "What would you like to do?";
+	mes "[慶典管理者]";
+	mes "您想做什麼？";
 	next;
-	switch(select("Disable festival NPCs:Enable festival NPCs")) {
+	switch(select("停用慶典 NPC:啟用慶典 NPC")) {
 	case 1:
-		mes "[Festival Manager]";
-		mes "Ending festivals and disabling NPCs.";
+		mes "[慶典管理者]";
+		mes "結束慶典並停用 NPC。";
 		donpcevent "Rhehe Ravies#gq_fes03::Onover";
 		donpcevent "Rhehe Ravies#gq_fes03::Ondisable";
 		close;
 	case 2:
-		mes "[Festival Manager]";
-		mes "Resetting festivals and enabling NPCs.";
+		mes "[慶典管理者]";
+		mes "重置慶典並啟用 NPC。";
 		donpcevent "Rhehe Ravies#gq_fes03::Onover";
 		donpcevent "Rhehe Ravies#gq_fes03::OnEnable";
 		close;
@@ -425,112 +425,112 @@ rachel,1,1,0	script	Festival Manager#gq_fes2	891,{
 
 rachel,132,117,3	script	Rhehe Ravies#gq_fes03	891,{
 	if (countitem(7840) > 0) {
-		mes "[Rhehe Ravies]";
-		mes "A flower!!";
-		mes "Shall we proceed?";
+		mes "[蕾赫·拉維斯]";
+		mes "一朵花！！";
+		mes "我們要繼續嗎？";
 		next;
 		if (is_guild_leader() == true) {
-			mes "[Rhehe Ravies]";
-			mes "Eeeeh, so young and yet you're a guild master? Your guildsmen must be jealous.";
+			mes "[蕾赫·拉維斯]";
+			mes "咦，這麼年輕就已經是公會會長了？ 你的公會成員一定很嫉妒。";
 			next;
-			mes "[Reumimi Ravies]";
-			mes "I'm not sure if you understand the uses for that flower, so I'll briefly explain.";
+			mes "[雷烏米米·拉維斯]";
+			mes "我不確定你是否了解那朵花的用途，所以我會簡單地解釋一下。";
 			next;
-			mes "[Reumimi Ravies]";
-			mes "That flower has been passed down as a gift from the Valkyrie Wish Maiden herself.";
-			mes "It may be used to summon special monsters through summoners in special areas.";
+			mes "[雷烏米米·拉維斯]";
+			mes "那朵花是女武神願望少女親自傳下來的禮物。";
+			mes "它可以用來通過特殊區域的召喚師召喚特殊怪物。";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "There are only two summoners in existence who are capable of using that flower.";
-			mes "One is me, and the other is my twin sister Reumimi.";
+			mes "[蕾赫·拉維斯]";
+			mes "只有兩個召喚師能夠使用那朵花。";
+			mes "一個是我，另一個是我的雙胞胎姐妹雷烏米米。";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "Twin sisters, but we do not have much alike, little fingers in front of you ...";
+			mes "[蕾赫·拉維斯]";
+			mes "雙胞胎姐妹，但我們沒有太多相似之處，你面前的小手指......";
 			next;
-			mes "[Rhehe Ravies]";
+			mes "[蕾赫·拉維斯]";
 			mes "..................................";
-			mes ".....Oops! I wasn't supposed to tell anyone...";
+			mes "..... 哎呀！ 我不應該告訴任何人的...";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "... Hehehe, anyways let's move on.";
-			mes "So do you wish to summon or not!?";
+			mes "[蕾赫·拉維斯]";
+			mes "... 呵呵，總之我們繼續。";
+			mes "那麼你希望召喚還是不召喚！？";
 			next;
-			switch(select("Do not summon:Summon")) {
+			switch(select("不要召喚:召喚")) {
 			case 1:
-				mes "[Rhehe Ravies]";
-				mes "...*Cries*.";
+				mes "[蕾赫·拉維斯]";
+				mes "...*哭了*。";
 				next;
-				mes "[Rhehe Ravies]";
-				mes "If you've got no business with me, please don't start a conversation.";
-				mes "If it were my sister, she would've humiliated you for it.";
+				mes "[蕾赫·拉維斯]";
+				mes "如果你沒有任何事情要找我，請不要開始對話。";
+				mes "如果是我的姐姐，她會為此羞辱你。";
 				close;
 			case 2:
 				break;
 			}
-			mes "[Rhehe Ravies]";
-			mes "Okay then, I'll explain a little about the summoning ritual.";
-			mes "Here in Juno, the summoning ritual through the use of that flower will summon Valkyrie's Blessing and Valkyrie's Gift.";
-			mes "The effects of the summoning ritual will last approximately one hour.";
+			mes "[蕾赫·拉維斯]";
+			mes "好的，那麼我將簡單地解釋一下召喚儀式。";
+			mes "在朱諾這裡，通過使用那朵花進行召喚儀式將召喚女武神的祝福和女武神的禮物。";
+			mes "召喚儀式的效果將持續約一個小時。";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "During the summoning ritual, continuous broadcasts will be made.";
-			mes "It is a courtesy of the Valkyrie Wish Maiden, in order to unite adventurers from all over to participate in the festival.";
+			mes "[蕾赫·拉維斯]";
+			mes "在召喚儀式期間，將進行持續的廣播。";
+			mes "這是女武神願望少女的恩惠，為了團結來自世界各地的冒險家參與慶典。";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "Are you ready to begin the summoning ritual~?";
+			mes "[蕾赫·拉維斯]";
+			mes "你準備好開始召喚儀式了嗎～？";
 			next;
-			switch(select("No, not yet.:Yes! I'm ready!")) {
+			switch(select("不，還沒。:是的！ 我準備好了！")) {
 			case 1:
-				mes "[Rhehe Ravies]";
-				mes "You're not even ready, why bother talking to me?";
+				mes "[蕾赫·拉維斯]";
+				mes "你甚至還沒準備好，為什麼要打擾我？";
 				next;
-				mes "[Rhehe Ravies]";
-				mes "Oh well, if you've got other things to do then I'll wait.";
-				mes "After all, that's also part of my job.";
+				mes "[蕾赫·拉維斯]";
+				mes "好吧，如果你有其他事情要做，那我會等待。";
+				mes "畢竟，這也是我工作的一部分。";
 				close;
 			case 2:
 				break;
 			}
-			mes "[Rhehe Ravies]";
-			mes "Very well, then I will check for a reasonable time to begin the summoning ritual.";
+			mes "[蕾赫·拉維斯]";
+			mes "很好，那麼我將檢查一個合理的時間來開始召喚儀式。";
 			next;
 			if ($@gqse_festival == 0) {
-				mes "[Rhehe Ravies]";
-				mes "Good! Now seems like a good time, so let's begin!";
+				mes "[蕾赫·拉維斯]";
+				mes "好！ 現在似乎是一個好時機，那麼讓我們開始吧！";
 				delitem 7840,1; //Valkyrie_Gift
 				next;
-				mes "[Rhehe Ravies]";
-				mes "I hope you enjoy yourself!";
+				mes "[蕾赫·拉維斯]";
+				mes "我希望你玩得開心！";
 				donpcevent "Rhehe Ravies#gq_fes03::OnStart";
 				announce "["+ strcharinfo(0) +"] member of ["+ GetGuildName( getcharid(2) ) +"] is summoning a 'Valkyrie's Present' in 'Rachel'.",bc_all,"0x70dbdb";
 				close;
 			}
 			else {
-				mes "[Rhehe Ravies]";
-				mes "*Cries*";
-				mes "It doesn't seem like now is a good time.";
+				mes "[蕾赫·拉維斯]";
+				mes "*哭了*";
+				mes "現在似乎不是一個好時機。";
 				next;
-				mes "[Rhehe Ravies]";
-				mes "Please try again later.";
+				mes "[蕾赫·拉維斯]";
+				mes "請稍後再試。";
 				close;
 			}
 		}
 		else {
-			mes "[Rhehe Ravies]";
-			mes "...Seems like you're not in a worthy position for me to talk to?";
+			mes "[蕾赫·拉維斯]";
+			mes "... 似乎你沒有一個值得我交談的地位？";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "I don't know how you obtained that flower, but if you're not capable of leading others.. then you cannot continue.";
+			mes "[蕾赫·拉維斯]";
+			mes "我不知道你是如何獲得那朵花的，但如果你沒有領導他人的能力... 那麼你就不能繼續。";
 			next;
-			mes "[Rhehe Ravies]";
-			mes "Too tough?";
-			mes "Well, what can you do, that's part of the job.";
+			mes "[蕾赫·拉維斯]";
+			mes "太難了嗎？";
+			mes "好吧，你能做什麼，那是工作的一部分。";
 			close;
 		}
 	}
 	else {
-		mes "[Rhehe Ravies]";
-		mes "Don't you have anything to give me to prove yourself?";
+		mes "[蕾赫·拉維斯]";
+		mes "你沒有任何東西可以給我證明自己嗎？";
 		close;
 	}
 

@@ -134,8 +134,8 @@ OnGuillaumeDie:
 		bg_updatescore "bat_c02",.Guillaume_Count,.Croix_Count;
 		if( .Guillaume_Count < 1 ) donpcevent "KvM02_BG::OnCroixWin";
 		else {
-			mapannounce "bat_c02", "The number of Guillaumes is "+.Guillaume_Count+".",bc_map,"0x00ff00";
-			mapannounce "bat_c02", "The number of Croixes is "+.Croix_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c02", "Guillaume 计秖琌 "+.Guillaume_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c02", "Croix 计秖琌 "+.Croix_Count+".",bc_map,"0x00ff00";
 		}
 	}
 	end;
@@ -152,8 +152,8 @@ OnCroixDie:
 		bg_updatescore "bat_c02",.Guillaume_Count,.Croix_Count;
 		if( .Croix_Count < 1 ) donpcevent "KvM02_BG::OnGuillaumeWin";
 		else {
-			mapannounce "bat_c02", "The number of Guillaumes is "+.Guillaume_Count+".",bc_map,"0x00ff00";
-			mapannounce "bat_c02", "The number of Croixes is "+.Croix_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c02", "Guillaume 计秖琌 "+.Guillaume_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c02", "Croix 计秖琌 "+.Croix_Count+".",bc_map,"0x00ff00";
 		}
 	}
 	end;
@@ -177,7 +177,7 @@ OnStart:
 	end;
 
 OnTimer1000:
-	mapannounce "bat_c02", "In 1 minute, KVM will start.",bc_map,"0x00ff00";
+	mapannounce "bat_c02", "In 1 minute, KVM 盢穦秨﹍",bc_map,"0x00ff00";
 	end;
 
 OnTimer3000:
@@ -229,7 +229,7 @@ OnTimer61000:
 		if (.Guillaume_Count < 5 || .Croix_Count < 5) {
 			set $@KvM02BG_Victory, 3;
 			set $@KvM02BG, 3;
-			mapannounce "bat_c02","There are not enough players to start the battle",1,0x808080;
+			mapannounce "bat_c02","⊿Τì镑產ㄓ秨﹍驹矮",1,0x808080;
 			stopnpctimer;
 			donpcevent "KvM02_BG::OnStop";
 			end;
@@ -271,8 +271,8 @@ OnTimer360000:
 	{ // Draw Game
 		set $@KvM02BG, 3;
 		set $@KvM02BG_Victory, 3;
-		mapannounce "bat_c02", "The number of Guillaumes is "+.Guillaume_Count+".",bc_map,"0x00ff00";
-		mapannounce "bat_c02", "The number of Croixes is "+.Croix_Count+".",bc_map,"0x00ff00";
+		mapannounce "bat_c02", "Guillaume 计秖琌 "+.Guillaume_Count+".",bc_map,"0x00ff00";
+		mapannounce "bat_c02", "Croix 计秖琌 "+.Croix_Count+".",bc_map,"0x00ff00";
 		mapannounce "bat_c02", "This battle has ended in a draw.",bc_map,"0x00ff00";
 		donpcevent "KvM02_BG::OnStop";
 	}
@@ -372,7 +372,7 @@ OnCroixJoin:
 //============================================================
 bat_c02,51,130,5	script	KVM Officer#KVM02A	419,{
 	if( $@KvM02BG_Victory ) {
-		mes "[KVM Officer]";
+		mes "[KVM恨瞶]";
 		if( $@KvM02BG_Victory == Bat_Team ) {
 			mes "Good Game.";
 			mes "May the glory of KVM be with you.";

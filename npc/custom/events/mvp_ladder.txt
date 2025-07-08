@@ -12,60 +12,60 @@
 //= 1.0 First version, edited. [Euphy]
 //============================================================
 
-prontera,164,171,3	script	MvP Ladder Warper	56,{
-	mes "[MvP Ladder Warper]";
-	mes "Say... do you want to play the MvP Ladder game?";
+prontera,164,171,3	script	MvP 隊長傳送師	56,{
+	mes "[MvP 隊長傳送師]";
+	mes "嘿... 你想玩 MvP 天梯遊戲嗎？";
 	next;
-	switch(select("Yes, let's get it on!:Information.:Show me the best record.:No.")) {
+	switch(select("是的，讓我們開始吧！:資訊.:顯示最佳紀錄.:不用了。")) {
 	case 1:
 		break;
 	case 2:
-		mes "[MvP Ladder Warper]";
-		mes "In this game, your party has to kill every single MvP monster in ascending order, from the weakest to strongest.";
+		mes "[MvP 隊長傳送師]";
+		mes "在這個遊戲中，你的隊伍必須按照強度遞增的順序，擊殺每個 MvP 魔物。";
 		if ( .finish_item_amount )
-			mes "If your party can finish the MVP ladder game, each member will earn "+ callfunc("F_InsertPlural", .finish_item_amount, getitemname( .finish_item_id )) +".";
+			mes "如果你的隊伍能完成 MVP 天梯遊戲，每個成員將會獲得 "+ callfunc("F_InsertPlural", .finish_item_amount, getitemname( .finish_item_id )) +"。";
 		if ( .register_cost )
-			mes "But the entrance fee is "+ callfunc( "F_InsertComma", .register_cost ) +" zeny.";
+			mes "但是入場費是 "+ callfunc( "F_InsertComma", .register_cost ) +" zeny。";
 		next;
-		mes "[MvP Ladder Warper]";
-		mes "You lose the game if you can't finish in "+ .timeout +" minutes, or if your entire party is killed.";
-		mes "Good luck!";
+		mes "[MvP 隊長傳送師]";
+		mes "如果你無法在 "+ .timeout +" 分鐘內完成，或者你的整個隊伍都被擊殺，你就會輸掉遊戲。";
+		mes "祝你好運！";
 		close;
 	case 3:
-		mes "[MvP Ladder Warper]";
+		mes "[MvP 隊長傳送師]";
 		if ( !$mvpladdderparty_time ) {
-			mes "Nobody has finished this game yet.";
+			mes "還沒有人完成過這個遊戲。";
 			close;
 		}
-		mes "The best record is";
-		mes "[ "+( $mvpladdderparty_time / 60 )+" min "+( $mvpladdderparty_time % 60 )+" sec ]";
-		mes "By the party ^FF0000"+ $mvpladdderparty_name$ +"^000000.";
+		mes "最佳紀錄是";
+		mes "[ "+( $mvpladdderparty_time / 60 )+" 分 "+( $mvpladdderparty_time % 60 )+" 秒 ]";
+		mes "由隊伍 ^FF0000"+ $mvpladdderparty_name$ +"^000000 達成。";
 		.@size = getarraysize( $mvpladderparty_member$ );
 		for ( .@i = 0; .@i < .@size; .@i++ )
 			mes "^000000"+ ( .@i +1 ) +". ^0000FF"+ $mvpladderparty_member$[.@i];
 		if ( getgmlevel() < .gmlvlreset ) close;
 		next;
-		if ( select( "Close.", "Reset the record." ) == 1 ) close;
-		if ( select( "Never mind.", "I really want to reset it." ) == 1 ) close;
+		if ( select( "關閉。", "重置紀錄。" ) == 1 ) close;
+		if ( select( "沒關係。", "我真的很想重置它。" ) == 1 ) close;
 		$mvpladdderparty_time = 0;
 		$mvpladdderparty_name$ = "";
 		deletearray $mvpladderparty_member$[.@i];
-		mes "[MvP Ladder Warper]";
-		mes "Record reset successfully.";
+		mes "[MvP 隊長傳送師]";
+		mes "紀錄重置成功。";
 		close;
 	case 4:
-		mes "[MvP Ladder Warper]";
-		mes "When you are strong enough to complete the game, please come back.";
+		mes "[MvP 隊長傳送師]";
+		mes "當你強大到足以完成遊戲時，請回來。";
 		close;
 	}
 	if ( !getcharid(1) ) {
-		mes "[MvP Ladder Warper]";
-		mes "You have to form a party to play.";
+		mes "[MvP 隊長傳送師]";
+		mes "你必須組成隊伍才能玩。";
 		close;
 	}
 	if ( is_party_leader() == false ) {
-		mes "[MvP Ladder Warper]";
-		mes "Only the party leader can register.";
+		mes "[MvP 隊長傳送師]";
+		mes "只有隊長才能註冊。";
 		close;
 	}
 	.@origin = getcharid(3);
@@ -80,24 +80,24 @@ prontera,164,171,3	script	MvP Ladder Warper	56,{
 	}
 	attachrid .@origin;
 	if ( $@partymembercount != .register_min ) {
-		mes "[MvP Ladder Warper]";
-		mes "You have to form a party with exactly "+ .register_min +" members to play.";
+		mes "[MvP 隊長傳送師]";
+		mes "你必須組成一個恰好 "+ .register_min +" 名成員的隊伍才能玩。";
 		close;
 	}
 	else if ( .@online != .register_min )  {
-		mes "[MvP Ladder Warper]";
-		mes "Your party must have "+ .register_min +" members online on map '"+ strnpcinfo(4) +"'.";
+		mes "[MvP 隊長傳送師]";
+		mes "你的隊伍必須有 "+ .register_min +" 名成員在地圖 '"+ strnpcinfo(4) +"' 上線。";
 		close;
 	}
 	else if ( .register_cost && Zeny < .register_cost ) {
-		mes "[MvP Ladder Warper]";
-		mes "You don't have enough zeny. Please come back when you do.";
+		mes "[MvP 隊長傳送師]";
+		mes "你沒有足夠的 zeny。請等你有的時候再來。";
 		close;
 	}
 	else if ( .party_id ) {
-		mes "[MvP Ladder Warper]";
-		mes "I'm sorry, but a party is currently playing the game. Please standby until the party is finished.";
-		mes "Thank you.";
+		mes "[MvP 隊長傳送師]";
+		mes "很抱歉，目前有隊伍正在進行遊戲。請稍等，直到該隊伍完成遊戲。";
+		mes "謝謝。";
 		close;
 	}
 	Zeny -= .register_cost;

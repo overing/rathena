@@ -85,7 +85,7 @@ OnTouch:
 S_Warp:
 	.@castle$ = getarg(0);
 	if (jobcanentermap(.@castle$) == 0) {
-		mes "3rd and expansion job level can't enter in WoE TE.";
+		mes "三轉和擴充職業等級無法進入 WoE TE。";
 		close;
 	}
 
@@ -99,14 +99,14 @@ S_Warp:
 
 	if (WoeTETimeStart(3600) == 1) {
 		if (!.@guild_id || !.@my_guild_id) {
-			mes "It's time for preparing to WoE. Only Alliance guild is able to enter.";
+			mes "現在是準備 WoE 的時間。只有聯盟公會才能進入。";
 			close;
 		}
 		if (getguildalliance(.@my_guild_id,.@guild_id) != 1) {
-			mes "It's time for preparing to WoE. Only Alliance guild is able to enter.";
+			mes "現在是準備 WoE 的時間。只有聯盟公會才能進入。";
 			close;
 		}
-		mes "Welcome alliance guild.";
+		mes "歡迎聯盟公會。";
 		close2;
 	}
 	warp .@castle$,getarg(1),getarg(2);

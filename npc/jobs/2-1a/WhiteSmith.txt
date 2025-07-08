@@ -19,70 +19,70 @@ valkyrie,44,50,5	script	MasterSmith#Valkyrie	731,{
 	if (ADVJOB == 0 || Upper != 1) {
 		set .@karma_d,rand(1,10);
 		if (.@karma_d > 4) {
-			mes "[MasterSmith]";
-			mes "Congratulations.";
-			mes "Honor to the warriors!";
+			mes "[鐵匠大師]";
+			mes "恭喜你。";
+			mes "向戰士致敬！";
 			close;
 		}
-		mes "[MasterSmith]";
-		mes "Ah...";
-		mes "The pinnacle";
-		mes "of craftsmanship.";
-		mes "That's the work of";
-		mes "a MasterSmith.";
+		mes "[鐵匠大師]";
+		mes "啊...";
+		mes "巔峰之作";
+		mes "的工藝。";
+		mes "那是";
+		mes "鐵匠大師的作品。";
 		next;
-		mes "[MasterSmith]";
-		mes "Once you're the";
-		mes "the best of the best,";
-		mes "you begin forging with";
-		mes "the goal of discovering";
-		mes "new and better ways of";
-		mes "crafting...";
+		mes "[鐵匠大師]";
+		mes "一旦你成為";
+		mes "最好的中的最好，";
+		mes "你便開始以";
+		mes "發現新的和更好的";
+		mes "製作方式為目標";
+		mes "來鍛造...";
 		close;
 	}
 	else if (ADVJOB == Job_WhiteSmith && Class == Job_Merchant_High && JobLevel > 39) {
-		mes "[MasterSmith]";
-		mes "The time has come!";
-		mes "Our world needs brave,";
-		mes "hard-working adventurers";
-		mes "like you...";
+		mes "[鐵匠大師]";
+		mes "時機已到！";
+		mes "我們的世界需要勇敢、";
+		mes "努力工作的冒險家";
+		mes "像你一樣...";
 		next;
-		mes "[MasterSmith]";
-		mes "Would you like to";
-		mes "become a MasterSmith?";
+		mes "[鐵匠大師]";
+		mes "你想要";
+		mes "成為鐵匠大師嗎？";
 		next;
-		if (select("No.:Yes.") == 1) {
-			mes "[MasterSmith]";
-			mes "When you're ready,";
-			mes "feel free to come back.";
-			mes "Honor to the warriors!";
+		if (select("不要。:是的。") == 1) {
+			mes "[鐵匠大師]";
+			mes "當你準備好時，";
+			mes "隨時回來。";
+			mes "向戰士致敬！";
 			close;
 		}
 		if (SkillPoint) {
-			mes "[MasterSmith]";
-			mes "It is still possible for you to learn more skills. Please use";
-			mes "all of your remaining Skill Points before returning to me.";
+			mes "[鐵匠大師]";
+			mes "你仍然有可能學習更多技能。請在使用";
+			mes "所有剩餘的技能點數後再回來找我。";
 			close;
 		}
 		jobchange Job_Whitesmith;
 		set ADVJOB,0;
-		mes "[MasterSmith]";
-		mes "Congratulations!";
-		mes "As a MasterSmith,";
-		mes "I hope you will forge";
-		mes "a path towards a brighter";
-		mes "future for Midgard.";
+		mes "[鐵匠大師]";
+		mes "恭喜你！";
+		mes "身為鐵匠大師，";
+		mes "我希望你將為";
+		mes "米德加爾特開創";
+		mes "一個更光明的未來。";
 		close;
 	}
-	mes "[MasterSmith]";
-	mes "Welcome";
-	mes "to Valhalla,";
-	mes "the Hall of Honor.";
+	mes "[鐵匠大師]";
+	mes "歡迎";
+	mes "來到英靈殿，";
+	mes "榮譽大廳。";
 	next;
-	mes "[MasterSmith]";
-	mes "Please make";
-	mes "yourself comfortable";
-	mes "while you are here.";
-	mes "Honor to the warriors!";
+	mes "[鐵匠大師]";
+	mes "請";
+	mes "在這裡";
+	mes "感到舒適。";
+	mes "向戰士致敬！";
 	close;
 }

@@ -29,159 +29,159 @@ geffen_in,164,124,4	script	Mage Guildsman	123,{
 	if (Upper == 1) {
 		if (ADVJOB == Job_High_Wizard || ADVJOB == Job_Professor) {
 			if (Class == Job_Novice_High) {
-				mes "[Mage Guildsman]";
-				mes "Whoa, long time no see! But weren't you supposed to be dead?";
+				mes "[法師公會人員]";
+				mes "哇，好久不見！但你不應該已經死了嗎？";
 				next;
-				mes "[Mage Guildsman]";
-				mes "Ah, you must have been reborn. Well, I'm glad to have you back.";
+				mes "[法師公會人員]";
+				mes "啊，你一定是轉生了。很高興你回來了。";
 				next;
 				if (!callfunc("F_CanChangeJob")) {
-					mes "[Mage Guildsman]";
-					mes "I'm sorry, but I don't think you're ready to learn magic yet. Why don't you go finish learning the Basic Skills first?";
+					mes "[法師公會人員]";
+					mes "抱歉，我不認為你已經準備好學習魔法了。你何不去先把基礎技能學完？";
 					next;
-					mes "[Mage Guildsman]";
-					mes "Take your time. The more you learn, the more ready you'll be to learn magic again.";
+					mes "[法師公會人員]";
+					mes "慢慢來。你學得越多，就越有準備好再次學習魔法。";
 					close;
 				}
-				mes "[Mage Guildsman]";
-				mes "Well, since you have passed the Mage test once, I will not question your qualification. You want to have your magic skills back immediately, don't you?";
+				mes "[法師公會人員]";
+				mes "好吧，既然你已經通過一次法師測試，我不會質疑你的資格。你想要立即恢復你的魔法技能，對吧？";
 				next;
 				skill "NV_TRICKDEAD",0,SKILL_PERM;
 				jobchange Job_Mage_High;
 				skill "MG_ENERGYCOAT",1,SKILL_PERM;
-				mes "[Mage Guildsman]";
-				mes "Wow, for some reason, you look way better than you did before. Anyway, I believe you will do a better job being a Mage as well.";
+				mes "[法師公會人員]";
+				mes "哇，不知什麼原因，你看起來比以前好多了。總之，我相信你作為法師也能做得更好。";
 				close;
 			}
 			else {
-				mes "[Mage Guildsman]";
-				mes "Is there anything more I can help you with? If not, why don't you go test your skills? The world is waiting for you~!";
+				mes "[法師公會人員]";
+				mes "還有什麼我可以幫你的嗎？如果沒有，你何不去測試你的技能？世界正在等著你～！";
 				close;
 			}
 		}
 		else {
-			mes "[Mage Guildsman]";
-			mes "What, are you interested in the Mage guild? I didn't want to tell you this, but you don't belong here.";
+			mes "[法師公會人員]";
+			mes "怎麼，你對法師公會感興趣？我本來不想告訴你這個，但你不屬於這裡。";
 			next;
-			mes "[Mage Guildsman]";
-			mes "I am not sure why you're still standing in front of me, but I can tell that you're not meant to be a Mage.";
+			mes "[法師公會人員]";
+			mes "我不確定你為什麼還站在我面前，但我可以肯定你注定不會成為法師。";
 			close;
 		}
 	}
-	mes "[Mage Guildsman]";
-	mes "Yo. What's up?";
+	mes "[法師公會人員]";
+	mes "唷。有什麼事嗎？";
 	next;
-	switch(select("I want to be a Mage.:Tell me the Requirements.:Pretty much nothing.")) {
+	switch(select("我想成為法師。:告訴我條件。:沒什麼特別的。")) {
 	case 1:
-		mes "[Mage Guildsman]";
+		mes "[法師公會人員]";
 		if (BaseJob == Job_Mage) {
-			mes "Hey, haven't you realized? You're aleady a Mage, silly!";
+			mes "嘿，你沒發現嗎？你已經是個法師了，傻瓜！";
 			next;
-			mes "[Mage Guildsman]";
-			mes "One of these days you'll realize the power inside of you when you can make Fire with your mind!";
+			mes "[法師公會人員]";
+			mes "總有一天你會意識到你內在的力量，當你可以用意念生火的時候！";
 			close;
 		}
 		if (BaseJob != Job_Novice) {
-			mes "Hey~ C'mon. Quit playing games. You can't be a Mage because you already have another Job.";
+			mes "嘿～ 拜託。別再玩遊戲了。你不能成為法師，因為你已經有另一個職業了。";
 			close;
 		}
 		if (job_magician_q == 0) {
-			mes "Wanna be a Mage, eh...?";
+			mes "想成為法師，嗯...？";
 			if (Sex == SEX_MALE)
-				mes "Hey, look at you! You're kinda cute~! Not my type though...";
+				mes "嘿，看看你！你有點可愛耶～！但不是我的菜...";
 			else {
-				mes "Oooh, you're such a hot babe~!";
-				mes "I like girls like you~";
+				mes "噢，你真是個辣妹～！";
+				mes "我喜歡像你這樣的女孩～";
 			}
 			next;
-			mes "[Mage Guildsman]";
-			mes "Right, you said that you wanna be a Mage? Alright then, please sign the Mage Application.";
+			mes "[法師公會人員]";
+			mes "好吧，你說你想成為法師？那麼，請簽署法師申請表。";
 			next;
-			if (select("Sign Up.:Quit.") == 1) {
-				mes "[Mage Guildsman]";
-				mes "Okay. Sign right there. Oh, you're very good at spelling. Alright. So your name is... " + strcharinfo(0) + ".";
+			if (select("簽署.:退出。") == 1) {
+				mes "[法師公會人員]";
+				mes "好的。簽在這裡。哦，你很擅長拼字。好的。所以你的名字是... " + strcharinfo(0) + "。";
 				next;
-				mes "[Mage Guildsman]";
-				mes "Now it's time for";
-				mes "me to give you the test.";
+				mes "[法師公會人員]";
+				mes "現在是";
+				mes "我給你測試的時候了。";
 				switch(rand(0,3)) {
 				case 1:
-					mes "Make me a ^3355FFMixed Solution No. 1^000000";
-					mes "and bring it back to me.";
+					mes "幫我製作一個 ^3355FF混合液體 1 號^000000";
+					mes "然後拿回來給我。";
 					set job_magician_q,1;
 					break;
 				case 2:
-					mes "Make me a ^3355FFMixed Solution No. 2^000000";
-					mes "and bring it back to me.";
+					mes "幫我製作一個 ^3355FF混合液體 2 號^000000";
+					mes "然後拿回來給我。";
 					set job_magician_q,2;
 					break;
 				case 3:
-					mes "Make me a ^3355FFMixed Solution No. 3^000000";
-					mes "and bring it back to me.";
+					mes "幫我製作一個 ^3355FF混合液體 3 號^000000";
+					mes "然後拿回來給我。";
 					set job_magician_q,3;
 					break;
 				default:
-					mes "Make me a ^3355FFMixed Solution No. 4^000000";
-					mes "and bring it back to me.";
+					mes "幫我製作一個 ^3355FF混合液體 4 號^000000";
+					mes "然後拿回來給我。";
 					set job_magician_q,4;
 				}
 				next;
 				getitem 1092,1; //Empty_Cylinder
-				mes "[Mage Guildsman]";
-				mes "You can find the neccessary ingredients inside the Guide Book in this Guild. So you better look up what you need before you go.";
+				mes "[法師公會人員]";
+				mes "你可以在這個公會的指南書中找到必要的成分。所以在去之前最好先查一下你需要什麼。";
 				next;
-				mes "[Mage Guildsman]";
-				mes "Once you collect all the ingredients you, use the machine in the center of the room to mix the solution. Good luck!";
+				mes "[法師公會人員]";
+				mes "一旦你收集了所有的材料，使用房間中央的機器來混合溶液。祝你好運！";
 				close;
 			}
-			mes "[Mage Guildsman]";
-			mes "Whaaaaat~?! Right after you tell me that you wanna become a Mage, you change your mind?! Be a bit more decisive!";
+			mes "[法師公會人員]";
+			mes "什麼～？！在你告訴我你想成為法師之後，你改變主意了？！要更有決斷力一點！";
 			close;
 		}
-		mes "Yeah? Ready...?";
+		mes "是嗎？準備好了嗎...？";
 		if (!callfunc("F_CanChangeJob")) {
-			mes "Oh, what a bummer. You haven't met the requirements yet.";
+			mes "哦，真可惜。你還沒有達到要求。";
 			next;
-			mes "[Mage Guildsman]";
-			mes "Go back and reach Novice Job level 9 first. Don't forget that you also have to learn all of the Basic Skills before you come back.";
+			mes "[法師公會人員]";
+			mes "回去先達到初心者職業等級 9。別忘了在你回來之前，你也必須學會所有的基本技能。";
 			close;
 		}
-		mes "" + strcharinfo(0) + "'s test was...";
+		mes "" + strcharinfo(0) + " 的測試是...";
 		if (job_magician_q == 1)
-			mes "Making Mixed Solution No. 1.";
+			mes "製作混合液體 1 號。";
 		else if (job_magician_q == 2)
-			mes "Making Mixed Solution No. 2.";
+			mes "製作混合液體 2 號。";
 		else if (job_magician_q == 3)
-			mes "Making Mixed Solution No. 3.";
+			mes "製作混合液體 3 號。";
 		else
-			mes "Making Mixed Solution No. 4.";
+			mes "製作混合液體 4 號。";
 		next;
-		mes "[Mage Guildsman]";
-		mes "Okay, let me";
-		mes "check if you made your";
-		mes "solution accurately...";
+		mes "[法師公會人員]";
+		mes "好的，讓我";
+		mes "檢查一下你是否";
+		mes "準確地製作了你的溶液...";
 		next;
-		mes "[Mage Guildsman]";
+		mes "[法師公會人員]";
 		if (countitem(1071) == 0 && countitem(1085) == 0 && countitem(1086) == 0 && countitem(1087) == 0 && countitem(1090) == 0) {
-			mes "Hey, where's the Solution";
-			mes "I asked for...? I can't check it if you don't show it to me, right?";
+			mes "嘿，我要求的";
+			mes "溶液在哪裡...？如果你不給我看，我怎麼檢查它，對吧？";
 			close;
 		}
 		else {
 			if ((job_magician_q == 1 && countitem(1071) == 0) || (job_magician_q == 2 && countitem(1085) == 0) || (job_magician_q == 3 && countitem(1086) == 0) || (job_magician_q == 4 && countitem(1087) == 0)) {
-				mes "Wait.";
-				mes "This isn't the";
-				mes "Solution I asked for!";
+				mes "等等。";
+				mes "這不是我";
+				mes "要求的溶液！";
 				next;
-				mes "[Mage Guildsman]";
+				mes "[法師公會人員]";
 				if (job_magician_q == 1)
-					mes "You're supposed to make Mixed Solution No. 1 and bring it back to me. Now go and try it again.";
+					mes "你應該製作混合液體 1 號，然後拿回來給我。現在去再試一次。";
 				else if (job_magician_q == 2)
-					mes "You're supposed to make Mixed Solution No. 2 and bring it back to me. Now go and try it again.";
+					mes "你應該製作混合液體 2 號，然後拿回來給我。現在去再試一次。";
 				else if (job_magician_q == 3)
-					mes "You're supposed to make Mixed Solution No. 3 and bring it back to me. Now go and try it again.";
+					mes "你應該製作混合液體 3 號，然後拿回來給我。現在去再試一次。";
 				else
-					mes "You're supposed to make Mixed Solution No. 4 and bring it back to me. Now go and try it again.";
+					mes "您應該製作混合液體 4 號並帶回來給我。現在去再試一次。";
 
 				if (countitem(1071) != 0) delitem 1071,1; //Mage_Test_1
 				else if (countitem(1085) != 0) delitem 1085,1; //Mage_Test_2
@@ -196,16 +196,16 @@ geffen_in,164,124,4	script	Mage Guildsman	123,{
 		else if (countitem(1086) != 0) delitem 1086,1; //Mage_Test_3
 		else if (countitem(1087) != 0) delitem 1087,1; //Mage_Test_4
 		else delitem 1090,1; //Mage_Test_Etc
-		mes "Hmm. I can see that you tried really hard. For a beginner's attempt, this is really good.";
-		mes "Great work!";
+		mes "嗯...我看得出來你很努力嘗試了。以初學者的嘗試來說，這真的很棒。";
+		mes "做得好！";
 		next;
-		mes "[Mage Guildsman]";
-		mes "Alright! I'm pleased to say that you've passed the Mage Test. I will transform you right away!";
+		mes "[法師公會會員]";
+		mes "好的！我很榮幸地宣布您已通過法師測試。我會立即讓您轉職！";
 		next;
-		mes "[Mage Guildsman]";
-		mes "*Ahem*";
-		mes "Congratulations!";
-		mes "You are now a Mage!";
+		mes "[法師公會會員]";
+		mes "*咳咳*";
+		mes "恭喜您！";
+		mes "您現在是一名法師了！";
 		next;
 		for ( .@quest_id = 1005; .@quest_id <= 1008; .@quest_id++ ) {
 			if (isbegin_quest(.@quest_id) == 1)
@@ -214,105 +214,105 @@ geffen_in,164,124,4	script	Mage Guildsman	123,{
 		callfunc "Job_Change",Job_Mage;
 		callfunc "F_ClearJobVar";
 		set Zeny,Zeny+50;
-		mes "[Mage Guildsman]";
-		mes "'Welcome to My World~'";
-		mes "Heh heh, I just wanted to say that. You know, it's a quote from a well-known movie~";
+		mes "[法師公會會員]";
+		mes "「歡迎來到我的世界～」";
+		mes "呵呵，我只是想說那句話。你知道的，這是一部著名電影的台詞～";
 		next;
-		mes "[Mage Guildsman]";
-		mes "Now that you're a Mage just like us, let's be friends, okay?";
+		mes "[法師公會會員]";
+		mes "既然你現在和我們一樣是法師了，讓我們成為朋友，好嗎？";
 		close;
 	case 2:
-		mes "[Mage Guildsman]";
-		mes "Wanna be a Mage, eh?";
+		mes "[法師公會會員]";
+		mes "想成為法師，嗯？";
 		if (Sex == SEX_MALE)
-			mes "For a cutie like you, I'd be happy to explain the requirements!";
+			mes "對於像妳這樣可愛的人，我很樂意解釋需求！";
 		else
-			mes "I'd be happy to explain the requirements for a pretty girl like you!";
+			mes "我很樂意為像妳這樣漂亮的女孩解釋需求！";
 		next;
-		mes "[Mage Guildsman]";
-		mes "First of all, you have to reach Novice Job Level 10 and learn all of the Basic Skills. Then, you'll have to pass the Mage Test.";
+		mes "[法師公會會員]";
+		mes "首先，您必須達到初心者職業等級 10 並學習所有的基本技能。然後，您必須通過法師測試。";
 		next;
 		if (job_magician_q != 0) {
-			mes "[Mage Guildsman]";
-			mes "Your test is to";
+			mes "[法師公會會員]";
+			mes "您的測試是";
 			switch(job_magician_q) {
 			case 1:
-				mes "make me a";
-				mes "^3355FFMixed Solution No. 1^000000";
-				mes "and bring it back to me.";
+				mes "製作一份";
+				mes "^3355FF混合液體 1 號^000000";
+				mes "並帶回來給我。";
 				if (isbegin_quest(1005) == 0)
 					setquest 1005;
 				break;
 			case 2:
-				mes "make me a";
-				mes "^3355FFMixed Solution No. 2^000000";
-				mes "and bring it back to me.";
+				mes "製作一份";
+				mes "^3355FF混合液體 2 號^000000";
+				mes "並帶回來給我。";
 				if (isbegin_quest(1006) == 0)
 					setquest 1006;
 				break;
 			case 3:
-				mes "make me a";
-				mes "^3355FFMixed Solution No. 3^000000";
-				mes "and bring it back to me.";
+				mes "製作一份";
+				mes "^3355FF混合液體 3 號^000000";
+				mes "並帶回來給我。";
 				if (isbegin_quest(1007) == 0)
 					setquest 1007;
 				break;
 			default:
-				mes "make me a";
-				mes "^3355FFMixed Solution No. 4^000000";
-				mes "and bring it back to me.";
+				mes "製作一份";
+				mes "^3355FF混合液體 4 號^000000";
+				mes "並帶回來給我。";
 				if (isbegin_quest(1008) == 0)
 					setquest 1008;
 				break;
 			}
 			next;
-			mes "[Mage Guildsman]";
-			mes "You can look up the ingredients you'll need to make the Solution inside the Guide Book in this Guild.";
+			mes "[法師公會會員]";
+			mes "您可以參考本公會指南書中，製作這些液體所需的材料。";
 		}
 		else {
-			mes "[Mage Guildsman]";
-			mes "You will be informed as to which Mixed Solution you will need to create after signing the application form.";
+			mes "[法師公會會員]";
+			mes "在簽署申請表後，您將被告知需要製作哪種混合液體。";
 		}
 		next;
-		mes "[Mage Guildsman]";
-		mes "Let me know when you are ready to become a Mage, alright?";
+		mes "[法師公會會員]";
+		mes "當您準備好成為法師時，請告訴我，好嗎？";
 		close;
 	case 3:
-		mes "[Mage Guildsman]";
-		mes "Nothing...?";
+		mes "[法師公會會員]";
+		mes "沒有嗎...?";
 		close;
 	}
 }
 
 geffen_in,164,112,4	script	Mixing Machine	111,{
-	mes "[Mixing Machine]";
-	mes "This machine is the property of the Geffen Mage Guild and is used only for mixing solutions for magic purposes.";
+	mes "[混合機器]";
+	mes "這台機器是吉芬法師公會的財產，僅用於混合魔法用途的液體。";
 	next;
-	if (select("Use Machine.:Cancel.") == 1) {
-		mes "[Mixing Machine]";
-		mes "Choose the";
-		mes "Solvent for";
-		mes "the Solution.";
+	if (select("使用機器.:取消。") == 1) {
+		mes "[混合機器]";
+		mes "選擇";
+		mes "溶劑";
+		mes "來製作液體。";
 		next;
-		switch(select("Payon Solution.:Morocc Solution.:No Solvent.")) {
+		switch(select("斐揚溶液.:夢羅克溶液.:沒有溶劑。")) {
 		case 1:
 			if (countitem(1089) == 0) {
-				mes "[Mixing Machine]";
-				mes "Error.";
-				mes "Cannot find the item.";
-				mes "Please check again.";
-				mes "Process Halting.";
+				mes "[混合機器]";
+				mes "錯誤。";
+				mes "找不到該物品。";
+				mes "請再次檢查。";
+				mes "程序中止。";
 				close;
 			}
 			set .@mixitem2,1;
 			break;
 		case 2:
 			if (countitem(1088) == 0) {
-				mes "[Mixing Machine]";
-				mes "Error.";
-				mes "Cannot find the item.";
-				mes "Please check again.";
-				mes "Process Halting.";
+				mes "[混合機器]";
+				mes "錯誤。";
+				mes "找不到該物品。";
+				mes "請再次檢查。";
+				mes "程序中止。";
 				close;
 			}
 			set .@mixitem2,2;
@@ -323,56 +323,56 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 		}
 		while (1) {
 			if (.@progress == 2) {
-				mes "[Mixing Machine]";
-				if (.@mixitem1_1 != 0) mes "Jellopy: " + .@mixitem1_1 + " ea.";
-				if (.@mixitem1_2 != 0) mes "Fluff: " + .@mixitem1_2 + " ea.";
-				if (.@mixitem1_3 != 0) mes "Milk: " + .@mixitem1_3 + " ea.";
-				if (.@mixitem2 == 0) mes "Solvent: None.";
-				if (.@mixitem2 == 1) mes "Solvent: Payon Solution.";
-				if (.@mixitem2 == 2) mes "Solvent: Morocc Solution.";
+				mes "[混合機器]";
+				if (.@mixitem1_1 != 0) mes "果凍: " + .@mixitem1_1 + " 個。";
+				if (.@mixitem1_2 != 0) mes "絲綢: " + .@mixitem1_2 + " 個。";
+				if (.@mixitem1_3 != 0) mes "牛奶: " + .@mixitem1_3 + " 個。";
+				if (.@mixitem2 == 0) mes "溶劑: 無。";
+				if (.@mixitem2 == 1) mes "溶劑: 斐揚溶液。";
+				if (.@mixitem2 == 2) mes "溶劑: 夢羅克溶液。";
 				next;
-				mes "[Mixing Machine]";
-				mes "Please choose if you wish to begin mixing, or to re-enter the number of items to be mixed.";
+				mes "[混合機器]";
+				mes "請選擇是否要開始混合，或是重新輸入要混合的物品數量。";
 				next;
-				switch(select("Begin Mixing.:Re-Enter Number of Items.:Reset.")) {
+				switch(select("開始混合.:重新輸入物品數量.:重置。")) {
 				case 1:
-					mes "[Mixing Machine]";
-					mes "Please place the items into the Mixing Receptacle. Make sure the item amounts are correct.";
+					mes "[混合機器]";
+					mes "請將物品放入混合容器中。 確保物品數量正確。";
 					next;
-					mes "[Mixing Machine]";
-					mes "You cannot adjust or restore items once they are placed into the Mixing Receptacle.";
+					mes "[混合機器]";
+					mes "一旦將物品放入混合容器中，您就無法調整或恢復物品。";
 					next;
-					mes "[Mixing Machine]";
-					mes "If everything is correct, press the 'Mix' button when you are ready. Otherwise, press the 'Cancel' button.";
+					mes "[混合機器]";
+					mes "如果一切都正確，請在準備好時按下「混合」按鈕。 否則，請按下「取消」按鈕。";
 					next;
-					if (select("Press 'Mix' Button.:Press 'Cancel' Button.") == 1) {
-						mes "[Mixing Machine]";
-						mes "Place items into the Mixing Receptacle now. Please wait.";
+					if (select("按下「混合」按鈕.:按下「取消」按鈕。") == 1) {
+						mes "[混合機器]";
+						mes "現在將物品放入混合容器中。 請稍候。";
 						next;
-						mes "[Mixing Machine]";
+						mes "[混合機器]";
 						if (countitem(909) < .@mixitem1_1) {
-							mes "Insufficient Jellopy.";
-							mes "Please Check again.";
-							mes "Process Halted.";
+							mes "果凍不足。";
+							mes "請再次檢查。";
+							mes "程序中止。";
 							close;
 						}
 						else if (countitem(914) < .@mixitem1_2) {
-							mes "Insufficient Fluff.";
-							mes "Please Check again.";
-							mes "Process Halted.";
+							mes "絲綢不足。";
+							mes "請再次檢查。";
+							mes "程序中止。";
 							close;
 						}
 						else if (countitem(519) < .@mixitem1_3) {
-							mes "Insufficient Milk.";
-							mes "Please Check again.";
-							mes "Process Halted.";
+							mes "牛奶不足。";
+							mes "請再次檢查。";
+							mes "程序中止。";
 							close;
 						}
 						else if (.@mixitem2 == 1 || .@mixitem2 == 2) {
 							if (countitem(1089) == 0 && countitem(1088) == 0) {
-								mes "Solution not found.";
-								mes "Please Check again.";
-								mes "Process Halted.";
+								mes "找不到溶液。";
+								mes "請再次檢查。";
+								mes "程序中止。";
 								close;
 							}
 						}
@@ -381,8 +381,8 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 						if (.@mixitem1_3 != 0) delitem 519,.@mixitem1_3; //Milk
 						if (.@mixitem2 == 1) delitem 1089,1; //Payon_Potion
 						if (.@mixitem2 == 2) delitem 1088,1; //Morocc_Potion
-						mes "Items are Ready.";
-						mes "Close the Lid.";
+						mes "物品已準備就緒。";
+						mes "關閉蓋子。";
 						set .@progress,3;
 						next;
 					}
@@ -397,35 +397,35 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 					set .@mixitem1_3,0;
 					set .@progress,0;
 					set .@continue,0;
-					mes "[Mixing Machine]";
-					mes "Reset Complete.";
-					mes "Initiate again?";
+					mes "[混合機器]";
+					mes "重置完成。";
+					mes "再次啟動？";
 					next;
-					if (select("Yes.:No.") == 1)
+					if (select("是.:否。") == 1)
 						break;
-					mes "[Mixing Machine]";
-					mes "Process Halted.";
-					mes "Thank you.";
+					mes "[混合機器]";
+					mes "程序中止。";
+					mes "謝謝。";
 					close;
 				}
 				if (.@progress == 3) break;
 			}
 			else if (.@progress == 1) {
-				mes "[Mixing Machine]";
-				mes "Nothing found.";
+				mes "[混合機器]";
+				mes "找不到任何東西。";
 				next;
 			}
-			mes "[Mixing Machine]";
-			mes "Select items to mix.";
+			mes "[混合機器]";
+			mes "選擇要混合的物品。";
 			while(1) {
-				switch(select("Jellopy.:Fluff.:Milk.:Ready to Mix.")) {
+				switch(select("果凍.:絲綢.:牛奶.:準備混合。")) {
 				case 1:
 					while(1) {
 						input .@input;
 						if (.@input > 10000) {
 							next;
-							mes "[Mixing Machine]";
-							mes "Error: Item limit exceeded. Please enter values less than 10,000 try again.";
+							mes "[混合機器]";
+							mes "錯誤：物品限制已超過。 請輸入小於 10,000 的值，然後重試。";
 							next;
 						}
 						else {
@@ -440,8 +440,8 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 						input .@input;
 						if (.@input > 10000) {
 							next;
-							mes "[Mixing Machine]";
-							mes "Error: Item limit exceeded. Please enter values less than 10,000 try again.";
+							mes "[混合機器]";
+							mes "錯誤：物品數量超出限制。請輸入小於 10,000 的值再試一次。";
 							next;
 						}
 						else {
@@ -456,8 +456,8 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 						input .@input;
 						if (.@input > 10000) {
 							next;
-							mes "[Mixing Machine]";
-							mes "Error: Item limit exceeded. Please enter values less than 10,000 try again.";
+							mes "[混合機器]";
+							mes "錯誤：物品數量超出限制。請輸入小於 10,000 的值再試一次。";
 							next;
 						}
 						else {
@@ -477,33 +477,33 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 				if (.@continue) break;
 			}
 		}
-		mes "[Mixing Machine]";
-		mes "Please enter the ";
-		mes "Serial Number of";
-		mes "the Magic Powder.";
+		mes "[混合機器]";
+		mes "請輸入";
+		mes "魔法粉末的";
+		mes "序號。";
 		next;
 		while(1) {
 			input .@input;
 			if (.@input < 1000 || .@input > 9999) {
-				mes "[Mixing Machine]";
+				mes "[混合機器]";
 				if (.@input == 0) {
-					mes "Do you want to skip this Menu?";
+					mes "您想要跳過這個選單嗎？";
 					next;
-					if (select("Yes.:No.") == 1) {
+					if (select("是.:否.") == 1) {
 						break;
 					}
 				}
 				else {
-					mes "Invalid Serial Number.";
-					mes "Please try again.";
+					mes "無效的序號。";
+					mes "請再試一次。";
 					next;
 				}
 			}
 			else {
-				mes "[Mixing Machine]";
-				mes "The Serial Number is #" + .@input + ", correct?";
+				mes "[混合機器]";
+				mes "序號是 #" + .@input + "，正確嗎？";
 				next;
-				if (select("Confirm.:Cancel.") == 1) {
+				if (select("確認.:取消.") == 1) {
 					if (.@input == 8472)
 						set .@magic_powder,1;
 					else if (.@input == 3735)
@@ -518,77 +518,77 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 				break;
 			}
 		}
-		mes "[Mixing Machine]";
-		mes "Choose a";
-		mes "Catalyst Stone.";
+		mes "[混合機器]";
+		mes "選擇一個";
+		mes "催化石。";
 		next;
-		switch(select("Yellow Gemstone.:Red Gemstone.:Blue Gemstone.:1carat Diamond.:Skip.")) {
+		switch(select("黃色寶石.:紅色寶石.:藍色寶石.:1克拉鑽石.:跳過.")) {
 		case 1: set .@mixitem3,1; break;
 		case 2: set .@mixitem3,2; break;
 		case 3: set .@mixitem3,3; break;
 		case 4: set .@mixitem3,4; break;
 		case 5: break;
 		}
-		mes "[Mixing Machine]";
-		mes "All Set.";
-		mes "Initiating";
-		mes "Mixing process.";
-		mes "Please Wait.";
+		mes "[混合機器]";
+		mes "全部設定完成。";
+		mes "開始";
+		mes "混合流程。";
+		mes "請稍候。";
 		next;
-		mes "[Mixing Machine]";
-		mes "- Proverb of the Day -";
+		mes "[混合機器]";
+		mes "- 每日諺語 -";
 		switch(rand(1,5)) {
 		case 1:
-			mes "An Eye for an Eye: When you take from a person, you must replace or repay in some way.";
+			mes "以眼還眼：當你從一個人那裡拿走東西時，你必須以某種方式歸還或償還。";
 			break;
 		case 2:
-			mes "Credibility is a Man's Currency: There's a value in genuine trust that cannot be measured.";
+			mes "信譽是一個人貨幣：真正的信任具有無法衡量的價值。";
 			break;
 		case 3:
-			mes "What Goes Around Comes Around: Ultimately, you will be treated in the way you treat others.";
+			mes "善有善報，惡有惡報：最終，你將以你對待他人的方式被對待。";
 			mes "It means 'When you harm Another you will be harmed by him in an unavoidable situation'.";
 			break;
 		case 4:
-			mes "A good neighbor is better than a distant brother: When you need help, you can count on those close to you.";
+			mes "遠親不如近鄰：當你需要幫助時，你可以依靠你身邊的人。";
 			break;
 		default:
-			mes "Birds of a Feather Flock Together: You can look at a person's friends as an indicator of their character.";
+			mes "物以類聚，人以群分：你可以把一個人的朋友看作是他們品格的指標。";
 		}
 		next;
 		if (.@mixitem1_1 == 2 && .@mixitem1_2 == 3 && .@mixitem1_3 == 1 && .@mixitem2 == 1 && .@mixitem3 == 1 && .@magic_powder == 1) {
-			mes "[Mixing Machine]";
-			mes "Mage Test Solution No. 1.";
+			mes "[混合機器]";
+			mes "法師測驗溶液 No. 1。";
 			getitem 1071,1; //Mage_Test_1
 			next;
 		}
 		else if (.@mixitem1_1 == 3 && .@mixitem1_2 == 1 && .@mixitem1_3 == 1 && .@mixitem2 == 0 && .@mixitem3 == 2 && .@magic_powder == 2) {
-			mes "[Mixing Machine]";
-			mes "Mage Test Solution No. 2.";
+			mes "[混合機器]";
+			mes "法師測驗溶液 No. 2。";
 			getitem 1085,1; //Mage_Test_2
 			next;
 		}
 		else if (.@mixitem1_1 == 6 && .@mixitem1_2 == 1 && .@mixitem1_3 == 0 && .@mixitem2 == 1 && .@mixitem3 == 3 && .@magic_powder == 3) {
-			mes "[Mixing Machine]";
-			mes "Mage Test Solution No. 3.";
+			mes "[混合機器]";
+			mes "法師測驗溶液 No. 3。";
 			getitem 1086,1; //Mage_Test_3
 			next;
 		}
 		else if (.@mixitem1_1 == 2 && .@mixitem1_2 == 3 && .@mixitem1_3 == 0 && .@mixitem2 == 2 && .@mixitem3 == 4 && .@magic_powder == 4) {
-			mes "[Mixing Machine]";
-			mes "Mage Test Solution No. 4.";
+			mes "[混合機器]";
+			mes "法師測驗溶液 No. 4。";
 			getitem 1087,1; //Mage_Test_4
 			next;
 		}
 		else {
-			mes "[Mixing Machine]";
-			mes "Unexpected";
-			mes "Error Occurred.";
+			mes "[混合機器]";
+			mes "發生了";
+			mes "意外錯誤。";
 			getitem 1090,1; //Mage_Test_Etc
 			next;
 		}
-		mes "[Mixing Machine]";
-		mes "Mixing Complete.";
-		mes "Thank you.";
+		mes "[混合機器]";
+		mes "混合完成。";
+		mes "謝謝。";
 		close;
 	}
 	close;
@@ -602,97 +602,97 @@ geffen_in,164,112,4	script	Mixing Machine	111,{
 // moc_ruins,91,150,0	script	Ponka-Hontas	93,{}
 
 geffen_in,177,112,4	script	Bookshelf	111,{
-	mes "[Guide Book]";
-	mes "This Guide Book is the property of the Geffen Mage Association. Please handle with care.";
+	mes "[導覽手冊]";
+	mes "本導覽手冊是吉芬魔法師協會的財產。請小心處理。";
 	next;
-	switch(select("Solution No. 1.:Solution No. 2.:Solution No. 3.:Solution No. 4.:Close.")) {
+	switch(select("溶液 No. 1.:溶液 No. 2.:溶液 No. 3.:溶液 No. 4.:關閉.")) {
 	case 1:
-		mes "[Mage Test Solution No. 1]";
-		mes "* Ingredients List *";
-		mes "2 Jellopy";
-		mes "3 Fluff";
-		mes "1 Milk";
+		mes "[法師測驗溶液 No. 1]";
+		mes "* 材料清單 *";
+		mes "2 個波利膠";
+		mes "3 個蓬鬆毛髮";
+		mes "1 個牛奶";
 		next;
-		mes "[Mage Test Solution No. 1]";
-		mes "* Solvent Agent *";
-		mes "Payon Solution";
-		mes "Where to Find:";
-		mes "A small spring in Payon, the Archer Village.";
+		mes "[法師測驗溶液 No. 1]";
+		mes "* 溶劑 *";
+		mes "艾爾貝塔溶液";
+		mes "在哪裡可以找到：";
+		mes "艾爾貝塔的一個小彈簧。";
 		next;
-		mes "[Mage Test Solution No. 1]";
-		mes "* Magic Power Serial Code *";
+		mes "[法師測驗溶液 No. 1]";
+		mes "* 魔法能量序號 *";
 		mes "8472";
 		next;
-		mes "[Mage Test Solution No. 1]";
-		mes "* Catalyst *";
-		mes "Yellow Gemstone";
-		mes "(Provided by";
-		mes "Mixing Machine)";
+		mes "[法師測驗溶液 No. 1]";
+		mes "* 催化劑 *";
+		mes "黃色寶石";
+		mes "(由";
+		mes "混合機器提供)";
 		close;
 	case 2:
-		mes "[Mage Test Solution No. 2]";
-		mes "* Ingredients List *";
-		mes "3 Jellopy";
-		mes "1 Fluff";
-		mes "1 Milk";
+		mes "[法師測驗溶液 No. 2]";
+		mes "* 材料清單 *";
+		mes "3 個波利膠";
+		mes "1 個蓬鬆毛髮";
+		mes "1 個牛奶";
 		next;
-		mes "[Mage Test Solution No. 2]";
-		mes "* Solvent Agent *";
-		mes "None";
+		mes "[法師測驗溶液 No. 2]";
+		mes "* 溶劑 *";
+		mes "無";
 		next;
-		mes "[Mage Test Solution No. 2]";
-		mes "* Magic Power Serial Code *";
+		mes "[法師測驗溶液 No. 2]";
+		mes "* 魔法能量序號 *";
 		mes "3735";
 		next;
-		mes "[Mage Test Solution No. 2]";
-		mes "* Catalyst *";
-		mes "Red Gemstone";
-		mes "(Provided by";
-		mes "Mixing Machine)";
+		mes "[法師測驗溶液 No. 2]";
+		mes "* 催化劑 *";
+		mes "紅色寶石";
+		mes "(由";
+		mes "混合機器提供)";
 		close;
 	case 3:
-		mes "[Mage Test Solution No. 3]";
-		mes "* Ingredients List *";
-		mes "6 Jellopy";
-		mes "1 Fluff";
+		mes "[法師測驗溶液 No. 3]";
+		mes "* 材料清單 *";
+		mes "6 個波利膠";
+		mes "1 個蓬鬆毛髮";
 		next;
-		mes "[Mage Test Solution No. 3]";
-		mes "* Solvent Agent *";
-		mes "Payon Solution";
-		mes "Where to Find:";
-		mes "A small spring in Payon, the Archer Village.";
+		mes "[法師測驗溶液 No. 3]";
+		mes "* 溶劑 *";
+		mes "艾爾貝塔溶液";
+		mes "在哪裡可以找到：";
+		mes "艾爾貝塔的一個小彈簧。";
 		next;
-		mes "[Mage Test Solution No. 3]";
-		mes "* Magic Power Serial Code *";
+		mes "[法師測驗溶液 No. 3]";
+		mes "* 魔法能量序號 *";
 		mes "2750";
 		next;
-		mes "[Mage Test Solution No. 3]";
-		mes "* Catalyst *";
-		mes "Blue Gemstone";
-		mes "(Provided by";
-		mes "Mixing Machine)";
+		mes "[法師測驗溶液 No. 3]";
+		mes "* 催化劑 *";
+		mes "藍色寶石";
+		mes "(由";
+		mes "混合機器提供)";
 		close;
 	case 4:
-		mes "[Mage Test Solution No. 4]";
-		mes "* Ingredients List *";
-		mes "2 Jellopy";
-		mes "3 Fluff";
+		mes "[法師測驗溶液 No. 4]";
+		mes "* 材料清單 *";
+		mes "2 個波利膠";
+		mes "3 個蓬鬆毛髮";
 		next;
-		mes "[Mage Test Solution No. 4]";
-		mes "* Solvent Agent *";
-		mes "Morocc Solution";
-		mes "Where to Find:";
-		mes "A small spring near entrance of pyramid in Morocc.";
+		mes "[法師測驗溶液 No. 4]";
+		mes "* 溶劑 *";
+		mes "夢羅克溶液";
+		mes "在哪裡可以找到：";
+		mes "夢羅克金字塔入口附近的一個小彈簧。";
 		next;
-		mes "[Mage Test Solution No. 4]";
-		mes "* Magic Power Serial Code *";
+		mes "[法師測驗溶液 No. 4]";
+		mes "* 魔法能量序號 *";
 		mes "5429";
 		next;
-		mes "[Mage Test Solution No. 4]";
-		mes "* Catalyst *";
-		mes "1 carat Diamond";
-		mes "(Provided by";
-		mes "Mixing Machine)";
+		mes "[法師測驗溶液 No. 4]";
+		mes "* 催化劑 *";
+		mes "1 克拉鑽石";
+		mes "(由";
+		mes "混合機器提供)";
 		close;
 	}
 	close;

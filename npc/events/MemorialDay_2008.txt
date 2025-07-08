@@ -16,78 +16,78 @@
 
 // Lauds
 //============================================================
-prontera,182,214,4	script	Lauds#Memorial	58,{
+prontera,182,214,4	script	勞茲#Memorial	58,{
 	if (Memorial08 < 1) {
-		mes "[Mad Sago Lauds]";
-		mes "Hey, yo!";
-		mes "What are you doing there!?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "嘿，呦！";
+		mes "你在那裡做什麼！？";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Do you know what day it is!?";
-		mes "It's a very important date!";
-		mes "A very important date to remember!";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "你知道今天是什麼日子嗎！？";
+		mes "這是一個非常重要的日子！";
+		mes "一個非常重要的紀念日！";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "What is this!?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "這是什麼！？";
 		emotion ET_SURPRISE;
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Where is your towel!?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "你的毛巾在哪裡！？";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "My what?";
+		mes "我的什麼？";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "How are you supposed to go on your trip without your towel!?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "沒有你的毛巾，你怎麼能去旅行！？";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "If you think this is just another holiday, I'm not going to waste my breath.";
-		mes "But if you like to pay a tribute to great soldiers, I will help you ready yourself.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "如果你認為這只是一個普通的節日，我就懶得浪費口舌了。";
+		mes "但如果你想向偉大的士兵致敬，我會幫助你做好準備。";
 		next;
-		if (select("I guess so...:Are you crazy or something?") == 2) {
-			mes "[Mad Sago Lauds]";
-			mes "Fine, be unprepared!";
+		if (select("我想是吧...:你瘋了嗎？") == 2) {
+			mes "[瘋狂薩戈·勞茲]";
+			mes "好吧，那就毫無準備吧！";
 			next;
-			mes "[Mad Sago Lauds]";
-			mes "^FF0000YOU WILL RUE THE DAY!^000000";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "^FF0000你會後悔今天的！^000000";
 			close;
 		}
-		mes "[Mad Sago Lauds]";
-		mes "Great!";
-		mes "Then listen to me carefully.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "太好了！";
+		mes "那就仔細聽我說。";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Now before you can pay tribute to the fallen soldiers you must be properly equipped.";
-		mes "Without your towel you will be lost!";
-		mes "If you bring me the materials, I can make you a towel.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "在你向陣亡的士兵致敬之前，你必須裝備齊全。";
+		mes "沒有你的毛巾，你會迷失方向的！";
+		mes "如果你把材料帶給我，我可以給你做一條毛巾。";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Listen closely.";
-		mes "Bring me ^FF000030 Fabric and 20 Fluffs^000000.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "仔細聽著。";
+		mes "帶給我 ^FF000030 個布料和 20 個蓬鬆毛^000000。";
 		set Memorial08,1;
 		close;
 	}
 
 	else if (Memorial08 == 1) {
 		if (countitem(1059) < 30 || countitem(914) < 20) {
-			mes "[Mad Sago Lauds]";
-			mes "What are these? They aren't enough?!";
-			mes "*Sigh* Do I really have to tell you again?!";
-			mes "Bring me ^FF000030 Fabric and 20 Fluffs^000000.";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "這些是什麼？這些不夠？！";
+			mes " *嘆氣* 我真的需要再告訴你一遍嗎？！";
+			mes "帶給我 ^FF000030 個布料和 20 個蓬鬆毛^000000。";
 			close;
 		} else {
-			mes "***Mad Sago Lauds appears to be muttering to himself***";
+			mes "***瘋狂薩戈·勞茲似乎在自言自語***";
 			next;
-			mes "[Mad Sago Lauds]";
-			mes "So, did you bring the towel materials?";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "所以，你帶了毛巾的材料嗎？";
 			next;
-			mes "[Mad Sago Lauds]";
-			mes "Excellent; you've brought them all.";
-			mes "Then I shall make you a Towel of Memory as I promised.";
-			mes "Give me a moment.";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "太棒了；你把它們都帶來了。";
+			mes "那我會按照承諾，給你做一條記憶毛巾。";
+			mes "請稍等片刻。";
 			next;
-			mes "[Mad Sago Lauds]";
-			mes "There you go!";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "給你！";
 			delitem 1059,30;
 			delitem 914,20;
 			getitem 6025,1;
@@ -98,96 +98,96 @@ prontera,182,214,4	script	Lauds#Memorial	58,{
 	}
 	
 	else if (Memorial08 == 2) {
-		mes "[Mad Sago Lauds]";
-		mes "Ah, you have fluffy new towel now I even put your name on it";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "啊，你現在有蓬鬆的新毛巾了，我甚至把你的名字繡在上面了";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Say, how do you like to go on a journey to pay a tribute to Memorial Day?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "你覺得去旅行以紀念陣亡將士紀念日怎麼樣？";
 		next;
-		if (select("Sure.:No, I'm Busy.") == 2) {
-			mes "[Mad Sago Lauds]";
-			mes "Don't come crying to me if someone decides to build a highway through your home!";
+		if (select("當然。:不，我很忙。") == 2) {
+			mes "[瘋狂薩戈·勞茲]";
+			mes "如果有人決定在你的家門口建一條高速公路，不要來找我哭訴！";
 			close;
 		}
-		mes "[Mad Sago Lauds]";
-		mes "Good. By the way, do you even know what the towel is for?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "很好。 順便問一下，你知道毛巾是做什麼用的嗎？";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "It seems you're just carrying it without understanding its meaning.";
-		mes "What a shame! You should go speak to ^FF0000Grast in Prontera^000000.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "看來你只是帶著它，卻不明白它的意義。";
+		mes "真是太可惜了！ 你應該去和 ^FF0000普隆德拉的葛拉斯特^000000 談談。";
 		set Memorial08,3;
 		close;
 	}
 
 	else if (Memorial08 == 3) {
-		mes "[Mad Sago Lauds]";
-		mes "What are you still doing here?";
-		mes "I told you to go speak to Grast in Prontera!";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "你還在這裡做什麼？";
+		mes "我告訴過你去普隆德拉和葛拉斯特談談！";
 		close;
 	}
 
 	else if (Memorial08 == 4 || Memorial08 == 5 || Memorial08 == 6) {
-		mes "[Mad Sago Lauds]";
-		mes "Go help Grast, and then come back.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "去幫助葛拉斯特，然後再回來。";
 		close;
 	}
 
 	else if (Memorial08 == 7) {
-		mes "[Mad Sago Lauds]";
-		mes "Oh, you've brought them all.";
-		mes "Hahaha!";
-		mes "HAHAHAHAHAHA!!!! cough cough";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "哦，你把它?都??了。";
+		mes "哈哈哈！";
+		mes "哈哈哈!!!! 咳咳";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "Please give them to me. Thank you for your hard work, by the way.";
-		mes "Say, have you learned anything from the journey?";
-		mes "Now is to go visit the plaque at 12 o'clock direction in Prontera.";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "請把它們給我。 順便感謝你的辛勤工作。";
+		mes "請問，你從旅程中學到了什麼嗎？";
+		mes "現在去參觀普隆德拉 12 點鐘方向的牌匾。";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "What do you mean you were just there?";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "你說你剛才就在那裡是什麼意思？";
 		next;
-		mes "[Mad Sago Lauds]";
-		mes "What? Why are you giving me your garbage!";
-		mes "Those items are not useful to me at all.";
-		mes "You should be going to the plaque!";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "什麼？ 為什麼你要給我你的垃圾！";
+		mes "這些物品對我來說一點用處都沒有。";
+		mes "你應該去牌匾！";
 		set Memorial08,8;
 		close;
 	}
 
 	else if (Memorial08 == 8) {
-		mes "[Mad Sago Lauds]";
-		mes "Stop trying to give me your garbage!";
-		mes "Go to the plaque at 12 o'clock direction in Prontera for your journey!";
+		mes "[瘋狂薩戈·勞茲]";
+		mes "別再想著給我你的垃圾了！";
+		mes "去普隆德拉 12 點鐘方向的牌匾，開始你的旅程！";
 		close;
 	}
 	
 	else if (Memorial08 >= 9) {
 		set .@RandomMsg, rand(1,5);
 		if (.@RandomMsg == 1) {
-			mes "[Mad Sago Lauds]";
-			mes "Don't panic!";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "不要驚慌！";
 			emotion ET_SURPRISE;
 			close;
 		}
 		else if (.@RandomMsg == 2) {
-			mes "[Mad Sago Lauds]";
-			mes "Life... is like a grapefruit.";
-			mes "It's orange and squishy, and has a few pips in it, and some folks have half a one for breakfast.";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "人生...就像葡萄柚。";
+			mes "它是橘色的、軟綿綿的，裡面有一些籽，有些人早餐會吃半個。";
 			close;
 		}
 		else if (.@RandomMsg == 3) {
-			mes "[Mad Sago Lauds]";
-			mes "There was a point to this story, but it has temporarily escaped the chronicler's mind.";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "這個故事本來是有意義的，但編年史家的思緒暫時逃離了。";
 			close;
 		}
 		else if (.@RandomMsg == 4) {
-			mes "[Mad Sago Lauds]";
-			mes "42!";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "42！";
 			close;
 		}
 		else if (.@RandomMsg == 5) {
-			mes "[Mad Sago Lauds]";
-			mes "It is a mistake to think you can solve any major problems just with potatoes.";
+			mes "[瘋狂薩戈·勞茲]";
+			mes "認為你可以僅僅用馬鈴薯解決任何重大問題是個錯誤。";
 			close;
 		}
 	}
@@ -195,18 +195,18 @@ prontera,182,214,4	script	Lauds#Memorial	58,{
 		
 // Memorial Plaque
 //============================================================
-prontera,153,286,4	script	Memorial Plaque#Memorial	857,{
+prontera,153,286,4	script	紀念碑#Memorial	857,{
 	if (Memorial08 < 8) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "- It's a dusty old plaque.-";
+		mes "- 這是一塊佈滿灰塵的舊牌匾。-";
 		close;
 	}
 	
 	else if (Memorial08 == 8) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "- It's a dusty old plaque.-";
-		mes "'This must be what Lauds was talking about.'";
-		mes "'Let's dust it off with the towel.'";
+		mes "- 這是一塊佈滿灰塵的舊牌匾。-";
+		mes "'這一定是勞茲說的那個。'";
+		mes "'讓我們用毛巾把它擦乾淨。'";
 		next;
 		set Memorial08,9;
 		getexp 93750,43750;
@@ -218,31 +218,31 @@ prontera,153,286,4	script	Memorial Plaque#Memorial	857,{
 	}
 	
 	L_CleanPlaque:
-		mes "- You see a message from the cleaned plaque.-";
+		mes "- 你看到從清理過的牌匾上顯示的信息。-";
 		next;
-		mes "-Although no sculptured marble should rise to their memory,-";
-		mes "-nor engraved stone bear record of their deeds,-";
-		mes "-yet will their remembrance be as lasting as the land they honored.-";
-		mes "-Daniel Webster-";
+		mes "-雖然不該豎立雕刻大理石來紀念他們,-";
+		mes "-也不該用雕刻的石頭來記錄他們的功績,-";
+		mes "-但他們的回憶將會像他們所榮耀的土地一樣長存。-";
+		mes "-丹尼爾·韋伯斯特-";
 		if (Memorial08 == 9) {
 			getexp 93750,43750;
 		}
 		next;
-		mes "-There's another message.-";
+		mes "-還有另一則訊息。-";
 		next;
-		mes "-I may not have gone where I intended to go,-";
-		mes "-but I think I have ended up where I needed to be.-";
-		mes "- Douglas Adams.-";
+		mes "-我可能沒有去到我打算去的地方,-";
+		mes "-但我認為我最終到達了我需要去的地方。-";
+		mes "- 道格拉斯·亞當斯.-";
 		if (Memorial08 == 9) { 
 			getexp 93750,43750;
 		}
 		next;
-		mes "-This is the last message.-";
+		mes "-這是最後一則訊息。-";
 		next;
-		mes "-True heroism is remarkably sober, very undramatic.-";
-		mes "-It is not the urge to surpass all others at whatever cost,-";
-		mes "- but the urge to serve others at whatever cost. -";
-		mes "- Arthur Ashe -";
+		mes "-真正的英雄主義非常清醒，非常不戲劇化。-";
+		mes "-它不是不惜一切代價超越所有人的衝動,-";
+		mes "-而是不惜一切代價為他人服務的衝動。-";
+		mes "- 亞瑟·阿什 -";
 		if (Memorial08 == 9) { 
 			getexp 93750,43750;
 			set Memorial08,10;
@@ -252,58 +252,58 @@ prontera,153,286,4	script	Memorial Plaque#Memorial	857,{
 
 // Grast
 //============================================================
-prontera,150,270,4	script	Grast#Memorial	900,{
+prontera,150,270,4	script	葛拉斯#Memorial	900,{
 	if (Memorial08 < 3) {
-		mes "[Grast]";
-		mes "Memorial Day is a sad and yet glorious day.";
-		mes "I wonder how many people remember them...";
+		mes "[葛拉斯]";
+		mes "陣亡將士紀念日是一個悲傷而又光榮的日子。";
+		mes "我想知道有多少人記得他們...";
 		close;
 	}
 	
 	else if (Memorial08 == 3) {
-		mes "[Grast]";
-		mes "Oh, isn't that a Towel of Memory?";
-		mes "I'm so glad to meet someone who understands the meaning of Memorial Day.";
+		mes "[葛拉斯]";
+		mes "哦，那不是記憶毛巾嗎？";
+		mes "我很高興遇到一個了解陣亡將士紀念日意義的人。";
 		next;
-		mes "[Grast]";
-		mes "It is very important to know what we're celebrating today, don't you think?";
+		mes "[葛拉斯]";
+		mes "了解我們今天慶祝的是什麼非常重要，你不覺得嗎？";
 		next;
-		mes "[Grast]";
-		mes "If you like to go on a journey to pay a tribute to Memorial Day, you should bring me some materials I ask.";
+		mes "[葛拉斯]";
+		mes "如果你想踏上旅程來紀念陣亡將士紀念日，你應該帶給我一些我要求的材料。";
 		next;
-		mes "[Grast]";
-		mes "Please bring me ^FF0000one of each Red Potion, Green Potion, Awakening Potion, and Butterfly Wing^000000.";
-		mes "I'll be waiting for your return.";
+		mes "[葛拉斯]";
+		mes "請給我 ^FF0000各一個紅色藥水、綠色藥水、覺醒藥水和蝴蝶翅膀^000000。";
+		mes "我會等你回來。";
 		set Memorial08,4;
 		close;
 	}
 
 	else if (Memorial08 == 4) {
 		if (countitem(501) < 1 || countitem(506) < 1 || countitem(656) < 1 || countitem(602) < 1) {
-			mes "[Grast]";
-			mes "Oops, you haven't brought all materials.";
-			mes "Please make sure you need to bring me";
-			mes "^FF0000one of each Red Potion, Green Potion, Awakening Potion, and Butteryfly Wing^000000.";
+			mes "[葛拉斯]";
+			mes "糟糕，你還沒有帶齊所有材料。";
+			mes "請確認你需要帶給我";
+			mes "^FF0000各一個紅色藥水、綠色藥水、覺醒藥水和蝴蝶翅膀^000000。";
 			next;
-			mes "[Grast]";
-			mes "You'll have to bring me more materials afterwards.";
-			mes "If you feel too burdened to gather them all,";
-			mes "I can provide you all the materials.";
+			mes "[葛拉斯]";
+			mes "之後你還需要帶給我更多材料。";
+			mes "如果你覺得收集它們太麻煩，";
+			mes "我可以為你提供所有材料。";
 			next;
-			if (select("I'll gather the rest.:Give me the materials.") == 2) {
+			if (select("我會收集剩下的。:給我材料。") == 2) {
 				goto L_GiveUp;
 			}
 			goto L_Continue;
 		} else {
-			mes "[Grast]";
-			mes "Oh, you've brought the materials I asked.";
+			mes "[葛拉斯]";
+			mes "哦，你帶了我要求的材料。";
 			next;
-			mes "[Grast]";
-			mes "Hmm, you will need some more things still...";
+			mes "[葛拉斯]";
+			mes "嗯，你還需要一些東西...";
 			next;
-			mes "[Grast]";
-			mes "Please bring me ^FF0000one of each Trap, Yggdrasil Leaf, Blue Gemstone, Crystal Mirror, Meat, and Carrot.^000000";
-			mes "I'll be waiting for your return.";
+			mes "[葛拉斯]";
+			mes "請給我 ^FF0000各一個陷阱、世界樹葉子、藍色寶石、水晶鏡子、肉和胡蘿蔔。^000000";
+			mes "我會等你回來。";
 			set Memorial08,5;
 			close;
 		}
@@ -311,26 +311,26 @@ prontera,150,270,4	script	Grast#Memorial	900,{
 	
 	else if (Memorial08 == 5) {
 		if (countitem(1065) < 1 || countitem(610) < 1 || countitem(717) < 1 || countitem(747) < 1 || countitem(517) < 1 || countitem(515) < 1) {
-			mes "[Grast]";
-			mes "Oops, you haven't brought all materials.";
-			mes "Please make sure you'll have to bring me";
-			mes "^FF0000one of each Trap, Yggdrasil Leaf, Blue Gemstone, Crystal Mirror, Meat, and Carrot^000000.";
+			mes "[葛拉斯]";
+			mes "糟糕，你還沒有帶齊所有材料。";
+			mes "請確認你需要帶給我";
+			mes "^FF0000各一個陷阱、世界樹葉子、藍色寶石、水晶鏡子、肉和胡蘿蔔^000000。";
 			next;
-			mes "[Grast]";
-			mes "You'll have to bring me more materials afterwards.";
-			mes "If you feel too burdened to gather them all, I can provide you all the materials.";
+			mes "[葛拉斯]";
+			mes "之後你還需要帶給我更多材料。";
+			mes "如果你覺得收集它們太麻煩，我可以為你提供所有材料。";
 			next;
-			if (select("I'll gather the rest.:Give me the materials.") == 2) {
+			if (select("我會收集剩下的。:給我材料。") == 2) {
 				goto L_GiveUp;
 			}
 			goto L_Continue;
 		} else {
-			mes "[Grast]";
-			mes "Oh, you've brought everything I asked.";
-			mes "Hmm, I think you need just a little bit more.";
+			mes "[葛拉斯]";
+			mes "哦，你帶了我要求的所有東西。";
+			mes "嗯，我想你只需要再多一點點。";
 			next;
-			mes "[Grast]";
-			mes "Please bring me ^FF0000one of each Pet Incubator, Firecracker, Poring Doll, and Bouquet^000000.";
+			mes "[葛拉斯]";
+			mes "請給我 ^FF0000各一個寵物孵化器、鞭炮、波利娃娃和花束^000000。";
 			set Memorial08,6;
 			close;
 		}
@@ -338,53 +338,53 @@ prontera,150,270,4	script	Grast#Memorial	900,{
 	
 	else if (Memorial08 == 6) {
 		if (countitem(643) < 1 || countitem(12018) < 1 || countitem(741) < 1 || countitem(745) < 1) {
-			mes "[Grast]";
-			mes "Oops, you haven't brought all materials.";
-			mes "Please make sure you need to bring me";
-			mes "^FF0000one of each Pet Incubator, Firecracker, Poring Doll and Bouquet";
+			mes "[葛拉斯]";
+			mes "糟糕，你還沒有帶齊所有材料。";
+			mes "請確認你需要帶給我";
+			mes "^FF0000各一個寵物孵化器、鞭炮、波利娃娃和花束";
 			next;
-			mes "[Grast]";
-			mes "They are the last batch of materials.";
-			mes "If you feel too burdened to gather them all, I can provide you all the materials.";
+			mes "[葛拉斯]";
+			mes "它們是最後一批材料。";
+			mes "如果你覺得收集它們太麻煩，我可以為你提供所有材料。";
 			next;
-			mes "[Grast]";
-			mes "If I provide you all materials, however, I won't have to thank you for your service.";
-			mes "It's your call, " + strcharinfo(0) + ".";
+			mes "[葛拉斯]";
+			mes "但是，如果我為你提供所有材料，我就不必感謝你的服務了。";
+			mes "這取決於你，" + strcharinfo(0) + "。";
 			next;
-			if (select("I'll gather the rest.:Give me the materials.") == 2) {
+			if (select("我會收集剩下的。:給我材料。") == 2) {
 				goto L_GiveUp;
 			}
 			goto L_Continue;
 		} else {
-			mes "[Grast]";
-			mes "Have you brought the materials I asked?";
-			mes "Ah, thank you for your hard work you've brought all of them.";
+			mes "[葛拉斯]";
+			mes "你帶了我要求的材料嗎？";
+			mes "啊，謝謝你的努力，你已經把所有的都帶齊了。";
 			next;
-			mes "[Grast]";
-			mes "I hope you'll learn a valuable lesson while gathering these materials.";
-			mes "I like to give you a small gift for your service.";
+			mes "[葛拉斯]";
+			mes "我希望你在收集這些材料的同時能學到寶貴的一課。";
+			mes "我想給你一份小禮物，以感謝你的服務。";
 			next;
-			mes "[Grast]";
-			mes "You see, I have two different gifts in my each hand.";
-			mes "A best thing would be giving you both of them, but...";
-			mes "How do you like to test your luck, " + strcharinfo(0) + "?";
+			mes "[葛拉斯]";
+			mes "你看，我的每隻手裡都有兩件不同的禮物。";
+			mes "最好的事情是把兩件都給你，但是...";
+			mes "你覺得怎麼樣，想測試一下你的運氣嗎，" + strcharinfo(0) + "?";
 			next;
-			mes "[Grast]";
-			mes "Okay, which hand would you like to pick?";
+			mes "[葛拉斯]";
+			mes "好的，你想選哪隻手？";
 			next;
-			if (select("Left hand.:Right hand.") == 2) {
-				mes "[Grast]";
-				mes "You've selected my right hand.";
-				mes "Here's the gift for you.";
-				mes "Now, please bring all these materials to Lauds.";
+			if (select("左手。:右手。") == 2) {
+				mes "[葛拉斯]";
+				mes "你選擇了我的右手。";
+				mes "這是給你的禮物。";
+				mes "現在，請把所有這些材料帶給勞德斯。";
 				set Memorial08, 7;
 				getitem 617,1;
 				close;
 			}
-			mes "[Grast]";
-			mes "You've selected my left hand.";
-			mes "Here's the gift for you.";
-			mes "Now, please bring all these materials to Lauds.";
+			mes "[葛拉斯]";
+			mes "你選擇了我的左手。";
+			mes "這是給你的禮物。";
+			mes "現在，請把所有這些材料帶給勞德斯。";
 			set Memorial08, 7;
 			getitem 12109,1;
 			close;
@@ -392,39 +392,39 @@ prontera,150,270,4	script	Grast#Memorial	900,{
 	}
 	
 	else if (Memorial08 == 7) {
-		mes "[Grast]";
-		mes "Have you met Lauds?";
-		mes "I hope you'll remember your freedom and happiness are built on thousands of lives sacrificed in war.";
+		mes "[葛拉斯]";
+		mes "你見過勞德斯了嗎？";
+		mes "我希望你能記住你的自由和幸福是建立在數千名在戰爭中犧牲的生命之上的。";
 		close;
 	}
 
 	else if (Memorial08 >= 8) {
-		mes "[Grast]";
-		mes "A towel is about the most massively useful thing an adventurer can have.";
+		mes "[葛拉斯]";
+		mes "毛巾是冒險家能擁有的最有用的一件東西。";
 		close;
 	}
 
 	L_GiveUp:
-		mes "[Grast]";
-		mes "Oh, I see. I guess you're quite busy nowadays, huh?";
-		mes "No problem; I'll give you all the supplies...";
+		mes "[葛拉斯]";
+		mes "哦，我明白了。我想你最近很忙，是嗎？";
+		mes "沒問題；我會給你所有的補給品...";
 		next;
-		mes "[Grast]";
-		mes "There you go.";
-		mes "I crushed all the items together into a more compact form for you.";
-		mes "You can thank me later for that extra service.";
-		mes "Please bring them to Lauds.";
+		mes "[葛拉斯]";
+		mes "給你。";
+		mes "我把所有物品都壓在一起，變成更緊湊的形式，給你。";
+		mes "你可以稍後感謝我提供的額外服務。";
+		mes "請把它們帶給勞德斯。";
 		set Memorial08,7;
 		getitem 7126,1;
 		next;
-		mes "[Grast]";
-		mes "By the way, he had an unfortunate accident, and has kind of lost his mind.";
-		mes "Please don't be alarmed even if he starts babbling.";
+		mes "[葛拉斯]";
+		mes "順便說一句，他發生了一場不幸的意外，有點失去了理智。";
+		mes "即使他開始胡言亂語，也請不要驚慌。";
 		close;
 	
 	L_Continue:
-		mes "[Grast]";
-		mes "That's a good idea.";
-		mes "Then I'll be waiting for your return.";
+		mes "[葛拉斯]";
+		mes "這是個好主意。";
+		mes "那我等你回來。";
 		close;
 }
