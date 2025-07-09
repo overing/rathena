@@ -49,18 +49,18 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 				case 1:
 					mes "樂園之都應該有很多悲傷和失落的故事。他們的故事不應該被遺忘，所以請告訴我你所知道的。";
 					next;
-					switch( select( "艾尼格瑪?賽尼亞 (劍士怪物)",
-									"阿邁爾·丁茲 (商人怪物)",
-									"維克賓·特雷斯 (盜賊怪物)",
-									"卡瓦奇·伊卡洛斯 (弓箭手怪物)",
+					switch( select( "艾尼格瑪·賽尼亞 (劍士怪物)",
+									"阿邁爾·娣潔 (商人怪物)",
+									"維克賓·特麗絲 (盜賊怪物)",
+									"卡瓦奇·伊卡勒斯 (弓箭手怪物)",
 									"艾倫德·艾貝西 (服事怪物)",
-									"勞蕾爾·溫德 (法師怪物)" ) ) {
+									"勞蕾爾·龐德 (法師怪物)" ) ) {
 						mes "[拉奇]";
 					case 1:
 						if (checkquest(13144,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13143,HUNTING) == 1) {
-							cutin "??????????????",3;  //ygnizem_card
+							cutin "ygnizem_card",3;  //ygnizem_card
 							mes "她是在如此遙遠的地方的一位悲傷劍士。你認為是什麼把她帶到這裡？";
 							next;
 							mes "[拉奇]";
@@ -72,7 +72,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13143,13144,1100000,300000;
 						}
 						else {
-							cutin "??????????????",3;  //ygnizem_card
+							cutin "ygnizem_card",3;  //ygnizem_card
 							mes "一位比任何劍士都強大的劍女。艾尼格瑪?賽尼亞。那是她的名字。我不確定那是她還是其他人。";
 							next;
 							mes "[拉奇]";
@@ -90,7 +90,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13146,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13145,HUNTING) == 1) {
-							cutin "??????????????",3;  //armaia_card
+							cutin "armaia_card",3;  //armaia_card
 							mes "她到底能繼續她的旅程多遠？我猜她不能獨自完成。";
 							next;
 							mes "[拉奇]";
@@ -105,8 +105,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13145,13146,1100000,300000;
 						}
 						else {
-							cutin "??????????????",3;  //armaia_card
-							mes "一位商人的女兒。阿梅爾?迪恩澤，她看起來像個有錢的女人。但她看起來沒有安全感。";
+							cutin "armaia_card",3;  //armaia_card
+							mes "一位商人的女兒。阿邁爾·娣潔，她看起來像個有錢的女人。但她看起來沒有安全感。";
 							next;
 							mes "[拉奇]";
 							mes "是什麼讓她消失了？或者為了什麼？請聽聽她的故事。";
@@ -123,7 +123,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13148,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13147,HUNTING) == 1) {
-							cutin "???????????????",3;  //whikebain_card
+							cutin "whikebain_card",3;  //whikebain_card
 							mes "是什麼觸動了她的心？她只關心錢。";
 							next;
 							mes "[拉奇]";
@@ -138,8 +138,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13147,13148,1100000,300000;
 						}
 						else {
-							cutin "???????????????",3;  //whikebain_card
-							mes "沒有人知道它是如何開始的。薇克拜恩?特雷斯這個名字可能已經找到了真正的同伴。";
+							cutin "whikebain_card",3;  //whikebain_card
+							mes "沒有人知道它是如何開始的。維克賓·特麗絲這個名字可能已經找到了真正的同伴。";
 							next;
 							mes "[拉奇]";
 							mes "她是一個只關心錢的人。她的旅程持續了多遠？請在樂園之都聽聽她的故事。";
@@ -157,7 +157,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13150,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13149,HUNTING) == 1) {
-							cutin "????????罺???",3;  //kavac_card
+							cutin "kavac_card",3;  //kavac_card
 							mes "是的。我好像在沛雍聽到過同樣的名字。我不確定這是否意味著同一個人。";
 							next;
 							mes "[拉奇]";
@@ -172,8 +172,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13149,13150,1100000,300000;
 						}
 						else {
-							cutin "????????罺???",3;  //kavac_card
-							mes "卡瓦奇?伊卡洛斯這個名字，他的手比眼睛還快，能迅速射箭。";
+							cutin "kavac_card",3;  //kavac_card
+							mes "卡瓦奇·伊卡勒斯這個名字，他的手比眼睛還快，能迅速射箭。";
 							next;
 							mes "[拉奇]";
 							mes "我聽說他的影子和他的箭在某處徘徊。請去樂園之都告訴我他的故事。";
@@ -190,7 +190,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13152,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但不足以創作一首歌曲。";
 						else if (checkquest(13151,HUNTING) == 1) {
-							cutin "????忡???????",3;  //erend_card
+							cutin "erend_card",3;  //erend_card
 							mes "無論是為了友誼還是為了任務。如果那段旅程是為了某人，那麼要停止旅程並不容易。";
 							next;
 							mes "[拉吉]";
@@ -205,8 +205,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13151,13152,1100000,300000;
 						}
 						else {
-							cutin "????忡???????",3;  //erend_card
-							mes "厄倫德·埃貝希是那個開始尋找某人的旅程的人。";
+							cutin "erend_card",3;  //erend_card
+							mes "艾倫德·艾貝西是那個開始尋找某人的旅程的人。";
 							next;
 							mes "[拉吉]";
 							mes "但我猜... 他的旅程也可能停在了里希塔樂鎮的某個地方。請聽聽他的故事。";
@@ -223,14 +223,14 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13154,PLAYTIME) == 0)
 							mes "有些冒險家告訴我一些故事，但它們不足以譜成一首歌。";
 						else if (checkquest(13153,HUNTING) == 1) {
-							cutin "?????????",3;  //rawrel_card
+							cutin "rawrel_card",3;  //rawrel_card
 							mes "順帶一提。我讀過一本叫做 ^FF0000如何成為巫師^000000 的書...";
 							next;
 							mes "[拉吉]";
 							mes "根據那本書，25 歲的人所使用的魔法可能比年長的巫師更強大。";
 							next;
 							mes "[拉吉]";
-							mes "你在認真聽什麼？讓我們完成關於勞雷爾·溫德的故事的請求！";
+							mes "你在認真聽什麼？讓我們完成關於勞蕾爾·龐德的故事的請求！";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13153,HUNTING) == 2) {
@@ -238,8 +238,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13153,13154,1100000,300000;
 						}
 						else {
-							cutin "?????????",3;  //rawrel_card
-							mes "勞雷爾·溫德，她決定進行一次艱難的旅程，以報答一些巫師的恩情。";
+							cutin "rawrel_card",3;  //rawrel_card
+							mes "勞蕾爾·龐德，她決定進行一次艱難的旅程，以報答一些巫師的恩情。";
 							next;
 							mes "[拉吉]";
 							mes "但是... 這些有才華的巫師無法回來嗎？是誰造成的？在里希塔樂鎮尋找線索。";
@@ -348,29 +348,29 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 					}
 					break;
 				case 3:
-					mes "我從未去過艾音布羅克，但我聽說在史卡巴洞穴裡有很多有趣的生物。";
+					mes "我從未去過艾音布羅克，但我聽說在甲蟲洞穴裡有很多有趣的生物。";
 					next;
-					switch( select( "獨角史卡巴故事", "犄角史卡巴故事", "鹿角史卡巴故事", "耙角史卡巴故事" ) ) {
+					switch( select( "獨角甲蟲的故事", "雙角甲蟲的故事", "鹿角甲蟲的故事", "尖角甲蟲的故事" ) ) {
 						mes "[拉吉]";
 					case 1:
 						if (checkquest(13162,PLAYTIME) == 0)
-							mes "我正在編寫關於獨角史卡巴的故事。一個意味著少於兩個！~ 我開始了，但很難完成。你能幫助我嗎？";
+							mes "我正在編寫關於獨角甲蟲的故事。一個意味著少於兩個！~ 我開始了，但很難完成。你能幫助我嗎？";
 						else if (checkquest(13161,HUNTING) == 1) {
-							cutin "?????????",3;  //scaraba_card
+							cutin "scaraba_card",3;  //scaraba_card
 							mes "他們也有一些故事，對吧？首先，我想知道帶有一個角的那個的形狀。";
 							next;
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13161,HUNTING) == 2) {
-							mes "我想知道獨角史卡巴在想什麼？我想寫一首歌。謝謝你的幫助！";
+							mes "我想知道獨角甲蟲在想什麼？我想寫一首歌。謝謝你的幫助！";
 							callsub S_Quest,13161,13162,1100000,200000;
 						}
 						else {
-							cutin "?????????",3;  //scaraba_card
+							cutin "scaraba_car",3;  //scaraba_card
 							mes "新世界充滿了驚人的怪物。 對於那些想成為冒險家的孩子來說，它們將會是個夢想。";
 							next;
 							mes "[拉吉]";
-							mes "我想製作一首關於 ^FF0000獨角仙人掌^000000 的歌曲！？ 孩子們一定會喜歡的。";
+							mes "我想製作一首關於 ^FF0000獨角甲蟲^000000 的歌曲！？ 孩子們一定會喜歡的。";
 							next;
 							cutin "ragi01",0;
 							if (select( "接受請求", "退出。" ) == 1) {
@@ -384,7 +384,7 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						if (checkquest(13164,PLAYTIME) == 0)
 							mes "我正在編寫一個故事... 二小於三～ 我開始編寫一個故事，但我無法完成。 你能幫我嗎？";
 						else if (checkquest(13163,HUNTING) == 1) {
-							cutin "?????????",3;  //scaraba_card
+							cutin "scaraba_car",3;  //scaraba_card
 							mes "那個有角的東西有點困擾我。 一個角和兩個角有什麼區別？ 只是外觀？";
 							next;
 							mes "[拉吉]";
@@ -392,12 +392,12 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13163,HUNTING) == 2) {
-							mes "你安全回來了！ 怎麼樣？ 獨角仙人掌似乎是個有趣的故事。 你做得真好。";
+							mes "你安全回來了！ 怎麼樣？ 獨角甲蟲似乎是個有趣的故事。 你做得真好。";
 							callsub S_Quest,13163,13164,1100000,200000;
 						}
 						else {
-							cutin "?????????",3;  //scaraba_card
-							mes "我們在談論獨角仙人掌嗎？ 我們還應該提到一個... 那就是獨角仙人掌！";
+							cutin "scaraba_car",3;  //scaraba_card
+							mes "我們在談論獨角甲蟲嗎？ 我們還應該提到一個... 那就是獨角甲蟲！";
 							next;
 							mes "[拉吉]";
 							mes "我不知道為什麼。 我只是從人們那裡聽說的。 我需要製作一首歌，所以請看看牠們的世界！";
@@ -412,13 +412,13 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 						break;
 					case 3:
 						if (checkquest(13166,PLAYTIME) == 0)
-							mes "似乎還有更多關於鹿角仙人掌的故事！ 如果你有時間請幫助我。";
+							mes "似乎還有更多關於鹿角甲蟲的故事！ 如果你有時間請幫助我。";
 						else if (checkquest(13165,HUNTING) == 1) {
-							cutin "?????????",3;  //scaraba_card
-							mes "根據傳聞，似乎還有更多特殊的仙人掌。 更強大，更可怕的。";
+							cutin "scaraba_car",3;  //scaraba_card
+							mes "根據傳聞，似乎還有更多特殊的甲蟲。 更強大，更可怕的。";
 							next;
 							mes "[拉吉]";
-							mes "你認為鹿角仙人掌可能是其中之一嗎？";
+							mes "你認為鹿角甲蟲可能是其中之一嗎？";
 							cutin "ragi01",0;
 						}
 						else if (checkquest(13165,HUNTING) == 2) {
@@ -426,8 +426,8 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13165,13166,1100000,200000;
 						}
 						else {
-							cutin "?????????",3;  //scaraba_card
-							mes "這個非常獨特！ 角看起來像鹿的角，所以它被稱為鹿角仙人掌。";
+							cutin "scaraba_car",3;  //scaraba_card
+							mes "這個非常獨特！ 角看起來像鹿的角，所以它被稱為鹿角甲蟲。";
 							next;
 							mes "[拉吉]";
 							mes "你不好奇牠為什麼有那個角嗎？ 我認為它有一個人們會喜歡的有趣故事。 我可以問你冒險家嗎？";
@@ -435,17 +435,17 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							cutin "ragi01",0;
 							if (select( "接受請求", "退出。" ) == 1) {
 								mes "[拉吉]";
-								mes "你能幫我找一個關於鹿角仙人掌的故事嗎？ 我想親身體驗是最好的！";
+								mes "你能幫我找一個關於鹿角甲蟲的故事嗎？ 我想親身體驗是最好的！";
 								callsub S_Quest,13166,13165;
 							}
 						}
 						break;
 					case 4:
 						if (checkquest(13168,PLAYTIME) == 0)
-							mes "我覺得耙角仙人掌有更多的故事。 如果你有時間請幫助我。";
+							mes "我覺得尖角甲蟲有更多的故事。 如果你有時間請幫助我。";
 						else if (checkquest(13167,HUNTING) == 1) {
-							cutin "?????????",3;  //scaraba_card
-							mes "這是我的計畫。 我要為每個仙人掌製作 4 個段落。";
+							cutin "scaraba_card",3;  //scaraba_card
+							mes "這是我的計畫。 我要為每個甲蟲製作 4 個段落。";
 							next;
 							mes "[拉吉]";
 							mes "無論誰聽或唱都會被搞糊塗到像在唱巨魔一樣。 聽起來很有趣，對吧？";
@@ -456,16 +456,16 @@ moc_para01,41,76,3	script	拉奇#1	4_M_RAGI,{
 							callsub S_Quest,13167,13168,1100000,200000;
 						}
 						else {
-							cutin "?????????",3;  //scaraba_card
-							mes "我開始感到困惑了。 我要製作一首關於耙角仙人掌的故事的歌曲。";
+							cutin "scaraba_card",3;  //scaraba_card
+							mes "我開始感到困惑了。 我要製作一首關於尖角甲蟲的故事的歌曲。";
 							next;
 							mes "[拉吉]";
-							mes "一首歌從獨角仙人掌開始，然後跟著耙角仙人掌一起唱。 你能幫我嗎？";
+							mes "一首歌從獨角甲蟲開始，然後跟著尖角甲蟲一起唱。 你能幫我嗎？";
 							next;
 							cutin "ragi01",0;
 							if (select( "接受請求", "退出。" ) == 1) {
 								mes "[拉吉]";
-								mes "請從斯卡拉巴聖殿找到一個關於耙角仙人掌的故事。 戰鬥或經驗故事都可以。";
+								mes "請從斯卡拉巴聖殿找到一個關於尖角甲蟲的故事。 戰鬥或經驗故事都可以。";
 								callsub S_Quest,13168,13167;
 							}
 						}

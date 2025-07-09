@@ -94,13 +94,13 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 			case 1:
 				mes "達納托斯之塔是最煩人的地方。別擔心你的補償。我說到做到。";
 				next;
-				switch( select( "懲罰的男爵夫人", "安寧夫人", "庇護女主人", "哨兵女士" ) ) {
+				switch( select( "代行刑者", "慰勞者", "安息者", "監視者" ) ) {
 					mes "[旋律-傑克]";
 				case 1:
 					if (checkquest(13120,PLAYTIME) == 0)
 						mes "我想我完成了今天的表演。我無法放鬆，如果怪物突然出現怎麼辦。";
 					else if (checkquest(13119,HUNTING) == 1) {
-						cutin "?????????????",3;  //retribution_card
+						cutin "retribution_card",3;  //retribution_card
 						mes "我不喜歡那個生物，不是因為艾格不喜歡它們... 你怎麼敢？誰在懲罰誰？";
 						next;
 						mes "[旋律-傑克]";
@@ -115,7 +115,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13119,13120,1;
 					}
 					else {
-						cutin "?????????????",3;  //retribution_card
+						cutin "retribution_card",3;  //retribution_card
 						mes "如你所知，達納托斯之塔是艾格最關心的地方。從某些方面來說，它是最危險的地方。";
 						next;
 						mes "[旋律-傑克]";
@@ -133,7 +133,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13122,PLAYTIME) == 0)
 						mes "我想我完成了今天的表演。我無法放鬆......如果怪物突然出現怎麼辦？";
 					else if (checkquest(13121,HUNTING) == 1) {
-						cutin "?????????",3;  //solace_card
+						cutin "solace_card",3;  //solace_card
 						mes "這座建築似乎不是人類設計的，而且總是在播放著奇怪的旋律。";
 						next;
 						mes "[旋律-傑克]";
@@ -148,11 +148,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13121,13122,1;
 					}
 					else {
-						cutin "?????????",3;  //solace_card
+						cutin "solace_card",3;  //solace_card
 						mes "美麗的旋律。也許它聽起來很美，因為是生物在演奏。";
 						next;
 						mes "[旋律-傑克]";
-						mes "然而，這是另一個障礙。任何時候，交易都優先於個人利益。所以清除安寧夫人。";
+						mes "然而，這是另一個障礙。任何時候，交易都優先於個人利益。所以清除慰勞者。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -166,7 +166,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13124,PLAYTIME) == 0)
 						mes "我想我完成了今天的表演。我無法放鬆......如果怪物突然出現怎麼辦？";
 					else if (checkquest(13123,HUNTING) == 1) {
-						cutin "?????????????",3;  //shelter_card
+						cutin "shelter_card",3;  //shelter_card
 						mes "你認識一個變成怪物的天使嗎？我不知道它是不是天使。但它的外表是天使。";
 						next;
 						mes "[旋律-傑克]";
@@ -181,7 +181,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13123,13124,1;
 					}
 					else {
-						cutin "?????????????",3;  //shelter_card
+						cutin "shelter_card",3;  //shelter_card
 						mes "你認識一個變成怪物的天使嗎？我不知道它是不是天使。但它的外表像個天使。";
 						next;
 						mes "[旋律-傑克]";
@@ -200,7 +200,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13126,PLAYTIME) == 0)
 						mes "我完成了今天的表演。我不能放鬆，如果怪物突然出現怎麼辦。";
 					else if (checkquest(13125,HUNTING) == 1) {
-						cutin "????????????",3;  //observation_card
+						cutin "observation_card",3;  //observation_card
 						mes "一旦你踏入塔納托斯之塔的上層區域，你可能已經感覺到它們在注視著你。";
 						next;
 						mes "[旋律-傑克]";
@@ -215,7 +215,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13125,13126,1;
 					}
 					else {
-						cutin "????????????",3;  //observation_card
+						cutin "observation_card",3;  //observation_card
 						mes "如果艾格提出要求，你就會見到她們。哨兵女爵。";
 						next;
 						mes "[旋律-傑克]";
@@ -233,17 +233,17 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 			case 2:
 				mes "艾格的冒險通往拉赫神殿。好吧... 如果^FF0000那個人類^000000艾格在尋找的任何地方被發現也不奇怪。";
 				next;
-				switch( select( "范保克和伊希拉", "霍德勒穆林", "阿加夫和艾奇歐" ) ) {
+				switch( select( "潘貝勒克和伊西拉", "異型", "阿加波和埃奇歐" ) ) {
 					mes "[旋律-傑克]";
 				case 1:
 					if (checkquest(13128,PLAYTIME) == 0)
 						mes "你可以休息一天。你清除的數量夠多了，但狂熱度增加了。";
 					else if (checkquest(13127,HUNTING) == 1) {
-						cutin "???????",3;  //isilla_card
+						cutin "isilla_card",3;  //isilla_card
 						mes "那些認為自己是對的人最危險。這個世界充滿了傻瓜。";
 						next;
 						mes "[旋律-傑克]";
-						mes "最終強迫其他人相信他們所相信的。讓我們清除范保克和伊希拉。";
+						mes "最終強迫其他人相信他們所相信的。讓我們清除潘貝勒克和伊西拉。";
 						next;
 						mes "[旋律-傑克]";
 						mes "這不是我的事。但這次不同。一個小男孩可能有危險，所以讓我們趕快清除這些怪物。";
@@ -254,11 +254,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13127,13128,1;
 					}
 					else {
-						cutin "?????????",3;  //vanberk_card
+						cutin "vanberk_card",3;  //vanberk_card
 						mes "拉赫的聖域禁止普通人進入。你必須知道這一點。";
 						next;
 						mes "[旋律-傑克]";
-						mes "他們認為他們可以在那裡找到線索，但那不是一個安全的地方。你應該事先清除范保克和伊希拉。";
+						mes "他們認為他們可以在那裡找到線索，但那不是一個安全的地方。你應該事先清除潘貝勒克和伊西拉。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -273,7 +273,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13130,PLAYTIME) == 0)
 						mes "未知的怪物很危險，所以先清除它們。如果發生什麼事，我會通知你。";
 					else if (checkquest(13129,HUNTING) == 1) {
-						cutin "??巽?????",3;  //hodremlin_card
+						cutin "hodremlin_card",3;  //hodremlin_card
 						mes "冰冷的牙齒可能正在逼近。它的牙齒比你的手更快。";
 						next;
 						mes "[旋律-傑克]";
@@ -288,11 +288,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13129,13130,1;
 					}
 					else {
-						cutin "??巽?????",3;  //hodremlin_card
+						cutin "hodremlin_card",3;  //hodremlin_card
 						mes "狂熱者是個問題。更嚴重的問題是他們突然出現。";
 						next;
 						mes "[旋律-傑克]";
-						mes "毫不猶豫地擺脫^FF0000霍德勒穆林^000000。因為它們非常危險。";
+						mes "毫不猶豫地擺脫^FF0000異型^000000。因為它們非常危險。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -306,11 +306,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13132,PLAYTIME) == 0)
 						mes "如果你能說話。現在沒有任何請求。休息一天吧。";
 					else if (checkquest(13131,HUNTING) == 1) {
-						cutin "????????",3;  //echio_card
+						cutin "echio_card",3;  //echio_card
 						mes "這裡充滿了瘋狂。我只是覺得噁心。";
 						next;
 						mes "[旋律-傑克]";
-						mes "這只是我的感覺，但你可能會喜歡它。我確定^FF0000阿加夫^000000和^FF0000艾奇歐^000000不會喜歡你。";
+						mes "這只是我的感覺，但你可能會喜歡它。我確定^FF0000阿加波^000000和^FF0000埃奇歐^000000不會喜歡你。";
 						next;
 						mes "[旋律-傑克]";
 						mes "它們會衝向你。不要猶豫，專注於工作。";
@@ -321,11 +321,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13131,13132,1;
 					}
 					else {
-						cutin "????????",3;  //agav_card
+						cutin "agav_card",3;  //agav_card
 						mes "拉赫聖域內部的確越來越危險，但艾格不會關心我們不確定的事情。";
 						next;
 						mes "[旋律-傑克]";
-						mes "那還不算太糟。但需要有人幫忙？讓我們清除拉赫神殿內的^FF0000阿加夫^000000和^FF0000艾奇歐^000000。";
+						mes "那還不算太糟。但需要有人幫忙？讓我們清除拉赫神殿內的^FF0000阿加波^000000和^FF0000埃奇歐^000000。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -339,13 +339,13 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 			case 3:
 				mes "無名島不為普通的冒險家所知。艾格也對那裡感興趣。";
 				next;
-				switch( select( "獵殺破爛殭屍", "屠殺殭屍", "獵殺妖女" ) ) {
+				switch( select( "獵殺襤褸腐屍", "屠殺腐屍", "獵殺惡耗女妖" ) ) {
 					mes "[旋律-傑克]";
 				case 1:
 					if (checkquest(13134,PLAYTIME) == 0)
-						mes "破爛殭屍數量減少了。現在是進行艾格請求的好時機。";
+						mes "襤褸腐屍數量減少了。現在是進行艾格請求的好時機。";
 					else if (checkquest(13133,HUNTING) == 1) {
-						cutin "?????????????",3;  //ragged_zombie_card
+						cutin "ragged_zombie_card",3;  //ragged_zombie_card
 						mes "在無名島上很容易遇到所有東西。真無聊。";
 						next;
 						mes "[旋律-傑克]";
@@ -357,11 +357,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13133,13134,1;
 					}
 					else {
-						cutin "?????????????",3;  //ragged_zombie_card
+						cutin "ragged_zombie_card",3;  //ragged_zombie_card
 						mes "死者在夜晚歸來。歸來聽起來很奇怪。我們別廢話了。";
 						next;
 						mes "[旋律-傑克]";
-						mes "希望清除 ^FF0000破爛殭屍^000000。這很簡單，因為他們到處都是。";
+						mes "希望清除 ^FF0000襤褸腐屍^000000。這很簡單，因為他們到處都是。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -375,7 +375,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13136,PLAYTIME) == 0)
 						mes "我知道去無名島的請求並不容易，但如果你再次加入我會很高興。";
 					else if (checkquest(13135,HUNTING) == 1) {
-						cutin "???????????",3;  //zombie_slaughter_card
+						cutin "zombie_slaughter_card",3;  //zombie_slaughter_card
 						mes "踏入無名島對我來說也不容易。我沒那麼有耐心。";
 						next;
 						mes "[旋律-傑克]";
@@ -387,8 +387,8 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13135,13136,1;
 					}
 					else {
-						cutin "???????????",3;  //zombie_slaughter_card
-						mes "它們不像破爛殭屍那麼危險，因為它們會揮舞鋒利的東西。";
+						cutin "zombie_slaughter_card",3;  //zombie_slaughter_card
+						mes "它們不像襤褸腐屍那麼危險，因為它們會揮舞鋒利的東西。";
 						next;
 						mes "[旋律-傑克]";
 						mes "請清除 ^FF0000殭屍屠殺^000000。小心避開它們的刀刃。";
@@ -405,7 +405,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 					if (checkquest(13138,PLAYTIME) == 0)
 						mes "女妖被清除了。請求反正已經解決了，但這不是結束。遲早會再次需要它。";
 					else if (checkquest(13137,HUNTING) == 1) {
-						cutin "??????",3;  //banshee_card
+						cutin "banshee_card",3;  //banshee_card
 						mes "你會看到，在冒險時，有時會遇到不受歡迎的事情，無論是怪物還是同伴。";
 						next;
 						mes "[旋律-傑克]";
@@ -417,7 +417,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13137,13138,1;
 					}
 					else {
-						cutin "??????",3;  //banshee_card
+						cutin "banshee_card",3;  //banshee_card
 						mes "請清除無名島內的 ^FF0000女妖^000000。不要說不。你知道這也是為了艾格。";
 						next;
 						mes "[旋律-傑克]";
@@ -435,12 +435,12 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 			case 4:
 				mes "深淵湖有一個小女孩的請求。非常勤奮。";
 				next;
-				if (select( "費歐斯和畢勒已經被清除了。", "黃金和藍色亞斯希多斯已經被清除了。" ) == 1) {
+				if (select( "紅貝勒斯和綠貝勒斯已經被清除了。", "黃金和藍色俄希托斯已經被清除了。" ) == 1) {
 					mes "[旋律-傑克]";
 					if (checkquest(13140,PLAYTIME) == 0)
 						mes "綠龍和紅龍讓我想起了西瓜。";
 					else if (checkquest(13139,HUNTING) == 1) {
-						cutin "???????????",3;  //ferus_card
+						cutin "ferus_card",3;  //ferus_card
 						mes "深淵湖... 你可能知道怎麼進去嗎？如果你有這個資訊，你還是個冒險家嗎？";
 						next;
 						mes "[旋律-傑克]";
@@ -452,11 +452,11 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13139,13140,1;
 					}
 					else {
-						cutin "??????????",3;  //ferus__card
+						cutin "ferus_card",3;  //ferus__card
 						mes "深淵湖裡裡外外都充滿了龍。龍沒什麼特別的，但是太多了。";
 						next;
 						mes "[旋律-傑克]";
-						mes "費歐斯和畢勒之間哪個更危險？我不知道。把牠們都清除掉。";
+						mes "紅貝勒斯和綠貝勒斯之間哪個更危險？我不知道。把牠們都清除掉。";
 						next;
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
@@ -469,9 +469,9 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 				else {
 					mes "[旋律-傑克]";
 					if (checkquest(13142,PLAYTIME) == 0)
-						mes "休息一下。我們應該再去征服亞斯希多斯龍。";
+						mes "休息一下。我們應該再去征服俄希托斯龍。";
 					else if (checkquest(13141,HUNTING) == 1) {
-						cutin "?????o??????",3;  //acidus__card
+						cutin "acidus__card",3;  //acidus__card
 						mes "深淵湖不近。但值得一遊。";
 						next;
 						mes "[旋律-傑克]";
@@ -483,7 +483,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						callsub S_Quest,13141,13142,1;
 					}
 					else {
-						cutin "????o???",3;  //acidus_card
+						cutin "acidus__card",3;  //acidus_card
 						mes "有一個洞穴，龍住在深淵湖裡面。有很多，但飛行生物很煩人。";
 						next;
 						mes "[旋律-傑克]";
@@ -492,7 +492,7 @@ moc_para01,44,81,3	script	旋律-傑克#1	4_M_MELODY,8,8,{
 						cutin "",255;
 						if (select( "接受請求。", "停止。" ) == 1) {
 							mes "[旋律-傑克]";
-							mes "征服深淵湖最後一層的黃金和藍色亞斯希多斯怪物。";
+							mes "征服深淵湖最後一層的黃金和藍色俄希托斯怪物。";
 							callsub S_Quest,13142,13141;
 						}
 					}
